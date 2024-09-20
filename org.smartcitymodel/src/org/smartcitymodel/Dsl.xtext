@@ -1,0 +1,100 @@
+grammar org.smartcitymodel.Dsl with org.eclipse.xtext.common.Terminals
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+generate dsl "http://www.smartcitymodel.org/Dsl"
+
+/*
+ * TODO: add scoping for Port references
+ * TODO: add validation for Port references (source must be out, target must be in, units and types must be the identical)
+ */
+
+SmartCityModel:
+	(entities+=Entity)*
+	(connections+=Connection)*
+;
+	
+Entity:
+    Sensor | Actor | Controller | CompoundEntity;
+    
+Sensor:
+	'sensor' name=ID '{'
+		(ports+=Port)+	
+		(frequency=Frequency)?						
+		location=Location
+	'}';
+
+Actor:
+	'actor' name=ID '{'
+		(ports+=Port)+
+		//(actions+=Action)*	
+		location=Location
+	'}'
+;
+
+Controller:
+	'controller' name=ID '{'
+		(ports+=Port)+
+		(actions+=Action)*
+		(services+=Service)*
+		location=Location
+	'}'
+;
+
+CompoundEntity:
+	'structure' name=ID '{'
+		(sensors+=Sensor)*
+		(actors+=Actor)*
+	'}'
+;
+	
+Port:
+	'port' id=INT '{'
+		'direction' direction=DIRECTION
+		'type' type=TYPE
+		'unit' unit=UNIT
+	'}'
+;
+
+Location:
+	'location' '{'
+		'longitude' longitude=FLOAT 'degrees'
+		'latitude' latitude=FLOAT 'degrees'
+		'altitude' altitude=FLOAT 'meters'
+	'}'
+;
+
+// -1 means values are pushed, other pulled at specified interval after start
+Frequency:
+	'frequency' '{'
+		'every' value=INT unit=TIME
+	'}'
+;
+
+Action:
+	'action' name=ID '{'
+		//how to specify actions?
+	'}'
+;
+
+Service:
+	'service' name=ID '{'
+		//how to specify services - and who offers these`?
+	'}'
+;
+
+Connection:
+	'connection' name =ID '{'
+		sourceRef=PortFQN '->' targetRef=PortFQN
+	'}'
+;
+
+PortFQN hidden(): 
+	ID('::'INT | '::'ID'::'INT)
+;
+
+enum DIRECTION: in | out;
+enum TYPE: float | integer | string;
+enum UNIT: cd | C;
+enum TIME: s | m | h | d;
+FLOAT returns ecore::EFloat: INT '.' INT;
