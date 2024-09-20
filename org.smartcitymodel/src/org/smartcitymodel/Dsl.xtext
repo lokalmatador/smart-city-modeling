@@ -7,6 +7,15 @@ generate dsl "http://www.smartcitymodel.org/Dsl"
 /*
  * TODO: add scoping for Port references
  * TODO: add validation for Port references (source must be out, target must be in, units and types must be the identical)
+ * TODO: add scoping for ports in actions
+ * 			- checked ports (values) need to be input ports, set values need to be output ports
+ *  		- set ports (values) need to be output ports
+ * TODO: all kinds of validations for conditions
+ * TODO: all kinds of validation for expressions
+ * TODO: all kinds of validations for effects
+ * TODO: all kinds of validation for properties and their usage
+ * 			- i.e., read or write
+ * TODO: add scoping for properties
  */
 
 SmartCityModel:
@@ -19,6 +28,7 @@ Entity:
     
 Sensor:
 	'sensor' name=ID '{'
+		(properties+=Property)*
 		(ports+=Port)+	
 		(frequency=Frequency)?						
 		location=Location
@@ -26,14 +36,16 @@ Sensor:
 
 Actor:
 	'actor' name=ID '{'
+		(properties+=Property)*
 		(ports+=Port)+
-		//(actions+=Action)*	
+		(actions+=Action)*	
 		location=Location
 	'}'
 ;
 
 Controller:
 	'controller' name=ID '{'
+		(properties+=Property)*
 		(ports+=Port)+
 		(actions+=Action)*
 		(services+=Service)*
@@ -45,6 +57,13 @@ CompoundEntity:
 	'structure' name=ID '{'
 		(sensors+=Sensor)*
 		(actors+=Actor)*
+	'}'
+;
+
+Property:
+	'property' name=ID '{'
+		type=TYPE
+		access=ACCESS
 	'}'
 ;
 	
@@ -71,14 +90,41 @@ Frequency:
 	'}'
 ;
 
+// specifies internal behavior
 Action:
 	'action' name=ID '{'
-		//how to specify actions?
+		(stmts+=Statement)+
 	'}'
 ;
 
+Statement:
+	ConditionalStatement
+;
+
+ConditionalStatement:
+    "if" condition=Condition 'then' effect=Effect';'
+;
+
+Condition:
+     target=PortFQN|PropertyFQN COMP expr=(PortFQN|Expression)
+;
+
+Effect:
+    'set' target=PortFQN|PropertyFQN 'to' expr=Expression
+;
+
+Expression:
+	ValueExpression
+;
+
+ValueExpression:
+	INT|FLOAT|STRING|BOOLEAN
+;
+
+// specifies external API calls
 Service:
 	'service' name=ID '{'
+		// input
 		//how to specify services - and who offers these`?
 	'}'
 ;
@@ -93,8 +139,16 @@ PortFQN hidden():
 	ID('::'INT | '::'ID'::'INT)
 ;
 
+PropertyFQN hidden(): 
+	ID('::'ID | '::'ID'::'ID)
+;
+
+
 enum DIRECTION: in | out;
-enum TYPE: float | integer | string;
+enum TYPE: float | integer | string | bool;
 enum UNIT: cd | C;
 enum TIME: s | m | h | d;
+enum ACCESS: r | w | rw;
 FLOAT returns ecore::EFloat: INT '.' INT;
+BOOLEAN returns ecore::EBoolean: 'true' | 'false';
+terminal COMP : '<' | '=' | '>' ;

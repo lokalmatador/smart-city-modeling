@@ -8,5 +8,8 @@ Bundle-SymbolicName: org.smartcitymodel.ide; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.smartcitymodel,
  org.eclipse.xtext.ide,
- org.eclipse.xtext.xbase.ide
+ org.eclipse.xtext.xbase.ide,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
 Bundle-RequiredExecutionEnvironment: JavaSE-21
+Export-Package: org.smartcitymodel.ide.contentassist.antlr,
+ org.smartcitymodel.ide.contentassist.antlr.internal
