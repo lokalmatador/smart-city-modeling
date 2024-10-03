@@ -5,18 +5,23 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 generate dsl "http://www.smartcitymodel.org/Dsl"
 
 /*
- * TODO: add scoping for Port references
- * TODO: add validation for Port references (source must be out, target must be in, units and types must be the identical)
- * TODO: add scoping for ports in actions
- * 			- checked ports (values) need to be input ports, set values need to be output ports
- *  		- set ports (values) need to be output ports
- * TODO: all kinds of validations for conditions
- * TODO: all kinds of validation for expressions
- * TODO: all kinds of validations for effects
- * TODO: all kinds of validation for properties and their usage
- * 			- i.e., read or write
- * TODO: add scoping for properties
+ * TODO: scoping everywhere (...)
+ * TODO: validations everywhere (...)
  */
+ 
+ /*
+  * TODO
+  	- add properties to sensors
+	- are ports really necessary? no
+		- maybe them for now?
+		- replace with property and service
+		- what does this mean for actions?
+	- services
+		- protocol, endpoint, parameters, return type (we should add JSON and some more)
+			- enum for protocol, end point is http with a slug, parameters are like properties, return is another enum
+	- connection
+		- specified at the service level (which entity calls which services with which values)
+  */
 
 SmartCityModel:
 	(entities+=Entity)*
