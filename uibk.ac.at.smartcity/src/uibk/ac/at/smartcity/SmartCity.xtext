@@ -1,0 +1,62 @@
+grammar uibk.ac.at.smartcity.SmartCity with org.eclipse.xtext.common.Terminals
+
+generate smartCity "http://www.ac.uibk/at/smartcity/SmartCity"
+
+Model:
+	nodes+=Node*
+	interoperableLayer=InteroperableLayer
+	globalLinks+=CommunicationLink*
+;
+
+InteroperableLayer:
+	'layer' name=ID
+	'priority' priority=INT
+	'delay' delay=INT
+;
+	
+Node:
+	'node' name=ID
+	'{'
+		sensors+=Sensor*
+		controller=Controller
+		links+=CommunicationLink*
+	'}'
+;
+
+Sensor:
+	'sensor' name=ID
+	'type' type=SensorType
+	'priority' priority=INT
+;
+
+
+CommunicationLink:
+	'link' type=LinkType 'from' origin=[Linkable] '->' destination=[Linkable] '{'
+		'delay' delay=DelayRange
+		'datatype' datatype=SensorType
+	'}'
+;
+
+Controller:
+	'controller' name=ID
+;
+
+Linkable:
+	Controller | Sensor | InteroperableLayer | Node
+;
+
+DelayRange:
+	'[' min=INT '..' max=INT ']'
+;
+	
+enum SensorType:
+	TEMPERATURE | PH | TURBIDITY | TDS | CURRENT | PULSE | ULTRASONIC | CAMERA 
+;
+
+enum LinkType:
+	UART | ADC | SPI | GPIO | CSI | HTTPS
+;
+
+enum DataType:
+	BOOL | FLOAT | EPOCH | STRING | DOUBLE
+;
