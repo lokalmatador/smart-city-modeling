@@ -13,10 +13,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import uibk.ac.at.smartcity.smartCity.CommunicationLink;
-import uibk.ac.at.smartcity.smartCity.DataType;
 import uibk.ac.at.smartcity.smartCity.DelayRange;
 import uibk.ac.at.smartcity.smartCity.LinkType;
 import uibk.ac.at.smartcity.smartCity.Linkable;
+import uibk.ac.at.smartcity.smartCity.SensorType;
 import uibk.ac.at.smartcity.smartCity.SmartCityPackage;
 
 /**
@@ -96,7 +96,7 @@ public class CommunicationLinkImpl extends MinimalEObjectImpl.Container implemen
    * @generated
    * @ordered
    */
-  protected static final DataType DATATYPE_EDEFAULT = DataType.PH;
+  protected static final SensorType DATATYPE_EDEFAULT = SensorType.TEMPERATURE;
 
   /**
    * The cached value of the '{@link #getDatatype() <em>Datatype</em>}' attribute.
@@ -106,7 +106,7 @@ public class CommunicationLinkImpl extends MinimalEObjectImpl.Container implemen
    * @generated
    * @ordered
    */
-  protected DataType datatype = DATATYPE_EDEFAULT;
+  protected SensorType datatype = DATATYPE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -300,7 +300,7 @@ public class CommunicationLinkImpl extends MinimalEObjectImpl.Container implemen
    * @generated
    */
   @Override
-  public DataType getDatatype()
+  public SensorType getDatatype()
   {
     return datatype;
   }
@@ -311,9 +311,9 @@ public class CommunicationLinkImpl extends MinimalEObjectImpl.Container implemen
    * @generated
    */
   @Override
-  public void setDatatype(DataType newDatatype)
+  public void setDatatype(SensorType newDatatype)
   {
-    DataType oldDatatype = datatype;
+    SensorType oldDatatype = datatype;
     datatype = newDatatype == null ? DATATYPE_EDEFAULT : newDatatype;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SmartCityPackage.COMMUNICATION_LINK__DATATYPE, oldDatatype, datatype));
@@ -384,7 +384,7 @@ public class CommunicationLinkImpl extends MinimalEObjectImpl.Container implemen
         setDelay((DelayRange)newValue);
         return;
       case SmartCityPackage.COMMUNICATION_LINK__DATATYPE:
-        setDatatype((DataType)newValue);
+        setDatatype((SensorType)newValue);
         return;
     }
     super.eSet(featureID, newValue);

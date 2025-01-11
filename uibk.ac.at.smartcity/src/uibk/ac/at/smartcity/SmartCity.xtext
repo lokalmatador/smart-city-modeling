@@ -39,6 +39,8 @@ CommunicationLink:
 
 Controller:
 	'controller' name=ID
+	'type' type=ControllerType
+	'priority' priority=INT
 ;
 
 Linkable:
@@ -51,6 +53,10 @@ DelayRange:
 	
 enum SensorType:
 	TEMPERATURE | PH | TURBIDITY | TDS | CURRENT | PULSE | ULTRASONIC | CAMERA 
+;
+
+enum ControllerType:
+	ESP32 | RASPBERRY_PI
 ;
 
 enum LinkType:

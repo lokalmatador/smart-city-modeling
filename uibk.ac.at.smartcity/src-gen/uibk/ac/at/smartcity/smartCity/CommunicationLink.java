@@ -120,27 +120,27 @@ public interface CommunicationLink extends EObject
 
   /**
    * Returns the value of the '<em><b>Datatype</b></em>' attribute.
-   * The literals are from the enumeration {@link uibk.ac.at.smartcity.smartCity.DataType}.
+   * The literals are from the enumeration {@link uibk.ac.at.smartcity.smartCity.SensorType}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Datatype</em>' attribute.
-   * @see uibk.ac.at.smartcity.smartCity.DataType
-   * @see #setDatatype(DataType)
+   * @see uibk.ac.at.smartcity.smartCity.SensorType
+   * @see #setDatatype(SensorType)
    * @see uibk.ac.at.smartcity.smartCity.SmartCityPackage#getCommunicationLink_Datatype()
    * @model
    * @generated
    */
-  DataType getDatatype();
+  SensorType getDatatype();
 
   /**
    * Sets the value of the '{@link uibk.ac.at.smartcity.smartCity.CommunicationLink#getDatatype <em>Datatype</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Datatype</em>' attribute.
-   * @see uibk.ac.at.smartcity.smartCity.DataType
+   * @see uibk.ac.at.smartcity.smartCity.SensorType
    * @see #getDatatype()
    * @generated
    */
-  void setDatatype(DataType value);
+  void setDatatype(SensorType value);
 
 } // CommunicationLink

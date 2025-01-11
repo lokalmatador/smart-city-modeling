@@ -44,12 +44,12 @@ public interface Model extends EObject
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Interoperable Layer</em>' containment reference.
-   * @see #setInteroperableLayer(Layer)
+   * @see #setInteroperableLayer(InteroperableLayer)
    * @see uibk.ac.at.smartcity.smartCity.SmartCityPackage#getModel_InteroperableLayer()
    * @model containment="true"
    * @generated
    */
-  Layer getInteroperableLayer();
+  InteroperableLayer getInteroperableLayer();
 
   /**
    * Sets the value of the '{@link uibk.ac.at.smartcity.smartCity.Model#getInteroperableLayer <em>Interoperable Layer</em>}' containment reference.
@@ -59,7 +59,7 @@ public interface Model extends EObject
    * @see #getInteroperableLayer()
    * @generated
    */
-  void setInteroperableLayer(Layer value);
+  void setInteroperableLayer(InteroperableLayer value);
 
   /**
    * Returns the value of the '<em><b>Global Links</b></em>' containment reference list.

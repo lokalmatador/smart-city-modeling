@@ -81,9 +81,9 @@ public class SmartCityAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
-      public Adapter caseLayer(Layer object)
+      public Adapter caseInteroperableLayer(InteroperableLayer object)
       {
-        return createLayerAdapter();
+        return createInteroperableLayerAdapter();
       }
       @Override
       public Adapter caseNode(Node object)
@@ -153,16 +153,16 @@ public class SmartCityAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uibk.ac.at.smartcity.smartCity.Layer <em>Layer</em>}'.
+   * Creates a new adapter for an object of class '{@link uibk.ac.at.smartcity.smartCity.InteroperableLayer <em>Interoperable Layer</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uibk.ac.at.smartcity.smartCity.Layer
+   * @see uibk.ac.at.smartcity.smartCity.InteroperableLayer
    * @generated
    */
-  public Adapter createLayerAdapter()
+  public Adapter createInteroperableLayerAdapter()
   {
     return null;
   }

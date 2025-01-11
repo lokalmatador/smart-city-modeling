@@ -67,7 +67,7 @@ public class SmartCityFactoryImpl extends EFactoryImpl implements SmartCityFacto
     switch (eClass.getClassifierID())
     {
       case SmartCityPackage.MODEL: return createModel();
-      case SmartCityPackage.LAYER: return createLayer();
+      case SmartCityPackage.INTEROPERABLE_LAYER: return createInteroperableLayer();
       case SmartCityPackage.NODE: return createNode();
       case SmartCityPackage.SENSOR: return createSensor();
       case SmartCityPackage.COMMUNICATION_LINK: return createCommunicationLink();
@@ -91,6 +91,8 @@ public class SmartCityFactoryImpl extends EFactoryImpl implements SmartCityFacto
     {
       case SmartCityPackage.SENSOR_TYPE:
         return createSensorTypeFromString(eDataType, initialValue);
+      case SmartCityPackage.CONTROLLER_TYPE:
+        return createControllerTypeFromString(eDataType, initialValue);
       case SmartCityPackage.LINK_TYPE:
         return createLinkTypeFromString(eDataType, initialValue);
       case SmartCityPackage.DATA_TYPE:
@@ -112,6 +114,8 @@ public class SmartCityFactoryImpl extends EFactoryImpl implements SmartCityFacto
     {
       case SmartCityPackage.SENSOR_TYPE:
         return convertSensorTypeToString(eDataType, instanceValue);
+      case SmartCityPackage.CONTROLLER_TYPE:
+        return convertControllerTypeToString(eDataType, instanceValue);
       case SmartCityPackage.LINK_TYPE:
         return convertLinkTypeToString(eDataType, instanceValue);
       case SmartCityPackage.DATA_TYPE:
@@ -139,10 +143,10 @@ public class SmartCityFactoryImpl extends EFactoryImpl implements SmartCityFacto
    * @generated
    */
   @Override
-  public Layer createLayer()
+  public InteroperableLayer createInteroperableLayer()
   {
-    LayerImpl layer = new LayerImpl();
-    return layer;
+    InteroperableLayerImpl interoperableLayer = new InteroperableLayerImpl();
+    return interoperableLayer;
   }
 
   /**
@@ -235,6 +239,28 @@ public class SmartCityFactoryImpl extends EFactoryImpl implements SmartCityFacto
    * @generated
    */
   public String convertSensorTypeToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ControllerType createControllerTypeFromString(EDataType eDataType, String initialValue)
+  {
+    ControllerType result = ControllerType.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertControllerTypeToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

@@ -6,22 +6,22 @@ package uibk.ac.at.smartcity.smartCity;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Layer</b></em>'.
+ * A representation of the model object '<em><b>Interoperable Layer</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uibk.ac.at.smartcity.smartCity.Layer#getPriority <em>Priority</em>}</li>
- *   <li>{@link uibk.ac.at.smartcity.smartCity.Layer#getDelay <em>Delay</em>}</li>
+ *   <li>{@link uibk.ac.at.smartcity.smartCity.InteroperableLayer#getPriority <em>Priority</em>}</li>
+ *   <li>{@link uibk.ac.at.smartcity.smartCity.InteroperableLayer#getDelay <em>Delay</em>}</li>
  * </ul>
  *
- * @see uibk.ac.at.smartcity.smartCity.SmartCityPackage#getLayer()
+ * @see uibk.ac.at.smartcity.smartCity.SmartCityPackage#getInteroperableLayer()
  * @model
  * @generated
  */
-public interface Layer extends Linkable
+public interface InteroperableLayer extends Linkable
 {
   /**
    * Returns the value of the '<em><b>Priority</b></em>' attribute.
@@ -29,14 +29,14 @@ public interface Layer extends Linkable
    * <!-- end-user-doc -->
    * @return the value of the '<em>Priority</em>' attribute.
    * @see #setPriority(int)
-   * @see uibk.ac.at.smartcity.smartCity.SmartCityPackage#getLayer_Priority()
+   * @see uibk.ac.at.smartcity.smartCity.SmartCityPackage#getInteroperableLayer_Priority()
    * @model
    * @generated
    */
   int getPriority();
 
   /**
-   * Sets the value of the '{@link uibk.ac.at.smartcity.smartCity.Layer#getPriority <em>Priority</em>}' attribute.
+   * Sets the value of the '{@link uibk.ac.at.smartcity.smartCity.InteroperableLayer#getPriority <em>Priority</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Priority</em>' attribute.
@@ -51,14 +51,14 @@ public interface Layer extends Linkable
    * <!-- end-user-doc -->
    * @return the value of the '<em>Delay</em>' attribute.
    * @see #setDelay(int)
-   * @see uibk.ac.at.smartcity.smartCity.SmartCityPackage#getLayer_Delay()
+   * @see uibk.ac.at.smartcity.smartCity.SmartCityPackage#getInteroperableLayer_Delay()
    * @model
    * @generated
    */
   int getDelay();
 
   /**
-   * Sets the value of the '{@link uibk.ac.at.smartcity.smartCity.Layer#getDelay <em>Delay</em>}' attribute.
+   * Sets the value of the '{@link uibk.ac.at.smartcity.smartCity.InteroperableLayer#getDelay <em>Delay</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Delay</em>' attribute.
@@ -67,4 +67,4 @@ public interface Layer extends Linkable
    */
   void setDelay(int value);
 
-} // Layer
+} // InteroperableLayer

@@ -31,19 +31,19 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Assignment cNodesAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cNodesNodeParserRuleCall_0_0 = (RuleCall)cNodesAssignment_0.eContents().get(0);
 		private final Assignment cInteroperableLayerAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cInteroperableLayerLayerParserRuleCall_1_0 = (RuleCall)cInteroperableLayerAssignment_1.eContents().get(0);
+		private final RuleCall cInteroperableLayerInteroperableLayerParserRuleCall_1_0 = (RuleCall)cInteroperableLayerAssignment_1.eContents().get(0);
 		private final Assignment cGlobalLinksAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cGlobalLinksCommunicationLinkParserRuleCall_2_0 = (RuleCall)cGlobalLinksAssignment_2.eContents().get(0);
 		
 		//Model:
 		//    nodes+=Node*
-		//    interoperableLayer=Layer
+		//    interoperableLayer=InteroperableLayer
 		//    globalLinks+=CommunicationLink*
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//nodes+=Node*
-		//interoperableLayer=Layer
+		//interoperableLayer=InteroperableLayer
 		//globalLinks+=CommunicationLink*
 		public Group getGroup() { return cGroup; }
 		
@@ -53,11 +53,11 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//Node
 		public RuleCall getNodesNodeParserRuleCall_0_0() { return cNodesNodeParserRuleCall_0_0; }
 		
-		//interoperableLayer=Layer
+		//interoperableLayer=InteroperableLayer
 		public Assignment getInteroperableLayerAssignment_1() { return cInteroperableLayerAssignment_1; }
 		
-		//Layer
-		public RuleCall getInteroperableLayerLayerParserRuleCall_1_0() { return cInteroperableLayerLayerParserRuleCall_1_0; }
+		//InteroperableLayer
+		public RuleCall getInteroperableLayerInteroperableLayerParserRuleCall_1_0() { return cInteroperableLayerInteroperableLayerParserRuleCall_1_0; }
 		
 		//globalLinks+=CommunicationLink*
 		public Assignment getGlobalLinksAssignment_2() { return cGlobalLinksAssignment_2; }
@@ -65,8 +65,8 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//CommunicationLink
 		public RuleCall getGlobalLinksCommunicationLinkParserRuleCall_2_0() { return cGlobalLinksCommunicationLinkParserRuleCall_2_0; }
 	}
-	public class LayerElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uibk.ac.at.smartcity.SmartCity.Layer");
+	public class InteroperableLayerElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uibk.ac.at.smartcity.SmartCity.InteroperableLayer");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cLayerKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -78,7 +78,7 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Assignment cDelayAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cDelayINTTerminalRuleCall_5_0 = (RuleCall)cDelayAssignment_5.eContents().get(0);
 		
-		//Layer:
+		//InteroperableLayer:
 		//    'layer' name=ID
 		//    'priority' priority=INT
 		//    'delay' delay=INT
@@ -255,20 +255,20 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final RuleCall cDelayDelayRangeParserRuleCall_8_0 = (RuleCall)cDelayAssignment_8.eContents().get(0);
 		private final Keyword cDatatypeKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		private final Assignment cDatatypeAssignment_10 = (Assignment)cGroup.eContents().get(10);
-		private final RuleCall cDatatypeDataTypeEnumRuleCall_10_0 = (RuleCall)cDatatypeAssignment_10.eContents().get(0);
+		private final RuleCall cDatatypeSensorTypeEnumRuleCall_10_0 = (RuleCall)cDatatypeAssignment_10.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		
 		//CommunicationLink:
 		//    'link' type=LinkType 'from' origin=[Linkable] '->' destination=[Linkable] '{'
 		//        'delay' delay=DelayRange
-		//        'datatype' datatype=DataType
+		//        'datatype' datatype=SensorType
 		//    '}'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'link' type=LinkType 'from' origin=[Linkable] '->' destination=[Linkable] '{'
 		//    'delay' delay=DelayRange
-		//    'datatype' datatype=DataType
+		//    'datatype' datatype=SensorType
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
@@ -320,11 +320,11 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//'datatype'
 		public Keyword getDatatypeKeyword_9() { return cDatatypeKeyword_9; }
 		
-		//datatype=DataType
+		//datatype=SensorType
 		public Assignment getDatatypeAssignment_10() { return cDatatypeAssignment_10; }
 		
-		//DataType
-		public RuleCall getDatatypeDataTypeEnumRuleCall_10_0() { return cDatatypeDataTypeEnumRuleCall_10_0; }
+		//SensorType
+		public RuleCall getDatatypeSensorTypeEnumRuleCall_10_0() { return cDatatypeSensorTypeEnumRuleCall_10_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
@@ -335,13 +335,23 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Keyword cControllerKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cTypeKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cTypeControllerTypeEnumRuleCall_3_0 = (RuleCall)cTypeAssignment_3.eContents().get(0);
+		private final Keyword cPriorityKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cPriorityAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cPriorityINTTerminalRuleCall_5_0 = (RuleCall)cPriorityAssignment_5.eContents().get(0);
 		
 		//Controller:
 		//    'controller' name=ID
+		//    'type' type=ControllerType
+		//    'priority' priority=INT
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'controller' name=ID
+		//'type' type=ControllerType
+		//'priority' priority=INT
 		public Group getGroup() { return cGroup; }
 		
 		//'controller'
@@ -352,21 +362,39 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 		
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		
+		//'type'
+		public Keyword getTypeKeyword_2() { return cTypeKeyword_2; }
+		
+		//type=ControllerType
+		public Assignment getTypeAssignment_3() { return cTypeAssignment_3; }
+		
+		//ControllerType
+		public RuleCall getTypeControllerTypeEnumRuleCall_3_0() { return cTypeControllerTypeEnumRuleCall_3_0; }
+		
+		//'priority'
+		public Keyword getPriorityKeyword_4() { return cPriorityKeyword_4; }
+		
+		//priority=INT
+		public Assignment getPriorityAssignment_5() { return cPriorityAssignment_5; }
+		
+		//INT
+		public RuleCall getPriorityINTTerminalRuleCall_5_0() { return cPriorityINTTerminalRuleCall_5_0; }
 	}
 	public class LinkableElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uibk.ac.at.smartcity.SmartCity.Linkable");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cControllerParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cSensorParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cLayerParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cInteroperableLayerParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cNodeParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//Linkable:
-		//    Controller | Sensor | Layer | Node
+		//    Controller | Sensor | InteroperableLayer | Node
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Controller | Sensor | Layer | Node
+		//Controller | Sensor | InteroperableLayer | Node
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//Controller
@@ -375,8 +403,8 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//Sensor
 		public RuleCall getSensorParserRuleCall_1() { return cSensorParserRuleCall_1; }
 		
-		//Layer
-		public RuleCall getLayerParserRuleCall_2() { return cLayerParserRuleCall_2; }
+		//InteroperableLayer
+		public RuleCall getInteroperableLayerParserRuleCall_2() { return cInteroperableLayerParserRuleCall_2; }
 		
 		//Node
 		public RuleCall getNodeParserRuleCall_3() { return cNodeParserRuleCall_3; }
@@ -490,6 +518,32 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 		
 		public Keyword getCAMERACAMERAKeyword_7_0() { return cCAMERACAMERAKeyword_7_0; }
 	}
+	public class ControllerTypeElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "uibk.ac.at.smartcity.SmartCity.ControllerType");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cESP32EnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cESP32ESP32Keyword_0_0 = (Keyword)cESP32EnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cRASPBERRY_PIEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cRASPBERRY_PIRASPBERRY_PIKeyword_1_0 = (Keyword)cRASPBERRY_PIEnumLiteralDeclaration_1.eContents().get(0);
+		
+		//enum ControllerType:
+		//    ESP32 | RASPBERRY_PI
+		//;
+		public EnumRule getRule() { return rule; }
+		
+		//ESP32 | RASPBERRY_PI
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//ESP32
+		public EnumLiteralDeclaration getESP32EnumLiteralDeclaration_0() { return cESP32EnumLiteralDeclaration_0; }
+		
+		public Keyword getESP32ESP32Keyword_0_0() { return cESP32ESP32Keyword_0_0; }
+		
+		//RASPBERRY_PI
+		public EnumLiteralDeclaration getRASPBERRY_PIEnumLiteralDeclaration_1() { return cRASPBERRY_PIEnumLiteralDeclaration_1; }
+		
+		public Keyword getRASPBERRY_PIRASPBERRY_PIKeyword_1_0() { return cRASPBERRY_PIRASPBERRY_PIKeyword_1_0; }
+	}
 	public class LinkTypeElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "uibk.ac.at.smartcity.SmartCity.LinkType");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -547,39 +601,53 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 	public class DataTypeElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "uibk.ac.at.smartcity.SmartCity.DataType");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final EnumLiteralDeclaration cPHEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
-		private final Keyword cPHPHKeyword_0_0 = (Keyword)cPHEnumLiteralDeclaration_0.eContents().get(0);
-		private final EnumLiteralDeclaration cTDSEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
-		private final Keyword cTDSTDSKeyword_1_0 = (Keyword)cTDSEnumLiteralDeclaration_1.eContents().get(0);
-		private final EnumLiteralDeclaration cTEMPERATUREEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
-		private final Keyword cTEMPERATURETEMPERATUREKeyword_2_0 = (Keyword)cTEMPERATUREEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cBOOLEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cBOOLBOOLKeyword_0_0 = (Keyword)cBOOLEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cFLOATEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cFLOATFLOATKeyword_1_0 = (Keyword)cFLOATEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cEPOCHEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cEPOCHEPOCHKeyword_2_0 = (Keyword)cEPOCHEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cSTRINGEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cSTRINGSTRINGKeyword_3_0 = (Keyword)cSTRINGEnumLiteralDeclaration_3.eContents().get(0);
+		private final EnumLiteralDeclaration cDOUBLEEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
+		private final Keyword cDOUBLEDOUBLEKeyword_4_0 = (Keyword)cDOUBLEEnumLiteralDeclaration_4.eContents().get(0);
 		
 		//enum DataType:
-		//    PH | TDS | TEMPERATURE
+		//    BOOL | FLOAT | EPOCH | STRING | DOUBLE
 		//;
 		public EnumRule getRule() { return rule; }
 		
-		//PH | TDS | TEMPERATURE
+		//BOOL | FLOAT | EPOCH | STRING | DOUBLE
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//PH
-		public EnumLiteralDeclaration getPHEnumLiteralDeclaration_0() { return cPHEnumLiteralDeclaration_0; }
+		//BOOL
+		public EnumLiteralDeclaration getBOOLEnumLiteralDeclaration_0() { return cBOOLEnumLiteralDeclaration_0; }
 		
-		public Keyword getPHPHKeyword_0_0() { return cPHPHKeyword_0_0; }
+		public Keyword getBOOLBOOLKeyword_0_0() { return cBOOLBOOLKeyword_0_0; }
 		
-		//TDS
-		public EnumLiteralDeclaration getTDSEnumLiteralDeclaration_1() { return cTDSEnumLiteralDeclaration_1; }
+		//FLOAT
+		public EnumLiteralDeclaration getFLOATEnumLiteralDeclaration_1() { return cFLOATEnumLiteralDeclaration_1; }
 		
-		public Keyword getTDSTDSKeyword_1_0() { return cTDSTDSKeyword_1_0; }
+		public Keyword getFLOATFLOATKeyword_1_0() { return cFLOATFLOATKeyword_1_0; }
 		
-		//TEMPERATURE
-		public EnumLiteralDeclaration getTEMPERATUREEnumLiteralDeclaration_2() { return cTEMPERATUREEnumLiteralDeclaration_2; }
+		//EPOCH
+		public EnumLiteralDeclaration getEPOCHEnumLiteralDeclaration_2() { return cEPOCHEnumLiteralDeclaration_2; }
 		
-		public Keyword getTEMPERATURETEMPERATUREKeyword_2_0() { return cTEMPERATURETEMPERATUREKeyword_2_0; }
+		public Keyword getEPOCHEPOCHKeyword_2_0() { return cEPOCHEPOCHKeyword_2_0; }
+		
+		//STRING
+		public EnumLiteralDeclaration getSTRINGEnumLiteralDeclaration_3() { return cSTRINGEnumLiteralDeclaration_3; }
+		
+		public Keyword getSTRINGSTRINGKeyword_3_0() { return cSTRINGSTRINGKeyword_3_0; }
+		
+		//DOUBLE
+		public EnumLiteralDeclaration getDOUBLEEnumLiteralDeclaration_4() { return cDOUBLEEnumLiteralDeclaration_4; }
+		
+		public Keyword getDOUBLEDOUBLEKeyword_4_0() { return cDOUBLEDOUBLEKeyword_4_0; }
 	}
 	
 	private final ModelElements pModel;
-	private final LayerElements pLayer;
+	private final InteroperableLayerElements pInteroperableLayer;
 	private final NodeElements pNode;
 	private final SensorElements pSensor;
 	private final CommunicationLinkElements pCommunicationLink;
@@ -587,6 +655,7 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 	private final LinkableElements pLinkable;
 	private final DelayRangeElements pDelayRange;
 	private final SensorTypeElements eSensorType;
+	private final ControllerTypeElements eControllerType;
 	private final LinkTypeElements eLinkType;
 	private final DataTypeElements eDataType;
 	
@@ -600,7 +669,7 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
 		this.pModel = new ModelElements();
-		this.pLayer = new LayerElements();
+		this.pInteroperableLayer = new InteroperableLayerElements();
 		this.pNode = new NodeElements();
 		this.pSensor = new SensorElements();
 		this.pCommunicationLink = new CommunicationLinkElements();
@@ -608,6 +677,7 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 		this.pLinkable = new LinkableElements();
 		this.pDelayRange = new DelayRangeElements();
 		this.eSensorType = new SensorTypeElements();
+		this.eControllerType = new ControllerTypeElements();
 		this.eLinkType = new LinkTypeElements();
 		this.eDataType = new DataTypeElements();
 	}
@@ -641,7 +711,7 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 	
 	//Model:
 	//    nodes+=Node*
-	//    interoperableLayer=Layer
+	//    interoperableLayer=InteroperableLayer
 	//    globalLinks+=CommunicationLink*
 	//;
 	public ModelElements getModelAccess() {
@@ -652,17 +722,17 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 		return getModelAccess().getRule();
 	}
 	
-	//Layer:
+	//InteroperableLayer:
 	//    'layer' name=ID
 	//    'priority' priority=INT
 	//    'delay' delay=INT
 	//;
-	public LayerElements getLayerAccess() {
-		return pLayer;
+	public InteroperableLayerElements getInteroperableLayerAccess() {
+		return pInteroperableLayer;
 	}
 	
-	public ParserRule getLayerRule() {
-		return getLayerAccess().getRule();
+	public ParserRule getInteroperableLayerRule() {
+		return getInteroperableLayerAccess().getRule();
 	}
 	
 	//Node:
@@ -697,7 +767,7 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 	//CommunicationLink:
 	//    'link' type=LinkType 'from' origin=[Linkable] '->' destination=[Linkable] '{'
 	//        'delay' delay=DelayRange
-	//        'datatype' datatype=DataType
+	//        'datatype' datatype=SensorType
 	//    '}'
 	//;
 	public CommunicationLinkElements getCommunicationLinkAccess() {
@@ -710,6 +780,8 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 	
 	//Controller:
 	//    'controller' name=ID
+	//    'type' type=ControllerType
+	//    'priority' priority=INT
 	//;
 	public ControllerElements getControllerAccess() {
 		return pController;
@@ -720,7 +792,7 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	
 	//Linkable:
-	//    Controller | Sensor | Layer | Node
+	//    Controller | Sensor | InteroperableLayer | Node
 	//;
 	public LinkableElements getLinkableAccess() {
 		return pLinkable;
@@ -752,6 +824,17 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 		return getSensorTypeAccess().getRule();
 	}
 	
+	//enum ControllerType:
+	//    ESP32 | RASPBERRY_PI
+	//;
+	public ControllerTypeElements getControllerTypeAccess() {
+		return eControllerType;
+	}
+	
+	public EnumRule getControllerTypeRule() {
+		return getControllerTypeAccess().getRule();
+	}
+	
 	//enum LinkType:
 	//    UART | ADC | SPI | GPIO | CSI | HTTPS
 	//;
@@ -764,7 +847,7 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	
 	//enum DataType:
-	//    PH | TDS | TEMPERATURE
+	//    BOOL | FLOAT | EPOCH | STRING | DOUBLE
 	//;
 	public DataTypeElements getDataTypeAccess() {
 		return eDataType;

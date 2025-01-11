@@ -9,6 +9,13 @@ package uibk.ac.at.smartcity.smartCity;
  * A representation of the model object '<em><b>Controller</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link uibk.ac.at.smartcity.smartCity.Controller#getType <em>Type</em>}</li>
+ *   <li>{@link uibk.ac.at.smartcity.smartCity.Controller#getPriority <em>Priority</em>}</li>
+ * </ul>
  *
  * @see uibk.ac.at.smartcity.smartCity.SmartCityPackage#getController()
  * @model
@@ -16,4 +23,51 @@ package uibk.ac.at.smartcity.smartCity;
  */
 public interface Controller extends Linkable
 {
+  /**
+   * Returns the value of the '<em><b>Type</b></em>' attribute.
+   * The literals are from the enumeration {@link uibk.ac.at.smartcity.smartCity.ControllerType}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Type</em>' attribute.
+   * @see uibk.ac.at.smartcity.smartCity.ControllerType
+   * @see #setType(ControllerType)
+   * @see uibk.ac.at.smartcity.smartCity.SmartCityPackage#getController_Type()
+   * @model
+   * @generated
+   */
+  ControllerType getType();
+
+  /**
+   * Sets the value of the '{@link uibk.ac.at.smartcity.smartCity.Controller#getType <em>Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Type</em>' attribute.
+   * @see uibk.ac.at.smartcity.smartCity.ControllerType
+   * @see #getType()
+   * @generated
+   */
+  void setType(ControllerType value);
+
+  /**
+   * Returns the value of the '<em><b>Priority</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Priority</em>' attribute.
+   * @see #setPriority(int)
+   * @see uibk.ac.at.smartcity.smartCity.SmartCityPackage#getController_Priority()
+   * @model
+   * @generated
+   */
+  int getPriority();
+
+  /**
+   * Sets the value of the '{@link uibk.ac.at.smartcity.smartCity.Controller#getPriority <em>Priority</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Priority</em>' attribute.
+   * @see #getPriority()
+   * @generated
+   */
+  void setPriority(int value);
+
 } // Controller

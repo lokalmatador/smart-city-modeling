@@ -13,7 +13,7 @@ import uibk.ac.at.smartcity.smartCity.CommunicationLink
 import uibk.ac.at.smartcity.smartCity.Node
 import uibk.ac.at.smartcity.smartCity.Sensor
 import java.util.ArrayList
-import uibk.ac.at.smartcity.smartCity.Layer
+import uibk.ac.at.smartcity.smartCity.InteroperableLayer
 
 /**
  * Generates code from your model files on save.
@@ -53,7 +53,7 @@ class SmartCityGenerator extends AbstractGenerator {
 		val sensors = resource.allContents.toIterable.filter(Sensor)
 		val links = resource.allContents.toIterable.filter(CommunicationLink)
 		val nodes = resource.allContents.toIterable.filter(Node)
-		val interoperableLayer = resource.allContents.toIterable.filter(Layer).get(0)
+		val interoperableLayer = resource.allContents.toIterable.filter(InteroperableLayer).get(0)
 		
 		fsa.generateFile("model.py", generateModel(sensors, links, nodes, interoperableLayer))
 				
@@ -242,7 +242,7 @@ class SmartCityGenerator extends AbstractGenerator {
 		'''
 	}
 	
-	def generateModel(Iterable<Sensor> sensors, Iterable<CommunicationLink> links, Iterable<Node> nodes, Layer interoperableLayer){
+	def generateModel(Iterable<Sensor> sensors, Iterable<CommunicationLink> links, Iterable<Node> nodes, InteroperableLayer interoperableLayer){
 		var commLinks = new ArrayList<CommunicationLink>
 		for (link:links){
 			commLinks.add(link)

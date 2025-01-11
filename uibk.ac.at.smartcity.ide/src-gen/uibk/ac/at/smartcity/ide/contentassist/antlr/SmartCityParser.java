@@ -33,10 +33,11 @@ public class SmartCityParser extends AbstractContentAssistParser {
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, SmartCityGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getLinkableAccess().getAlternatives(), "rule__Linkable__Alternatives");
 			builder.put(grammarAccess.getSensorTypeAccess().getAlternatives(), "rule__SensorType__Alternatives");
+			builder.put(grammarAccess.getControllerTypeAccess().getAlternatives(), "rule__ControllerType__Alternatives");
 			builder.put(grammarAccess.getLinkTypeAccess().getAlternatives(), "rule__LinkType__Alternatives");
 			builder.put(grammarAccess.getDataTypeAccess().getAlternatives(), "rule__DataType__Alternatives");
 			builder.put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
-			builder.put(grammarAccess.getLayerAccess().getGroup(), "rule__Layer__Group__0");
+			builder.put(grammarAccess.getInteroperableLayerAccess().getGroup(), "rule__InteroperableLayer__Group__0");
 			builder.put(grammarAccess.getNodeAccess().getGroup(), "rule__Node__Group__0");
 			builder.put(grammarAccess.getSensorAccess().getGroup(), "rule__Sensor__Group__0");
 			builder.put(grammarAccess.getCommunicationLinkAccess().getGroup(), "rule__CommunicationLink__Group__0");
@@ -45,9 +46,9 @@ public class SmartCityParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getModelAccess().getNodesAssignment_0(), "rule__Model__NodesAssignment_0");
 			builder.put(grammarAccess.getModelAccess().getInteroperableLayerAssignment_1(), "rule__Model__InteroperableLayerAssignment_1");
 			builder.put(grammarAccess.getModelAccess().getGlobalLinksAssignment_2(), "rule__Model__GlobalLinksAssignment_2");
-			builder.put(grammarAccess.getLayerAccess().getNameAssignment_1(), "rule__Layer__NameAssignment_1");
-			builder.put(grammarAccess.getLayerAccess().getPriorityAssignment_3(), "rule__Layer__PriorityAssignment_3");
-			builder.put(grammarAccess.getLayerAccess().getDelayAssignment_5(), "rule__Layer__DelayAssignment_5");
+			builder.put(grammarAccess.getInteroperableLayerAccess().getNameAssignment_1(), "rule__InteroperableLayer__NameAssignment_1");
+			builder.put(grammarAccess.getInteroperableLayerAccess().getPriorityAssignment_3(), "rule__InteroperableLayer__PriorityAssignment_3");
+			builder.put(grammarAccess.getInteroperableLayerAccess().getDelayAssignment_5(), "rule__InteroperableLayer__DelayAssignment_5");
 			builder.put(grammarAccess.getNodeAccess().getNameAssignment_1(), "rule__Node__NameAssignment_1");
 			builder.put(grammarAccess.getNodeAccess().getSensorsAssignment_3(), "rule__Node__SensorsAssignment_3");
 			builder.put(grammarAccess.getNodeAccess().getControllerAssignment_4(), "rule__Node__ControllerAssignment_4");
@@ -61,6 +62,8 @@ public class SmartCityParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getCommunicationLinkAccess().getDelayAssignment_8(), "rule__CommunicationLink__DelayAssignment_8");
 			builder.put(grammarAccess.getCommunicationLinkAccess().getDatatypeAssignment_10(), "rule__CommunicationLink__DatatypeAssignment_10");
 			builder.put(grammarAccess.getControllerAccess().getNameAssignment_1(), "rule__Controller__NameAssignment_1");
+			builder.put(grammarAccess.getControllerAccess().getTypeAssignment_3(), "rule__Controller__TypeAssignment_3");
+			builder.put(grammarAccess.getControllerAccess().getPriorityAssignment_5(), "rule__Controller__PriorityAssignment_5");
 			builder.put(grammarAccess.getDelayRangeAccess().getMinAssignment_1(), "rule__DelayRange__MinAssignment_1");
 			builder.put(grammarAccess.getDelayRangeAccess().getMaxAssignment_3(), "rule__DelayRange__MaxAssignment_3");
 		}

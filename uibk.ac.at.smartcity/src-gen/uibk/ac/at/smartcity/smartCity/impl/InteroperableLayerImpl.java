@@ -9,24 +9,24 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import uibk.ac.at.smartcity.smartCity.Layer;
+import uibk.ac.at.smartcity.smartCity.InteroperableLayer;
 import uibk.ac.at.smartcity.smartCity.SmartCityPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Layer</b></em>'.
+ * An implementation of the model object '<em><b>Interoperable Layer</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.LayerImpl#getPriority <em>Priority</em>}</li>
- *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.LayerImpl#getDelay <em>Delay</em>}</li>
+ *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.InteroperableLayerImpl#getPriority <em>Priority</em>}</li>
+ *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.InteroperableLayerImpl#getDelay <em>Delay</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class LayerImpl extends LinkableImpl implements Layer
+public class InteroperableLayerImpl extends LinkableImpl implements InteroperableLayer
 {
   /**
    * The default value of the '{@link #getPriority() <em>Priority</em>}' attribute.
@@ -73,7 +73,7 @@ public class LayerImpl extends LinkableImpl implements Layer
    * <!-- end-user-doc -->
    * @generated
    */
-  protected LayerImpl()
+  protected InteroperableLayerImpl()
   {
     super();
   }
@@ -86,7 +86,7 @@ public class LayerImpl extends LinkableImpl implements Layer
   @Override
   protected EClass eStaticClass()
   {
-    return SmartCityPackage.Literals.LAYER;
+    return SmartCityPackage.Literals.INTEROPERABLE_LAYER;
   }
 
   /**
@@ -111,7 +111,7 @@ public class LayerImpl extends LinkableImpl implements Layer
     int oldPriority = priority;
     priority = newPriority;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SmartCityPackage.LAYER__PRIORITY, oldPriority, priority));
+      eNotify(new ENotificationImpl(this, Notification.SET, SmartCityPackage.INTEROPERABLE_LAYER__PRIORITY, oldPriority, priority));
   }
 
   /**
@@ -136,7 +136,7 @@ public class LayerImpl extends LinkableImpl implements Layer
     int oldDelay = delay;
     delay = newDelay;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SmartCityPackage.LAYER__DELAY, oldDelay, delay));
+      eNotify(new ENotificationImpl(this, Notification.SET, SmartCityPackage.INTEROPERABLE_LAYER__DELAY, oldDelay, delay));
   }
 
   /**
@@ -149,9 +149,9 @@ public class LayerImpl extends LinkableImpl implements Layer
   {
     switch (featureID)
     {
-      case SmartCityPackage.LAYER__PRIORITY:
+      case SmartCityPackage.INTEROPERABLE_LAYER__PRIORITY:
         return getPriority();
-      case SmartCityPackage.LAYER__DELAY:
+      case SmartCityPackage.INTEROPERABLE_LAYER__DELAY:
         return getDelay();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -167,10 +167,10 @@ public class LayerImpl extends LinkableImpl implements Layer
   {
     switch (featureID)
     {
-      case SmartCityPackage.LAYER__PRIORITY:
+      case SmartCityPackage.INTEROPERABLE_LAYER__PRIORITY:
         setPriority((Integer)newValue);
         return;
-      case SmartCityPackage.LAYER__DELAY:
+      case SmartCityPackage.INTEROPERABLE_LAYER__DELAY:
         setDelay((Integer)newValue);
         return;
     }
@@ -187,10 +187,10 @@ public class LayerImpl extends LinkableImpl implements Layer
   {
     switch (featureID)
     {
-      case SmartCityPackage.LAYER__PRIORITY:
+      case SmartCityPackage.INTEROPERABLE_LAYER__PRIORITY:
         setPriority(PRIORITY_EDEFAULT);
         return;
-      case SmartCityPackage.LAYER__DELAY:
+      case SmartCityPackage.INTEROPERABLE_LAYER__DELAY:
         setDelay(DELAY_EDEFAULT);
         return;
     }
@@ -207,9 +207,9 @@ public class LayerImpl extends LinkableImpl implements Layer
   {
     switch (featureID)
     {
-      case SmartCityPackage.LAYER__PRIORITY:
+      case SmartCityPackage.INTEROPERABLE_LAYER__PRIORITY:
         return priority != PRIORITY_EDEFAULT;
-      case SmartCityPackage.LAYER__DELAY:
+      case SmartCityPackage.INTEROPERABLE_LAYER__DELAY:
         return delay != DELAY_EDEFAULT;
     }
     return super.eIsSet(featureID);
@@ -234,4 +234,4 @@ public class LayerImpl extends LinkableImpl implements Layer
     return result.toString();
   }
 
-} //LayerImpl
+} //InteroperableLayerImpl

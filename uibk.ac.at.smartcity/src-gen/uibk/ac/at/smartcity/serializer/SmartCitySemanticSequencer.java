@@ -18,7 +18,7 @@ import uibk.ac.at.smartcity.services.SmartCityGrammarAccess;
 import uibk.ac.at.smartcity.smartCity.CommunicationLink;
 import uibk.ac.at.smartcity.smartCity.Controller;
 import uibk.ac.at.smartcity.smartCity.DelayRange;
-import uibk.ac.at.smartcity.smartCity.Layer;
+import uibk.ac.at.smartcity.smartCity.InteroperableLayer;
 import uibk.ac.at.smartcity.smartCity.Model;
 import uibk.ac.at.smartcity.smartCity.Node;
 import uibk.ac.at.smartcity.smartCity.Sensor;
@@ -47,8 +47,8 @@ public class SmartCitySemanticSequencer extends AbstractDelegatingSemanticSequen
 			case SmartCityPackage.DELAY_RANGE:
 				sequence_DelayRange(context, (DelayRange) semanticObject); 
 				return; 
-			case SmartCityPackage.LAYER:
-				sequence_Layer(context, (Layer) semanticObject); 
+			case SmartCityPackage.INTEROPERABLE_LAYER:
+				sequence_InteroperableLayer(context, (InteroperableLayer) semanticObject); 
 				return; 
 			case SmartCityPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
@@ -70,7 +70,7 @@ public class SmartCitySemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     CommunicationLink returns CommunicationLink
 	 *
 	 * Constraint:
-	 *     (type=LinkType origin=[Linkable|ID] destination=[Linkable|ID] delay=DelayRange datatype=DataType)
+	 *     (type=LinkType origin=[Linkable|ID] destination=[Linkable|ID] delay=DelayRange datatype=SensorType)
 	 * </pre>
 	 */
 	protected void sequence_CommunicationLink(ISerializationContext context, CommunicationLink semanticObject) {
@@ -91,7 +91,7 @@ public class SmartCitySemanticSequencer extends AbstractDelegatingSemanticSequen
 		feeder.accept(grammarAccess.getCommunicationLinkAccess().getOriginLinkableIDTerminalRuleCall_3_0_1(), semanticObject.eGet(SmartCityPackage.Literals.COMMUNICATION_LINK__ORIGIN, false));
 		feeder.accept(grammarAccess.getCommunicationLinkAccess().getDestinationLinkableIDTerminalRuleCall_5_0_1(), semanticObject.eGet(SmartCityPackage.Literals.COMMUNICATION_LINK__DESTINATION, false));
 		feeder.accept(grammarAccess.getCommunicationLinkAccess().getDelayDelayRangeParserRuleCall_8_0(), semanticObject.getDelay());
-		feeder.accept(grammarAccess.getCommunicationLinkAccess().getDatatypeDataTypeEnumRuleCall_10_0(), semanticObject.getDatatype());
+		feeder.accept(grammarAccess.getCommunicationLinkAccess().getDatatypeSensorTypeEnumRuleCall_10_0(), semanticObject.getDatatype());
 		feeder.finish();
 	}
 	
@@ -103,16 +103,22 @@ public class SmartCitySemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Linkable returns Controller
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     (name=ID type=ControllerType priority=INT)
 	 * </pre>
 	 */
 	protected void sequence_Controller(ISerializationContext context, Controller semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, SmartCityPackage.Literals.LINKABLE__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCityPackage.Literals.LINKABLE__NAME));
+			if (transientValues.isValueTransient(semanticObject, SmartCityPackage.Literals.CONTROLLER__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCityPackage.Literals.CONTROLLER__TYPE));
+			if (transientValues.isValueTransient(semanticObject, SmartCityPackage.Literals.CONTROLLER__PRIORITY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCityPackage.Literals.CONTROLLER__PRIORITY));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getControllerAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getControllerAccess().getTypeControllerTypeEnumRuleCall_3_0(), semanticObject.getType());
+		feeder.accept(grammarAccess.getControllerAccess().getPriorityINTTerminalRuleCall_5_0(), semanticObject.getPriority());
 		feeder.finish();
 	}
 	
@@ -143,26 +149,26 @@ public class SmartCitySemanticSequencer extends AbstractDelegatingSemanticSequen
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Layer returns Layer
-	 *     Linkable returns Layer
+	 *     InteroperableLayer returns InteroperableLayer
+	 *     Linkable returns InteroperableLayer
 	 *
 	 * Constraint:
 	 *     (name=ID priority=INT delay=INT)
 	 * </pre>
 	 */
-	protected void sequence_Layer(ISerializationContext context, Layer semanticObject) {
+	protected void sequence_InteroperableLayer(ISerializationContext context, InteroperableLayer semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, SmartCityPackage.Literals.LINKABLE__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCityPackage.Literals.LINKABLE__NAME));
-			if (transientValues.isValueTransient(semanticObject, SmartCityPackage.Literals.LAYER__PRIORITY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCityPackage.Literals.LAYER__PRIORITY));
-			if (transientValues.isValueTransient(semanticObject, SmartCityPackage.Literals.LAYER__DELAY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCityPackage.Literals.LAYER__DELAY));
+			if (transientValues.isValueTransient(semanticObject, SmartCityPackage.Literals.INTEROPERABLE_LAYER__PRIORITY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCityPackage.Literals.INTEROPERABLE_LAYER__PRIORITY));
+			if (transientValues.isValueTransient(semanticObject, SmartCityPackage.Literals.INTEROPERABLE_LAYER__DELAY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCityPackage.Literals.INTEROPERABLE_LAYER__DELAY));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getLayerAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getLayerAccess().getPriorityINTTerminalRuleCall_3_0(), semanticObject.getPriority());
-		feeder.accept(grammarAccess.getLayerAccess().getDelayINTTerminalRuleCall_5_0(), semanticObject.getDelay());
+		feeder.accept(grammarAccess.getInteroperableLayerAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getInteroperableLayerAccess().getPriorityINTTerminalRuleCall_3_0(), semanticObject.getPriority());
+		feeder.accept(grammarAccess.getInteroperableLayerAccess().getDelayINTTerminalRuleCall_5_0(), semanticObject.getDelay());
 		feeder.finish();
 	}
 	
@@ -173,7 +179,7 @@ public class SmartCitySemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Model returns Model
 	 *
 	 * Constraint:
-	 *     (nodes+=Node* interoperableLayer=Layer globalLinks+=CommunicationLink*)
+	 *     (nodes+=Node* interoperableLayer=InteroperableLayer globalLinks+=CommunicationLink*)
 	 * </pre>
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {

@@ -11,157 +11,91 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Data Type</b></em>',
+ * A representation of the literals of the enumeration '<em><b>Controller Type</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see uibk.ac.at.smartcity.smartCity.SmartCityPackage#getDataType()
+ * @see uibk.ac.at.smartcity.smartCity.SmartCityPackage#getControllerType()
  * @model
  * @generated
  */
-public enum DataType implements Enumerator
+public enum ControllerType implements Enumerator
 {
   /**
-   * The '<em><b>BOOL</b></em>' literal object.
+   * The '<em><b>ESP32</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #BOOL_VALUE
+   * @see #ESP32_VALUE
    * @generated
    * @ordered
    */
-  BOOL(0, "BOOL", "BOOL"),
+  ESP32(0, "ESP32", "ESP32"),
 
   /**
-   * The '<em><b>FLOAT</b></em>' literal object.
+   * The '<em><b>RASPBERRY PI</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #FLOAT_VALUE
+   * @see #RASPBERRY_PI_VALUE
    * @generated
    * @ordered
    */
-  FLOAT(1, "FLOAT", "FLOAT"),
+  RASPBERRY_PI(1, "RASPBERRY_PI", "RASPBERRY_PI");
 
   /**
-   * The '<em><b>EPOCH</b></em>' literal object.
+   * The '<em><b>ESP32</b></em>' literal value.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #EPOCH_VALUE
-   * @generated
-   * @ordered
-   */
-  EPOCH(2, "EPOCH", "EPOCH"),
-
-  /**
-   * The '<em><b>STRING</b></em>' literal object.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #STRING_VALUE
-   * @generated
-   * @ordered
-   */
-  STRING(3, "STRING", "STRING"),
-
-  /**
-   * The '<em><b>DOUBLE</b></em>' literal object.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #DOUBLE_VALUE
-   * @generated
-   * @ordered
-   */
-  DOUBLE(4, "DOUBLE", "DOUBLE");
-
-  /**
-   * The '<em><b>BOOL</b></em>' literal value.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #BOOL
+   * @see #ESP32
    * @model
    * @generated
    * @ordered
    */
-  public static final int BOOL_VALUE = 0;
+  public static final int ESP32_VALUE = 0;
 
   /**
-   * The '<em><b>FLOAT</b></em>' literal value.
+   * The '<em><b>RASPBERRY PI</b></em>' literal value.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #FLOAT
+   * @see #RASPBERRY_PI
    * @model
    * @generated
    * @ordered
    */
-  public static final int FLOAT_VALUE = 1;
+  public static final int RASPBERRY_PI_VALUE = 1;
 
   /**
-   * The '<em><b>EPOCH</b></em>' literal value.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #EPOCH
-   * @model
-   * @generated
-   * @ordered
-   */
-  public static final int EPOCH_VALUE = 2;
-
-  /**
-   * The '<em><b>STRING</b></em>' literal value.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #STRING
-   * @model
-   * @generated
-   * @ordered
-   */
-  public static final int STRING_VALUE = 3;
-
-  /**
-   * The '<em><b>DOUBLE</b></em>' literal value.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #DOUBLE
-   * @model
-   * @generated
-   * @ordered
-   */
-  public static final int DOUBLE_VALUE = 4;
-
-  /**
-   * An array of all the '<em><b>Data Type</b></em>' enumerators.
+   * An array of all the '<em><b>Controller Type</b></em>' enumerators.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private static final DataType[] VALUES_ARRAY =
-    new DataType[]
+  private static final ControllerType[] VALUES_ARRAY =
+    new ControllerType[]
     {
-      BOOL,
-      FLOAT,
-      EPOCH,
-      STRING,
-      DOUBLE,
+      ESP32,
+      RASPBERRY_PI,
     };
 
   /**
-   * A public read-only list of all the '<em><b>Data Type</b></em>' enumerators.
+   * A public read-only list of all the '<em><b>Controller Type</b></em>' enumerators.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  public static final List<DataType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+  public static final List<ControllerType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
   /**
-   * Returns the '<em><b>Data Type</b></em>' literal with the specified literal value.
+   * Returns the '<em><b>Controller Type</b></em>' literal with the specified literal value.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param literal the literal.
    * @return the matching enumerator or <code>null</code>.
    * @generated
    */
-  public static DataType get(String literal)
+  public static ControllerType get(String literal)
   {
     for (int i = 0; i < VALUES_ARRAY.length; ++i)
     {
-      DataType result = VALUES_ARRAY[i];
+      ControllerType result = VALUES_ARRAY[i];
       if (result.toString().equals(literal))
       {
         return result;
@@ -171,18 +105,18 @@ public enum DataType implements Enumerator
   }
 
   /**
-   * Returns the '<em><b>Data Type</b></em>' literal with the specified name.
+   * Returns the '<em><b>Controller Type</b></em>' literal with the specified name.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param name the name.
    * @return the matching enumerator or <code>null</code>.
    * @generated
    */
-  public static DataType getByName(String name)
+  public static ControllerType getByName(String name)
   {
     for (int i = 0; i < VALUES_ARRAY.length; ++i)
     {
-      DataType result = VALUES_ARRAY[i];
+      ControllerType result = VALUES_ARRAY[i];
       if (result.getName().equals(name))
       {
         return result;
@@ -192,22 +126,19 @@ public enum DataType implements Enumerator
   }
 
   /**
-   * Returns the '<em><b>Data Type</b></em>' literal with the specified integer value.
+   * Returns the '<em><b>Controller Type</b></em>' literal with the specified integer value.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the integer value.
    * @return the matching enumerator or <code>null</code>.
    * @generated
    */
-  public static DataType get(int value)
+  public static ControllerType get(int value)
   {
     switch (value)
     {
-      case BOOL_VALUE: return BOOL;
-      case FLOAT_VALUE: return FLOAT;
-      case EPOCH_VALUE: return EPOCH;
-      case STRING_VALUE: return STRING;
-      case DOUBLE_VALUE: return DOUBLE;
+      case ESP32_VALUE: return ESP32;
+      case RASPBERRY_PI_VALUE: return RASPBERRY_PI;
     }
     return null;
   }
@@ -239,7 +170,7 @@ public enum DataType implements Enumerator
    * <!-- end-user-doc -->
    * @generated
    */
-  private DataType(int value, String name, String literal)
+  private ControllerType(int value, String name, String literal)
   {
     this.value = value;
     this.name = name;
@@ -291,4 +222,4 @@ public enum DataType implements Enumerator
     return literal;
   }
   
-} //DataType
+} //ControllerType

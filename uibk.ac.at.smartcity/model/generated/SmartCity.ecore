@@ -5,12 +5,12 @@
   <eClassifiers xsi:type="ecore:EClass" name="Model">
     <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" upperBound="-1"
         eType="#//Node" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="interoperableLayer" eType="#//Layer"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interoperableLayer" eType="#//InteroperableLayer"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="globalLinks" upperBound="-1"
         eType="#//CommunicationLink" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Layer" eSuperTypes="#//Linkable">
+  <eClassifiers xsi:type="ecore:EClass" name="InteroperableLayer" eSuperTypes="#//Linkable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="delay" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
@@ -32,9 +32,12 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="destination" eType="#//Linkable"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="delay" eType="#//DelayRange"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="datatype" eType="#//DataType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="datatype" eType="#//SensorType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Controller" eSuperTypes="#//Linkable"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Controller" eSuperTypes="#//Linkable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ControllerType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Linkable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -52,6 +55,10 @@
     <eLiterals name="ULTRASONIC" value="6" literal="ULTRASONIC"/>
     <eLiterals name="CAMERA" value="7" literal="CAMERA"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ControllerType">
+    <eLiterals name="ESP32" literal="ESP32"/>
+    <eLiterals name="RASPBERRY_PI" value="1" literal="RASPBERRY_PI"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="LinkType">
     <eLiterals name="UART" literal="UART"/>
     <eLiterals name="ADC" value="1" literal="ADC"/>
@@ -61,8 +68,10 @@
     <eLiterals name="HTTPS" value="5" literal="HTTPS"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="DataType">
-    <eLiterals name="PH" literal="PH"/>
-    <eLiterals name="TDS" value="1" literal="TDS"/>
-    <eLiterals name="TEMPERATURE" value="2" literal="TEMPERATURE"/>
+    <eLiterals name="BOOL" literal="BOOL"/>
+    <eLiterals name="FLOAT" value="1" literal="FLOAT"/>
+    <eLiterals name="EPOCH" value="2" literal="EPOCH"/>
+    <eLiterals name="STRING" value="3" literal="STRING"/>
+    <eLiterals name="DOUBLE" value="4" literal="DOUBLE"/>
   </eClassifiers>
 </ecore:EPackage>

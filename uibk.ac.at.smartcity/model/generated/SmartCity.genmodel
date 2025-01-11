@@ -16,6 +16,10 @@
       <genEnumLiterals ecoreEnumLiteral="SmartCity.ecore#//SensorType/ULTRASONIC"/>
       <genEnumLiterals ecoreEnumLiteral="SmartCity.ecore#//SensorType/CAMERA"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SmartCity.ecore#//ControllerType">
+      <genEnumLiterals ecoreEnumLiteral="SmartCity.ecore#//ControllerType/ESP32"/>
+      <genEnumLiterals ecoreEnumLiteral="SmartCity.ecore#//ControllerType/RASPBERRY_PI"/>
+    </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="SmartCity.ecore#//LinkType">
       <genEnumLiterals ecoreEnumLiteral="SmartCity.ecore#//LinkType/UART"/>
       <genEnumLiterals ecoreEnumLiteral="SmartCity.ecore#//LinkType/ADC"/>
@@ -25,18 +29,20 @@
       <genEnumLiterals ecoreEnumLiteral="SmartCity.ecore#//LinkType/HTTPS"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="SmartCity.ecore#//DataType">
-      <genEnumLiterals ecoreEnumLiteral="SmartCity.ecore#//DataType/PH"/>
-      <genEnumLiterals ecoreEnumLiteral="SmartCity.ecore#//DataType/TDS"/>
-      <genEnumLiterals ecoreEnumLiteral="SmartCity.ecore#//DataType/TEMPERATURE"/>
+      <genEnumLiterals ecoreEnumLiteral="SmartCity.ecore#//DataType/BOOL"/>
+      <genEnumLiterals ecoreEnumLiteral="SmartCity.ecore#//DataType/FLOAT"/>
+      <genEnumLiterals ecoreEnumLiteral="SmartCity.ecore#//DataType/EPOCH"/>
+      <genEnumLiterals ecoreEnumLiteral="SmartCity.ecore#//DataType/STRING"/>
+      <genEnumLiterals ecoreEnumLiteral="SmartCity.ecore#//DataType/DOUBLE"/>
     </genEnums>
     <genClasses ecoreClass="SmartCity.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//Model/nodes"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//Model/interoperableLayer"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//Model/globalLinks"/>
     </genClasses>
-    <genClasses ecoreClass="SmartCity.ecore#//Layer">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//Layer/priority"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//Layer/delay"/>
+    <genClasses ecoreClass="SmartCity.ecore#//InteroperableLayer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//InteroperableLayer/priority"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//InteroperableLayer/delay"/>
     </genClasses>
     <genClasses ecoreClass="SmartCity.ecore#//Node">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//Node/sensors"/>
@@ -54,7 +60,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//CommunicationLink/delay"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//CommunicationLink/datatype"/>
     </genClasses>
-    <genClasses ecoreClass="SmartCity.ecore#//Controller"/>
+    <genClasses ecoreClass="SmartCity.ecore#//Controller">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//Controller/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//Controller/priority"/>
+    </genClasses>
     <genClasses ecoreClass="SmartCity.ecore#//Linkable">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//Linkable/name"/>
     </genClasses>

@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSmartCityParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'layer'", "'priority'", "'delay'", "'node'", "'{'", "'}'", "'sensor'", "'type'", "'link'", "'from'", "'->'", "'datatype'", "'controller'", "'['", "'..'", "']'", "'TEMPERATURE'", "'PH'", "'TURBIDITY'", "'TDS'", "'CURRENT'", "'PULSE'", "'ULTRASONIC'", "'CAMERA'", "'UART'", "'ADC'", "'SPI'", "'GPIO'", "'CSI'", "'HTTPS'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'layer'", "'priority'", "'delay'", "'node'", "'{'", "'}'", "'sensor'", "'type'", "'link'", "'from'", "'->'", "'datatype'", "'controller'", "'['", "'..'", "']'", "'TEMPERATURE'", "'PH'", "'TURBIDITY'", "'TDS'", "'CURRENT'", "'PULSE'", "'ULTRASONIC'", "'CAMERA'", "'ESP32'", "'RASPBERRY_PI'", "'UART'", "'ADC'", "'SPI'", "'GPIO'", "'CSI'", "'HTTPS'"
     };
     public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
@@ -60,7 +60,9 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
     public static final int T__24=24;
     public static final int T__25=25;
     public static final int T__40=40;
+    public static final int T__41=41;
     public static final int T__20=20;
+    public static final int T__42=42;
     public static final int T__21=21;
 
     // delegates
@@ -139,7 +141,7 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleModel"
-    // InternalSmartCity.g:72:1: ruleModel returns [EObject current=null] : ( ( (lv_nodes_0_0= ruleNode ) )* ( (lv_interoperableLayer_1_0= ruleLayer ) ) ( (lv_globalLinks_2_0= ruleCommunicationLink ) )* ) ;
+    // InternalSmartCity.g:72:1: ruleModel returns [EObject current=null] : ( ( (lv_nodes_0_0= ruleNode ) )* ( (lv_interoperableLayer_1_0= ruleInteroperableLayer ) ) ( (lv_globalLinks_2_0= ruleCommunicationLink ) )* ) ;
     public final EObject ruleModel() throws RecognitionException {
         EObject current = null;
 
@@ -154,11 +156,11 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCity.g:78:2: ( ( ( (lv_nodes_0_0= ruleNode ) )* ( (lv_interoperableLayer_1_0= ruleLayer ) ) ( (lv_globalLinks_2_0= ruleCommunicationLink ) )* ) )
-            // InternalSmartCity.g:79:2: ( ( (lv_nodes_0_0= ruleNode ) )* ( (lv_interoperableLayer_1_0= ruleLayer ) ) ( (lv_globalLinks_2_0= ruleCommunicationLink ) )* )
+            // InternalSmartCity.g:78:2: ( ( ( (lv_nodes_0_0= ruleNode ) )* ( (lv_interoperableLayer_1_0= ruleInteroperableLayer ) ) ( (lv_globalLinks_2_0= ruleCommunicationLink ) )* ) )
+            // InternalSmartCity.g:79:2: ( ( (lv_nodes_0_0= ruleNode ) )* ( (lv_interoperableLayer_1_0= ruleInteroperableLayer ) ) ( (lv_globalLinks_2_0= ruleCommunicationLink ) )* )
             {
-            // InternalSmartCity.g:79:2: ( ( (lv_nodes_0_0= ruleNode ) )* ( (lv_interoperableLayer_1_0= ruleLayer ) ) ( (lv_globalLinks_2_0= ruleCommunicationLink ) )* )
-            // InternalSmartCity.g:80:3: ( (lv_nodes_0_0= ruleNode ) )* ( (lv_interoperableLayer_1_0= ruleLayer ) ) ( (lv_globalLinks_2_0= ruleCommunicationLink ) )*
+            // InternalSmartCity.g:79:2: ( ( (lv_nodes_0_0= ruleNode ) )* ( (lv_interoperableLayer_1_0= ruleInteroperableLayer ) ) ( (lv_globalLinks_2_0= ruleCommunicationLink ) )* )
+            // InternalSmartCity.g:80:3: ( (lv_nodes_0_0= ruleNode ) )* ( (lv_interoperableLayer_1_0= ruleInteroperableLayer ) ) ( (lv_globalLinks_2_0= ruleCommunicationLink ) )*
             {
             // InternalSmartCity.g:80:3: ( (lv_nodes_0_0= ruleNode ) )*
             loop1:
@@ -209,17 +211,17 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            // InternalSmartCity.g:99:3: ( (lv_interoperableLayer_1_0= ruleLayer ) )
-            // InternalSmartCity.g:100:4: (lv_interoperableLayer_1_0= ruleLayer )
+            // InternalSmartCity.g:99:3: ( (lv_interoperableLayer_1_0= ruleInteroperableLayer ) )
+            // InternalSmartCity.g:100:4: (lv_interoperableLayer_1_0= ruleInteroperableLayer )
             {
-            // InternalSmartCity.g:100:4: (lv_interoperableLayer_1_0= ruleLayer )
-            // InternalSmartCity.g:101:5: lv_interoperableLayer_1_0= ruleLayer
+            // InternalSmartCity.g:100:4: (lv_interoperableLayer_1_0= ruleInteroperableLayer )
+            // InternalSmartCity.g:101:5: lv_interoperableLayer_1_0= ruleInteroperableLayer
             {
 
-            					newCompositeNode(grammarAccess.getModelAccess().getInteroperableLayerLayerParserRuleCall_1_0());
+            					newCompositeNode(grammarAccess.getModelAccess().getInteroperableLayerInteroperableLayerParserRuleCall_1_0());
             				
             pushFollow(FOLLOW_4);
-            lv_interoperableLayer_1_0=ruleLayer();
+            lv_interoperableLayer_1_0=ruleInteroperableLayer();
 
             state._fsp--;
 
@@ -231,7 +233,7 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
             						current,
             						"interoperableLayer",
             						lv_interoperableLayer_1_0,
-            						"uibk.ac.at.smartcity.SmartCity.Layer");
+            						"uibk.ac.at.smartcity.SmartCity.InteroperableLayer");
             					afterParserOrEnumRuleCall();
             				
 
@@ -311,25 +313,25 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleModel"
 
 
-    // $ANTLR start "entryRuleLayer"
-    // InternalSmartCity.g:141:1: entryRuleLayer returns [EObject current=null] : iv_ruleLayer= ruleLayer EOF ;
-    public final EObject entryRuleLayer() throws RecognitionException {
+    // $ANTLR start "entryRuleInteroperableLayer"
+    // InternalSmartCity.g:141:1: entryRuleInteroperableLayer returns [EObject current=null] : iv_ruleInteroperableLayer= ruleInteroperableLayer EOF ;
+    public final EObject entryRuleInteroperableLayer() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleLayer = null;
+        EObject iv_ruleInteroperableLayer = null;
 
 
         try {
-            // InternalSmartCity.g:141:46: (iv_ruleLayer= ruleLayer EOF )
-            // InternalSmartCity.g:142:2: iv_ruleLayer= ruleLayer EOF
+            // InternalSmartCity.g:141:59: (iv_ruleInteroperableLayer= ruleInteroperableLayer EOF )
+            // InternalSmartCity.g:142:2: iv_ruleInteroperableLayer= ruleInteroperableLayer EOF
             {
-             newCompositeNode(grammarAccess.getLayerRule()); 
+             newCompositeNode(grammarAccess.getInteroperableLayerRule()); 
             pushFollow(FOLLOW_1);
-            iv_ruleLayer=ruleLayer();
+            iv_ruleInteroperableLayer=ruleInteroperableLayer();
 
             state._fsp--;
 
-             current =iv_ruleLayer; 
+             current =iv_ruleInteroperableLayer; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -344,12 +346,12 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleLayer"
+    // $ANTLR end "entryRuleInteroperableLayer"
 
 
-    // $ANTLR start "ruleLayer"
-    // InternalSmartCity.g:148:1: ruleLayer returns [EObject current=null] : (otherlv_0= 'layer' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'priority' ( (lv_priority_3_0= RULE_INT ) ) otherlv_4= 'delay' ( (lv_delay_5_0= RULE_INT ) ) ) ;
-    public final EObject ruleLayer() throws RecognitionException {
+    // $ANTLR start "ruleInteroperableLayer"
+    // InternalSmartCity.g:148:1: ruleInteroperableLayer returns [EObject current=null] : (otherlv_0= 'layer' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'priority' ( (lv_priority_3_0= RULE_INT ) ) otherlv_4= 'delay' ( (lv_delay_5_0= RULE_INT ) ) ) ;
+    public final EObject ruleInteroperableLayer() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
@@ -371,7 +373,7 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
             {
             otherlv_0=(Token)match(input,11,FOLLOW_5); 
 
-            			newLeafNode(otherlv_0, grammarAccess.getLayerAccess().getLayerKeyword_0());
+            			newLeafNode(otherlv_0, grammarAccess.getInteroperableLayerAccess().getLayerKeyword_0());
             		
             // InternalSmartCity.g:160:3: ( (lv_name_1_0= RULE_ID ) )
             // InternalSmartCity.g:161:4: (lv_name_1_0= RULE_ID )
@@ -381,11 +383,11 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_6); 
 
-            					newLeafNode(lv_name_1_0, grammarAccess.getLayerAccess().getNameIDTerminalRuleCall_1_0());
+            					newLeafNode(lv_name_1_0, grammarAccess.getInteroperableLayerAccess().getNameIDTerminalRuleCall_1_0());
             				
 
             					if (current==null) {
-            						current = createModelElement(grammarAccess.getLayerRule());
+            						current = createModelElement(grammarAccess.getInteroperableLayerRule());
             					}
             					setWithLastConsumed(
             						current,
@@ -401,7 +403,7 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
 
             otherlv_2=(Token)match(input,12,FOLLOW_7); 
 
-            			newLeafNode(otherlv_2, grammarAccess.getLayerAccess().getPriorityKeyword_2());
+            			newLeafNode(otherlv_2, grammarAccess.getInteroperableLayerAccess().getPriorityKeyword_2());
             		
             // InternalSmartCity.g:182:3: ( (lv_priority_3_0= RULE_INT ) )
             // InternalSmartCity.g:183:4: (lv_priority_3_0= RULE_INT )
@@ -411,11 +413,11 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
             {
             lv_priority_3_0=(Token)match(input,RULE_INT,FOLLOW_8); 
 
-            					newLeafNode(lv_priority_3_0, grammarAccess.getLayerAccess().getPriorityINTTerminalRuleCall_3_0());
+            					newLeafNode(lv_priority_3_0, grammarAccess.getInteroperableLayerAccess().getPriorityINTTerminalRuleCall_3_0());
             				
 
             					if (current==null) {
-            						current = createModelElement(grammarAccess.getLayerRule());
+            						current = createModelElement(grammarAccess.getInteroperableLayerRule());
             					}
             					setWithLastConsumed(
             						current,
@@ -431,7 +433,7 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
 
             otherlv_4=(Token)match(input,13,FOLLOW_7); 
 
-            			newLeafNode(otherlv_4, grammarAccess.getLayerAccess().getDelayKeyword_4());
+            			newLeafNode(otherlv_4, grammarAccess.getInteroperableLayerAccess().getDelayKeyword_4());
             		
             // InternalSmartCity.g:204:3: ( (lv_delay_5_0= RULE_INT ) )
             // InternalSmartCity.g:205:4: (lv_delay_5_0= RULE_INT )
@@ -441,11 +443,11 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
             {
             lv_delay_5_0=(Token)match(input,RULE_INT,FOLLOW_2); 
 
-            					newLeafNode(lv_delay_5_0, grammarAccess.getLayerAccess().getDelayINTTerminalRuleCall_5_0());
+            					newLeafNode(lv_delay_5_0, grammarAccess.getInteroperableLayerAccess().getDelayINTTerminalRuleCall_5_0());
             				
 
             					if (current==null) {
-            						current = createModelElement(grammarAccess.getLayerRule());
+            						current = createModelElement(grammarAccess.getInteroperableLayerRule());
             					}
             					setWithLastConsumed(
             						current,
@@ -478,7 +480,7 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleLayer"
+    // $ANTLR end "ruleInteroperableLayer"
 
 
     // $ANTLR start "entryRuleNode"
@@ -945,7 +947,7 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCommunicationLink"
-    // InternalSmartCity.g:425:1: ruleCommunicationLink returns [EObject current=null] : (otherlv_0= 'link' ( (lv_type_1_0= ruleLinkType ) ) otherlv_2= 'from' ( (otherlv_3= RULE_ID ) ) otherlv_4= '->' ( (otherlv_5= RULE_ID ) ) otherlv_6= '{' otherlv_7= 'delay' ( (lv_delay_8_0= ruleDelayRange ) ) otherlv_9= 'datatype' ( (lv_datatype_10_0= ruleDataType ) ) otherlv_11= '}' ) ;
+    // InternalSmartCity.g:425:1: ruleCommunicationLink returns [EObject current=null] : (otherlv_0= 'link' ( (lv_type_1_0= ruleLinkType ) ) otherlv_2= 'from' ( (otherlv_3= RULE_ID ) ) otherlv_4= '->' ( (otherlv_5= RULE_ID ) ) otherlv_6= '{' otherlv_7= 'delay' ( (lv_delay_8_0= ruleDelayRange ) ) otherlv_9= 'datatype' ( (lv_datatype_10_0= ruleSensorType ) ) otherlv_11= '}' ) ;
     public final EObject ruleCommunicationLink() throws RecognitionException {
         EObject current = null;
 
@@ -969,11 +971,11 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCity.g:431:2: ( (otherlv_0= 'link' ( (lv_type_1_0= ruleLinkType ) ) otherlv_2= 'from' ( (otherlv_3= RULE_ID ) ) otherlv_4= '->' ( (otherlv_5= RULE_ID ) ) otherlv_6= '{' otherlv_7= 'delay' ( (lv_delay_8_0= ruleDelayRange ) ) otherlv_9= 'datatype' ( (lv_datatype_10_0= ruleDataType ) ) otherlv_11= '}' ) )
-            // InternalSmartCity.g:432:2: (otherlv_0= 'link' ( (lv_type_1_0= ruleLinkType ) ) otherlv_2= 'from' ( (otherlv_3= RULE_ID ) ) otherlv_4= '->' ( (otherlv_5= RULE_ID ) ) otherlv_6= '{' otherlv_7= 'delay' ( (lv_delay_8_0= ruleDelayRange ) ) otherlv_9= 'datatype' ( (lv_datatype_10_0= ruleDataType ) ) otherlv_11= '}' )
+            // InternalSmartCity.g:431:2: ( (otherlv_0= 'link' ( (lv_type_1_0= ruleLinkType ) ) otherlv_2= 'from' ( (otherlv_3= RULE_ID ) ) otherlv_4= '->' ( (otherlv_5= RULE_ID ) ) otherlv_6= '{' otherlv_7= 'delay' ( (lv_delay_8_0= ruleDelayRange ) ) otherlv_9= 'datatype' ( (lv_datatype_10_0= ruleSensorType ) ) otherlv_11= '}' ) )
+            // InternalSmartCity.g:432:2: (otherlv_0= 'link' ( (lv_type_1_0= ruleLinkType ) ) otherlv_2= 'from' ( (otherlv_3= RULE_ID ) ) otherlv_4= '->' ( (otherlv_5= RULE_ID ) ) otherlv_6= '{' otherlv_7= 'delay' ( (lv_delay_8_0= ruleDelayRange ) ) otherlv_9= 'datatype' ( (lv_datatype_10_0= ruleSensorType ) ) otherlv_11= '}' )
             {
-            // InternalSmartCity.g:432:2: (otherlv_0= 'link' ( (lv_type_1_0= ruleLinkType ) ) otherlv_2= 'from' ( (otherlv_3= RULE_ID ) ) otherlv_4= '->' ( (otherlv_5= RULE_ID ) ) otherlv_6= '{' otherlv_7= 'delay' ( (lv_delay_8_0= ruleDelayRange ) ) otherlv_9= 'datatype' ( (lv_datatype_10_0= ruleDataType ) ) otherlv_11= '}' )
-            // InternalSmartCity.g:433:3: otherlv_0= 'link' ( (lv_type_1_0= ruleLinkType ) ) otherlv_2= 'from' ( (otherlv_3= RULE_ID ) ) otherlv_4= '->' ( (otherlv_5= RULE_ID ) ) otherlv_6= '{' otherlv_7= 'delay' ( (lv_delay_8_0= ruleDelayRange ) ) otherlv_9= 'datatype' ( (lv_datatype_10_0= ruleDataType ) ) otherlv_11= '}'
+            // InternalSmartCity.g:432:2: (otherlv_0= 'link' ( (lv_type_1_0= ruleLinkType ) ) otherlv_2= 'from' ( (otherlv_3= RULE_ID ) ) otherlv_4= '->' ( (otherlv_5= RULE_ID ) ) otherlv_6= '{' otherlv_7= 'delay' ( (lv_delay_8_0= ruleDelayRange ) ) otherlv_9= 'datatype' ( (lv_datatype_10_0= ruleSensorType ) ) otherlv_11= '}' )
+            // InternalSmartCity.g:433:3: otherlv_0= 'link' ( (lv_type_1_0= ruleLinkType ) ) otherlv_2= 'from' ( (otherlv_3= RULE_ID ) ) otherlv_4= '->' ( (otherlv_5= RULE_ID ) ) otherlv_6= '{' otherlv_7= 'delay' ( (lv_delay_8_0= ruleDelayRange ) ) otherlv_9= 'datatype' ( (lv_datatype_10_0= ruleSensorType ) ) otherlv_11= '}'
             {
             otherlv_0=(Token)match(input,19,FOLLOW_14); 
 
@@ -1099,21 +1101,21 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_9=(Token)match(input,22,FOLLOW_19); 
+            otherlv_9=(Token)match(input,22,FOLLOW_13); 
 
             			newLeafNode(otherlv_9, grammarAccess.getCommunicationLinkAccess().getDatatypeKeyword_9());
             		
-            // InternalSmartCity.g:521:3: ( (lv_datatype_10_0= ruleDataType ) )
-            // InternalSmartCity.g:522:4: (lv_datatype_10_0= ruleDataType )
+            // InternalSmartCity.g:521:3: ( (lv_datatype_10_0= ruleSensorType ) )
+            // InternalSmartCity.g:522:4: (lv_datatype_10_0= ruleSensorType )
             {
-            // InternalSmartCity.g:522:4: (lv_datatype_10_0= ruleDataType )
-            // InternalSmartCity.g:523:5: lv_datatype_10_0= ruleDataType
+            // InternalSmartCity.g:522:4: (lv_datatype_10_0= ruleSensorType )
+            // InternalSmartCity.g:523:5: lv_datatype_10_0= ruleSensorType
             {
 
-            					newCompositeNode(grammarAccess.getCommunicationLinkAccess().getDatatypeDataTypeEnumRuleCall_10_0());
+            					newCompositeNode(grammarAccess.getCommunicationLinkAccess().getDatatypeSensorTypeEnumRuleCall_10_0());
             				
-            pushFollow(FOLLOW_20);
-            lv_datatype_10_0=ruleDataType();
+            pushFollow(FOLLOW_19);
+            lv_datatype_10_0=ruleSensorType();
 
             state._fsp--;
 
@@ -1125,7 +1127,7 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
             						current,
             						"datatype",
             						lv_datatype_10_0,
-            						"uibk.ac.at.smartcity.SmartCity.DataType");
+            						"uibk.ac.at.smartcity.SmartCity.SensorType");
             					afterParserOrEnumRuleCall();
             				
 
@@ -1197,22 +1199,27 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleController"
-    // InternalSmartCity.g:555:1: ruleController returns [EObject current=null] : (otherlv_0= 'controller' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // InternalSmartCity.g:555:1: ruleController returns [EObject current=null] : (otherlv_0= 'controller' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'type' ( (lv_type_3_0= ruleControllerType ) ) otherlv_4= 'priority' ( (lv_priority_5_0= RULE_INT ) ) ) ;
     public final EObject ruleController() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token lv_name_1_0=null;
+        Token otherlv_2=null;
+        Token otherlv_4=null;
+        Token lv_priority_5_0=null;
+        Enumerator lv_type_3_0 = null;
+
 
 
         	enterRule();
 
         try {
-            // InternalSmartCity.g:561:2: ( (otherlv_0= 'controller' ( (lv_name_1_0= RULE_ID ) ) ) )
-            // InternalSmartCity.g:562:2: (otherlv_0= 'controller' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSmartCity.g:561:2: ( (otherlv_0= 'controller' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'type' ( (lv_type_3_0= ruleControllerType ) ) otherlv_4= 'priority' ( (lv_priority_5_0= RULE_INT ) ) ) )
+            // InternalSmartCity.g:562:2: (otherlv_0= 'controller' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'type' ( (lv_type_3_0= ruleControllerType ) ) otherlv_4= 'priority' ( (lv_priority_5_0= RULE_INT ) ) )
             {
-            // InternalSmartCity.g:562:2: (otherlv_0= 'controller' ( (lv_name_1_0= RULE_ID ) ) )
-            // InternalSmartCity.g:563:3: otherlv_0= 'controller' ( (lv_name_1_0= RULE_ID ) )
+            // InternalSmartCity.g:562:2: (otherlv_0= 'controller' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'type' ( (lv_type_3_0= ruleControllerType ) ) otherlv_4= 'priority' ( (lv_priority_5_0= RULE_INT ) ) )
+            // InternalSmartCity.g:563:3: otherlv_0= 'controller' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'type' ( (lv_type_3_0= ruleControllerType ) ) otherlv_4= 'priority' ( (lv_priority_5_0= RULE_INT ) )
             {
             otherlv_0=(Token)match(input,23,FOLLOW_5); 
 
@@ -1224,7 +1231,7 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
             // InternalSmartCity.g:568:4: (lv_name_1_0= RULE_ID )
             // InternalSmartCity.g:569:5: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_12); 
 
             					newLeafNode(lv_name_1_0, grammarAccess.getControllerAccess().getNameIDTerminalRuleCall_1_0());
             				
@@ -1237,6 +1244,71 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
             						"name",
             						lv_name_1_0,
             						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+            otherlv_2=(Token)match(input,18,FOLLOW_20); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getControllerAccess().getTypeKeyword_2());
+            		
+            // InternalSmartCity.g:589:3: ( (lv_type_3_0= ruleControllerType ) )
+            // InternalSmartCity.g:590:4: (lv_type_3_0= ruleControllerType )
+            {
+            // InternalSmartCity.g:590:4: (lv_type_3_0= ruleControllerType )
+            // InternalSmartCity.g:591:5: lv_type_3_0= ruleControllerType
+            {
+
+            					newCompositeNode(grammarAccess.getControllerAccess().getTypeControllerTypeEnumRuleCall_3_0());
+            				
+            pushFollow(FOLLOW_6);
+            lv_type_3_0=ruleControllerType();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getControllerRule());
+            					}
+            					set(
+            						current,
+            						"type",
+            						lv_type_3_0,
+            						"uibk.ac.at.smartcity.SmartCity.ControllerType");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            otherlv_4=(Token)match(input,12,FOLLOW_7); 
+
+            			newLeafNode(otherlv_4, grammarAccess.getControllerAccess().getPriorityKeyword_4());
+            		
+            // InternalSmartCity.g:612:3: ( (lv_priority_5_0= RULE_INT ) )
+            // InternalSmartCity.g:613:4: (lv_priority_5_0= RULE_INT )
+            {
+            // InternalSmartCity.g:613:4: (lv_priority_5_0= RULE_INT )
+            // InternalSmartCity.g:614:5: lv_priority_5_0= RULE_INT
+            {
+            lv_priority_5_0=(Token)match(input,RULE_INT,FOLLOW_2); 
+
+            					newLeafNode(lv_priority_5_0, grammarAccess.getControllerAccess().getPriorityINTTerminalRuleCall_5_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getControllerRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"priority",
+            						lv_priority_5_0,
+            						"org.eclipse.xtext.common.Terminals.INT");
             				
 
             }
@@ -1267,7 +1339,7 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDelayRange"
-    // InternalSmartCity.g:589:1: entryRuleDelayRange returns [EObject current=null] : iv_ruleDelayRange= ruleDelayRange EOF ;
+    // InternalSmartCity.g:634:1: entryRuleDelayRange returns [EObject current=null] : iv_ruleDelayRange= ruleDelayRange EOF ;
     public final EObject entryRuleDelayRange() throws RecognitionException {
         EObject current = null;
 
@@ -1275,8 +1347,8 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmartCity.g:589:51: (iv_ruleDelayRange= ruleDelayRange EOF )
-            // InternalSmartCity.g:590:2: iv_ruleDelayRange= ruleDelayRange EOF
+            // InternalSmartCity.g:634:51: (iv_ruleDelayRange= ruleDelayRange EOF )
+            // InternalSmartCity.g:635:2: iv_ruleDelayRange= ruleDelayRange EOF
             {
              newCompositeNode(grammarAccess.getDelayRangeRule()); 
             pushFollow(FOLLOW_1);
@@ -1303,7 +1375,7 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDelayRange"
-    // InternalSmartCity.g:596:1: ruleDelayRange returns [EObject current=null] : (otherlv_0= '[' ( (lv_min_1_0= RULE_INT ) ) otherlv_2= '..' ( (lv_max_3_0= RULE_INT ) ) otherlv_4= ']' ) ;
+    // InternalSmartCity.g:641:1: ruleDelayRange returns [EObject current=null] : (otherlv_0= '[' ( (lv_min_1_0= RULE_INT ) ) otherlv_2= '..' ( (lv_max_3_0= RULE_INT ) ) otherlv_4= ']' ) ;
     public final EObject ruleDelayRange() throws RecognitionException {
         EObject current = null;
 
@@ -1317,21 +1389,21 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCity.g:602:2: ( (otherlv_0= '[' ( (lv_min_1_0= RULE_INT ) ) otherlv_2= '..' ( (lv_max_3_0= RULE_INT ) ) otherlv_4= ']' ) )
-            // InternalSmartCity.g:603:2: (otherlv_0= '[' ( (lv_min_1_0= RULE_INT ) ) otherlv_2= '..' ( (lv_max_3_0= RULE_INT ) ) otherlv_4= ']' )
+            // InternalSmartCity.g:647:2: ( (otherlv_0= '[' ( (lv_min_1_0= RULE_INT ) ) otherlv_2= '..' ( (lv_max_3_0= RULE_INT ) ) otherlv_4= ']' ) )
+            // InternalSmartCity.g:648:2: (otherlv_0= '[' ( (lv_min_1_0= RULE_INT ) ) otherlv_2= '..' ( (lv_max_3_0= RULE_INT ) ) otherlv_4= ']' )
             {
-            // InternalSmartCity.g:603:2: (otherlv_0= '[' ( (lv_min_1_0= RULE_INT ) ) otherlv_2= '..' ( (lv_max_3_0= RULE_INT ) ) otherlv_4= ']' )
-            // InternalSmartCity.g:604:3: otherlv_0= '[' ( (lv_min_1_0= RULE_INT ) ) otherlv_2= '..' ( (lv_max_3_0= RULE_INT ) ) otherlv_4= ']'
+            // InternalSmartCity.g:648:2: (otherlv_0= '[' ( (lv_min_1_0= RULE_INT ) ) otherlv_2= '..' ( (lv_max_3_0= RULE_INT ) ) otherlv_4= ']' )
+            // InternalSmartCity.g:649:3: otherlv_0= '[' ( (lv_min_1_0= RULE_INT ) ) otherlv_2= '..' ( (lv_max_3_0= RULE_INT ) ) otherlv_4= ']'
             {
             otherlv_0=(Token)match(input,24,FOLLOW_7); 
 
             			newLeafNode(otherlv_0, grammarAccess.getDelayRangeAccess().getLeftSquareBracketKeyword_0());
             		
-            // InternalSmartCity.g:608:3: ( (lv_min_1_0= RULE_INT ) )
-            // InternalSmartCity.g:609:4: (lv_min_1_0= RULE_INT )
+            // InternalSmartCity.g:653:3: ( (lv_min_1_0= RULE_INT ) )
+            // InternalSmartCity.g:654:4: (lv_min_1_0= RULE_INT )
             {
-            // InternalSmartCity.g:609:4: (lv_min_1_0= RULE_INT )
-            // InternalSmartCity.g:610:5: lv_min_1_0= RULE_INT
+            // InternalSmartCity.g:654:4: (lv_min_1_0= RULE_INT )
+            // InternalSmartCity.g:655:5: lv_min_1_0= RULE_INT
             {
             lv_min_1_0=(Token)match(input,RULE_INT,FOLLOW_21); 
 
@@ -1357,11 +1429,11 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getDelayRangeAccess().getFullStopFullStopKeyword_2());
             		
-            // InternalSmartCity.g:630:3: ( (lv_max_3_0= RULE_INT ) )
-            // InternalSmartCity.g:631:4: (lv_max_3_0= RULE_INT )
+            // InternalSmartCity.g:675:3: ( (lv_max_3_0= RULE_INT ) )
+            // InternalSmartCity.g:676:4: (lv_max_3_0= RULE_INT )
             {
-            // InternalSmartCity.g:631:4: (lv_max_3_0= RULE_INT )
-            // InternalSmartCity.g:632:5: lv_max_3_0= RULE_INT
+            // InternalSmartCity.g:676:4: (lv_max_3_0= RULE_INT )
+            // InternalSmartCity.g:677:5: lv_max_3_0= RULE_INT
             {
             lv_max_3_0=(Token)match(input,RULE_INT,FOLLOW_22); 
 
@@ -1410,7 +1482,7 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSensorType"
-    // InternalSmartCity.g:656:1: ruleSensorType returns [Enumerator current=null] : ( (enumLiteral_0= 'TEMPERATURE' ) | (enumLiteral_1= 'PH' ) | (enumLiteral_2= 'TURBIDITY' ) | (enumLiteral_3= 'TDS' ) | (enumLiteral_4= 'CURRENT' ) | (enumLiteral_5= 'PULSE' ) | (enumLiteral_6= 'ULTRASONIC' ) | (enumLiteral_7= 'CAMERA' ) ) ;
+    // InternalSmartCity.g:701:1: ruleSensorType returns [Enumerator current=null] : ( (enumLiteral_0= 'TEMPERATURE' ) | (enumLiteral_1= 'PH' ) | (enumLiteral_2= 'TURBIDITY' ) | (enumLiteral_3= 'TDS' ) | (enumLiteral_4= 'CURRENT' ) | (enumLiteral_5= 'PULSE' ) | (enumLiteral_6= 'ULTRASONIC' ) | (enumLiteral_7= 'CAMERA' ) ) ;
     public final Enumerator ruleSensorType() throws RecognitionException {
         Enumerator current = null;
 
@@ -1427,10 +1499,10 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCity.g:662:2: ( ( (enumLiteral_0= 'TEMPERATURE' ) | (enumLiteral_1= 'PH' ) | (enumLiteral_2= 'TURBIDITY' ) | (enumLiteral_3= 'TDS' ) | (enumLiteral_4= 'CURRENT' ) | (enumLiteral_5= 'PULSE' ) | (enumLiteral_6= 'ULTRASONIC' ) | (enumLiteral_7= 'CAMERA' ) ) )
-            // InternalSmartCity.g:663:2: ( (enumLiteral_0= 'TEMPERATURE' ) | (enumLiteral_1= 'PH' ) | (enumLiteral_2= 'TURBIDITY' ) | (enumLiteral_3= 'TDS' ) | (enumLiteral_4= 'CURRENT' ) | (enumLiteral_5= 'PULSE' ) | (enumLiteral_6= 'ULTRASONIC' ) | (enumLiteral_7= 'CAMERA' ) )
+            // InternalSmartCity.g:707:2: ( ( (enumLiteral_0= 'TEMPERATURE' ) | (enumLiteral_1= 'PH' ) | (enumLiteral_2= 'TURBIDITY' ) | (enumLiteral_3= 'TDS' ) | (enumLiteral_4= 'CURRENT' ) | (enumLiteral_5= 'PULSE' ) | (enumLiteral_6= 'ULTRASONIC' ) | (enumLiteral_7= 'CAMERA' ) ) )
+            // InternalSmartCity.g:708:2: ( (enumLiteral_0= 'TEMPERATURE' ) | (enumLiteral_1= 'PH' ) | (enumLiteral_2= 'TURBIDITY' ) | (enumLiteral_3= 'TDS' ) | (enumLiteral_4= 'CURRENT' ) | (enumLiteral_5= 'PULSE' ) | (enumLiteral_6= 'ULTRASONIC' ) | (enumLiteral_7= 'CAMERA' ) )
             {
-            // InternalSmartCity.g:663:2: ( (enumLiteral_0= 'TEMPERATURE' ) | (enumLiteral_1= 'PH' ) | (enumLiteral_2= 'TURBIDITY' ) | (enumLiteral_3= 'TDS' ) | (enumLiteral_4= 'CURRENT' ) | (enumLiteral_5= 'PULSE' ) | (enumLiteral_6= 'ULTRASONIC' ) | (enumLiteral_7= 'CAMERA' ) )
+            // InternalSmartCity.g:708:2: ( (enumLiteral_0= 'TEMPERATURE' ) | (enumLiteral_1= 'PH' ) | (enumLiteral_2= 'TURBIDITY' ) | (enumLiteral_3= 'TDS' ) | (enumLiteral_4= 'CURRENT' ) | (enumLiteral_5= 'PULSE' ) | (enumLiteral_6= 'ULTRASONIC' ) | (enumLiteral_7= 'CAMERA' ) )
             int alt5=8;
             switch ( input.LA(1) ) {
             case 27:
@@ -1482,10 +1554,10 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
 
             switch (alt5) {
                 case 1 :
-                    // InternalSmartCity.g:664:3: (enumLiteral_0= 'TEMPERATURE' )
+                    // InternalSmartCity.g:709:3: (enumLiteral_0= 'TEMPERATURE' )
                     {
-                    // InternalSmartCity.g:664:3: (enumLiteral_0= 'TEMPERATURE' )
-                    // InternalSmartCity.g:665:4: enumLiteral_0= 'TEMPERATURE'
+                    // InternalSmartCity.g:709:3: (enumLiteral_0= 'TEMPERATURE' )
+                    // InternalSmartCity.g:710:4: enumLiteral_0= 'TEMPERATURE'
                     {
                     enumLiteral_0=(Token)match(input,27,FOLLOW_2); 
 
@@ -1499,10 +1571,10 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCity.g:672:3: (enumLiteral_1= 'PH' )
+                    // InternalSmartCity.g:717:3: (enumLiteral_1= 'PH' )
                     {
-                    // InternalSmartCity.g:672:3: (enumLiteral_1= 'PH' )
-                    // InternalSmartCity.g:673:4: enumLiteral_1= 'PH'
+                    // InternalSmartCity.g:717:3: (enumLiteral_1= 'PH' )
+                    // InternalSmartCity.g:718:4: enumLiteral_1= 'PH'
                     {
                     enumLiteral_1=(Token)match(input,28,FOLLOW_2); 
 
@@ -1516,10 +1588,10 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalSmartCity.g:680:3: (enumLiteral_2= 'TURBIDITY' )
+                    // InternalSmartCity.g:725:3: (enumLiteral_2= 'TURBIDITY' )
                     {
-                    // InternalSmartCity.g:680:3: (enumLiteral_2= 'TURBIDITY' )
-                    // InternalSmartCity.g:681:4: enumLiteral_2= 'TURBIDITY'
+                    // InternalSmartCity.g:725:3: (enumLiteral_2= 'TURBIDITY' )
+                    // InternalSmartCity.g:726:4: enumLiteral_2= 'TURBIDITY'
                     {
                     enumLiteral_2=(Token)match(input,29,FOLLOW_2); 
 
@@ -1533,10 +1605,10 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalSmartCity.g:688:3: (enumLiteral_3= 'TDS' )
+                    // InternalSmartCity.g:733:3: (enumLiteral_3= 'TDS' )
                     {
-                    // InternalSmartCity.g:688:3: (enumLiteral_3= 'TDS' )
-                    // InternalSmartCity.g:689:4: enumLiteral_3= 'TDS'
+                    // InternalSmartCity.g:733:3: (enumLiteral_3= 'TDS' )
+                    // InternalSmartCity.g:734:4: enumLiteral_3= 'TDS'
                     {
                     enumLiteral_3=(Token)match(input,30,FOLLOW_2); 
 
@@ -1550,10 +1622,10 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalSmartCity.g:696:3: (enumLiteral_4= 'CURRENT' )
+                    // InternalSmartCity.g:741:3: (enumLiteral_4= 'CURRENT' )
                     {
-                    // InternalSmartCity.g:696:3: (enumLiteral_4= 'CURRENT' )
-                    // InternalSmartCity.g:697:4: enumLiteral_4= 'CURRENT'
+                    // InternalSmartCity.g:741:3: (enumLiteral_4= 'CURRENT' )
+                    // InternalSmartCity.g:742:4: enumLiteral_4= 'CURRENT'
                     {
                     enumLiteral_4=(Token)match(input,31,FOLLOW_2); 
 
@@ -1567,10 +1639,10 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalSmartCity.g:704:3: (enumLiteral_5= 'PULSE' )
+                    // InternalSmartCity.g:749:3: (enumLiteral_5= 'PULSE' )
                     {
-                    // InternalSmartCity.g:704:3: (enumLiteral_5= 'PULSE' )
-                    // InternalSmartCity.g:705:4: enumLiteral_5= 'PULSE'
+                    // InternalSmartCity.g:749:3: (enumLiteral_5= 'PULSE' )
+                    // InternalSmartCity.g:750:4: enumLiteral_5= 'PULSE'
                     {
                     enumLiteral_5=(Token)match(input,32,FOLLOW_2); 
 
@@ -1584,10 +1656,10 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalSmartCity.g:712:3: (enumLiteral_6= 'ULTRASONIC' )
+                    // InternalSmartCity.g:757:3: (enumLiteral_6= 'ULTRASONIC' )
                     {
-                    // InternalSmartCity.g:712:3: (enumLiteral_6= 'ULTRASONIC' )
-                    // InternalSmartCity.g:713:4: enumLiteral_6= 'ULTRASONIC'
+                    // InternalSmartCity.g:757:3: (enumLiteral_6= 'ULTRASONIC' )
+                    // InternalSmartCity.g:758:4: enumLiteral_6= 'ULTRASONIC'
                     {
                     enumLiteral_6=(Token)match(input,33,FOLLOW_2); 
 
@@ -1601,10 +1673,10 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalSmartCity.g:720:3: (enumLiteral_7= 'CAMERA' )
+                    // InternalSmartCity.g:765:3: (enumLiteral_7= 'CAMERA' )
                     {
-                    // InternalSmartCity.g:720:3: (enumLiteral_7= 'CAMERA' )
-                    // InternalSmartCity.g:721:4: enumLiteral_7= 'CAMERA'
+                    // InternalSmartCity.g:765:3: (enumLiteral_7= 'CAMERA' )
+                    // InternalSmartCity.g:766:4: enumLiteral_7= 'CAMERA'
                     {
                     enumLiteral_7=(Token)match(input,34,FOLLOW_2); 
 
@@ -1639,8 +1711,96 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleSensorType"
 
 
+    // $ANTLR start "ruleControllerType"
+    // InternalSmartCity.g:776:1: ruleControllerType returns [Enumerator current=null] : ( (enumLiteral_0= 'ESP32' ) | (enumLiteral_1= 'RASPBERRY_PI' ) ) ;
+    public final Enumerator ruleControllerType() throws RecognitionException {
+        Enumerator current = null;
+
+        Token enumLiteral_0=null;
+        Token enumLiteral_1=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalSmartCity.g:782:2: ( ( (enumLiteral_0= 'ESP32' ) | (enumLiteral_1= 'RASPBERRY_PI' ) ) )
+            // InternalSmartCity.g:783:2: ( (enumLiteral_0= 'ESP32' ) | (enumLiteral_1= 'RASPBERRY_PI' ) )
+            {
+            // InternalSmartCity.g:783:2: ( (enumLiteral_0= 'ESP32' ) | (enumLiteral_1= 'RASPBERRY_PI' ) )
+            int alt6=2;
+            int LA6_0 = input.LA(1);
+
+            if ( (LA6_0==35) ) {
+                alt6=1;
+            }
+            else if ( (LA6_0==36) ) {
+                alt6=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 6, 0, input);
+
+                throw nvae;
+            }
+            switch (alt6) {
+                case 1 :
+                    // InternalSmartCity.g:784:3: (enumLiteral_0= 'ESP32' )
+                    {
+                    // InternalSmartCity.g:784:3: (enumLiteral_0= 'ESP32' )
+                    // InternalSmartCity.g:785:4: enumLiteral_0= 'ESP32'
+                    {
+                    enumLiteral_0=(Token)match(input,35,FOLLOW_2); 
+
+                    				current = grammarAccess.getControllerTypeAccess().getESP32EnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_0, grammarAccess.getControllerTypeAccess().getESP32EnumLiteralDeclaration_0());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalSmartCity.g:792:3: (enumLiteral_1= 'RASPBERRY_PI' )
+                    {
+                    // InternalSmartCity.g:792:3: (enumLiteral_1= 'RASPBERRY_PI' )
+                    // InternalSmartCity.g:793:4: enumLiteral_1= 'RASPBERRY_PI'
+                    {
+                    enumLiteral_1=(Token)match(input,36,FOLLOW_2); 
+
+                    				current = grammarAccess.getControllerTypeAccess().getRASPBERRY_PIEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_1, grammarAccess.getControllerTypeAccess().getRASPBERRY_PIEnumLiteralDeclaration_1());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleControllerType"
+
+
     // $ANTLR start "ruleLinkType"
-    // InternalSmartCity.g:731:1: ruleLinkType returns [Enumerator current=null] : ( (enumLiteral_0= 'UART' ) | (enumLiteral_1= 'ADC' ) | (enumLiteral_2= 'SPI' ) | (enumLiteral_3= 'GPIO' ) | (enumLiteral_4= 'CSI' ) | (enumLiteral_5= 'HTTPS' ) ) ;
+    // InternalSmartCity.g:803:1: ruleLinkType returns [Enumerator current=null] : ( (enumLiteral_0= 'UART' ) | (enumLiteral_1= 'ADC' ) | (enumLiteral_2= 'SPI' ) | (enumLiteral_3= 'GPIO' ) | (enumLiteral_4= 'CSI' ) | (enumLiteral_5= 'HTTPS' ) ) ;
     public final Enumerator ruleLinkType() throws RecognitionException {
         Enumerator current = null;
 
@@ -1655,57 +1815,57 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCity.g:737:2: ( ( (enumLiteral_0= 'UART' ) | (enumLiteral_1= 'ADC' ) | (enumLiteral_2= 'SPI' ) | (enumLiteral_3= 'GPIO' ) | (enumLiteral_4= 'CSI' ) | (enumLiteral_5= 'HTTPS' ) ) )
-            // InternalSmartCity.g:738:2: ( (enumLiteral_0= 'UART' ) | (enumLiteral_1= 'ADC' ) | (enumLiteral_2= 'SPI' ) | (enumLiteral_3= 'GPIO' ) | (enumLiteral_4= 'CSI' ) | (enumLiteral_5= 'HTTPS' ) )
+            // InternalSmartCity.g:809:2: ( ( (enumLiteral_0= 'UART' ) | (enumLiteral_1= 'ADC' ) | (enumLiteral_2= 'SPI' ) | (enumLiteral_3= 'GPIO' ) | (enumLiteral_4= 'CSI' ) | (enumLiteral_5= 'HTTPS' ) ) )
+            // InternalSmartCity.g:810:2: ( (enumLiteral_0= 'UART' ) | (enumLiteral_1= 'ADC' ) | (enumLiteral_2= 'SPI' ) | (enumLiteral_3= 'GPIO' ) | (enumLiteral_4= 'CSI' ) | (enumLiteral_5= 'HTTPS' ) )
             {
-            // InternalSmartCity.g:738:2: ( (enumLiteral_0= 'UART' ) | (enumLiteral_1= 'ADC' ) | (enumLiteral_2= 'SPI' ) | (enumLiteral_3= 'GPIO' ) | (enumLiteral_4= 'CSI' ) | (enumLiteral_5= 'HTTPS' ) )
-            int alt6=6;
+            // InternalSmartCity.g:810:2: ( (enumLiteral_0= 'UART' ) | (enumLiteral_1= 'ADC' ) | (enumLiteral_2= 'SPI' ) | (enumLiteral_3= 'GPIO' ) | (enumLiteral_4= 'CSI' ) | (enumLiteral_5= 'HTTPS' ) )
+            int alt7=6;
             switch ( input.LA(1) ) {
-            case 35:
-                {
-                alt6=1;
-                }
-                break;
-            case 36:
-                {
-                alt6=2;
-                }
-                break;
             case 37:
                 {
-                alt6=3;
+                alt7=1;
                 }
                 break;
             case 38:
                 {
-                alt6=4;
+                alt7=2;
                 }
                 break;
             case 39:
                 {
-                alt6=5;
+                alt7=3;
                 }
                 break;
             case 40:
                 {
-                alt6=6;
+                alt7=4;
+                }
+                break;
+            case 41:
+                {
+                alt7=5;
+                }
+                break;
+            case 42:
+                {
+                alt7=6;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 6, 0, input);
+                    new NoViableAltException("", 7, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt6) {
+            switch (alt7) {
                 case 1 :
-                    // InternalSmartCity.g:739:3: (enumLiteral_0= 'UART' )
+                    // InternalSmartCity.g:811:3: (enumLiteral_0= 'UART' )
                     {
-                    // InternalSmartCity.g:739:3: (enumLiteral_0= 'UART' )
-                    // InternalSmartCity.g:740:4: enumLiteral_0= 'UART'
+                    // InternalSmartCity.g:811:3: (enumLiteral_0= 'UART' )
+                    // InternalSmartCity.g:812:4: enumLiteral_0= 'UART'
                     {
-                    enumLiteral_0=(Token)match(input,35,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,37,FOLLOW_2); 
 
                     				current = grammarAccess.getLinkTypeAccess().getUARTEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getLinkTypeAccess().getUARTEnumLiteralDeclaration_0());
@@ -1717,12 +1877,12 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCity.g:747:3: (enumLiteral_1= 'ADC' )
+                    // InternalSmartCity.g:819:3: (enumLiteral_1= 'ADC' )
                     {
-                    // InternalSmartCity.g:747:3: (enumLiteral_1= 'ADC' )
-                    // InternalSmartCity.g:748:4: enumLiteral_1= 'ADC'
+                    // InternalSmartCity.g:819:3: (enumLiteral_1= 'ADC' )
+                    // InternalSmartCity.g:820:4: enumLiteral_1= 'ADC'
                     {
-                    enumLiteral_1=(Token)match(input,36,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,38,FOLLOW_2); 
 
                     				current = grammarAccess.getLinkTypeAccess().getADCEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getLinkTypeAccess().getADCEnumLiteralDeclaration_1());
@@ -1734,12 +1894,12 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalSmartCity.g:755:3: (enumLiteral_2= 'SPI' )
+                    // InternalSmartCity.g:827:3: (enumLiteral_2= 'SPI' )
                     {
-                    // InternalSmartCity.g:755:3: (enumLiteral_2= 'SPI' )
-                    // InternalSmartCity.g:756:4: enumLiteral_2= 'SPI'
+                    // InternalSmartCity.g:827:3: (enumLiteral_2= 'SPI' )
+                    // InternalSmartCity.g:828:4: enumLiteral_2= 'SPI'
                     {
-                    enumLiteral_2=(Token)match(input,37,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,39,FOLLOW_2); 
 
                     				current = grammarAccess.getLinkTypeAccess().getSPIEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getLinkTypeAccess().getSPIEnumLiteralDeclaration_2());
@@ -1751,12 +1911,12 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalSmartCity.g:763:3: (enumLiteral_3= 'GPIO' )
+                    // InternalSmartCity.g:835:3: (enumLiteral_3= 'GPIO' )
                     {
-                    // InternalSmartCity.g:763:3: (enumLiteral_3= 'GPIO' )
-                    // InternalSmartCity.g:764:4: enumLiteral_3= 'GPIO'
+                    // InternalSmartCity.g:835:3: (enumLiteral_3= 'GPIO' )
+                    // InternalSmartCity.g:836:4: enumLiteral_3= 'GPIO'
                     {
-                    enumLiteral_3=(Token)match(input,38,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,40,FOLLOW_2); 
 
                     				current = grammarAccess.getLinkTypeAccess().getGPIOEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getLinkTypeAccess().getGPIOEnumLiteralDeclaration_3());
@@ -1768,12 +1928,12 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalSmartCity.g:771:3: (enumLiteral_4= 'CSI' )
+                    // InternalSmartCity.g:843:3: (enumLiteral_4= 'CSI' )
                     {
-                    // InternalSmartCity.g:771:3: (enumLiteral_4= 'CSI' )
-                    // InternalSmartCity.g:772:4: enumLiteral_4= 'CSI'
+                    // InternalSmartCity.g:843:3: (enumLiteral_4= 'CSI' )
+                    // InternalSmartCity.g:844:4: enumLiteral_4= 'CSI'
                     {
-                    enumLiteral_4=(Token)match(input,39,FOLLOW_2); 
+                    enumLiteral_4=(Token)match(input,41,FOLLOW_2); 
 
                     				current = grammarAccess.getLinkTypeAccess().getCSIEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_4, grammarAccess.getLinkTypeAccess().getCSIEnumLiteralDeclaration_4());
@@ -1785,12 +1945,12 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalSmartCity.g:779:3: (enumLiteral_5= 'HTTPS' )
+                    // InternalSmartCity.g:851:3: (enumLiteral_5= 'HTTPS' )
                     {
-                    // InternalSmartCity.g:779:3: (enumLiteral_5= 'HTTPS' )
-                    // InternalSmartCity.g:780:4: enumLiteral_5= 'HTTPS'
+                    // InternalSmartCity.g:851:3: (enumLiteral_5= 'HTTPS' )
+                    // InternalSmartCity.g:852:4: enumLiteral_5= 'HTTPS'
                     {
-                    enumLiteral_5=(Token)match(input,40,FOLLOW_2); 
+                    enumLiteral_5=(Token)match(input,42,FOLLOW_2); 
 
                     				current = grammarAccess.getLinkTypeAccess().getHTTPSEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_5, grammarAccess.getLinkTypeAccess().getHTTPSEnumLiteralDeclaration_5());
@@ -1822,121 +1982,6 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
     }
     // $ANTLR end "ruleLinkType"
 
-
-    // $ANTLR start "ruleDataType"
-    // InternalSmartCity.g:790:1: ruleDataType returns [Enumerator current=null] : ( (enumLiteral_0= 'PH' ) | (enumLiteral_1= 'TDS' ) | (enumLiteral_2= 'TEMPERATURE' ) ) ;
-    public final Enumerator ruleDataType() throws RecognitionException {
-        Enumerator current = null;
-
-        Token enumLiteral_0=null;
-        Token enumLiteral_1=null;
-        Token enumLiteral_2=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalSmartCity.g:796:2: ( ( (enumLiteral_0= 'PH' ) | (enumLiteral_1= 'TDS' ) | (enumLiteral_2= 'TEMPERATURE' ) ) )
-            // InternalSmartCity.g:797:2: ( (enumLiteral_0= 'PH' ) | (enumLiteral_1= 'TDS' ) | (enumLiteral_2= 'TEMPERATURE' ) )
-            {
-            // InternalSmartCity.g:797:2: ( (enumLiteral_0= 'PH' ) | (enumLiteral_1= 'TDS' ) | (enumLiteral_2= 'TEMPERATURE' ) )
-            int alt7=3;
-            switch ( input.LA(1) ) {
-            case 28:
-                {
-                alt7=1;
-                }
-                break;
-            case 30:
-                {
-                alt7=2;
-                }
-                break;
-            case 27:
-                {
-                alt7=3;
-                }
-                break;
-            default:
-                NoViableAltException nvae =
-                    new NoViableAltException("", 7, 0, input);
-
-                throw nvae;
-            }
-
-            switch (alt7) {
-                case 1 :
-                    // InternalSmartCity.g:798:3: (enumLiteral_0= 'PH' )
-                    {
-                    // InternalSmartCity.g:798:3: (enumLiteral_0= 'PH' )
-                    // InternalSmartCity.g:799:4: enumLiteral_0= 'PH'
-                    {
-                    enumLiteral_0=(Token)match(input,28,FOLLOW_2); 
-
-                    				current = grammarAccess.getDataTypeAccess().getPHEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_0, grammarAccess.getDataTypeAccess().getPHEnumLiteralDeclaration_0());
-                    			
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalSmartCity.g:806:3: (enumLiteral_1= 'TDS' )
-                    {
-                    // InternalSmartCity.g:806:3: (enumLiteral_1= 'TDS' )
-                    // InternalSmartCity.g:807:4: enumLiteral_1= 'TDS'
-                    {
-                    enumLiteral_1=(Token)match(input,30,FOLLOW_2); 
-
-                    				current = grammarAccess.getDataTypeAccess().getTDSEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_1, grammarAccess.getDataTypeAccess().getTDSEnumLiteralDeclaration_1());
-                    			
-
-                    }
-
-
-                    }
-                    break;
-                case 3 :
-                    // InternalSmartCity.g:814:3: (enumLiteral_2= 'TEMPERATURE' )
-                    {
-                    // InternalSmartCity.g:814:3: (enumLiteral_2= 'TEMPERATURE' )
-                    // InternalSmartCity.g:815:4: enumLiteral_2= 'TEMPERATURE'
-                    {
-                    enumLiteral_2=(Token)match(input,27,FOLLOW_2); 
-
-                    				current = grammarAccess.getDataTypeAccess().getTEMPERATUREEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_2, grammarAccess.getDataTypeAccess().getTEMPERATUREEnumLiteralDeclaration_2());
-                    			
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleDataType"
-
     // Delegated rules
 
 
@@ -1955,13 +2000,13 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000090000L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000040000L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x00000007F8000000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x000001F800000000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x000007E000000000L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000100000L});
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000200000L});
     public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000001000000L});
     public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000058000000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000001800000000L});
     public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000002000000L});
     public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000004000000L});
 

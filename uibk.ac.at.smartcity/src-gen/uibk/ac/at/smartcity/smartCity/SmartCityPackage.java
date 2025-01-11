@@ -133,14 +133,14 @@ public interface SmartCityPackage extends EPackage
   int LINKABLE_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link uibk.ac.at.smartcity.smartCity.impl.LayerImpl <em>Layer</em>}' class.
+   * The meta object id for the '{@link uibk.ac.at.smartcity.smartCity.impl.InteroperableLayerImpl <em>Interoperable Layer</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uibk.ac.at.smartcity.smartCity.impl.LayerImpl
-   * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getLayer()
+   * @see uibk.ac.at.smartcity.smartCity.impl.InteroperableLayerImpl
+   * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getInteroperableLayer()
    * @generated
    */
-  int LAYER = 1;
+  int INTEROPERABLE_LAYER = 1;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -149,7 +149,7 @@ public interface SmartCityPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LAYER__NAME = LINKABLE__NAME;
+  int INTEROPERABLE_LAYER__NAME = LINKABLE__NAME;
 
   /**
    * The feature id for the '<em><b>Priority</b></em>' attribute.
@@ -158,7 +158,7 @@ public interface SmartCityPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LAYER__PRIORITY = LINKABLE_FEATURE_COUNT + 0;
+  int INTEROPERABLE_LAYER__PRIORITY = LINKABLE_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Delay</b></em>' attribute.
@@ -167,16 +167,16 @@ public interface SmartCityPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LAYER__DELAY = LINKABLE_FEATURE_COUNT + 1;
+  int INTEROPERABLE_LAYER__DELAY = LINKABLE_FEATURE_COUNT + 1;
 
   /**
-   * The number of structural features of the '<em>Layer</em>' class.
+   * The number of structural features of the '<em>Interoperable Layer</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LAYER_FEATURE_COUNT = LINKABLE_FEATURE_COUNT + 2;
+  int INTEROPERABLE_LAYER_FEATURE_COUNT = LINKABLE_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link uibk.ac.at.smartcity.smartCity.impl.NodeImpl <em>Node</em>}' class.
@@ -363,13 +363,31 @@ public interface SmartCityPackage extends EPackage
   int CONTROLLER__NAME = LINKABLE__NAME;
 
   /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTROLLER__TYPE = LINKABLE_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Priority</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTROLLER__PRIORITY = LINKABLE_FEATURE_COUNT + 1;
+
+  /**
    * The number of structural features of the '<em>Controller</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONTROLLER_FEATURE_COUNT = LINKABLE_FEATURE_COUNT + 0;
+  int CONTROLLER_FEATURE_COUNT = LINKABLE_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link uibk.ac.at.smartcity.smartCity.impl.DelayRangeImpl <em>Delay Range</em>}' class.
@@ -419,6 +437,16 @@ public interface SmartCityPackage extends EPackage
   int SENSOR_TYPE = 8;
 
   /**
+   * The meta object id for the '{@link uibk.ac.at.smartcity.smartCity.ControllerType <em>Controller Type</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uibk.ac.at.smartcity.smartCity.ControllerType
+   * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getControllerType()
+   * @generated
+   */
+  int CONTROLLER_TYPE = 9;
+
+  /**
    * The meta object id for the '{@link uibk.ac.at.smartcity.smartCity.LinkType <em>Link Type</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -426,7 +454,7 @@ public interface SmartCityPackage extends EPackage
    * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getLinkType()
    * @generated
    */
-  int LINK_TYPE = 9;
+  int LINK_TYPE = 10;
 
   /**
    * The meta object id for the '{@link uibk.ac.at.smartcity.smartCity.DataType <em>Data Type</em>}' enum.
@@ -436,7 +464,7 @@ public interface SmartCityPackage extends EPackage
    * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getDataType()
    * @generated
    */
-  int DATA_TYPE = 10;
+  int DATA_TYPE = 11;
 
 
   /**
@@ -483,36 +511,36 @@ public interface SmartCityPackage extends EPackage
   EReference getModel_GlobalLinks();
 
   /**
-   * Returns the meta object for class '{@link uibk.ac.at.smartcity.smartCity.Layer <em>Layer</em>}'.
+   * Returns the meta object for class '{@link uibk.ac.at.smartcity.smartCity.InteroperableLayer <em>Interoperable Layer</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Layer</em>'.
-   * @see uibk.ac.at.smartcity.smartCity.Layer
+   * @return the meta object for class '<em>Interoperable Layer</em>'.
+   * @see uibk.ac.at.smartcity.smartCity.InteroperableLayer
    * @generated
    */
-  EClass getLayer();
+  EClass getInteroperableLayer();
 
   /**
-   * Returns the meta object for the attribute '{@link uibk.ac.at.smartcity.smartCity.Layer#getPriority <em>Priority</em>}'.
+   * Returns the meta object for the attribute '{@link uibk.ac.at.smartcity.smartCity.InteroperableLayer#getPriority <em>Priority</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Priority</em>'.
-   * @see uibk.ac.at.smartcity.smartCity.Layer#getPriority()
-   * @see #getLayer()
+   * @see uibk.ac.at.smartcity.smartCity.InteroperableLayer#getPriority()
+   * @see #getInteroperableLayer()
    * @generated
    */
-  EAttribute getLayer_Priority();
+  EAttribute getInteroperableLayer_Priority();
 
   /**
-   * Returns the meta object for the attribute '{@link uibk.ac.at.smartcity.smartCity.Layer#getDelay <em>Delay</em>}'.
+   * Returns the meta object for the attribute '{@link uibk.ac.at.smartcity.smartCity.InteroperableLayer#getDelay <em>Delay</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Delay</em>'.
-   * @see uibk.ac.at.smartcity.smartCity.Layer#getDelay()
-   * @see #getLayer()
+   * @see uibk.ac.at.smartcity.smartCity.InteroperableLayer#getDelay()
+   * @see #getInteroperableLayer()
    * @generated
    */
-  EAttribute getLayer_Delay();
+  EAttribute getInteroperableLayer_Delay();
 
   /**
    * Returns the meta object for class '{@link uibk.ac.at.smartcity.smartCity.Node <em>Node</em>}'.
@@ -665,6 +693,28 @@ public interface SmartCityPackage extends EPackage
   EClass getController();
 
   /**
+   * Returns the meta object for the attribute '{@link uibk.ac.at.smartcity.smartCity.Controller#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see uibk.ac.at.smartcity.smartCity.Controller#getType()
+   * @see #getController()
+   * @generated
+   */
+  EAttribute getController_Type();
+
+  /**
+   * Returns the meta object for the attribute '{@link uibk.ac.at.smartcity.smartCity.Controller#getPriority <em>Priority</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Priority</em>'.
+   * @see uibk.ac.at.smartcity.smartCity.Controller#getPriority()
+   * @see #getController()
+   * @generated
+   */
+  EAttribute getController_Priority();
+
+  /**
    * Returns the meta object for class '{@link uibk.ac.at.smartcity.smartCity.Linkable <em>Linkable</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -726,6 +776,16 @@ public interface SmartCityPackage extends EPackage
    * @generated
    */
   EEnum getSensorType();
+
+  /**
+   * Returns the meta object for enum '{@link uibk.ac.at.smartcity.smartCity.ControllerType <em>Controller Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Controller Type</em>'.
+   * @see uibk.ac.at.smartcity.smartCity.ControllerType
+   * @generated
+   */
+  EEnum getControllerType();
 
   /**
    * Returns the meta object for enum '{@link uibk.ac.at.smartcity.smartCity.LinkType <em>Link Type</em>}'.
@@ -805,14 +865,14 @@ public interface SmartCityPackage extends EPackage
     EReference MODEL__GLOBAL_LINKS = eINSTANCE.getModel_GlobalLinks();
 
     /**
-     * The meta object literal for the '{@link uibk.ac.at.smartcity.smartCity.impl.LayerImpl <em>Layer</em>}' class.
+     * The meta object literal for the '{@link uibk.ac.at.smartcity.smartCity.impl.InteroperableLayerImpl <em>Interoperable Layer</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see uibk.ac.at.smartcity.smartCity.impl.LayerImpl
-     * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getLayer()
+     * @see uibk.ac.at.smartcity.smartCity.impl.InteroperableLayerImpl
+     * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getInteroperableLayer()
      * @generated
      */
-    EClass LAYER = eINSTANCE.getLayer();
+    EClass INTEROPERABLE_LAYER = eINSTANCE.getInteroperableLayer();
 
     /**
      * The meta object literal for the '<em><b>Priority</b></em>' attribute feature.
@@ -820,7 +880,7 @@ public interface SmartCityPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute LAYER__PRIORITY = eINSTANCE.getLayer_Priority();
+    EAttribute INTEROPERABLE_LAYER__PRIORITY = eINSTANCE.getInteroperableLayer_Priority();
 
     /**
      * The meta object literal for the '<em><b>Delay</b></em>' attribute feature.
@@ -828,7 +888,7 @@ public interface SmartCityPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute LAYER__DELAY = eINSTANCE.getLayer_Delay();
+    EAttribute INTEROPERABLE_LAYER__DELAY = eINSTANCE.getInteroperableLayer_Delay();
 
     /**
      * The meta object literal for the '{@link uibk.ac.at.smartcity.smartCity.impl.NodeImpl <em>Node</em>}' class.
@@ -951,6 +1011,22 @@ public interface SmartCityPackage extends EPackage
     EClass CONTROLLER = eINSTANCE.getController();
 
     /**
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONTROLLER__TYPE = eINSTANCE.getController_Type();
+
+    /**
+     * The meta object literal for the '<em><b>Priority</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONTROLLER__PRIORITY = eINSTANCE.getController_Priority();
+
+    /**
      * The meta object literal for the '{@link uibk.ac.at.smartcity.smartCity.impl.LinkableImpl <em>Linkable</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1003,6 +1079,16 @@ public interface SmartCityPackage extends EPackage
      * @generated
      */
     EEnum SENSOR_TYPE = eINSTANCE.getSensorType();
+
+    /**
+     * The meta object literal for the '{@link uibk.ac.at.smartcity.smartCity.ControllerType <em>Controller Type</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uibk.ac.at.smartcity.smartCity.ControllerType
+     * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getControllerType()
+     * @generated
+     */
+    EEnum CONTROLLER_TYPE = eINSTANCE.getControllerType();
 
     /**
      * The meta object literal for the '{@link uibk.ac.at.smartcity.smartCity.LinkType <em>Link Type</em>}' enum.

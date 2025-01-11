@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uibk.ac.at.smartcity.smartCity.CommunicationLink;
-import uibk.ac.at.smartcity.smartCity.Layer;
+import uibk.ac.at.smartcity.smartCity.InteroperableLayer;
 import uibk.ac.at.smartcity.smartCity.Model;
 import uibk.ac.at.smartcity.smartCity.Node;
 import uibk.ac.at.smartcity.smartCity.SmartCityPackage;
@@ -60,7 +60,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @generated
    * @ordered
    */
-  protected Layer interoperableLayer;
+  protected InteroperableLayer interoperableLayer;
 
   /**
    * The cached value of the '{@link #getGlobalLinks() <em>Global Links</em>}' containment reference list.
@@ -114,7 +114,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @generated
    */
   @Override
-  public Layer getInteroperableLayer()
+  public InteroperableLayer getInteroperableLayer()
   {
     return interoperableLayer;
   }
@@ -124,9 +124,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetInteroperableLayer(Layer newInteroperableLayer, NotificationChain msgs)
+  public NotificationChain basicSetInteroperableLayer(InteroperableLayer newInteroperableLayer, NotificationChain msgs)
   {
-    Layer oldInteroperableLayer = interoperableLayer;
+    InteroperableLayer oldInteroperableLayer = interoperableLayer;
     interoperableLayer = newInteroperableLayer;
     if (eNotificationRequired())
     {
@@ -142,7 +142,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @generated
    */
   @Override
-  public void setInteroperableLayer(Layer newInteroperableLayer)
+  public void setInteroperableLayer(InteroperableLayer newInteroperableLayer)
   {
     if (newInteroperableLayer != interoperableLayer)
     {
@@ -229,7 +229,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         getNodes().addAll((Collection<? extends Node>)newValue);
         return;
       case SmartCityPackage.MODEL__INTEROPERABLE_LAYER:
-        setInteroperableLayer((Layer)newValue);
+        setInteroperableLayer((InteroperableLayer)newValue);
         return;
       case SmartCityPackage.MODEL__GLOBAL_LINKS:
         getGlobalLinks().clear();
@@ -253,7 +253,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         getNodes().clear();
         return;
       case SmartCityPackage.MODEL__INTEROPERABLE_LAYER:
-        setInteroperableLayer((Layer)null);
+        setInteroperableLayer((InteroperableLayer)null);
         return;
       case SmartCityPackage.MODEL__GLOBAL_LINKS:
         getGlobalLinks().clear();
