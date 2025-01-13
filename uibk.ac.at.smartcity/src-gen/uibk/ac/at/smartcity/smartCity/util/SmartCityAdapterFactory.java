@@ -10,7 +10,17 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
-import uibk.ac.at.smartcity.smartCity.*;
+import uibk.ac.at.smartcity.smartCity.CommunicationLink;
+import uibk.ac.at.smartcity.smartCity.Controller;
+import uibk.ac.at.smartcity.smartCity.CyclicAction;
+import uibk.ac.at.smartcity.smartCity.DelayRange;
+import uibk.ac.at.smartcity.smartCity.InteroperableLayer;
+import uibk.ac.at.smartcity.smartCity.Linkable;
+import uibk.ac.at.smartcity.smartCity.Model;
+import uibk.ac.at.smartcity.smartCity.Node;
+import uibk.ac.at.smartcity.smartCity.Sensor;
+import uibk.ac.at.smartcity.smartCity.SmartCityPackage;
+import uibk.ac.at.smartcity.smartCity.TriggeredAction;
 
 /**
  * <!-- begin-user-doc -->
@@ -106,6 +116,11 @@ public class SmartCityAdapterFactory extends AdapterFactoryImpl
         return createControllerAdapter();
       }
       @Override
+      public Adapter caseModule(uibk.ac.at.smartcity.smartCity.Module object)
+      {
+        return createModuleAdapter();
+      }
+      @Override
       public Adapter caseLinkable(Linkable object)
       {
         return createLinkableAdapter();
@@ -114,6 +129,16 @@ public class SmartCityAdapterFactory extends AdapterFactoryImpl
       public Adapter caseDelayRange(DelayRange object)
       {
         return createDelayRangeAdapter();
+      }
+      @Override
+      public Adapter caseCyclicAction(CyclicAction object)
+      {
+        return createCyclicActionAdapter();
+      }
+      @Override
+      public Adapter caseTriggeredAction(TriggeredAction object)
+      {
+        return createTriggeredActionAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -228,6 +253,21 @@ public class SmartCityAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link uibk.ac.at.smartcity.smartCity.Module <em>Module</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uibk.ac.at.smartcity.smartCity.Module
+   * @generated
+   */
+  public Adapter createModuleAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link uibk.ac.at.smartcity.smartCity.Linkable <em>Linkable</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -253,6 +293,36 @@ public class SmartCityAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDelayRangeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uibk.ac.at.smartcity.smartCity.CyclicAction <em>Cyclic Action</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uibk.ac.at.smartcity.smartCity.CyclicAction
+   * @generated
+   */
+  public Adapter createCyclicActionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uibk.ac.at.smartcity.smartCity.TriggeredAction <em>Triggered Action</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uibk.ac.at.smartcity.smartCity.TriggeredAction
+   * @generated
+   */
+  public Adapter createTriggeredActionAdapter()
   {
     return null;
   }

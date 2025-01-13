@@ -3,6 +3,7 @@
  */
 package uibk.ac.at.smartcity.smartCity;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,6 +16,7 @@ package uibk.ac.at.smartcity.smartCity;
  * <ul>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.Sensor#getType <em>Type</em>}</li>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.Sensor#getPriority <em>Priority</em>}</li>
+ *   <li>{@link uibk.ac.at.smartcity.smartCity.Sensor#getCyclicActions <em>Cyclic Actions</em>}</li>
  * </ul>
  *
  * @see uibk.ac.at.smartcity.smartCity.SmartCityPackage#getSensor()
@@ -69,5 +71,17 @@ public interface Sensor extends Linkable
    * @generated
    */
   void setPriority(int value);
+
+  /**
+   * Returns the value of the '<em><b>Cyclic Actions</b></em>' containment reference list.
+   * The list contents are of type {@link uibk.ac.at.smartcity.smartCity.CyclicAction}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Cyclic Actions</em>' containment reference list.
+   * @see uibk.ac.at.smartcity.smartCity.SmartCityPackage#getSensor_CyclicActions()
+   * @model containment="true"
+   * @generated
+   */
+  EList<CyclicAction> getCyclicActions();
 
 } // Sensor

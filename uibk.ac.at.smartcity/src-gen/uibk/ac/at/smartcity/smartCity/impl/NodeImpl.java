@@ -33,6 +33,7 @@ import uibk.ac.at.smartcity.smartCity.SmartCityPackage;
  * </p>
  * <ul>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.NodeImpl#getSensors <em>Sensors</em>}</li>
+ *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.NodeImpl#getModules <em>Modules</em>}</li>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.NodeImpl#getController <em>Controller</em>}</li>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.NodeImpl#getLinks <em>Links</em>}</li>
  * </ul>
@@ -50,6 +51,16 @@ public class NodeImpl extends LinkableImpl implements Node
    * @ordered
    */
   protected EList<Sensor> sensors;
+
+  /**
+   * The cached value of the '{@link #getModules() <em>Modules</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getModules()
+   * @generated
+   * @ordered
+   */
+  protected EList<uibk.ac.at.smartcity.smartCity.Module> modules;
 
   /**
    * The cached value of the '{@link #getController() <em>Controller</em>}' containment reference.
@@ -105,6 +116,21 @@ public class NodeImpl extends LinkableImpl implements Node
       sensors = new EObjectContainmentEList<Sensor>(Sensor.class, this, SmartCityPackage.NODE__SENSORS);
     }
     return sensors;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<uibk.ac.at.smartcity.smartCity.Module> getModules()
+  {
+    if (modules == null)
+    {
+      modules = new EObjectContainmentEList<uibk.ac.at.smartcity.smartCity.Module>(uibk.ac.at.smartcity.smartCity.Module.class, this, SmartCityPackage.NODE__MODULES);
+    }
+    return modules;
   }
 
   /**
@@ -184,6 +210,8 @@ public class NodeImpl extends LinkableImpl implements Node
     {
       case SmartCityPackage.NODE__SENSORS:
         return ((InternalEList<?>)getSensors()).basicRemove(otherEnd, msgs);
+      case SmartCityPackage.NODE__MODULES:
+        return ((InternalEList<?>)getModules()).basicRemove(otherEnd, msgs);
       case SmartCityPackage.NODE__CONTROLLER:
         return basicSetController(null, msgs);
       case SmartCityPackage.NODE__LINKS:
@@ -204,6 +232,8 @@ public class NodeImpl extends LinkableImpl implements Node
     {
       case SmartCityPackage.NODE__SENSORS:
         return getSensors();
+      case SmartCityPackage.NODE__MODULES:
+        return getModules();
       case SmartCityPackage.NODE__CONTROLLER:
         return getController();
       case SmartCityPackage.NODE__LINKS:
@@ -226,6 +256,10 @@ public class NodeImpl extends LinkableImpl implements Node
       case SmartCityPackage.NODE__SENSORS:
         getSensors().clear();
         getSensors().addAll((Collection<? extends Sensor>)newValue);
+        return;
+      case SmartCityPackage.NODE__MODULES:
+        getModules().clear();
+        getModules().addAll((Collection<? extends uibk.ac.at.smartcity.smartCity.Module>)newValue);
         return;
       case SmartCityPackage.NODE__CONTROLLER:
         setController((Controller)newValue);
@@ -251,6 +285,9 @@ public class NodeImpl extends LinkableImpl implements Node
       case SmartCityPackage.NODE__SENSORS:
         getSensors().clear();
         return;
+      case SmartCityPackage.NODE__MODULES:
+        getModules().clear();
+        return;
       case SmartCityPackage.NODE__CONTROLLER:
         setController((Controller)null);
         return;
@@ -273,6 +310,8 @@ public class NodeImpl extends LinkableImpl implements Node
     {
       case SmartCityPackage.NODE__SENSORS:
         return sensors != null && !sensors.isEmpty();
+      case SmartCityPackage.NODE__MODULES:
+        return modules != null && !modules.isEmpty();
       case SmartCityPackage.NODE__CONTROLLER:
         return controller != null;
       case SmartCityPackage.NODE__LINKS:

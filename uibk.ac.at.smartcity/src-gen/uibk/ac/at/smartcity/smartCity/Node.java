@@ -15,6 +15,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.Node#getSensors <em>Sensors</em>}</li>
+ *   <li>{@link uibk.ac.at.smartcity.smartCity.Node#getModules <em>Modules</em>}</li>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.Node#getController <em>Controller</em>}</li>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.Node#getLinks <em>Links</em>}</li>
  * </ul>
@@ -36,6 +37,18 @@ public interface Node extends Linkable
    * @generated
    */
   EList<Sensor> getSensors();
+
+  /**
+   * Returns the value of the '<em><b>Modules</b></em>' containment reference list.
+   * The list contents are of type {@link uibk.ac.at.smartcity.smartCity.Module}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Modules</em>' containment reference list.
+   * @see uibk.ac.at.smartcity.smartCity.SmartCityPackage#getNode_Modules()
+   * @model containment="true"
+   * @generated
+   */
+  EList<uibk.ac.at.smartcity.smartCity.Module> getModules();
 
   /**
    * Returns the value of the '<em><b>Controller</b></em>' containment reference.

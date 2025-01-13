@@ -12,11 +12,14 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InteroperableLayer" eSuperTypes="#//Linkable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="delay" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="delay" eType="#//DelayRange"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Node" eSuperTypes="#//Linkable">
     <eStructuralFeatures xsi:type="ecore:EReference" name="sensors" upperBound="-1"
         eType="#//Sensor" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modules" upperBound="-1"
+        eType="#//Module" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="controller" eType="#//Controller"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1"
@@ -25,6 +28,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="Sensor" eSuperTypes="#//Linkable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//SensorType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cyclicActions" upperBound="-1"
+        eType="#//CyclicAction" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CommunicationLink">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//LinkType"/>
@@ -37,6 +42,14 @@
   <eClassifiers xsi:type="ecore:EClass" name="Controller" eSuperTypes="#//Linkable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ControllerType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cyclicActions" upperBound="-1"
+        eType="#//CyclicAction" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Module">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cyclicActions" upperBound="-1"
+        eType="#//CyclicAction" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Linkable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -44,6 +57,14 @@
   <eClassifiers xsi:type="ecore:EClass" name="DelayRange">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="min" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="max" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CyclicAction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="#//FrequencyUnit"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TriggeredAction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="SensorType">
     <eLiterals name="TEMPERATURE" literal="TEMPERATURE"/>
@@ -73,5 +94,13 @@
     <eLiterals name="EPOCH" value="2" literal="EPOCH"/>
     <eLiterals name="STRING" value="3" literal="STRING"/>
     <eLiterals name="DOUBLE" value="4" literal="DOUBLE"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="FrequencyUnit">
+    <eLiterals name="HERTZ" literal="HERTZ"/>
+    <eLiterals name="SECONDS" value="1" literal="SECONDS"/>
+    <eLiterals name="MINUTES" value="2" literal="MINUTES"/>
+    <eLiterals name="HOURS" value="3" literal="HOURS"/>
+    <eLiterals name="DAYS" value="4" literal="DAYS"/>
+    <eLiterals name="INF" value="5" literal="INF"/>
   </eClassifiers>
 </ecore:EPackage>

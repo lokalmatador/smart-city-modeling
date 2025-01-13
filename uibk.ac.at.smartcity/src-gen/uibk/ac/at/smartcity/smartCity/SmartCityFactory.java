@@ -78,6 +78,15 @@ public interface SmartCityFactory extends EFactory
   Controller createController();
 
   /**
+   * Returns a new object of class '<em>Module</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Module</em>'.
+   * @generated
+   */
+  Module createModule();
+
+  /**
    * Returns a new object of class '<em>Linkable</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -94,6 +103,24 @@ public interface SmartCityFactory extends EFactory
    * @generated
    */
   DelayRange createDelayRange();
+
+  /**
+   * Returns a new object of class '<em>Cyclic Action</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Cyclic Action</em>'.
+   * @generated
+   */
+  CyclicAction createCyclicAction();
+
+  /**
+   * Returns a new object of class '<em>Triggered Action</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Triggered Action</em>'.
+   * @generated
+   */
+  TriggeredAction createTriggeredAction();
 
   /**
    * Returns the package supported by this factory.

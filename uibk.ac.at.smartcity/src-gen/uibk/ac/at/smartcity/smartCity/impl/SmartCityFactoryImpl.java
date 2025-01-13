@@ -12,7 +12,23 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import uibk.ac.at.smartcity.smartCity.*;
+import uibk.ac.at.smartcity.smartCity.CommunicationLink;
+import uibk.ac.at.smartcity.smartCity.Controller;
+import uibk.ac.at.smartcity.smartCity.ControllerType;
+import uibk.ac.at.smartcity.smartCity.CyclicAction;
+import uibk.ac.at.smartcity.smartCity.DataType;
+import uibk.ac.at.smartcity.smartCity.DelayRange;
+import uibk.ac.at.smartcity.smartCity.FrequencyUnit;
+import uibk.ac.at.smartcity.smartCity.InteroperableLayer;
+import uibk.ac.at.smartcity.smartCity.LinkType;
+import uibk.ac.at.smartcity.smartCity.Linkable;
+import uibk.ac.at.smartcity.smartCity.Model;
+import uibk.ac.at.smartcity.smartCity.Node;
+import uibk.ac.at.smartcity.smartCity.Sensor;
+import uibk.ac.at.smartcity.smartCity.SensorType;
+import uibk.ac.at.smartcity.smartCity.SmartCityFactory;
+import uibk.ac.at.smartcity.smartCity.SmartCityPackage;
+import uibk.ac.at.smartcity.smartCity.TriggeredAction;
 
 /**
  * <!-- begin-user-doc -->
@@ -72,8 +88,11 @@ public class SmartCityFactoryImpl extends EFactoryImpl implements SmartCityFacto
       case SmartCityPackage.SENSOR: return createSensor();
       case SmartCityPackage.COMMUNICATION_LINK: return createCommunicationLink();
       case SmartCityPackage.CONTROLLER: return createController();
+      case SmartCityPackage.MODULE: return createModule();
       case SmartCityPackage.LINKABLE: return createLinkable();
       case SmartCityPackage.DELAY_RANGE: return createDelayRange();
+      case SmartCityPackage.CYCLIC_ACTION: return createCyclicAction();
+      case SmartCityPackage.TRIGGERED_ACTION: return createTriggeredAction();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -97,6 +116,8 @@ public class SmartCityFactoryImpl extends EFactoryImpl implements SmartCityFacto
         return createLinkTypeFromString(eDataType, initialValue);
       case SmartCityPackage.DATA_TYPE:
         return createDataTypeFromString(eDataType, initialValue);
+      case SmartCityPackage.FREQUENCY_UNIT:
+        return createFrequencyUnitFromString(eDataType, initialValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -120,6 +141,8 @@ public class SmartCityFactoryImpl extends EFactoryImpl implements SmartCityFacto
         return convertLinkTypeToString(eDataType, instanceValue);
       case SmartCityPackage.DATA_TYPE:
         return convertDataTypeToString(eDataType, instanceValue);
+      case SmartCityPackage.FREQUENCY_UNIT:
+        return convertFrequencyUnitToString(eDataType, instanceValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -203,6 +226,18 @@ public class SmartCityFactoryImpl extends EFactoryImpl implements SmartCityFacto
    * @generated
    */
   @Override
+  public uibk.ac.at.smartcity.smartCity.Module createModule()
+  {
+    ModuleImpl module = new ModuleImpl();
+    return module;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Linkable createLinkable()
   {
     LinkableImpl linkable = new LinkableImpl();
@@ -219,6 +254,30 @@ public class SmartCityFactoryImpl extends EFactoryImpl implements SmartCityFacto
   {
     DelayRangeImpl delayRange = new DelayRangeImpl();
     return delayRange;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public CyclicAction createCyclicAction()
+  {
+    CyclicActionImpl cyclicAction = new CyclicActionImpl();
+    return cyclicAction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TriggeredAction createTriggeredAction()
+  {
+    TriggeredActionImpl triggeredAction = new TriggeredActionImpl();
+    return triggeredAction;
   }
 
   /**
@@ -305,6 +364,28 @@ public class SmartCityFactoryImpl extends EFactoryImpl implements SmartCityFacto
    * @generated
    */
   public String convertDataTypeToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FrequencyUnit createFrequencyUnitFromString(EDataType eDataType, String initialValue)
+  {
+    FrequencyUnit result = FrequencyUnit.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertFrequencyUnitToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

@@ -35,6 +35,14 @@
       <genEnumLiterals ecoreEnumLiteral="SmartCity.ecore#//DataType/STRING"/>
       <genEnumLiterals ecoreEnumLiteral="SmartCity.ecore#//DataType/DOUBLE"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SmartCity.ecore#//FrequencyUnit">
+      <genEnumLiterals ecoreEnumLiteral="SmartCity.ecore#//FrequencyUnit/HERTZ"/>
+      <genEnumLiterals ecoreEnumLiteral="SmartCity.ecore#//FrequencyUnit/SECONDS"/>
+      <genEnumLiterals ecoreEnumLiteral="SmartCity.ecore#//FrequencyUnit/MINUTES"/>
+      <genEnumLiterals ecoreEnumLiteral="SmartCity.ecore#//FrequencyUnit/HOURS"/>
+      <genEnumLiterals ecoreEnumLiteral="SmartCity.ecore#//FrequencyUnit/DAYS"/>
+      <genEnumLiterals ecoreEnumLiteral="SmartCity.ecore#//FrequencyUnit/INF"/>
+    </genEnums>
     <genClasses ecoreClass="SmartCity.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//Model/nodes"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//Model/interoperableLayer"/>
@@ -42,16 +50,18 @@
     </genClasses>
     <genClasses ecoreClass="SmartCity.ecore#//InteroperableLayer">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//InteroperableLayer/priority"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//InteroperableLayer/delay"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//InteroperableLayer/delay"/>
     </genClasses>
     <genClasses ecoreClass="SmartCity.ecore#//Node">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//Node/sensors"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//Node/modules"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//Node/controller"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//Node/links"/>
     </genClasses>
     <genClasses ecoreClass="SmartCity.ecore#//Sensor">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//Sensor/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//Sensor/priority"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//Sensor/cyclicActions"/>
     </genClasses>
     <genClasses ecoreClass="SmartCity.ecore#//CommunicationLink">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//CommunicationLink/type"/>
@@ -63,6 +73,12 @@
     <genClasses ecoreClass="SmartCity.ecore#//Controller">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//Controller/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//Controller/priority"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//Controller/cyclicActions"/>
+    </genClasses>
+    <genClasses ecoreClass="SmartCity.ecore#//Module">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//Module/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//Module/priority"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//Module/cyclicActions"/>
     </genClasses>
     <genClasses ecoreClass="SmartCity.ecore#//Linkable">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//Linkable/name"/>
@@ -70,6 +86,14 @@
     <genClasses ecoreClass="SmartCity.ecore#//DelayRange">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//DelayRange/min"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//DelayRange/max"/>
+    </genClasses>
+    <genClasses ecoreClass="SmartCity.ecore#//CyclicAction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//CyclicAction/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//CyclicAction/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//CyclicAction/unit"/>
+    </genClasses>
+    <genClasses ecoreClass="SmartCity.ecore#//TriggeredAction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//TriggeredAction/name"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

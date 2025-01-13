@@ -11,13 +11,14 @@ Model:
 InteroperableLayer:
 	'layer' name=ID
 	'priority' priority=INT
-	'delay' delay=INT
+	'delay' delay=DelayRange
 ;
 	
 Node:
 	'node' name=ID
 	'{'
 		sensors+=Sensor*
+		modules+=Module*
 		controller=Controller
 		links+=CommunicationLink*
 	'}'
@@ -27,6 +28,7 @@ Sensor:
 	'sensor' name=ID
 	'type' type=SensorType
 	'priority' priority=INT
+	cyclicActions+=CyclicAction*
 ;
 
 
@@ -41,6 +43,14 @@ Controller:
 	'controller' name=ID
 	'type' type=ControllerType
 	'priority' priority=INT
+	cyclicActions+=CyclicAction*
+;
+
+Module:
+	'module' name=ID
+	'priority' priority=INT
+	cyclicActions+=CyclicAction*
+	
 ;
 
 Linkable:
@@ -49,6 +59,15 @@ Linkable:
 
 DelayRange:
 	'[' min=INT '..' max=INT ']'
+;
+
+CyclicAction:
+	'cyclicAction' name=ID
+	'frequency' value=INT unit=FrequencyUnit
+;
+
+TriggeredAction:
+	'TriggeredAction' name=ID
 ;
 	
 enum SensorType:
@@ -65,4 +84,8 @@ enum LinkType:
 
 enum DataType:
 	BOOL | FLOAT | EPOCH | STRING | DOUBLE
+;
+
+enum FrequencyUnit:
+	HERTZ | SECONDS | MINUTES | HOURS |DAYS | INF
 ;

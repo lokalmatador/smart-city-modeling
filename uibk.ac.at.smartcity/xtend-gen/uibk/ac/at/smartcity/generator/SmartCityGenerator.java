@@ -20,6 +20,7 @@ import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
 import uibk.ac.at.smartcity.smartCity.CommunicationLink;
 import uibk.ac.at.smartcity.smartCity.Controller;
+import uibk.ac.at.smartcity.smartCity.DelayRange;
 import uibk.ac.at.smartcity.smartCity.InteroperableLayer;
 import uibk.ac.at.smartcity.smartCity.LinkType;
 import uibk.ac.at.smartcity.smartCity.Linkable;
@@ -628,7 +629,7 @@ public class SmartCityGenerator extends AbstractGenerator {
       String _name_4 = interoperableLayer.getName();
       _builder.append(_name_4, "\t\t");
       _builder.append("\", simulated_delay=");
-      int _delay = interoperableLayer.getDelay();
+      DelayRange _delay = interoperableLayer.getDelay();
       _builder.append(_delay, "\t\t");
       _builder.append(", priority=");
       int _priority = interoperableLayer.getPriority();

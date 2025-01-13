@@ -17,12 +17,14 @@ import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransi
 import uibk.ac.at.smartcity.services.SmartCityGrammarAccess;
 import uibk.ac.at.smartcity.smartCity.CommunicationLink;
 import uibk.ac.at.smartcity.smartCity.Controller;
+import uibk.ac.at.smartcity.smartCity.CyclicAction;
 import uibk.ac.at.smartcity.smartCity.DelayRange;
 import uibk.ac.at.smartcity.smartCity.InteroperableLayer;
 import uibk.ac.at.smartcity.smartCity.Model;
 import uibk.ac.at.smartcity.smartCity.Node;
 import uibk.ac.at.smartcity.smartCity.Sensor;
 import uibk.ac.at.smartcity.smartCity.SmartCityPackage;
+import uibk.ac.at.smartcity.smartCity.TriggeredAction;
 
 @SuppressWarnings("all")
 public class SmartCitySemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -44,6 +46,9 @@ public class SmartCitySemanticSequencer extends AbstractDelegatingSemanticSequen
 			case SmartCityPackage.CONTROLLER:
 				sequence_Controller(context, (Controller) semanticObject); 
 				return; 
+			case SmartCityPackage.CYCLIC_ACTION:
+				sequence_CyclicAction(context, (CyclicAction) semanticObject); 
+				return; 
 			case SmartCityPackage.DELAY_RANGE:
 				sequence_DelayRange(context, (DelayRange) semanticObject); 
 				return; 
@@ -53,11 +58,17 @@ public class SmartCitySemanticSequencer extends AbstractDelegatingSemanticSequen
 			case SmartCityPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
 				return; 
+			case SmartCityPackage.MODULE:
+				sequence_Module(context, (uibk.ac.at.smartcity.smartCity.Module) semanticObject); 
+				return; 
 			case SmartCityPackage.NODE:
 				sequence_Node(context, (Node) semanticObject); 
 				return; 
 			case SmartCityPackage.SENSOR:
 				sequence_Sensor(context, (Sensor) semanticObject); 
+				return; 
+			case SmartCityPackage.TRIGGERED_ACTION:
+				sequence_TriggeredAction(context, (TriggeredAction) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -103,22 +114,36 @@ public class SmartCitySemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Linkable returns Controller
 	 *
 	 * Constraint:
-	 *     (name=ID type=ControllerType priority=INT)
+	 *     (name=ID type=ControllerType priority=INT cyclicActions+=CyclicAction*)
 	 * </pre>
 	 */
 	protected void sequence_Controller(ISerializationContext context, Controller semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     CyclicAction returns CyclicAction
+	 *
+	 * Constraint:
+	 *     (name=ID value=INT unit=FrequencyUnit)
+	 * </pre>
+	 */
+	protected void sequence_CyclicAction(ISerializationContext context, CyclicAction semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SmartCityPackage.Literals.LINKABLE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCityPackage.Literals.LINKABLE__NAME));
-			if (transientValues.isValueTransient(semanticObject, SmartCityPackage.Literals.CONTROLLER__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCityPackage.Literals.CONTROLLER__TYPE));
-			if (transientValues.isValueTransient(semanticObject, SmartCityPackage.Literals.CONTROLLER__PRIORITY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCityPackage.Literals.CONTROLLER__PRIORITY));
+			if (transientValues.isValueTransient(semanticObject, SmartCityPackage.Literals.CYCLIC_ACTION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCityPackage.Literals.CYCLIC_ACTION__NAME));
+			if (transientValues.isValueTransient(semanticObject, SmartCityPackage.Literals.CYCLIC_ACTION__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCityPackage.Literals.CYCLIC_ACTION__VALUE));
+			if (transientValues.isValueTransient(semanticObject, SmartCityPackage.Literals.CYCLIC_ACTION__UNIT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCityPackage.Literals.CYCLIC_ACTION__UNIT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getControllerAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getControllerAccess().getTypeControllerTypeEnumRuleCall_3_0(), semanticObject.getType());
-		feeder.accept(grammarAccess.getControllerAccess().getPriorityINTTerminalRuleCall_5_0(), semanticObject.getPriority());
+		feeder.accept(grammarAccess.getCyclicActionAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getCyclicActionAccess().getValueINTTerminalRuleCall_3_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getCyclicActionAccess().getUnitFrequencyUnitEnumRuleCall_4_0(), semanticObject.getUnit());
 		feeder.finish();
 	}
 	
@@ -153,7 +178,7 @@ public class SmartCitySemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Linkable returns InteroperableLayer
 	 *
 	 * Constraint:
-	 *     (name=ID priority=INT delay=INT)
+	 *     (name=ID priority=INT delay=DelayRange)
 	 * </pre>
 	 */
 	protected void sequence_InteroperableLayer(ISerializationContext context, InteroperableLayer semanticObject) {
@@ -168,7 +193,7 @@ public class SmartCitySemanticSequencer extends AbstractDelegatingSemanticSequen
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getInteroperableLayerAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getInteroperableLayerAccess().getPriorityINTTerminalRuleCall_3_0(), semanticObject.getPriority());
-		feeder.accept(grammarAccess.getInteroperableLayerAccess().getDelayINTTerminalRuleCall_5_0(), semanticObject.getDelay());
+		feeder.accept(grammarAccess.getInteroperableLayerAccess().getDelayDelayRangeParserRuleCall_5_0(), semanticObject.getDelay());
 		feeder.finish();
 	}
 	
@@ -190,11 +215,25 @@ public class SmartCitySemanticSequencer extends AbstractDelegatingSemanticSequen
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     Module returns Module
+	 *
+	 * Constraint:
+	 *     (name=ID priority=INT cyclicActions+=CyclicAction*)
+	 * </pre>
+	 */
+	protected void sequence_Module(ISerializationContext context, uibk.ac.at.smartcity.smartCity.Module semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     Node returns Node
 	 *     Linkable returns Node
 	 *
 	 * Constraint:
-	 *     (name=ID sensors+=Sensor* controller=Controller links+=CommunicationLink*)
+	 *     (name=ID sensors+=Sensor* modules+=Module* controller=Controller links+=CommunicationLink*)
 	 * </pre>
 	 */
 	protected void sequence_Node(ISerializationContext context, Node semanticObject) {
@@ -209,22 +248,30 @@ public class SmartCitySemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Linkable returns Sensor
 	 *
 	 * Constraint:
-	 *     (name=ID type=SensorType priority=INT)
+	 *     (name=ID type=SensorType priority=INT cyclicActions+=CyclicAction*)
 	 * </pre>
 	 */
 	protected void sequence_Sensor(ISerializationContext context, Sensor semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     TriggeredAction returns TriggeredAction
+	 *
+	 * Constraint:
+	 *     name=ID
+	 * </pre>
+	 */
+	protected void sequence_TriggeredAction(ISerializationContext context, TriggeredAction semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SmartCityPackage.Literals.LINKABLE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCityPackage.Literals.LINKABLE__NAME));
-			if (transientValues.isValueTransient(semanticObject, SmartCityPackage.Literals.SENSOR__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCityPackage.Literals.SENSOR__TYPE));
-			if (transientValues.isValueTransient(semanticObject, SmartCityPackage.Literals.SENSOR__PRIORITY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCityPackage.Literals.SENSOR__PRIORITY));
+			if (transientValues.isValueTransient(semanticObject, SmartCityPackage.Literals.TRIGGERED_ACTION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCityPackage.Literals.TRIGGERED_ACTION__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSensorAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getSensorAccess().getTypeSensorTypeEnumRuleCall_3_0(), semanticObject.getType());
-		feeder.accept(grammarAccess.getSensorAccess().getPriorityINTTerminalRuleCall_5_0(), semanticObject.getPriority());
+		feeder.accept(grammarAccess.getTriggeredActionAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	

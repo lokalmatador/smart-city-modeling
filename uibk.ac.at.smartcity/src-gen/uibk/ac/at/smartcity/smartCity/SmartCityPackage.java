@@ -112,7 +112,7 @@ public interface SmartCityPackage extends EPackage
    * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getLinkable()
    * @generated
    */
-  int LINKABLE = 6;
+  int LINKABLE = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -161,7 +161,7 @@ public interface SmartCityPackage extends EPackage
   int INTEROPERABLE_LAYER__PRIORITY = LINKABLE_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Delay</b></em>' attribute.
+   * The feature id for the '<em><b>Delay</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -207,13 +207,22 @@ public interface SmartCityPackage extends EPackage
   int NODE__SENSORS = LINKABLE_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Modules</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NODE__MODULES = LINKABLE_FEATURE_COUNT + 1;
+
+  /**
    * The feature id for the '<em><b>Controller</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NODE__CONTROLLER = LINKABLE_FEATURE_COUNT + 1;
+  int NODE__CONTROLLER = LINKABLE_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Links</b></em>' containment reference list.
@@ -222,7 +231,7 @@ public interface SmartCityPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NODE__LINKS = LINKABLE_FEATURE_COUNT + 2;
+  int NODE__LINKS = LINKABLE_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Node</em>' class.
@@ -231,7 +240,7 @@ public interface SmartCityPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NODE_FEATURE_COUNT = LINKABLE_FEATURE_COUNT + 3;
+  int NODE_FEATURE_COUNT = LINKABLE_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link uibk.ac.at.smartcity.smartCity.impl.SensorImpl <em>Sensor</em>}' class.
@@ -271,13 +280,22 @@ public interface SmartCityPackage extends EPackage
   int SENSOR__PRIORITY = LINKABLE_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Cyclic Actions</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SENSOR__CYCLIC_ACTIONS = LINKABLE_FEATURE_COUNT + 2;
+
+  /**
    * The number of structural features of the '<em>Sensor</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SENSOR_FEATURE_COUNT = LINKABLE_FEATURE_COUNT + 2;
+  int SENSOR_FEATURE_COUNT = LINKABLE_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link uibk.ac.at.smartcity.smartCity.impl.CommunicationLinkImpl <em>Communication Link</em>}' class.
@@ -381,13 +399,68 @@ public interface SmartCityPackage extends EPackage
   int CONTROLLER__PRIORITY = LINKABLE_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Cyclic Actions</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTROLLER__CYCLIC_ACTIONS = LINKABLE_FEATURE_COUNT + 2;
+
+  /**
    * The number of structural features of the '<em>Controller</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONTROLLER_FEATURE_COUNT = LINKABLE_FEATURE_COUNT + 2;
+  int CONTROLLER_FEATURE_COUNT = LINKABLE_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link uibk.ac.at.smartcity.smartCity.impl.ModuleImpl <em>Module</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uibk.ac.at.smartcity.smartCity.impl.ModuleImpl
+   * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getModule()
+   * @generated
+   */
+  int MODULE = 6;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODULE__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Priority</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODULE__PRIORITY = 1;
+
+  /**
+   * The feature id for the '<em><b>Cyclic Actions</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODULE__CYCLIC_ACTIONS = 2;
+
+  /**
+   * The number of structural features of the '<em>Module</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODULE_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link uibk.ac.at.smartcity.smartCity.impl.DelayRangeImpl <em>Delay Range</em>}' class.
@@ -397,7 +470,7 @@ public interface SmartCityPackage extends EPackage
    * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getDelayRange()
    * @generated
    */
-  int DELAY_RANGE = 7;
+  int DELAY_RANGE = 8;
 
   /**
    * The feature id for the '<em><b>Min</b></em>' attribute.
@@ -427,6 +500,80 @@ public interface SmartCityPackage extends EPackage
   int DELAY_RANGE_FEATURE_COUNT = 2;
 
   /**
+   * The meta object id for the '{@link uibk.ac.at.smartcity.smartCity.impl.CyclicActionImpl <em>Cyclic Action</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uibk.ac.at.smartcity.smartCity.impl.CyclicActionImpl
+   * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getCyclicAction()
+   * @generated
+   */
+  int CYCLIC_ACTION = 9;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CYCLIC_ACTION__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CYCLIC_ACTION__VALUE = 1;
+
+  /**
+   * The feature id for the '<em><b>Unit</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CYCLIC_ACTION__UNIT = 2;
+
+  /**
+   * The number of structural features of the '<em>Cyclic Action</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CYCLIC_ACTION_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link uibk.ac.at.smartcity.smartCity.impl.TriggeredActionImpl <em>Triggered Action</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uibk.ac.at.smartcity.smartCity.impl.TriggeredActionImpl
+   * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getTriggeredAction()
+   * @generated
+   */
+  int TRIGGERED_ACTION = 10;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRIGGERED_ACTION__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Triggered Action</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRIGGERED_ACTION_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link uibk.ac.at.smartcity.smartCity.SensorType <em>Sensor Type</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -434,7 +581,7 @@ public interface SmartCityPackage extends EPackage
    * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getSensorType()
    * @generated
    */
-  int SENSOR_TYPE = 8;
+  int SENSOR_TYPE = 11;
 
   /**
    * The meta object id for the '{@link uibk.ac.at.smartcity.smartCity.ControllerType <em>Controller Type</em>}' enum.
@@ -444,7 +591,7 @@ public interface SmartCityPackage extends EPackage
    * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getControllerType()
    * @generated
    */
-  int CONTROLLER_TYPE = 9;
+  int CONTROLLER_TYPE = 12;
 
   /**
    * The meta object id for the '{@link uibk.ac.at.smartcity.smartCity.LinkType <em>Link Type</em>}' enum.
@@ -454,7 +601,7 @@ public interface SmartCityPackage extends EPackage
    * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getLinkType()
    * @generated
    */
-  int LINK_TYPE = 10;
+  int LINK_TYPE = 13;
 
   /**
    * The meta object id for the '{@link uibk.ac.at.smartcity.smartCity.DataType <em>Data Type</em>}' enum.
@@ -464,7 +611,17 @@ public interface SmartCityPackage extends EPackage
    * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getDataType()
    * @generated
    */
-  int DATA_TYPE = 11;
+  int DATA_TYPE = 14;
+
+  /**
+   * The meta object id for the '{@link uibk.ac.at.smartcity.smartCity.FrequencyUnit <em>Frequency Unit</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uibk.ac.at.smartcity.smartCity.FrequencyUnit
+   * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getFrequencyUnit()
+   * @generated
+   */
+  int FREQUENCY_UNIT = 15;
 
 
   /**
@@ -532,15 +689,15 @@ public interface SmartCityPackage extends EPackage
   EAttribute getInteroperableLayer_Priority();
 
   /**
-   * Returns the meta object for the attribute '{@link uibk.ac.at.smartcity.smartCity.InteroperableLayer#getDelay <em>Delay</em>}'.
+   * Returns the meta object for the containment reference '{@link uibk.ac.at.smartcity.smartCity.InteroperableLayer#getDelay <em>Delay</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Delay</em>'.
+   * @return the meta object for the containment reference '<em>Delay</em>'.
    * @see uibk.ac.at.smartcity.smartCity.InteroperableLayer#getDelay()
    * @see #getInteroperableLayer()
    * @generated
    */
-  EAttribute getInteroperableLayer_Delay();
+  EReference getInteroperableLayer_Delay();
 
   /**
    * Returns the meta object for class '{@link uibk.ac.at.smartcity.smartCity.Node <em>Node</em>}'.
@@ -562,6 +719,17 @@ public interface SmartCityPackage extends EPackage
    * @generated
    */
   EReference getNode_Sensors();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uibk.ac.at.smartcity.smartCity.Node#getModules <em>Modules</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Modules</em>'.
+   * @see uibk.ac.at.smartcity.smartCity.Node#getModules()
+   * @see #getNode()
+   * @generated
+   */
+  EReference getNode_Modules();
 
   /**
    * Returns the meta object for the containment reference '{@link uibk.ac.at.smartcity.smartCity.Node#getController <em>Controller</em>}'.
@@ -616,6 +784,17 @@ public interface SmartCityPackage extends EPackage
    * @generated
    */
   EAttribute getSensor_Priority();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uibk.ac.at.smartcity.smartCity.Sensor#getCyclicActions <em>Cyclic Actions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Cyclic Actions</em>'.
+   * @see uibk.ac.at.smartcity.smartCity.Sensor#getCyclicActions()
+   * @see #getSensor()
+   * @generated
+   */
+  EReference getSensor_CyclicActions();
 
   /**
    * Returns the meta object for class '{@link uibk.ac.at.smartcity.smartCity.CommunicationLink <em>Communication Link</em>}'.
@@ -715,6 +894,60 @@ public interface SmartCityPackage extends EPackage
   EAttribute getController_Priority();
 
   /**
+   * Returns the meta object for the containment reference list '{@link uibk.ac.at.smartcity.smartCity.Controller#getCyclicActions <em>Cyclic Actions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Cyclic Actions</em>'.
+   * @see uibk.ac.at.smartcity.smartCity.Controller#getCyclicActions()
+   * @see #getController()
+   * @generated
+   */
+  EReference getController_CyclicActions();
+
+  /**
+   * Returns the meta object for class '{@link uibk.ac.at.smartcity.smartCity.Module <em>Module</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Module</em>'.
+   * @see uibk.ac.at.smartcity.smartCity.Module
+   * @generated
+   */
+  EClass getModule();
+
+  /**
+   * Returns the meta object for the attribute '{@link uibk.ac.at.smartcity.smartCity.Module#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see uibk.ac.at.smartcity.smartCity.Module#getName()
+   * @see #getModule()
+   * @generated
+   */
+  EAttribute getModule_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link uibk.ac.at.smartcity.smartCity.Module#getPriority <em>Priority</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Priority</em>'.
+   * @see uibk.ac.at.smartcity.smartCity.Module#getPriority()
+   * @see #getModule()
+   * @generated
+   */
+  EAttribute getModule_Priority();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uibk.ac.at.smartcity.smartCity.Module#getCyclicActions <em>Cyclic Actions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Cyclic Actions</em>'.
+   * @see uibk.ac.at.smartcity.smartCity.Module#getCyclicActions()
+   * @see #getModule()
+   * @generated
+   */
+  EReference getModule_CyclicActions();
+
+  /**
    * Returns the meta object for class '{@link uibk.ac.at.smartcity.smartCity.Linkable <em>Linkable</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -768,6 +1001,70 @@ public interface SmartCityPackage extends EPackage
   EAttribute getDelayRange_Max();
 
   /**
+   * Returns the meta object for class '{@link uibk.ac.at.smartcity.smartCity.CyclicAction <em>Cyclic Action</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Cyclic Action</em>'.
+   * @see uibk.ac.at.smartcity.smartCity.CyclicAction
+   * @generated
+   */
+  EClass getCyclicAction();
+
+  /**
+   * Returns the meta object for the attribute '{@link uibk.ac.at.smartcity.smartCity.CyclicAction#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see uibk.ac.at.smartcity.smartCity.CyclicAction#getName()
+   * @see #getCyclicAction()
+   * @generated
+   */
+  EAttribute getCyclicAction_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link uibk.ac.at.smartcity.smartCity.CyclicAction#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see uibk.ac.at.smartcity.smartCity.CyclicAction#getValue()
+   * @see #getCyclicAction()
+   * @generated
+   */
+  EAttribute getCyclicAction_Value();
+
+  /**
+   * Returns the meta object for the attribute '{@link uibk.ac.at.smartcity.smartCity.CyclicAction#getUnit <em>Unit</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Unit</em>'.
+   * @see uibk.ac.at.smartcity.smartCity.CyclicAction#getUnit()
+   * @see #getCyclicAction()
+   * @generated
+   */
+  EAttribute getCyclicAction_Unit();
+
+  /**
+   * Returns the meta object for class '{@link uibk.ac.at.smartcity.smartCity.TriggeredAction <em>Triggered Action</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Triggered Action</em>'.
+   * @see uibk.ac.at.smartcity.smartCity.TriggeredAction
+   * @generated
+   */
+  EClass getTriggeredAction();
+
+  /**
+   * Returns the meta object for the attribute '{@link uibk.ac.at.smartcity.smartCity.TriggeredAction#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see uibk.ac.at.smartcity.smartCity.TriggeredAction#getName()
+   * @see #getTriggeredAction()
+   * @generated
+   */
+  EAttribute getTriggeredAction_Name();
+
+  /**
    * Returns the meta object for enum '{@link uibk.ac.at.smartcity.smartCity.SensorType <em>Sensor Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -806,6 +1103,16 @@ public interface SmartCityPackage extends EPackage
    * @generated
    */
   EEnum getDataType();
+
+  /**
+   * Returns the meta object for enum '{@link uibk.ac.at.smartcity.smartCity.FrequencyUnit <em>Frequency Unit</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Frequency Unit</em>'.
+   * @see uibk.ac.at.smartcity.smartCity.FrequencyUnit
+   * @generated
+   */
+  EEnum getFrequencyUnit();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -883,12 +1190,12 @@ public interface SmartCityPackage extends EPackage
     EAttribute INTEROPERABLE_LAYER__PRIORITY = eINSTANCE.getInteroperableLayer_Priority();
 
     /**
-     * The meta object literal for the '<em><b>Delay</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Delay</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute INTEROPERABLE_LAYER__DELAY = eINSTANCE.getInteroperableLayer_Delay();
+    EReference INTEROPERABLE_LAYER__DELAY = eINSTANCE.getInteroperableLayer_Delay();
 
     /**
      * The meta object literal for the '{@link uibk.ac.at.smartcity.smartCity.impl.NodeImpl <em>Node</em>}' class.
@@ -907,6 +1214,14 @@ public interface SmartCityPackage extends EPackage
      * @generated
      */
     EReference NODE__SENSORS = eINSTANCE.getNode_Sensors();
+
+    /**
+     * The meta object literal for the '<em><b>Modules</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NODE__MODULES = eINSTANCE.getNode_Modules();
 
     /**
      * The meta object literal for the '<em><b>Controller</b></em>' containment reference feature.
@@ -949,6 +1264,14 @@ public interface SmartCityPackage extends EPackage
      * @generated
      */
     EAttribute SENSOR__PRIORITY = eINSTANCE.getSensor_Priority();
+
+    /**
+     * The meta object literal for the '<em><b>Cyclic Actions</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SENSOR__CYCLIC_ACTIONS = eINSTANCE.getSensor_CyclicActions();
 
     /**
      * The meta object literal for the '{@link uibk.ac.at.smartcity.smartCity.impl.CommunicationLinkImpl <em>Communication Link</em>}' class.
@@ -1027,6 +1350,48 @@ public interface SmartCityPackage extends EPackage
     EAttribute CONTROLLER__PRIORITY = eINSTANCE.getController_Priority();
 
     /**
+     * The meta object literal for the '<em><b>Cyclic Actions</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONTROLLER__CYCLIC_ACTIONS = eINSTANCE.getController_CyclicActions();
+
+    /**
+     * The meta object literal for the '{@link uibk.ac.at.smartcity.smartCity.impl.ModuleImpl <em>Module</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uibk.ac.at.smartcity.smartCity.impl.ModuleImpl
+     * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getModule()
+     * @generated
+     */
+    EClass MODULE = eINSTANCE.getModule();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MODULE__NAME = eINSTANCE.getModule_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Priority</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MODULE__PRIORITY = eINSTANCE.getModule_Priority();
+
+    /**
+     * The meta object literal for the '<em><b>Cyclic Actions</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODULE__CYCLIC_ACTIONS = eINSTANCE.getModule_CyclicActions();
+
+    /**
      * The meta object literal for the '{@link uibk.ac.at.smartcity.smartCity.impl.LinkableImpl <em>Linkable</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1071,6 +1436,58 @@ public interface SmartCityPackage extends EPackage
     EAttribute DELAY_RANGE__MAX = eINSTANCE.getDelayRange_Max();
 
     /**
+     * The meta object literal for the '{@link uibk.ac.at.smartcity.smartCity.impl.CyclicActionImpl <em>Cyclic Action</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uibk.ac.at.smartcity.smartCity.impl.CyclicActionImpl
+     * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getCyclicAction()
+     * @generated
+     */
+    EClass CYCLIC_ACTION = eINSTANCE.getCyclicAction();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CYCLIC_ACTION__NAME = eINSTANCE.getCyclicAction_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CYCLIC_ACTION__VALUE = eINSTANCE.getCyclicAction_Value();
+
+    /**
+     * The meta object literal for the '<em><b>Unit</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CYCLIC_ACTION__UNIT = eINSTANCE.getCyclicAction_Unit();
+
+    /**
+     * The meta object literal for the '{@link uibk.ac.at.smartcity.smartCity.impl.TriggeredActionImpl <em>Triggered Action</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uibk.ac.at.smartcity.smartCity.impl.TriggeredActionImpl
+     * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getTriggeredAction()
+     * @generated
+     */
+    EClass TRIGGERED_ACTION = eINSTANCE.getTriggeredAction();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TRIGGERED_ACTION__NAME = eINSTANCE.getTriggeredAction_Name();
+
+    /**
      * The meta object literal for the '{@link uibk.ac.at.smartcity.smartCity.SensorType <em>Sensor Type</em>}' enum.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1109,6 +1526,16 @@ public interface SmartCityPackage extends EPackage
      * @generated
      */
     EEnum DATA_TYPE = eINSTANCE.getDataType();
+
+    /**
+     * The meta object literal for the '{@link uibk.ac.at.smartcity.smartCity.FrequencyUnit <em>Frequency Unit</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uibk.ac.at.smartcity.smartCity.FrequencyUnit
+     * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getFrequencyUnit()
+     * @generated
+     */
+    EEnum FREQUENCY_UNIT = eINSTANCE.getFrequencyUnit();
 
   }
 

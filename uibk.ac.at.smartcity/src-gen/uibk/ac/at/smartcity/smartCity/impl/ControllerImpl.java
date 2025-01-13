@@ -3,14 +3,24 @@
  */
 package uibk.ac.at.smartcity.smartCity.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
 import uibk.ac.at.smartcity.smartCity.Controller;
 import uibk.ac.at.smartcity.smartCity.ControllerType;
+import uibk.ac.at.smartcity.smartCity.CyclicAction;
 import uibk.ac.at.smartcity.smartCity.SmartCityPackage;
 
 /**
@@ -23,6 +33,7 @@ import uibk.ac.at.smartcity.smartCity.SmartCityPackage;
  * <ul>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.ControllerImpl#getType <em>Type</em>}</li>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.ControllerImpl#getPriority <em>Priority</em>}</li>
+ *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.ControllerImpl#getCyclicActions <em>Cyclic Actions</em>}</li>
  * </ul>
  *
  * @generated
@@ -68,6 +79,16 @@ public class ControllerImpl extends LinkableImpl implements Controller
    * @ordered
    */
   protected int priority = PRIORITY_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getCyclicActions() <em>Cyclic Actions</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCyclicActions()
+   * @generated
+   * @ordered
+   */
+  protected EList<CyclicAction> cyclicActions;
 
   /**
    * <!-- begin-user-doc -->
@@ -146,6 +167,37 @@ public class ControllerImpl extends LinkableImpl implements Controller
    * @generated
    */
   @Override
+  public EList<CyclicAction> getCyclicActions()
+  {
+    if (cyclicActions == null)
+    {
+      cyclicActions = new EObjectContainmentEList<CyclicAction>(CyclicAction.class, this, SmartCityPackage.CONTROLLER__CYCLIC_ACTIONS);
+    }
+    return cyclicActions;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case SmartCityPackage.CONTROLLER__CYCLIC_ACTIONS:
+        return ((InternalEList<?>)getCyclicActions()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
@@ -154,6 +206,8 @@ public class ControllerImpl extends LinkableImpl implements Controller
         return getType();
       case SmartCityPackage.CONTROLLER__PRIORITY:
         return getPriority();
+      case SmartCityPackage.CONTROLLER__CYCLIC_ACTIONS:
+        return getCyclicActions();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -163,6 +217,7 @@ public class ControllerImpl extends LinkableImpl implements Controller
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -173,6 +228,10 @@ public class ControllerImpl extends LinkableImpl implements Controller
         return;
       case SmartCityPackage.CONTROLLER__PRIORITY:
         setPriority((Integer)newValue);
+        return;
+      case SmartCityPackage.CONTROLLER__CYCLIC_ACTIONS:
+        getCyclicActions().clear();
+        getCyclicActions().addAll((Collection<? extends CyclicAction>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -194,6 +253,9 @@ public class ControllerImpl extends LinkableImpl implements Controller
       case SmartCityPackage.CONTROLLER__PRIORITY:
         setPriority(PRIORITY_EDEFAULT);
         return;
+      case SmartCityPackage.CONTROLLER__CYCLIC_ACTIONS:
+        getCyclicActions().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -212,6 +274,8 @@ public class ControllerImpl extends LinkableImpl implements Controller
         return type != TYPE_EDEFAULT;
       case SmartCityPackage.CONTROLLER__PRIORITY:
         return priority != PRIORITY_EDEFAULT;
+      case SmartCityPackage.CONTROLLER__CYCLIC_ACTIONS:
+        return cyclicActions != null && !cyclicActions.isEmpty();
     }
     return super.eIsSet(featureID);
   }

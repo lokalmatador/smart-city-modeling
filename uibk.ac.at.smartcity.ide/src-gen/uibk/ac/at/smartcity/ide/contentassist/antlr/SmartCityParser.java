@@ -36,13 +36,17 @@ public class SmartCityParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getControllerTypeAccess().getAlternatives(), "rule__ControllerType__Alternatives");
 			builder.put(grammarAccess.getLinkTypeAccess().getAlternatives(), "rule__LinkType__Alternatives");
 			builder.put(grammarAccess.getDataTypeAccess().getAlternatives(), "rule__DataType__Alternatives");
+			builder.put(grammarAccess.getFrequencyUnitAccess().getAlternatives(), "rule__FrequencyUnit__Alternatives");
 			builder.put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
 			builder.put(grammarAccess.getInteroperableLayerAccess().getGroup(), "rule__InteroperableLayer__Group__0");
 			builder.put(grammarAccess.getNodeAccess().getGroup(), "rule__Node__Group__0");
 			builder.put(grammarAccess.getSensorAccess().getGroup(), "rule__Sensor__Group__0");
 			builder.put(grammarAccess.getCommunicationLinkAccess().getGroup(), "rule__CommunicationLink__Group__0");
 			builder.put(grammarAccess.getControllerAccess().getGroup(), "rule__Controller__Group__0");
+			builder.put(grammarAccess.getModuleAccess().getGroup(), "rule__Module__Group__0");
 			builder.put(grammarAccess.getDelayRangeAccess().getGroup(), "rule__DelayRange__Group__0");
+			builder.put(grammarAccess.getCyclicActionAccess().getGroup(), "rule__CyclicAction__Group__0");
+			builder.put(grammarAccess.getTriggeredActionAccess().getGroup(), "rule__TriggeredAction__Group__0");
 			builder.put(grammarAccess.getModelAccess().getNodesAssignment_0(), "rule__Model__NodesAssignment_0");
 			builder.put(grammarAccess.getModelAccess().getInteroperableLayerAssignment_1(), "rule__Model__InteroperableLayerAssignment_1");
 			builder.put(grammarAccess.getModelAccess().getGlobalLinksAssignment_2(), "rule__Model__GlobalLinksAssignment_2");
@@ -51,11 +55,13 @@ public class SmartCityParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getInteroperableLayerAccess().getDelayAssignment_5(), "rule__InteroperableLayer__DelayAssignment_5");
 			builder.put(grammarAccess.getNodeAccess().getNameAssignment_1(), "rule__Node__NameAssignment_1");
 			builder.put(grammarAccess.getNodeAccess().getSensorsAssignment_3(), "rule__Node__SensorsAssignment_3");
-			builder.put(grammarAccess.getNodeAccess().getControllerAssignment_4(), "rule__Node__ControllerAssignment_4");
-			builder.put(grammarAccess.getNodeAccess().getLinksAssignment_5(), "rule__Node__LinksAssignment_5");
+			builder.put(grammarAccess.getNodeAccess().getModulesAssignment_4(), "rule__Node__ModulesAssignment_4");
+			builder.put(grammarAccess.getNodeAccess().getControllerAssignment_5(), "rule__Node__ControllerAssignment_5");
+			builder.put(grammarAccess.getNodeAccess().getLinksAssignment_6(), "rule__Node__LinksAssignment_6");
 			builder.put(grammarAccess.getSensorAccess().getNameAssignment_1(), "rule__Sensor__NameAssignment_1");
 			builder.put(grammarAccess.getSensorAccess().getTypeAssignment_3(), "rule__Sensor__TypeAssignment_3");
 			builder.put(grammarAccess.getSensorAccess().getPriorityAssignment_5(), "rule__Sensor__PriorityAssignment_5");
+			builder.put(grammarAccess.getSensorAccess().getCyclicActionsAssignment_6(), "rule__Sensor__CyclicActionsAssignment_6");
 			builder.put(grammarAccess.getCommunicationLinkAccess().getTypeAssignment_1(), "rule__CommunicationLink__TypeAssignment_1");
 			builder.put(grammarAccess.getCommunicationLinkAccess().getOriginAssignment_3(), "rule__CommunicationLink__OriginAssignment_3");
 			builder.put(grammarAccess.getCommunicationLinkAccess().getDestinationAssignment_5(), "rule__CommunicationLink__DestinationAssignment_5");
@@ -64,8 +70,16 @@ public class SmartCityParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getControllerAccess().getNameAssignment_1(), "rule__Controller__NameAssignment_1");
 			builder.put(grammarAccess.getControllerAccess().getTypeAssignment_3(), "rule__Controller__TypeAssignment_3");
 			builder.put(grammarAccess.getControllerAccess().getPriorityAssignment_5(), "rule__Controller__PriorityAssignment_5");
+			builder.put(grammarAccess.getControllerAccess().getCyclicActionsAssignment_6(), "rule__Controller__CyclicActionsAssignment_6");
+			builder.put(grammarAccess.getModuleAccess().getNameAssignment_1(), "rule__Module__NameAssignment_1");
+			builder.put(grammarAccess.getModuleAccess().getPriorityAssignment_3(), "rule__Module__PriorityAssignment_3");
+			builder.put(grammarAccess.getModuleAccess().getCyclicActionsAssignment_4(), "rule__Module__CyclicActionsAssignment_4");
 			builder.put(grammarAccess.getDelayRangeAccess().getMinAssignment_1(), "rule__DelayRange__MinAssignment_1");
 			builder.put(grammarAccess.getDelayRangeAccess().getMaxAssignment_3(), "rule__DelayRange__MaxAssignment_3");
+			builder.put(grammarAccess.getCyclicActionAccess().getNameAssignment_1(), "rule__CyclicAction__NameAssignment_1");
+			builder.put(grammarAccess.getCyclicActionAccess().getValueAssignment_3(), "rule__CyclicAction__ValueAssignment_3");
+			builder.put(grammarAccess.getCyclicActionAccess().getUnitAssignment_4(), "rule__CyclicAction__UnitAssignment_4");
+			builder.put(grammarAccess.getTriggeredActionAccess().getNameAssignment_1(), "rule__TriggeredAction__NameAssignment_1");
 		}
 	}
 	

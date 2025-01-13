@@ -8,7 +8,17 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
-import uibk.ac.at.smartcity.smartCity.*;
+import uibk.ac.at.smartcity.smartCity.CommunicationLink;
+import uibk.ac.at.smartcity.smartCity.Controller;
+import uibk.ac.at.smartcity.smartCity.CyclicAction;
+import uibk.ac.at.smartcity.smartCity.DelayRange;
+import uibk.ac.at.smartcity.smartCity.InteroperableLayer;
+import uibk.ac.at.smartcity.smartCity.Linkable;
+import uibk.ac.at.smartcity.smartCity.Model;
+import uibk.ac.at.smartcity.smartCity.Node;
+import uibk.ac.at.smartcity.smartCity.Sensor;
+import uibk.ac.at.smartcity.smartCity.SmartCityPackage;
+import uibk.ac.at.smartcity.smartCity.TriggeredAction;
 
 /**
  * <!-- begin-user-doc -->
@@ -119,6 +129,13 @@ public class SmartCitySwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SmartCityPackage.MODULE:
+      {
+        uibk.ac.at.smartcity.smartCity.Module module = (uibk.ac.at.smartcity.smartCity.Module)theEObject;
+        T result = caseModule(module);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SmartCityPackage.LINKABLE:
       {
         Linkable linkable = (Linkable)theEObject;
@@ -130,6 +147,20 @@ public class SmartCitySwitch<T> extends Switch<T>
       {
         DelayRange delayRange = (DelayRange)theEObject;
         T result = caseDelayRange(delayRange);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SmartCityPackage.CYCLIC_ACTION:
+      {
+        CyclicAction cyclicAction = (CyclicAction)theEObject;
+        T result = caseCyclicAction(cyclicAction);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SmartCityPackage.TRIGGERED_ACTION:
+      {
+        TriggeredAction triggeredAction = (TriggeredAction)theEObject;
+        T result = caseTriggeredAction(triggeredAction);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -234,6 +265,22 @@ public class SmartCitySwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Module</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Module</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseModule(uibk.ac.at.smartcity.smartCity.Module object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Linkable</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -261,6 +308,38 @@ public class SmartCitySwitch<T> extends Switch<T>
    * @generated
    */
   public T caseDelayRange(DelayRange object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Cyclic Action</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Cyclic Action</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCyclicAction(CyclicAction object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Triggered Action</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Triggered Action</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTriggeredAction(TriggeredAction object)
   {
     return null;
   }

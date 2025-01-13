@@ -203,19 +203,20 @@ ruleInteroperableLayer returns [EObject current=null]
 		}
 		(
 			(
-				lv_delay_5_0=RULE_INT
 				{
-					newLeafNode(lv_delay_5_0, grammarAccess.getInteroperableLayerAccess().getDelayINTTerminalRuleCall_5_0());
+					newCompositeNode(grammarAccess.getInteroperableLayerAccess().getDelayDelayRangeParserRuleCall_5_0());
 				}
+				lv_delay_5_0=ruleDelayRange
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getInteroperableLayerRule());
+						$current = createModelElementForParent(grammarAccess.getInteroperableLayerRule());
 					}
-					setWithLastConsumed(
+					set(
 						$current,
 						"delay",
 						lv_delay_5_0,
-						"org.eclipse.xtext.common.Terminals.INT");
+						"uibk.ac.at.smartcity.SmartCity.DelayRange");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
@@ -286,9 +287,28 @@ ruleNode returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getNodeAccess().getControllerControllerParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getNodeAccess().getModulesModuleParserRuleCall_4_0());
 				}
-				lv_controller_4_0=ruleController
+				lv_modules_4_0=ruleModule
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getNodeRule());
+					}
+					add(
+						$current,
+						"modules",
+						lv_modules_4_0,
+						"uibk.ac.at.smartcity.SmartCity.Module");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getNodeAccess().getControllerControllerParserRuleCall_5_0());
+				}
+				lv_controller_5_0=ruleController
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getNodeRule());
@@ -296,7 +316,7 @@ ruleNode returns [EObject current=null]
 					set(
 						$current,
 						"controller",
-						lv_controller_4_0,
+						lv_controller_5_0,
 						"uibk.ac.at.smartcity.SmartCity.Controller");
 					afterParserOrEnumRuleCall();
 				}
@@ -305,9 +325,9 @@ ruleNode returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getNodeAccess().getLinksCommunicationLinkParserRuleCall_5_0());
+					newCompositeNode(grammarAccess.getNodeAccess().getLinksCommunicationLinkParserRuleCall_6_0());
 				}
-				lv_links_5_0=ruleCommunicationLink
+				lv_links_6_0=ruleCommunicationLink
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getNodeRule());
@@ -315,15 +335,15 @@ ruleNode returns [EObject current=null]
 					add(
 						$current,
 						"links",
-						lv_links_5_0,
+						lv_links_6_0,
 						"uibk.ac.at.smartcity.SmartCity.CommunicationLink");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
-		otherlv_6='}'
+		otherlv_7='}'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getNodeAccess().getRightCurlyBracketKeyword_6());
+			newLeafNode(otherlv_7, grammarAccess.getNodeAccess().getRightCurlyBracketKeyword_7());
 		}
 	)
 ;
@@ -411,6 +431,25 @@ ruleSensor returns [EObject current=null]
 				}
 			)
 		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getSensorAccess().getCyclicActionsCyclicActionParserRuleCall_6_0());
+				}
+				lv_cyclicActions_6_0=ruleCyclicAction
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getSensorRule());
+					}
+					add(
+						$current,
+						"cyclicActions",
+						lv_cyclicActions_6_0,
+						"uibk.ac.at.smartcity.SmartCity.CyclicAction");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
 	)
 ;
 
@@ -627,6 +666,107 @@ ruleController returns [EObject current=null]
 				}
 			)
 		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getControllerAccess().getCyclicActionsCyclicActionParserRuleCall_6_0());
+				}
+				lv_cyclicActions_6_0=ruleCyclicAction
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getControllerRule());
+					}
+					add(
+						$current,
+						"cyclicActions",
+						lv_cyclicActions_6_0,
+						"uibk.ac.at.smartcity.SmartCity.CyclicAction");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+	)
+;
+
+// Entry rule entryRuleModule
+entryRuleModule returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getModuleRule()); }
+	iv_ruleModule=ruleModule
+	{ $current=$iv_ruleModule.current; }
+	EOF;
+
+// Rule Module
+ruleModule returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='module'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getModuleAccess().getModuleKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getModuleAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getModuleRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_2='priority'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getModuleAccess().getPriorityKeyword_2());
+		}
+		(
+			(
+				lv_priority_3_0=RULE_INT
+				{
+					newLeafNode(lv_priority_3_0, grammarAccess.getModuleAccess().getPriorityINTTerminalRuleCall_3_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getModuleRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"priority",
+						lv_priority_3_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getModuleAccess().getCyclicActionsCyclicActionParserRuleCall_4_0());
+				}
+				lv_cyclicActions_4_0=ruleCyclicAction
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getModuleRule());
+					}
+					add(
+						$current,
+						"cyclicActions",
+						lv_cyclicActions_4_0,
+						"uibk.ac.at.smartcity.SmartCity.CyclicAction");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
 	)
 ;
 
@@ -694,6 +834,88 @@ ruleDelayRange returns [EObject current=null]
 		{
 			newLeafNode(otherlv_4, grammarAccess.getDelayRangeAccess().getRightSquareBracketKeyword_4());
 		}
+	)
+;
+
+// Entry rule entryRuleCyclicAction
+entryRuleCyclicAction returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getCyclicActionRule()); }
+	iv_ruleCyclicAction=ruleCyclicAction
+	{ $current=$iv_ruleCyclicAction.current; }
+	EOF;
+
+// Rule CyclicAction
+ruleCyclicAction returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='cyclicAction'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getCyclicActionAccess().getCyclicActionKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getCyclicActionAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getCyclicActionRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_2='frequency'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getCyclicActionAccess().getFrequencyKeyword_2());
+		}
+		(
+			(
+				lv_value_3_0=RULE_INT
+				{
+					newLeafNode(lv_value_3_0, grammarAccess.getCyclicActionAccess().getValueINTTerminalRuleCall_3_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getCyclicActionRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"value",
+						lv_value_3_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getCyclicActionAccess().getUnitFrequencyUnitEnumRuleCall_4_0());
+				}
+				lv_unit_4_0=ruleFrequencyUnit
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getCyclicActionRule());
+					}
+					set(
+						$current,
+						"unit",
+						lv_unit_4_0,
+						"uibk.ac.at.smartcity.SmartCity.FrequencyUnit");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 	)
 ;
 
@@ -853,6 +1075,65 @@ ruleLinkType returns [Enumerator current=null]
 			{
 				$current = grammarAccess.getLinkTypeAccess().getHTTPSEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
 				newLeafNode(enumLiteral_5, grammarAccess.getLinkTypeAccess().getHTTPSEnumLiteralDeclaration_5());
+			}
+		)
+	)
+;
+
+// Rule FrequencyUnit
+ruleFrequencyUnit returns [Enumerator current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			enumLiteral_0='HERTZ'
+			{
+				$current = grammarAccess.getFrequencyUnitAccess().getHERTZEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getFrequencyUnitAccess().getHERTZEnumLiteralDeclaration_0());
+			}
+		)
+		    |
+		(
+			enumLiteral_1='SECONDS'
+			{
+				$current = grammarAccess.getFrequencyUnitAccess().getSECONDSEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getFrequencyUnitAccess().getSECONDSEnumLiteralDeclaration_1());
+			}
+		)
+		    |
+		(
+			enumLiteral_2='MINUTES'
+			{
+				$current = grammarAccess.getFrequencyUnitAccess().getMINUTESEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_2, grammarAccess.getFrequencyUnitAccess().getMINUTESEnumLiteralDeclaration_2());
+			}
+		)
+		    |
+		(
+			enumLiteral_3='HOURS'
+			{
+				$current = grammarAccess.getFrequencyUnitAccess().getHOURSEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_3, grammarAccess.getFrequencyUnitAccess().getHOURSEnumLiteralDeclaration_3());
+			}
+		)
+		    |
+		(
+			enumLiteral_4='DAYS'
+			{
+				$current = grammarAccess.getFrequencyUnitAccess().getDAYSEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_4, grammarAccess.getFrequencyUnitAccess().getDAYSEnumLiteralDeclaration_4());
+			}
+		)
+		    |
+		(
+			enumLiteral_5='INF'
+			{
+				$current = grammarAccess.getFrequencyUnitAccess().getINFEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_5, grammarAccess.getFrequencyUnitAccess().getINFEnumLiteralDeclaration_5());
 			}
 		)
 	)

@@ -4,11 +4,14 @@
 package uibk.ac.at.smartcity.smartCity.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import uibk.ac.at.smartcity.smartCity.DelayRange;
 import uibk.ac.at.smartcity.smartCity.InteroperableLayer;
 import uibk.ac.at.smartcity.smartCity.SmartCityPackage;
 
@@ -49,24 +52,14 @@ public class InteroperableLayerImpl extends LinkableImpl implements Interoperabl
   protected int priority = PRIORITY_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getDelay() <em>Delay</em>}' attribute.
+   * The cached value of the '{@link #getDelay() <em>Delay</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getDelay()
    * @generated
    * @ordered
    */
-  protected static final int DELAY_EDEFAULT = 0;
-
-  /**
-   * The cached value of the '{@link #getDelay() <em>Delay</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDelay()
-   * @generated
-   * @ordered
-   */
-  protected int delay = DELAY_EDEFAULT;
+  protected DelayRange delay;
 
   /**
    * <!-- begin-user-doc -->
@@ -120,7 +113,7 @@ public class InteroperableLayerImpl extends LinkableImpl implements Interoperabl
    * @generated
    */
   @Override
-  public int getDelay()
+  public DelayRange getDelay()
   {
     return delay;
   }
@@ -130,13 +123,54 @@ public class InteroperableLayerImpl extends LinkableImpl implements Interoperabl
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setDelay(int newDelay)
+  public NotificationChain basicSetDelay(DelayRange newDelay, NotificationChain msgs)
   {
-    int oldDelay = delay;
+    DelayRange oldDelay = delay;
     delay = newDelay;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SmartCityPackage.INTEROPERABLE_LAYER__DELAY, oldDelay, delay));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmartCityPackage.INTEROPERABLE_LAYER__DELAY, oldDelay, newDelay);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDelay(DelayRange newDelay)
+  {
+    if (newDelay != delay)
+    {
+      NotificationChain msgs = null;
+      if (delay != null)
+        msgs = ((InternalEObject)delay).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SmartCityPackage.INTEROPERABLE_LAYER__DELAY, null, msgs);
+      if (newDelay != null)
+        msgs = ((InternalEObject)newDelay).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SmartCityPackage.INTEROPERABLE_LAYER__DELAY, null, msgs);
+      msgs = basicSetDelay(newDelay, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SmartCityPackage.INTEROPERABLE_LAYER__DELAY, newDelay, newDelay));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case SmartCityPackage.INTEROPERABLE_LAYER__DELAY:
+        return basicSetDelay(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -171,7 +205,7 @@ public class InteroperableLayerImpl extends LinkableImpl implements Interoperabl
         setPriority((Integer)newValue);
         return;
       case SmartCityPackage.INTEROPERABLE_LAYER__DELAY:
-        setDelay((Integer)newValue);
+        setDelay((DelayRange)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -191,7 +225,7 @@ public class InteroperableLayerImpl extends LinkableImpl implements Interoperabl
         setPriority(PRIORITY_EDEFAULT);
         return;
       case SmartCityPackage.INTEROPERABLE_LAYER__DELAY:
-        setDelay(DELAY_EDEFAULT);
+        setDelay((DelayRange)null);
         return;
     }
     super.eUnset(featureID);
@@ -210,7 +244,7 @@ public class InteroperableLayerImpl extends LinkableImpl implements Interoperabl
       case SmartCityPackage.INTEROPERABLE_LAYER__PRIORITY:
         return priority != PRIORITY_EDEFAULT;
       case SmartCityPackage.INTEROPERABLE_LAYER__DELAY:
-        return delay != DELAY_EDEFAULT;
+        return delay != null;
     }
     return super.eIsSet(featureID);
   }
@@ -228,8 +262,6 @@ public class InteroperableLayerImpl extends LinkableImpl implements Interoperabl
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (priority: ");
     result.append(priority);
-    result.append(", delay: ");
-    result.append(delay);
     result.append(')');
     return result.toString();
   }

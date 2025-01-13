@@ -46,25 +46,25 @@ public interface InteroperableLayer extends Linkable
   void setPriority(int value);
 
   /**
-   * Returns the value of the '<em><b>Delay</b></em>' attribute.
+   * Returns the value of the '<em><b>Delay</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Delay</em>' attribute.
-   * @see #setDelay(int)
+   * @return the value of the '<em>Delay</em>' containment reference.
+   * @see #setDelay(DelayRange)
    * @see uibk.ac.at.smartcity.smartCity.SmartCityPackage#getInteroperableLayer_Delay()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  int getDelay();
+  DelayRange getDelay();
 
   /**
-   * Sets the value of the '{@link uibk.ac.at.smartcity.smartCity.InteroperableLayer#getDelay <em>Delay</em>}' attribute.
+   * Sets the value of the '{@link uibk.ac.at.smartcity.smartCity.InteroperableLayer#getDelay <em>Delay</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Delay</em>' attribute.
+   * @param value the new value of the '<em>Delay</em>' containment reference.
    * @see #getDelay()
    * @generated
    */
-  void setDelay(int value);
+  void setDelay(DelayRange value);
 
 } // InteroperableLayer

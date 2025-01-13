@@ -76,18 +76,18 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final RuleCall cPriorityINTTerminalRuleCall_3_0 = (RuleCall)cPriorityAssignment_3.eContents().get(0);
 		private final Keyword cDelayKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cDelayAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cDelayINTTerminalRuleCall_5_0 = (RuleCall)cDelayAssignment_5.eContents().get(0);
+		private final RuleCall cDelayDelayRangeParserRuleCall_5_0 = (RuleCall)cDelayAssignment_5.eContents().get(0);
 		
 		//InteroperableLayer:
 		//    'layer' name=ID
 		//    'priority' priority=INT
-		//    'delay' delay=INT
+		//    'delay' delay=DelayRange
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'layer' name=ID
 		//'priority' priority=INT
-		//'delay' delay=INT
+		//'delay' delay=DelayRange
 		public Group getGroup() { return cGroup; }
 		
 		//'layer'
@@ -111,11 +111,11 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//'delay'
 		public Keyword getDelayKeyword_4() { return cDelayKeyword_4; }
 		
-		//delay=INT
+		//delay=DelayRange
 		public Assignment getDelayAssignment_5() { return cDelayAssignment_5; }
 		
-		//INT
-		public RuleCall getDelayINTTerminalRuleCall_5_0() { return cDelayINTTerminalRuleCall_5_0; }
+		//DelayRange
+		public RuleCall getDelayDelayRangeParserRuleCall_5_0() { return cDelayDelayRangeParserRuleCall_5_0; }
 	}
 	public class NodeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uibk.ac.at.smartcity.SmartCity.Node");
@@ -126,16 +126,19 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cSensorsAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cSensorsSensorParserRuleCall_3_0 = (RuleCall)cSensorsAssignment_3.eContents().get(0);
-		private final Assignment cControllerAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cControllerControllerParserRuleCall_4_0 = (RuleCall)cControllerAssignment_4.eContents().get(0);
-		private final Assignment cLinksAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cLinksCommunicationLinkParserRuleCall_5_0 = (RuleCall)cLinksAssignment_5.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cModulesAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cModulesModuleParserRuleCall_4_0 = (RuleCall)cModulesAssignment_4.eContents().get(0);
+		private final Assignment cControllerAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cControllerControllerParserRuleCall_5_0 = (RuleCall)cControllerAssignment_5.eContents().get(0);
+		private final Assignment cLinksAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cLinksCommunicationLinkParserRuleCall_6_0 = (RuleCall)cLinksAssignment_6.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Node:
 		//    'node' name=ID
 		//    '{'
 		//        sensors+=Sensor*
+		//        modules+=Module*
 		//        controller=Controller
 		//        links+=CommunicationLink*
 		//    '}'
@@ -145,6 +148,7 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//'node' name=ID
 		//'{'
 		//    sensors+=Sensor*
+		//    modules+=Module*
 		//    controller=Controller
 		//    links+=CommunicationLink*
 		//'}'
@@ -168,20 +172,26 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//Sensor
 		public RuleCall getSensorsSensorParserRuleCall_3_0() { return cSensorsSensorParserRuleCall_3_0; }
 		
+		//modules+=Module*
+		public Assignment getModulesAssignment_4() { return cModulesAssignment_4; }
+		
+		//Module
+		public RuleCall getModulesModuleParserRuleCall_4_0() { return cModulesModuleParserRuleCall_4_0; }
+		
 		//controller=Controller
-		public Assignment getControllerAssignment_4() { return cControllerAssignment_4; }
+		public Assignment getControllerAssignment_5() { return cControllerAssignment_5; }
 		
 		//Controller
-		public RuleCall getControllerControllerParserRuleCall_4_0() { return cControllerControllerParserRuleCall_4_0; }
+		public RuleCall getControllerControllerParserRuleCall_5_0() { return cControllerControllerParserRuleCall_5_0; }
 		
 		//links+=CommunicationLink*
-		public Assignment getLinksAssignment_5() { return cLinksAssignment_5; }
+		public Assignment getLinksAssignment_6() { return cLinksAssignment_6; }
 		
 		//CommunicationLink
-		public RuleCall getLinksCommunicationLinkParserRuleCall_5_0() { return cLinksCommunicationLinkParserRuleCall_5_0; }
+		public RuleCall getLinksCommunicationLinkParserRuleCall_6_0() { return cLinksCommunicationLinkParserRuleCall_6_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 	public class SensorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uibk.ac.at.smartcity.SmartCity.Sensor");
@@ -195,17 +205,21 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Keyword cPriorityKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cPriorityAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cPriorityINTTerminalRuleCall_5_0 = (RuleCall)cPriorityAssignment_5.eContents().get(0);
+		private final Assignment cCyclicActionsAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cCyclicActionsCyclicActionParserRuleCall_6_0 = (RuleCall)cCyclicActionsAssignment_6.eContents().get(0);
 		
 		//Sensor:
 		//    'sensor' name=ID
 		//    'type' type=SensorType
 		//    'priority' priority=INT
+		//    cyclicActions+=CyclicAction*
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'sensor' name=ID
 		//'type' type=SensorType
 		//'priority' priority=INT
+		//cyclicActions+=CyclicAction*
 		public Group getGroup() { return cGroup; }
 		
 		//'sensor'
@@ -234,6 +248,12 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 		
 		//INT
 		public RuleCall getPriorityINTTerminalRuleCall_5_0() { return cPriorityINTTerminalRuleCall_5_0; }
+		
+		//cyclicActions+=CyclicAction*
+		public Assignment getCyclicActionsAssignment_6() { return cCyclicActionsAssignment_6; }
+		
+		//CyclicAction
+		public RuleCall getCyclicActionsCyclicActionParserRuleCall_6_0() { return cCyclicActionsCyclicActionParserRuleCall_6_0; }
 	}
 	public class CommunicationLinkElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uibk.ac.at.smartcity.SmartCity.CommunicationLink");
@@ -341,17 +361,21 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Keyword cPriorityKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cPriorityAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cPriorityINTTerminalRuleCall_5_0 = (RuleCall)cPriorityAssignment_5.eContents().get(0);
+		private final Assignment cCyclicActionsAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cCyclicActionsCyclicActionParserRuleCall_6_0 = (RuleCall)cCyclicActionsAssignment_6.eContents().get(0);
 		
 		//Controller:
 		//    'controller' name=ID
 		//    'type' type=ControllerType
 		//    'priority' priority=INT
+		//    cyclicActions+=CyclicAction*
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'controller' name=ID
 		//'type' type=ControllerType
 		//'priority' priority=INT
+		//cyclicActions+=CyclicAction*
 		public Group getGroup() { return cGroup; }
 		
 		//'controller'
@@ -380,6 +404,60 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 		
 		//INT
 		public RuleCall getPriorityINTTerminalRuleCall_5_0() { return cPriorityINTTerminalRuleCall_5_0; }
+		
+		//cyclicActions+=CyclicAction*
+		public Assignment getCyclicActionsAssignment_6() { return cCyclicActionsAssignment_6; }
+		
+		//CyclicAction
+		public RuleCall getCyclicActionsCyclicActionParserRuleCall_6_0() { return cCyclicActionsCyclicActionParserRuleCall_6_0; }
+	}
+	public class ModuleElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uibk.ac.at.smartcity.SmartCity.Module");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cModuleKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cPriorityKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cPriorityAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cPriorityINTTerminalRuleCall_3_0 = (RuleCall)cPriorityAssignment_3.eContents().get(0);
+		private final Assignment cCyclicActionsAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cCyclicActionsCyclicActionParserRuleCall_4_0 = (RuleCall)cCyclicActionsAssignment_4.eContents().get(0);
+		
+		//Module:
+		//    'module' name=ID
+		//    'priority' priority=INT
+		//    cyclicActions+=CyclicAction*
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'module' name=ID
+		//'priority' priority=INT
+		//cyclicActions+=CyclicAction*
+		public Group getGroup() { return cGroup; }
+		
+		//'module'
+		public Keyword getModuleKeyword_0() { return cModuleKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		
+		//'priority'
+		public Keyword getPriorityKeyword_2() { return cPriorityKeyword_2; }
+		
+		//priority=INT
+		public Assignment getPriorityAssignment_3() { return cPriorityAssignment_3; }
+		
+		//INT
+		public RuleCall getPriorityINTTerminalRuleCall_3_0() { return cPriorityINTTerminalRuleCall_3_0; }
+		
+		//cyclicActions+=CyclicAction*
+		public Assignment getCyclicActionsAssignment_4() { return cCyclicActionsAssignment_4; }
+		
+		//CyclicAction
+		public RuleCall getCyclicActionsCyclicActionParserRuleCall_4_0() { return cCyclicActionsCyclicActionParserRuleCall_4_0; }
 	}
 	public class LinkableElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uibk.ac.at.smartcity.SmartCity.Linkable");
@@ -448,6 +526,79 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 		
 		//']'
 		public Keyword getRightSquareBracketKeyword_4() { return cRightSquareBracketKeyword_4; }
+	}
+	public class CyclicActionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uibk.ac.at.smartcity.SmartCity.CyclicAction");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cCyclicActionKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cFrequencyKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cValueINTTerminalRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
+		private final Assignment cUnitAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cUnitFrequencyUnitEnumRuleCall_4_0 = (RuleCall)cUnitAssignment_4.eContents().get(0);
+		
+		//CyclicAction:
+		//    'cyclicAction' name=ID
+		//    // TODO: TEST THIS!
+		//    'frequency' value=INT unit=FrequencyUnit
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'cyclicAction' name=ID
+		//// TODO: TEST THIS!
+		//'frequency' value=INT unit=FrequencyUnit
+		public Group getGroup() { return cGroup; }
+		
+		//'cyclicAction'
+		public Keyword getCyclicActionKeyword_0() { return cCyclicActionKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		
+		//// TODO: TEST THIS!
+		//'frequency'
+		public Keyword getFrequencyKeyword_2() { return cFrequencyKeyword_2; }
+		
+		//value=INT
+		public Assignment getValueAssignment_3() { return cValueAssignment_3; }
+		
+		//INT
+		public RuleCall getValueINTTerminalRuleCall_3_0() { return cValueINTTerminalRuleCall_3_0; }
+		
+		//unit=FrequencyUnit
+		public Assignment getUnitAssignment_4() { return cUnitAssignment_4; }
+		
+		//FrequencyUnit
+		public RuleCall getUnitFrequencyUnitEnumRuleCall_4_0() { return cUnitFrequencyUnitEnumRuleCall_4_0; }
+	}
+	public class TriggeredActionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uibk.ac.at.smartcity.SmartCity.TriggeredAction");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cTriggeredActionKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		
+		//TriggeredAction:
+		//    'TriggeredAction' name=ID
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'TriggeredAction' name=ID
+		public Group getGroup() { return cGroup; }
+		
+		//'TriggeredAction'
+		public Keyword getTriggeredActionKeyword_0() { return cTriggeredActionKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 	}
 	
 	public class SensorTypeElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
@@ -645,6 +796,60 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 		
 		public Keyword getDOUBLEDOUBLEKeyword_4_0() { return cDOUBLEDOUBLEKeyword_4_0; }
 	}
+	public class FrequencyUnitElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "uibk.ac.at.smartcity.SmartCity.FrequencyUnit");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cHERTZEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cHERTZHERTZKeyword_0_0 = (Keyword)cHERTZEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cSECONDSEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cSECONDSSECONDSKeyword_1_0 = (Keyword)cSECONDSEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cMINUTESEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cMINUTESMINUTESKeyword_2_0 = (Keyword)cMINUTESEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cHOURSEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cHOURSHOURSKeyword_3_0 = (Keyword)cHOURSEnumLiteralDeclaration_3.eContents().get(0);
+		private final EnumLiteralDeclaration cDAYSEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
+		private final Keyword cDAYSDAYSKeyword_4_0 = (Keyword)cDAYSEnumLiteralDeclaration_4.eContents().get(0);
+		private final EnumLiteralDeclaration cINFEnumLiteralDeclaration_5 = (EnumLiteralDeclaration)cAlternatives.eContents().get(5);
+		private final Keyword cINFINFKeyword_5_0 = (Keyword)cINFEnumLiteralDeclaration_5.eContents().get(0);
+		
+		//enum FrequencyUnit:
+		//    HERTZ | SECONDS | MINUTES | HOURS |DAYS | INF
+		//;
+		public EnumRule getRule() { return rule; }
+		
+		//HERTZ | SECONDS | MINUTES | HOURS |DAYS | INF
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//HERTZ
+		public EnumLiteralDeclaration getHERTZEnumLiteralDeclaration_0() { return cHERTZEnumLiteralDeclaration_0; }
+		
+		public Keyword getHERTZHERTZKeyword_0_0() { return cHERTZHERTZKeyword_0_0; }
+		
+		//SECONDS
+		public EnumLiteralDeclaration getSECONDSEnumLiteralDeclaration_1() { return cSECONDSEnumLiteralDeclaration_1; }
+		
+		public Keyword getSECONDSSECONDSKeyword_1_0() { return cSECONDSSECONDSKeyword_1_0; }
+		
+		//MINUTES
+		public EnumLiteralDeclaration getMINUTESEnumLiteralDeclaration_2() { return cMINUTESEnumLiteralDeclaration_2; }
+		
+		public Keyword getMINUTESMINUTESKeyword_2_0() { return cMINUTESMINUTESKeyword_2_0; }
+		
+		//HOURS
+		public EnumLiteralDeclaration getHOURSEnumLiteralDeclaration_3() { return cHOURSEnumLiteralDeclaration_3; }
+		
+		public Keyword getHOURSHOURSKeyword_3_0() { return cHOURSHOURSKeyword_3_0; }
+		
+		//DAYS
+		public EnumLiteralDeclaration getDAYSEnumLiteralDeclaration_4() { return cDAYSEnumLiteralDeclaration_4; }
+		
+		public Keyword getDAYSDAYSKeyword_4_0() { return cDAYSDAYSKeyword_4_0; }
+		
+		//INF
+		public EnumLiteralDeclaration getINFEnumLiteralDeclaration_5() { return cINFEnumLiteralDeclaration_5; }
+		
+		public Keyword getINFINFKeyword_5_0() { return cINFINFKeyword_5_0; }
+	}
 	
 	private final ModelElements pModel;
 	private final InteroperableLayerElements pInteroperableLayer;
@@ -652,12 +857,16 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 	private final SensorElements pSensor;
 	private final CommunicationLinkElements pCommunicationLink;
 	private final ControllerElements pController;
+	private final ModuleElements pModule;
 	private final LinkableElements pLinkable;
 	private final DelayRangeElements pDelayRange;
+	private final CyclicActionElements pCyclicAction;
+	private final TriggeredActionElements pTriggeredAction;
 	private final SensorTypeElements eSensorType;
 	private final ControllerTypeElements eControllerType;
 	private final LinkTypeElements eLinkType;
 	private final DataTypeElements eDataType;
+	private final FrequencyUnitElements eFrequencyUnit;
 	
 	private final Grammar grammar;
 	
@@ -674,12 +883,16 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 		this.pSensor = new SensorElements();
 		this.pCommunicationLink = new CommunicationLinkElements();
 		this.pController = new ControllerElements();
+		this.pModule = new ModuleElements();
 		this.pLinkable = new LinkableElements();
 		this.pDelayRange = new DelayRangeElements();
+		this.pCyclicAction = new CyclicActionElements();
+		this.pTriggeredAction = new TriggeredActionElements();
 		this.eSensorType = new SensorTypeElements();
 		this.eControllerType = new ControllerTypeElements();
 		this.eLinkType = new LinkTypeElements();
 		this.eDataType = new DataTypeElements();
+		this.eFrequencyUnit = new FrequencyUnitElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -725,7 +938,7 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 	//InteroperableLayer:
 	//    'layer' name=ID
 	//    'priority' priority=INT
-	//    'delay' delay=INT
+	//    'delay' delay=DelayRange
 	//;
 	public InteroperableLayerElements getInteroperableLayerAccess() {
 		return pInteroperableLayer;
@@ -739,6 +952,7 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 	//    'node' name=ID
 	//    '{'
 	//        sensors+=Sensor*
+	//        modules+=Module*
 	//        controller=Controller
 	//        links+=CommunicationLink*
 	//    '}'
@@ -755,6 +969,7 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 	//    'sensor' name=ID
 	//    'type' type=SensorType
 	//    'priority' priority=INT
+	//    cyclicActions+=CyclicAction*
 	//;
 	public SensorElements getSensorAccess() {
 		return pSensor;
@@ -782,6 +997,7 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 	//    'controller' name=ID
 	//    'type' type=ControllerType
 	//    'priority' priority=INT
+	//    cyclicActions+=CyclicAction*
 	//;
 	public ControllerElements getControllerAccess() {
 		return pController;
@@ -789,6 +1005,19 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 	
 	public ParserRule getControllerRule() {
 		return getControllerAccess().getRule();
+	}
+	
+	//Module:
+	//    'module' name=ID
+	//    'priority' priority=INT
+	//    cyclicActions+=CyclicAction*
+	//;
+	public ModuleElements getModuleAccess() {
+		return pModule;
+	}
+	
+	public ParserRule getModuleRule() {
+		return getModuleAccess().getRule();
 	}
 	
 	//Linkable:
@@ -811,6 +1040,30 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 	
 	public ParserRule getDelayRangeRule() {
 		return getDelayRangeAccess().getRule();
+	}
+	
+	//CyclicAction:
+	//    'cyclicAction' name=ID
+	//    // TODO: TEST THIS!
+	//    'frequency' value=INT unit=FrequencyUnit
+	//;
+	public CyclicActionElements getCyclicActionAccess() {
+		return pCyclicAction;
+	}
+	
+	public ParserRule getCyclicActionRule() {
+		return getCyclicActionAccess().getRule();
+	}
+	
+	//TriggeredAction:
+	//    'TriggeredAction' name=ID
+	//;
+	public TriggeredActionElements getTriggeredActionAccess() {
+		return pTriggeredAction;
+	}
+	
+	public ParserRule getTriggeredActionRule() {
+		return getTriggeredActionAccess().getRule();
 	}
 	
 	//enum SensorType:
@@ -855,6 +1108,17 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 	
 	public EnumRule getDataTypeRule() {
 		return getDataTypeAccess().getRule();
+	}
+	
+	//enum FrequencyUnit:
+	//    HERTZ | SECONDS | MINUTES | HOURS |DAYS | INF
+	//;
+	public FrequencyUnitElements getFrequencyUnitAccess() {
+		return eFrequencyUnit;
+	}
+	
+	public EnumRule getFrequencyUnitRule() {
+		return getFrequencyUnitAccess().getRule();
 	}
 	
 	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
