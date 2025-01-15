@@ -14,6 +14,7 @@ import uibk.ac.at.smartcity.smartCity.Node
 import uibk.ac.at.smartcity.smartCity.Sensor
 import java.util.ArrayList
 import uibk.ac.at.smartcity.smartCity.InteroperableLayer
+import uibk.ac.at.smartcity.smartCity.SensorType
 
 /**
  * Generates code from your model files on save.
@@ -69,24 +70,88 @@ class SmartCityGenerator extends AbstractGenerator {
 		
 		class «sensor.name.toFirstUpper»(AtomicDEVS):
 			def __init__(self):
+			«IF sensor.type == SensorType.CAMERA»
+				super().__init__("«sensor.name»")
+				self.in_port = self.addInPort("in_port")
+				self.outport = self.addOutPort("outport")
+				self.state = {
+					"number": 0,
+					"image_data": None,
+					"number_detected": None,
+					"processing_time": 0,
+					"status": "capturing"  # Start in capturing state
+				}
+				self.priority = «sensor.priority»
+			«ELSE»
 				super().__init__("«sensor.name»")
 				self.inport = self.addInPort("in_port")
 				self.outport = self.addOutPort("outport")
 				self.state = {"«sensor.type»": 0}
-				self.priority = 1
-		        
+				self.priority = «sensor.priority»
+      		 «ENDIF»
+
 			def intTransition(self):
+			«IF (sensor.type == SensorType.PH)»
+				self.state["«sensor.type»"] = random.uniform(0, 14)
+				return self.state
+			«ELSEIF (sensor.type == SensorType.CURRENT)»
 				self.state["«sensor.type»"] = random.uniform(0, 100)
 				return self.state
+			«ELSEIF (sensor.type == SensorType.PULSE)»
+				self.state["«sensor.type»"] = random.uniform(0, 1)
+				return self.state
+			«ELSEIF (sensor.type == SensorType.TDS)»
+				self.state["«sensor.type»"] = random.uniform(0, 1000)
+				return self.state
+			«ELSEIF (sensor.type == SensorType.TEMPERATURE)»
+				self.state["«sensor.type»"] = random.uniform(0, 100)
+				return self.state
+			«ELSEIF (sensor.type == SensorType.TURBIDITY)»
+				self.state["«sensor.type»"] = random.uniform(0, 100)
+				return self.state
+			«ELSEIF (sensor.type == SensorType.ULTRASONIC)»
+				self.state["«sensor.type»"] = random.uniform(0.5, 4.0)
+				return self.state
+			«ELSEIF (sensor.type == SensorType.CAMERA)»
+				if self.state["status"] == "capturing":
+				    self.capture_image()
+				    self.state["status"] = "processing"
+				elif self.state["status"] == "processing":
+				    self.process_image()
+				    self.state["status"] = "capturing"  # Loop back to capturing for continuous processing
+				return self.state
+			«ELSE»
+				print("Internal Transition not defined for this sensor type")
+				return None
+			«ENDIF»
 				
 			def extTransition(self, inputs):
+			«IF (sensor.type == SensorType.CAMERA)»
+				self.state["status"] = "capturing"
+				return self.state
+			«ELSE»
+				return self.state
+			«ENDIF»
+
 				return self.state 
 				
 			def outputFnc(self):
 				return {self.outport: self.state['«sensor.type»']}
 				
 			def timeAdvance(self):
-				return 5.0  # Every 5 seconds
+			«IF (sensor.type == SensorType.CAMERA)»
+				if self.state["status"] == "idle":
+				    return INFINITY
+				elif self.state["status"] == "capturing":
+				    return 1.0  # Time to capture an image
+				elif self.state["status"] == "processing":
+				    return 2.0  # Time to process the image
+				return INFINITY
+			«ELSEIF (sensor.type == SensorType.CURRENT || sensor.type == SensorType.PULSE || sensor.type == SensorType.ULTRASONIC)»
+				return 1.0
+			«ELSE»
+				return 5.0
+			«ENDIF»
 				
 			def __lt__(self, other):
 				return self.priority < other.priority
@@ -105,7 +170,7 @@ class SmartCityGenerator extends AbstractGenerator {
 		from pypdevs.DEVS import AtomicDEVS
 		from pypdevs.infinity import INFINITY
 		import time
-		class NodeState:
+		class «node.name.toFirstUpper»State:
 			def __init__(self):
 				self.data_aggregated = {}
 				self.next_send_time = 1.0  # Initial time until the next data send
@@ -115,7 +180,7 @@ class SmartCityGenerator extends AbstractGenerator {
 			def __init__(self, name):
 				super().__init__(name)
 				
-				self.state = NodeState()
+				self.state = «node.name.toFirstUpper»State()
 				self.timeLast = 0.0  # Initialize timeLast
 				«FOR type: distinctLinkTypes»
 				self.«type.toString.toLowerCase»_inport = self.addInPort("«type.toString.toLowerCase»_in")

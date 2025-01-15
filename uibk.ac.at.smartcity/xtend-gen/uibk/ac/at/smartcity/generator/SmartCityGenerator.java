@@ -7,6 +7,7 @@ import com.google.common.collect.Iterables;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
@@ -80,45 +81,240 @@ public class SmartCityGenerator extends AbstractGenerator {
     _builder.append("\t");
     _builder.append("def __init__(self):");
     _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("super().__init__(\"");
-    String _name = sensor.getName();
-    _builder.append(_name, "\t\t");
-    _builder.append("\")");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t\t");
-    _builder.append("self.inport = self.addInPort(\"in_port\")");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("self.outport = self.addOutPort(\"outport\")");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("self.state = {\"");
-    SensorType _type = sensor.getType();
-    _builder.append(_type, "\t\t");
-    _builder.append("\": 0}");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t\t");
-    _builder.append("self.priority = 1");
-    _builder.newLine();
-    _builder.append("        ");
+    {
+      SensorType _type = sensor.getType();
+      boolean _equals = Objects.equals(_type, SensorType.CAMERA);
+      if (_equals) {
+        _builder.append("\t");
+        _builder.append("super().__init__(\"");
+        String _name = sensor.getName();
+        _builder.append(_name, "\t");
+        _builder.append("\")");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t");
+        _builder.append("self.in_port = self.addInPort(\"in_port\")");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("self.outport = self.addOutPort(\"outport\")");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("self.state = {");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("\t");
+        _builder.append("\"number\": 0,");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("\t");
+        _builder.append("\"image_data\": None,");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("\t");
+        _builder.append("\"number_detected\": None,");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("\t");
+        _builder.append("\"processing_time\": 0,");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("\t");
+        _builder.append("\"status\": \"capturing\"  # Start in capturing state");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("}");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("self.priority = ");
+        int _priority = sensor.getPriority();
+        _builder.append(_priority, "\t");
+        _builder.newLineIfNotEmpty();
+      } else {
+        _builder.append("\t");
+        _builder.append("super().__init__(\"");
+        String _name_1 = sensor.getName();
+        _builder.append(_name_1, "\t");
+        _builder.append("\")");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t");
+        _builder.append("self.inport = self.addInPort(\"in_port\")");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("self.outport = self.addOutPort(\"outport\")");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("self.state = {\"");
+        SensorType _type_1 = sensor.getType();
+        _builder.append(_type_1, "\t");
+        _builder.append("\": 0}");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t");
+        _builder.append("self.priority = ");
+        int _priority_1 = sensor.getPriority();
+        _builder.append(_priority_1, "\t");
+        _builder.newLineIfNotEmpty();
+      }
+    }
     _builder.newLine();
     _builder.append("\t");
     _builder.append("def intTransition(self):");
     _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("self.state[\"");
-    SensorType _type_1 = sensor.getType();
-    _builder.append(_type_1, "\t\t");
-    _builder.append("\"] = random.uniform(0, 100)");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t\t");
-    _builder.append("return self.state");
-    _builder.newLine();
+    {
+      SensorType _type_2 = sensor.getType();
+      boolean _equals_1 = Objects.equals(_type_2, SensorType.PH);
+      if (_equals_1) {
+        _builder.append("\t");
+        _builder.append("self.state[\"");
+        SensorType _type_3 = sensor.getType();
+        _builder.append(_type_3, "\t");
+        _builder.append("\"] = random.uniform(0, 14)");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t");
+        _builder.append("return self.state");
+        _builder.newLine();
+      } else {
+        SensorType _type_4 = sensor.getType();
+        boolean _equals_2 = Objects.equals(_type_4, SensorType.CURRENT);
+        if (_equals_2) {
+          _builder.append("\t");
+          _builder.append("self.state[\"");
+          SensorType _type_5 = sensor.getType();
+          _builder.append(_type_5, "\t");
+          _builder.append("\"] = random.uniform(0, 100)");
+          _builder.newLineIfNotEmpty();
+          _builder.append("\t");
+          _builder.append("return self.state");
+          _builder.newLine();
+        } else {
+          SensorType _type_6 = sensor.getType();
+          boolean _equals_3 = Objects.equals(_type_6, SensorType.PULSE);
+          if (_equals_3) {
+            _builder.append("\t");
+            _builder.append("self.state[\"");
+            SensorType _type_7 = sensor.getType();
+            _builder.append(_type_7, "\t");
+            _builder.append("\"] = random.uniform(0, 1)");
+            _builder.newLineIfNotEmpty();
+            _builder.append("\t");
+            _builder.append("return self.state");
+            _builder.newLine();
+          } else {
+            SensorType _type_8 = sensor.getType();
+            boolean _equals_4 = Objects.equals(_type_8, SensorType.TDS);
+            if (_equals_4) {
+              _builder.append("\t");
+              _builder.append("self.state[\"");
+              SensorType _type_9 = sensor.getType();
+              _builder.append(_type_9, "\t");
+              _builder.append("\"] = random.uniform(0, 1000)");
+              _builder.newLineIfNotEmpty();
+              _builder.append("\t");
+              _builder.append("return self.state");
+              _builder.newLine();
+            } else {
+              SensorType _type_10 = sensor.getType();
+              boolean _equals_5 = Objects.equals(_type_10, SensorType.TEMPERATURE);
+              if (_equals_5) {
+                _builder.append("\t");
+                _builder.append("self.state[\"");
+                SensorType _type_11 = sensor.getType();
+                _builder.append(_type_11, "\t");
+                _builder.append("\"] = random.uniform(0, 100)");
+                _builder.newLineIfNotEmpty();
+                _builder.append("\t");
+                _builder.append("return self.state");
+                _builder.newLine();
+              } else {
+                SensorType _type_12 = sensor.getType();
+                boolean _equals_6 = Objects.equals(_type_12, SensorType.TURBIDITY);
+                if (_equals_6) {
+                  _builder.append("\t");
+                  _builder.append("self.state[\"");
+                  SensorType _type_13 = sensor.getType();
+                  _builder.append(_type_13, "\t");
+                  _builder.append("\"] = random.uniform(0, 100)");
+                  _builder.newLineIfNotEmpty();
+                  _builder.append("\t");
+                  _builder.append("return self.state");
+                  _builder.newLine();
+                } else {
+                  SensorType _type_14 = sensor.getType();
+                  boolean _equals_7 = Objects.equals(_type_14, SensorType.ULTRASONIC);
+                  if (_equals_7) {
+                    _builder.append("\t");
+                    _builder.append("self.state[\"");
+                    SensorType _type_15 = sensor.getType();
+                    _builder.append(_type_15, "\t");
+                    _builder.append("\"] = random.uniform(0.5, 4.0)");
+                    _builder.newLineIfNotEmpty();
+                    _builder.append("\t");
+                    _builder.append("return self.state");
+                    _builder.newLine();
+                  } else {
+                    SensorType _type_16 = sensor.getType();
+                    boolean _equals_8 = Objects.equals(_type_16, SensorType.CAMERA);
+                    if (_equals_8) {
+                      _builder.append("\t");
+                      _builder.append("if self.state[\"status\"] == \"capturing\":");
+                      _builder.newLine();
+                      _builder.append("\t");
+                      _builder.append("    ");
+                      _builder.append("self.capture_image()");
+                      _builder.newLine();
+                      _builder.append("\t");
+                      _builder.append("    ");
+                      _builder.append("self.state[\"status\"] = \"processing\"");
+                      _builder.newLine();
+                      _builder.append("\t");
+                      _builder.append("elif self.state[\"status\"] == \"processing\":");
+                      _builder.newLine();
+                      _builder.append("\t");
+                      _builder.append("    ");
+                      _builder.append("self.process_image()");
+                      _builder.newLine();
+                      _builder.append("\t");
+                      _builder.append("    ");
+                      _builder.append("self.state[\"status\"] = \"capturing\"  # Loop back to capturing for continuous processing");
+                      _builder.newLine();
+                      _builder.append("\t");
+                      _builder.append("return self.state");
+                      _builder.newLine();
+                    } else {
+                      _builder.append("\t");
+                      _builder.append("print(\"Internal Transition not defined for this sensor type\")");
+                      _builder.newLine();
+                      _builder.append("\t");
+                      _builder.append("return None");
+                      _builder.newLine();
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
     _builder.append("\t\t");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("def extTransition(self, inputs):");
+    _builder.newLine();
+    {
+      SensorType _type_17 = sensor.getType();
+      boolean _equals_9 = Objects.equals(_type_17, SensorType.CAMERA);
+      if (_equals_9) {
+        _builder.append("\t");
+        _builder.append("self.state[\"status\"] = \"capturing\"");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("return self.state");
+        _builder.newLine();
+      } else {
+        _builder.append("\t");
+        _builder.append("return self.state");
+        _builder.newLine();
+      }
+    }
     _builder.newLine();
     _builder.append("\t\t");
     _builder.append("return self.state ");
@@ -130,8 +326,8 @@ public class SmartCityGenerator extends AbstractGenerator {
     _builder.newLine();
     _builder.append("\t\t");
     _builder.append("return {self.outport: self.state[\'");
-    SensorType _type_2 = sensor.getType();
-    _builder.append(_type_2, "\t\t");
+    SensorType _type_18 = sensor.getType();
+    _builder.append(_type_18, "\t\t");
     _builder.append("\']}");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
@@ -139,9 +335,46 @@ public class SmartCityGenerator extends AbstractGenerator {
     _builder.append("\t");
     _builder.append("def timeAdvance(self):");
     _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("return 5.0  # Every 5 seconds");
-    _builder.newLine();
+    {
+      SensorType _type_19 = sensor.getType();
+      boolean _equals_10 = Objects.equals(_type_19, SensorType.CAMERA);
+      if (_equals_10) {
+        _builder.append("\t");
+        _builder.append("if self.state[\"status\"] == \"idle\":");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("    ");
+        _builder.append("return INFINITY");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("elif self.state[\"status\"] == \"capturing\":");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("    ");
+        _builder.append("return 1.0  # Time to capture an image");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("elif self.state[\"status\"] == \"processing\":");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("    ");
+        _builder.append("return 2.0  # Time to process the image");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("return INFINITY");
+        _builder.newLine();
+      } else {
+        if (((Objects.equals(sensor.getType(), SensorType.CURRENT) || Objects.equals(sensor.getType(), SensorType.PULSE)) || Objects.equals(sensor.getType(), SensorType.ULTRASONIC))) {
+          _builder.append("\t");
+          _builder.append("return 1.0");
+          _builder.newLine();
+        } else {
+          _builder.append("\t");
+          _builder.append("return 5.0");
+          _builder.newLine();
+        }
+      }
+    }
     _builder.append("\t\t");
     _builder.newLine();
     _builder.append("\t");
@@ -172,8 +405,11 @@ public class SmartCityGenerator extends AbstractGenerator {
       _builder.newLine();
       _builder.append("import time");
       _builder.newLine();
-      _builder.append("class NodeState:");
-      _builder.newLine();
+      _builder.append("class ");
+      String _firstUpper = StringExtensions.toFirstUpper(node.getName());
+      _builder.append(_firstUpper);
+      _builder.append("State:");
+      _builder.newLineIfNotEmpty();
       _builder.append("\t");
       _builder.append("def __init__(self):");
       _builder.newLine();
@@ -186,8 +422,8 @@ public class SmartCityGenerator extends AbstractGenerator {
       _builder.newLine();
       _builder.newLine();
       _builder.append("class ");
-      String _firstUpper = StringExtensions.toFirstUpper(node.getName());
-      _builder.append(_firstUpper);
+      String _firstUpper_1 = StringExtensions.toFirstUpper(node.getName());
+      _builder.append(_firstUpper_1);
       _builder.append("(AtomicDEVS):");
       _builder.newLineIfNotEmpty();
       _builder.append("\t");
@@ -199,8 +435,11 @@ public class SmartCityGenerator extends AbstractGenerator {
       _builder.append("\t\t");
       _builder.newLine();
       _builder.append("\t\t");
-      _builder.append("self.state = NodeState()");
-      _builder.newLine();
+      _builder.append("self.state = ");
+      String _firstUpper_2 = StringExtensions.toFirstUpper(node.getName());
+      _builder.append(_firstUpper_2, "\t\t");
+      _builder.append("State()");
+      _builder.newLineIfNotEmpty();
       _builder.append("\t\t");
       _builder.append("self.timeLast = 0.0  # Initialize timeLast");
       _builder.newLine();
