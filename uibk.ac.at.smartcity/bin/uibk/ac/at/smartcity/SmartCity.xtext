@@ -20,7 +20,9 @@ Node:
 		sensors+=Sensor*
 		modules+=Module*
 		controller=Controller
+		'postFrequency' freqValue=INT freqUnit=FrequencyUnit
 		links+=CommunicationLink*
+		'priority' priority=INT
 	'}'
 ;
 
@@ -63,7 +65,7 @@ DelayRange:
 
 CyclicAction:
 	'cyclicAction' name=ID
-	'frequency' value=INT unit=FrequencyUnit
+	'frequency' freqValue=INT freqUnit=FrequencyUnit
 ;
 
 TriggeredAction:
@@ -75,7 +77,7 @@ enum SensorType:
 ;
 
 enum ControllerType:
-	ESP32 | RASPBERRY_PI
+	ESP32 | RASPBERRY_PI | OTHER
 ;
 
 enum LinkType:

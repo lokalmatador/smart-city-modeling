@@ -15,8 +15,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.CyclicAction#getName <em>Name</em>}</li>
- *   <li>{@link uibk.ac.at.smartcity.smartCity.CyclicAction#getValue <em>Value</em>}</li>
- *   <li>{@link uibk.ac.at.smartcity.smartCity.CyclicAction#getUnit <em>Unit</em>}</li>
+ *   <li>{@link uibk.ac.at.smartcity.smartCity.CyclicAction#getFreqValue <em>Freq Value</em>}</li>
+ *   <li>{@link uibk.ac.at.smartcity.smartCity.CyclicAction#getFreqUnit <em>Freq Unit</em>}</li>
  * </ul>
  *
  * @see uibk.ac.at.smartcity.smartCity.SmartCityPackage#getCyclicAction()
@@ -48,50 +48,50 @@ public interface CyclicAction extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Value</b></em>' attribute.
+   * Returns the value of the '<em><b>Freq Value</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Value</em>' attribute.
-   * @see #setValue(int)
-   * @see uibk.ac.at.smartcity.smartCity.SmartCityPackage#getCyclicAction_Value()
+   * @return the value of the '<em>Freq Value</em>' attribute.
+   * @see #setFreqValue(int)
+   * @see uibk.ac.at.smartcity.smartCity.SmartCityPackage#getCyclicAction_FreqValue()
    * @model
    * @generated
    */
-  int getValue();
+  int getFreqValue();
 
   /**
-   * Sets the value of the '{@link uibk.ac.at.smartcity.smartCity.CyclicAction#getValue <em>Value</em>}' attribute.
+   * Sets the value of the '{@link uibk.ac.at.smartcity.smartCity.CyclicAction#getFreqValue <em>Freq Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Value</em>' attribute.
-   * @see #getValue()
+   * @param value the new value of the '<em>Freq Value</em>' attribute.
+   * @see #getFreqValue()
    * @generated
    */
-  void setValue(int value);
+  void setFreqValue(int value);
 
   /**
-   * Returns the value of the '<em><b>Unit</b></em>' attribute.
+   * Returns the value of the '<em><b>Freq Unit</b></em>' attribute.
    * The literals are from the enumeration {@link uibk.ac.at.smartcity.smartCity.FrequencyUnit}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Unit</em>' attribute.
+   * @return the value of the '<em>Freq Unit</em>' attribute.
    * @see uibk.ac.at.smartcity.smartCity.FrequencyUnit
-   * @see #setUnit(FrequencyUnit)
-   * @see uibk.ac.at.smartcity.smartCity.SmartCityPackage#getCyclicAction_Unit()
+   * @see #setFreqUnit(FrequencyUnit)
+   * @see uibk.ac.at.smartcity.smartCity.SmartCityPackage#getCyclicAction_FreqUnit()
    * @model
    * @generated
    */
-  FrequencyUnit getUnit();
+  FrequencyUnit getFreqUnit();
 
   /**
-   * Sets the value of the '{@link uibk.ac.at.smartcity.smartCity.CyclicAction#getUnit <em>Unit</em>}' attribute.
+   * Sets the value of the '{@link uibk.ac.at.smartcity.smartCity.CyclicAction#getFreqUnit <em>Freq Unit</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Unit</em>' attribute.
+   * @param value the new value of the '<em>Freq Unit</em>' attribute.
    * @see uibk.ac.at.smartcity.smartCity.FrequencyUnit
-   * @see #getUnit()
+   * @see #getFreqUnit()
    * @generated
    */
-  void setUnit(FrequencyUnit value);
+  void setFreqUnit(FrequencyUnit value);
 
 } // CyclicAction

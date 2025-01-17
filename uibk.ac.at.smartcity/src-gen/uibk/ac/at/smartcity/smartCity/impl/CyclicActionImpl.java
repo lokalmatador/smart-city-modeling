@@ -23,8 +23,8 @@ import uibk.ac.at.smartcity.smartCity.SmartCityPackage;
  * </p>
  * <ul>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.CyclicActionImpl#getName <em>Name</em>}</li>
- *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.CyclicActionImpl#getValue <em>Value</em>}</li>
- *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.CyclicActionImpl#getUnit <em>Unit</em>}</li>
+ *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.CyclicActionImpl#getFreqValue <em>Freq Value</em>}</li>
+ *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.CyclicActionImpl#getFreqUnit <em>Freq Unit</em>}</li>
  * </ul>
  *
  * @generated
@@ -52,44 +52,44 @@ public class CyclicActionImpl extends MinimalEObjectImpl.Container implements Cy
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * The default value of the '{@link #getFreqValue() <em>Freq Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #getFreqValue()
    * @generated
    * @ordered
    */
-  protected static final int VALUE_EDEFAULT = 0;
+  protected static final int FREQ_VALUE_EDEFAULT = 0;
 
   /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * The cached value of the '{@link #getFreqValue() <em>Freq Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #getFreqValue()
    * @generated
    * @ordered
    */
-  protected int value = VALUE_EDEFAULT;
+  protected int freqValue = FREQ_VALUE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getUnit() <em>Unit</em>}' attribute.
+   * The default value of the '{@link #getFreqUnit() <em>Freq Unit</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getUnit()
+   * @see #getFreqUnit()
    * @generated
    * @ordered
    */
-  protected static final FrequencyUnit UNIT_EDEFAULT = FrequencyUnit.HERTZ;
+  protected static final FrequencyUnit FREQ_UNIT_EDEFAULT = FrequencyUnit.HERTZ;
 
   /**
-   * The cached value of the '{@link #getUnit() <em>Unit</em>}' attribute.
+   * The cached value of the '{@link #getFreqUnit() <em>Freq Unit</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getUnit()
+   * @see #getFreqUnit()
    * @generated
    * @ordered
    */
-  protected FrequencyUnit unit = UNIT_EDEFAULT;
+  protected FrequencyUnit freqUnit = FREQ_UNIT_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -143,9 +143,9 @@ public class CyclicActionImpl extends MinimalEObjectImpl.Container implements Cy
    * @generated
    */
   @Override
-  public int getValue()
+  public int getFreqValue()
   {
-    return value;
+    return freqValue;
   }
 
   /**
@@ -154,12 +154,12 @@ public class CyclicActionImpl extends MinimalEObjectImpl.Container implements Cy
    * @generated
    */
   @Override
-  public void setValue(int newValue)
+  public void setFreqValue(int newFreqValue)
   {
-    int oldValue = value;
-    value = newValue;
+    int oldFreqValue = freqValue;
+    freqValue = newFreqValue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SmartCityPackage.CYCLIC_ACTION__VALUE, oldValue, value));
+      eNotify(new ENotificationImpl(this, Notification.SET, SmartCityPackage.CYCLIC_ACTION__FREQ_VALUE, oldFreqValue, freqValue));
   }
 
   /**
@@ -168,9 +168,9 @@ public class CyclicActionImpl extends MinimalEObjectImpl.Container implements Cy
    * @generated
    */
   @Override
-  public FrequencyUnit getUnit()
+  public FrequencyUnit getFreqUnit()
   {
-    return unit;
+    return freqUnit;
   }
 
   /**
@@ -179,12 +179,12 @@ public class CyclicActionImpl extends MinimalEObjectImpl.Container implements Cy
    * @generated
    */
   @Override
-  public void setUnit(FrequencyUnit newUnit)
+  public void setFreqUnit(FrequencyUnit newFreqUnit)
   {
-    FrequencyUnit oldUnit = unit;
-    unit = newUnit == null ? UNIT_EDEFAULT : newUnit;
+    FrequencyUnit oldFreqUnit = freqUnit;
+    freqUnit = newFreqUnit == null ? FREQ_UNIT_EDEFAULT : newFreqUnit;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SmartCityPackage.CYCLIC_ACTION__UNIT, oldUnit, unit));
+      eNotify(new ENotificationImpl(this, Notification.SET, SmartCityPackage.CYCLIC_ACTION__FREQ_UNIT, oldFreqUnit, freqUnit));
   }
 
   /**
@@ -199,10 +199,10 @@ public class CyclicActionImpl extends MinimalEObjectImpl.Container implements Cy
     {
       case SmartCityPackage.CYCLIC_ACTION__NAME:
         return getName();
-      case SmartCityPackage.CYCLIC_ACTION__VALUE:
-        return getValue();
-      case SmartCityPackage.CYCLIC_ACTION__UNIT:
-        return getUnit();
+      case SmartCityPackage.CYCLIC_ACTION__FREQ_VALUE:
+        return getFreqValue();
+      case SmartCityPackage.CYCLIC_ACTION__FREQ_UNIT:
+        return getFreqUnit();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -220,11 +220,11 @@ public class CyclicActionImpl extends MinimalEObjectImpl.Container implements Cy
       case SmartCityPackage.CYCLIC_ACTION__NAME:
         setName((String)newValue);
         return;
-      case SmartCityPackage.CYCLIC_ACTION__VALUE:
-        setValue((Integer)newValue);
+      case SmartCityPackage.CYCLIC_ACTION__FREQ_VALUE:
+        setFreqValue((Integer)newValue);
         return;
-      case SmartCityPackage.CYCLIC_ACTION__UNIT:
-        setUnit((FrequencyUnit)newValue);
+      case SmartCityPackage.CYCLIC_ACTION__FREQ_UNIT:
+        setFreqUnit((FrequencyUnit)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -243,11 +243,11 @@ public class CyclicActionImpl extends MinimalEObjectImpl.Container implements Cy
       case SmartCityPackage.CYCLIC_ACTION__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case SmartCityPackage.CYCLIC_ACTION__VALUE:
-        setValue(VALUE_EDEFAULT);
+      case SmartCityPackage.CYCLIC_ACTION__FREQ_VALUE:
+        setFreqValue(FREQ_VALUE_EDEFAULT);
         return;
-      case SmartCityPackage.CYCLIC_ACTION__UNIT:
-        setUnit(UNIT_EDEFAULT);
+      case SmartCityPackage.CYCLIC_ACTION__FREQ_UNIT:
+        setFreqUnit(FREQ_UNIT_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -265,10 +265,10 @@ public class CyclicActionImpl extends MinimalEObjectImpl.Container implements Cy
     {
       case SmartCityPackage.CYCLIC_ACTION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case SmartCityPackage.CYCLIC_ACTION__VALUE:
-        return value != VALUE_EDEFAULT;
-      case SmartCityPackage.CYCLIC_ACTION__UNIT:
-        return unit != UNIT_EDEFAULT;
+      case SmartCityPackage.CYCLIC_ACTION__FREQ_VALUE:
+        return freqValue != FREQ_VALUE_EDEFAULT;
+      case SmartCityPackage.CYCLIC_ACTION__FREQ_UNIT:
+        return freqUnit != FREQ_UNIT_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -286,10 +286,10 @@ public class CyclicActionImpl extends MinimalEObjectImpl.Container implements Cy
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (name: ");
     result.append(name);
-    result.append(", value: ");
-    result.append(value);
-    result.append(", unit: ");
-    result.append(unit);
+    result.append(", freqValue: ");
+    result.append(freqValue);
+    result.append(", freqUnit: ");
+    result.append(freqUnit);
     result.append(')');
     return result.toString();
   }

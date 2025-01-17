@@ -128,22 +128,22 @@ public class SmartCitySemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     CyclicAction returns CyclicAction
 	 *
 	 * Constraint:
-	 *     (name=ID value=INT unit=FrequencyUnit)
+	 *     (name=ID freqValue=INT freqUnit=FrequencyUnit)
 	 * </pre>
 	 */
 	protected void sequence_CyclicAction(ISerializationContext context, CyclicAction semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, SmartCityPackage.Literals.CYCLIC_ACTION__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCityPackage.Literals.CYCLIC_ACTION__NAME));
-			if (transientValues.isValueTransient(semanticObject, SmartCityPackage.Literals.CYCLIC_ACTION__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCityPackage.Literals.CYCLIC_ACTION__VALUE));
-			if (transientValues.isValueTransient(semanticObject, SmartCityPackage.Literals.CYCLIC_ACTION__UNIT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCityPackage.Literals.CYCLIC_ACTION__UNIT));
+			if (transientValues.isValueTransient(semanticObject, SmartCityPackage.Literals.CYCLIC_ACTION__FREQ_VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCityPackage.Literals.CYCLIC_ACTION__FREQ_VALUE));
+			if (transientValues.isValueTransient(semanticObject, SmartCityPackage.Literals.CYCLIC_ACTION__FREQ_UNIT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCityPackage.Literals.CYCLIC_ACTION__FREQ_UNIT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getCyclicActionAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getCyclicActionAccess().getValueINTTerminalRuleCall_3_0(), semanticObject.getValue());
-		feeder.accept(grammarAccess.getCyclicActionAccess().getUnitFrequencyUnitEnumRuleCall_4_0(), semanticObject.getUnit());
+		feeder.accept(grammarAccess.getCyclicActionAccess().getFreqValueINTTerminalRuleCall_3_0(), semanticObject.getFreqValue());
+		feeder.accept(grammarAccess.getCyclicActionAccess().getFreqUnitFrequencyUnitEnumRuleCall_4_0(), semanticObject.getFreqUnit());
 		feeder.finish();
 	}
 	
@@ -185,8 +185,8 @@ public class SmartCitySemanticSequencer extends AbstractDelegatingSemanticSequen
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, SmartCityPackage.Literals.LINKABLE__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCityPackage.Literals.LINKABLE__NAME));
-			if (transientValues.isValueTransient(semanticObject, SmartCityPackage.Literals.INTEROPERABLE_LAYER__PRIORITY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCityPackage.Literals.INTEROPERABLE_LAYER__PRIORITY));
+			if (transientValues.isValueTransient(semanticObject, SmartCityPackage.Literals.LINKABLE__PRIORITY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCityPackage.Literals.LINKABLE__PRIORITY));
 			if (transientValues.isValueTransient(semanticObject, SmartCityPackage.Literals.INTEROPERABLE_LAYER__DELAY) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCityPackage.Literals.INTEROPERABLE_LAYER__DELAY));
 		}
@@ -233,7 +233,16 @@ public class SmartCitySemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Linkable returns Node
 	 *
 	 * Constraint:
-	 *     (name=ID sensors+=Sensor* modules+=Module* controller=Controller links+=CommunicationLink*)
+	 *     (
+	 *         name=ID 
+	 *         sensors+=Sensor* 
+	 *         modules+=Module* 
+	 *         controller=Controller 
+	 *         freqValue=INT 
+	 *         freqUnit=FrequencyUnit 
+	 *         links+=CommunicationLink* 
+	 *         priority=INT
+	 *     )
 	 * </pre>
 	 */
 	protected void sequence_Node(ISerializationContext context, Node semanticObject) {

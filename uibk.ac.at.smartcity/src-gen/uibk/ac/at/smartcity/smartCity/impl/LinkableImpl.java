@@ -22,6 +22,7 @@ import uibk.ac.at.smartcity.smartCity.SmartCityPackage;
  * </p>
  * <ul>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.LinkableImpl#getName <em>Name</em>}</li>
+ *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.LinkableImpl#getPriority <em>Priority</em>}</li>
  * </ul>
  *
  * @generated
@@ -47,6 +48,26 @@ public class LinkableImpl extends MinimalEObjectImpl.Container implements Linkab
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getPriority() <em>Priority</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPriority()
+   * @generated
+   * @ordered
+   */
+  protected static final int PRIORITY_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getPriority() <em>Priority</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPriority()
+   * @generated
+   * @ordered
+   */
+  protected int priority = PRIORITY_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -100,12 +121,39 @@ public class LinkableImpl extends MinimalEObjectImpl.Container implements Linkab
    * @generated
    */
   @Override
+  public int getPriority()
+  {
+    return priority;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setPriority(int newPriority)
+  {
+    int oldPriority = priority;
+    priority = newPriority;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SmartCityPackage.LINKABLE__PRIORITY, oldPriority, priority));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
       case SmartCityPackage.LINKABLE__NAME:
         return getName();
+      case SmartCityPackage.LINKABLE__PRIORITY:
+        return getPriority();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -122,6 +170,9 @@ public class LinkableImpl extends MinimalEObjectImpl.Container implements Linkab
     {
       case SmartCityPackage.LINKABLE__NAME:
         setName((String)newValue);
+        return;
+      case SmartCityPackage.LINKABLE__PRIORITY:
+        setPriority((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -140,6 +191,9 @@ public class LinkableImpl extends MinimalEObjectImpl.Container implements Linkab
       case SmartCityPackage.LINKABLE__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case SmartCityPackage.LINKABLE__PRIORITY:
+        setPriority(PRIORITY_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -156,6 +210,8 @@ public class LinkableImpl extends MinimalEObjectImpl.Container implements Linkab
     {
       case SmartCityPackage.LINKABLE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case SmartCityPackage.LINKABLE__PRIORITY:
+        return priority != PRIORITY_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -173,6 +229,8 @@ public class LinkableImpl extends MinimalEObjectImpl.Container implements Linkab
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (name: ");
     result.append(name);
+    result.append(", priority: ");
+    result.append(priority);
     result.append(')');
     return result.toString();
   }

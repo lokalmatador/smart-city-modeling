@@ -11,7 +11,6 @@
         eType="#//CommunicationLink" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InteroperableLayer" eSuperTypes="#//Linkable">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="delay" eType="#//DelayRange"
         containment="true"/>
   </eClassifiers>
@@ -22,12 +21,13 @@
         eType="#//Module" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="controller" eType="#//Controller"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="freqValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="freqUnit" eType="#//FrequencyUnit"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1"
         eType="#//CommunicationLink" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Sensor" eSuperTypes="#//Linkable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//SensorType"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="cyclicActions" upperBound="-1"
         eType="#//CyclicAction" containment="true"/>
   </eClassifiers>
@@ -41,7 +41,6 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Controller" eSuperTypes="#//Linkable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ControllerType"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="cyclicActions" upperBound="-1"
         eType="#//CyclicAction" containment="true"/>
   </eClassifiers>
@@ -53,6 +52,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Linkable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DelayRange">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="min" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -60,8 +60,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CyclicAction">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="#//FrequencyUnit"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="freqValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="freqUnit" eType="#//FrequencyUnit"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TriggeredAction">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -79,6 +79,7 @@
   <eClassifiers xsi:type="ecore:EEnum" name="ControllerType">
     <eLiterals name="ESP32" literal="ESP32"/>
     <eLiterals name="RASPBERRY_PI" value="1" literal="RASPBERRY_PI"/>
+    <eLiterals name="OTHER" value="2" literal="OTHER"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="LinkType">
     <eLiterals name="UART" literal="UART"/>

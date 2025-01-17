@@ -57,7 +57,10 @@ public class SmartCityParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getNodeAccess().getSensorsAssignment_3(), "rule__Node__SensorsAssignment_3");
 			builder.put(grammarAccess.getNodeAccess().getModulesAssignment_4(), "rule__Node__ModulesAssignment_4");
 			builder.put(grammarAccess.getNodeAccess().getControllerAssignment_5(), "rule__Node__ControllerAssignment_5");
-			builder.put(grammarAccess.getNodeAccess().getLinksAssignment_6(), "rule__Node__LinksAssignment_6");
+			builder.put(grammarAccess.getNodeAccess().getFreqValueAssignment_7(), "rule__Node__FreqValueAssignment_7");
+			builder.put(grammarAccess.getNodeAccess().getFreqUnitAssignment_8(), "rule__Node__FreqUnitAssignment_8");
+			builder.put(grammarAccess.getNodeAccess().getLinksAssignment_9(), "rule__Node__LinksAssignment_9");
+			builder.put(grammarAccess.getNodeAccess().getPriorityAssignment_11(), "rule__Node__PriorityAssignment_11");
 			builder.put(grammarAccess.getSensorAccess().getNameAssignment_1(), "rule__Sensor__NameAssignment_1");
 			builder.put(grammarAccess.getSensorAccess().getTypeAssignment_3(), "rule__Sensor__TypeAssignment_3");
 			builder.put(grammarAccess.getSensorAccess().getPriorityAssignment_5(), "rule__Sensor__PriorityAssignment_5");
@@ -77,8 +80,8 @@ public class SmartCityParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getDelayRangeAccess().getMinAssignment_1(), "rule__DelayRange__MinAssignment_1");
 			builder.put(grammarAccess.getDelayRangeAccess().getMaxAssignment_3(), "rule__DelayRange__MaxAssignment_3");
 			builder.put(grammarAccess.getCyclicActionAccess().getNameAssignment_1(), "rule__CyclicAction__NameAssignment_1");
-			builder.put(grammarAccess.getCyclicActionAccess().getValueAssignment_3(), "rule__CyclicAction__ValueAssignment_3");
-			builder.put(grammarAccess.getCyclicActionAccess().getUnitAssignment_4(), "rule__CyclicAction__UnitAssignment_4");
+			builder.put(grammarAccess.getCyclicActionAccess().getFreqValueAssignment_3(), "rule__CyclicAction__FreqValueAssignment_3");
+			builder.put(grammarAccess.getCyclicActionAccess().getFreqUnitAssignment_4(), "rule__CyclicAction__FreqUnitAssignment_4");
 			builder.put(grammarAccess.getTriggeredActionAccess().getNameAssignment_1(), "rule__TriggeredAction__NameAssignment_1");
 		}
 	}

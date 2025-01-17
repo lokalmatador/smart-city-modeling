@@ -13,7 +13,6 @@ package uibk.ac.at.smartcity.smartCity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uibk.ac.at.smartcity.smartCity.InteroperableLayer#getPriority <em>Priority</em>}</li>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.InteroperableLayer#getDelay <em>Delay</em>}</li>
  * </ul>
  *
@@ -23,28 +22,6 @@ package uibk.ac.at.smartcity.smartCity;
  */
 public interface InteroperableLayer extends Linkable
 {
-  /**
-   * Returns the value of the '<em><b>Priority</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Priority</em>' attribute.
-   * @see #setPriority(int)
-   * @see uibk.ac.at.smartcity.smartCity.SmartCityPackage#getInteroperableLayer_Priority()
-   * @model
-   * @generated
-   */
-  int getPriority();
-
-  /**
-   * Sets the value of the '{@link uibk.ac.at.smartcity.smartCity.InteroperableLayer#getPriority <em>Priority</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Priority</em>' attribute.
-   * @see #getPriority()
-   * @generated
-   */
-  void setPriority(int value);
-
   /**
    * Returns the value of the '<em><b>Delay</b></em>' containment reference.
    * <!-- begin-user-doc -->

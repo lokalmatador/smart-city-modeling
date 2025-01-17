@@ -21,7 +21,8 @@ import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
 import uibk.ac.at.smartcity.smartCity.CommunicationLink;
 import uibk.ac.at.smartcity.smartCity.Controller;
-import uibk.ac.at.smartcity.smartCity.DelayRange;
+import uibk.ac.at.smartcity.smartCity.ControllerType;
+import uibk.ac.at.smartcity.smartCity.FrequencyUnit;
 import uibk.ac.at.smartcity.smartCity.InteroperableLayer;
 import uibk.ac.at.smartcity.smartCity.LinkType;
 import uibk.ac.at.smartcity.smartCity.Linkable;
@@ -54,7 +55,6 @@ public class SmartCityGenerator extends AbstractGenerator {
         }
       }
     }
-    this.generateCommunications(fsa);
     this.generateInterface(fsa);
     this.generateSink(fsa);
     final Iterable<Sensor> sensors = Iterables.<Sensor>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), Sensor.class);
@@ -63,6 +63,27 @@ public class SmartCityGenerator extends AbstractGenerator {
     final InteroperableLayer interoperableLayer = ((InteroperableLayer[])Conversions.unwrapArray((Iterables.<InteroperableLayer>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), InteroperableLayer.class)), InteroperableLayer.class))[0];
     fsa.generateFile("model.py", this.generateModel(sensors, links, nodes, interoperableLayer));
     fsa.generateFile("experiment.py", this.generateMain());
+  }
+
+  public double frequencyToSeconds(final int value, final FrequencyUnit unit) {
+    if (unit != null) {
+      switch (unit) {
+        case DAYS:
+          return (((value * 24) * 60) * 60);
+        case HOURS:
+          return ((value * 60) * 60);
+        case SECONDS:
+          return value;
+        case HERTZ:
+          return (1 / value);
+        case INF:
+          return (-1);
+        default:
+          return value;
+      }
+    } else {
+      return value;
+    }
   }
 
   public CharSequence compile(final Sensor sensor) {
@@ -100,24 +121,19 @@ public class SmartCityGenerator extends AbstractGenerator {
         _builder.append("\t");
         _builder.append("self.state = {");
         _builder.newLine();
-        _builder.append("\t");
-        _builder.append("\t");
+        _builder.append("\t\t");
         _builder.append("\"number\": 0,");
         _builder.newLine();
-        _builder.append("\t");
-        _builder.append("\t");
+        _builder.append("\t\t");
         _builder.append("\"image_data\": None,");
         _builder.newLine();
-        _builder.append("\t");
-        _builder.append("\t");
+        _builder.append("\t\t");
         _builder.append("\"number_detected\": None,");
         _builder.newLine();
-        _builder.append("\t");
-        _builder.append("\t");
+        _builder.append("\t\t");
         _builder.append("\"processing_time\": 0,");
         _builder.newLine();
-        _builder.append("\t");
-        _builder.append("\t");
+        _builder.append("\t\t");
         _builder.append("\"status\": \"capturing\"  # Start in capturing state");
         _builder.newLine();
         _builder.append("\t");
@@ -128,29 +144,58 @@ public class SmartCityGenerator extends AbstractGenerator {
         int _priority = sensor.getPriority();
         _builder.append(_priority, "\t");
         _builder.newLineIfNotEmpty();
-      } else {
+        _builder.append("def generate_random_number(self):");
+        _builder.newLine();
         _builder.append("\t");
+        _builder.append("return random.randint(0, 100)");
+        _builder.newLine();
+        _builder.newLine();
+        _builder.append("def capture_image(self):");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("# Simulate capturing an image");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("self.state[\"image_data\"] = f\"image_data_{time.time()}\"");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("print(f\"[{self.name}] Captured image: {self.state[\'image_data\']}\")");
+        _builder.newLine();
+        _builder.newLine();
+        _builder.append("def process_image(self):");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("# Simulate processing the image to detect a number");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("self.state[\"number_detected\"] = self.generate_random_number()");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("print(f\"[{self.name}] Detected number: {self.state[\'number_detected\']}\")");
+        _builder.newLine();
+      } else {
+        _builder.append("\t\t");
         _builder.append("super().__init__(\"");
         String _name_1 = sensor.getName();
-        _builder.append(_name_1, "\t");
+        _builder.append(_name_1, "\t\t");
         _builder.append("\")");
         _builder.newLineIfNotEmpty();
-        _builder.append("\t");
+        _builder.append("\t\t");
         _builder.append("self.inport = self.addInPort(\"in_port\")");
         _builder.newLine();
-        _builder.append("\t");
+        _builder.append("\t\t");
         _builder.append("self.outport = self.addOutPort(\"outport\")");
         _builder.newLine();
-        _builder.append("\t");
+        _builder.append("\t\t");
         _builder.append("self.state = {\"");
         SensorType _type_1 = sensor.getType();
-        _builder.append(_type_1, "\t");
+        _builder.append(_type_1, "\t\t");
         _builder.append("\": 0}");
         _builder.newLineIfNotEmpty();
-        _builder.append("\t");
+        _builder.append("\t\t");
         _builder.append("self.priority = ");
         int _priority_1 = sensor.getPriority();
-        _builder.append(_priority_1, "\t");
+        _builder.append(_priority_1, "\t\t");
         _builder.newLineIfNotEmpty();
       }
     }
@@ -162,127 +207,127 @@ public class SmartCityGenerator extends AbstractGenerator {
       SensorType _type_2 = sensor.getType();
       boolean _equals_1 = Objects.equals(_type_2, SensorType.PH);
       if (_equals_1) {
-        _builder.append("\t");
+        _builder.append("\t\t");
         _builder.append("self.state[\"");
         SensorType _type_3 = sensor.getType();
-        _builder.append(_type_3, "\t");
+        _builder.append(_type_3, "\t\t");
         _builder.append("\"] = random.uniform(0, 14)");
         _builder.newLineIfNotEmpty();
-        _builder.append("\t");
+        _builder.append("\t\t");
         _builder.append("return self.state");
         _builder.newLine();
       } else {
         SensorType _type_4 = sensor.getType();
         boolean _equals_2 = Objects.equals(_type_4, SensorType.CURRENT);
         if (_equals_2) {
-          _builder.append("\t");
+          _builder.append("\t\t");
           _builder.append("self.state[\"");
           SensorType _type_5 = sensor.getType();
-          _builder.append(_type_5, "\t");
+          _builder.append(_type_5, "\t\t");
           _builder.append("\"] = random.uniform(0, 100)");
           _builder.newLineIfNotEmpty();
-          _builder.append("\t");
+          _builder.append("\t\t");
           _builder.append("return self.state");
           _builder.newLine();
         } else {
           SensorType _type_6 = sensor.getType();
           boolean _equals_3 = Objects.equals(_type_6, SensorType.PULSE);
           if (_equals_3) {
-            _builder.append("\t");
+            _builder.append("\t\t");
             _builder.append("self.state[\"");
             SensorType _type_7 = sensor.getType();
-            _builder.append(_type_7, "\t");
+            _builder.append(_type_7, "\t\t");
             _builder.append("\"] = random.uniform(0, 1)");
             _builder.newLineIfNotEmpty();
-            _builder.append("\t");
+            _builder.append("\t\t");
             _builder.append("return self.state");
             _builder.newLine();
           } else {
             SensorType _type_8 = sensor.getType();
             boolean _equals_4 = Objects.equals(_type_8, SensorType.TDS);
             if (_equals_4) {
-              _builder.append("\t");
+              _builder.append("\t\t");
               _builder.append("self.state[\"");
               SensorType _type_9 = sensor.getType();
-              _builder.append(_type_9, "\t");
+              _builder.append(_type_9, "\t\t");
               _builder.append("\"] = random.uniform(0, 1000)");
               _builder.newLineIfNotEmpty();
-              _builder.append("\t");
+              _builder.append("\t\t");
               _builder.append("return self.state");
               _builder.newLine();
             } else {
               SensorType _type_10 = sensor.getType();
               boolean _equals_5 = Objects.equals(_type_10, SensorType.TEMPERATURE);
               if (_equals_5) {
-                _builder.append("\t");
+                _builder.append("\t\t");
                 _builder.append("self.state[\"");
                 SensorType _type_11 = sensor.getType();
-                _builder.append(_type_11, "\t");
+                _builder.append(_type_11, "\t\t");
                 _builder.append("\"] = random.uniform(0, 100)");
                 _builder.newLineIfNotEmpty();
-                _builder.append("\t");
+                _builder.append("\t\t");
                 _builder.append("return self.state");
                 _builder.newLine();
               } else {
                 SensorType _type_12 = sensor.getType();
                 boolean _equals_6 = Objects.equals(_type_12, SensorType.TURBIDITY);
                 if (_equals_6) {
-                  _builder.append("\t");
+                  _builder.append("\t\t");
                   _builder.append("self.state[\"");
                   SensorType _type_13 = sensor.getType();
-                  _builder.append(_type_13, "\t");
+                  _builder.append(_type_13, "\t\t");
                   _builder.append("\"] = random.uniform(0, 100)");
                   _builder.newLineIfNotEmpty();
-                  _builder.append("\t");
+                  _builder.append("\t\t");
                   _builder.append("return self.state");
                   _builder.newLine();
                 } else {
                   SensorType _type_14 = sensor.getType();
                   boolean _equals_7 = Objects.equals(_type_14, SensorType.ULTRASONIC);
                   if (_equals_7) {
-                    _builder.append("\t");
+                    _builder.append("\t\t");
                     _builder.append("self.state[\"");
                     SensorType _type_15 = sensor.getType();
-                    _builder.append(_type_15, "\t");
+                    _builder.append(_type_15, "\t\t");
                     _builder.append("\"] = random.uniform(0.5, 4.0)");
                     _builder.newLineIfNotEmpty();
-                    _builder.append("\t");
+                    _builder.append("\t\t");
                     _builder.append("return self.state");
                     _builder.newLine();
                   } else {
                     SensorType _type_16 = sensor.getType();
                     boolean _equals_8 = Objects.equals(_type_16, SensorType.CAMERA);
                     if (_equals_8) {
-                      _builder.append("\t");
+                      _builder.append("\t\t");
                       _builder.append("if self.state[\"status\"] == \"capturing\":");
                       _builder.newLine();
-                      _builder.append("\t");
+                      _builder.append("\t\t");
                       _builder.append("    ");
                       _builder.append("self.capture_image()");
                       _builder.newLine();
-                      _builder.append("\t");
+                      _builder.append("\t\t");
                       _builder.append("    ");
                       _builder.append("self.state[\"status\"] = \"processing\"");
                       _builder.newLine();
-                      _builder.append("\t");
+                      _builder.append("\t\t");
                       _builder.append("elif self.state[\"status\"] == \"processing\":");
                       _builder.newLine();
-                      _builder.append("\t");
+                      _builder.append("\t\t");
                       _builder.append("    ");
                       _builder.append("self.process_image()");
                       _builder.newLine();
-                      _builder.append("\t");
+                      _builder.append("\t\t");
                       _builder.append("    ");
                       _builder.append("self.state[\"status\"] = \"capturing\"  # Loop back to capturing for continuous processing");
                       _builder.newLine();
-                      _builder.append("\t");
+                      _builder.append("\t\t");
                       _builder.append("return self.state");
                       _builder.newLine();
                     } else {
-                      _builder.append("\t");
+                      _builder.append("\t\t");
                       _builder.append("print(\"Internal Transition not defined for this sensor type\")");
                       _builder.newLine();
-                      _builder.append("\t");
+                      _builder.append("\t\t");
                       _builder.append("return None");
                       _builder.newLine();
                     }
@@ -294,7 +339,6 @@ public class SmartCityGenerator extends AbstractGenerator {
         }
       }
     }
-    _builder.append("\t\t");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("def extTransition(self, inputs):");
@@ -303,23 +347,18 @@ public class SmartCityGenerator extends AbstractGenerator {
       SensorType _type_17 = sensor.getType();
       boolean _equals_9 = Objects.equals(_type_17, SensorType.CAMERA);
       if (_equals_9) {
-        _builder.append("\t");
+        _builder.append("\t\t");
         _builder.append("self.state[\"status\"] = \"capturing\"");
         _builder.newLine();
-        _builder.append("\t");
+        _builder.append("\t\t");
         _builder.append("return self.state");
         _builder.newLine();
       } else {
-        _builder.append("\t");
+        _builder.append("\t\t");
         _builder.append("return self.state");
         _builder.newLine();
       }
     }
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("return self.state ");
-    _builder.newLine();
-    _builder.append("\t\t");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("def outputFnc(self):");
@@ -339,37 +378,37 @@ public class SmartCityGenerator extends AbstractGenerator {
       SensorType _type_19 = sensor.getType();
       boolean _equals_10 = Objects.equals(_type_19, SensorType.CAMERA);
       if (_equals_10) {
-        _builder.append("\t");
+        _builder.append("\t\t");
         _builder.append("if self.state[\"status\"] == \"idle\":");
         _builder.newLine();
-        _builder.append("\t");
+        _builder.append("\t\t");
         _builder.append("    ");
         _builder.append("return INFINITY");
         _builder.newLine();
-        _builder.append("\t");
+        _builder.append("\t\t");
         _builder.append("elif self.state[\"status\"] == \"capturing\":");
         _builder.newLine();
-        _builder.append("\t");
+        _builder.append("\t\t");
         _builder.append("    ");
         _builder.append("return 1.0  # Time to capture an image");
         _builder.newLine();
-        _builder.append("\t");
+        _builder.append("\t\t");
         _builder.append("elif self.state[\"status\"] == \"processing\":");
         _builder.newLine();
-        _builder.append("\t");
+        _builder.append("\t\t");
         _builder.append("    ");
         _builder.append("return 2.0  # Time to process the image");
         _builder.newLine();
-        _builder.append("\t");
+        _builder.append("\t\t");
         _builder.append("return INFINITY");
         _builder.newLine();
       } else {
         if (((Objects.equals(sensor.getType(), SensorType.CURRENT) || Objects.equals(sensor.getType(), SensorType.PULSE)) || Objects.equals(sensor.getType(), SensorType.ULTRASONIC))) {
-          _builder.append("\t");
+          _builder.append("\t\t");
           _builder.append("return 1.0");
           _builder.newLine();
         } else {
-          _builder.append("\t");
+          _builder.append("\t\t");
           _builder.append("return 5.0");
           _builder.newLine();
         }
@@ -398,12 +437,15 @@ public class SmartCityGenerator extends AbstractGenerator {
           distinctLinkTypes.add(link.getType());
         }
       }
+      final double postFrequency = this.frequencyToSeconds(node.getFreqValue(), node.getFreqUnit());
+      ControllerType _type = node.getController().getType();
+      final boolean knownController = (!Objects.equals(_type, ControllerType.OTHER));
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("from pypdevs.DEVS import AtomicDEVS");
       _builder.newLine();
       _builder.append("from pypdevs.infinity import INFINITY");
       _builder.newLine();
-      _builder.append("import time");
+      _builder.append("import time, random");
       _builder.newLine();
       _builder.append("class ");
       String _firstUpper = StringExtensions.toFirstUpper(node.getName());
@@ -417,8 +459,26 @@ public class SmartCityGenerator extends AbstractGenerator {
       _builder.append("self.data_aggregated = {}");
       _builder.newLine();
       _builder.append("\t\t");
-      _builder.append("self.next_send_time = 1.0  # Initial time until the next data send");
       _builder.newLine();
+      _builder.append("\t\t");
+      _builder.append("if random.random() < 0.8:");
+      _builder.newLine();
+      _builder.append("\t\t\t");
+      _builder.append("self.next_internal_time = ");
+      _builder.append(postFrequency, "\t\t\t");
+      _builder.newLineIfNotEmpty();
+      _builder.append("\t\t");
+      _builder.append("else:");
+      _builder.newLine();
+      _builder.append("\t\t\t");
+      _builder.append("self.next_internal_time = ");
+      _builder.append(postFrequency, "\t\t\t");
+      _builder.append(" + random.uniform(");
+      _builder.append(postFrequency, "\t\t\t");
+      _builder.append(" * (-0.8), ");
+      _builder.append(postFrequency, "\t\t\t");
+      _builder.append(" * 0.8)");
+      _builder.newLineIfNotEmpty();
       _builder.newLine();
       _builder.newLine();
       _builder.append("class ");
@@ -427,12 +487,10 @@ public class SmartCityGenerator extends AbstractGenerator {
       _builder.append("(AtomicDEVS):");
       _builder.newLineIfNotEmpty();
       _builder.append("\t");
-      _builder.append("def __init__(self, name):");
+      _builder.append("def __init__(self, name, pinout):");
       _builder.newLine();
       _builder.append("\t\t");
       _builder.append("super().__init__(name)");
-      _builder.newLine();
-      _builder.append("\t\t");
       _builder.newLine();
       _builder.append("\t\t");
       _builder.append("self.state = ");
@@ -443,25 +501,49 @@ public class SmartCityGenerator extends AbstractGenerator {
       _builder.append("\t\t");
       _builder.append("self.timeLast = 0.0  # Initialize timeLast");
       _builder.newLine();
+      _builder.append("\t\t");
+      _builder.append("self.pins = pinout");
+      _builder.newLine();
       {
-        for(final LinkType type : distinctLinkTypes) {
-          _builder.append("\t\t");
-          _builder.append("self.");
-          String _lowerCase = type.toString().toLowerCase();
-          _builder.append(_lowerCase, "\t\t");
-          _builder.append("_inport = self.addInPort(\"");
-          String _lowerCase_1 = type.toString().toLowerCase();
-          _builder.append(_lowerCase_1, "\t\t");
-          _builder.append("_in\")");
-          _builder.newLineIfNotEmpty();
+        if (knownController) {
+          {
+            for(final LinkType type : distinctLinkTypes) {
+              _builder.append("\t\t");
+              _builder.append("self.");
+              String _lowerCase = type.toString().toLowerCase();
+              _builder.append(_lowerCase, "\t\t");
+              _builder.append("_inport = self.addInPort(\"");
+              String _lowerCase_1 = type.toString().toLowerCase();
+              _builder.append(_lowerCase_1, "\t\t");
+              _builder.append("_in\")");
+              _builder.newLineIfNotEmpty();
+            }
+          }
+        } else {
+          {
+            for(final LinkType type_1 : distinctLinkTypes) {
+              _builder.append("\t\t");
+              _builder.append("self.");
+              String _lowerCase_2 = type_1.toString().toLowerCase();
+              _builder.append(_lowerCase_2, "\t\t");
+              _builder.append("_inport = self.addInPort(\"");
+              String _lowerCase_3 = type_1.toString().toLowerCase();
+              _builder.append(_lowerCase_3, "\t\t");
+              _builder.append("_in\")");
+              _builder.newLineIfNotEmpty();
+            }
+          }
         }
       }
       _builder.append("\t\t");
       _builder.append("self.outport = self.addOutPort(\"out\")");
       _builder.newLine();
       _builder.append("\t\t");
-      _builder.append("self.priority = 3  # Priority for nodes");
-      _builder.newLine();
+      _builder.append("self.priority = ");
+      int _priority = node.getPriority();
+      _builder.append(_priority, "\t\t");
+      _builder.append("  # Priority for nodes");
+      _builder.newLineIfNotEmpty();
       _builder.newLine();
       _builder.append("\t");
       _builder.append("def timeAdvance(self):");
@@ -470,10 +552,10 @@ public class SmartCityGenerator extends AbstractGenerator {
       _builder.append("# Calculate the remaining time until the next send event");
       _builder.newLine();
       _builder.append("\t\t");
-      _builder.append("print(f\"[{self.name}] timeAdvance called. Next send time: {self.state.next_send_time}, timeLast: {self.timeLast}\")");
+      _builder.append("print(f\"[{self.name}] timeAdvance called. Next internal time: {self.state.next_internal_time}, timeLast: {self.timeLast}\")");
       _builder.newLine();
       _builder.append("\t\t");
-      _builder.append("return self.state.next_send_time - self.timeLast if self.state.data_aggregated else INFINITY");
+      _builder.append("return self.state.next_internal_time - self.timeLast if self.state.data_aggregated else INFINITY");
       _builder.newLine();
       _builder.append("\t\t");
       _builder.newLine();
@@ -495,28 +577,28 @@ public class SmartCityGenerator extends AbstractGenerator {
             boolean _tripleEquals = (_destination == _controller);
             if (_tripleEquals) {
               _builder.append("\t\t");
-              _builder.append("self.");
-              String _lowerCase_2 = link_1.getType().toString().toLowerCase();
-              _builder.append(_lowerCase_2, "\t\t");
+              _builder.append("# self.");
+              String _lowerCase_4 = link_1.getType().toString().toLowerCase();
+              _builder.append(_lowerCase_4, "\t\t");
               _builder.append("_inport = self.addInPort(\"");
-              String _lowerCase_3 = link_1.getType().toString().toLowerCase();
-              _builder.append(_lowerCase_3, "\t\t");
+              String _lowerCase_5 = link_1.getType().toString().toLowerCase();
+              _builder.append(_lowerCase_5, "\t\t");
               _builder.append("_in\")");
               _builder.newLineIfNotEmpty();
               _builder.append("\t\t");
               _builder.append("if self.");
-              String _lowerCase_4 = link_1.getType().toString().toLowerCase();
-              _builder.append(_lowerCase_4, "\t\t");
+              String _lowerCase_6 = link_1.getType().toString().toLowerCase();
+              _builder.append(_lowerCase_6, "\t\t");
               _builder.append("_inport in inputs:");
               _builder.newLineIfNotEmpty();
               _builder.append("\t\t");
               _builder.append("\t");
               _builder.append("self.state.data_aggregated[\"");
-              LinkType _type = link_1.getType();
-              _builder.append(_type, "\t\t\t");
+              LinkType _type_1 = link_1.getType();
+              _builder.append(_type_1, "\t\t\t");
               _builder.append("\"] = inputs[self.");
-              String _lowerCase_5 = link_1.getType().toString().toLowerCase();
-              _builder.append(_lowerCase_5, "\t\t\t");
+              String _lowerCase_7 = link_1.getType().toString().toLowerCase();
+              _builder.append(_lowerCase_7, "\t\t\t");
               _builder.append("_inport]");
               _builder.newLineIfNotEmpty();
             }
@@ -524,7 +606,7 @@ public class SmartCityGenerator extends AbstractGenerator {
         }
       }
       _builder.append("\t\t");
-      _builder.append("self.timeLast = self.state.next_send_time  # Update timeLast");
+      _builder.append("self.timeLast = self.state.next_internal_time  # Update timeLast");
       _builder.newLine();
       _builder.append("\t\t");
       _builder.append("return self.state");
@@ -541,10 +623,10 @@ public class SmartCityGenerator extends AbstractGenerator {
       _builder.append("print(f\"[{self.name}] intTransition called.\")");
       _builder.newLine();
       _builder.append("\t\t");
-      _builder.append("self.timeLast = self.state.next_send_time  # Update timeLast");
+      _builder.append("self.timeLast = self.state.next_internal_time  # Update timeLast");
       _builder.newLine();
       _builder.append("\t\t");
-      _builder.append("self.state.next_send_time += 1.0");
+      _builder.append("self.state.next_internal_time += 1.0");
       _builder.newLine();
       _builder.append("\t\t");
       _builder.append("return self.state");
@@ -565,28 +647,28 @@ public class SmartCityGenerator extends AbstractGenerator {
       _builder.append("timestamp = str(int(time.time()))");
       _builder.newLine();
       _builder.append("\t\t\t");
-      _builder.append("ph_value = str(self.state.data_aggregated.get(\'ADC_WaterQuality\', {}).get(\'pH\', \'\'))");
-      _builder.newLine();
-      _builder.append("\t\t\t");
-      _builder.append("tds_value = str(self.state.data_aggregated.get(\'ADC_WaterQuality\', {}).get(\'TDS\', \'\'))");
-      _builder.newLine();
-      _builder.append("\t\t\t");
-      _builder.append("temp_value = str(self.state.data_aggregated.get(\'SPI\', {}).get(\'temperature\', \'\'))");
-      _builder.newLine();
-      _builder.append("\t\t\t");
-      _builder.append("con_value = [timestamp, ph_value, tds_value, temp_value]");
-      _builder.newLine();
-      _builder.append("\t\t\t");
       _builder.append("data_to_send = {");
       _builder.newLine();
       _builder.append("\t\t\t    ");
       _builder.append("\"m2m:cin\": {");
       _builder.newLine();
       _builder.append("\t\t\t        ");
-      _builder.append("\"lbl\": [\"AE-WM-WD\", \"WM-WD-KH98-00\", \"V4.1.0\", \"WM-WD-V4.1.0\"],");
+      _builder.append("\"lbl\": [\'");
+      String _name = node.getName();
+      _builder.append(_name, "\t\t\t        ");
+      _builder.append("\'],");
+      _builder.newLineIfNotEmpty();
+      _builder.append("\t\t\t        ");
+      _builder.append("\"con\": [");
+      _builder.newLine();
+      _builder.append("\t\t\t        \t");
+      _builder.append("timestamp,");
+      _builder.newLine();
+      _builder.append("\t\t\t        \t");
+      _builder.append("*self.state.data_aggregated");
       _builder.newLine();
       _builder.append("\t\t\t        ");
-      _builder.append("\"con\": con_value");
+      _builder.append("]");
       _builder.newLine();
       _builder.append("\t\t\t    ");
       _builder.append("}");
@@ -792,14 +874,100 @@ public class SmartCityGenerator extends AbstractGenerator {
       for (final Node node : nodes) {
         nodesList.add(node);
       }
+      final ArrayList<Sensor> sensorList = new ArrayList<Sensor>();
+      for (final Sensor sensor : sensors) {
+        sensorList.add(sensor);
+      }
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("from pypdevs.DEVS import CoupledDEVS");
-      _builder.newLine();
-      _builder.append("import communications");
       _builder.newLine();
       _builder.append("from sink import Sink");
       _builder.newLine();
       _builder.append("from layers.m2m_interface import M2MInterface");
+      _builder.newLine();
+      _builder.newLine();
+      _builder.append("esp32_pins = {");
+      _builder.newLine();
+      _builder.append("    ");
+      _builder.append("# ESP32 NodeMCU Pin Configuration");
+      _builder.newLine();
+      _builder.append("    ");
+      _builder.append("\"ADC\": [32, 33, 34, 35, 36, 39],");
+      _builder.newLine();
+      _builder.append("    ");
+      _builder.append("\"DIGITAL_IO\": [0, 2, 4, 12, 13, 14, 15],");
+      _builder.newLine();
+      _builder.append("    ");
+      _builder.append("\"PWM\": [16, 17, 18, 19, 21, 23],");
+      _builder.newLine();
+      _builder.append("    ");
+      _builder.append("\"I2C\": [22, 27],");
+      _builder.newLine();
+      _builder.append("    ");
+      _builder.append("\"SPI\": [5, 18, 19, 23],");
+      _builder.newLine();
+      _builder.append("    ");
+      _builder.append("\"UART\": [1, 3, 9, 10, 16, 17],");
+      _builder.newLine();
+      _builder.append("    ");
+      _builder.append("\"DAC\": [25, 26],");
+      _builder.newLine();
+      _builder.append("    ");
+      _builder.append("\"TOUCH\": [0, 2, 4, 12, 13, 14, 27],");
+      _builder.newLine();
+      _builder.append("    ");
+      _builder.append("\"RTC\": [32, 33, 34, 35, 36, 39],");
+      _builder.newLine();
+      _builder.append("    ");
+      _builder.append("\"POWER\": {\"3V3\": \"External\", \"GND\": \"External\"}");
+      _builder.newLine();
+      _builder.append("}");
+      _builder.newLine();
+      _builder.newLine();
+      _builder.append("raspberry_pi_pins = {");
+      _builder.newLine();
+      _builder.append("    ");
+      _builder.append("# Raspberry Pi GPIO Pin Configuration (Raspberry Pi 4 Model B)");
+      _builder.newLine();
+      _builder.append("    ");
+      _builder.append("\"GPIO\": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31],");
+      _builder.newLine();
+      _builder.append("    ");
+      _builder.append("\"I2C\": [2, 3],  # SDA, SCL");
+      _builder.newLine();
+      _builder.append("    ");
+      _builder.append("\"SPI\": [10, 11, 12, 13, 14, 15],  # MOSI, MISO, SCLK, CE0, CE1");
+      _builder.newLine();
+      _builder.append("    ");
+      _builder.append("\"UART\": [14, 15],  # TX, RX");
+      _builder.newLine();
+      _builder.append("    ");
+      _builder.append("\"PWM\": [18],  # PWM pin");
+      _builder.newLine();
+      _builder.append("    ");
+      _builder.append("\"ADC\": None,  # Raspberry Pi does not have built-in ADC, requires external ADC like MCP3008");
+      _builder.newLine();
+      _builder.append("    ");
+      _builder.append("\"DIGITAL_IO\": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27],  # GPIO pins");
+      _builder.newLine();
+      _builder.append("    ");
+      _builder.append("\"DAC\": None,  # Raspberry Pi does not have built-in DAC, requires external DAC like MCP4725");
+      _builder.newLine();
+      _builder.append("    ");
+      _builder.append("\"TOUCH\": None,  # Raspberry Pi does not have built-in touch pins");
+      _builder.newLine();
+      _builder.append("    ");
+      _builder.append("\"RTC\": None,  # External RTC module like DS3231 is needed");
+      _builder.newLine();
+      _builder.append("    ");
+      _builder.append("\"POWER\": {\"3V3\": \"External\", \"GND\": \"External\"},");
+      _builder.newLine();
+      _builder.append("    ");
+      _builder.append("\"CSI\": \"Camera Serial Interface (CSI) Port\",  # Special port for camera connection");
+      _builder.newLine();
+      _builder.append("}");
+      _builder.newLine();
+      _builder.newLine();
       _builder.newLine();
       _builder.append("class Model(CoupledDEVS):");
       _builder.newLine();
@@ -813,20 +981,20 @@ public class SmartCityGenerator extends AbstractGenerator {
       _builder.append("# Sensors");
       _builder.newLine();
       {
-        for(final Sensor sensor : sensors) {
+        for(final Sensor sensor_1 : sensorList) {
           _builder.append("\t\t");
           _builder.append("from sensors.");
-          String _name = sensor.getName();
+          String _name = sensor_1.getName();
           _builder.append(_name, "\t\t");
           _builder.append(" import ");
-          String _firstUpper = StringExtensions.toFirstUpper(sensor.getName());
+          String _firstUpper = StringExtensions.toFirstUpper(sensor_1.getName());
           _builder.append(_firstUpper, "\t\t");
           _builder.newLineIfNotEmpty();
           _builder.append("\t\t");
-          String _name_1 = sensor.getName();
+          String _name_1 = sensor_1.getName();
           _builder.append(_name_1, "\t\t");
           _builder.append(" = self.addSubModel(");
-          String _firstUpper_1 = StringExtensions.toFirstUpper(sensor.getName());
+          String _firstUpper_1 = StringExtensions.toFirstUpper(sensor_1.getName());
           _builder.append(_firstUpper_1, "\t\t");
           _builder.append("())");
           _builder.newLineIfNotEmpty();
@@ -847,17 +1015,38 @@ public class SmartCityGenerator extends AbstractGenerator {
           String _firstUpper_2 = StringExtensions.toFirstUpper(node_1.getName());
           _builder.append(_firstUpper_2, "\t\t");
           _builder.newLineIfNotEmpty();
-          _builder.append("\t\t");
-          String _name_3 = node_1.getName();
-          _builder.append(_name_3, "\t\t");
-          _builder.append(" = self.addSubModel(");
-          String _firstUpper_3 = StringExtensions.toFirstUpper(node_1.getName());
-          _builder.append(_firstUpper_3, "\t\t");
-          _builder.append("(\"");
-          String _firstUpper_4 = StringExtensions.toFirstUpper(node_1.getName());
-          _builder.append(_firstUpper_4, "\t\t");
-          _builder.append("\"))");
-          _builder.newLineIfNotEmpty();
+          {
+            ControllerType _type = node_1.getController().getType();
+            boolean _equals = Objects.equals(_type, ControllerType.OTHER);
+            if (_equals) {
+              _builder.append("\t\t");
+              String _name_3 = node_1.getName();
+              _builder.append(_name_3, "\t\t");
+              _builder.append(" = self.addSubModel(");
+              String _firstUpper_3 = StringExtensions.toFirstUpper(node_1.getName());
+              _builder.append(_firstUpper_3, "\t\t");
+              _builder.append("(\"");
+              String _firstUpper_4 = StringExtensions.toFirstUpper(node_1.getName());
+              _builder.append(_firstUpper_4, "\t\t");
+              _builder.append("\"), None)");
+              _builder.newLineIfNotEmpty();
+            } else {
+              _builder.append("\t\t");
+              String _name_4 = node_1.getName();
+              _builder.append(_name_4, "\t\t");
+              _builder.append(" = self.addSubModel(");
+              String _firstUpper_5 = StringExtensions.toFirstUpper(node_1.getName());
+              _builder.append(_firstUpper_5, "\t\t");
+              _builder.append("(\"");
+              String _firstUpper_6 = StringExtensions.toFirstUpper(node_1.getName());
+              _builder.append(_firstUpper_6, "\t\t");
+              _builder.append("\", ");
+              String _lowerCase = node_1.getController().getType().toString().toLowerCase();
+              _builder.append(_lowerCase, "\t\t");
+              _builder.append("_pins))");
+              _builder.newLineIfNotEmpty();
+            }
+          }
         }
       }
       _builder.append("\t\t");
@@ -865,12 +1054,9 @@ public class SmartCityGenerator extends AbstractGenerator {
       _builder.newLine();
       _builder.append("\t\t");
       _builder.append("interfaceLayer = self.addSubModel(M2MInterface(\"");
-      String _name_4 = interoperableLayer.getName();
-      _builder.append(_name_4, "\t\t");
-      _builder.append("\", simulated_delay=");
-      DelayRange _delay = interoperableLayer.getDelay();
-      _builder.append(_delay, "\t\t");
-      _builder.append(", priority=");
+      String _name_5 = interoperableLayer.getName();
+      _builder.append(_name_5, "\t\t");
+      _builder.append("\", priority=");
       int _priority = interoperableLayer.getPriority();
       _builder.append(_priority, "\t\t");
       _builder.append("))");
@@ -878,15 +1064,6 @@ public class SmartCityGenerator extends AbstractGenerator {
       _builder.append("\t\t");
       _builder.append("sink = self.addSubModel(Sink(\"Sink\"))");
       _builder.newLine();
-      _builder.append("\t\t");
-      _builder.append("# Communications");
-      _builder.newLine();
-      _builder.append("\t\t");
-      CharSequence _compile = this.compile(commLinks);
-      _builder.append(_compile, "\t\t");
-      _builder.newLineIfNotEmpty();
-      _builder.append("\t\t");
-      _builder.append("# Connect models to nodes");
       _builder.newLine();
       {
         for(final Node node_2 : nodesList) {
@@ -900,26 +1077,28 @@ public class SmartCityGenerator extends AbstractGenerator {
                 if (_tripleEquals) {
                   _builder.append("\t\t");
                   _builder.append("self.connectPorts(");
-                  LinkType _type = link_1.getType();
-                  _builder.append(_type, "\t\t");
+                  String _name_6 = link_1.getOrigin().getName();
+                  _builder.append(_name_6, "\t\t");
                   _builder.append(".outport, ");
-                  String _name_5 = node_2.getName();
-                  _builder.append(_name_5, "\t\t");
+                  String _name_7 = node_2.getName();
+                  _builder.append(_name_7, "\t\t");
                   _builder.append(".");
-                  String _lowerCase = link_1.getType().toString().toLowerCase();
-                  _builder.append(_lowerCase, "\t\t");
+                  String _lowerCase_1 = link_1.getType().toString().toLowerCase();
+                  _builder.append(_lowerCase_1, "\t\t");
                   _builder.append("_inport)");
                   _builder.newLineIfNotEmpty();
                 }
               }
             }
           }
+          _builder.newLine();
           _builder.append("\t\t");
           _builder.append("self.connectPorts(");
-          String _name_6 = node_2.getName();
-          _builder.append(_name_6, "\t\t");
+          String _name_8 = node_2.getName();
+          _builder.append(_name_8, "\t\t");
           _builder.append(".outport, interfaceLayer.inport)");
           _builder.newLineIfNotEmpty();
+          _builder.newLine();
         }
       }
       _builder.append("\t\t");
@@ -1110,7 +1289,7 @@ public class SmartCityGenerator extends AbstractGenerator {
     _builder.append("\t");
     _builder.append("def __lt__(self, other):");
     _builder.newLine();
-    _builder.append("\t    ");
+    _builder.append("\t\t");
     _builder.append("# Define comparison logic based on priority attribute");
     _builder.newLine();
     _builder.append("\t\t");

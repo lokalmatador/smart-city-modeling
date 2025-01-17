@@ -32,7 +32,6 @@ import uibk.ac.at.smartcity.smartCity.SmartCityPackage;
  * </p>
  * <ul>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.SensorImpl#getType <em>Type</em>}</li>
- *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.SensorImpl#getPriority <em>Priority</em>}</li>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.SensorImpl#getCyclicActions <em>Cyclic Actions</em>}</li>
  * </ul>
  *
@@ -59,26 +58,6 @@ public class SensorImpl extends LinkableImpl implements Sensor
    * @ordered
    */
   protected SensorType type = TYPE_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getPriority() <em>Priority</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPriority()
-   * @generated
-   * @ordered
-   */
-  protected static final int PRIORITY_EDEFAULT = 0;
-
-  /**
-   * The cached value of the '{@link #getPriority() <em>Priority</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPriority()
-   * @generated
-   * @ordered
-   */
-  protected int priority = PRIORITY_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getCyclicActions() <em>Cyclic Actions</em>}' containment reference list.
@@ -142,31 +121,6 @@ public class SensorImpl extends LinkableImpl implements Sensor
    * @generated
    */
   @Override
-  public int getPriority()
-  {
-    return priority;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setPriority(int newPriority)
-  {
-    int oldPriority = priority;
-    priority = newPriority;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SmartCityPackage.SENSOR__PRIORITY, oldPriority, priority));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EList<CyclicAction> getCyclicActions()
   {
     if (cyclicActions == null)
@@ -204,8 +158,6 @@ public class SensorImpl extends LinkableImpl implements Sensor
     {
       case SmartCityPackage.SENSOR__TYPE:
         return getType();
-      case SmartCityPackage.SENSOR__PRIORITY:
-        return getPriority();
       case SmartCityPackage.SENSOR__CYCLIC_ACTIONS:
         return getCyclicActions();
     }
@@ -225,9 +177,6 @@ public class SensorImpl extends LinkableImpl implements Sensor
     {
       case SmartCityPackage.SENSOR__TYPE:
         setType((SensorType)newValue);
-        return;
-      case SmartCityPackage.SENSOR__PRIORITY:
-        setPriority((Integer)newValue);
         return;
       case SmartCityPackage.SENSOR__CYCLIC_ACTIONS:
         getCyclicActions().clear();
@@ -250,9 +199,6 @@ public class SensorImpl extends LinkableImpl implements Sensor
       case SmartCityPackage.SENSOR__TYPE:
         setType(TYPE_EDEFAULT);
         return;
-      case SmartCityPackage.SENSOR__PRIORITY:
-        setPriority(PRIORITY_EDEFAULT);
-        return;
       case SmartCityPackage.SENSOR__CYCLIC_ACTIONS:
         getCyclicActions().clear();
         return;
@@ -272,8 +218,6 @@ public class SensorImpl extends LinkableImpl implements Sensor
     {
       case SmartCityPackage.SENSOR__TYPE:
         return type != TYPE_EDEFAULT;
-      case SmartCityPackage.SENSOR__PRIORITY:
-        return priority != PRIORITY_EDEFAULT;
       case SmartCityPackage.SENSOR__CYCLIC_ACTIONS:
         return cyclicActions != null && !cyclicActions.isEmpty();
     }
@@ -293,8 +237,6 @@ public class SensorImpl extends LinkableImpl implements Sensor
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (type: ");
     result.append(type);
-    result.append(", priority: ");
-    result.append(priority);
     result.append(')');
     return result.toString();
   }

@@ -15,6 +15,8 @@ import uibk.ac.at.smartcity.smartCity.Sensor
 import java.util.ArrayList
 import uibk.ac.at.smartcity.smartCity.InteroperableLayer
 import uibk.ac.at.smartcity.smartCity.SensorType
+import uibk.ac.at.smartcity.smartCity.FrequencyUnit
+import uibk.ac.at.smartcity.smartCity.ControllerType
 
 /**
  * Generates code from your model files on save.
@@ -42,7 +44,7 @@ class SmartCityGenerator extends AbstractGenerator {
 		
 		
 		// generate communication models
-		generateCommunications(fsa)
+		// generateCommunications(fsa)
 		
 		// generate blueprint for the interface
 		generateInterface(fsa)
@@ -62,6 +64,29 @@ class SmartCityGenerator extends AbstractGenerator {
 		fsa.generateFile("experiment.py", generateMain())
 	}
 	
+	def double frequencyToSeconds(int value, FrequencyUnit unit){
+		switch (unit) {
+			case DAYS: {
+				return value * 24 * 60 * 60
+			}
+			case HOURS: {
+				return value * 60 * 60
+			}
+			case SECONDS: {
+				return value
+			}
+			case HERTZ: {
+				return 1/value
+			}
+			case INF: {
+				return -1
+			}
+			default: {
+				return value
+			}
+		}
+	}
+	
 	def compile(Sensor sensor){
 		'''
 		from pypdevs.DEVS import AtomicDEVS
@@ -70,7 +95,7 @@ class SmartCityGenerator extends AbstractGenerator {
 		
 		class «sensor.name.toFirstUpper»(AtomicDEVS):
 			def __init__(self):
-			«IF sensor.type == SensorType.CAMERA»
+				«IF sensor.type == SensorType.CAMERA»
 				super().__init__("«sensor.name»")
 				self.in_port = self.addInPort("in_port")
 				self.outport = self.addOutPort("outport")
@@ -82,37 +107,49 @@ class SmartCityGenerator extends AbstractGenerator {
 					"status": "capturing"  # Start in capturing state
 				}
 				self.priority = «sensor.priority»
-			«ELSE»
+			def generate_random_number(self):
+				return random.randint(0, 100)
+			
+			def capture_image(self):
+				# Simulate capturing an image
+				self.state["image_data"] = f"image_data_{time.time()}"
+				print(f"[{self.name}] Captured image: {self.state['image_data']}")
+
+			def process_image(self):
+				# Simulate processing the image to detect a number
+				self.state["number_detected"] = self.generate_random_number()
+				print(f"[{self.name}] Detected number: {self.state['number_detected']}")
+				«ELSE»
 				super().__init__("«sensor.name»")
 				self.inport = self.addInPort("in_port")
 				self.outport = self.addOutPort("outport")
 				self.state = {"«sensor.type»": 0}
 				self.priority = «sensor.priority»
-      		 «ENDIF»
+      		 	«ENDIF»
 
 			def intTransition(self):
-			«IF (sensor.type == SensorType.PH)»
+				«IF (sensor.type == SensorType.PH)»
 				self.state["«sensor.type»"] = random.uniform(0, 14)
 				return self.state
-			«ELSEIF (sensor.type == SensorType.CURRENT)»
+				«ELSEIF (sensor.type == SensorType.CURRENT)»
 				self.state["«sensor.type»"] = random.uniform(0, 100)
 				return self.state
-			«ELSEIF (sensor.type == SensorType.PULSE)»
+				«ELSEIF (sensor.type == SensorType.PULSE)»
 				self.state["«sensor.type»"] = random.uniform(0, 1)
 				return self.state
-			«ELSEIF (sensor.type == SensorType.TDS)»
+				«ELSEIF (sensor.type == SensorType.TDS)»
 				self.state["«sensor.type»"] = random.uniform(0, 1000)
 				return self.state
-			«ELSEIF (sensor.type == SensorType.TEMPERATURE)»
+				«ELSEIF (sensor.type == SensorType.TEMPERATURE)»
 				self.state["«sensor.type»"] = random.uniform(0, 100)
 				return self.state
-			«ELSEIF (sensor.type == SensorType.TURBIDITY)»
+				«ELSEIF (sensor.type == SensorType.TURBIDITY)»
 				self.state["«sensor.type»"] = random.uniform(0, 100)
 				return self.state
-			«ELSEIF (sensor.type == SensorType.ULTRASONIC)»
+				«ELSEIF (sensor.type == SensorType.ULTRASONIC)»
 				self.state["«sensor.type»"] = random.uniform(0.5, 4.0)
 				return self.state
-			«ELSEIF (sensor.type == SensorType.CAMERA)»
+				«ELSEIF (sensor.type == SensorType.CAMERA)»
 				if self.state["status"] == "capturing":
 				    self.capture_image()
 				    self.state["status"] = "processing"
@@ -120,26 +157,24 @@ class SmartCityGenerator extends AbstractGenerator {
 				    self.process_image()
 				    self.state["status"] = "capturing"  # Loop back to capturing for continuous processing
 				return self.state
-			«ELSE»
+				«ELSE»
 				print("Internal Transition not defined for this sensor type")
 				return None
-			«ENDIF»
-				
+				«ENDIF»
+
 			def extTransition(self, inputs):
-			«IF (sensor.type == SensorType.CAMERA)»
+				«IF (sensor.type == SensorType.CAMERA)»
 				self.state["status"] = "capturing"
 				return self.state
-			«ELSE»
+				«ELSE»
 				return self.state
-			«ENDIF»
+				«ENDIF»
 
-				return self.state 
-				
 			def outputFnc(self):
 				return {self.outport: self.state['«sensor.type»']}
 				
 			def timeAdvance(self):
-			«IF (sensor.type == SensorType.CAMERA)»
+				«IF (sensor.type == SensorType.CAMERA)»
 				if self.state["status"] == "idle":
 				    return INFINITY
 				elif self.state["status"] == "capturing":
@@ -147,11 +182,11 @@ class SmartCityGenerator extends AbstractGenerator {
 				elif self.state["status"] == "processing":
 				    return 2.0  # Time to process the image
 				return INFINITY
-			«ELSEIF (sensor.type == SensorType.CURRENT || sensor.type == SensorType.PULSE || sensor.type == SensorType.ULTRASONIC)»
+				«ELSEIF (sensor.type == SensorType.CURRENT || sensor.type == SensorType.PULSE || sensor.type == SensorType.ULTRASONIC)»
 				return 1.0
-			«ELSE»
+				«ELSE»
 				return 5.0
-			«ENDIF»
+				«ENDIF»
 				
 			def __lt__(self, other):
 				return self.priority < other.priority
@@ -165,52 +200,64 @@ class SmartCityGenerator extends AbstractGenerator {
 			nodeLinks.add(link)
 			distinctLinkTypes.add(link.type)
 		}
+		val postFrequency = frequencyToSeconds(node.freqValue, node.freqUnit)
+		val boolean knownController = node.controller.type != ControllerType.OTHER
 		
 		'''
 		from pypdevs.DEVS import AtomicDEVS
 		from pypdevs.infinity import INFINITY
-		import time
+		import time, random
 		class «node.name.toFirstUpper»State:
 			def __init__(self):
 				self.data_aggregated = {}
-				self.next_send_time = 1.0  # Initial time until the next data send
+				
+				if random.random() < 0.8:
+					self.next_internal_time = «postFrequency»
+				else:
+					self.next_internal_time = «postFrequency» + random.uniform(«postFrequency» * (-0.8), «postFrequency» * 0.8)
 		
 		
 		class «node.name.toFirstUpper»(AtomicDEVS):
-			def __init__(self, name):
+			def __init__(self, name, pinout):
 				super().__init__(name)
-				
 				self.state = «node.name.toFirstUpper»State()
 				self.timeLast = 0.0  # Initialize timeLast
+				self.pins = pinout
+				«IF knownController»
 				«FOR type: distinctLinkTypes»
 				self.«type.toString.toLowerCase»_inport = self.addInPort("«type.toString.toLowerCase»_in")
 		        «ENDFOR»
+				«ELSE»
+				«FOR type: distinctLinkTypes»
+				self.«type.toString.toLowerCase»_inport = self.addInPort("«type.toString.toLowerCase»_in")
+		        «ENDFOR»
+		        «ENDIF»
 				self.outport = self.addOutPort("out")
-				self.priority = 3  # Priority for nodes
+				self.priority = «node.priority»  # Priority for nodes
 		
 			def timeAdvance(self):
 				# Calculate the remaining time until the next send event
-				print(f"[{self.name}] timeAdvance called. Next send time: {self.state.next_send_time}, timeLast: {self.timeLast}")
-				return self.state.next_send_time - self.timeLast if self.state.data_aggregated else INFINITY
+				print(f"[{self.name}] timeAdvance called. Next internal time: {self.state.next_internal_time}, timeLast: {self.timeLast}")
+				return self.state.next_internal_time - self.timeLast if self.state.data_aggregated else INFINITY
 				
 			def extTransition(self, inputs):
 				# Update the state based on inputs from the connections
 				print(f"[{self.name}] extTransition called with inputs: {inputs}")
 				«FOR link: node.links»
 				«IF link.destination === node.controller»
-				self.«link.type.toString.toLowerCase»_inport = self.addInPort("«link.type.toString.toLowerCase»_in")
+				# self.«link.type.toString.toLowerCase»_inport = self.addInPort("«link.type.toString.toLowerCase»_in")
 				if self.«link.type.toString.toLowerCase»_inport in inputs:
 					self.state.data_aggregated["«link.type»"] = inputs[self.«link.type.toString.toLowerCase»_inport]
 				«ENDIF»
 				«ENDFOR»
-				self.timeLast = self.state.next_send_time  # Update timeLast
+				self.timeLast = self.state.next_internal_time  # Update timeLast
 				return self.state
 				
 			def intTransition(self):
 				# Schedule the next send time
 				print(f"[{self.name}] intTransition called.")
-				self.timeLast = self.state.next_send_time  # Update timeLast
-				self.state.next_send_time += 1.0
+				self.timeLast = self.state.next_internal_time  # Update timeLast
+				self.state.next_internal_time += 1.0
 				return self.state
 
 		# TODO: Discuss how this format should be handeled, maybe we need Node Type in the metamodel
@@ -218,14 +265,13 @@ class SmartCityGenerator extends AbstractGenerator {
 				# Only send data if there is aggregated data
 				if self.state.data_aggregated:
 					timestamp = str(int(time.time()))
-					ph_value = str(self.state.data_aggregated.get('ADC_WaterQuality', {}).get('pH', ''))
-					tds_value = str(self.state.data_aggregated.get('ADC_WaterQuality', {}).get('TDS', ''))
-					temp_value = str(self.state.data_aggregated.get('SPI', {}).get('temperature', ''))
-					con_value = [timestamp, ph_value, tds_value, temp_value]
 					data_to_send = {
 					    "m2m:cin": {
-					        "lbl": ["AE-WM-WD", "WM-WD-KH98-00", "V4.1.0", "WM-WD-V4.1.0"],
-					        "con": con_value
+					        "lbl": ['«node.name»'],
+					        "con": [
+					        	timestamp,
+					        	*self.state.data_aggregated
+					        ]
 					    }
 					}
 					print(f"[{self.name}] Sending aggregated data: {data_to_send}")
@@ -318,16 +364,52 @@ class SmartCityGenerator extends AbstractGenerator {
 			nodesList.add(node)
 		}
 		
+		val sensorList = new ArrayList<Sensor>
+		for (sensor: sensors){
+			sensorList.add(sensor)
+		}
+		
 		'''
 		from pypdevs.DEVS import CoupledDEVS
-		import communications
 		from sink import Sink
 		from layers.m2m_interface import M2MInterface
+		
+		esp32_pins = {
+		    # ESP32 NodeMCU Pin Configuration
+		    "ADC": [32, 33, 34, 35, 36, 39],
+		    "DIGITAL_IO": [0, 2, 4, 12, 13, 14, 15],
+		    "PWM": [16, 17, 18, 19, 21, 23],
+		    "I2C": [22, 27],
+		    "SPI": [5, 18, 19, 23],
+		    "UART": [1, 3, 9, 10, 16, 17],
+		    "DAC": [25, 26],
+		    "TOUCH": [0, 2, 4, 12, 13, 14, 27],
+		    "RTC": [32, 33, 34, 35, 36, 39],
+		    "POWER": {"3V3": "External", "GND": "External"}
+		}
+		
+		raspberry_pi_pins = {
+		    # Raspberry Pi GPIO Pin Configuration (Raspberry Pi 4 Model B)
+		    "GPIO": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31],
+		    "I2C": [2, 3],  # SDA, SCL
+		    "SPI": [10, 11, 12, 13, 14, 15],  # MOSI, MISO, SCLK, CE0, CE1
+		    "UART": [14, 15],  # TX, RX
+		    "PWM": [18],  # PWM pin
+		    "ADC": None,  # Raspberry Pi does not have built-in ADC, requires external ADC like MCP3008
+		    "DIGITAL_IO": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27],  # GPIO pins
+		    "DAC": None,  # Raspberry Pi does not have built-in DAC, requires external DAC like MCP4725
+		    "TOUCH": None,  # Raspberry Pi does not have built-in touch pins
+		    "RTC": None,  # External RTC module like DS3231 is needed
+		    "POWER": {"3V3": "External", "GND": "External"},
+		    "CSI": "Camera Serial Interface (CSI) Port",  # Special port for camera connection
+		}
+		
+		
 		class Model(CoupledDEVS):
 			def __init__(self):
 				super().__init__("SmartCityModel")
 				# Sensors
-				«FOR sensor: sensors»
+				«FOR sensor: sensorList»
 				from sensors.«sensor.name» import «sensor.name.toFirstUpper»
 				«sensor.name» = self.addSubModel(«sensor.name.toFirstUpper»())
 				«ENDFOR»
@@ -335,21 +417,25 @@ class SmartCityGenerator extends AbstractGenerator {
 				# Nodes
 				«FOR node:nodesList»
 				from nodes.«node.name» import «node.name.toFirstUpper»
-				«node.name» = self.addSubModel(«node.name.toFirstUpper»("«node.name.toFirstUpper»"))
+				«IF node.controller.type == ControllerType.OTHER»
+				«node.name» = self.addSubModel(«node.name.toFirstUpper»("«node.name.toFirstUpper»"), None)
+				«ELSE»
+				«node.name» = self.addSubModel(«node.name.toFirstUpper»("«node.name.toFirstUpper»", «node.controller.type.toString.toLowerCase»_pins))
+				«ENDIF»
 				«ENDFOR»
 				# Interface
-				interfaceLayer = self.addSubModel(M2MInterface("«interoperableLayer.name»", simulated_delay=«interoperableLayer.delay», priority=«interoperableLayer.priority»))
+				interfaceLayer = self.addSubModel(M2MInterface("«interoperableLayer.name»", priority=«interoperableLayer.priority»))
 				sink = self.addSubModel(Sink("Sink"))
-				# Communications
-				«commLinks.compile»
-				# Connect models to nodes
+
 				«FOR node:nodesList»
 				«FOR link:node.links»
 				«IF link.destination === node.controller»
-				self.connectPorts(«link.type».outport, «node.name».«link.type.toString.toLowerCase»_inport)
+				self.connectPorts(«link.origin.name».outport, «node.name».«link.type.toString.toLowerCase»_inport)
 				«ENDIF»
 				«ENDFOR»
+
 				self.connectPorts(«node.name».outport, interfaceLayer.inport)
+
 				«ENDFOR»
 				self.connectPorts(interfaceLayer.outport, sink.inport)
 		'''
@@ -420,7 +506,7 @@ class SmartCityGenerator extends AbstractGenerator {
 				return self.state
 			    
 			def __lt__(self, other):
-			    # Define comparison logic based on priority attribute
+				# Define comparison logic based on priority attribute
 				return self.priority < other.priority
 		'''
 		

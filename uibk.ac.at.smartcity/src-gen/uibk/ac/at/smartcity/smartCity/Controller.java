@@ -15,7 +15,6 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.Controller#getType <em>Type</em>}</li>
- *   <li>{@link uibk.ac.at.smartcity.smartCity.Controller#getPriority <em>Priority</em>}</li>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.Controller#getCyclicActions <em>Cyclic Actions</em>}</li>
  * </ul>
  *
@@ -49,28 +48,6 @@ public interface Controller extends Linkable
    * @generated
    */
   void setType(ControllerType value);
-
-  /**
-   * Returns the value of the '<em><b>Priority</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Priority</em>' attribute.
-   * @see #setPriority(int)
-   * @see uibk.ac.at.smartcity.smartCity.SmartCityPackage#getController_Priority()
-   * @model
-   * @generated
-   */
-  int getPriority();
-
-  /**
-   * Sets the value of the '{@link uibk.ac.at.smartcity.smartCity.Controller#getPriority <em>Priority</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Priority</em>' attribute.
-   * @see #getPriority()
-   * @generated
-   */
-  void setPriority(int value);
 
   /**
    * Returns the value of the '<em><b>Cyclic Actions</b></em>' containment reference list.

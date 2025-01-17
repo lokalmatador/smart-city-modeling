@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.Linkable#getName <em>Name</em>}</li>
+ *   <li>{@link uibk.ac.at.smartcity.smartCity.Linkable#getPriority <em>Priority</em>}</li>
  * </ul>
  *
  * @see uibk.ac.at.smartcity.smartCity.SmartCityPackage#getLinkable()
@@ -44,5 +45,27 @@ public interface Linkable extends EObject
    * @generated
    */
   void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Priority</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Priority</em>' attribute.
+   * @see #setPriority(int)
+   * @see uibk.ac.at.smartcity.smartCity.SmartCityPackage#getLinkable_Priority()
+   * @model
+   * @generated
+   */
+  int getPriority();
+
+  /**
+   * Sets the value of the '{@link uibk.ac.at.smartcity.smartCity.Linkable#getPriority <em>Priority</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Priority</em>' attribute.
+   * @see #getPriority()
+   * @generated
+   */
+  void setPriority(int value);
 
 } // Linkable

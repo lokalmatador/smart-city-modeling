@@ -272,20 +272,9 @@ public class SmartCityPackageImpl extends EPackageImpl implements SmartCityPacka
    * @generated
    */
   @Override
-  public EAttribute getInteroperableLayer_Priority()
-  {
-    return (EAttribute)interoperableLayerEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EReference getInteroperableLayer_Delay()
   {
-    return (EReference)interoperableLayerEClass.getEStructuralFeatures().get(1);
+    return (EReference)interoperableLayerEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -338,9 +327,31 @@ public class SmartCityPackageImpl extends EPackageImpl implements SmartCityPacka
    * @generated
    */
   @Override
+  public EAttribute getNode_FreqValue()
+  {
+    return (EAttribute)nodeEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getNode_FreqUnit()
+  {
+    return (EAttribute)nodeEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EReference getNode_Links()
   {
-    return (EReference)nodeEClass.getEStructuralFeatures().get(3);
+    return (EReference)nodeEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -371,20 +382,9 @@ public class SmartCityPackageImpl extends EPackageImpl implements SmartCityPacka
    * @generated
    */
   @Override
-  public EAttribute getSensor_Priority()
-  {
-    return (EAttribute)sensorEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EReference getSensor_CyclicActions()
   {
-    return (EReference)sensorEClass.getEStructuralFeatures().get(2);
+    return (EReference)sensorEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -481,20 +481,9 @@ public class SmartCityPackageImpl extends EPackageImpl implements SmartCityPacka
    * @generated
    */
   @Override
-  public EAttribute getController_Priority()
-  {
-    return (EAttribute)controllerEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EReference getController_CyclicActions()
   {
-    return (EReference)controllerEClass.getEStructuralFeatures().get(2);
+    return (EReference)controllerEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -569,6 +558,17 @@ public class SmartCityPackageImpl extends EPackageImpl implements SmartCityPacka
    * @generated
    */
   @Override
+  public EAttribute getLinkable_Priority()
+  {
+    return (EAttribute)linkableEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getDelayRange()
   {
     return delayRangeEClass;
@@ -624,7 +624,7 @@ public class SmartCityPackageImpl extends EPackageImpl implements SmartCityPacka
    * @generated
    */
   @Override
-  public EAttribute getCyclicAction_Value()
+  public EAttribute getCyclicAction_FreqValue()
   {
     return (EAttribute)cyclicActionEClass.getEStructuralFeatures().get(1);
   }
@@ -635,7 +635,7 @@ public class SmartCityPackageImpl extends EPackageImpl implements SmartCityPacka
    * @generated
    */
   @Override
-  public EAttribute getCyclicAction_Unit()
+  public EAttribute getCyclicAction_FreqUnit()
   {
     return (EAttribute)cyclicActionEClass.getEStructuralFeatures().get(2);
   }
@@ -754,18 +754,18 @@ public class SmartCityPackageImpl extends EPackageImpl implements SmartCityPacka
     createEReference(modelEClass, MODEL__GLOBAL_LINKS);
 
     interoperableLayerEClass = createEClass(INTEROPERABLE_LAYER);
-    createEAttribute(interoperableLayerEClass, INTEROPERABLE_LAYER__PRIORITY);
     createEReference(interoperableLayerEClass, INTEROPERABLE_LAYER__DELAY);
 
     nodeEClass = createEClass(NODE);
     createEReference(nodeEClass, NODE__SENSORS);
     createEReference(nodeEClass, NODE__MODULES);
     createEReference(nodeEClass, NODE__CONTROLLER);
+    createEAttribute(nodeEClass, NODE__FREQ_VALUE);
+    createEAttribute(nodeEClass, NODE__FREQ_UNIT);
     createEReference(nodeEClass, NODE__LINKS);
 
     sensorEClass = createEClass(SENSOR);
     createEAttribute(sensorEClass, SENSOR__TYPE);
-    createEAttribute(sensorEClass, SENSOR__PRIORITY);
     createEReference(sensorEClass, SENSOR__CYCLIC_ACTIONS);
 
     communicationLinkEClass = createEClass(COMMUNICATION_LINK);
@@ -777,7 +777,6 @@ public class SmartCityPackageImpl extends EPackageImpl implements SmartCityPacka
 
     controllerEClass = createEClass(CONTROLLER);
     createEAttribute(controllerEClass, CONTROLLER__TYPE);
-    createEAttribute(controllerEClass, CONTROLLER__PRIORITY);
     createEReference(controllerEClass, CONTROLLER__CYCLIC_ACTIONS);
 
     moduleEClass = createEClass(MODULE);
@@ -787,6 +786,7 @@ public class SmartCityPackageImpl extends EPackageImpl implements SmartCityPacka
 
     linkableEClass = createEClass(LINKABLE);
     createEAttribute(linkableEClass, LINKABLE__NAME);
+    createEAttribute(linkableEClass, LINKABLE__PRIORITY);
 
     delayRangeEClass = createEClass(DELAY_RANGE);
     createEAttribute(delayRangeEClass, DELAY_RANGE__MIN);
@@ -794,8 +794,8 @@ public class SmartCityPackageImpl extends EPackageImpl implements SmartCityPacka
 
     cyclicActionEClass = createEClass(CYCLIC_ACTION);
     createEAttribute(cyclicActionEClass, CYCLIC_ACTION__NAME);
-    createEAttribute(cyclicActionEClass, CYCLIC_ACTION__VALUE);
-    createEAttribute(cyclicActionEClass, CYCLIC_ACTION__UNIT);
+    createEAttribute(cyclicActionEClass, CYCLIC_ACTION__FREQ_VALUE);
+    createEAttribute(cyclicActionEClass, CYCLIC_ACTION__FREQ_UNIT);
 
     triggeredActionEClass = createEClass(TRIGGERED_ACTION);
     createEAttribute(triggeredActionEClass, TRIGGERED_ACTION__NAME);
@@ -849,18 +849,18 @@ public class SmartCityPackageImpl extends EPackageImpl implements SmartCityPacka
     initEReference(getModel_GlobalLinks(), this.getCommunicationLink(), null, "globalLinks", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(interoperableLayerEClass, InteroperableLayer.class, "InteroperableLayer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getInteroperableLayer_Priority(), ecorePackage.getEInt(), "priority", null, 0, 1, InteroperableLayer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getInteroperableLayer_Delay(), this.getDelayRange(), null, "delay", null, 0, 1, InteroperableLayer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(nodeEClass, Node.class, "Node", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getNode_Sensors(), this.getSensor(), null, "sensors", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getNode_Modules(), this.getModule(), null, "modules", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getNode_Controller(), this.getController(), null, "controller", null, 0, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getNode_FreqValue(), ecorePackage.getEInt(), "freqValue", null, 0, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getNode_FreqUnit(), this.getFrequencyUnit(), "freqUnit", null, 0, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getNode_Links(), this.getCommunicationLink(), null, "links", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(sensorEClass, Sensor.class, "Sensor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSensor_Type(), this.getSensorType(), "type", null, 0, 1, Sensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSensor_Priority(), ecorePackage.getEInt(), "priority", null, 0, 1, Sensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSensor_CyclicActions(), this.getCyclicAction(), null, "cyclicActions", null, 0, -1, Sensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(communicationLinkEClass, CommunicationLink.class, "CommunicationLink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -872,7 +872,6 @@ public class SmartCityPackageImpl extends EPackageImpl implements SmartCityPacka
 
     initEClass(controllerEClass, Controller.class, "Controller", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getController_Type(), this.getControllerType(), "type", null, 0, 1, Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getController_Priority(), ecorePackage.getEInt(), "priority", null, 0, 1, Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getController_CyclicActions(), this.getCyclicAction(), null, "cyclicActions", null, 0, -1, Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(moduleEClass, uibk.ac.at.smartcity.smartCity.Module.class, "Module", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -882,6 +881,7 @@ public class SmartCityPackageImpl extends EPackageImpl implements SmartCityPacka
 
     initEClass(linkableEClass, Linkable.class, "Linkable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getLinkable_Name(), ecorePackage.getEString(), "name", null, 0, 1, Linkable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getLinkable_Priority(), ecorePackage.getEInt(), "priority", null, 0, 1, Linkable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(delayRangeEClass, DelayRange.class, "DelayRange", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDelayRange_Min(), ecorePackage.getEInt(), "min", null, 0, 1, DelayRange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -889,8 +889,8 @@ public class SmartCityPackageImpl extends EPackageImpl implements SmartCityPacka
 
     initEClass(cyclicActionEClass, CyclicAction.class, "CyclicAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getCyclicAction_Name(), ecorePackage.getEString(), "name", null, 0, 1, CyclicAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getCyclicAction_Value(), ecorePackage.getEInt(), "value", null, 0, 1, CyclicAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getCyclicAction_Unit(), this.getFrequencyUnit(), "unit", null, 0, 1, CyclicAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCyclicAction_FreqValue(), ecorePackage.getEInt(), "freqValue", null, 0, 1, CyclicAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCyclicAction_FreqUnit(), this.getFrequencyUnit(), "freqUnit", null, 0, 1, CyclicAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(triggeredActionEClass, TriggeredAction.class, "TriggeredAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getTriggeredAction_Name(), ecorePackage.getEString(), "name", null, 0, 1, TriggeredAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -909,6 +909,7 @@ public class SmartCityPackageImpl extends EPackageImpl implements SmartCityPacka
     initEEnum(controllerTypeEEnum, ControllerType.class, "ControllerType");
     addEEnumLiteral(controllerTypeEEnum, ControllerType.ESP32);
     addEEnumLiteral(controllerTypeEEnum, ControllerType.RASPBERRY_PI);
+    addEEnumLiteral(controllerTypeEEnum, ControllerType.OTHER);
 
     initEEnum(linkTypeEEnum, LinkType.class, "LinkType");
     addEEnumLiteral(linkTypeEEnum, LinkType.UART);

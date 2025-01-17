@@ -23,7 +23,6 @@ import uibk.ac.at.smartcity.smartCity.SmartCityPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.InteroperableLayerImpl#getPriority <em>Priority</em>}</li>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.InteroperableLayerImpl#getDelay <em>Delay</em>}</li>
  * </ul>
  *
@@ -31,26 +30,6 @@ import uibk.ac.at.smartcity.smartCity.SmartCityPackage;
  */
 public class InteroperableLayerImpl extends LinkableImpl implements InteroperableLayer
 {
-  /**
-   * The default value of the '{@link #getPriority() <em>Priority</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPriority()
-   * @generated
-   * @ordered
-   */
-  protected static final int PRIORITY_EDEFAULT = 0;
-
-  /**
-   * The cached value of the '{@link #getPriority() <em>Priority</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPriority()
-   * @generated
-   * @ordered
-   */
-  protected int priority = PRIORITY_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getDelay() <em>Delay</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -80,31 +59,6 @@ public class InteroperableLayerImpl extends LinkableImpl implements Interoperabl
   protected EClass eStaticClass()
   {
     return SmartCityPackage.Literals.INTEROPERABLE_LAYER;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public int getPriority()
-  {
-    return priority;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setPriority(int newPriority)
-  {
-    int oldPriority = priority;
-    priority = newPriority;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SmartCityPackage.INTEROPERABLE_LAYER__PRIORITY, oldPriority, priority));
   }
 
   /**
@@ -183,8 +137,6 @@ public class InteroperableLayerImpl extends LinkableImpl implements Interoperabl
   {
     switch (featureID)
     {
-      case SmartCityPackage.INTEROPERABLE_LAYER__PRIORITY:
-        return getPriority();
       case SmartCityPackage.INTEROPERABLE_LAYER__DELAY:
         return getDelay();
     }
@@ -201,9 +153,6 @@ public class InteroperableLayerImpl extends LinkableImpl implements Interoperabl
   {
     switch (featureID)
     {
-      case SmartCityPackage.INTEROPERABLE_LAYER__PRIORITY:
-        setPriority((Integer)newValue);
-        return;
       case SmartCityPackage.INTEROPERABLE_LAYER__DELAY:
         setDelay((DelayRange)newValue);
         return;
@@ -221,9 +170,6 @@ public class InteroperableLayerImpl extends LinkableImpl implements Interoperabl
   {
     switch (featureID)
     {
-      case SmartCityPackage.INTEROPERABLE_LAYER__PRIORITY:
-        setPriority(PRIORITY_EDEFAULT);
-        return;
       case SmartCityPackage.INTEROPERABLE_LAYER__DELAY:
         setDelay((DelayRange)null);
         return;
@@ -241,29 +187,10 @@ public class InteroperableLayerImpl extends LinkableImpl implements Interoperabl
   {
     switch (featureID)
     {
-      case SmartCityPackage.INTEROPERABLE_LAYER__PRIORITY:
-        return priority != PRIORITY_EDEFAULT;
       case SmartCityPackage.INTEROPERABLE_LAYER__DELAY:
         return delay != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (priority: ");
-    result.append(priority);
-    result.append(')');
-    return result.toString();
   }
 
 } //InteroperableLayerImpl

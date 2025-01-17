@@ -38,7 +38,17 @@ public enum ControllerType implements Enumerator
    * @generated
    * @ordered
    */
-  RASPBERRY_PI(1, "RASPBERRY_PI", "RASPBERRY_PI");
+  RASPBERRY_PI(1, "RASPBERRY_PI", "RASPBERRY_PI"),
+
+  /**
+   * The '<em><b>OTHER</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #OTHER_VALUE
+   * @generated
+   * @ordered
+   */
+  OTHER(2, "OTHER", "OTHER");
 
   /**
    * The '<em><b>ESP32</b></em>' literal value.
@@ -63,6 +73,17 @@ public enum ControllerType implements Enumerator
   public static final int RASPBERRY_PI_VALUE = 1;
 
   /**
+   * The '<em><b>OTHER</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #OTHER
+   * @model
+   * @generated
+   * @ordered
+   */
+  public static final int OTHER_VALUE = 2;
+
+  /**
    * An array of all the '<em><b>Controller Type</b></em>' enumerators.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -73,6 +94,7 @@ public enum ControllerType implements Enumerator
     {
       ESP32,
       RASPBERRY_PI,
+      OTHER,
     };
 
   /**
@@ -139,6 +161,7 @@ public enum ControllerType implements Enumerator
     {
       case ESP32_VALUE: return ESP32;
       case RASPBERRY_PI_VALUE: return RASPBERRY_PI;
+      case OTHER_VALUE: return OTHER;
     }
     return null;
   }

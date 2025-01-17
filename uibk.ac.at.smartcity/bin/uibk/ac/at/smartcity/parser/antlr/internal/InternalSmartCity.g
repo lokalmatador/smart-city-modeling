@@ -322,12 +322,53 @@ ruleNode returns [EObject current=null]
 				}
 			)
 		)
+		otherlv_6='postFrequency'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getNodeAccess().getPostFrequencyKeyword_6());
+		}
+		(
+			(
+				lv_freqValue_7_0=RULE_INT
+				{
+					newLeafNode(lv_freqValue_7_0, grammarAccess.getNodeAccess().getFreqValueINTTerminalRuleCall_7_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getNodeRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"freqValue",
+						lv_freqValue_7_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getNodeAccess().getLinksCommunicationLinkParserRuleCall_6_0());
+					newCompositeNode(grammarAccess.getNodeAccess().getFreqUnitFrequencyUnitEnumRuleCall_8_0());
 				}
-				lv_links_6_0=ruleCommunicationLink
+				lv_freqUnit_8_0=ruleFrequencyUnit
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getNodeRule());
+					}
+					set(
+						$current,
+						"freqUnit",
+						lv_freqUnit_8_0,
+						"uibk.ac.at.smartcity.SmartCity.FrequencyUnit");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getNodeAccess().getLinksCommunicationLinkParserRuleCall_9_0());
+				}
+				lv_links_9_0=ruleCommunicationLink
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getNodeRule());
@@ -335,15 +376,37 @@ ruleNode returns [EObject current=null]
 					add(
 						$current,
 						"links",
-						lv_links_6_0,
+						lv_links_9_0,
 						"uibk.ac.at.smartcity.SmartCity.CommunicationLink");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
-		otherlv_7='}'
+		otherlv_10='priority'
 		{
-			newLeafNode(otherlv_7, grammarAccess.getNodeAccess().getRightCurlyBracketKeyword_7());
+			newLeafNode(otherlv_10, grammarAccess.getNodeAccess().getPriorityKeyword_10());
+		}
+		(
+			(
+				lv_priority_11_0=RULE_INT
+				{
+					newLeafNode(lv_priority_11_0, grammarAccess.getNodeAccess().getPriorityINTTerminalRuleCall_11_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getNodeRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"priority",
+						lv_priority_11_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_12='}'
+		{
+			newLeafNode(otherlv_12, grammarAccess.getNodeAccess().getRightCurlyBracketKeyword_12());
 		}
 	)
 ;
@@ -881,9 +944,9 @@ ruleCyclicAction returns [EObject current=null]
 		}
 		(
 			(
-				lv_value_3_0=RULE_INT
+				lv_freqValue_3_0=RULE_INT
 				{
-					newLeafNode(lv_value_3_0, grammarAccess.getCyclicActionAccess().getValueINTTerminalRuleCall_3_0());
+					newLeafNode(lv_freqValue_3_0, grammarAccess.getCyclicActionAccess().getFreqValueINTTerminalRuleCall_3_0());
 				}
 				{
 					if ($current==null) {
@@ -891,8 +954,8 @@ ruleCyclicAction returns [EObject current=null]
 					}
 					setWithLastConsumed(
 						$current,
-						"value",
-						lv_value_3_0,
+						"freqValue",
+						lv_freqValue_3_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
@@ -900,17 +963,17 @@ ruleCyclicAction returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getCyclicActionAccess().getUnitFrequencyUnitEnumRuleCall_4_0());
+					newCompositeNode(grammarAccess.getCyclicActionAccess().getFreqUnitFrequencyUnitEnumRuleCall_4_0());
 				}
-				lv_unit_4_0=ruleFrequencyUnit
+				lv_freqUnit_4_0=ruleFrequencyUnit
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getCyclicActionRule());
 					}
 					set(
 						$current,
-						"unit",
-						lv_unit_4_0,
+						"freqUnit",
+						lv_freqUnit_4_0,
 						"uibk.ac.at.smartcity.SmartCity.FrequencyUnit");
 					afterParserOrEnumRuleCall();
 				}
@@ -1016,6 +1079,14 @@ ruleControllerType returns [Enumerator current=null]
 			{
 				$current = grammarAccess.getControllerTypeAccess().getRASPBERRY_PIEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
 				newLeafNode(enumLiteral_1, grammarAccess.getControllerTypeAccess().getRASPBERRY_PIEnumLiteralDeclaration_1());
+			}
+		)
+		    |
+		(
+			enumLiteral_2='OTHER'
+			{
+				$current = grammarAccess.getControllerTypeAccess().getOTHEREnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_2, grammarAccess.getControllerTypeAccess().getOTHEREnumLiteralDeclaration_2());
 			}
 		)
 	)
