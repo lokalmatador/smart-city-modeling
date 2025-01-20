@@ -5,16 +5,12 @@ package uibk.ac.at.smartcity.smartCity.impl;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -30,55 +26,13 @@ import uibk.ac.at.smartcity.smartCity.SmartCityPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.ModuleImpl#getName <em>Name</em>}</li>
- *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.ModuleImpl#getPriority <em>Priority</em>}</li>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.ModuleImpl#getCyclicActions <em>Cyclic Actions</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ModuleImpl extends MinimalEObjectImpl.Container implements uibk.ac.at.smartcity.smartCity.Module
+public class ModuleImpl extends LinkableImpl implements uibk.ac.at.smartcity.smartCity.Module
 {
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getPriority() <em>Priority</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPriority()
-   * @generated
-   * @ordered
-   */
-  protected static final int PRIORITY_EDEFAULT = 0;
-
-  /**
-   * The cached value of the '{@link #getPriority() <em>Priority</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPriority()
-   * @generated
-   * @ordered
-   */
-  protected int priority = PRIORITY_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getCyclicActions() <em>Cyclic Actions</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -108,56 +62,6 @@ public class ModuleImpl extends MinimalEObjectImpl.Container implements uibk.ac.
   protected EClass eStaticClass()
   {
     return SmartCityPackage.Literals.MODULE;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SmartCityPackage.MODULE__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public int getPriority()
-  {
-    return priority;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setPriority(int newPriority)
-  {
-    int oldPriority = priority;
-    priority = newPriority;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SmartCityPackage.MODULE__PRIORITY, oldPriority, priority));
   }
 
   /**
@@ -201,10 +105,6 @@ public class ModuleImpl extends MinimalEObjectImpl.Container implements uibk.ac.
   {
     switch (featureID)
     {
-      case SmartCityPackage.MODULE__NAME:
-        return getName();
-      case SmartCityPackage.MODULE__PRIORITY:
-        return getPriority();
       case SmartCityPackage.MODULE__CYCLIC_ACTIONS:
         return getCyclicActions();
     }
@@ -222,12 +122,6 @@ public class ModuleImpl extends MinimalEObjectImpl.Container implements uibk.ac.
   {
     switch (featureID)
     {
-      case SmartCityPackage.MODULE__NAME:
-        setName((String)newValue);
-        return;
-      case SmartCityPackage.MODULE__PRIORITY:
-        setPriority((Integer)newValue);
-        return;
       case SmartCityPackage.MODULE__CYCLIC_ACTIONS:
         getCyclicActions().clear();
         getCyclicActions().addAll((Collection<? extends CyclicAction>)newValue);
@@ -246,12 +140,6 @@ public class ModuleImpl extends MinimalEObjectImpl.Container implements uibk.ac.
   {
     switch (featureID)
     {
-      case SmartCityPackage.MODULE__NAME:
-        setName(NAME_EDEFAULT);
-        return;
-      case SmartCityPackage.MODULE__PRIORITY:
-        setPriority(PRIORITY_EDEFAULT);
-        return;
       case SmartCityPackage.MODULE__CYCLIC_ACTIONS:
         getCyclicActions().clear();
         return;
@@ -269,33 +157,10 @@ public class ModuleImpl extends MinimalEObjectImpl.Container implements uibk.ac.
   {
     switch (featureID)
     {
-      case SmartCityPackage.MODULE__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case SmartCityPackage.MODULE__PRIORITY:
-        return priority != PRIORITY_EDEFAULT;
       case SmartCityPackage.MODULE__CYCLIC_ACTIONS:
         return cyclicActions != null && !cyclicActions.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(", priority: ");
-    result.append(priority);
-    result.append(')');
-    return result.toString();
   }
 
 } //ModuleImpl

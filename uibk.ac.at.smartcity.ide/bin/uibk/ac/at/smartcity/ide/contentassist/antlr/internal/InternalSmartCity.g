@@ -390,6 +390,12 @@ rule__SensorType__Alternatives
 		('CAMERA')
 		{ after(grammarAccess.getSensorTypeAccess().getCAMERAEnumLiteralDeclaration_7()); }
 	)
+	|
+	(
+		{ before(grammarAccess.getSensorTypeAccess().getGSMEnumLiteralDeclaration_8()); }
+		('GSM')
+		{ after(grammarAccess.getSensorTypeAccess().getGSMEnumLiteralDeclaration_8()); }
+	)
 ;
 finally {
 	restoreStackSize(stackSize);

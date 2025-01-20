@@ -90,12 +90,13 @@ class SmartCityGenerator extends AbstractGenerator {
 	def compile(Sensor sensor){
 		'''
 		from pypdevs.DEVS import AtomicDEVS
+		from pypdevs.infinity import INFINITY
 		import random
-		
+		import time
 		
 		class «sensor.name.toFirstUpper»(AtomicDEVS):
+			«IF sensor.type == SensorType.CAMERA»
 			def __init__(self):
-				«IF sensor.type == SensorType.CAMERA»
 				super().__init__("«sensor.name»")
 				self.in_port = self.addInPort("in_port")
 				self.outport = self.addOutPort("outport")
@@ -119,13 +120,14 @@ class SmartCityGenerator extends AbstractGenerator {
 				# Simulate processing the image to detect a number
 				self.state["number_detected"] = self.generate_random_number()
 				print(f"[{self.name}] Detected number: {self.state['number_detected']}")
-				«ELSE»
+			«ELSE»
+			def __init__(self):
 				super().__init__("«sensor.name»")
 				self.inport = self.addInPort("in_port")
 				self.outport = self.addOutPort("outport")
 				self.state = {"«sensor.type»": 0}
 				self.priority = «sensor.priority»
-      		 	«ENDIF»
+  		 	«ENDIF»
 
 			def intTransition(self):
 				«IF (sensor.type == SensorType.PH)»
@@ -151,11 +153,11 @@ class SmartCityGenerator extends AbstractGenerator {
 				return self.state
 				«ELSEIF (sensor.type == SensorType.CAMERA)»
 				if self.state["status"] == "capturing":
-				    self.capture_image()
-				    self.state["status"] = "processing"
+					self.capture_image()
+					self.state["status"] = "processing"
 				elif self.state["status"] == "processing":
-				    self.process_image()
-				    self.state["status"] = "capturing"  # Loop back to capturing for continuous processing
+					self.process_image()
+					self.state["status"] = "capturing"  # Loop back to capturing for continuous processing
 				return self.state
 				«ELSE»
 				print("Internal Transition not defined for this sensor type")
@@ -171,16 +173,23 @@ class SmartCityGenerator extends AbstractGenerator {
 				«ENDIF»
 
 			def outputFnc(self):
+				«IF (sensor.type == SensorType.CAMERA)»
+				if self.state["status"] == "processing" and self.state["number_detected"] is not None:
+					print(f"[{self.name}] Outputting detected number: {self.state['number_detected']}")
+					return {self.outport: self.state["number_detected"]}
+				return {}
+				«ELSE»
 				return {self.outport: self.state['«sensor.type»']}
-				
+				«ENDIF»
+
 			def timeAdvance(self):
 				«IF (sensor.type == SensorType.CAMERA)»
 				if self.state["status"] == "idle":
-				    return INFINITY
+					return INFINITY
 				elif self.state["status"] == "capturing":
-				    return 1.0  # Time to capture an image
+					return 1.0  # Time to capture an image
 				elif self.state["status"] == "processing":
-				    return 2.0  # Time to process the image
+					return 2.0  # Time to process the image
 				return INFINITY
 				«ELSEIF (sensor.type == SensorType.CURRENT || sensor.type == SensorType.PULSE || sensor.type == SensorType.ULTRASONIC)»
 				return 1.0

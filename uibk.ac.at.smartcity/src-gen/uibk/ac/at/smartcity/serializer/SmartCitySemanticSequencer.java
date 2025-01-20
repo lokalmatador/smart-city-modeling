@@ -216,6 +216,7 @@ public class SmartCitySemanticSequencer extends AbstractDelegatingSemanticSequen
 	 * <pre>
 	 * Contexts:
 	 *     Module returns Module
+	 *     Linkable returns Module
 	 *
 	 * Constraint:
 	 *     (name=ID priority=INT cyclicActions+=CyclicAction*)

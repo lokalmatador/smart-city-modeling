@@ -502,13 +502,14 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final RuleCall cSensorParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cInteroperableLayerParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cNodeParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cModuleParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
 		//Linkable:
-		//    Controller | Sensor | InteroperableLayer | Node
+		//    Controller | Sensor | InteroperableLayer | Node | Module
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Controller | Sensor | InteroperableLayer | Node
+		//Controller | Sensor | InteroperableLayer | Node | Module
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//Controller
@@ -522,6 +523,9 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 		
 		//Node
 		public RuleCall getNodeParserRuleCall_3() { return cNodeParserRuleCall_3; }
+		
+		//Module
+		public RuleCall getModuleParserRuleCall_4() { return cModuleParserRuleCall_4; }
 	}
 	public class DelayRangeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uibk.ac.at.smartcity.SmartCity.DelayRange");
@@ -653,13 +657,15 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Keyword cULTRASONICULTRASONICKeyword_6_0 = (Keyword)cULTRASONICEnumLiteralDeclaration_6.eContents().get(0);
 		private final EnumLiteralDeclaration cCAMERAEnumLiteralDeclaration_7 = (EnumLiteralDeclaration)cAlternatives.eContents().get(7);
 		private final Keyword cCAMERACAMERAKeyword_7_0 = (Keyword)cCAMERAEnumLiteralDeclaration_7.eContents().get(0);
+		private final EnumLiteralDeclaration cGSMEnumLiteralDeclaration_8 = (EnumLiteralDeclaration)cAlternatives.eContents().get(8);
+		private final Keyword cGSMGSMKeyword_8_0 = (Keyword)cGSMEnumLiteralDeclaration_8.eContents().get(0);
 		
 		//enum SensorType:
-		//    TEMPERATURE | PH | TURBIDITY | TDS | CURRENT | PULSE | ULTRASONIC | CAMERA
+		//    TEMPERATURE | PH | TURBIDITY | TDS | CURRENT | PULSE | ULTRASONIC | CAMERA | GSM
 		//;
 		public EnumRule getRule() { return rule; }
 		
-		//TEMPERATURE | PH | TURBIDITY | TDS | CURRENT | PULSE | ULTRASONIC | CAMERA
+		//TEMPERATURE | PH | TURBIDITY | TDS | CURRENT | PULSE | ULTRASONIC | CAMERA | GSM
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//TEMPERATURE
@@ -701,6 +707,11 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 		public EnumLiteralDeclaration getCAMERAEnumLiteralDeclaration_7() { return cCAMERAEnumLiteralDeclaration_7; }
 		
 		public Keyword getCAMERACAMERAKeyword_7_0() { return cCAMERACAMERAKeyword_7_0; }
+		
+		//GSM
+		public EnumLiteralDeclaration getGSMEnumLiteralDeclaration_8() { return cGSMEnumLiteralDeclaration_8; }
+		
+		public Keyword getGSMGSMKeyword_8_0() { return cGSMGSMKeyword_8_0; }
 	}
 	public class ControllerTypeElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "uibk.ac.at.smartcity.SmartCity.ControllerType");
@@ -1063,7 +1074,7 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	
 	//Linkable:
-	//    Controller | Sensor | InteroperableLayer | Node
+	//    Controller | Sensor | InteroperableLayer | Node | Module
 	//;
 	public LinkableElements getLinkableAccess() {
 		return pLinkable;
@@ -1108,7 +1119,7 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	
 	//enum SensorType:
-	//    TEMPERATURE | PH | TURBIDITY | TDS | CURRENT | PULSE | ULTRASONIC | CAMERA
+	//    TEMPERATURE | PH | TURBIDITY | TDS | CURRENT | PULSE | ULTRASONIC | CAMERA | GSM
 	//;
 	public SensorTypeElements getSensorTypeAccess() {
 		return eSensorType;

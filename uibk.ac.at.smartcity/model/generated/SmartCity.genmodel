@@ -15,6 +15,7 @@
       <genEnumLiterals ecoreEnumLiteral="SmartCity.ecore#//SensorType/PULSE"/>
       <genEnumLiterals ecoreEnumLiteral="SmartCity.ecore#//SensorType/ULTRASONIC"/>
       <genEnumLiterals ecoreEnumLiteral="SmartCity.ecore#//SensorType/CAMERA"/>
+      <genEnumLiterals ecoreEnumLiteral="SmartCity.ecore#//SensorType/GSM"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="SmartCity.ecore#//ControllerType">
       <genEnumLiterals ecoreEnumLiteral="SmartCity.ecore#//ControllerType/ESP32"/>
@@ -76,8 +77,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//Controller/cyclicActions"/>
     </genClasses>
     <genClasses ecoreClass="SmartCity.ecore#//Module">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//Module/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//Module/priority"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//Module/cyclicActions"/>
     </genClasses>
     <genClasses ecoreClass="SmartCity.ecore#//Linkable">

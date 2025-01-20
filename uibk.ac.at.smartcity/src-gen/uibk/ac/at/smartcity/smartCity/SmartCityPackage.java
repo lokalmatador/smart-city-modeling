@@ -469,7 +469,7 @@ public interface SmartCityPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODULE__NAME = 0;
+  int MODULE__NAME = LINKABLE__NAME;
 
   /**
    * The feature id for the '<em><b>Priority</b></em>' attribute.
@@ -478,7 +478,7 @@ public interface SmartCityPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODULE__PRIORITY = 1;
+  int MODULE__PRIORITY = LINKABLE__PRIORITY;
 
   /**
    * The feature id for the '<em><b>Cyclic Actions</b></em>' containment reference list.
@@ -487,7 +487,7 @@ public interface SmartCityPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODULE__CYCLIC_ACTIONS = 2;
+  int MODULE__CYCLIC_ACTIONS = LINKABLE_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Module</em>' class.
@@ -496,7 +496,7 @@ public interface SmartCityPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODULE_FEATURE_COUNT = 3;
+  int MODULE_FEATURE_COUNT = LINKABLE_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link uibk.ac.at.smartcity.smartCity.impl.DelayRangeImpl <em>Delay Range</em>}' class.
@@ -940,28 +940,6 @@ public interface SmartCityPackage extends EPackage
   EClass getModule();
 
   /**
-   * Returns the meta object for the attribute '{@link uibk.ac.at.smartcity.smartCity.Module#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see uibk.ac.at.smartcity.smartCity.Module#getName()
-   * @see #getModule()
-   * @generated
-   */
-  EAttribute getModule_Name();
-
-  /**
-   * Returns the meta object for the attribute '{@link uibk.ac.at.smartcity.smartCity.Module#getPriority <em>Priority</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Priority</em>'.
-   * @see uibk.ac.at.smartcity.smartCity.Module#getPriority()
-   * @see #getModule()
-   * @generated
-   */
-  EAttribute getModule_Priority();
-
-  /**
    * Returns the meta object for the containment reference list '{@link uibk.ac.at.smartcity.smartCity.Module#getCyclicActions <em>Cyclic Actions</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1394,22 +1372,6 @@ public interface SmartCityPackage extends EPackage
      * @generated
      */
     EClass MODULE = eINSTANCE.getModule();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute MODULE__NAME = eINSTANCE.getModule_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Priority</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute MODULE__PRIORITY = eINSTANCE.getModule_Priority();
 
     /**
      * The meta object literal for the '<em><b>Cyclic Actions</b></em>' containment reference list feature.

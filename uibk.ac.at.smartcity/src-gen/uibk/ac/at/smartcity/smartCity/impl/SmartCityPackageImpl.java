@@ -503,31 +503,9 @@ public class SmartCityPackageImpl extends EPackageImpl implements SmartCityPacka
    * @generated
    */
   @Override
-  public EAttribute getModule_Name()
-  {
-    return (EAttribute)moduleEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getModule_Priority()
-  {
-    return (EAttribute)moduleEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EReference getModule_CyclicActions()
   {
-    return (EReference)moduleEClass.getEStructuralFeatures().get(2);
+    return (EReference)moduleEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -780,8 +758,6 @@ public class SmartCityPackageImpl extends EPackageImpl implements SmartCityPacka
     createEReference(controllerEClass, CONTROLLER__CYCLIC_ACTIONS);
 
     moduleEClass = createEClass(MODULE);
-    createEAttribute(moduleEClass, MODULE__NAME);
-    createEAttribute(moduleEClass, MODULE__PRIORITY);
     createEReference(moduleEClass, MODULE__CYCLIC_ACTIONS);
 
     linkableEClass = createEClass(LINKABLE);
@@ -841,6 +817,7 @@ public class SmartCityPackageImpl extends EPackageImpl implements SmartCityPacka
     nodeEClass.getESuperTypes().add(this.getLinkable());
     sensorEClass.getESuperTypes().add(this.getLinkable());
     controllerEClass.getESuperTypes().add(this.getLinkable());
+    moduleEClass.getESuperTypes().add(this.getLinkable());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -875,8 +852,6 @@ public class SmartCityPackageImpl extends EPackageImpl implements SmartCityPacka
     initEReference(getController_CyclicActions(), this.getCyclicAction(), null, "cyclicActions", null, 0, -1, Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(moduleEClass, uibk.ac.at.smartcity.smartCity.Module.class, "Module", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getModule_Name(), ecorePackage.getEString(), "name", null, 0, 1, uibk.ac.at.smartcity.smartCity.Module.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getModule_Priority(), ecorePackage.getEInt(), "priority", null, 0, 1, uibk.ac.at.smartcity.smartCity.Module.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModule_CyclicActions(), this.getCyclicAction(), null, "cyclicActions", null, 0, -1, uibk.ac.at.smartcity.smartCity.Module.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(linkableEClass, Linkable.class, "Linkable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -905,6 +880,7 @@ public class SmartCityPackageImpl extends EPackageImpl implements SmartCityPacka
     addEEnumLiteral(sensorTypeEEnum, SensorType.PULSE);
     addEEnumLiteral(sensorTypeEEnum, SensorType.ULTRASONIC);
     addEEnumLiteral(sensorTypeEEnum, SensorType.CAMERA);
+    addEEnumLiteral(sensorTypeEEnum, SensorType.GSM);
 
     initEEnum(controllerTypeEEnum, ControllerType.class, "ControllerType");
     addEEnumLiteral(controllerTypeEEnum, ControllerType.ESP32);

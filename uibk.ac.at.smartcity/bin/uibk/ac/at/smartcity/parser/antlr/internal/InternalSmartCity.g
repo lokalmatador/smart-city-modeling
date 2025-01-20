@@ -1054,6 +1054,14 @@ ruleSensorType returns [Enumerator current=null]
 				newLeafNode(enumLiteral_7, grammarAccess.getSensorTypeAccess().getCAMERAEnumLiteralDeclaration_7());
 			}
 		)
+		    |
+		(
+			enumLiteral_8='GSM'
+			{
+				$current = grammarAccess.getSensorTypeAccess().getGSMEnumLiteralDeclaration_8().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_8, grammarAccess.getSensorTypeAccess().getGSMEnumLiteralDeclaration_8());
+			}
+		)
 	)
 ;
 

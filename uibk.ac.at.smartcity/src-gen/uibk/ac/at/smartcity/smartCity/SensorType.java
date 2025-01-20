@@ -98,7 +98,17 @@ public enum SensorType implements Enumerator
    * @generated
    * @ordered
    */
-  CAMERA(7, "CAMERA", "CAMERA");
+  CAMERA(7, "CAMERA", "CAMERA"),
+
+  /**
+   * The '<em><b>GSM</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #GSM_VALUE
+   * @generated
+   * @ordered
+   */
+  GSM(8, "GSM", "GSM");
 
   /**
    * The '<em><b>TEMPERATURE</b></em>' literal value.
@@ -189,6 +199,17 @@ public enum SensorType implements Enumerator
   public static final int CAMERA_VALUE = 7;
 
   /**
+   * The '<em><b>GSM</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #GSM
+   * @model
+   * @generated
+   * @ordered
+   */
+  public static final int GSM_VALUE = 8;
+
+  /**
    * An array of all the '<em><b>Sensor Type</b></em>' enumerators.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -205,6 +226,7 @@ public enum SensorType implements Enumerator
       PULSE,
       ULTRASONIC,
       CAMERA,
+      GSM,
     };
 
   /**
@@ -277,6 +299,7 @@ public enum SensorType implements Enumerator
       case PULSE_VALUE: return PULSE;
       case ULTRASONIC_VALUE: return ULTRASONIC;
       case CAMERA_VALUE: return CAMERA;
+      case GSM_VALUE: return GSM;
     }
     return null;
   }

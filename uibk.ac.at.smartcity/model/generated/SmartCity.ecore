@@ -44,9 +44,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="cyclicActions" upperBound="-1"
         eType="#//CyclicAction" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Module">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Module" eSuperTypes="#//Linkable">
     <eStructuralFeatures xsi:type="ecore:EReference" name="cyclicActions" upperBound="-1"
         eType="#//CyclicAction" containment="true"/>
   </eClassifiers>
@@ -75,6 +73,7 @@
     <eLiterals name="PULSE" value="5" literal="PULSE"/>
     <eLiterals name="ULTRASONIC" value="6" literal="ULTRASONIC"/>
     <eLiterals name="CAMERA" value="7" literal="CAMERA"/>
+    <eLiterals name="GSM" value="8" literal="GSM"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ControllerType">
     <eLiterals name="ESP32" literal="ESP32"/>

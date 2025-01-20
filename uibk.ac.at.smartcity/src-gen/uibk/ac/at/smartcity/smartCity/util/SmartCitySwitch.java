@@ -133,6 +133,7 @@ public class SmartCitySwitch<T> extends Switch<T>
       {
         uibk.ac.at.smartcity.smartCity.Module module = (uibk.ac.at.smartcity.smartCity.Module)theEObject;
         T result = caseModule(module);
+        if (result == null) result = caseLinkable(module);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
