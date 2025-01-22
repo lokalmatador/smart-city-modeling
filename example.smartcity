@@ -1,0 +1,96 @@
+node waterQualityNode {
+	sensor temperatureWQ type TEMPERATURE priority 1
+	sensor phWQ type PH priority 1
+	sensor turbidityWQ type TURBIDITY priority 1
+	sensor tdsWQ type TDS priority 1
+	
+	controller esp32WQ type ESP32 priority 3
+	
+	postFrequency 3600 SECONDS
+	
+	link SPI from temperatureWQ -> esp32WQ {
+		delay [1..12]
+		datatype TEMPERATURE
+	}
+	link ADC from phWQ -> esp32WQ {
+		delay [1..12]
+		datatype PH
+	}
+	link ADC from turbidityWQ -> esp32WQ {
+		delay [1..12]
+		datatype TURBIDITY
+	}
+	link ADC from tdsWQ -> esp32WQ {
+		delay [1..12]
+		datatype TDS
+	}
+	
+	priority 3
+}
+
+node waterLevelNode {
+	sensor temperatureWL type TEMPERATURE priority 1
+	sensor ultrasonicWL type ULTRASONIC priority 1
+		
+	controller esp32WL type ESP32 priority 3
+	
+	postFrequency 1 SECONDS
+	
+	link SPI from temperatureWL -> esp32WL {
+		delay [1..12]
+		datatype TEMPERATURE
+	}
+	
+	link UART from ultrasonicWL -> esp32WL {
+		delay [1..11]
+		datatype ULTRASONIC
+	}
+	
+	priority 3
+}
+
+node waterQuantityNodeCam {
+	sensor cameraWQ type CAMERA priority 1
+	
+	controller raspiWQ type RASPBERRY_PI priority 3
+	
+	postFrequency 300 SECONDS
+	
+	link SPI from cameraWQ -> raspiWQ {
+		delay [1..12]
+		datatype CAMERA
+	}
+	
+	priority 3
+}
+
+node waterQuantityNodePulse {
+	sensor pulseWQ type PULSE priority 1
+	
+	controller espWQP type ESP32 priority 3
+	
+	postFrequency 300 SECONDS
+	
+	link SPI from pulseWQ -> espWQP {
+		delay [1..12]
+		datatype PULSE
+	}
+	priority 3
+}
+
+node MotorControllerNode {
+	sensor currentMC type CURRENT priority 1
+	
+	controller espMC type ESP32 priority 3
+	
+	postFrequency 1 SECONDS
+	
+	link SPI from currentMC -> espMC {
+		delay [1..12]
+		datatype CURRENT
+	}
+	priority 3
+}
+
+
+layer oneM2M priority 4 delay [1..3]

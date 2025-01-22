@@ -1,0 +1,28 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: uibk.ac.at.smartcity
+Bundle-ManifestVersion: 2
+Bundle-Name: uibk.ac.at.smartcity
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: uibk.ac.at.smartcity; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.16.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.37.0",
+ org.eclipse.emf.common,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Export-Package: uibk.ac.at.smartcity.smartCity,
+ uibk.ac.at.smartcity.smartCity.util,
+ uibk.ac.at.smartcity.validation,
+ uibk.ac.at.smartcity,
+ uibk.ac.at.smartcity.smartCity.impl,
+ uibk.ac.at.smartcity.generator,
+ uibk.ac.at.smartcity.scoping,
+ uibk.ac.at.smartcity.serializer,
+ uibk.ac.at.smartcity.parser.antlr,
+ uibk.ac.at.smartcity.services,
+ uibk.ac.at.smartcity.parser.antlr.internal
+Import-Package: org.apache.log4j

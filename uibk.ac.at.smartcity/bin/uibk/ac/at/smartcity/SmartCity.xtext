@@ -1,0 +1,93 @@
+grammar uibk.ac.at.smartcity.SmartCity with org.eclipse.xtext.common.Terminals
+
+generate smartCity "http://www.ac.uibk/at/smartcity/SmartCity"
+
+Model:
+	nodes+=Node*
+	interoperableLayer=InteroperableLayer
+	globalLinks+=CommunicationLink*
+;
+
+InteroperableLayer:
+	'layer' name=ID
+	'priority' priority=INT
+	'delay' delay=DelayRange
+;
+	
+Node:
+	'node' name=ID
+	'{'
+		sensors+=Sensor*
+		modules+=Module*
+		controller=Controller
+		'postFrequency' freqValue=INT freqUnit=FrequencyUnit
+		links+=CommunicationLink*
+		'priority' priority=INT
+	'}'
+;
+
+Sensor:
+	'sensor' name=ID
+	'type' type=SensorType
+	'priority' priority=INT
+	cyclicActions+=CyclicAction*
+;
+
+
+CommunicationLink:
+	'link' type=LinkType 'from' origin=[Linkable] '->' destination=[Linkable] '{'
+		'delay' delay=DelayRange
+		'datatype' datatype=SensorType
+	'}'
+;
+
+Controller:
+	'controller' name=ID
+	'type' type=ControllerType
+	'priority' priority=INT
+	cyclicActions+=CyclicAction*
+;
+
+Module:
+	'module' name=ID
+	'priority' priority=INT
+	cyclicActions+=CyclicAction*
+	
+;
+
+Linkable:
+	Controller | Sensor | InteroperableLayer | Node | Module
+;
+
+DelayRange:
+	'[' min=INT '..' max=INT ']'
+;
+
+CyclicAction:
+	'cyclicAction' name=ID
+	'frequency' freqValue=INT freqUnit=FrequencyUnit
+;
+
+TriggeredAction:
+	'TriggeredAction' name=ID
+;
+	
+enum SensorType:
+	TEMPERATURE | PH | TURBIDITY | TDS | CURRENT | PULSE | ULTRASONIC | CAMERA | GSM
+;
+
+enum ControllerType:
+	ESP32 | RASPBERRY_PI | OTHER
+;
+
+enum LinkType:
+	UART | ADC | SPI | GPIO | CSI | HTTPS
+;
+
+enum DataType:
+	BOOL | FLOAT | EPOCH | STRING | DOUBLE
+;
+
+enum FrequencyUnit:
+	HERTZ | SECONDS | MINUTES | HOURS |DAYS | INF
+;
