@@ -51,16 +51,6 @@ public enum LinkType implements Enumerator
   SPI(2, "SPI", "SPI"),
 
   /**
-   * The '<em><b>GPIO</b></em>' literal object.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #GPIO_VALUE
-   * @generated
-   * @ordered
-   */
-  GPIO(3, "GPIO", "GPIO"),
-
-  /**
    * The '<em><b>CSI</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -68,7 +58,7 @@ public enum LinkType implements Enumerator
    * @generated
    * @ordered
    */
-  CSI(4, "CSI", "CSI"),
+  CSI(3, "CSI", "CSI"),
 
   /**
    * The '<em><b>HTTPS</b></em>' literal object.
@@ -78,7 +68,7 @@ public enum LinkType implements Enumerator
    * @generated
    * @ordered
    */
-  HTTPS(5, "HTTPS", "HTTPS");
+  HTTPS(4, "HTTPS", "HTTPS");
 
   /**
    * The '<em><b>UART</b></em>' literal value.
@@ -114,17 +104,6 @@ public enum LinkType implements Enumerator
   public static final int SPI_VALUE = 2;
 
   /**
-   * The '<em><b>GPIO</b></em>' literal value.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #GPIO
-   * @model
-   * @generated
-   * @ordered
-   */
-  public static final int GPIO_VALUE = 3;
-
-  /**
    * The '<em><b>CSI</b></em>' literal value.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -133,7 +112,7 @@ public enum LinkType implements Enumerator
    * @generated
    * @ordered
    */
-  public static final int CSI_VALUE = 4;
+  public static final int CSI_VALUE = 3;
 
   /**
    * The '<em><b>HTTPS</b></em>' literal value.
@@ -144,7 +123,7 @@ public enum LinkType implements Enumerator
    * @generated
    * @ordered
    */
-  public static final int HTTPS_VALUE = 5;
+  public static final int HTTPS_VALUE = 4;
 
   /**
    * An array of all the '<em><b>Link Type</b></em>' enumerators.
@@ -158,7 +137,6 @@ public enum LinkType implements Enumerator
       UART,
       ADC,
       SPI,
-      GPIO,
       CSI,
       HTTPS,
     };
@@ -228,7 +206,6 @@ public enum LinkType implements Enumerator
       case UART_VALUE: return UART;
       case ADC_VALUE: return ADC;
       case SPI_VALUE: return SPI;
-      case GPIO_VALUE: return GPIO;
       case CSI_VALUE: return CSI;
       case HTTPS_VALUE: return HTTPS;
     }

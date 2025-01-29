@@ -17,9 +17,9 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link uibk.ac.at.smartcity.smartCity.Node#getSensors <em>Sensors</em>}</li>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.Node#getModules <em>Modules</em>}</li>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.Node#getController <em>Controller</em>}</li>
+ *   <li>{@link uibk.ac.at.smartcity.smartCity.Node#getLinks <em>Links</em>}</li>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.Node#getFreqValue <em>Freq Value</em>}</li>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.Node#getFreqUnit <em>Freq Unit</em>}</li>
- *   <li>{@link uibk.ac.at.smartcity.smartCity.Node#getLinks <em>Links</em>}</li>
  * </ul>
  *
  * @see uibk.ac.at.smartcity.smartCity.SmartCityPackage#getNode()
@@ -75,6 +75,18 @@ public interface Node extends Linkable
   void setController(Controller value);
 
   /**
+   * Returns the value of the '<em><b>Links</b></em>' containment reference list.
+   * The list contents are of type {@link uibk.ac.at.smartcity.smartCity.CommunicationLink}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Links</em>' containment reference list.
+   * @see uibk.ac.at.smartcity.smartCity.SmartCityPackage#getNode_Links()
+   * @model containment="true"
+   * @generated
+   */
+  EList<CommunicationLink> getLinks();
+
+  /**
    * Returns the value of the '<em><b>Freq Value</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -120,17 +132,5 @@ public interface Node extends Linkable
    * @generated
    */
   void setFreqUnit(FrequencyUnit value);
-
-  /**
-   * Returns the value of the '<em><b>Links</b></em>' containment reference list.
-   * The list contents are of type {@link uibk.ac.at.smartcity.smartCity.CommunicationLink}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Links</em>' containment reference list.
-   * @see uibk.ac.at.smartcity.smartCity.SmartCityPackage#getNode_Links()
-   * @model containment="true"
-   * @generated
-   */
-  EList<CommunicationLink> getLinks();
 
 } // Node

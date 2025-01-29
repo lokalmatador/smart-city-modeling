@@ -8,3 +8,8 @@ An example implementation using the DSML can be found [here](example.smartcity).
 
 It aims to represent the upper part of following scenario:
 ![scenario](imgs/scenario.png) 
+
+## Model
+
+This graphical representation of the underlying metamodel can help to understand the structure of the DSML:
+![model](imgs/model.png)

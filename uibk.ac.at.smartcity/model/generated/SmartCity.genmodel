@@ -26,7 +26,6 @@
       <genEnumLiterals ecoreEnumLiteral="SmartCity.ecore#//LinkType/UART"/>
       <genEnumLiterals ecoreEnumLiteral="SmartCity.ecore#//LinkType/ADC"/>
       <genEnumLiterals ecoreEnumLiteral="SmartCity.ecore#//LinkType/SPI"/>
-      <genEnumLiterals ecoreEnumLiteral="SmartCity.ecore#//LinkType/GPIO"/>
       <genEnumLiterals ecoreEnumLiteral="SmartCity.ecore#//LinkType/CSI"/>
       <genEnumLiterals ecoreEnumLiteral="SmartCity.ecore#//LinkType/HTTPS"/>
     </genEnums>
@@ -47,23 +46,24 @@
     </genEnums>
     <genClasses ecoreClass="SmartCity.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//Model/nodes"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//Model/interoperableLayer"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//Model/dataGateway"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//Model/globalLinks"/>
     </genClasses>
-    <genClasses ecoreClass="SmartCity.ecore#//InteroperableLayer">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//InteroperableLayer/delay"/>
+    <genClasses ecoreClass="SmartCity.ecore#//DataGateway">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//DataGateway/delay"/>
     </genClasses>
     <genClasses ecoreClass="SmartCity.ecore#//Node">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//Node/sensors"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//Node/modules"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//Node/controller"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//Node/links"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//Node/freqValue"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//Node/freqUnit"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//Node/links"/>
     </genClasses>
     <genClasses ecoreClass="SmartCity.ecore#//Sensor">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//Sensor/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//Sensor/cyclicActions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//Sensor/triggeredActions"/>
     </genClasses>
     <genClasses ecoreClass="SmartCity.ecore#//CommunicationLink">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//CommunicationLink/type"/>
@@ -75,9 +75,11 @@
     <genClasses ecoreClass="SmartCity.ecore#//Controller">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//Controller/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//Controller/cyclicActions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//Controller/triggeredActions"/>
     </genClasses>
     <genClasses ecoreClass="SmartCity.ecore#//Module">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//Module/cyclicActions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//Module/triggeredActions"/>
     </genClasses>
     <genClasses ecoreClass="SmartCity.ecore#//Linkable">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//Linkable/name"/>

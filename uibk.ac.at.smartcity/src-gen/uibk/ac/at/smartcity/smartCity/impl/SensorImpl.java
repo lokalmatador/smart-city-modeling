@@ -22,6 +22,7 @@ import uibk.ac.at.smartcity.smartCity.CyclicAction;
 import uibk.ac.at.smartcity.smartCity.Sensor;
 import uibk.ac.at.smartcity.smartCity.SensorType;
 import uibk.ac.at.smartcity.smartCity.SmartCityPackage;
+import uibk.ac.at.smartcity.smartCity.TriggeredAction;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,6 +34,7 @@ import uibk.ac.at.smartcity.smartCity.SmartCityPackage;
  * <ul>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.SensorImpl#getType <em>Type</em>}</li>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.SensorImpl#getCyclicActions <em>Cyclic Actions</em>}</li>
+ *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.SensorImpl#getTriggeredActions <em>Triggered Actions</em>}</li>
  * </ul>
  *
  * @generated
@@ -68,6 +70,16 @@ public class SensorImpl extends LinkableImpl implements Sensor
    * @ordered
    */
   protected EList<CyclicAction> cyclicActions;
+
+  /**
+   * The cached value of the '{@link #getTriggeredActions() <em>Triggered Actions</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTriggeredActions()
+   * @generated
+   * @ordered
+   */
+  protected EList<TriggeredAction> triggeredActions;
 
   /**
    * <!-- begin-user-doc -->
@@ -136,12 +148,29 @@ public class SensorImpl extends LinkableImpl implements Sensor
    * @generated
    */
   @Override
+  public EList<TriggeredAction> getTriggeredActions()
+  {
+    if (triggeredActions == null)
+    {
+      triggeredActions = new EObjectContainmentEList<TriggeredAction>(TriggeredAction.class, this, SmartCityPackage.SENSOR__TRIGGERED_ACTIONS);
+    }
+    return triggeredActions;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
       case SmartCityPackage.SENSOR__CYCLIC_ACTIONS:
         return ((InternalEList<?>)getCyclicActions()).basicRemove(otherEnd, msgs);
+      case SmartCityPackage.SENSOR__TRIGGERED_ACTIONS:
+        return ((InternalEList<?>)getTriggeredActions()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -160,6 +189,8 @@ public class SensorImpl extends LinkableImpl implements Sensor
         return getType();
       case SmartCityPackage.SENSOR__CYCLIC_ACTIONS:
         return getCyclicActions();
+      case SmartCityPackage.SENSOR__TRIGGERED_ACTIONS:
+        return getTriggeredActions();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -182,6 +213,10 @@ public class SensorImpl extends LinkableImpl implements Sensor
         getCyclicActions().clear();
         getCyclicActions().addAll((Collection<? extends CyclicAction>)newValue);
         return;
+      case SmartCityPackage.SENSOR__TRIGGERED_ACTIONS:
+        getTriggeredActions().clear();
+        getTriggeredActions().addAll((Collection<? extends TriggeredAction>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -202,6 +237,9 @@ public class SensorImpl extends LinkableImpl implements Sensor
       case SmartCityPackage.SENSOR__CYCLIC_ACTIONS:
         getCyclicActions().clear();
         return;
+      case SmartCityPackage.SENSOR__TRIGGERED_ACTIONS:
+        getTriggeredActions().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -220,6 +258,8 @@ public class SensorImpl extends LinkableImpl implements Sensor
         return type != TYPE_EDEFAULT;
       case SmartCityPackage.SENSOR__CYCLIC_ACTIONS:
         return cyclicActions != null && !cyclicActions.isEmpty();
+      case SmartCityPackage.SENSOR__TRIGGERED_ACTIONS:
+        return triggeredActions != null && !triggeredActions.isEmpty();
     }
     return super.eIsSet(featureID);
   }

@@ -6,21 +6,21 @@ package uibk.ac.at.smartcity.smartCity;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Interoperable Layer</b></em>'.
+ * A representation of the model object '<em><b>Data Gateway</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uibk.ac.at.smartcity.smartCity.InteroperableLayer#getDelay <em>Delay</em>}</li>
+ *   <li>{@link uibk.ac.at.smartcity.smartCity.DataGateway#getDelay <em>Delay</em>}</li>
  * </ul>
  *
- * @see uibk.ac.at.smartcity.smartCity.SmartCityPackage#getInteroperableLayer()
+ * @see uibk.ac.at.smartcity.smartCity.SmartCityPackage#getDataGateway()
  * @model
  * @generated
  */
-public interface InteroperableLayer extends Linkable
+public interface DataGateway extends Linkable
 {
   /**
    * Returns the value of the '<em><b>Delay</b></em>' containment reference.
@@ -28,14 +28,14 @@ public interface InteroperableLayer extends Linkable
    * <!-- end-user-doc -->
    * @return the value of the '<em>Delay</em>' containment reference.
    * @see #setDelay(DelayRange)
-   * @see uibk.ac.at.smartcity.smartCity.SmartCityPackage#getInteroperableLayer_Delay()
+   * @see uibk.ac.at.smartcity.smartCity.SmartCityPackage#getDataGateway_Delay()
    * @model containment="true"
    * @generated
    */
   DelayRange getDelay();
 
   /**
-   * Sets the value of the '{@link uibk.ac.at.smartcity.smartCity.InteroperableLayer#getDelay <em>Delay</em>}' containment reference.
+   * Sets the value of the '{@link uibk.ac.at.smartcity.smartCity.DataGateway#getDelay <em>Delay</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Delay</em>' containment reference.
@@ -44,4 +44,4 @@ public interface InteroperableLayer extends Linkable
    */
   void setDelay(DelayRange value);
 
-} // InteroperableLayer
+} // DataGateway

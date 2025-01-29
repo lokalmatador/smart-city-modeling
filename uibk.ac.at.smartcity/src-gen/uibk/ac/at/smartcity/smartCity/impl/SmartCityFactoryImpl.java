@@ -16,10 +16,10 @@ import uibk.ac.at.smartcity.smartCity.CommunicationLink;
 import uibk.ac.at.smartcity.smartCity.Controller;
 import uibk.ac.at.smartcity.smartCity.ControllerType;
 import uibk.ac.at.smartcity.smartCity.CyclicAction;
+import uibk.ac.at.smartcity.smartCity.DataGateway;
 import uibk.ac.at.smartcity.smartCity.DataType;
 import uibk.ac.at.smartcity.smartCity.DelayRange;
 import uibk.ac.at.smartcity.smartCity.FrequencyUnit;
-import uibk.ac.at.smartcity.smartCity.InteroperableLayer;
 import uibk.ac.at.smartcity.smartCity.LinkType;
 import uibk.ac.at.smartcity.smartCity.Linkable;
 import uibk.ac.at.smartcity.smartCity.Model;
@@ -83,7 +83,7 @@ public class SmartCityFactoryImpl extends EFactoryImpl implements SmartCityFacto
     switch (eClass.getClassifierID())
     {
       case SmartCityPackage.MODEL: return createModel();
-      case SmartCityPackage.INTEROPERABLE_LAYER: return createInteroperableLayer();
+      case SmartCityPackage.DATA_GATEWAY: return createDataGateway();
       case SmartCityPackage.NODE: return createNode();
       case SmartCityPackage.SENSOR: return createSensor();
       case SmartCityPackage.COMMUNICATION_LINK: return createCommunicationLink();
@@ -166,10 +166,10 @@ public class SmartCityFactoryImpl extends EFactoryImpl implements SmartCityFacto
    * @generated
    */
   @Override
-  public InteroperableLayer createInteroperableLayer()
+  public DataGateway createDataGateway()
   {
-    InteroperableLayerImpl interoperableLayer = new InteroperableLayerImpl();
-    return interoperableLayer;
+    DataGatewayImpl dataGateway = new DataGatewayImpl();
+    return dataGateway;
   }
 
   /**

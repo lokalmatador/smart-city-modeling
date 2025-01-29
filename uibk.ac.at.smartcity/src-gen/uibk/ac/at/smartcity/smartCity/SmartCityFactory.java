@@ -33,13 +33,13 @@ public interface SmartCityFactory extends EFactory
   Model createModel();
 
   /**
-   * Returns a new object of class '<em>Interoperable Layer</em>'.
+   * Returns a new object of class '<em>Data Gateway</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Interoperable Layer</em>'.
+   * @return a new object of class '<em>Data Gateway</em>'.
    * @generated
    */
-  InteroperableLayer createInteroperableLayer();
+  DataGateway createDataGateway();
 
   /**
    * Returns a new object of class '<em>Node</em>'.

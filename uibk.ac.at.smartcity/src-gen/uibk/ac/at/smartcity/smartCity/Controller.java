@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.Controller#getType <em>Type</em>}</li>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.Controller#getCyclicActions <em>Cyclic Actions</em>}</li>
+ *   <li>{@link uibk.ac.at.smartcity.smartCity.Controller#getTriggeredActions <em>Triggered Actions</em>}</li>
  * </ul>
  *
  * @see uibk.ac.at.smartcity.smartCity.SmartCityPackage#getController()
@@ -60,5 +61,17 @@ public interface Controller extends Linkable
    * @generated
    */
   EList<CyclicAction> getCyclicActions();
+
+  /**
+   * Returns the value of the '<em><b>Triggered Actions</b></em>' containment reference list.
+   * The list contents are of type {@link uibk.ac.at.smartcity.smartCity.TriggeredAction}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Triggered Actions</em>' containment reference list.
+   * @see uibk.ac.at.smartcity.smartCity.SmartCityPackage#getController_TriggeredActions()
+   * @model containment="true"
+   * @generated
+   */
+  EList<TriggeredAction> getTriggeredActions();
 
 } // Controller

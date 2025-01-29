@@ -11,8 +11,8 @@ import org.eclipse.emf.ecore.util.Switch;
 import uibk.ac.at.smartcity.smartCity.CommunicationLink;
 import uibk.ac.at.smartcity.smartCity.Controller;
 import uibk.ac.at.smartcity.smartCity.CyclicAction;
+import uibk.ac.at.smartcity.smartCity.DataGateway;
 import uibk.ac.at.smartcity.smartCity.DelayRange;
-import uibk.ac.at.smartcity.smartCity.InteroperableLayer;
 import uibk.ac.at.smartcity.smartCity.Linkable;
 import uibk.ac.at.smartcity.smartCity.Model;
 import uibk.ac.at.smartcity.smartCity.Node;
@@ -90,11 +90,11 @@ public class SmartCitySwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SmartCityPackage.INTEROPERABLE_LAYER:
+      case SmartCityPackage.DATA_GATEWAY:
       {
-        InteroperableLayer interoperableLayer = (InteroperableLayer)theEObject;
-        T result = caseInteroperableLayer(interoperableLayer);
-        if (result == null) result = caseLinkable(interoperableLayer);
+        DataGateway dataGateway = (DataGateway)theEObject;
+        T result = caseDataGateway(dataGateway);
+        if (result == null) result = caseLinkable(dataGateway);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -186,17 +186,17 @@ public class SmartCitySwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Interoperable Layer</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Data Gateway</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Interoperable Layer</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Data Gateway</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseInteroperableLayer(InteroperableLayer object)
+  public T caseDataGateway(DataGateway object)
   {
     return null;
   }

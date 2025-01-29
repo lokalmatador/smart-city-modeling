@@ -99,18 +99,18 @@ ruleModel returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getModelAccess().getInteroperableLayerInteroperableLayerParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getModelAccess().getDataGatewayDataGatewayParserRuleCall_1_0());
 				}
-				lv_interoperableLayer_1_0=ruleInteroperableLayer
+				lv_dataGateway_1_0=ruleDataGateway
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getModelRule());
 					}
 					set(
 						$current,
-						"interoperableLayer",
-						lv_interoperableLayer_1_0,
-						"uibk.ac.at.smartcity.SmartCity.InteroperableLayer");
+						"dataGateway",
+						lv_dataGateway_1_0,
+						"uibk.ac.at.smartcity.SmartCity.DataGateway");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -137,15 +137,15 @@ ruleModel returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleInteroperableLayer
-entryRuleInteroperableLayer returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getInteroperableLayerRule()); }
-	iv_ruleInteroperableLayer=ruleInteroperableLayer
-	{ $current=$iv_ruleInteroperableLayer.current; }
+// Entry rule entryRuleDataGateway
+entryRuleDataGateway returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getDataGatewayRule()); }
+	iv_ruleDataGateway=ruleDataGateway
+	{ $current=$iv_ruleDataGateway.current; }
 	EOF;
 
-// Rule InteroperableLayer
-ruleInteroperableLayer returns [EObject current=null]
+// Rule DataGateway
+ruleDataGateway returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -153,19 +153,19 @@ ruleInteroperableLayer returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='layer'
+		otherlv_0='dataGateway'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getInteroperableLayerAccess().getLayerKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getDataGatewayAccess().getDataGatewayKeyword_0());
 		}
 		(
 			(
 				lv_name_1_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getInteroperableLayerAccess().getNameIDTerminalRuleCall_1_0());
+					newLeafNode(lv_name_1_0, grammarAccess.getDataGatewayAccess().getNameIDTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getInteroperableLayerRule());
+						$current = createModelElement(grammarAccess.getDataGatewayRule());
 					}
 					setWithLastConsumed(
 						$current,
@@ -175,51 +175,59 @@ ruleInteroperableLayer returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_2='priority'
+		otherlv_2='{'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getInteroperableLayerAccess().getPriorityKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getDataGatewayAccess().getLeftCurlyBracketKeyword_2());
+		}
+		otherlv_3='priority'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getDataGatewayAccess().getPriorityKeyword_3());
 		}
 		(
 			(
-				lv_priority_3_0=RULE_INT
+				lv_priority_4_0=RULE_INT
 				{
-					newLeafNode(lv_priority_3_0, grammarAccess.getInteroperableLayerAccess().getPriorityINTTerminalRuleCall_3_0());
+					newLeafNode(lv_priority_4_0, grammarAccess.getDataGatewayAccess().getPriorityINTTerminalRuleCall_4_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getInteroperableLayerRule());
+						$current = createModelElement(grammarAccess.getDataGatewayRule());
 					}
 					setWithLastConsumed(
 						$current,
 						"priority",
-						lv_priority_3_0,
+						lv_priority_4_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
 		)
-		otherlv_4='delay'
+		otherlv_5='delay'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getInteroperableLayerAccess().getDelayKeyword_4());
+			newLeafNode(otherlv_5, grammarAccess.getDataGatewayAccess().getDelayKeyword_5());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getInteroperableLayerAccess().getDelayDelayRangeParserRuleCall_5_0());
+					newCompositeNode(grammarAccess.getDataGatewayAccess().getDelayDelayRangeParserRuleCall_6_0());
 				}
-				lv_delay_5_0=ruleDelayRange
+				lv_delay_6_0=ruleDelayRange
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getInteroperableLayerRule());
+						$current = createModelElementForParent(grammarAccess.getDataGatewayRule());
 					}
 					set(
 						$current,
 						"delay",
-						lv_delay_5_0,
+						lv_delay_6_0,
 						"uibk.ac.at.smartcity.SmartCity.DelayRange");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		otherlv_7='}'
+		{
+			newLeafNode(otherlv_7, grammarAccess.getDataGatewayAccess().getRightCurlyBracketKeyword_7());
+		}
 	)
 ;
 
@@ -322,15 +330,34 @@ ruleNode returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_6='postFrequency'
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getNodeAccess().getLinksCommunicationLinkParserRuleCall_6_0());
+				}
+				lv_links_6_0=ruleCommunicationLink
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getNodeRule());
+					}
+					add(
+						$current,
+						"links",
+						lv_links_6_0,
+						"uibk.ac.at.smartcity.SmartCity.CommunicationLink");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		otherlv_7='postFrequency'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getNodeAccess().getPostFrequencyKeyword_6());
+			newLeafNode(otherlv_7, grammarAccess.getNodeAccess().getPostFrequencyKeyword_7());
 		}
 		(
 			(
-				lv_freqValue_7_0=RULE_INT
+				lv_freqValue_8_0=RULE_INT
 				{
-					newLeafNode(lv_freqValue_7_0, grammarAccess.getNodeAccess().getFreqValueINTTerminalRuleCall_7_0());
+					newLeafNode(lv_freqValue_8_0, grammarAccess.getNodeAccess().getFreqValueINTTerminalRuleCall_8_0());
 				}
 				{
 					if ($current==null) {
@@ -339,7 +366,7 @@ ruleNode returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"freqValue",
-						lv_freqValue_7_0,
+						lv_freqValue_8_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
@@ -347,9 +374,9 @@ ruleNode returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getNodeAccess().getFreqUnitFrequencyUnitEnumRuleCall_8_0());
+					newCompositeNode(grammarAccess.getNodeAccess().getFreqUnitFrequencyUnitEnumRuleCall_9_0());
 				}
-				lv_freqUnit_8_0=ruleFrequencyUnit
+				lv_freqUnit_9_0=ruleFrequencyUnit
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getNodeRule());
@@ -357,31 +384,12 @@ ruleNode returns [EObject current=null]
 					set(
 						$current,
 						"freqUnit",
-						lv_freqUnit_8_0,
+						lv_freqUnit_9_0,
 						"uibk.ac.at.smartcity.SmartCity.FrequencyUnit");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getNodeAccess().getLinksCommunicationLinkParserRuleCall_9_0());
-				}
-				lv_links_9_0=ruleCommunicationLink
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getNodeRule());
-					}
-					add(
-						$current,
-						"links",
-						lv_links_9_0,
-						"uibk.ac.at.smartcity.SmartCity.CommunicationLink");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)*
 		otherlv_10='priority'
 		{
 			newLeafNode(otherlv_10, grammarAccess.getNodeAccess().getPriorityKeyword_10());
@@ -449,16 +457,20 @@ ruleSensor returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_2='type'
+		otherlv_2='{'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getSensorAccess().getTypeKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getSensorAccess().getLeftCurlyBracketKeyword_2());
+		}
+		otherlv_3='type'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getSensorAccess().getTypeKeyword_3());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSensorAccess().getTypeSensorTypeEnumRuleCall_3_0());
+					newCompositeNode(grammarAccess.getSensorAccess().getTypeSensorTypeEnumRuleCall_4_0());
 				}
-				lv_type_3_0=ruleSensorType
+				lv_type_4_0=ruleSensorType
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getSensorRule());
@@ -466,21 +478,21 @@ ruleSensor returns [EObject current=null]
 					set(
 						$current,
 						"type",
-						lv_type_3_0,
+						lv_type_4_0,
 						"uibk.ac.at.smartcity.SmartCity.SensorType");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_4='priority'
+		otherlv_5='priority'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getSensorAccess().getPriorityKeyword_4());
+			newLeafNode(otherlv_5, grammarAccess.getSensorAccess().getPriorityKeyword_5());
 		}
 		(
 			(
-				lv_priority_5_0=RULE_INT
+				lv_priority_6_0=RULE_INT
 				{
-					newLeafNode(lv_priority_5_0, grammarAccess.getSensorAccess().getPriorityINTTerminalRuleCall_5_0());
+					newLeafNode(lv_priority_6_0, grammarAccess.getSensorAccess().getPriorityINTTerminalRuleCall_6_0());
 				}
 				{
 					if ($current==null) {
@@ -489,7 +501,7 @@ ruleSensor returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"priority",
-						lv_priority_5_0,
+						lv_priority_6_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
@@ -497,9 +509,9 @@ ruleSensor returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSensorAccess().getCyclicActionsCyclicActionParserRuleCall_6_0());
+					newCompositeNode(grammarAccess.getSensorAccess().getCyclicActionsCyclicActionParserRuleCall_7_0());
 				}
-				lv_cyclicActions_6_0=ruleCyclicAction
+				lv_cyclicActions_7_0=ruleCyclicAction
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getSensorRule());
@@ -507,12 +519,35 @@ ruleSensor returns [EObject current=null]
 					add(
 						$current,
 						"cyclicActions",
-						lv_cyclicActions_6_0,
+						lv_cyclicActions_7_0,
 						"uibk.ac.at.smartcity.SmartCity.CyclicAction");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getSensorAccess().getTriggeredActionsTriggeredActionParserRuleCall_8_0());
+				}
+				lv_triggeredActions_8_0=ruleTriggeredAction
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getSensorRule());
+					}
+					add(
+						$current,
+						"triggeredActions",
+						lv_triggeredActions_8_0,
+						"uibk.ac.at.smartcity.SmartCity.TriggeredAction");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		otherlv_9='}'
+		{
+			newLeafNode(otherlv_9, grammarAccess.getSensorAccess().getRightCurlyBracketKeyword_9());
+		}
 	)
 ;
 
@@ -684,16 +719,20 @@ ruleController returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_2='type'
+		otherlv_2='{'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getControllerAccess().getTypeKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getControllerAccess().getLeftCurlyBracketKeyword_2());
+		}
+		otherlv_3='type'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getControllerAccess().getTypeKeyword_3());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getControllerAccess().getTypeControllerTypeEnumRuleCall_3_0());
+					newCompositeNode(grammarAccess.getControllerAccess().getTypeControllerTypeEnumRuleCall_4_0());
 				}
-				lv_type_3_0=ruleControllerType
+				lv_type_4_0=ruleControllerType
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getControllerRule());
@@ -701,21 +740,21 @@ ruleController returns [EObject current=null]
 					set(
 						$current,
 						"type",
-						lv_type_3_0,
+						lv_type_4_0,
 						"uibk.ac.at.smartcity.SmartCity.ControllerType");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_4='priority'
+		otherlv_5='priority'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getControllerAccess().getPriorityKeyword_4());
+			newLeafNode(otherlv_5, grammarAccess.getControllerAccess().getPriorityKeyword_5());
 		}
 		(
 			(
-				lv_priority_5_0=RULE_INT
+				lv_priority_6_0=RULE_INT
 				{
-					newLeafNode(lv_priority_5_0, grammarAccess.getControllerAccess().getPriorityINTTerminalRuleCall_5_0());
+					newLeafNode(lv_priority_6_0, grammarAccess.getControllerAccess().getPriorityINTTerminalRuleCall_6_0());
 				}
 				{
 					if ($current==null) {
@@ -724,7 +763,7 @@ ruleController returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"priority",
-						lv_priority_5_0,
+						lv_priority_6_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
@@ -732,9 +771,9 @@ ruleController returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getControllerAccess().getCyclicActionsCyclicActionParserRuleCall_6_0());
+					newCompositeNode(grammarAccess.getControllerAccess().getCyclicActionsCyclicActionParserRuleCall_7_0());
 				}
-				lv_cyclicActions_6_0=ruleCyclicAction
+				lv_cyclicActions_7_0=ruleCyclicAction
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getControllerRule());
@@ -742,12 +781,35 @@ ruleController returns [EObject current=null]
 					add(
 						$current,
 						"cyclicActions",
-						lv_cyclicActions_6_0,
+						lv_cyclicActions_7_0,
 						"uibk.ac.at.smartcity.SmartCity.CyclicAction");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getControllerAccess().getTriggeredActionsTriggeredActionParserRuleCall_8_0());
+				}
+				lv_triggeredActions_8_0=ruleTriggeredAction
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getControllerRule());
+					}
+					add(
+						$current,
+						"triggeredActions",
+						lv_triggeredActions_8_0,
+						"uibk.ac.at.smartcity.SmartCity.TriggeredAction");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		otherlv_9='}'
+		{
+			newLeafNode(otherlv_9, grammarAccess.getControllerAccess().getRightCurlyBracketKeyword_9());
+		}
 	)
 ;
 
@@ -789,15 +851,19 @@ ruleModule returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_2='priority'
+		otherlv_2='{'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getModuleAccess().getPriorityKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getModuleAccess().getLeftCurlyBracketKeyword_2());
+		}
+		otherlv_3='priority'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getModuleAccess().getPriorityKeyword_3());
 		}
 		(
 			(
-				lv_priority_3_0=RULE_INT
+				lv_priority_4_0=RULE_INT
 				{
-					newLeafNode(lv_priority_3_0, grammarAccess.getModuleAccess().getPriorityINTTerminalRuleCall_3_0());
+					newLeafNode(lv_priority_4_0, grammarAccess.getModuleAccess().getPriorityINTTerminalRuleCall_4_0());
 				}
 				{
 					if ($current==null) {
@@ -806,7 +872,7 @@ ruleModule returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"priority",
-						lv_priority_3_0,
+						lv_priority_4_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
@@ -814,9 +880,9 @@ ruleModule returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getModuleAccess().getCyclicActionsCyclicActionParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getModuleAccess().getCyclicActionsCyclicActionParserRuleCall_5_0());
 				}
-				lv_cyclicActions_4_0=ruleCyclicAction
+				lv_cyclicActions_5_0=ruleCyclicAction
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getModuleRule());
@@ -824,12 +890,35 @@ ruleModule returns [EObject current=null]
 					add(
 						$current,
 						"cyclicActions",
-						lv_cyclicActions_4_0,
+						lv_cyclicActions_5_0,
 						"uibk.ac.at.smartcity.SmartCity.CyclicAction");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getModuleAccess().getTriggeredActionsTriggeredActionParserRuleCall_6_0());
+				}
+				lv_triggeredActions_6_0=ruleTriggeredAction
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getModuleRule());
+					}
+					add(
+						$current,
+						"triggeredActions",
+						lv_triggeredActions_6_0,
+						"uibk.ac.at.smartcity.SmartCity.TriggeredAction");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		otherlv_7='}'
+		{
+			newLeafNode(otherlv_7, grammarAccess.getModuleAccess().getRightCurlyBracketKeyword_7());
+		}
 	)
 ;
 
@@ -976,6 +1065,47 @@ ruleCyclicAction returns [EObject current=null]
 						lv_freqUnit_4_0,
 						"uibk.ac.at.smartcity.SmartCity.FrequencyUnit");
 					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleTriggeredAction
+entryRuleTriggeredAction returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getTriggeredActionRule()); }
+	iv_ruleTriggeredAction=ruleTriggeredAction
+	{ $current=$iv_ruleTriggeredAction.current; }
+	EOF;
+
+// Rule TriggeredAction
+ruleTriggeredAction returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='TriggeredAction'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getTriggeredActionAccess().getTriggeredActionKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getTriggeredActionAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getTriggeredActionRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
@@ -1134,26 +1264,18 @@ ruleLinkType returns [Enumerator current=null]
 		)
 		    |
 		(
-			enumLiteral_3='GPIO'
+			enumLiteral_3='CSI'
 			{
-				$current = grammarAccess.getLinkTypeAccess().getGPIOEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_3, grammarAccess.getLinkTypeAccess().getGPIOEnumLiteralDeclaration_3());
+				$current = grammarAccess.getLinkTypeAccess().getCSIEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_3, grammarAccess.getLinkTypeAccess().getCSIEnumLiteralDeclaration_3());
 			}
 		)
 		    |
 		(
-			enumLiteral_4='CSI'
+			enumLiteral_4='HTTPS'
 			{
-				$current = grammarAccess.getLinkTypeAccess().getCSIEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_4, grammarAccess.getLinkTypeAccess().getCSIEnumLiteralDeclaration_4());
-			}
-		)
-		    |
-		(
-			enumLiteral_5='HTTPS'
-			{
-				$current = grammarAccess.getLinkTypeAccess().getHTTPSEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_5, grammarAccess.getLinkTypeAccess().getHTTPSEnumLiteralDeclaration_5());
+				$current = grammarAccess.getLinkTypeAccess().getHTTPSEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_4, grammarAccess.getLinkTypeAccess().getHTTPSEnumLiteralDeclaration_4());
 			}
 		)
 	)

@@ -13,8 +13,8 @@ import org.eclipse.emf.ecore.EObject;
 import uibk.ac.at.smartcity.smartCity.CommunicationLink;
 import uibk.ac.at.smartcity.smartCity.Controller;
 import uibk.ac.at.smartcity.smartCity.CyclicAction;
+import uibk.ac.at.smartcity.smartCity.DataGateway;
 import uibk.ac.at.smartcity.smartCity.DelayRange;
-import uibk.ac.at.smartcity.smartCity.InteroperableLayer;
 import uibk.ac.at.smartcity.smartCity.Linkable;
 import uibk.ac.at.smartcity.smartCity.Model;
 import uibk.ac.at.smartcity.smartCity.Node;
@@ -91,9 +91,9 @@ public class SmartCityAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
-      public Adapter caseInteroperableLayer(InteroperableLayer object)
+      public Adapter caseDataGateway(DataGateway object)
       {
-        return createInteroperableLayerAdapter();
+        return createDataGatewayAdapter();
       }
       @Override
       public Adapter caseNode(Node object)
@@ -178,16 +178,16 @@ public class SmartCityAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uibk.ac.at.smartcity.smartCity.InteroperableLayer <em>Interoperable Layer</em>}'.
+   * Creates a new adapter for an object of class '{@link uibk.ac.at.smartcity.smartCity.DataGateway <em>Data Gateway</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uibk.ac.at.smartcity.smartCity.InteroperableLayer
+   * @see uibk.ac.at.smartcity.smartCity.DataGateway
    * @generated
    */
-  public Adapter createInteroperableLayerAdapter()
+  public Adapter createDataGatewayAdapter()
   {
     return null;
   }

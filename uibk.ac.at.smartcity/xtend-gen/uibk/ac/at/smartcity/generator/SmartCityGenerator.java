@@ -22,8 +22,8 @@ import org.eclipse.xtext.xbase.lib.StringExtensions;
 import uibk.ac.at.smartcity.smartCity.CommunicationLink;
 import uibk.ac.at.smartcity.smartCity.Controller;
 import uibk.ac.at.smartcity.smartCity.ControllerType;
+import uibk.ac.at.smartcity.smartCity.DataGateway;
 import uibk.ac.at.smartcity.smartCity.FrequencyUnit;
-import uibk.ac.at.smartcity.smartCity.InteroperableLayer;
 import uibk.ac.at.smartcity.smartCity.LinkType;
 import uibk.ac.at.smartcity.smartCity.Linkable;
 import uibk.ac.at.smartcity.smartCity.Node;
@@ -60,7 +60,7 @@ public class SmartCityGenerator extends AbstractGenerator {
     final Iterable<Sensor> sensors = Iterables.<Sensor>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), Sensor.class);
     final Iterable<CommunicationLink> links = Iterables.<CommunicationLink>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), CommunicationLink.class);
     final Iterable<Node> nodes = Iterables.<Node>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), Node.class);
-    final InteroperableLayer interoperableLayer = ((InteroperableLayer[])Conversions.unwrapArray((Iterables.<InteroperableLayer>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), InteroperableLayer.class)), InteroperableLayer.class))[0];
+    final DataGateway interoperableLayer = ((DataGateway[])Conversions.unwrapArray((Iterables.<DataGateway>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), DataGateway.class)), DataGateway.class))[0];
     fsa.generateFile("model.py", this.generateModel(sensors, links, nodes, interoperableLayer));
     fsa.generateFile("experiment.py", this.generateMain());
   }
@@ -916,7 +916,7 @@ public class SmartCityGenerator extends AbstractGenerator {
     return _builder;
   }
 
-  public CharSequence generateModel(final Iterable<Sensor> sensors, final Iterable<CommunicationLink> links, final Iterable<Node> nodes, final InteroperableLayer interoperableLayer) {
+  public CharSequence generateModel(final Iterable<Sensor> sensors, final Iterable<CommunicationLink> links, final Iterable<Node> nodes, final DataGateway interoperableLayer) {
     CharSequence _xblockexpression = null;
     {
       ArrayList<CommunicationLink> commLinks = new ArrayList<CommunicationLink>();

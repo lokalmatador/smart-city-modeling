@@ -36,9 +36,9 @@ import uibk.ac.at.smartcity.smartCity.SmartCityPackage;
  *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.NodeImpl#getSensors <em>Sensors</em>}</li>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.NodeImpl#getModules <em>Modules</em>}</li>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.NodeImpl#getController <em>Controller</em>}</li>
+ *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.NodeImpl#getLinks <em>Links</em>}</li>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.NodeImpl#getFreqValue <em>Freq Value</em>}</li>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.NodeImpl#getFreqUnit <em>Freq Unit</em>}</li>
- *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.NodeImpl#getLinks <em>Links</em>}</li>
  * </ul>
  *
  * @generated
@@ -74,6 +74,16 @@ public class NodeImpl extends LinkableImpl implements Node
    * @ordered
    */
   protected Controller controller;
+
+  /**
+   * The cached value of the '{@link #getLinks() <em>Links</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLinks()
+   * @generated
+   * @ordered
+   */
+  protected EList<CommunicationLink> links;
 
   /**
    * The default value of the '{@link #getFreqValue() <em>Freq Value</em>}' attribute.
@@ -114,16 +124,6 @@ public class NodeImpl extends LinkableImpl implements Node
    * @ordered
    */
   protected FrequencyUnit freqUnit = FREQ_UNIT_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getLinks() <em>Links</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getLinks()
-   * @generated
-   * @ordered
-   */
-  protected EList<CommunicationLink> links;
 
   /**
    * <!-- begin-user-doc -->
@@ -232,6 +232,21 @@ public class NodeImpl extends LinkableImpl implements Node
    * @generated
    */
   @Override
+  public EList<CommunicationLink> getLinks()
+  {
+    if (links == null)
+    {
+      links = new EObjectContainmentEList<CommunicationLink>(CommunicationLink.class, this, SmartCityPackage.NODE__LINKS);
+    }
+    return links;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public int getFreqValue()
   {
     return freqValue;
@@ -282,21 +297,6 @@ public class NodeImpl extends LinkableImpl implements Node
    * @generated
    */
   @Override
-  public EList<CommunicationLink> getLinks()
-  {
-    if (links == null)
-    {
-      links = new EObjectContainmentEList<CommunicationLink>(CommunicationLink.class, this, SmartCityPackage.NODE__LINKS);
-    }
-    return links;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -329,12 +329,12 @@ public class NodeImpl extends LinkableImpl implements Node
         return getModules();
       case SmartCityPackage.NODE__CONTROLLER:
         return getController();
+      case SmartCityPackage.NODE__LINKS:
+        return getLinks();
       case SmartCityPackage.NODE__FREQ_VALUE:
         return getFreqValue();
       case SmartCityPackage.NODE__FREQ_UNIT:
         return getFreqUnit();
-      case SmartCityPackage.NODE__LINKS:
-        return getLinks();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -361,15 +361,15 @@ public class NodeImpl extends LinkableImpl implements Node
       case SmartCityPackage.NODE__CONTROLLER:
         setController((Controller)newValue);
         return;
+      case SmartCityPackage.NODE__LINKS:
+        getLinks().clear();
+        getLinks().addAll((Collection<? extends CommunicationLink>)newValue);
+        return;
       case SmartCityPackage.NODE__FREQ_VALUE:
         setFreqValue((Integer)newValue);
         return;
       case SmartCityPackage.NODE__FREQ_UNIT:
         setFreqUnit((FrequencyUnit)newValue);
-        return;
-      case SmartCityPackage.NODE__LINKS:
-        getLinks().clear();
-        getLinks().addAll((Collection<? extends CommunicationLink>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -394,14 +394,14 @@ public class NodeImpl extends LinkableImpl implements Node
       case SmartCityPackage.NODE__CONTROLLER:
         setController((Controller)null);
         return;
+      case SmartCityPackage.NODE__LINKS:
+        getLinks().clear();
+        return;
       case SmartCityPackage.NODE__FREQ_VALUE:
         setFreqValue(FREQ_VALUE_EDEFAULT);
         return;
       case SmartCityPackage.NODE__FREQ_UNIT:
         setFreqUnit(FREQ_UNIT_EDEFAULT);
-        return;
-      case SmartCityPackage.NODE__LINKS:
-        getLinks().clear();
         return;
     }
     super.eUnset(featureID);
@@ -423,12 +423,12 @@ public class NodeImpl extends LinkableImpl implements Node
         return modules != null && !modules.isEmpty();
       case SmartCityPackage.NODE__CONTROLLER:
         return controller != null;
+      case SmartCityPackage.NODE__LINKS:
+        return links != null && !links.isEmpty();
       case SmartCityPackage.NODE__FREQ_VALUE:
         return freqValue != FREQ_VALUE_EDEFAULT;
       case SmartCityPackage.NODE__FREQ_UNIT:
         return freqUnit != FREQ_UNIT_EDEFAULT;
-      case SmartCityPackage.NODE__LINKS:
-        return links != null && !links.isEmpty();
     }
     return super.eIsSet(featureID);
   }

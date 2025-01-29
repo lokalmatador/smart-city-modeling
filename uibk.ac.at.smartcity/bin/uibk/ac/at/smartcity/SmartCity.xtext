@@ -4,14 +4,16 @@ generate smartCity "http://www.ac.uibk/at/smartcity/SmartCity"
 
 Model:
 	nodes+=Node*
-	interoperableLayer=InteroperableLayer
-	globalLinks+=CommunicationLink*
+	dataGateway=DataGateway
+	globalLinks+=CommunicationLink* // by default all the nodes will already be connected to the dataGateway
 ;
 
-InteroperableLayer:
-	'layer' name=ID
-	'priority' priority=INT
-	'delay' delay=DelayRange
+DataGateway:
+	'dataGateway' name=ID
+	'{'
+		'priority' priority=INT
+		'delay' delay=DelayRange
+	'}'
 ;
 	
 Node:
@@ -20,17 +22,20 @@ Node:
 		sensors+=Sensor*
 		modules+=Module*
 		controller=Controller
-		'postFrequency' freqValue=INT freqUnit=FrequencyUnit
 		links+=CommunicationLink*
+		'postFrequency' freqValue=INT freqUnit=FrequencyUnit
 		'priority' priority=INT
 	'}'
 ;
 
 Sensor:
 	'sensor' name=ID
-	'type' type=SensorType
-	'priority' priority=INT
-	cyclicActions+=CyclicAction*
+	'{'
+		'type' type=SensorType
+		'priority' priority=INT
+		cyclicActions+=CyclicAction*
+		triggeredActions+=TriggeredAction*
+	'}'
 ;
 
 
@@ -43,20 +48,26 @@ CommunicationLink:
 
 Controller:
 	'controller' name=ID
-	'type' type=ControllerType
-	'priority' priority=INT
-	cyclicActions+=CyclicAction*
+	'{'
+		'type' type=ControllerType
+		'priority' priority=INT
+		cyclicActions+=CyclicAction*
+		triggeredActions+=TriggeredAction*
+	'}'
 ;
 
 Module:
 	'module' name=ID
-	'priority' priority=INT
-	cyclicActions+=CyclicAction*
+	'{'
+		'priority' priority=INT
+		cyclicActions+=CyclicAction*
+		triggeredActions+=TriggeredAction*		
+	'}'
 	
 ;
 
 Linkable:
-	Controller | Sensor | InteroperableLayer | Node | Module
+	Controller | Sensor | DataGateway | Node | Module
 ;
 
 DelayRange:
@@ -81,7 +92,7 @@ enum ControllerType:
 ;
 
 enum LinkType:
-	UART | ADC | SPI | GPIO | CSI | HTTPS
+	UART | ADC | SPI | CSI | HTTPS
 ;
 
 enum DataType:

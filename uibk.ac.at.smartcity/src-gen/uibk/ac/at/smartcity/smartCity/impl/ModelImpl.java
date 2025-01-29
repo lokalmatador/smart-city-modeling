@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uibk.ac.at.smartcity.smartCity.CommunicationLink;
-import uibk.ac.at.smartcity.smartCity.InteroperableLayer;
+import uibk.ac.at.smartcity.smartCity.DataGateway;
 import uibk.ac.at.smartcity.smartCity.Model;
 import uibk.ac.at.smartcity.smartCity.Node;
 import uibk.ac.at.smartcity.smartCity.SmartCityPackage;
@@ -34,7 +34,7 @@ import uibk.ac.at.smartcity.smartCity.SmartCityPackage;
  * </p>
  * <ul>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.ModelImpl#getNodes <em>Nodes</em>}</li>
- *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.ModelImpl#getInteroperableLayer <em>Interoperable Layer</em>}</li>
+ *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.ModelImpl#getDataGateway <em>Data Gateway</em>}</li>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.ModelImpl#getGlobalLinks <em>Global Links</em>}</li>
  * </ul>
  *
@@ -53,14 +53,14 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   protected EList<Node> nodes;
 
   /**
-   * The cached value of the '{@link #getInteroperableLayer() <em>Interoperable Layer</em>}' containment reference.
+   * The cached value of the '{@link #getDataGateway() <em>Data Gateway</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getInteroperableLayer()
+   * @see #getDataGateway()
    * @generated
    * @ordered
    */
-  protected InteroperableLayer interoperableLayer;
+  protected DataGateway dataGateway;
 
   /**
    * The cached value of the '{@link #getGlobalLinks() <em>Global Links</em>}' containment reference list.
@@ -114,9 +114,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @generated
    */
   @Override
-  public InteroperableLayer getInteroperableLayer()
+  public DataGateway getDataGateway()
   {
-    return interoperableLayer;
+    return dataGateway;
   }
 
   /**
@@ -124,13 +124,13 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetInteroperableLayer(InteroperableLayer newInteroperableLayer, NotificationChain msgs)
+  public NotificationChain basicSetDataGateway(DataGateway newDataGateway, NotificationChain msgs)
   {
-    InteroperableLayer oldInteroperableLayer = interoperableLayer;
-    interoperableLayer = newInteroperableLayer;
+    DataGateway oldDataGateway = dataGateway;
+    dataGateway = newDataGateway;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmartCityPackage.MODEL__INTEROPERABLE_LAYER, oldInteroperableLayer, newInteroperableLayer);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmartCityPackage.MODEL__DATA_GATEWAY, oldDataGateway, newDataGateway);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -142,20 +142,20 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @generated
    */
   @Override
-  public void setInteroperableLayer(InteroperableLayer newInteroperableLayer)
+  public void setDataGateway(DataGateway newDataGateway)
   {
-    if (newInteroperableLayer != interoperableLayer)
+    if (newDataGateway != dataGateway)
     {
       NotificationChain msgs = null;
-      if (interoperableLayer != null)
-        msgs = ((InternalEObject)interoperableLayer).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SmartCityPackage.MODEL__INTEROPERABLE_LAYER, null, msgs);
-      if (newInteroperableLayer != null)
-        msgs = ((InternalEObject)newInteroperableLayer).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SmartCityPackage.MODEL__INTEROPERABLE_LAYER, null, msgs);
-      msgs = basicSetInteroperableLayer(newInteroperableLayer, msgs);
+      if (dataGateway != null)
+        msgs = ((InternalEObject)dataGateway).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SmartCityPackage.MODEL__DATA_GATEWAY, null, msgs);
+      if (newDataGateway != null)
+        msgs = ((InternalEObject)newDataGateway).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SmartCityPackage.MODEL__DATA_GATEWAY, null, msgs);
+      msgs = basicSetDataGateway(newDataGateway, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SmartCityPackage.MODEL__INTEROPERABLE_LAYER, newInteroperableLayer, newInteroperableLayer));
+      eNotify(new ENotificationImpl(this, Notification.SET, SmartCityPackage.MODEL__DATA_GATEWAY, newDataGateway, newDataGateway));
   }
 
   /**
@@ -185,8 +185,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     {
       case SmartCityPackage.MODEL__NODES:
         return ((InternalEList<?>)getNodes()).basicRemove(otherEnd, msgs);
-      case SmartCityPackage.MODEL__INTEROPERABLE_LAYER:
-        return basicSetInteroperableLayer(null, msgs);
+      case SmartCityPackage.MODEL__DATA_GATEWAY:
+        return basicSetDataGateway(null, msgs);
       case SmartCityPackage.MODEL__GLOBAL_LINKS:
         return ((InternalEList<?>)getGlobalLinks()).basicRemove(otherEnd, msgs);
     }
@@ -205,8 +205,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     {
       case SmartCityPackage.MODEL__NODES:
         return getNodes();
-      case SmartCityPackage.MODEL__INTEROPERABLE_LAYER:
-        return getInteroperableLayer();
+      case SmartCityPackage.MODEL__DATA_GATEWAY:
+        return getDataGateway();
       case SmartCityPackage.MODEL__GLOBAL_LINKS:
         return getGlobalLinks();
     }
@@ -228,8 +228,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         getNodes().clear();
         getNodes().addAll((Collection<? extends Node>)newValue);
         return;
-      case SmartCityPackage.MODEL__INTEROPERABLE_LAYER:
-        setInteroperableLayer((InteroperableLayer)newValue);
+      case SmartCityPackage.MODEL__DATA_GATEWAY:
+        setDataGateway((DataGateway)newValue);
         return;
       case SmartCityPackage.MODEL__GLOBAL_LINKS:
         getGlobalLinks().clear();
@@ -252,8 +252,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
       case SmartCityPackage.MODEL__NODES:
         getNodes().clear();
         return;
-      case SmartCityPackage.MODEL__INTEROPERABLE_LAYER:
-        setInteroperableLayer((InteroperableLayer)null);
+      case SmartCityPackage.MODEL__DATA_GATEWAY:
+        setDataGateway((DataGateway)null);
         return;
       case SmartCityPackage.MODEL__GLOBAL_LINKS:
         getGlobalLinks().clear();
@@ -274,8 +274,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     {
       case SmartCityPackage.MODEL__NODES:
         return nodes != null && !nodes.isEmpty();
-      case SmartCityPackage.MODEL__INTEROPERABLE_LAYER:
-        return interoperableLayer != null;
+      case SmartCityPackage.MODEL__DATA_GATEWAY:
+        return dataGateway != null;
       case SmartCityPackage.MODEL__GLOBAL_LINKS:
         return globalLinks != null && !globalLinks.isEmpty();
     }

@@ -18,8 +18,8 @@ import uibk.ac.at.smartcity.services.SmartCityGrammarAccess;
 import uibk.ac.at.smartcity.smartCity.CommunicationLink;
 import uibk.ac.at.smartcity.smartCity.Controller;
 import uibk.ac.at.smartcity.smartCity.CyclicAction;
+import uibk.ac.at.smartcity.smartCity.DataGateway;
 import uibk.ac.at.smartcity.smartCity.DelayRange;
-import uibk.ac.at.smartcity.smartCity.InteroperableLayer;
 import uibk.ac.at.smartcity.smartCity.Model;
 import uibk.ac.at.smartcity.smartCity.Node;
 import uibk.ac.at.smartcity.smartCity.Sensor;
@@ -49,11 +49,11 @@ public class SmartCitySemanticSequencer extends AbstractDelegatingSemanticSequen
 			case SmartCityPackage.CYCLIC_ACTION:
 				sequence_CyclicAction(context, (CyclicAction) semanticObject); 
 				return; 
+			case SmartCityPackage.DATA_GATEWAY:
+				sequence_DataGateway(context, (DataGateway) semanticObject); 
+				return; 
 			case SmartCityPackage.DELAY_RANGE:
 				sequence_DelayRange(context, (DelayRange) semanticObject); 
-				return; 
-			case SmartCityPackage.INTEROPERABLE_LAYER:
-				sequence_InteroperableLayer(context, (InteroperableLayer) semanticObject); 
 				return; 
 			case SmartCityPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
@@ -114,7 +114,7 @@ public class SmartCitySemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Linkable returns Controller
 	 *
 	 * Constraint:
-	 *     (name=ID type=ControllerType priority=INT cyclicActions+=CyclicAction*)
+	 *     (name=ID type=ControllerType priority=INT cyclicActions+=CyclicAction* triggeredActions+=TriggeredAction*)
 	 * </pre>
 	 */
 	protected void sequence_Controller(ISerializationContext context, Controller semanticObject) {
@@ -151,6 +151,33 @@ public class SmartCitySemanticSequencer extends AbstractDelegatingSemanticSequen
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     DataGateway returns DataGateway
+	 *     Linkable returns DataGateway
+	 *
+	 * Constraint:
+	 *     (name=ID priority=INT delay=DelayRange)
+	 * </pre>
+	 */
+	protected void sequence_DataGateway(ISerializationContext context, DataGateway semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SmartCityPackage.Literals.LINKABLE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCityPackage.Literals.LINKABLE__NAME));
+			if (transientValues.isValueTransient(semanticObject, SmartCityPackage.Literals.LINKABLE__PRIORITY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCityPackage.Literals.LINKABLE__PRIORITY));
+			if (transientValues.isValueTransient(semanticObject, SmartCityPackage.Literals.DATA_GATEWAY__DELAY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCityPackage.Literals.DATA_GATEWAY__DELAY));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getDataGatewayAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getDataGatewayAccess().getPriorityINTTerminalRuleCall_4_0(), semanticObject.getPriority());
+		feeder.accept(grammarAccess.getDataGatewayAccess().getDelayDelayRangeParserRuleCall_6_0(), semanticObject.getDelay());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     DelayRange returns DelayRange
 	 *
 	 * Constraint:
@@ -174,37 +201,10 @@ public class SmartCitySemanticSequencer extends AbstractDelegatingSemanticSequen
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     InteroperableLayer returns InteroperableLayer
-	 *     Linkable returns InteroperableLayer
-	 *
-	 * Constraint:
-	 *     (name=ID priority=INT delay=DelayRange)
-	 * </pre>
-	 */
-	protected void sequence_InteroperableLayer(ISerializationContext context, InteroperableLayer semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SmartCityPackage.Literals.LINKABLE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCityPackage.Literals.LINKABLE__NAME));
-			if (transientValues.isValueTransient(semanticObject, SmartCityPackage.Literals.LINKABLE__PRIORITY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCityPackage.Literals.LINKABLE__PRIORITY));
-			if (transientValues.isValueTransient(semanticObject, SmartCityPackage.Literals.INTEROPERABLE_LAYER__DELAY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCityPackage.Literals.INTEROPERABLE_LAYER__DELAY));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getInteroperableLayerAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getInteroperableLayerAccess().getPriorityINTTerminalRuleCall_3_0(), semanticObject.getPriority());
-		feeder.accept(grammarAccess.getInteroperableLayerAccess().getDelayDelayRangeParserRuleCall_5_0(), semanticObject.getDelay());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
 	 *     Model returns Model
 	 *
 	 * Constraint:
-	 *     (nodes+=Node* interoperableLayer=InteroperableLayer globalLinks+=CommunicationLink*)
+	 *     (nodes+=Node* dataGateway=DataGateway globalLinks+=CommunicationLink*)
 	 * </pre>
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
@@ -219,7 +219,7 @@ public class SmartCitySemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Linkable returns Module
 	 *
 	 * Constraint:
-	 *     (name=ID priority=INT cyclicActions+=CyclicAction*)
+	 *     (name=ID priority=INT cyclicActions+=CyclicAction* triggeredActions+=TriggeredAction*)
 	 * </pre>
 	 */
 	protected void sequence_Module(ISerializationContext context, uibk.ac.at.smartcity.smartCity.Module semanticObject) {
@@ -239,9 +239,9 @@ public class SmartCitySemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *         sensors+=Sensor* 
 	 *         modules+=Module* 
 	 *         controller=Controller 
+	 *         links+=CommunicationLink* 
 	 *         freqValue=INT 
 	 *         freqUnit=FrequencyUnit 
-	 *         links+=CommunicationLink* 
 	 *         priority=INT
 	 *     )
 	 * </pre>
@@ -258,7 +258,7 @@ public class SmartCitySemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Linkable returns Sensor
 	 *
 	 * Constraint:
-	 *     (name=ID type=SensorType priority=INT cyclicActions+=CyclicAction*)
+	 *     (name=ID type=SensorType priority=INT cyclicActions+=CyclicAction* triggeredActions+=TriggeredAction*)
 	 * </pre>
 	 */
 	protected void sequence_Sensor(ISerializationContext context, Sensor semanticObject) {

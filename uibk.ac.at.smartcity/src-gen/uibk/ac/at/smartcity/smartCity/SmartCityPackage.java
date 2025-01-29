@@ -78,13 +78,13 @@ public interface SmartCityPackage extends EPackage
   int MODEL__NODES = 0;
 
   /**
-   * The feature id for the '<em><b>Interoperable Layer</b></em>' containment reference.
+   * The feature id for the '<em><b>Data Gateway</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL__INTEROPERABLE_LAYER = 1;
+  int MODEL__DATA_GATEWAY = 1;
 
   /**
    * The feature id for the '<em><b>Global Links</b></em>' containment reference list.
@@ -142,14 +142,14 @@ public interface SmartCityPackage extends EPackage
   int LINKABLE_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link uibk.ac.at.smartcity.smartCity.impl.InteroperableLayerImpl <em>Interoperable Layer</em>}' class.
+   * The meta object id for the '{@link uibk.ac.at.smartcity.smartCity.impl.DataGatewayImpl <em>Data Gateway</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uibk.ac.at.smartcity.smartCity.impl.InteroperableLayerImpl
-   * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getInteroperableLayer()
+   * @see uibk.ac.at.smartcity.smartCity.impl.DataGatewayImpl
+   * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getDataGateway()
    * @generated
    */
-  int INTEROPERABLE_LAYER = 1;
+  int DATA_GATEWAY = 1;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -158,7 +158,7 @@ public interface SmartCityPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTEROPERABLE_LAYER__NAME = LINKABLE__NAME;
+  int DATA_GATEWAY__NAME = LINKABLE__NAME;
 
   /**
    * The feature id for the '<em><b>Priority</b></em>' attribute.
@@ -167,7 +167,7 @@ public interface SmartCityPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTEROPERABLE_LAYER__PRIORITY = LINKABLE__PRIORITY;
+  int DATA_GATEWAY__PRIORITY = LINKABLE__PRIORITY;
 
   /**
    * The feature id for the '<em><b>Delay</b></em>' containment reference.
@@ -176,16 +176,16 @@ public interface SmartCityPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTEROPERABLE_LAYER__DELAY = LINKABLE_FEATURE_COUNT + 0;
+  int DATA_GATEWAY__DELAY = LINKABLE_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Interoperable Layer</em>' class.
+   * The number of structural features of the '<em>Data Gateway</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INTEROPERABLE_LAYER_FEATURE_COUNT = LINKABLE_FEATURE_COUNT + 1;
+  int DATA_GATEWAY_FEATURE_COUNT = LINKABLE_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link uibk.ac.at.smartcity.smartCity.impl.NodeImpl <em>Node</em>}' class.
@@ -243,13 +243,22 @@ public interface SmartCityPackage extends EPackage
   int NODE__CONTROLLER = LINKABLE_FEATURE_COUNT + 2;
 
   /**
+   * The feature id for the '<em><b>Links</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NODE__LINKS = LINKABLE_FEATURE_COUNT + 3;
+
+  /**
    * The feature id for the '<em><b>Freq Value</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NODE__FREQ_VALUE = LINKABLE_FEATURE_COUNT + 3;
+  int NODE__FREQ_VALUE = LINKABLE_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Freq Unit</b></em>' attribute.
@@ -258,16 +267,7 @@ public interface SmartCityPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NODE__FREQ_UNIT = LINKABLE_FEATURE_COUNT + 4;
-
-  /**
-   * The feature id for the '<em><b>Links</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NODE__LINKS = LINKABLE_FEATURE_COUNT + 5;
+  int NODE__FREQ_UNIT = LINKABLE_FEATURE_COUNT + 5;
 
   /**
    * The number of structural features of the '<em>Node</em>' class.
@@ -325,13 +325,22 @@ public interface SmartCityPackage extends EPackage
   int SENSOR__CYCLIC_ACTIONS = LINKABLE_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Triggered Actions</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SENSOR__TRIGGERED_ACTIONS = LINKABLE_FEATURE_COUNT + 2;
+
+  /**
    * The number of structural features of the '<em>Sensor</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SENSOR_FEATURE_COUNT = LINKABLE_FEATURE_COUNT + 2;
+  int SENSOR_FEATURE_COUNT = LINKABLE_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link uibk.ac.at.smartcity.smartCity.impl.CommunicationLinkImpl <em>Communication Link</em>}' class.
@@ -444,13 +453,22 @@ public interface SmartCityPackage extends EPackage
   int CONTROLLER__CYCLIC_ACTIONS = LINKABLE_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Triggered Actions</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTROLLER__TRIGGERED_ACTIONS = LINKABLE_FEATURE_COUNT + 2;
+
+  /**
    * The number of structural features of the '<em>Controller</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONTROLLER_FEATURE_COUNT = LINKABLE_FEATURE_COUNT + 2;
+  int CONTROLLER_FEATURE_COUNT = LINKABLE_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link uibk.ac.at.smartcity.smartCity.impl.ModuleImpl <em>Module</em>}' class.
@@ -490,13 +508,22 @@ public interface SmartCityPackage extends EPackage
   int MODULE__CYCLIC_ACTIONS = LINKABLE_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Triggered Actions</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODULE__TRIGGERED_ACTIONS = LINKABLE_FEATURE_COUNT + 1;
+
+  /**
    * The number of structural features of the '<em>Module</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODULE_FEATURE_COUNT = LINKABLE_FEATURE_COUNT + 1;
+  int MODULE_FEATURE_COUNT = LINKABLE_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link uibk.ac.at.smartcity.smartCity.impl.DelayRangeImpl <em>Delay Range</em>}' class.
@@ -682,15 +709,15 @@ public interface SmartCityPackage extends EPackage
   EReference getModel_Nodes();
 
   /**
-   * Returns the meta object for the containment reference '{@link uibk.ac.at.smartcity.smartCity.Model#getInteroperableLayer <em>Interoperable Layer</em>}'.
+   * Returns the meta object for the containment reference '{@link uibk.ac.at.smartcity.smartCity.Model#getDataGateway <em>Data Gateway</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Interoperable Layer</em>'.
-   * @see uibk.ac.at.smartcity.smartCity.Model#getInteroperableLayer()
+   * @return the meta object for the containment reference '<em>Data Gateway</em>'.
+   * @see uibk.ac.at.smartcity.smartCity.Model#getDataGateway()
    * @see #getModel()
    * @generated
    */
-  EReference getModel_InteroperableLayer();
+  EReference getModel_DataGateway();
 
   /**
    * Returns the meta object for the containment reference list '{@link uibk.ac.at.smartcity.smartCity.Model#getGlobalLinks <em>Global Links</em>}'.
@@ -704,25 +731,25 @@ public interface SmartCityPackage extends EPackage
   EReference getModel_GlobalLinks();
 
   /**
-   * Returns the meta object for class '{@link uibk.ac.at.smartcity.smartCity.InteroperableLayer <em>Interoperable Layer</em>}'.
+   * Returns the meta object for class '{@link uibk.ac.at.smartcity.smartCity.DataGateway <em>Data Gateway</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Interoperable Layer</em>'.
-   * @see uibk.ac.at.smartcity.smartCity.InteroperableLayer
+   * @return the meta object for class '<em>Data Gateway</em>'.
+   * @see uibk.ac.at.smartcity.smartCity.DataGateway
    * @generated
    */
-  EClass getInteroperableLayer();
+  EClass getDataGateway();
 
   /**
-   * Returns the meta object for the containment reference '{@link uibk.ac.at.smartcity.smartCity.InteroperableLayer#getDelay <em>Delay</em>}'.
+   * Returns the meta object for the containment reference '{@link uibk.ac.at.smartcity.smartCity.DataGateway#getDelay <em>Delay</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Delay</em>'.
-   * @see uibk.ac.at.smartcity.smartCity.InteroperableLayer#getDelay()
-   * @see #getInteroperableLayer()
+   * @see uibk.ac.at.smartcity.smartCity.DataGateway#getDelay()
+   * @see #getDataGateway()
    * @generated
    */
-  EReference getInteroperableLayer_Delay();
+  EReference getDataGateway_Delay();
 
   /**
    * Returns the meta object for class '{@link uibk.ac.at.smartcity.smartCity.Node <em>Node</em>}'.
@@ -768,6 +795,17 @@ public interface SmartCityPackage extends EPackage
   EReference getNode_Controller();
 
   /**
+   * Returns the meta object for the containment reference list '{@link uibk.ac.at.smartcity.smartCity.Node#getLinks <em>Links</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Links</em>'.
+   * @see uibk.ac.at.smartcity.smartCity.Node#getLinks()
+   * @see #getNode()
+   * @generated
+   */
+  EReference getNode_Links();
+
+  /**
    * Returns the meta object for the attribute '{@link uibk.ac.at.smartcity.smartCity.Node#getFreqValue <em>Freq Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -788,17 +826,6 @@ public interface SmartCityPackage extends EPackage
    * @generated
    */
   EAttribute getNode_FreqUnit();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link uibk.ac.at.smartcity.smartCity.Node#getLinks <em>Links</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Links</em>'.
-   * @see uibk.ac.at.smartcity.smartCity.Node#getLinks()
-   * @see #getNode()
-   * @generated
-   */
-  EReference getNode_Links();
 
   /**
    * Returns the meta object for class '{@link uibk.ac.at.smartcity.smartCity.Sensor <em>Sensor</em>}'.
@@ -831,6 +858,17 @@ public interface SmartCityPackage extends EPackage
    * @generated
    */
   EReference getSensor_CyclicActions();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uibk.ac.at.smartcity.smartCity.Sensor#getTriggeredActions <em>Triggered Actions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Triggered Actions</em>'.
+   * @see uibk.ac.at.smartcity.smartCity.Sensor#getTriggeredActions()
+   * @see #getSensor()
+   * @generated
+   */
+  EReference getSensor_TriggeredActions();
 
   /**
    * Returns the meta object for class '{@link uibk.ac.at.smartcity.smartCity.CommunicationLink <em>Communication Link</em>}'.
@@ -930,6 +968,17 @@ public interface SmartCityPackage extends EPackage
   EReference getController_CyclicActions();
 
   /**
+   * Returns the meta object for the containment reference list '{@link uibk.ac.at.smartcity.smartCity.Controller#getTriggeredActions <em>Triggered Actions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Triggered Actions</em>'.
+   * @see uibk.ac.at.smartcity.smartCity.Controller#getTriggeredActions()
+   * @see #getController()
+   * @generated
+   */
+  EReference getController_TriggeredActions();
+
+  /**
    * Returns the meta object for class '{@link uibk.ac.at.smartcity.smartCity.Module <em>Module</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -949,6 +998,17 @@ public interface SmartCityPackage extends EPackage
    * @generated
    */
   EReference getModule_CyclicActions();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uibk.ac.at.smartcity.smartCity.Module#getTriggeredActions <em>Triggered Actions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Triggered Actions</em>'.
+   * @see uibk.ac.at.smartcity.smartCity.Module#getTriggeredActions()
+   * @see #getModule()
+   * @generated
+   */
+  EReference getModule_TriggeredActions();
 
   /**
    * Returns the meta object for class '{@link uibk.ac.at.smartcity.smartCity.Linkable <em>Linkable</em>}'.
@@ -1170,12 +1230,12 @@ public interface SmartCityPackage extends EPackage
     EReference MODEL__NODES = eINSTANCE.getModel_Nodes();
 
     /**
-     * The meta object literal for the '<em><b>Interoperable Layer</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Data Gateway</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__INTEROPERABLE_LAYER = eINSTANCE.getModel_InteroperableLayer();
+    EReference MODEL__DATA_GATEWAY = eINSTANCE.getModel_DataGateway();
 
     /**
      * The meta object literal for the '<em><b>Global Links</b></em>' containment reference list feature.
@@ -1186,14 +1246,14 @@ public interface SmartCityPackage extends EPackage
     EReference MODEL__GLOBAL_LINKS = eINSTANCE.getModel_GlobalLinks();
 
     /**
-     * The meta object literal for the '{@link uibk.ac.at.smartcity.smartCity.impl.InteroperableLayerImpl <em>Interoperable Layer</em>}' class.
+     * The meta object literal for the '{@link uibk.ac.at.smartcity.smartCity.impl.DataGatewayImpl <em>Data Gateway</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see uibk.ac.at.smartcity.smartCity.impl.InteroperableLayerImpl
-     * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getInteroperableLayer()
+     * @see uibk.ac.at.smartcity.smartCity.impl.DataGatewayImpl
+     * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getDataGateway()
      * @generated
      */
-    EClass INTEROPERABLE_LAYER = eINSTANCE.getInteroperableLayer();
+    EClass DATA_GATEWAY = eINSTANCE.getDataGateway();
 
     /**
      * The meta object literal for the '<em><b>Delay</b></em>' containment reference feature.
@@ -1201,7 +1261,7 @@ public interface SmartCityPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference INTEROPERABLE_LAYER__DELAY = eINSTANCE.getInteroperableLayer_Delay();
+    EReference DATA_GATEWAY__DELAY = eINSTANCE.getDataGateway_Delay();
 
     /**
      * The meta object literal for the '{@link uibk.ac.at.smartcity.smartCity.impl.NodeImpl <em>Node</em>}' class.
@@ -1238,6 +1298,14 @@ public interface SmartCityPackage extends EPackage
     EReference NODE__CONTROLLER = eINSTANCE.getNode_Controller();
 
     /**
+     * The meta object literal for the '<em><b>Links</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NODE__LINKS = eINSTANCE.getNode_Links();
+
+    /**
      * The meta object literal for the '<em><b>Freq Value</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1252,14 +1320,6 @@ public interface SmartCityPackage extends EPackage
      * @generated
      */
     EAttribute NODE__FREQ_UNIT = eINSTANCE.getNode_FreqUnit();
-
-    /**
-     * The meta object literal for the '<em><b>Links</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference NODE__LINKS = eINSTANCE.getNode_Links();
 
     /**
      * The meta object literal for the '{@link uibk.ac.at.smartcity.smartCity.impl.SensorImpl <em>Sensor</em>}' class.
@@ -1286,6 +1346,14 @@ public interface SmartCityPackage extends EPackage
      * @generated
      */
     EReference SENSOR__CYCLIC_ACTIONS = eINSTANCE.getSensor_CyclicActions();
+
+    /**
+     * The meta object literal for the '<em><b>Triggered Actions</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SENSOR__TRIGGERED_ACTIONS = eINSTANCE.getSensor_TriggeredActions();
 
     /**
      * The meta object literal for the '{@link uibk.ac.at.smartcity.smartCity.impl.CommunicationLinkImpl <em>Communication Link</em>}' class.
@@ -1364,6 +1432,14 @@ public interface SmartCityPackage extends EPackage
     EReference CONTROLLER__CYCLIC_ACTIONS = eINSTANCE.getController_CyclicActions();
 
     /**
+     * The meta object literal for the '<em><b>Triggered Actions</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONTROLLER__TRIGGERED_ACTIONS = eINSTANCE.getController_TriggeredActions();
+
+    /**
      * The meta object literal for the '{@link uibk.ac.at.smartcity.smartCity.impl.ModuleImpl <em>Module</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1380,6 +1456,14 @@ public interface SmartCityPackage extends EPackage
      * @generated
      */
     EReference MODULE__CYCLIC_ACTIONS = eINSTANCE.getModule_CyclicActions();
+
+    /**
+     * The meta object literal for the '<em><b>Triggered Actions</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODULE__TRIGGERED_ACTIONS = eINSTANCE.getModule_TriggeredActions();
 
     /**
      * The meta object literal for the '{@link uibk.ac.at.smartcity.smartCity.impl.LinkableImpl <em>Linkable</em>}' class.

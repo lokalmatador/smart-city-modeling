@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import uibk.ac.at.smartcity.smartCity.CyclicAction;
 import uibk.ac.at.smartcity.smartCity.SmartCityPackage;
+import uibk.ac.at.smartcity.smartCity.TriggeredAction;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,6 +28,7 @@ import uibk.ac.at.smartcity.smartCity.SmartCityPackage;
  * </p>
  * <ul>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.ModuleImpl#getCyclicActions <em>Cyclic Actions</em>}</li>
+ *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.ModuleImpl#getTriggeredActions <em>Triggered Actions</em>}</li>
  * </ul>
  *
  * @generated
@@ -42,6 +44,16 @@ public class ModuleImpl extends LinkableImpl implements uibk.ac.at.smartcity.sma
    * @ordered
    */
   protected EList<CyclicAction> cyclicActions;
+
+  /**
+   * The cached value of the '{@link #getTriggeredActions() <em>Triggered Actions</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTriggeredActions()
+   * @generated
+   * @ordered
+   */
+  protected EList<TriggeredAction> triggeredActions;
 
   /**
    * <!-- begin-user-doc -->
@@ -85,12 +97,29 @@ public class ModuleImpl extends LinkableImpl implements uibk.ac.at.smartcity.sma
    * @generated
    */
   @Override
+  public EList<TriggeredAction> getTriggeredActions()
+  {
+    if (triggeredActions == null)
+    {
+      triggeredActions = new EObjectContainmentEList<TriggeredAction>(TriggeredAction.class, this, SmartCityPackage.MODULE__TRIGGERED_ACTIONS);
+    }
+    return triggeredActions;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
       case SmartCityPackage.MODULE__CYCLIC_ACTIONS:
         return ((InternalEList<?>)getCyclicActions()).basicRemove(otherEnd, msgs);
+      case SmartCityPackage.MODULE__TRIGGERED_ACTIONS:
+        return ((InternalEList<?>)getTriggeredActions()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -107,6 +136,8 @@ public class ModuleImpl extends LinkableImpl implements uibk.ac.at.smartcity.sma
     {
       case SmartCityPackage.MODULE__CYCLIC_ACTIONS:
         return getCyclicActions();
+      case SmartCityPackage.MODULE__TRIGGERED_ACTIONS:
+        return getTriggeredActions();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -126,6 +157,10 @@ public class ModuleImpl extends LinkableImpl implements uibk.ac.at.smartcity.sma
         getCyclicActions().clear();
         getCyclicActions().addAll((Collection<? extends CyclicAction>)newValue);
         return;
+      case SmartCityPackage.MODULE__TRIGGERED_ACTIONS:
+        getTriggeredActions().clear();
+        getTriggeredActions().addAll((Collection<? extends TriggeredAction>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -143,6 +178,9 @@ public class ModuleImpl extends LinkableImpl implements uibk.ac.at.smartcity.sma
       case SmartCityPackage.MODULE__CYCLIC_ACTIONS:
         getCyclicActions().clear();
         return;
+      case SmartCityPackage.MODULE__TRIGGERED_ACTIONS:
+        getTriggeredActions().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -159,6 +197,8 @@ public class ModuleImpl extends LinkableImpl implements uibk.ac.at.smartcity.sma
     {
       case SmartCityPackage.MODULE__CYCLIC_ACTIONS:
         return cyclicActions != null && !cyclicActions.isEmpty();
+      case SmartCityPackage.MODULE__TRIGGERED_ACTIONS:
+        return triggeredActions != null && !triggeredActions.isEmpty();
     }
     return super.eIsSet(featureID);
   }

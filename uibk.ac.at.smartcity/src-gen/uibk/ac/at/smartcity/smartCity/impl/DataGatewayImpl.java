@@ -11,24 +11,24 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import uibk.ac.at.smartcity.smartCity.DataGateway;
 import uibk.ac.at.smartcity.smartCity.DelayRange;
-import uibk.ac.at.smartcity.smartCity.InteroperableLayer;
 import uibk.ac.at.smartcity.smartCity.SmartCityPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Interoperable Layer</b></em>'.
+ * An implementation of the model object '<em><b>Data Gateway</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.InteroperableLayerImpl#getDelay <em>Delay</em>}</li>
+ *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.DataGatewayImpl#getDelay <em>Delay</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class InteroperableLayerImpl extends LinkableImpl implements InteroperableLayer
+public class DataGatewayImpl extends LinkableImpl implements DataGateway
 {
   /**
    * The cached value of the '{@link #getDelay() <em>Delay</em>}' containment reference.
@@ -45,7 +45,7 @@ public class InteroperableLayerImpl extends LinkableImpl implements Interoperabl
    * <!-- end-user-doc -->
    * @generated
    */
-  protected InteroperableLayerImpl()
+  protected DataGatewayImpl()
   {
     super();
   }
@@ -58,7 +58,7 @@ public class InteroperableLayerImpl extends LinkableImpl implements Interoperabl
   @Override
   protected EClass eStaticClass()
   {
-    return SmartCityPackage.Literals.INTEROPERABLE_LAYER;
+    return SmartCityPackage.Literals.DATA_GATEWAY;
   }
 
   /**
@@ -83,7 +83,7 @@ public class InteroperableLayerImpl extends LinkableImpl implements Interoperabl
     delay = newDelay;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmartCityPackage.INTEROPERABLE_LAYER__DELAY, oldDelay, newDelay);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmartCityPackage.DATA_GATEWAY__DELAY, oldDelay, newDelay);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -101,14 +101,14 @@ public class InteroperableLayerImpl extends LinkableImpl implements Interoperabl
     {
       NotificationChain msgs = null;
       if (delay != null)
-        msgs = ((InternalEObject)delay).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SmartCityPackage.INTEROPERABLE_LAYER__DELAY, null, msgs);
+        msgs = ((InternalEObject)delay).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SmartCityPackage.DATA_GATEWAY__DELAY, null, msgs);
       if (newDelay != null)
-        msgs = ((InternalEObject)newDelay).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SmartCityPackage.INTEROPERABLE_LAYER__DELAY, null, msgs);
+        msgs = ((InternalEObject)newDelay).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SmartCityPackage.DATA_GATEWAY__DELAY, null, msgs);
       msgs = basicSetDelay(newDelay, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SmartCityPackage.INTEROPERABLE_LAYER__DELAY, newDelay, newDelay));
+      eNotify(new ENotificationImpl(this, Notification.SET, SmartCityPackage.DATA_GATEWAY__DELAY, newDelay, newDelay));
   }
 
   /**
@@ -121,7 +121,7 @@ public class InteroperableLayerImpl extends LinkableImpl implements Interoperabl
   {
     switch (featureID)
     {
-      case SmartCityPackage.INTEROPERABLE_LAYER__DELAY:
+      case SmartCityPackage.DATA_GATEWAY__DELAY:
         return basicSetDelay(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -137,7 +137,7 @@ public class InteroperableLayerImpl extends LinkableImpl implements Interoperabl
   {
     switch (featureID)
     {
-      case SmartCityPackage.INTEROPERABLE_LAYER__DELAY:
+      case SmartCityPackage.DATA_GATEWAY__DELAY:
         return getDelay();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -153,7 +153,7 @@ public class InteroperableLayerImpl extends LinkableImpl implements Interoperabl
   {
     switch (featureID)
     {
-      case SmartCityPackage.INTEROPERABLE_LAYER__DELAY:
+      case SmartCityPackage.DATA_GATEWAY__DELAY:
         setDelay((DelayRange)newValue);
         return;
     }
@@ -170,7 +170,7 @@ public class InteroperableLayerImpl extends LinkableImpl implements Interoperabl
   {
     switch (featureID)
     {
-      case SmartCityPackage.INTEROPERABLE_LAYER__DELAY:
+      case SmartCityPackage.DATA_GATEWAY__DELAY:
         setDelay((DelayRange)null);
         return;
     }
@@ -187,10 +187,10 @@ public class InteroperableLayerImpl extends LinkableImpl implements Interoperabl
   {
     switch (featureID)
     {
-      case SmartCityPackage.INTEROPERABLE_LAYER__DELAY:
+      case SmartCityPackage.DATA_GATEWAY__DELAY:
         return delay != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //InteroperableLayerImpl
+} //DataGatewayImpl

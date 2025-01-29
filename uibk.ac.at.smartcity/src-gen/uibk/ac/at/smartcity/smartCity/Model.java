@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.Model#getNodes <em>Nodes</em>}</li>
- *   <li>{@link uibk.ac.at.smartcity.smartCity.Model#getInteroperableLayer <em>Interoperable Layer</em>}</li>
+ *   <li>{@link uibk.ac.at.smartcity.smartCity.Model#getDataGateway <em>Data Gateway</em>}</li>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.Model#getGlobalLinks <em>Global Links</em>}</li>
  * </ul>
  *
@@ -40,26 +40,26 @@ public interface Model extends EObject
   EList<Node> getNodes();
 
   /**
-   * Returns the value of the '<em><b>Interoperable Layer</b></em>' containment reference.
+   * Returns the value of the '<em><b>Data Gateway</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Interoperable Layer</em>' containment reference.
-   * @see #setInteroperableLayer(InteroperableLayer)
-   * @see uibk.ac.at.smartcity.smartCity.SmartCityPackage#getModel_InteroperableLayer()
+   * @return the value of the '<em>Data Gateway</em>' containment reference.
+   * @see #setDataGateway(DataGateway)
+   * @see uibk.ac.at.smartcity.smartCity.SmartCityPackage#getModel_DataGateway()
    * @model containment="true"
    * @generated
    */
-  InteroperableLayer getInteroperableLayer();
+  DataGateway getDataGateway();
 
   /**
-   * Sets the value of the '{@link uibk.ac.at.smartcity.smartCity.Model#getInteroperableLayer <em>Interoperable Layer</em>}' containment reference.
+   * Sets the value of the '{@link uibk.ac.at.smartcity.smartCity.Model#getDataGateway <em>Data Gateway</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Interoperable Layer</em>' containment reference.
-   * @see #getInteroperableLayer()
+   * @param value the new value of the '<em>Data Gateway</em>' containment reference.
+   * @see #getDataGateway()
    * @generated
    */
-  void setInteroperableLayer(InteroperableLayer value);
+  void setDataGateway(DataGateway value);
 
   /**
    * Returns the value of the '<em><b>Global Links</b></em>' containment reference list.
