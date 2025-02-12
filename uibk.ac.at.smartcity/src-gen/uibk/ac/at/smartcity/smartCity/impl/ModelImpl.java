@@ -23,6 +23,7 @@ import uibk.ac.at.smartcity.smartCity.CommunicationLink;
 import uibk.ac.at.smartcity.smartCity.DataGateway;
 import uibk.ac.at.smartcity.smartCity.Model;
 import uibk.ac.at.smartcity.smartCity.Node;
+import uibk.ac.at.smartcity.smartCity.SimulationProperties;
 import uibk.ac.at.smartcity.smartCity.SmartCityPackage;
 
 /**
@@ -36,6 +37,7 @@ import uibk.ac.at.smartcity.smartCity.SmartCityPackage;
  *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.ModelImpl#getNodes <em>Nodes</em>}</li>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.ModelImpl#getDataGateway <em>Data Gateway</em>}</li>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.ModelImpl#getGlobalLinks <em>Global Links</em>}</li>
+ *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.ModelImpl#getSimulationProperties <em>Simulation Properties</em>}</li>
  * </ul>
  *
  * @generated
@@ -71,6 +73,16 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @ordered
    */
   protected EList<CommunicationLink> globalLinks;
+
+  /**
+   * The cached value of the '{@link #getSimulationProperties() <em>Simulation Properties</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSimulationProperties()
+   * @generated
+   * @ordered
+   */
+  protected SimulationProperties simulationProperties;
 
   /**
    * <!-- begin-user-doc -->
@@ -179,6 +191,56 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @generated
    */
   @Override
+  public SimulationProperties getSimulationProperties()
+  {
+    return simulationProperties;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetSimulationProperties(SimulationProperties newSimulationProperties, NotificationChain msgs)
+  {
+    SimulationProperties oldSimulationProperties = simulationProperties;
+    simulationProperties = newSimulationProperties;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmartCityPackage.MODEL__SIMULATION_PROPERTIES, oldSimulationProperties, newSimulationProperties);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setSimulationProperties(SimulationProperties newSimulationProperties)
+  {
+    if (newSimulationProperties != simulationProperties)
+    {
+      NotificationChain msgs = null;
+      if (simulationProperties != null)
+        msgs = ((InternalEObject)simulationProperties).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SmartCityPackage.MODEL__SIMULATION_PROPERTIES, null, msgs);
+      if (newSimulationProperties != null)
+        msgs = ((InternalEObject)newSimulationProperties).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SmartCityPackage.MODEL__SIMULATION_PROPERTIES, null, msgs);
+      msgs = basicSetSimulationProperties(newSimulationProperties, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SmartCityPackage.MODEL__SIMULATION_PROPERTIES, newSimulationProperties, newSimulationProperties));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -189,6 +251,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return basicSetDataGateway(null, msgs);
       case SmartCityPackage.MODEL__GLOBAL_LINKS:
         return ((InternalEList<?>)getGlobalLinks()).basicRemove(otherEnd, msgs);
+      case SmartCityPackage.MODEL__SIMULATION_PROPERTIES:
+        return basicSetSimulationProperties(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -209,6 +273,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return getDataGateway();
       case SmartCityPackage.MODEL__GLOBAL_LINKS:
         return getGlobalLinks();
+      case SmartCityPackage.MODEL__SIMULATION_PROPERTIES:
+        return getSimulationProperties();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -235,6 +301,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         getGlobalLinks().clear();
         getGlobalLinks().addAll((Collection<? extends CommunicationLink>)newValue);
         return;
+      case SmartCityPackage.MODEL__SIMULATION_PROPERTIES:
+        setSimulationProperties((SimulationProperties)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -258,6 +327,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
       case SmartCityPackage.MODEL__GLOBAL_LINKS:
         getGlobalLinks().clear();
         return;
+      case SmartCityPackage.MODEL__SIMULATION_PROPERTIES:
+        setSimulationProperties((SimulationProperties)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -278,6 +350,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return dataGateway != null;
       case SmartCityPackage.MODEL__GLOBAL_LINKS:
         return globalLinks != null && !globalLinks.isEmpty();
+      case SmartCityPackage.MODEL__SIMULATION_PROPERTIES:
+        return simulationProperties != null;
     }
     return super.eIsSet(featureID);
   }

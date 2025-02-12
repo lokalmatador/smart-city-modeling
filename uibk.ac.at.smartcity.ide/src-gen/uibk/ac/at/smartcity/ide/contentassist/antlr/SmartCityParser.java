@@ -38,6 +38,8 @@ public class SmartCityParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getDataTypeAccess().getAlternatives(), "rule__DataType__Alternatives");
 			builder.put(grammarAccess.getFrequencyUnitAccess().getAlternatives(), "rule__FrequencyUnit__Alternatives");
 			builder.put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
+			builder.put(grammarAccess.getSimulationPropertiesAccess().getGroup(), "rule__SimulationProperties__Group__0");
+			builder.put(grammarAccess.getSimulationPropertiesAccess().getGroup_4(), "rule__SimulationProperties__Group_4__0");
 			builder.put(grammarAccess.getDataGatewayAccess().getGroup(), "rule__DataGateway__Group__0");
 			builder.put(grammarAccess.getNodeAccess().getGroup(), "rule__Node__Group__0");
 			builder.put(grammarAccess.getSensorAccess().getGroup(), "rule__Sensor__Group__0");
@@ -50,6 +52,9 @@ public class SmartCityParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getModelAccess().getNodesAssignment_0(), "rule__Model__NodesAssignment_0");
 			builder.put(grammarAccess.getModelAccess().getDataGatewayAssignment_1(), "rule__Model__DataGatewayAssignment_1");
 			builder.put(grammarAccess.getModelAccess().getGlobalLinksAssignment_2(), "rule__Model__GlobalLinksAssignment_2");
+			builder.put(grammarAccess.getModelAccess().getSimulationPropertiesAssignment_3(), "rule__Model__SimulationPropertiesAssignment_3");
+			builder.put(grammarAccess.getSimulationPropertiesAccess().getTerminationTimeAssignment_3(), "rule__SimulationProperties__TerminationTimeAssignment_3");
+			builder.put(grammarAccess.getSimulationPropertiesAccess().getGeneratorFileAssignment_4_1(), "rule__SimulationProperties__GeneratorFileAssignment_4_1");
 			builder.put(grammarAccess.getDataGatewayAccess().getNameAssignment_1(), "rule__DataGateway__NameAssignment_1");
 			builder.put(grammarAccess.getDataGatewayAccess().getPriorityAssignment_4(), "rule__DataGateway__PriorityAssignment_4");
 			builder.put(grammarAccess.getDataGatewayAccess().getDelayAssignment_6(), "rule__DataGateway__DelayAssignment_6");

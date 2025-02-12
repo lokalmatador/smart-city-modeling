@@ -19,6 +19,7 @@ import uibk.ac.at.smartcity.smartCity.Linkable;
 import uibk.ac.at.smartcity.smartCity.Model;
 import uibk.ac.at.smartcity.smartCity.Node;
 import uibk.ac.at.smartcity.smartCity.Sensor;
+import uibk.ac.at.smartcity.smartCity.SimulationProperties;
 import uibk.ac.at.smartcity.smartCity.SmartCityPackage;
 import uibk.ac.at.smartcity.smartCity.TriggeredAction;
 
@@ -89,6 +90,11 @@ public class SmartCityAdapterFactory extends AdapterFactoryImpl
       public Adapter caseModel(Model object)
       {
         return createModelAdapter();
+      }
+      @Override
+      public Adapter caseSimulationProperties(SimulationProperties object)
+      {
+        return createSimulationPropertiesAdapter();
       }
       @Override
       public Adapter caseDataGateway(DataGateway object)
@@ -173,6 +179,21 @@ public class SmartCityAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createModelAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uibk.ac.at.smartcity.smartCity.SimulationProperties <em>Simulation Properties</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uibk.ac.at.smartcity.smartCity.SimulationProperties
+   * @generated
+   */
+  public Adapter createSimulationPropertiesAdapter()
   {
     return null;
   }

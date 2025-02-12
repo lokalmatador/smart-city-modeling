@@ -17,6 +17,12 @@ import uibk.ac.at.smartcity.smartCity.SensorType
 import uibk.ac.at.smartcity.smartCity.FrequencyUnit
 import uibk.ac.at.smartcity.smartCity.ControllerType
 import uibk.ac.at.smartcity.smartCity.DataGateway
+import uibk.ac.at.smartcity.smartCity.SimulationProperties
+
+
+// TODO Adjust the sensors
+
+
 
 /**
  * Generates code from your model files on save.
@@ -26,14 +32,7 @@ import uibk.ac.at.smartcity.smartCity.DataGateway
 class SmartCityGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(Greeting)
-//				.map[name]
-//				.join(', '))
-
-
-
+		
 		// first create nodes, in there the sensors
 		for (node: resource.allContents.toIterable.filter(Node)){
 			fsa.generateFile("nodes/" + node.name + ".py", node.compile)
@@ -42,27 +41,27 @@ class SmartCityGenerator extends AbstractGenerator {
 			}
 		}
 		
-		
-		// generate communication models
-		// generateCommunications(fsa)
-		
 		// generate blueprint for the interface
 		generateInterface(fsa)
 		
 		// generate hardcoded sink
 		generateSink(fsa)
 		
+		//Generate the data generator and config file
+		generateGenerator(fsa)
+		
 		// create the model
 		val sensors = resource.allContents.toIterable.filter(Sensor)
 		val links = resource.allContents.toIterable.filter(CommunicationLink)
 		val nodes = resource.allContents.toIterable.filter(Node)
 		val interoperableLayer = resource.allContents.toIterable.filter(DataGateway).get(0)
-		
+		val simulationPropeties = resource.allContents.toIterable.filter(SimulationProperties).get(0)
 		fsa.generateFile("model.py", generateModel(sensors, links, nodes, interoperableLayer))
 				
 		// main:
-		fsa.generateFile("experiment.py", generateMain())
+		fsa.generateFile("experiment.py", generateMain(simulationPropeties))
 	}
+
 	
 	def double frequencyToSeconds(int value, FrequencyUnit unit){
 		switch (unit) {
@@ -96,7 +95,7 @@ class SmartCityGenerator extends AbstractGenerator {
 		
 		class «sensor.name.toFirstUpper»(AtomicDEVS):
 			«IF sensor.type == SensorType.CAMERA»
-			def __init__(self):
+			def __init__(self, data_generator):
 				super().__init__("«sensor.name»")
 				self.in_port = self.addInPort("in_port")
 				self.outport = self.addOutPort("outport")
@@ -108,8 +107,7 @@ class SmartCityGenerator extends AbstractGenerator {
 					"status": "capturing"  # Start in capturing state
 				}
 				self.priority = «sensor.priority»
-			def generate_random_number(self):
-				return random.randint(0, 100)
+				self.data_generator = data_generator
 			
 			def capture_image(self):
 				# Simulate capturing an image
@@ -118,40 +116,20 @@ class SmartCityGenerator extends AbstractGenerator {
 
 			def process_image(self):
 				# Simulate processing the image to detect a number
-				self.state["number_detected"] = self.generate_random_number()
+				self.state["number_detected"] = self.data_generator.generate_camera_value("camera_sensor")
 				print(f"[{self.name}] Detected number: {self.state['number_detected']}")
 			«ELSE»
-			def __init__(self):
+			def __init__(self, data_generator):
 				super().__init__("«sensor.name»")
 				self.inport = self.addInPort("in_port")
 				self.outport = self.addOutPort("outport")
 				self.state = {"«sensor.type»": 0}
 				self.priority = «sensor.priority»
+				self.data_generator = data_generator
   		 	«ENDIF»
 
 			def intTransition(self):
-				«IF (sensor.type == SensorType.PH)»
-				self.state["«sensor.type»"] = random.uniform(0, 14)
-				return self.state
-				«ELSEIF (sensor.type == SensorType.CURRENT)»
-				self.state["«sensor.type»"] = random.uniform(0, 100)
-				return self.state
-				«ELSEIF (sensor.type == SensorType.PULSE)»
-				self.state["«sensor.type»"] = random.uniform(0, 1)
-				return self.state
-				«ELSEIF (sensor.type == SensorType.TDS)»
-				self.state["«sensor.type»"] = random.uniform(0, 1000)
-				return self.state
-				«ELSEIF (sensor.type == SensorType.TEMPERATURE)»
-				self.state["«sensor.type»"] = random.uniform(0, 100)
-				return self.state
-				«ELSEIF (sensor.type == SensorType.TURBIDITY)»
-				self.state["«sensor.type»"] = random.uniform(0, 100)
-				return self.state
-				«ELSEIF (sensor.type == SensorType.ULTRASONIC)»
-				self.state["«sensor.type»"] = random.uniform(0.5, 4.0)
-				return self.state
-				«ELSEIF (sensor.type == SensorType.CAMERA)»
+				«IF (sensor.type == SensorType.CAMERA)»
 				if self.state["status"] == "capturing":
 					self.capture_image()
 					self.state["status"] = "processing"
@@ -160,8 +138,8 @@ class SmartCityGenerator extends AbstractGenerator {
 					self.state["status"] = "capturing"  # Loop back to capturing for continuous processing
 				return self.state
 				«ELSE»
-				print("Internal Transition not defined for this sensor type")
-				return None
+				self.state["«sensor.type»"] = self.data_generator.generate_value("«sensor.type.toString.toLowerCase»_sensor")
+				return self.state
 				«ENDIF»
 
 			def extTransition(self, inputs):
@@ -269,7 +247,6 @@ class SmartCityGenerator extends AbstractGenerator {
 				self.state.next_internal_time += 1.0
 				return self.state
 
-		# TODO: Discuss how this format should be handeled, maybe we need Node Type in the metamodel
 			def outputFnc(self):
 				# Only send data if there is aggregated data
 				if self.state.data_aggregated:
@@ -334,15 +311,23 @@ class SmartCityGenerator extends AbstractGenerator {
 		'''
 	}
 	
-	def generateMain(){
+	def generateMain(SimulationProperties simulationProperties){
+		val dgFile = simulationProperties.generatorFile
 		'''
 		from pypdevs.simulator import Simulator
 		from model import Model
 		import logging
+		from generator.data_generator import DataGenerator
+		
 		logging.basicConfig(level=logging.DEBUG)
 		if __name__ == '__main__':
+			«IF dgFile !== null»
+			generator = DataGenerator(mode='csv', csv_file="«dgFile»")
+			«ELSE»
+			generator = DataGenerator(mode='random', csv_file=None)
+			«ENDIF»
 			logging.debug("Starting the model")
-			model = Model()
+			model = Model(generator)
 			logging.debug("Model Loaded")
 			sim = Simulator(model)
 			logging.debug("Simulator Loaded")
@@ -352,8 +337,7 @@ class SmartCityGenerator extends AbstractGenerator {
 			sim.setVerbose()
 			logging.debug("Verbose mode set")
 			
-			# sim.setTerminationTime(86400)  # 24 hours
-			sim.setTerminationTime(300) # 5 minutes
+			sim.setTerminationTime(«simulationProperties.terminationTime»)
 			logging.debug("Termination time set")
 			
 			logging.debug("Starting simulation")
@@ -415,12 +399,13 @@ class SmartCityGenerator extends AbstractGenerator {
 		
 		
 		class Model(CoupledDEVS):
-			def __init__(self):
+			def __init__(self, data_generator):
 				super().__init__("SmartCityModel")
+				self.data_generator = data_generator
 				# Sensors
 				«FOR sensor: sensorList»
 				from sensors.«sensor.name» import «sensor.name.toFirstUpper»
-				«sensor.name» = self.addSubModel(«sensor.name.toFirstUpper»())
+				«sensor.name» = self.addSubModel(«sensor.name.toFirstUpper»(self.data_generator))
 				«ENDFOR»
 				
 				# Nodes
@@ -816,5 +801,172 @@ class SmartCityGenerator extends AbstractGenerator {
 		fsa.generateFile("communications/http_comm.py", http_comm)		
 		fsa.generateFile("communications/spi_comm.py", spi_comm)		
 		fsa.generateFile("communications/uart_comm.py", uart_comm)		
+	}
+	
+		
+	def generateGenerator(IFileSystemAccess2 fsa) {
+		/*
+		 * Generates all the generator classes and the base configuration for the modeled sensors
+		 */
+		val generatorClass = '''
+		import json
+		import random
+		import logging
+		import csv
+		import sys
+		import os
+		
+		class DataGenerator:
+		    def __init__(self, mode='random', config_file='generator/sensors_config.json', csv_file=None):
+		        if mode == 'csv' and csv_file is None:
+		            raise ValueError("CSV mode requires a valid CSV file path")
+		        elif mode == 'csv':
+		            self.generator = CSVDataGenerator(csv_file)
+		        elif mode == 'random':
+		            self.generator = RandomDataGenerator(config_file)
+		        else:
+		            raise ValueError(f"Unsupported mode: {mode}")
+		
+		
+		    def generate_value(self, sensor_name):
+		        return self.generator.generate_value(sensor_name)
+		
+		    def generate_pulse_value(self, sensor_name):
+		        return self.generator.generate_pulse_value(sensor_name)
+		
+		    def generate_camera_value(self, sensor_name):
+		        return self.generator.generate_camera_value(sensor_name)
+		
+		class RandomDataGenerator:
+		    def __init__(self, config_file):
+		        logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+		        with open(config_file, 'r') as file:
+		            self.config = json.load(file)
+		        logging.info('Loaded configuration from %s', config_file)
+		
+		    def generate_value(self, sensor_name):
+		        logging.debug('Generating value for sensor: %s', sensor_name)
+		        sensor_config = self.config[sensor_name]
+		        min_value = sensor_config['min']
+		        max_value = sensor_config['max']
+		        step = sensor_config['step']
+		        
+		        if 'current_value' not in sensor_config:
+		            sensor_config['current_value'] = random.uniform(min_value, max_value)
+		            logging.debug('Initial value for %s: %f', sensor_name, sensor_config['current_value'])
+		        else:
+		            change = random.choice([-1, 1]) * step
+		            sensor_config['current_value'] += change
+		            logging.debug('Updated value for %s: %f', sensor_name, sensor_config['current_value'])
+		            if sensor_config['current_value'] > max_value:
+		                sensor_config['current_value'] = max_value
+		                logging.debug('Value for %s capped to max: %f', sensor_name, max_value)
+		            elif sensor_config['current_value'] < min_value:
+		                sensor_config['current_value'] = min_value
+		                logging.debug('Value for %s capped to min: %f', sensor_name, min_value)
+		
+		        return sensor_config['current_value']
+		    
+		    def generate_pulse_value(self, sensor_name):
+		        sensor_config = self.config[sensor_name]
+		        sensor_config['current_value'] = random.choice([0, 1])
+		        return sensor_config['current_value']
+		    
+		    def generate_camera_value(self, sensor_name):
+		        logging.debug('Generating camera value for sensor: %s', sensor_name)
+		        sensor_config = self.config[sensor_name]
+		        if 'current_value' not in sensor_config:
+		            sensor_config['current_value'] = 1
+		            logging.debug('Initial camera value for %s: %f', sensor_name, sensor_config['current_value'])
+		        else:
+		            sensor_config['current_value'] += 1
+		            logging.debug('Updated camera value for %s: %f', sensor_name, sensor_config['current_value'])
+		        return sensor_config['current_value']
+		
+		class CSVDataGenerator:
+		    def __init__(self, csv_file):
+		        if not os.path.exists(csv_file):
+		            raise FileNotFoundError(f"CSV file not found: {csv_file}")
+		        logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+		        self.data = []
+		        with open(csv_file, 'r') as file:
+		            reader = csv.DictReader(file)
+		            for row in reader:
+		                self.data.append({sensor_name: float(value) for sensor_name, value in row.items() if value})
+		        self.index = 0
+		        logging.info('Loaded data from %s', csv_file)
+		
+		    def get_next_row(self):
+		        if self.index < len(self.data):
+		            row = self.data[self.index]
+		            self.index = (self.index + 1) % len(self.data)
+		            logging.debug('Read row %d: %s', self.index, row)
+		            return row
+		        else:
+		            raise ValueError("No more data available")
+		
+		    def generate_value(self, sensor_name):
+		        row = self.get_next_row()
+		        if sensor_name in row:
+		            value = row[sensor_name]
+		            logging.debug('Generated value for %s: %f', sensor_name, value)
+		            return value
+		        else:
+		            raise ValueError(f"No data for sensor: {sensor_name}")
+		
+		    def generate_pulse_value(self, sensor_name):
+		        return self.generate_value(sensor_name)
+		
+		    def generate_camera_value(self, sensor_name):
+		        return self.generate_value(sensor_name)
+		
+		'''
+		val config = '''
+		{
+		    "temperature_sensor": {
+		        "min": 15,
+		        "max": 50,
+		        "step": 1
+		    },
+		    "ph_sensor": {
+		        "min": 0,
+		        "max": 14,
+		        "step": 0.1
+		    },
+		    "tds_sensor": {
+		        "min": 50,
+		        "max": 1000,
+		        "step": 10
+		    },
+		    "turbidity_sensor": {
+		        "min": 0,
+		        "max": 100,
+		        "step": 1
+		    },
+		    "pulse_sensor": {
+		        "min": 0,
+		        "max": 1,
+		        "step": 0.01
+		    },
+		    "current_sensor": {
+		        "min": 0,
+		        "max": 100,
+		        "step": 1
+		    },
+		    "ultrasonic_sensor": {
+		        "min": 0.5,
+		        "max": 4.0,
+		        "step": 0.1
+		    },
+		    "camera_sensor": {
+		        "min": 1,
+		        "max": 9999999999999,
+		        "step": 1
+		    }
+		}
+		
+		'''
+		fsa.generateFile("generator/data_generator.py", generatorClass)
+		fsa.generateFile("generator/sensors_config.json", config)
 	}
 }

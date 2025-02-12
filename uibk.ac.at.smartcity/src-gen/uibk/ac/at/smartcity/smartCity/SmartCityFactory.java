@@ -33,6 +33,15 @@ public interface SmartCityFactory extends EFactory
   Model createModel();
 
   /**
+   * Returns a new object of class '<em>Simulation Properties</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Simulation Properties</em>'.
+   * @generated
+   */
+  SimulationProperties createSimulationProperties();
+
+  /**
    * Returns a new object of class '<em>Data Gateway</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

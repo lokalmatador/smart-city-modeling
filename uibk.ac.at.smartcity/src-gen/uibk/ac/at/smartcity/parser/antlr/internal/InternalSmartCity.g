@@ -134,6 +134,102 @@ ruleModel returns [EObject current=null]
 				}
 			)
 		)*
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getModelAccess().getSimulationPropertiesSimulationPropertiesParserRuleCall_3_0());
+				}
+				lv_simulationProperties_3_0=ruleSimulationProperties
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getModelRule());
+					}
+					set(
+						$current,
+						"simulationProperties",
+						lv_simulationProperties_3_0,
+						"uibk.ac.at.smartcity.SmartCity.SimulationProperties");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleSimulationProperties
+entryRuleSimulationProperties returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSimulationPropertiesRule()); }
+	iv_ruleSimulationProperties=ruleSimulationProperties
+	{ $current=$iv_ruleSimulationProperties.current; }
+	EOF;
+
+// Rule SimulationProperties
+ruleSimulationProperties returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='simulationProperties'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getSimulationPropertiesAccess().getSimulationPropertiesKeyword_0());
+		}
+		otherlv_1='{'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getSimulationPropertiesAccess().getLeftCurlyBracketKeyword_1());
+		}
+		otherlv_2='terminationTime'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getSimulationPropertiesAccess().getTerminationTimeKeyword_2());
+		}
+		(
+			(
+				lv_terminationTime_3_0=RULE_INT
+				{
+					newLeafNode(lv_terminationTime_3_0, grammarAccess.getSimulationPropertiesAccess().getTerminationTimeINTTerminalRuleCall_3_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSimulationPropertiesRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"terminationTime",
+						lv_terminationTime_3_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		(
+			otherlv_4='generatorFile'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getSimulationPropertiesAccess().getGeneratorFileKeyword_4_0());
+			}
+			(
+				(
+					lv_generatorFile_5_0=RULE_STRING
+					{
+						newLeafNode(lv_generatorFile_5_0, grammarAccess.getSimulationPropertiesAccess().getGeneratorFileSTRINGTerminalRuleCall_4_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getSimulationPropertiesRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"generatorFile",
+							lv_generatorFile_5_0,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+				)
+			)
+		)?
+		otherlv_6='}'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getSimulationPropertiesAccess().getRightCurlyBracketKeyword_5());
+		}
 	)
 ;
 

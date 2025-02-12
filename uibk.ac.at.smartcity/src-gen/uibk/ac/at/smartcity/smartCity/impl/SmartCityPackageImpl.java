@@ -25,6 +25,7 @@ import uibk.ac.at.smartcity.smartCity.Model;
 import uibk.ac.at.smartcity.smartCity.Node;
 import uibk.ac.at.smartcity.smartCity.Sensor;
 import uibk.ac.at.smartcity.smartCity.SensorType;
+import uibk.ac.at.smartcity.smartCity.SimulationProperties;
 import uibk.ac.at.smartcity.smartCity.SmartCityFactory;
 import uibk.ac.at.smartcity.smartCity.SmartCityPackage;
 import uibk.ac.at.smartcity.smartCity.TriggeredAction;
@@ -43,6 +44,13 @@ public class SmartCityPackageImpl extends EPackageImpl implements SmartCityPacka
    * @generated
    */
   private EClass modelEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass simulationPropertiesEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -253,6 +261,50 @@ public class SmartCityPackageImpl extends EPackageImpl implements SmartCityPacka
   public EReference getModel_GlobalLinks()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getModel_SimulationProperties()
+  {
+    return (EReference)modelEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSimulationProperties()
+  {
+    return simulationPropertiesEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSimulationProperties_TerminationTime()
+  {
+    return (EAttribute)simulationPropertiesEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSimulationProperties_GeneratorFile()
+  {
+    return (EAttribute)simulationPropertiesEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -763,6 +815,11 @@ public class SmartCityPackageImpl extends EPackageImpl implements SmartCityPacka
     createEReference(modelEClass, MODEL__NODES);
     createEReference(modelEClass, MODEL__DATA_GATEWAY);
     createEReference(modelEClass, MODEL__GLOBAL_LINKS);
+    createEReference(modelEClass, MODEL__SIMULATION_PROPERTIES);
+
+    simulationPropertiesEClass = createEClass(SIMULATION_PROPERTIES);
+    createEAttribute(simulationPropertiesEClass, SIMULATION_PROPERTIES__TERMINATION_TIME);
+    createEAttribute(simulationPropertiesEClass, SIMULATION_PROPERTIES__GENERATOR_FILE);
 
     dataGatewayEClass = createEClass(DATA_GATEWAY);
     createEReference(dataGatewayEClass, DATA_GATEWAY__DELAY);
@@ -860,6 +917,11 @@ public class SmartCityPackageImpl extends EPackageImpl implements SmartCityPacka
     initEReference(getModel_Nodes(), this.getNode(), null, "nodes", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_DataGateway(), this.getDataGateway(), null, "dataGateway", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_GlobalLinks(), this.getCommunicationLink(), null, "globalLinks", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_SimulationProperties(), this.getSimulationProperties(), null, "simulationProperties", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(simulationPropertiesEClass, SimulationProperties.class, "SimulationProperties", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSimulationProperties_TerminationTime(), ecorePackage.getEInt(), "terminationTime", null, 0, 1, SimulationProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSimulationProperties_GeneratorFile(), ecorePackage.getEString(), "generatorFile", null, 0, 1, SimulationProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(dataGatewayEClass, DataGateway.class, "DataGateway", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getDataGateway_Delay(), this.getDelayRange(), null, "delay", null, 0, 1, DataGateway.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

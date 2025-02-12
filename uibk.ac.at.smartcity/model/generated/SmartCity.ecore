@@ -9,6 +9,12 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="globalLinks" upperBound="-1"
         eType="#//CommunicationLink" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="simulationProperties" eType="#//SimulationProperties"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SimulationProperties">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="terminationTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="generatorFile" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataGateway" eSuperTypes="#//Linkable">
     <eStructuralFeatures xsi:type="ecore:EReference" name="delay" eType="#//DelayRange"

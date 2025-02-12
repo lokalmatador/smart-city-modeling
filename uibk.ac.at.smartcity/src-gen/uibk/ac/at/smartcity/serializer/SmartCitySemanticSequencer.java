@@ -23,6 +23,7 @@ import uibk.ac.at.smartcity.smartCity.DelayRange;
 import uibk.ac.at.smartcity.smartCity.Model;
 import uibk.ac.at.smartcity.smartCity.Node;
 import uibk.ac.at.smartcity.smartCity.Sensor;
+import uibk.ac.at.smartcity.smartCity.SimulationProperties;
 import uibk.ac.at.smartcity.smartCity.SmartCityPackage;
 import uibk.ac.at.smartcity.smartCity.TriggeredAction;
 
@@ -66,6 +67,9 @@ public class SmartCitySemanticSequencer extends AbstractDelegatingSemanticSequen
 				return; 
 			case SmartCityPackage.SENSOR:
 				sequence_Sensor(context, (Sensor) semanticObject); 
+				return; 
+			case SmartCityPackage.SIMULATION_PROPERTIES:
+				sequence_SimulationProperties(context, (SimulationProperties) semanticObject); 
 				return; 
 			case SmartCityPackage.TRIGGERED_ACTION:
 				sequence_TriggeredAction(context, (TriggeredAction) semanticObject); 
@@ -204,7 +208,7 @@ public class SmartCitySemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Model returns Model
 	 *
 	 * Constraint:
-	 *     (nodes+=Node* dataGateway=DataGateway globalLinks+=CommunicationLink*)
+	 *     (nodes+=Node* dataGateway=DataGateway globalLinks+=CommunicationLink* simulationProperties=SimulationProperties)
 	 * </pre>
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
@@ -262,6 +266,20 @@ public class SmartCitySemanticSequencer extends AbstractDelegatingSemanticSequen
 	 * </pre>
 	 */
 	protected void sequence_Sensor(ISerializationContext context, Sensor semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     SimulationProperties returns SimulationProperties
+	 *
+	 * Constraint:
+	 *     (terminationTime=INT generatorFile=STRING?)
+	 * </pre>
+	 */
+	protected void sequence_SimulationProperties(ISerializationContext context, SimulationProperties semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

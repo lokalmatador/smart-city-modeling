@@ -34,17 +34,21 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final RuleCall cDataGatewayDataGatewayParserRuleCall_1_0 = (RuleCall)cDataGatewayAssignment_1.eContents().get(0);
 		private final Assignment cGlobalLinksAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cGlobalLinksCommunicationLinkParserRuleCall_2_0 = (RuleCall)cGlobalLinksAssignment_2.eContents().get(0);
+		private final Assignment cSimulationPropertiesAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cSimulationPropertiesSimulationPropertiesParserRuleCall_3_0 = (RuleCall)cSimulationPropertiesAssignment_3.eContents().get(0);
 		
 		//Model:
 		//    nodes+=Node*
 		//    dataGateway=DataGateway
 		//    globalLinks+=CommunicationLink* // by default all the nodes will already be connected to the dataGateway
+		//    simulationProperties=SimulationProperties
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//nodes+=Node*
 		//dataGateway=DataGateway
-		//globalLinks+=CommunicationLink*
+		//globalLinks+=CommunicationLink* // by default all the nodes will already be connected to the dataGateway
+		//simulationProperties=SimulationProperties
 		public Group getGroup() { return cGroup; }
 		
 		//nodes+=Node*
@@ -64,6 +68,71 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 		
 		//CommunicationLink
 		public RuleCall getGlobalLinksCommunicationLinkParserRuleCall_2_0() { return cGlobalLinksCommunicationLinkParserRuleCall_2_0; }
+		
+		//// by default all the nodes will already be connected to the dataGateway
+		//   simulationProperties=SimulationProperties
+		public Assignment getSimulationPropertiesAssignment_3() { return cSimulationPropertiesAssignment_3; }
+		
+		//SimulationProperties
+		public RuleCall getSimulationPropertiesSimulationPropertiesParserRuleCall_3_0() { return cSimulationPropertiesSimulationPropertiesParserRuleCall_3_0; }
+	}
+	public class SimulationPropertiesElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uibk.ac.at.smartcity.SmartCity.SimulationProperties");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cSimulationPropertiesKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cTerminationTimeKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cTerminationTimeAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cTerminationTimeINTTerminalRuleCall_3_0 = (RuleCall)cTerminationTimeAssignment_3.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cGeneratorFileKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cGeneratorFileAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cGeneratorFileSTRINGTerminalRuleCall_4_1_0 = (RuleCall)cGeneratorFileAssignment_4_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//SimulationProperties:
+		//    'simulationProperties' '{'
+		//        'terminationTime' terminationTime=INT
+		//        ('generatorFile' generatorFile=STRING)?
+		//    '}'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'simulationProperties' '{'
+		//    'terminationTime' terminationTime=INT
+		//    ('generatorFile' generatorFile=STRING)?
+		//'}'
+		public Group getGroup() { return cGroup; }
+		
+		//'simulationProperties'
+		public Keyword getSimulationPropertiesKeyword_0() { return cSimulationPropertiesKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//'terminationTime'
+		public Keyword getTerminationTimeKeyword_2() { return cTerminationTimeKeyword_2; }
+		
+		//terminationTime=INT
+		public Assignment getTerminationTimeAssignment_3() { return cTerminationTimeAssignment_3; }
+		
+		//INT
+		public RuleCall getTerminationTimeINTTerminalRuleCall_3_0() { return cTerminationTimeINTTerminalRuleCall_3_0; }
+		
+		//('generatorFile' generatorFile=STRING)?
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//'generatorFile'
+		public Keyword getGeneratorFileKeyword_4_0() { return cGeneratorFileKeyword_4_0; }
+		
+		//generatorFile=STRING
+		public Assignment getGeneratorFileAssignment_4_1() { return cGeneratorFileAssignment_4_1; }
+		
+		//STRING
+		public RuleCall getGeneratorFileSTRINGTerminalRuleCall_4_1_0() { return cGeneratorFileSTRINGTerminalRuleCall_4_1_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 	public class DataGatewayElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uibk.ac.at.smartcity.SmartCity.DataGateway");
@@ -974,6 +1043,7 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	
 	private final ModelElements pModel;
+	private final SimulationPropertiesElements pSimulationProperties;
 	private final DataGatewayElements pDataGateway;
 	private final NodeElements pNode;
 	private final SensorElements pSensor;
@@ -1000,6 +1070,7 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
 		this.pModel = new ModelElements();
+		this.pSimulationProperties = new SimulationPropertiesElements();
 		this.pDataGateway = new DataGatewayElements();
 		this.pNode = new NodeElements();
 		this.pSensor = new SensorElements();
@@ -1048,6 +1119,7 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 	//    nodes+=Node*
 	//    dataGateway=DataGateway
 	//    globalLinks+=CommunicationLink* // by default all the nodes will already be connected to the dataGateway
+	//    simulationProperties=SimulationProperties
 	//;
 	public ModelElements getModelAccess() {
 		return pModel;
@@ -1055,6 +1127,20 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 	
 	public ParserRule getModelRule() {
 		return getModelAccess().getRule();
+	}
+	
+	//SimulationProperties:
+	//    'simulationProperties' '{'
+	//        'terminationTime' terminationTime=INT
+	//        ('generatorFile' generatorFile=STRING)?
+	//    '}'
+	//;
+	public SimulationPropertiesElements getSimulationPropertiesAccess() {
+		return pSimulationProperties;
+	}
+	
+	public ParserRule getSimulationPropertiesRule() {
+		return getSimulationPropertiesAccess().getRule();
 	}
 	
 	//DataGateway:

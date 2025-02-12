@@ -96,13 +96,59 @@ public interface SmartCityPackage extends EPackage
   int MODEL__GLOBAL_LINKS = 2;
 
   /**
+   * The feature id for the '<em><b>Simulation Properties</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL__SIMULATION_PROPERTIES = 3;
+
+  /**
    * The number of structural features of the '<em>Model</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL_FEATURE_COUNT = 3;
+  int MODEL_FEATURE_COUNT = 4;
+
+  /**
+   * The meta object id for the '{@link uibk.ac.at.smartcity.smartCity.impl.SimulationPropertiesImpl <em>Simulation Properties</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uibk.ac.at.smartcity.smartCity.impl.SimulationPropertiesImpl
+   * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getSimulationProperties()
+   * @generated
+   */
+  int SIMULATION_PROPERTIES = 1;
+
+  /**
+   * The feature id for the '<em><b>Termination Time</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMULATION_PROPERTIES__TERMINATION_TIME = 0;
+
+  /**
+   * The feature id for the '<em><b>Generator File</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMULATION_PROPERTIES__GENERATOR_FILE = 1;
+
+  /**
+   * The number of structural features of the '<em>Simulation Properties</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMULATION_PROPERTIES_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link uibk.ac.at.smartcity.smartCity.impl.LinkableImpl <em>Linkable</em>}' class.
@@ -112,7 +158,7 @@ public interface SmartCityPackage extends EPackage
    * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getLinkable()
    * @generated
    */
-  int LINKABLE = 7;
+  int LINKABLE = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -149,7 +195,7 @@ public interface SmartCityPackage extends EPackage
    * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getDataGateway()
    * @generated
    */
-  int DATA_GATEWAY = 1;
+  int DATA_GATEWAY = 2;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -195,7 +241,7 @@ public interface SmartCityPackage extends EPackage
    * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getNode()
    * @generated
    */
-  int NODE = 2;
+  int NODE = 3;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -286,7 +332,7 @@ public interface SmartCityPackage extends EPackage
    * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getSensor()
    * @generated
    */
-  int SENSOR = 3;
+  int SENSOR = 4;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -350,7 +396,7 @@ public interface SmartCityPackage extends EPackage
    * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getCommunicationLink()
    * @generated
    */
-  int COMMUNICATION_LINK = 4;
+  int COMMUNICATION_LINK = 5;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -414,7 +460,7 @@ public interface SmartCityPackage extends EPackage
    * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getController()
    * @generated
    */
-  int CONTROLLER = 5;
+  int CONTROLLER = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -478,7 +524,7 @@ public interface SmartCityPackage extends EPackage
    * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getModule()
    * @generated
    */
-  int MODULE = 6;
+  int MODULE = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -533,7 +579,7 @@ public interface SmartCityPackage extends EPackage
    * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getDelayRange()
    * @generated
    */
-  int DELAY_RANGE = 8;
+  int DELAY_RANGE = 9;
 
   /**
    * The feature id for the '<em><b>Min</b></em>' attribute.
@@ -570,7 +616,7 @@ public interface SmartCityPackage extends EPackage
    * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getCyclicAction()
    * @generated
    */
-  int CYCLIC_ACTION = 9;
+  int CYCLIC_ACTION = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -616,7 +662,7 @@ public interface SmartCityPackage extends EPackage
    * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getTriggeredAction()
    * @generated
    */
-  int TRIGGERED_ACTION = 10;
+  int TRIGGERED_ACTION = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -644,7 +690,7 @@ public interface SmartCityPackage extends EPackage
    * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getSensorType()
    * @generated
    */
-  int SENSOR_TYPE = 11;
+  int SENSOR_TYPE = 12;
 
   /**
    * The meta object id for the '{@link uibk.ac.at.smartcity.smartCity.ControllerType <em>Controller Type</em>}' enum.
@@ -654,7 +700,7 @@ public interface SmartCityPackage extends EPackage
    * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getControllerType()
    * @generated
    */
-  int CONTROLLER_TYPE = 12;
+  int CONTROLLER_TYPE = 13;
 
   /**
    * The meta object id for the '{@link uibk.ac.at.smartcity.smartCity.LinkType <em>Link Type</em>}' enum.
@@ -664,7 +710,7 @@ public interface SmartCityPackage extends EPackage
    * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getLinkType()
    * @generated
    */
-  int LINK_TYPE = 13;
+  int LINK_TYPE = 14;
 
   /**
    * The meta object id for the '{@link uibk.ac.at.smartcity.smartCity.DataType <em>Data Type</em>}' enum.
@@ -674,7 +720,7 @@ public interface SmartCityPackage extends EPackage
    * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getDataType()
    * @generated
    */
-  int DATA_TYPE = 14;
+  int DATA_TYPE = 15;
 
   /**
    * The meta object id for the '{@link uibk.ac.at.smartcity.smartCity.FrequencyUnit <em>Frequency Unit</em>}' enum.
@@ -684,7 +730,7 @@ public interface SmartCityPackage extends EPackage
    * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getFrequencyUnit()
    * @generated
    */
-  int FREQUENCY_UNIT = 15;
+  int FREQUENCY_UNIT = 16;
 
 
   /**
@@ -729,6 +775,49 @@ public interface SmartCityPackage extends EPackage
    * @generated
    */
   EReference getModel_GlobalLinks();
+
+  /**
+   * Returns the meta object for the containment reference '{@link uibk.ac.at.smartcity.smartCity.Model#getSimulationProperties <em>Simulation Properties</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Simulation Properties</em>'.
+   * @see uibk.ac.at.smartcity.smartCity.Model#getSimulationProperties()
+   * @see #getModel()
+   * @generated
+   */
+  EReference getModel_SimulationProperties();
+
+  /**
+   * Returns the meta object for class '{@link uibk.ac.at.smartcity.smartCity.SimulationProperties <em>Simulation Properties</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Simulation Properties</em>'.
+   * @see uibk.ac.at.smartcity.smartCity.SimulationProperties
+   * @generated
+   */
+  EClass getSimulationProperties();
+
+  /**
+   * Returns the meta object for the attribute '{@link uibk.ac.at.smartcity.smartCity.SimulationProperties#getTerminationTime <em>Termination Time</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Termination Time</em>'.
+   * @see uibk.ac.at.smartcity.smartCity.SimulationProperties#getTerminationTime()
+   * @see #getSimulationProperties()
+   * @generated
+   */
+  EAttribute getSimulationProperties_TerminationTime();
+
+  /**
+   * Returns the meta object for the attribute '{@link uibk.ac.at.smartcity.smartCity.SimulationProperties#getGeneratorFile <em>Generator File</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Generator File</em>'.
+   * @see uibk.ac.at.smartcity.smartCity.SimulationProperties#getGeneratorFile()
+   * @see #getSimulationProperties()
+   * @generated
+   */
+  EAttribute getSimulationProperties_GeneratorFile();
 
   /**
    * Returns the meta object for class '{@link uibk.ac.at.smartcity.smartCity.DataGateway <em>Data Gateway</em>}'.
@@ -1244,6 +1333,40 @@ public interface SmartCityPackage extends EPackage
      * @generated
      */
     EReference MODEL__GLOBAL_LINKS = eINSTANCE.getModel_GlobalLinks();
+
+    /**
+     * The meta object literal for the '<em><b>Simulation Properties</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODEL__SIMULATION_PROPERTIES = eINSTANCE.getModel_SimulationProperties();
+
+    /**
+     * The meta object literal for the '{@link uibk.ac.at.smartcity.smartCity.impl.SimulationPropertiesImpl <em>Simulation Properties</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uibk.ac.at.smartcity.smartCity.impl.SimulationPropertiesImpl
+     * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getSimulationProperties()
+     * @generated
+     */
+    EClass SIMULATION_PROPERTIES = eINSTANCE.getSimulationProperties();
+
+    /**
+     * The meta object literal for the '<em><b>Termination Time</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SIMULATION_PROPERTIES__TERMINATION_TIME = eINSTANCE.getSimulationProperties_TerminationTime();
+
+    /**
+     * The meta object literal for the '<em><b>Generator File</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SIMULATION_PROPERTIES__GENERATOR_FILE = eINSTANCE.getSimulationProperties_GeneratorFile();
 
     /**
      * The meta object literal for the '{@link uibk.ac.at.smartcity.smartCity.impl.DataGatewayImpl <em>Data Gateway</em>}' class.

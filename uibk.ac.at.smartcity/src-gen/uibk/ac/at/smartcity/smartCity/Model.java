@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link uibk.ac.at.smartcity.smartCity.Model#getNodes <em>Nodes</em>}</li>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.Model#getDataGateway <em>Data Gateway</em>}</li>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.Model#getGlobalLinks <em>Global Links</em>}</li>
+ *   <li>{@link uibk.ac.at.smartcity.smartCity.Model#getSimulationProperties <em>Simulation Properties</em>}</li>
  * </ul>
  *
  * @see uibk.ac.at.smartcity.smartCity.SmartCityPackage#getModel()
@@ -72,5 +73,27 @@ public interface Model extends EObject
    * @generated
    */
   EList<CommunicationLink> getGlobalLinks();
+
+  /**
+   * Returns the value of the '<em><b>Simulation Properties</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Simulation Properties</em>' containment reference.
+   * @see #setSimulationProperties(SimulationProperties)
+   * @see uibk.ac.at.smartcity.smartCity.SmartCityPackage#getModel_SimulationProperties()
+   * @model containment="true"
+   * @generated
+   */
+  SimulationProperties getSimulationProperties();
+
+  /**
+   * Sets the value of the '{@link uibk.ac.at.smartcity.smartCity.Model#getSimulationProperties <em>Simulation Properties</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Simulation Properties</em>' containment reference.
+   * @see #getSimulationProperties()
+   * @generated
+   */
+  void setSimulationProperties(SimulationProperties value);
 
 } // Model

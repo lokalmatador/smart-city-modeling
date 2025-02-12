@@ -26,6 +26,7 @@ import uibk.ac.at.smartcity.smartCity.Model;
 import uibk.ac.at.smartcity.smartCity.Node;
 import uibk.ac.at.smartcity.smartCity.Sensor;
 import uibk.ac.at.smartcity.smartCity.SensorType;
+import uibk.ac.at.smartcity.smartCity.SimulationProperties;
 import uibk.ac.at.smartcity.smartCity.SmartCityFactory;
 import uibk.ac.at.smartcity.smartCity.SmartCityPackage;
 import uibk.ac.at.smartcity.smartCity.TriggeredAction;
@@ -83,6 +84,7 @@ public class SmartCityFactoryImpl extends EFactoryImpl implements SmartCityFacto
     switch (eClass.getClassifierID())
     {
       case SmartCityPackage.MODEL: return createModel();
+      case SmartCityPackage.SIMULATION_PROPERTIES: return createSimulationProperties();
       case SmartCityPackage.DATA_GATEWAY: return createDataGateway();
       case SmartCityPackage.NODE: return createNode();
       case SmartCityPackage.SENSOR: return createSensor();
@@ -158,6 +160,18 @@ public class SmartCityFactoryImpl extends EFactoryImpl implements SmartCityFacto
   {
     ModelImpl model = new ModelImpl();
     return model;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SimulationProperties createSimulationProperties()
+  {
+    SimulationPropertiesImpl simulationProperties = new SimulationPropertiesImpl();
+    return simulationProperties;
   }
 
   /**

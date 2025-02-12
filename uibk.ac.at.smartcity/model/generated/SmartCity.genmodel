@@ -48,6 +48,11 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//Model/nodes"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//Model/dataGateway"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//Model/globalLinks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//Model/simulationProperties"/>
+    </genClasses>
+    <genClasses ecoreClass="SmartCity.ecore#//SimulationProperties">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//SimulationProperties/terminationTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//SimulationProperties/generatorFile"/>
     </genClasses>
     <genClasses ecoreClass="SmartCity.ecore#//DataGateway">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//DataGateway/delay"/>

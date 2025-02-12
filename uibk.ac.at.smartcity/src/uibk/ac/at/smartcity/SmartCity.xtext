@@ -6,6 +6,14 @@ Model:
 	nodes+=Node*
 	dataGateway=DataGateway
 	globalLinks+=CommunicationLink* // by default all the nodes will already be connected to the dataGateway
+	simulationProperties=SimulationProperties
+;
+
+SimulationProperties:
+	'simulationProperties' '{'
+		'terminationTime' terminationTime=INT
+		('generatorFile' generatorFile=STRING)?
+	'}'
 ;
 
 DataGateway:
