@@ -2083,7 +2083,7 @@ public class SmartCityGenerator extends AbstractGenerator {
     _builder.append("def generate_value(self, sensor_name):");
     _builder.newLine();
     _builder.append("        ");
-    _builder.append("return self.generator.value(sensor_name)");
+    _builder.append("return self.generator.generate_value(sensor_name)");
     _builder.newLine();
     _builder.newLine();
     _builder.append("    ");
@@ -2119,7 +2119,7 @@ public class SmartCityGenerator extends AbstractGenerator {
     _builder.newLine();
     _builder.newLine();
     _builder.append("    ");
-    _builder.append("def value(self, sensor_name):");
+    _builder.append("def generate_value(self, sensor_name):");
     _builder.newLine();
     _builder.append("        ");
     _builder.append("logging.debug(\'Generating value for sensor: %s\', sensor_name)");
