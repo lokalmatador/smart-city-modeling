@@ -829,13 +829,13 @@ class SmartCityGenerator extends AbstractGenerator {
 		
 		
 		    def generate_value(self, sensor_name):
-		        return self.generator.generate_value(sensor_name)
+		        return self.generator.value(sensor_name)
 		
 		    def generate_pulse_value(self, sensor_name):
-		        return self.generator.generate_pulse_value(sensor_name)
+		        return self.generator.pulse_value(sensor_name)
 		
 		    def generate_camera_value(self, sensor_name):
-		        return self.generator.generate_camera_value(sensor_name)
+		        return self.generator.camera_value(sensor_name)
 		
 		class RandomDataGenerator:
 		    def __init__(self, config_file):
@@ -844,7 +844,7 @@ class SmartCityGenerator extends AbstractGenerator {
 		            self.config = json.load(file)
 		        logging.info('Loaded configuration from %s', config_file)
 		
-		    def generate_value(self, sensor_name):
+		    def value(self, sensor_name):
 		        logging.debug('Generating value for sensor: %s', sensor_name)
 		        sensor_config = self.config[sensor_name]
 		        min_value = sensor_config['min']
@@ -867,12 +867,12 @@ class SmartCityGenerator extends AbstractGenerator {
 		
 		        return sensor_config['current_value']
 		    
-		    def generate_pulse_value(self, sensor_name):
+		    def pulse_value(self, sensor_name):
 		        sensor_config = self.config[sensor_name]
 		        sensor_config['current_value'] = random.choice([0, 1])
 		        return sensor_config['current_value']
 		    
-		    def generate_camera_value(self, sensor_name):
+		    def camera_value(self, sensor_name):
 		        logging.debug('Generating camera value for sensor: %s', sensor_name)
 		        sensor_config = self.config[sensor_name]
 		        if 'current_value' not in sensor_config:

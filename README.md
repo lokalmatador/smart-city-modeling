@@ -27,4 +27,4 @@ The execution time of the code generator scales well for larger input files, as 
 | 8× | 565 | 1668, 1659, 1630 | 4870 | Eightfold increase
 | 32× | 2245 | 2164, 2186, 2131 | 19030 | Stress Test: 32×
 
-The python script to generate these large input files can be found in [evaluation](/evaluation).
+The python script to generate the input files can be found in [evaluation](/evaluation).
