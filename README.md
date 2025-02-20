@@ -28,3 +28,10 @@ The execution time of the code generator scales well for larger input files, as 
 | 32× | 2245 | 2164, 2186, 2131 | 19030 | Stress Test: 32×
 
 The python script to generate the input files can be found in [evaluation](/evaluation).
+
+## Instructions
+
+1. [Download](https://eclipse.dev/Xtext/)
+2. Download and import projects
+3. Follow these [guidelines](https://blogs.itemis.com/en/get-started-with-xtext-and-eclipse-in-5-minutes) from "Generating the language infrastructure" on, an example model that you can import is available in the repository (example.smartcity)
+4. To generate executable [Python PDEVS](https://msdl.uantwerpen.be/documentation/PythonPDEVS/index.html) models ....
