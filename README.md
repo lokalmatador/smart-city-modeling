@@ -32,6 +32,6 @@ The python script to generate the input files can be found in [evaluation](/eval
 ## Instructions
 
 1. [Download](https://eclipse.dev/Xtext/) Eclipse with Xtext
-2. Download and import projects
+2. Check out/download this repository and import the projects in Eclipse
 3. Follow these [guidelines](https://blogs.itemis.com/en/get-started-with-xtext-and-eclipse-in-5-minutes) from "Generating the language infrastructure" on, an example model that you can import is available in the repository (example.smartcity)
 4. To generate executable [Python PDEVS](https://msdl.uantwerpen.be/documentation/PythonPDEVS/index.html) models ....
