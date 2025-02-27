@@ -34,4 +34,9 @@ The python script to generate the input files can be found in [evaluation](/eval
 1. [Download](https://eclipse.dev/Xtext/) Eclipse with Xtext
 2. Check out/download this repository and import the projects in Eclipse
 3. Follow these [guidelines](https://blogs.itemis.com/en/get-started-with-xtext-and-eclipse-in-5-minutes) from "Generating the language infrastructure" on, an example model that you can import is available in the repository (example.smartcity)
-4. To generate executable [Python PDEVS](https://msdl.uantwerpen.be/documentation/PythonPDEVS/index.html) models ....
+4. To generate executable [Python PDEVS](https://msdl.uantwerpen.be/documentation/PythonPDEVS/index.html) models directly, run the *SmartCityGeneratorLauncher.java* class using your preffered method.
+The easisest option is running from Eclipse:
+    1. Right-click on the *SmartCityGeneratorLauncher.java* file.
+    2. Select **Run As -> Java Application**.
+    3. In the Arguments tab, provide the required Arguments: `<inputfile.smartcity> <output-directory>`
+    4. Click **Run** to execute the generator.
