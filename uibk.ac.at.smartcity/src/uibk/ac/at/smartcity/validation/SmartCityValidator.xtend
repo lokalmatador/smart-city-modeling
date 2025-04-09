@@ -61,37 +61,37 @@ class SmartCityValidator extends AbstractSmartCityValidator {
 	@Check
 	def checkSensorNamesAreLowerCase(Sensor sensor) {
 		if (sensor.name.charAt(0).upperCase) {
-				warning(
-					"Sensor name should start with a lower case letter",					
-					SmartCityPackage.Literals.LINKABLE__NAME,
-					INVALID_ATTRIBUTE_NAME,
-					sensor.name
-				)
-			}
+			warning(
+				"Sensor name should start with a lower case letter",
+				SmartCityPackage.Literals.LINKABLE__NAME,
+				INVALID_ATTRIBUTE_NAME,
+				sensor.name
+			)
+		}
 	}
-	
+
 	@Check
 	def checkModuleNamesAreLowerCase(Module module) {
 		if (module.name.charAt(0).upperCase) {
-				warning(
-					"Module name should start with a lower case letter",					
-					SmartCityPackage.Literals.LINKABLE__NAME,
-					INVALID_ATTRIBUTE_NAME,
-					module.name
-				)
-			}
+			warning(
+				"Module name should start with a lower case letter",
+				SmartCityPackage.Literals.LINKABLE__NAME,
+				INVALID_ATTRIBUTE_NAME,
+				module.name
+			)
+		}
 	}
-		
+
 	@Check
 	def checkControllerNamesAreLowerCase(Controller controller) {
 		if (controller.name.charAt(0).upperCase) {
-				warning(
-					"Controller name should start with a lower case letter",					
-					SmartCityPackage.Literals.LINKABLE__NAME,
-					INVALID_ATTRIBUTE_NAME,
-					controller.name
-				)
-			}
+			warning(
+				"Controller name should start with a lower case letter",
+				SmartCityPackage.Literals.LINKABLE__NAME,
+				INVALID_ATTRIBUTE_NAME,
+				controller.name
+			)
+		}
 	}
 
 	// Simulation Properties checks:
@@ -168,6 +168,31 @@ class SmartCityValidator extends AbstractSmartCityValidator {
 					SmartCityPackage.Literals.COMMUNICATION_LINK__DATATYPE
 				)
 			}
+		}
+	}
+
+	// Duplicates with different names
+	@Check
+	def checkCommunicationLinkDuplicates(CommunicationLink link) {
+		// First, get the containing Node
+		val node = link.eContainer as Node
+
+		if (node === null) {
+			return
+		}
+
+		val duplicates = node.links.filter [ otherLink |
+			// Skip comparison with itself
+			otherLink !== link && // Check if origin, destination and datatype match
+			otherLink.type == link.type && otherLink.origin == link.origin &&
+				otherLink.destination == link.destination && otherLink.datatype == link.datatype
+		]
+
+		if (!duplicates.empty) {
+			error(
+				"Duplicate communication link", // both of the duplicates will show this message
+				null // marks the whole link
+			)
 		}
 	}
 }

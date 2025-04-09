@@ -5,8 +5,11 @@ package uibk.ac.at.smartcity.validation;
 
 import java.io.File;
 import java.util.Objects;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.xbase.lib.Conversions;
+import org.eclipse.xtext.xbase.lib.Functions.Function1;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
 import uibk.ac.at.smartcity.smartCity.CommunicationLink;
 import uibk.ac.at.smartcity.smartCity.Controller;
@@ -174,6 +177,28 @@ public class SmartCityValidator extends AbstractSmartCityValidator {
           "For links from sensors the link data type must match the sensor type", 
           SmartCityPackage.Literals.COMMUNICATION_LINK__DATATYPE);
       }
+    }
+  }
+
+  @Check
+  public void checkCommunicationLinkDuplicates(final CommunicationLink link) {
+    EObject _eContainer = link.eContainer();
+    final Node node = ((Node) _eContainer);
+    if ((node == null)) {
+      return;
+    }
+    final Function1<CommunicationLink, Boolean> _function = (CommunicationLink otherLink) -> {
+      return Boolean.valueOf((((((otherLink != link) && 
+        Objects.equals(otherLink.getType(), link.getType())) && Objects.equals(otherLink.getOrigin(), link.getOrigin())) && 
+        Objects.equals(otherLink.getDestination(), link.getDestination())) && Objects.equals(otherLink.getDatatype(), link.getDatatype())));
+    };
+    final Iterable<CommunicationLink> duplicates = IterableExtensions.<CommunicationLink>filter(node.getLinks(), _function);
+    boolean _isEmpty = IterableExtensions.isEmpty(duplicates);
+    boolean _not = (!_isEmpty);
+    if (_not) {
+      this.error(
+        "Duplicate communication link", 
+        null);
     }
   }
 }
