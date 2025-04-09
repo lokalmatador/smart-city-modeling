@@ -3,6 +3,7 @@
  */
 package uibk.ac.at.smartcity.generator
 
+import java.util.ArrayList
 import java.util.HashMap
 import java.util.HashSet
 import org.eclipse.emf.ecore.resource.Resource
@@ -10,15 +11,13 @@ import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import uibk.ac.at.smartcity.smartCity.CommunicationLink
-import uibk.ac.at.smartcity.smartCity.Node
-import uibk.ac.at.smartcity.smartCity.Sensor
-import java.util.ArrayList
-import uibk.ac.at.smartcity.smartCity.SensorType
-import uibk.ac.at.smartcity.smartCity.FrequencyUnit
 import uibk.ac.at.smartcity.smartCity.ControllerType
 import uibk.ac.at.smartcity.smartCity.DataGateway
+import uibk.ac.at.smartcity.smartCity.Frequency
+import uibk.ac.at.smartcity.smartCity.Node
+import uibk.ac.at.smartcity.smartCity.Sensor
+import uibk.ac.at.smartcity.smartCity.SensorType
 import uibk.ac.at.smartcity.smartCity.SimulationProperties
-
 
 // TODO Adjust the sensors
 
@@ -63,25 +62,25 @@ class SmartCityGenerator extends AbstractGenerator {
 	}
 
 	
-	def double frequencyToSeconds(int value, FrequencyUnit unit){
-		switch (unit) {
+	def double frequencyToSeconds(Frequency frequency){
+		switch (frequency.unit) {
 			case DAYS: {
-				return value * 24 * 60 * 60
+				return frequency.value * 24 * 60 * 60
 			}
 			case HOURS: {
-				return value * 60 * 60
+				return frequency.value * 60 * 60
 			}
 			case SECONDS: {
-				return value
+				return frequency.value
 			}
 			case HERTZ: {
-				return 1/value
+				return 1/frequency.value
 			}
 			case INF: {
 				return -1
 			}
 			default: {
-				return value
+				return frequency.value
 			}
 		}
 	}
@@ -187,7 +186,7 @@ class SmartCityGenerator extends AbstractGenerator {
 			nodeLinks.add(link)
 			distinctLinkTypes.add(link.type)
 		}
-		val postFrequency = frequencyToSeconds(node.freqValue, node.freqUnit)
+		val postFrequency = frequencyToSeconds(node.frequency)
 		val boolean knownController = node.controller.type != ControllerType.OTHER
 		
 		'''

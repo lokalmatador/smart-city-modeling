@@ -731,12 +731,89 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
     // $ANTLR end "ruleModule"
 
 
+    // $ANTLR start "entryRuleFrequency"
+    // InternalSmartCity.g:253:1: entryRuleFrequency : ruleFrequency EOF ;
+    public final void entryRuleFrequency() throws RecognitionException {
+        try {
+            // InternalSmartCity.g:254:1: ( ruleFrequency EOF )
+            // InternalSmartCity.g:255:1: ruleFrequency EOF
+            {
+             before(grammarAccess.getFrequencyRule()); 
+            pushFollow(FOLLOW_1);
+            ruleFrequency();
+
+            state._fsp--;
+
+             after(grammarAccess.getFrequencyRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleFrequency"
+
+
+    // $ANTLR start "ruleFrequency"
+    // InternalSmartCity.g:262:1: ruleFrequency : ( ( rule__Frequency__Group__0 ) ) ;
+    public final void ruleFrequency() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSmartCity.g:266:2: ( ( ( rule__Frequency__Group__0 ) ) )
+            // InternalSmartCity.g:267:2: ( ( rule__Frequency__Group__0 ) )
+            {
+            // InternalSmartCity.g:267:2: ( ( rule__Frequency__Group__0 ) )
+            // InternalSmartCity.g:268:3: ( rule__Frequency__Group__0 )
+            {
+             before(grammarAccess.getFrequencyAccess().getGroup()); 
+            // InternalSmartCity.g:269:3: ( rule__Frequency__Group__0 )
+            // InternalSmartCity.g:269:4: rule__Frequency__Group__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__Frequency__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getFrequencyAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleFrequency"
+
+
     // $ANTLR start "entryRuleDelayRange"
-    // InternalSmartCity.g:253:1: entryRuleDelayRange : ruleDelayRange EOF ;
+    // InternalSmartCity.g:278:1: entryRuleDelayRange : ruleDelayRange EOF ;
     public final void entryRuleDelayRange() throws RecognitionException {
         try {
-            // InternalSmartCity.g:254:1: ( ruleDelayRange EOF )
-            // InternalSmartCity.g:255:1: ruleDelayRange EOF
+            // InternalSmartCity.g:279:1: ( ruleDelayRange EOF )
+            // InternalSmartCity.g:280:1: ruleDelayRange EOF
             {
              before(grammarAccess.getDelayRangeRule()); 
             pushFollow(FOLLOW_1);
@@ -762,21 +839,21 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "ruleDelayRange"
-    // InternalSmartCity.g:262:1: ruleDelayRange : ( ( rule__DelayRange__Group__0 ) ) ;
+    // InternalSmartCity.g:287:1: ruleDelayRange : ( ( rule__DelayRange__Group__0 ) ) ;
     public final void ruleDelayRange() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:266:2: ( ( ( rule__DelayRange__Group__0 ) ) )
-            // InternalSmartCity.g:267:2: ( ( rule__DelayRange__Group__0 ) )
+            // InternalSmartCity.g:291:2: ( ( ( rule__DelayRange__Group__0 ) ) )
+            // InternalSmartCity.g:292:2: ( ( rule__DelayRange__Group__0 ) )
             {
-            // InternalSmartCity.g:267:2: ( ( rule__DelayRange__Group__0 ) )
-            // InternalSmartCity.g:268:3: ( rule__DelayRange__Group__0 )
+            // InternalSmartCity.g:292:2: ( ( rule__DelayRange__Group__0 ) )
+            // InternalSmartCity.g:293:3: ( rule__DelayRange__Group__0 )
             {
              before(grammarAccess.getDelayRangeAccess().getGroup()); 
-            // InternalSmartCity.g:269:3: ( rule__DelayRange__Group__0 )
-            // InternalSmartCity.g:269:4: rule__DelayRange__Group__0
+            // InternalSmartCity.g:294:3: ( rule__DelayRange__Group__0 )
+            // InternalSmartCity.g:294:4: rule__DelayRange__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__DelayRange__Group__0();
@@ -809,11 +886,11 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "entryRuleCyclicAction"
-    // InternalSmartCity.g:278:1: entryRuleCyclicAction : ruleCyclicAction EOF ;
+    // InternalSmartCity.g:303:1: entryRuleCyclicAction : ruleCyclicAction EOF ;
     public final void entryRuleCyclicAction() throws RecognitionException {
         try {
-            // InternalSmartCity.g:279:1: ( ruleCyclicAction EOF )
-            // InternalSmartCity.g:280:1: ruleCyclicAction EOF
+            // InternalSmartCity.g:304:1: ( ruleCyclicAction EOF )
+            // InternalSmartCity.g:305:1: ruleCyclicAction EOF
             {
              before(grammarAccess.getCyclicActionRule()); 
             pushFollow(FOLLOW_1);
@@ -839,21 +916,21 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "ruleCyclicAction"
-    // InternalSmartCity.g:287:1: ruleCyclicAction : ( ( rule__CyclicAction__Group__0 ) ) ;
+    // InternalSmartCity.g:312:1: ruleCyclicAction : ( ( rule__CyclicAction__Group__0 ) ) ;
     public final void ruleCyclicAction() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:291:2: ( ( ( rule__CyclicAction__Group__0 ) ) )
-            // InternalSmartCity.g:292:2: ( ( rule__CyclicAction__Group__0 ) )
+            // InternalSmartCity.g:316:2: ( ( ( rule__CyclicAction__Group__0 ) ) )
+            // InternalSmartCity.g:317:2: ( ( rule__CyclicAction__Group__0 ) )
             {
-            // InternalSmartCity.g:292:2: ( ( rule__CyclicAction__Group__0 ) )
-            // InternalSmartCity.g:293:3: ( rule__CyclicAction__Group__0 )
+            // InternalSmartCity.g:317:2: ( ( rule__CyclicAction__Group__0 ) )
+            // InternalSmartCity.g:318:3: ( rule__CyclicAction__Group__0 )
             {
              before(grammarAccess.getCyclicActionAccess().getGroup()); 
-            // InternalSmartCity.g:294:3: ( rule__CyclicAction__Group__0 )
-            // InternalSmartCity.g:294:4: rule__CyclicAction__Group__0
+            // InternalSmartCity.g:319:3: ( rule__CyclicAction__Group__0 )
+            // InternalSmartCity.g:319:4: rule__CyclicAction__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__CyclicAction__Group__0();
@@ -886,11 +963,11 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "entryRuleTriggeredAction"
-    // InternalSmartCity.g:303:1: entryRuleTriggeredAction : ruleTriggeredAction EOF ;
+    // InternalSmartCity.g:328:1: entryRuleTriggeredAction : ruleTriggeredAction EOF ;
     public final void entryRuleTriggeredAction() throws RecognitionException {
         try {
-            // InternalSmartCity.g:304:1: ( ruleTriggeredAction EOF )
-            // InternalSmartCity.g:305:1: ruleTriggeredAction EOF
+            // InternalSmartCity.g:329:1: ( ruleTriggeredAction EOF )
+            // InternalSmartCity.g:330:1: ruleTriggeredAction EOF
             {
              before(grammarAccess.getTriggeredActionRule()); 
             pushFollow(FOLLOW_1);
@@ -916,21 +993,21 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "ruleTriggeredAction"
-    // InternalSmartCity.g:312:1: ruleTriggeredAction : ( ( rule__TriggeredAction__Group__0 ) ) ;
+    // InternalSmartCity.g:337:1: ruleTriggeredAction : ( ( rule__TriggeredAction__Group__0 ) ) ;
     public final void ruleTriggeredAction() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:316:2: ( ( ( rule__TriggeredAction__Group__0 ) ) )
-            // InternalSmartCity.g:317:2: ( ( rule__TriggeredAction__Group__0 ) )
+            // InternalSmartCity.g:341:2: ( ( ( rule__TriggeredAction__Group__0 ) ) )
+            // InternalSmartCity.g:342:2: ( ( rule__TriggeredAction__Group__0 ) )
             {
-            // InternalSmartCity.g:317:2: ( ( rule__TriggeredAction__Group__0 ) )
-            // InternalSmartCity.g:318:3: ( rule__TriggeredAction__Group__0 )
+            // InternalSmartCity.g:342:2: ( ( rule__TriggeredAction__Group__0 ) )
+            // InternalSmartCity.g:343:3: ( rule__TriggeredAction__Group__0 )
             {
              before(grammarAccess.getTriggeredActionAccess().getGroup()); 
-            // InternalSmartCity.g:319:3: ( rule__TriggeredAction__Group__0 )
-            // InternalSmartCity.g:319:4: rule__TriggeredAction__Group__0
+            // InternalSmartCity.g:344:3: ( rule__TriggeredAction__Group__0 )
+            // InternalSmartCity.g:344:4: rule__TriggeredAction__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__TriggeredAction__Group__0();
@@ -963,21 +1040,21 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "ruleSensorType"
-    // InternalSmartCity.g:328:1: ruleSensorType : ( ( rule__SensorType__Alternatives ) ) ;
+    // InternalSmartCity.g:353:1: ruleSensorType : ( ( rule__SensorType__Alternatives ) ) ;
     public final void ruleSensorType() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:332:1: ( ( ( rule__SensorType__Alternatives ) ) )
-            // InternalSmartCity.g:333:2: ( ( rule__SensorType__Alternatives ) )
+            // InternalSmartCity.g:357:1: ( ( ( rule__SensorType__Alternatives ) ) )
+            // InternalSmartCity.g:358:2: ( ( rule__SensorType__Alternatives ) )
             {
-            // InternalSmartCity.g:333:2: ( ( rule__SensorType__Alternatives ) )
-            // InternalSmartCity.g:334:3: ( rule__SensorType__Alternatives )
+            // InternalSmartCity.g:358:2: ( ( rule__SensorType__Alternatives ) )
+            // InternalSmartCity.g:359:3: ( rule__SensorType__Alternatives )
             {
              before(grammarAccess.getSensorTypeAccess().getAlternatives()); 
-            // InternalSmartCity.g:335:3: ( rule__SensorType__Alternatives )
-            // InternalSmartCity.g:335:4: rule__SensorType__Alternatives
+            // InternalSmartCity.g:360:3: ( rule__SensorType__Alternatives )
+            // InternalSmartCity.g:360:4: rule__SensorType__Alternatives
             {
             pushFollow(FOLLOW_2);
             rule__SensorType__Alternatives();
@@ -1010,21 +1087,21 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "ruleControllerType"
-    // InternalSmartCity.g:344:1: ruleControllerType : ( ( rule__ControllerType__Alternatives ) ) ;
+    // InternalSmartCity.g:369:1: ruleControllerType : ( ( rule__ControllerType__Alternatives ) ) ;
     public final void ruleControllerType() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:348:1: ( ( ( rule__ControllerType__Alternatives ) ) )
-            // InternalSmartCity.g:349:2: ( ( rule__ControllerType__Alternatives ) )
+            // InternalSmartCity.g:373:1: ( ( ( rule__ControllerType__Alternatives ) ) )
+            // InternalSmartCity.g:374:2: ( ( rule__ControllerType__Alternatives ) )
             {
-            // InternalSmartCity.g:349:2: ( ( rule__ControllerType__Alternatives ) )
-            // InternalSmartCity.g:350:3: ( rule__ControllerType__Alternatives )
+            // InternalSmartCity.g:374:2: ( ( rule__ControllerType__Alternatives ) )
+            // InternalSmartCity.g:375:3: ( rule__ControllerType__Alternatives )
             {
              before(grammarAccess.getControllerTypeAccess().getAlternatives()); 
-            // InternalSmartCity.g:351:3: ( rule__ControllerType__Alternatives )
-            // InternalSmartCity.g:351:4: rule__ControllerType__Alternatives
+            // InternalSmartCity.g:376:3: ( rule__ControllerType__Alternatives )
+            // InternalSmartCity.g:376:4: rule__ControllerType__Alternatives
             {
             pushFollow(FOLLOW_2);
             rule__ControllerType__Alternatives();
@@ -1057,21 +1134,21 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "ruleLinkType"
-    // InternalSmartCity.g:360:1: ruleLinkType : ( ( rule__LinkType__Alternatives ) ) ;
+    // InternalSmartCity.g:385:1: ruleLinkType : ( ( rule__LinkType__Alternatives ) ) ;
     public final void ruleLinkType() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:364:1: ( ( ( rule__LinkType__Alternatives ) ) )
-            // InternalSmartCity.g:365:2: ( ( rule__LinkType__Alternatives ) )
+            // InternalSmartCity.g:389:1: ( ( ( rule__LinkType__Alternatives ) ) )
+            // InternalSmartCity.g:390:2: ( ( rule__LinkType__Alternatives ) )
             {
-            // InternalSmartCity.g:365:2: ( ( rule__LinkType__Alternatives ) )
-            // InternalSmartCity.g:366:3: ( rule__LinkType__Alternatives )
+            // InternalSmartCity.g:390:2: ( ( rule__LinkType__Alternatives ) )
+            // InternalSmartCity.g:391:3: ( rule__LinkType__Alternatives )
             {
              before(grammarAccess.getLinkTypeAccess().getAlternatives()); 
-            // InternalSmartCity.g:367:3: ( rule__LinkType__Alternatives )
-            // InternalSmartCity.g:367:4: rule__LinkType__Alternatives
+            // InternalSmartCity.g:392:3: ( rule__LinkType__Alternatives )
+            // InternalSmartCity.g:392:4: rule__LinkType__Alternatives
             {
             pushFollow(FOLLOW_2);
             rule__LinkType__Alternatives();
@@ -1104,21 +1181,21 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "ruleFrequencyUnit"
-    // InternalSmartCity.g:376:1: ruleFrequencyUnit : ( ( rule__FrequencyUnit__Alternatives ) ) ;
+    // InternalSmartCity.g:401:1: ruleFrequencyUnit : ( ( rule__FrequencyUnit__Alternatives ) ) ;
     public final void ruleFrequencyUnit() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:380:1: ( ( ( rule__FrequencyUnit__Alternatives ) ) )
-            // InternalSmartCity.g:381:2: ( ( rule__FrequencyUnit__Alternatives ) )
+            // InternalSmartCity.g:405:1: ( ( ( rule__FrequencyUnit__Alternatives ) ) )
+            // InternalSmartCity.g:406:2: ( ( rule__FrequencyUnit__Alternatives ) )
             {
-            // InternalSmartCity.g:381:2: ( ( rule__FrequencyUnit__Alternatives ) )
-            // InternalSmartCity.g:382:3: ( rule__FrequencyUnit__Alternatives )
+            // InternalSmartCity.g:406:2: ( ( rule__FrequencyUnit__Alternatives ) )
+            // InternalSmartCity.g:407:3: ( rule__FrequencyUnit__Alternatives )
             {
              before(grammarAccess.getFrequencyUnitAccess().getAlternatives()); 
-            // InternalSmartCity.g:383:3: ( rule__FrequencyUnit__Alternatives )
-            // InternalSmartCity.g:383:4: rule__FrequencyUnit__Alternatives
+            // InternalSmartCity.g:408:3: ( rule__FrequencyUnit__Alternatives )
+            // InternalSmartCity.g:408:4: rule__FrequencyUnit__Alternatives
             {
             pushFollow(FOLLOW_2);
             rule__FrequencyUnit__Alternatives();
@@ -1151,13 +1228,13 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__SensorType__Alternatives"
-    // InternalSmartCity.g:391:1: rule__SensorType__Alternatives : ( ( ( 'TEMPERATURE' ) ) | ( ( 'PH' ) ) | ( ( 'TURBIDITY' ) ) | ( ( 'TDS' ) ) | ( ( 'CURRENT' ) ) | ( ( 'PULSE' ) ) | ( ( 'ULTRASONIC' ) ) | ( ( 'CAMERA' ) ) | ( ( 'GSM' ) ) );
+    // InternalSmartCity.g:416:1: rule__SensorType__Alternatives : ( ( ( 'TEMPERATURE' ) ) | ( ( 'PH' ) ) | ( ( 'TURBIDITY' ) ) | ( ( 'TDS' ) ) | ( ( 'CURRENT' ) ) | ( ( 'PULSE' ) ) | ( ( 'ULTRASONIC' ) ) | ( ( 'CAMERA' ) ) | ( ( 'GSM' ) ) );
     public final void rule__SensorType__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:395:1: ( ( ( 'TEMPERATURE' ) ) | ( ( 'PH' ) ) | ( ( 'TURBIDITY' ) ) | ( ( 'TDS' ) ) | ( ( 'CURRENT' ) ) | ( ( 'PULSE' ) ) | ( ( 'ULTRASONIC' ) ) | ( ( 'CAMERA' ) ) | ( ( 'GSM' ) ) )
+            // InternalSmartCity.g:420:1: ( ( ( 'TEMPERATURE' ) ) | ( ( 'PH' ) ) | ( ( 'TURBIDITY' ) ) | ( ( 'TDS' ) ) | ( ( 'CURRENT' ) ) | ( ( 'PULSE' ) ) | ( ( 'ULTRASONIC' ) ) | ( ( 'CAMERA' ) ) | ( ( 'GSM' ) ) )
             int alt1=9;
             switch ( input.LA(1) ) {
             case 11:
@@ -1214,14 +1291,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
             switch (alt1) {
                 case 1 :
-                    // InternalSmartCity.g:396:2: ( ( 'TEMPERATURE' ) )
+                    // InternalSmartCity.g:421:2: ( ( 'TEMPERATURE' ) )
                     {
-                    // InternalSmartCity.g:396:2: ( ( 'TEMPERATURE' ) )
-                    // InternalSmartCity.g:397:3: ( 'TEMPERATURE' )
+                    // InternalSmartCity.g:421:2: ( ( 'TEMPERATURE' ) )
+                    // InternalSmartCity.g:422:3: ( 'TEMPERATURE' )
                     {
                      before(grammarAccess.getSensorTypeAccess().getTEMPERATUREEnumLiteralDeclaration_0()); 
-                    // InternalSmartCity.g:398:3: ( 'TEMPERATURE' )
-                    // InternalSmartCity.g:398:4: 'TEMPERATURE'
+                    // InternalSmartCity.g:423:3: ( 'TEMPERATURE' )
+                    // InternalSmartCity.g:423:4: 'TEMPERATURE'
                     {
                     match(input,11,FOLLOW_2); 
 
@@ -1235,14 +1312,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
                     }
                     break;
                 case 2 :
-                    // InternalSmartCity.g:402:2: ( ( 'PH' ) )
+                    // InternalSmartCity.g:427:2: ( ( 'PH' ) )
                     {
-                    // InternalSmartCity.g:402:2: ( ( 'PH' ) )
-                    // InternalSmartCity.g:403:3: ( 'PH' )
+                    // InternalSmartCity.g:427:2: ( ( 'PH' ) )
+                    // InternalSmartCity.g:428:3: ( 'PH' )
                     {
                      before(grammarAccess.getSensorTypeAccess().getPHEnumLiteralDeclaration_1()); 
-                    // InternalSmartCity.g:404:3: ( 'PH' )
-                    // InternalSmartCity.g:404:4: 'PH'
+                    // InternalSmartCity.g:429:3: ( 'PH' )
+                    // InternalSmartCity.g:429:4: 'PH'
                     {
                     match(input,12,FOLLOW_2); 
 
@@ -1256,14 +1333,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
                     }
                     break;
                 case 3 :
-                    // InternalSmartCity.g:408:2: ( ( 'TURBIDITY' ) )
+                    // InternalSmartCity.g:433:2: ( ( 'TURBIDITY' ) )
                     {
-                    // InternalSmartCity.g:408:2: ( ( 'TURBIDITY' ) )
-                    // InternalSmartCity.g:409:3: ( 'TURBIDITY' )
+                    // InternalSmartCity.g:433:2: ( ( 'TURBIDITY' ) )
+                    // InternalSmartCity.g:434:3: ( 'TURBIDITY' )
                     {
                      before(grammarAccess.getSensorTypeAccess().getTURBIDITYEnumLiteralDeclaration_2()); 
-                    // InternalSmartCity.g:410:3: ( 'TURBIDITY' )
-                    // InternalSmartCity.g:410:4: 'TURBIDITY'
+                    // InternalSmartCity.g:435:3: ( 'TURBIDITY' )
+                    // InternalSmartCity.g:435:4: 'TURBIDITY'
                     {
                     match(input,13,FOLLOW_2); 
 
@@ -1277,14 +1354,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
                     }
                     break;
                 case 4 :
-                    // InternalSmartCity.g:414:2: ( ( 'TDS' ) )
+                    // InternalSmartCity.g:439:2: ( ( 'TDS' ) )
                     {
-                    // InternalSmartCity.g:414:2: ( ( 'TDS' ) )
-                    // InternalSmartCity.g:415:3: ( 'TDS' )
+                    // InternalSmartCity.g:439:2: ( ( 'TDS' ) )
+                    // InternalSmartCity.g:440:3: ( 'TDS' )
                     {
                      before(grammarAccess.getSensorTypeAccess().getTDSEnumLiteralDeclaration_3()); 
-                    // InternalSmartCity.g:416:3: ( 'TDS' )
-                    // InternalSmartCity.g:416:4: 'TDS'
+                    // InternalSmartCity.g:441:3: ( 'TDS' )
+                    // InternalSmartCity.g:441:4: 'TDS'
                     {
                     match(input,14,FOLLOW_2); 
 
@@ -1298,14 +1375,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
                     }
                     break;
                 case 5 :
-                    // InternalSmartCity.g:420:2: ( ( 'CURRENT' ) )
+                    // InternalSmartCity.g:445:2: ( ( 'CURRENT' ) )
                     {
-                    // InternalSmartCity.g:420:2: ( ( 'CURRENT' ) )
-                    // InternalSmartCity.g:421:3: ( 'CURRENT' )
+                    // InternalSmartCity.g:445:2: ( ( 'CURRENT' ) )
+                    // InternalSmartCity.g:446:3: ( 'CURRENT' )
                     {
                      before(grammarAccess.getSensorTypeAccess().getCURRENTEnumLiteralDeclaration_4()); 
-                    // InternalSmartCity.g:422:3: ( 'CURRENT' )
-                    // InternalSmartCity.g:422:4: 'CURRENT'
+                    // InternalSmartCity.g:447:3: ( 'CURRENT' )
+                    // InternalSmartCity.g:447:4: 'CURRENT'
                     {
                     match(input,15,FOLLOW_2); 
 
@@ -1319,14 +1396,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
                     }
                     break;
                 case 6 :
-                    // InternalSmartCity.g:426:2: ( ( 'PULSE' ) )
+                    // InternalSmartCity.g:451:2: ( ( 'PULSE' ) )
                     {
-                    // InternalSmartCity.g:426:2: ( ( 'PULSE' ) )
-                    // InternalSmartCity.g:427:3: ( 'PULSE' )
+                    // InternalSmartCity.g:451:2: ( ( 'PULSE' ) )
+                    // InternalSmartCity.g:452:3: ( 'PULSE' )
                     {
                      before(grammarAccess.getSensorTypeAccess().getPULSEEnumLiteralDeclaration_5()); 
-                    // InternalSmartCity.g:428:3: ( 'PULSE' )
-                    // InternalSmartCity.g:428:4: 'PULSE'
+                    // InternalSmartCity.g:453:3: ( 'PULSE' )
+                    // InternalSmartCity.g:453:4: 'PULSE'
                     {
                     match(input,16,FOLLOW_2); 
 
@@ -1340,14 +1417,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
                     }
                     break;
                 case 7 :
-                    // InternalSmartCity.g:432:2: ( ( 'ULTRASONIC' ) )
+                    // InternalSmartCity.g:457:2: ( ( 'ULTRASONIC' ) )
                     {
-                    // InternalSmartCity.g:432:2: ( ( 'ULTRASONIC' ) )
-                    // InternalSmartCity.g:433:3: ( 'ULTRASONIC' )
+                    // InternalSmartCity.g:457:2: ( ( 'ULTRASONIC' ) )
+                    // InternalSmartCity.g:458:3: ( 'ULTRASONIC' )
                     {
                      before(grammarAccess.getSensorTypeAccess().getULTRASONICEnumLiteralDeclaration_6()); 
-                    // InternalSmartCity.g:434:3: ( 'ULTRASONIC' )
-                    // InternalSmartCity.g:434:4: 'ULTRASONIC'
+                    // InternalSmartCity.g:459:3: ( 'ULTRASONIC' )
+                    // InternalSmartCity.g:459:4: 'ULTRASONIC'
                     {
                     match(input,17,FOLLOW_2); 
 
@@ -1361,14 +1438,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
                     }
                     break;
                 case 8 :
-                    // InternalSmartCity.g:438:2: ( ( 'CAMERA' ) )
+                    // InternalSmartCity.g:463:2: ( ( 'CAMERA' ) )
                     {
-                    // InternalSmartCity.g:438:2: ( ( 'CAMERA' ) )
-                    // InternalSmartCity.g:439:3: ( 'CAMERA' )
+                    // InternalSmartCity.g:463:2: ( ( 'CAMERA' ) )
+                    // InternalSmartCity.g:464:3: ( 'CAMERA' )
                     {
                      before(grammarAccess.getSensorTypeAccess().getCAMERAEnumLiteralDeclaration_7()); 
-                    // InternalSmartCity.g:440:3: ( 'CAMERA' )
-                    // InternalSmartCity.g:440:4: 'CAMERA'
+                    // InternalSmartCity.g:465:3: ( 'CAMERA' )
+                    // InternalSmartCity.g:465:4: 'CAMERA'
                     {
                     match(input,18,FOLLOW_2); 
 
@@ -1382,14 +1459,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
                     }
                     break;
                 case 9 :
-                    // InternalSmartCity.g:444:2: ( ( 'GSM' ) )
+                    // InternalSmartCity.g:469:2: ( ( 'GSM' ) )
                     {
-                    // InternalSmartCity.g:444:2: ( ( 'GSM' ) )
-                    // InternalSmartCity.g:445:3: ( 'GSM' )
+                    // InternalSmartCity.g:469:2: ( ( 'GSM' ) )
+                    // InternalSmartCity.g:470:3: ( 'GSM' )
                     {
                      before(grammarAccess.getSensorTypeAccess().getGSMEnumLiteralDeclaration_8()); 
-                    // InternalSmartCity.g:446:3: ( 'GSM' )
-                    // InternalSmartCity.g:446:4: 'GSM'
+                    // InternalSmartCity.g:471:3: ( 'GSM' )
+                    // InternalSmartCity.g:471:4: 'GSM'
                     {
                     match(input,19,FOLLOW_2); 
 
@@ -1420,13 +1497,13 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__ControllerType__Alternatives"
-    // InternalSmartCity.g:454:1: rule__ControllerType__Alternatives : ( ( ( 'ESP32' ) ) | ( ( 'RASPBERRY_PI' ) ) | ( ( 'OTHER' ) ) );
+    // InternalSmartCity.g:479:1: rule__ControllerType__Alternatives : ( ( ( 'ESP32' ) ) | ( ( 'RASPBERRY_PI' ) ) | ( ( 'OTHER' ) ) );
     public final void rule__ControllerType__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:458:1: ( ( ( 'ESP32' ) ) | ( ( 'RASPBERRY_PI' ) ) | ( ( 'OTHER' ) ) )
+            // InternalSmartCity.g:483:1: ( ( ( 'ESP32' ) ) | ( ( 'RASPBERRY_PI' ) ) | ( ( 'OTHER' ) ) )
             int alt2=3;
             switch ( input.LA(1) ) {
             case 20:
@@ -1453,14 +1530,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
             switch (alt2) {
                 case 1 :
-                    // InternalSmartCity.g:459:2: ( ( 'ESP32' ) )
+                    // InternalSmartCity.g:484:2: ( ( 'ESP32' ) )
                     {
-                    // InternalSmartCity.g:459:2: ( ( 'ESP32' ) )
-                    // InternalSmartCity.g:460:3: ( 'ESP32' )
+                    // InternalSmartCity.g:484:2: ( ( 'ESP32' ) )
+                    // InternalSmartCity.g:485:3: ( 'ESP32' )
                     {
                      before(grammarAccess.getControllerTypeAccess().getESP32EnumLiteralDeclaration_0()); 
-                    // InternalSmartCity.g:461:3: ( 'ESP32' )
-                    // InternalSmartCity.g:461:4: 'ESP32'
+                    // InternalSmartCity.g:486:3: ( 'ESP32' )
+                    // InternalSmartCity.g:486:4: 'ESP32'
                     {
                     match(input,20,FOLLOW_2); 
 
@@ -1474,14 +1551,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
                     }
                     break;
                 case 2 :
-                    // InternalSmartCity.g:465:2: ( ( 'RASPBERRY_PI' ) )
+                    // InternalSmartCity.g:490:2: ( ( 'RASPBERRY_PI' ) )
                     {
-                    // InternalSmartCity.g:465:2: ( ( 'RASPBERRY_PI' ) )
-                    // InternalSmartCity.g:466:3: ( 'RASPBERRY_PI' )
+                    // InternalSmartCity.g:490:2: ( ( 'RASPBERRY_PI' ) )
+                    // InternalSmartCity.g:491:3: ( 'RASPBERRY_PI' )
                     {
                      before(grammarAccess.getControllerTypeAccess().getRASPBERRY_PIEnumLiteralDeclaration_1()); 
-                    // InternalSmartCity.g:467:3: ( 'RASPBERRY_PI' )
-                    // InternalSmartCity.g:467:4: 'RASPBERRY_PI'
+                    // InternalSmartCity.g:492:3: ( 'RASPBERRY_PI' )
+                    // InternalSmartCity.g:492:4: 'RASPBERRY_PI'
                     {
                     match(input,21,FOLLOW_2); 
 
@@ -1495,14 +1572,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
                     }
                     break;
                 case 3 :
-                    // InternalSmartCity.g:471:2: ( ( 'OTHER' ) )
+                    // InternalSmartCity.g:496:2: ( ( 'OTHER' ) )
                     {
-                    // InternalSmartCity.g:471:2: ( ( 'OTHER' ) )
-                    // InternalSmartCity.g:472:3: ( 'OTHER' )
+                    // InternalSmartCity.g:496:2: ( ( 'OTHER' ) )
+                    // InternalSmartCity.g:497:3: ( 'OTHER' )
                     {
                      before(grammarAccess.getControllerTypeAccess().getOTHEREnumLiteralDeclaration_2()); 
-                    // InternalSmartCity.g:473:3: ( 'OTHER' )
-                    // InternalSmartCity.g:473:4: 'OTHER'
+                    // InternalSmartCity.g:498:3: ( 'OTHER' )
+                    // InternalSmartCity.g:498:4: 'OTHER'
                     {
                     match(input,22,FOLLOW_2); 
 
@@ -1533,13 +1610,13 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__LinkType__Alternatives"
-    // InternalSmartCity.g:481:1: rule__LinkType__Alternatives : ( ( ( 'UART' ) ) | ( ( 'ADC' ) ) | ( ( 'SPI' ) ) | ( ( 'CSI' ) ) | ( ( 'HTTPS' ) ) );
+    // InternalSmartCity.g:506:1: rule__LinkType__Alternatives : ( ( ( 'UART' ) ) | ( ( 'ADC' ) ) | ( ( 'SPI' ) ) | ( ( 'CSI' ) ) | ( ( 'HTTPS' ) ) );
     public final void rule__LinkType__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:485:1: ( ( ( 'UART' ) ) | ( ( 'ADC' ) ) | ( ( 'SPI' ) ) | ( ( 'CSI' ) ) | ( ( 'HTTPS' ) ) )
+            // InternalSmartCity.g:510:1: ( ( ( 'UART' ) ) | ( ( 'ADC' ) ) | ( ( 'SPI' ) ) | ( ( 'CSI' ) ) | ( ( 'HTTPS' ) ) )
             int alt3=5;
             switch ( input.LA(1) ) {
             case 23:
@@ -1576,14 +1653,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
             switch (alt3) {
                 case 1 :
-                    // InternalSmartCity.g:486:2: ( ( 'UART' ) )
+                    // InternalSmartCity.g:511:2: ( ( 'UART' ) )
                     {
-                    // InternalSmartCity.g:486:2: ( ( 'UART' ) )
-                    // InternalSmartCity.g:487:3: ( 'UART' )
+                    // InternalSmartCity.g:511:2: ( ( 'UART' ) )
+                    // InternalSmartCity.g:512:3: ( 'UART' )
                     {
                      before(grammarAccess.getLinkTypeAccess().getUARTEnumLiteralDeclaration_0()); 
-                    // InternalSmartCity.g:488:3: ( 'UART' )
-                    // InternalSmartCity.g:488:4: 'UART'
+                    // InternalSmartCity.g:513:3: ( 'UART' )
+                    // InternalSmartCity.g:513:4: 'UART'
                     {
                     match(input,23,FOLLOW_2); 
 
@@ -1597,14 +1674,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
                     }
                     break;
                 case 2 :
-                    // InternalSmartCity.g:492:2: ( ( 'ADC' ) )
+                    // InternalSmartCity.g:517:2: ( ( 'ADC' ) )
                     {
-                    // InternalSmartCity.g:492:2: ( ( 'ADC' ) )
-                    // InternalSmartCity.g:493:3: ( 'ADC' )
+                    // InternalSmartCity.g:517:2: ( ( 'ADC' ) )
+                    // InternalSmartCity.g:518:3: ( 'ADC' )
                     {
                      before(grammarAccess.getLinkTypeAccess().getADCEnumLiteralDeclaration_1()); 
-                    // InternalSmartCity.g:494:3: ( 'ADC' )
-                    // InternalSmartCity.g:494:4: 'ADC'
+                    // InternalSmartCity.g:519:3: ( 'ADC' )
+                    // InternalSmartCity.g:519:4: 'ADC'
                     {
                     match(input,24,FOLLOW_2); 
 
@@ -1618,14 +1695,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
                     }
                     break;
                 case 3 :
-                    // InternalSmartCity.g:498:2: ( ( 'SPI' ) )
+                    // InternalSmartCity.g:523:2: ( ( 'SPI' ) )
                     {
-                    // InternalSmartCity.g:498:2: ( ( 'SPI' ) )
-                    // InternalSmartCity.g:499:3: ( 'SPI' )
+                    // InternalSmartCity.g:523:2: ( ( 'SPI' ) )
+                    // InternalSmartCity.g:524:3: ( 'SPI' )
                     {
                      before(grammarAccess.getLinkTypeAccess().getSPIEnumLiteralDeclaration_2()); 
-                    // InternalSmartCity.g:500:3: ( 'SPI' )
-                    // InternalSmartCity.g:500:4: 'SPI'
+                    // InternalSmartCity.g:525:3: ( 'SPI' )
+                    // InternalSmartCity.g:525:4: 'SPI'
                     {
                     match(input,25,FOLLOW_2); 
 
@@ -1639,14 +1716,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
                     }
                     break;
                 case 4 :
-                    // InternalSmartCity.g:504:2: ( ( 'CSI' ) )
+                    // InternalSmartCity.g:529:2: ( ( 'CSI' ) )
                     {
-                    // InternalSmartCity.g:504:2: ( ( 'CSI' ) )
-                    // InternalSmartCity.g:505:3: ( 'CSI' )
+                    // InternalSmartCity.g:529:2: ( ( 'CSI' ) )
+                    // InternalSmartCity.g:530:3: ( 'CSI' )
                     {
                      before(grammarAccess.getLinkTypeAccess().getCSIEnumLiteralDeclaration_3()); 
-                    // InternalSmartCity.g:506:3: ( 'CSI' )
-                    // InternalSmartCity.g:506:4: 'CSI'
+                    // InternalSmartCity.g:531:3: ( 'CSI' )
+                    // InternalSmartCity.g:531:4: 'CSI'
                     {
                     match(input,26,FOLLOW_2); 
 
@@ -1660,14 +1737,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
                     }
                     break;
                 case 5 :
-                    // InternalSmartCity.g:510:2: ( ( 'HTTPS' ) )
+                    // InternalSmartCity.g:535:2: ( ( 'HTTPS' ) )
                     {
-                    // InternalSmartCity.g:510:2: ( ( 'HTTPS' ) )
-                    // InternalSmartCity.g:511:3: ( 'HTTPS' )
+                    // InternalSmartCity.g:535:2: ( ( 'HTTPS' ) )
+                    // InternalSmartCity.g:536:3: ( 'HTTPS' )
                     {
                      before(grammarAccess.getLinkTypeAccess().getHTTPSEnumLiteralDeclaration_4()); 
-                    // InternalSmartCity.g:512:3: ( 'HTTPS' )
-                    // InternalSmartCity.g:512:4: 'HTTPS'
+                    // InternalSmartCity.g:537:3: ( 'HTTPS' )
+                    // InternalSmartCity.g:537:4: 'HTTPS'
                     {
                     match(input,27,FOLLOW_2); 
 
@@ -1698,13 +1775,13 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__FrequencyUnit__Alternatives"
-    // InternalSmartCity.g:520:1: rule__FrequencyUnit__Alternatives : ( ( ( 'HERTZ' ) ) | ( ( 'SECONDS' ) ) | ( ( 'MINUTES' ) ) | ( ( 'HOURS' ) ) | ( ( 'DAYS' ) ) | ( ( 'INF' ) ) );
+    // InternalSmartCity.g:545:1: rule__FrequencyUnit__Alternatives : ( ( ( 'HERTZ' ) ) | ( ( 'SECONDS' ) ) | ( ( 'MINUTES' ) ) | ( ( 'HOURS' ) ) | ( ( 'DAYS' ) ) | ( ( 'INF' ) ) );
     public final void rule__FrequencyUnit__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:524:1: ( ( ( 'HERTZ' ) ) | ( ( 'SECONDS' ) ) | ( ( 'MINUTES' ) ) | ( ( 'HOURS' ) ) | ( ( 'DAYS' ) ) | ( ( 'INF' ) ) )
+            // InternalSmartCity.g:549:1: ( ( ( 'HERTZ' ) ) | ( ( 'SECONDS' ) ) | ( ( 'MINUTES' ) ) | ( ( 'HOURS' ) ) | ( ( 'DAYS' ) ) | ( ( 'INF' ) ) )
             int alt4=6;
             switch ( input.LA(1) ) {
             case 28:
@@ -1746,14 +1823,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
             switch (alt4) {
                 case 1 :
-                    // InternalSmartCity.g:525:2: ( ( 'HERTZ' ) )
+                    // InternalSmartCity.g:550:2: ( ( 'HERTZ' ) )
                     {
-                    // InternalSmartCity.g:525:2: ( ( 'HERTZ' ) )
-                    // InternalSmartCity.g:526:3: ( 'HERTZ' )
+                    // InternalSmartCity.g:550:2: ( ( 'HERTZ' ) )
+                    // InternalSmartCity.g:551:3: ( 'HERTZ' )
                     {
                      before(grammarAccess.getFrequencyUnitAccess().getHERTZEnumLiteralDeclaration_0()); 
-                    // InternalSmartCity.g:527:3: ( 'HERTZ' )
-                    // InternalSmartCity.g:527:4: 'HERTZ'
+                    // InternalSmartCity.g:552:3: ( 'HERTZ' )
+                    // InternalSmartCity.g:552:4: 'HERTZ'
                     {
                     match(input,28,FOLLOW_2); 
 
@@ -1767,14 +1844,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
                     }
                     break;
                 case 2 :
-                    // InternalSmartCity.g:531:2: ( ( 'SECONDS' ) )
+                    // InternalSmartCity.g:556:2: ( ( 'SECONDS' ) )
                     {
-                    // InternalSmartCity.g:531:2: ( ( 'SECONDS' ) )
-                    // InternalSmartCity.g:532:3: ( 'SECONDS' )
+                    // InternalSmartCity.g:556:2: ( ( 'SECONDS' ) )
+                    // InternalSmartCity.g:557:3: ( 'SECONDS' )
                     {
                      before(grammarAccess.getFrequencyUnitAccess().getSECONDSEnumLiteralDeclaration_1()); 
-                    // InternalSmartCity.g:533:3: ( 'SECONDS' )
-                    // InternalSmartCity.g:533:4: 'SECONDS'
+                    // InternalSmartCity.g:558:3: ( 'SECONDS' )
+                    // InternalSmartCity.g:558:4: 'SECONDS'
                     {
                     match(input,29,FOLLOW_2); 
 
@@ -1788,14 +1865,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
                     }
                     break;
                 case 3 :
-                    // InternalSmartCity.g:537:2: ( ( 'MINUTES' ) )
+                    // InternalSmartCity.g:562:2: ( ( 'MINUTES' ) )
                     {
-                    // InternalSmartCity.g:537:2: ( ( 'MINUTES' ) )
-                    // InternalSmartCity.g:538:3: ( 'MINUTES' )
+                    // InternalSmartCity.g:562:2: ( ( 'MINUTES' ) )
+                    // InternalSmartCity.g:563:3: ( 'MINUTES' )
                     {
                      before(grammarAccess.getFrequencyUnitAccess().getMINUTESEnumLiteralDeclaration_2()); 
-                    // InternalSmartCity.g:539:3: ( 'MINUTES' )
-                    // InternalSmartCity.g:539:4: 'MINUTES'
+                    // InternalSmartCity.g:564:3: ( 'MINUTES' )
+                    // InternalSmartCity.g:564:4: 'MINUTES'
                     {
                     match(input,30,FOLLOW_2); 
 
@@ -1809,14 +1886,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
                     }
                     break;
                 case 4 :
-                    // InternalSmartCity.g:543:2: ( ( 'HOURS' ) )
+                    // InternalSmartCity.g:568:2: ( ( 'HOURS' ) )
                     {
-                    // InternalSmartCity.g:543:2: ( ( 'HOURS' ) )
-                    // InternalSmartCity.g:544:3: ( 'HOURS' )
+                    // InternalSmartCity.g:568:2: ( ( 'HOURS' ) )
+                    // InternalSmartCity.g:569:3: ( 'HOURS' )
                     {
                      before(grammarAccess.getFrequencyUnitAccess().getHOURSEnumLiteralDeclaration_3()); 
-                    // InternalSmartCity.g:545:3: ( 'HOURS' )
-                    // InternalSmartCity.g:545:4: 'HOURS'
+                    // InternalSmartCity.g:570:3: ( 'HOURS' )
+                    // InternalSmartCity.g:570:4: 'HOURS'
                     {
                     match(input,31,FOLLOW_2); 
 
@@ -1830,14 +1907,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
                     }
                     break;
                 case 5 :
-                    // InternalSmartCity.g:549:2: ( ( 'DAYS' ) )
+                    // InternalSmartCity.g:574:2: ( ( 'DAYS' ) )
                     {
-                    // InternalSmartCity.g:549:2: ( ( 'DAYS' ) )
-                    // InternalSmartCity.g:550:3: ( 'DAYS' )
+                    // InternalSmartCity.g:574:2: ( ( 'DAYS' ) )
+                    // InternalSmartCity.g:575:3: ( 'DAYS' )
                     {
                      before(grammarAccess.getFrequencyUnitAccess().getDAYSEnumLiteralDeclaration_4()); 
-                    // InternalSmartCity.g:551:3: ( 'DAYS' )
-                    // InternalSmartCity.g:551:4: 'DAYS'
+                    // InternalSmartCity.g:576:3: ( 'DAYS' )
+                    // InternalSmartCity.g:576:4: 'DAYS'
                     {
                     match(input,32,FOLLOW_2); 
 
@@ -1851,14 +1928,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
                     }
                     break;
                 case 6 :
-                    // InternalSmartCity.g:555:2: ( ( 'INF' ) )
+                    // InternalSmartCity.g:580:2: ( ( 'INF' ) )
                     {
-                    // InternalSmartCity.g:555:2: ( ( 'INF' ) )
-                    // InternalSmartCity.g:556:3: ( 'INF' )
+                    // InternalSmartCity.g:580:2: ( ( 'INF' ) )
+                    // InternalSmartCity.g:581:3: ( 'INF' )
                     {
                      before(grammarAccess.getFrequencyUnitAccess().getINFEnumLiteralDeclaration_5()); 
-                    // InternalSmartCity.g:557:3: ( 'INF' )
-                    // InternalSmartCity.g:557:4: 'INF'
+                    // InternalSmartCity.g:582:3: ( 'INF' )
+                    // InternalSmartCity.g:582:4: 'INF'
                     {
                     match(input,33,FOLLOW_2); 
 
@@ -1889,14 +1966,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Model__Group__0"
-    // InternalSmartCity.g:565:1: rule__Model__Group__0 : rule__Model__Group__0__Impl rule__Model__Group__1 ;
+    // InternalSmartCity.g:590:1: rule__Model__Group__0 : rule__Model__Group__0__Impl rule__Model__Group__1 ;
     public final void rule__Model__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:569:1: ( rule__Model__Group__0__Impl rule__Model__Group__1 )
-            // InternalSmartCity.g:570:2: rule__Model__Group__0__Impl rule__Model__Group__1
+            // InternalSmartCity.g:594:1: ( rule__Model__Group__0__Impl rule__Model__Group__1 )
+            // InternalSmartCity.g:595:2: rule__Model__Group__0__Impl rule__Model__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__Model__Group__0__Impl();
@@ -1927,20 +2004,20 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Model__Group__0__Impl"
-    // InternalSmartCity.g:577:1: rule__Model__Group__0__Impl : ( ( rule__Model__NodesAssignment_0 )* ) ;
+    // InternalSmartCity.g:602:1: rule__Model__Group__0__Impl : ( ( rule__Model__NodesAssignment_0 )* ) ;
     public final void rule__Model__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:581:1: ( ( ( rule__Model__NodesAssignment_0 )* ) )
-            // InternalSmartCity.g:582:1: ( ( rule__Model__NodesAssignment_0 )* )
+            // InternalSmartCity.g:606:1: ( ( ( rule__Model__NodesAssignment_0 )* ) )
+            // InternalSmartCity.g:607:1: ( ( rule__Model__NodesAssignment_0 )* )
             {
-            // InternalSmartCity.g:582:1: ( ( rule__Model__NodesAssignment_0 )* )
-            // InternalSmartCity.g:583:2: ( rule__Model__NodesAssignment_0 )*
+            // InternalSmartCity.g:607:1: ( ( rule__Model__NodesAssignment_0 )* )
+            // InternalSmartCity.g:608:2: ( rule__Model__NodesAssignment_0 )*
             {
              before(grammarAccess.getModelAccess().getNodesAssignment_0()); 
-            // InternalSmartCity.g:584:2: ( rule__Model__NodesAssignment_0 )*
+            // InternalSmartCity.g:609:2: ( rule__Model__NodesAssignment_0 )*
             loop5:
             do {
                 int alt5=2;
@@ -1953,7 +2030,7 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
                 switch (alt5) {
             	case 1 :
-            	    // InternalSmartCity.g:584:3: rule__Model__NodesAssignment_0
+            	    // InternalSmartCity.g:609:3: rule__Model__NodesAssignment_0
             	    {
             	    pushFollow(FOLLOW_4);
             	    rule__Model__NodesAssignment_0();
@@ -1992,14 +2069,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Model__Group__1"
-    // InternalSmartCity.g:592:1: rule__Model__Group__1 : rule__Model__Group__1__Impl rule__Model__Group__2 ;
+    // InternalSmartCity.g:617:1: rule__Model__Group__1 : rule__Model__Group__1__Impl rule__Model__Group__2 ;
     public final void rule__Model__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:596:1: ( rule__Model__Group__1__Impl rule__Model__Group__2 )
-            // InternalSmartCity.g:597:2: rule__Model__Group__1__Impl rule__Model__Group__2
+            // InternalSmartCity.g:621:1: ( rule__Model__Group__1__Impl rule__Model__Group__2 )
+            // InternalSmartCity.g:622:2: rule__Model__Group__1__Impl rule__Model__Group__2
             {
             pushFollow(FOLLOW_5);
             rule__Model__Group__1__Impl();
@@ -2030,21 +2107,21 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Model__Group__1__Impl"
-    // InternalSmartCity.g:604:1: rule__Model__Group__1__Impl : ( ( rule__Model__DataGatewayAssignment_1 ) ) ;
+    // InternalSmartCity.g:629:1: rule__Model__Group__1__Impl : ( ( rule__Model__DataGatewayAssignment_1 ) ) ;
     public final void rule__Model__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:608:1: ( ( ( rule__Model__DataGatewayAssignment_1 ) ) )
-            // InternalSmartCity.g:609:1: ( ( rule__Model__DataGatewayAssignment_1 ) )
+            // InternalSmartCity.g:633:1: ( ( ( rule__Model__DataGatewayAssignment_1 ) ) )
+            // InternalSmartCity.g:634:1: ( ( rule__Model__DataGatewayAssignment_1 ) )
             {
-            // InternalSmartCity.g:609:1: ( ( rule__Model__DataGatewayAssignment_1 ) )
-            // InternalSmartCity.g:610:2: ( rule__Model__DataGatewayAssignment_1 )
+            // InternalSmartCity.g:634:1: ( ( rule__Model__DataGatewayAssignment_1 ) )
+            // InternalSmartCity.g:635:2: ( rule__Model__DataGatewayAssignment_1 )
             {
              before(grammarAccess.getModelAccess().getDataGatewayAssignment_1()); 
-            // InternalSmartCity.g:611:2: ( rule__Model__DataGatewayAssignment_1 )
-            // InternalSmartCity.g:611:3: rule__Model__DataGatewayAssignment_1
+            // InternalSmartCity.g:636:2: ( rule__Model__DataGatewayAssignment_1 )
+            // InternalSmartCity.g:636:3: rule__Model__DataGatewayAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Model__DataGatewayAssignment_1();
@@ -2077,14 +2154,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Model__Group__2"
-    // InternalSmartCity.g:619:1: rule__Model__Group__2 : rule__Model__Group__2__Impl rule__Model__Group__3 ;
+    // InternalSmartCity.g:644:1: rule__Model__Group__2 : rule__Model__Group__2__Impl rule__Model__Group__3 ;
     public final void rule__Model__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:623:1: ( rule__Model__Group__2__Impl rule__Model__Group__3 )
-            // InternalSmartCity.g:624:2: rule__Model__Group__2__Impl rule__Model__Group__3
+            // InternalSmartCity.g:648:1: ( rule__Model__Group__2__Impl rule__Model__Group__3 )
+            // InternalSmartCity.g:649:2: rule__Model__Group__2__Impl rule__Model__Group__3
             {
             pushFollow(FOLLOW_5);
             rule__Model__Group__2__Impl();
@@ -2115,20 +2192,20 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Model__Group__2__Impl"
-    // InternalSmartCity.g:631:1: rule__Model__Group__2__Impl : ( ( rule__Model__GlobalLinksAssignment_2 )* ) ;
+    // InternalSmartCity.g:656:1: rule__Model__Group__2__Impl : ( ( rule__Model__GlobalLinksAssignment_2 )* ) ;
     public final void rule__Model__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:635:1: ( ( ( rule__Model__GlobalLinksAssignment_2 )* ) )
-            // InternalSmartCity.g:636:1: ( ( rule__Model__GlobalLinksAssignment_2 )* )
+            // InternalSmartCity.g:660:1: ( ( ( rule__Model__GlobalLinksAssignment_2 )* ) )
+            // InternalSmartCity.g:661:1: ( ( rule__Model__GlobalLinksAssignment_2 )* )
             {
-            // InternalSmartCity.g:636:1: ( ( rule__Model__GlobalLinksAssignment_2 )* )
-            // InternalSmartCity.g:637:2: ( rule__Model__GlobalLinksAssignment_2 )*
+            // InternalSmartCity.g:661:1: ( ( rule__Model__GlobalLinksAssignment_2 )* )
+            // InternalSmartCity.g:662:2: ( rule__Model__GlobalLinksAssignment_2 )*
             {
              before(grammarAccess.getModelAccess().getGlobalLinksAssignment_2()); 
-            // InternalSmartCity.g:638:2: ( rule__Model__GlobalLinksAssignment_2 )*
+            // InternalSmartCity.g:663:2: ( rule__Model__GlobalLinksAssignment_2 )*
             loop6:
             do {
                 int alt6=2;
@@ -2141,7 +2218,7 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
                 switch (alt6) {
             	case 1 :
-            	    // InternalSmartCity.g:638:3: rule__Model__GlobalLinksAssignment_2
+            	    // InternalSmartCity.g:663:3: rule__Model__GlobalLinksAssignment_2
             	    {
             	    pushFollow(FOLLOW_6);
             	    rule__Model__GlobalLinksAssignment_2();
@@ -2180,14 +2257,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Model__Group__3"
-    // InternalSmartCity.g:646:1: rule__Model__Group__3 : rule__Model__Group__3__Impl ;
+    // InternalSmartCity.g:671:1: rule__Model__Group__3 : rule__Model__Group__3__Impl ;
     public final void rule__Model__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:650:1: ( rule__Model__Group__3__Impl )
-            // InternalSmartCity.g:651:2: rule__Model__Group__3__Impl
+            // InternalSmartCity.g:675:1: ( rule__Model__Group__3__Impl )
+            // InternalSmartCity.g:676:2: rule__Model__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Model__Group__3__Impl();
@@ -2213,21 +2290,21 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Model__Group__3__Impl"
-    // InternalSmartCity.g:657:1: rule__Model__Group__3__Impl : ( ( rule__Model__SimulationPropertiesAssignment_3 ) ) ;
+    // InternalSmartCity.g:682:1: rule__Model__Group__3__Impl : ( ( rule__Model__SimulationPropertiesAssignment_3 ) ) ;
     public final void rule__Model__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:661:1: ( ( ( rule__Model__SimulationPropertiesAssignment_3 ) ) )
-            // InternalSmartCity.g:662:1: ( ( rule__Model__SimulationPropertiesAssignment_3 ) )
+            // InternalSmartCity.g:686:1: ( ( ( rule__Model__SimulationPropertiesAssignment_3 ) ) )
+            // InternalSmartCity.g:687:1: ( ( rule__Model__SimulationPropertiesAssignment_3 ) )
             {
-            // InternalSmartCity.g:662:1: ( ( rule__Model__SimulationPropertiesAssignment_3 ) )
-            // InternalSmartCity.g:663:2: ( rule__Model__SimulationPropertiesAssignment_3 )
+            // InternalSmartCity.g:687:1: ( ( rule__Model__SimulationPropertiesAssignment_3 ) )
+            // InternalSmartCity.g:688:2: ( rule__Model__SimulationPropertiesAssignment_3 )
             {
              before(grammarAccess.getModelAccess().getSimulationPropertiesAssignment_3()); 
-            // InternalSmartCity.g:664:2: ( rule__Model__SimulationPropertiesAssignment_3 )
-            // InternalSmartCity.g:664:3: rule__Model__SimulationPropertiesAssignment_3
+            // InternalSmartCity.g:689:2: ( rule__Model__SimulationPropertiesAssignment_3 )
+            // InternalSmartCity.g:689:3: rule__Model__SimulationPropertiesAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__Model__SimulationPropertiesAssignment_3();
@@ -2260,14 +2337,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__SimulationProperties__Group__0"
-    // InternalSmartCity.g:673:1: rule__SimulationProperties__Group__0 : rule__SimulationProperties__Group__0__Impl rule__SimulationProperties__Group__1 ;
+    // InternalSmartCity.g:698:1: rule__SimulationProperties__Group__0 : rule__SimulationProperties__Group__0__Impl rule__SimulationProperties__Group__1 ;
     public final void rule__SimulationProperties__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:677:1: ( rule__SimulationProperties__Group__0__Impl rule__SimulationProperties__Group__1 )
-            // InternalSmartCity.g:678:2: rule__SimulationProperties__Group__0__Impl rule__SimulationProperties__Group__1
+            // InternalSmartCity.g:702:1: ( rule__SimulationProperties__Group__0__Impl rule__SimulationProperties__Group__1 )
+            // InternalSmartCity.g:703:2: rule__SimulationProperties__Group__0__Impl rule__SimulationProperties__Group__1
             {
             pushFollow(FOLLOW_7);
             rule__SimulationProperties__Group__0__Impl();
@@ -2298,17 +2375,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__SimulationProperties__Group__0__Impl"
-    // InternalSmartCity.g:685:1: rule__SimulationProperties__Group__0__Impl : ( 'simulationProperties' ) ;
+    // InternalSmartCity.g:710:1: rule__SimulationProperties__Group__0__Impl : ( 'simulationProperties' ) ;
     public final void rule__SimulationProperties__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:689:1: ( ( 'simulationProperties' ) )
-            // InternalSmartCity.g:690:1: ( 'simulationProperties' )
+            // InternalSmartCity.g:714:1: ( ( 'simulationProperties' ) )
+            // InternalSmartCity.g:715:1: ( 'simulationProperties' )
             {
-            // InternalSmartCity.g:690:1: ( 'simulationProperties' )
-            // InternalSmartCity.g:691:2: 'simulationProperties'
+            // InternalSmartCity.g:715:1: ( 'simulationProperties' )
+            // InternalSmartCity.g:716:2: 'simulationProperties'
             {
              before(grammarAccess.getSimulationPropertiesAccess().getSimulationPropertiesKeyword_0()); 
             match(input,34,FOLLOW_2); 
@@ -2335,14 +2412,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__SimulationProperties__Group__1"
-    // InternalSmartCity.g:700:1: rule__SimulationProperties__Group__1 : rule__SimulationProperties__Group__1__Impl rule__SimulationProperties__Group__2 ;
+    // InternalSmartCity.g:725:1: rule__SimulationProperties__Group__1 : rule__SimulationProperties__Group__1__Impl rule__SimulationProperties__Group__2 ;
     public final void rule__SimulationProperties__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:704:1: ( rule__SimulationProperties__Group__1__Impl rule__SimulationProperties__Group__2 )
-            // InternalSmartCity.g:705:2: rule__SimulationProperties__Group__1__Impl rule__SimulationProperties__Group__2
+            // InternalSmartCity.g:729:1: ( rule__SimulationProperties__Group__1__Impl rule__SimulationProperties__Group__2 )
+            // InternalSmartCity.g:730:2: rule__SimulationProperties__Group__1__Impl rule__SimulationProperties__Group__2
             {
             pushFollow(FOLLOW_8);
             rule__SimulationProperties__Group__1__Impl();
@@ -2373,17 +2450,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__SimulationProperties__Group__1__Impl"
-    // InternalSmartCity.g:712:1: rule__SimulationProperties__Group__1__Impl : ( '{' ) ;
+    // InternalSmartCity.g:737:1: rule__SimulationProperties__Group__1__Impl : ( '{' ) ;
     public final void rule__SimulationProperties__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:716:1: ( ( '{' ) )
-            // InternalSmartCity.g:717:1: ( '{' )
+            // InternalSmartCity.g:741:1: ( ( '{' ) )
+            // InternalSmartCity.g:742:1: ( '{' )
             {
-            // InternalSmartCity.g:717:1: ( '{' )
-            // InternalSmartCity.g:718:2: '{'
+            // InternalSmartCity.g:742:1: ( '{' )
+            // InternalSmartCity.g:743:2: '{'
             {
              before(grammarAccess.getSimulationPropertiesAccess().getLeftCurlyBracketKeyword_1()); 
             match(input,35,FOLLOW_2); 
@@ -2410,14 +2487,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__SimulationProperties__Group__2"
-    // InternalSmartCity.g:727:1: rule__SimulationProperties__Group__2 : rule__SimulationProperties__Group__2__Impl rule__SimulationProperties__Group__3 ;
+    // InternalSmartCity.g:752:1: rule__SimulationProperties__Group__2 : rule__SimulationProperties__Group__2__Impl rule__SimulationProperties__Group__3 ;
     public final void rule__SimulationProperties__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:731:1: ( rule__SimulationProperties__Group__2__Impl rule__SimulationProperties__Group__3 )
-            // InternalSmartCity.g:732:2: rule__SimulationProperties__Group__2__Impl rule__SimulationProperties__Group__3
+            // InternalSmartCity.g:756:1: ( rule__SimulationProperties__Group__2__Impl rule__SimulationProperties__Group__3 )
+            // InternalSmartCity.g:757:2: rule__SimulationProperties__Group__2__Impl rule__SimulationProperties__Group__3
             {
             pushFollow(FOLLOW_9);
             rule__SimulationProperties__Group__2__Impl();
@@ -2448,17 +2525,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__SimulationProperties__Group__2__Impl"
-    // InternalSmartCity.g:739:1: rule__SimulationProperties__Group__2__Impl : ( 'terminationTime' ) ;
+    // InternalSmartCity.g:764:1: rule__SimulationProperties__Group__2__Impl : ( 'terminationTime' ) ;
     public final void rule__SimulationProperties__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:743:1: ( ( 'terminationTime' ) )
-            // InternalSmartCity.g:744:1: ( 'terminationTime' )
+            // InternalSmartCity.g:768:1: ( ( 'terminationTime' ) )
+            // InternalSmartCity.g:769:1: ( 'terminationTime' )
             {
-            // InternalSmartCity.g:744:1: ( 'terminationTime' )
-            // InternalSmartCity.g:745:2: 'terminationTime'
+            // InternalSmartCity.g:769:1: ( 'terminationTime' )
+            // InternalSmartCity.g:770:2: 'terminationTime'
             {
              before(grammarAccess.getSimulationPropertiesAccess().getTerminationTimeKeyword_2()); 
             match(input,36,FOLLOW_2); 
@@ -2485,14 +2562,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__SimulationProperties__Group__3"
-    // InternalSmartCity.g:754:1: rule__SimulationProperties__Group__3 : rule__SimulationProperties__Group__3__Impl rule__SimulationProperties__Group__4 ;
+    // InternalSmartCity.g:779:1: rule__SimulationProperties__Group__3 : rule__SimulationProperties__Group__3__Impl rule__SimulationProperties__Group__4 ;
     public final void rule__SimulationProperties__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:758:1: ( rule__SimulationProperties__Group__3__Impl rule__SimulationProperties__Group__4 )
-            // InternalSmartCity.g:759:2: rule__SimulationProperties__Group__3__Impl rule__SimulationProperties__Group__4
+            // InternalSmartCity.g:783:1: ( rule__SimulationProperties__Group__3__Impl rule__SimulationProperties__Group__4 )
+            // InternalSmartCity.g:784:2: rule__SimulationProperties__Group__3__Impl rule__SimulationProperties__Group__4
             {
             pushFollow(FOLLOW_10);
             rule__SimulationProperties__Group__3__Impl();
@@ -2523,21 +2600,21 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__SimulationProperties__Group__3__Impl"
-    // InternalSmartCity.g:766:1: rule__SimulationProperties__Group__3__Impl : ( ( rule__SimulationProperties__TerminationTimeAssignment_3 ) ) ;
+    // InternalSmartCity.g:791:1: rule__SimulationProperties__Group__3__Impl : ( ( rule__SimulationProperties__TerminationTimeAssignment_3 ) ) ;
     public final void rule__SimulationProperties__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:770:1: ( ( ( rule__SimulationProperties__TerminationTimeAssignment_3 ) ) )
-            // InternalSmartCity.g:771:1: ( ( rule__SimulationProperties__TerminationTimeAssignment_3 ) )
+            // InternalSmartCity.g:795:1: ( ( ( rule__SimulationProperties__TerminationTimeAssignment_3 ) ) )
+            // InternalSmartCity.g:796:1: ( ( rule__SimulationProperties__TerminationTimeAssignment_3 ) )
             {
-            // InternalSmartCity.g:771:1: ( ( rule__SimulationProperties__TerminationTimeAssignment_3 ) )
-            // InternalSmartCity.g:772:2: ( rule__SimulationProperties__TerminationTimeAssignment_3 )
+            // InternalSmartCity.g:796:1: ( ( rule__SimulationProperties__TerminationTimeAssignment_3 ) )
+            // InternalSmartCity.g:797:2: ( rule__SimulationProperties__TerminationTimeAssignment_3 )
             {
              before(grammarAccess.getSimulationPropertiesAccess().getTerminationTimeAssignment_3()); 
-            // InternalSmartCity.g:773:2: ( rule__SimulationProperties__TerminationTimeAssignment_3 )
-            // InternalSmartCity.g:773:3: rule__SimulationProperties__TerminationTimeAssignment_3
+            // InternalSmartCity.g:798:2: ( rule__SimulationProperties__TerminationTimeAssignment_3 )
+            // InternalSmartCity.g:798:3: rule__SimulationProperties__TerminationTimeAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__SimulationProperties__TerminationTimeAssignment_3();
@@ -2570,14 +2647,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__SimulationProperties__Group__4"
-    // InternalSmartCity.g:781:1: rule__SimulationProperties__Group__4 : rule__SimulationProperties__Group__4__Impl rule__SimulationProperties__Group__5 ;
+    // InternalSmartCity.g:806:1: rule__SimulationProperties__Group__4 : rule__SimulationProperties__Group__4__Impl rule__SimulationProperties__Group__5 ;
     public final void rule__SimulationProperties__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:785:1: ( rule__SimulationProperties__Group__4__Impl rule__SimulationProperties__Group__5 )
-            // InternalSmartCity.g:786:2: rule__SimulationProperties__Group__4__Impl rule__SimulationProperties__Group__5
+            // InternalSmartCity.g:810:1: ( rule__SimulationProperties__Group__4__Impl rule__SimulationProperties__Group__5 )
+            // InternalSmartCity.g:811:2: rule__SimulationProperties__Group__4__Impl rule__SimulationProperties__Group__5
             {
             pushFollow(FOLLOW_10);
             rule__SimulationProperties__Group__4__Impl();
@@ -2608,20 +2685,20 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__SimulationProperties__Group__4__Impl"
-    // InternalSmartCity.g:793:1: rule__SimulationProperties__Group__4__Impl : ( ( rule__SimulationProperties__Group_4__0 )? ) ;
+    // InternalSmartCity.g:818:1: rule__SimulationProperties__Group__4__Impl : ( ( rule__SimulationProperties__Group_4__0 )? ) ;
     public final void rule__SimulationProperties__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:797:1: ( ( ( rule__SimulationProperties__Group_4__0 )? ) )
-            // InternalSmartCity.g:798:1: ( ( rule__SimulationProperties__Group_4__0 )? )
+            // InternalSmartCity.g:822:1: ( ( ( rule__SimulationProperties__Group_4__0 )? ) )
+            // InternalSmartCity.g:823:1: ( ( rule__SimulationProperties__Group_4__0 )? )
             {
-            // InternalSmartCity.g:798:1: ( ( rule__SimulationProperties__Group_4__0 )? )
-            // InternalSmartCity.g:799:2: ( rule__SimulationProperties__Group_4__0 )?
+            // InternalSmartCity.g:823:1: ( ( rule__SimulationProperties__Group_4__0 )? )
+            // InternalSmartCity.g:824:2: ( rule__SimulationProperties__Group_4__0 )?
             {
              before(grammarAccess.getSimulationPropertiesAccess().getGroup_4()); 
-            // InternalSmartCity.g:800:2: ( rule__SimulationProperties__Group_4__0 )?
+            // InternalSmartCity.g:825:2: ( rule__SimulationProperties__Group_4__0 )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -2630,7 +2707,7 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
             }
             switch (alt7) {
                 case 1 :
-                    // InternalSmartCity.g:800:3: rule__SimulationProperties__Group_4__0
+                    // InternalSmartCity.g:825:3: rule__SimulationProperties__Group_4__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__SimulationProperties__Group_4__0();
@@ -2666,14 +2743,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__SimulationProperties__Group__5"
-    // InternalSmartCity.g:808:1: rule__SimulationProperties__Group__5 : rule__SimulationProperties__Group__5__Impl ;
+    // InternalSmartCity.g:833:1: rule__SimulationProperties__Group__5 : rule__SimulationProperties__Group__5__Impl ;
     public final void rule__SimulationProperties__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:812:1: ( rule__SimulationProperties__Group__5__Impl )
-            // InternalSmartCity.g:813:2: rule__SimulationProperties__Group__5__Impl
+            // InternalSmartCity.g:837:1: ( rule__SimulationProperties__Group__5__Impl )
+            // InternalSmartCity.g:838:2: rule__SimulationProperties__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__SimulationProperties__Group__5__Impl();
@@ -2699,17 +2776,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__SimulationProperties__Group__5__Impl"
-    // InternalSmartCity.g:819:1: rule__SimulationProperties__Group__5__Impl : ( '}' ) ;
+    // InternalSmartCity.g:844:1: rule__SimulationProperties__Group__5__Impl : ( '}' ) ;
     public final void rule__SimulationProperties__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:823:1: ( ( '}' ) )
-            // InternalSmartCity.g:824:1: ( '}' )
+            // InternalSmartCity.g:848:1: ( ( '}' ) )
+            // InternalSmartCity.g:849:1: ( '}' )
             {
-            // InternalSmartCity.g:824:1: ( '}' )
-            // InternalSmartCity.g:825:2: '}'
+            // InternalSmartCity.g:849:1: ( '}' )
+            // InternalSmartCity.g:850:2: '}'
             {
              before(grammarAccess.getSimulationPropertiesAccess().getRightCurlyBracketKeyword_5()); 
             match(input,37,FOLLOW_2); 
@@ -2736,14 +2813,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__SimulationProperties__Group_4__0"
-    // InternalSmartCity.g:835:1: rule__SimulationProperties__Group_4__0 : rule__SimulationProperties__Group_4__0__Impl rule__SimulationProperties__Group_4__1 ;
+    // InternalSmartCity.g:860:1: rule__SimulationProperties__Group_4__0 : rule__SimulationProperties__Group_4__0__Impl rule__SimulationProperties__Group_4__1 ;
     public final void rule__SimulationProperties__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:839:1: ( rule__SimulationProperties__Group_4__0__Impl rule__SimulationProperties__Group_4__1 )
-            // InternalSmartCity.g:840:2: rule__SimulationProperties__Group_4__0__Impl rule__SimulationProperties__Group_4__1
+            // InternalSmartCity.g:864:1: ( rule__SimulationProperties__Group_4__0__Impl rule__SimulationProperties__Group_4__1 )
+            // InternalSmartCity.g:865:2: rule__SimulationProperties__Group_4__0__Impl rule__SimulationProperties__Group_4__1
             {
             pushFollow(FOLLOW_11);
             rule__SimulationProperties__Group_4__0__Impl();
@@ -2774,17 +2851,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__SimulationProperties__Group_4__0__Impl"
-    // InternalSmartCity.g:847:1: rule__SimulationProperties__Group_4__0__Impl : ( 'generatorFile' ) ;
+    // InternalSmartCity.g:872:1: rule__SimulationProperties__Group_4__0__Impl : ( 'generatorFile' ) ;
     public final void rule__SimulationProperties__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:851:1: ( ( 'generatorFile' ) )
-            // InternalSmartCity.g:852:1: ( 'generatorFile' )
+            // InternalSmartCity.g:876:1: ( ( 'generatorFile' ) )
+            // InternalSmartCity.g:877:1: ( 'generatorFile' )
             {
-            // InternalSmartCity.g:852:1: ( 'generatorFile' )
-            // InternalSmartCity.g:853:2: 'generatorFile'
+            // InternalSmartCity.g:877:1: ( 'generatorFile' )
+            // InternalSmartCity.g:878:2: 'generatorFile'
             {
              before(grammarAccess.getSimulationPropertiesAccess().getGeneratorFileKeyword_4_0()); 
             match(input,38,FOLLOW_2); 
@@ -2811,14 +2888,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__SimulationProperties__Group_4__1"
-    // InternalSmartCity.g:862:1: rule__SimulationProperties__Group_4__1 : rule__SimulationProperties__Group_4__1__Impl ;
+    // InternalSmartCity.g:887:1: rule__SimulationProperties__Group_4__1 : rule__SimulationProperties__Group_4__1__Impl ;
     public final void rule__SimulationProperties__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:866:1: ( rule__SimulationProperties__Group_4__1__Impl )
-            // InternalSmartCity.g:867:2: rule__SimulationProperties__Group_4__1__Impl
+            // InternalSmartCity.g:891:1: ( rule__SimulationProperties__Group_4__1__Impl )
+            // InternalSmartCity.g:892:2: rule__SimulationProperties__Group_4__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__SimulationProperties__Group_4__1__Impl();
@@ -2844,21 +2921,21 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__SimulationProperties__Group_4__1__Impl"
-    // InternalSmartCity.g:873:1: rule__SimulationProperties__Group_4__1__Impl : ( ( rule__SimulationProperties__GeneratorFileAssignment_4_1 ) ) ;
+    // InternalSmartCity.g:898:1: rule__SimulationProperties__Group_4__1__Impl : ( ( rule__SimulationProperties__GeneratorFileAssignment_4_1 ) ) ;
     public final void rule__SimulationProperties__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:877:1: ( ( ( rule__SimulationProperties__GeneratorFileAssignment_4_1 ) ) )
-            // InternalSmartCity.g:878:1: ( ( rule__SimulationProperties__GeneratorFileAssignment_4_1 ) )
+            // InternalSmartCity.g:902:1: ( ( ( rule__SimulationProperties__GeneratorFileAssignment_4_1 ) ) )
+            // InternalSmartCity.g:903:1: ( ( rule__SimulationProperties__GeneratorFileAssignment_4_1 ) )
             {
-            // InternalSmartCity.g:878:1: ( ( rule__SimulationProperties__GeneratorFileAssignment_4_1 ) )
-            // InternalSmartCity.g:879:2: ( rule__SimulationProperties__GeneratorFileAssignment_4_1 )
+            // InternalSmartCity.g:903:1: ( ( rule__SimulationProperties__GeneratorFileAssignment_4_1 ) )
+            // InternalSmartCity.g:904:2: ( rule__SimulationProperties__GeneratorFileAssignment_4_1 )
             {
              before(grammarAccess.getSimulationPropertiesAccess().getGeneratorFileAssignment_4_1()); 
-            // InternalSmartCity.g:880:2: ( rule__SimulationProperties__GeneratorFileAssignment_4_1 )
-            // InternalSmartCity.g:880:3: rule__SimulationProperties__GeneratorFileAssignment_4_1
+            // InternalSmartCity.g:905:2: ( rule__SimulationProperties__GeneratorFileAssignment_4_1 )
+            // InternalSmartCity.g:905:3: rule__SimulationProperties__GeneratorFileAssignment_4_1
             {
             pushFollow(FOLLOW_2);
             rule__SimulationProperties__GeneratorFileAssignment_4_1();
@@ -2891,14 +2968,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__DataGateway__Group__0"
-    // InternalSmartCity.g:889:1: rule__DataGateway__Group__0 : rule__DataGateway__Group__0__Impl rule__DataGateway__Group__1 ;
+    // InternalSmartCity.g:914:1: rule__DataGateway__Group__0 : rule__DataGateway__Group__0__Impl rule__DataGateway__Group__1 ;
     public final void rule__DataGateway__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:893:1: ( rule__DataGateway__Group__0__Impl rule__DataGateway__Group__1 )
-            // InternalSmartCity.g:894:2: rule__DataGateway__Group__0__Impl rule__DataGateway__Group__1
+            // InternalSmartCity.g:918:1: ( rule__DataGateway__Group__0__Impl rule__DataGateway__Group__1 )
+            // InternalSmartCity.g:919:2: rule__DataGateway__Group__0__Impl rule__DataGateway__Group__1
             {
             pushFollow(FOLLOW_12);
             rule__DataGateway__Group__0__Impl();
@@ -2929,17 +3006,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__DataGateway__Group__0__Impl"
-    // InternalSmartCity.g:901:1: rule__DataGateway__Group__0__Impl : ( 'dataGateway' ) ;
+    // InternalSmartCity.g:926:1: rule__DataGateway__Group__0__Impl : ( 'dataGateway' ) ;
     public final void rule__DataGateway__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:905:1: ( ( 'dataGateway' ) )
-            // InternalSmartCity.g:906:1: ( 'dataGateway' )
+            // InternalSmartCity.g:930:1: ( ( 'dataGateway' ) )
+            // InternalSmartCity.g:931:1: ( 'dataGateway' )
             {
-            // InternalSmartCity.g:906:1: ( 'dataGateway' )
-            // InternalSmartCity.g:907:2: 'dataGateway'
+            // InternalSmartCity.g:931:1: ( 'dataGateway' )
+            // InternalSmartCity.g:932:2: 'dataGateway'
             {
              before(grammarAccess.getDataGatewayAccess().getDataGatewayKeyword_0()); 
             match(input,39,FOLLOW_2); 
@@ -2966,14 +3043,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__DataGateway__Group__1"
-    // InternalSmartCity.g:916:1: rule__DataGateway__Group__1 : rule__DataGateway__Group__1__Impl rule__DataGateway__Group__2 ;
+    // InternalSmartCity.g:941:1: rule__DataGateway__Group__1 : rule__DataGateway__Group__1__Impl rule__DataGateway__Group__2 ;
     public final void rule__DataGateway__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:920:1: ( rule__DataGateway__Group__1__Impl rule__DataGateway__Group__2 )
-            // InternalSmartCity.g:921:2: rule__DataGateway__Group__1__Impl rule__DataGateway__Group__2
+            // InternalSmartCity.g:945:1: ( rule__DataGateway__Group__1__Impl rule__DataGateway__Group__2 )
+            // InternalSmartCity.g:946:2: rule__DataGateway__Group__1__Impl rule__DataGateway__Group__2
             {
             pushFollow(FOLLOW_7);
             rule__DataGateway__Group__1__Impl();
@@ -3004,21 +3081,21 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__DataGateway__Group__1__Impl"
-    // InternalSmartCity.g:928:1: rule__DataGateway__Group__1__Impl : ( ( rule__DataGateway__NameAssignment_1 ) ) ;
+    // InternalSmartCity.g:953:1: rule__DataGateway__Group__1__Impl : ( ( rule__DataGateway__NameAssignment_1 ) ) ;
     public final void rule__DataGateway__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:932:1: ( ( ( rule__DataGateway__NameAssignment_1 ) ) )
-            // InternalSmartCity.g:933:1: ( ( rule__DataGateway__NameAssignment_1 ) )
+            // InternalSmartCity.g:957:1: ( ( ( rule__DataGateway__NameAssignment_1 ) ) )
+            // InternalSmartCity.g:958:1: ( ( rule__DataGateway__NameAssignment_1 ) )
             {
-            // InternalSmartCity.g:933:1: ( ( rule__DataGateway__NameAssignment_1 ) )
-            // InternalSmartCity.g:934:2: ( rule__DataGateway__NameAssignment_1 )
+            // InternalSmartCity.g:958:1: ( ( rule__DataGateway__NameAssignment_1 ) )
+            // InternalSmartCity.g:959:2: ( rule__DataGateway__NameAssignment_1 )
             {
              before(grammarAccess.getDataGatewayAccess().getNameAssignment_1()); 
-            // InternalSmartCity.g:935:2: ( rule__DataGateway__NameAssignment_1 )
-            // InternalSmartCity.g:935:3: rule__DataGateway__NameAssignment_1
+            // InternalSmartCity.g:960:2: ( rule__DataGateway__NameAssignment_1 )
+            // InternalSmartCity.g:960:3: rule__DataGateway__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__DataGateway__NameAssignment_1();
@@ -3051,14 +3128,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__DataGateway__Group__2"
-    // InternalSmartCity.g:943:1: rule__DataGateway__Group__2 : rule__DataGateway__Group__2__Impl rule__DataGateway__Group__3 ;
+    // InternalSmartCity.g:968:1: rule__DataGateway__Group__2 : rule__DataGateway__Group__2__Impl rule__DataGateway__Group__3 ;
     public final void rule__DataGateway__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:947:1: ( rule__DataGateway__Group__2__Impl rule__DataGateway__Group__3 )
-            // InternalSmartCity.g:948:2: rule__DataGateway__Group__2__Impl rule__DataGateway__Group__3
+            // InternalSmartCity.g:972:1: ( rule__DataGateway__Group__2__Impl rule__DataGateway__Group__3 )
+            // InternalSmartCity.g:973:2: rule__DataGateway__Group__2__Impl rule__DataGateway__Group__3
             {
             pushFollow(FOLLOW_13);
             rule__DataGateway__Group__2__Impl();
@@ -3089,17 +3166,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__DataGateway__Group__2__Impl"
-    // InternalSmartCity.g:955:1: rule__DataGateway__Group__2__Impl : ( '{' ) ;
+    // InternalSmartCity.g:980:1: rule__DataGateway__Group__2__Impl : ( '{' ) ;
     public final void rule__DataGateway__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:959:1: ( ( '{' ) )
-            // InternalSmartCity.g:960:1: ( '{' )
+            // InternalSmartCity.g:984:1: ( ( '{' ) )
+            // InternalSmartCity.g:985:1: ( '{' )
             {
-            // InternalSmartCity.g:960:1: ( '{' )
-            // InternalSmartCity.g:961:2: '{'
+            // InternalSmartCity.g:985:1: ( '{' )
+            // InternalSmartCity.g:986:2: '{'
             {
              before(grammarAccess.getDataGatewayAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,35,FOLLOW_2); 
@@ -3126,14 +3203,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__DataGateway__Group__3"
-    // InternalSmartCity.g:970:1: rule__DataGateway__Group__3 : rule__DataGateway__Group__3__Impl rule__DataGateway__Group__4 ;
+    // InternalSmartCity.g:995:1: rule__DataGateway__Group__3 : rule__DataGateway__Group__3__Impl rule__DataGateway__Group__4 ;
     public final void rule__DataGateway__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:974:1: ( rule__DataGateway__Group__3__Impl rule__DataGateway__Group__4 )
-            // InternalSmartCity.g:975:2: rule__DataGateway__Group__3__Impl rule__DataGateway__Group__4
+            // InternalSmartCity.g:999:1: ( rule__DataGateway__Group__3__Impl rule__DataGateway__Group__4 )
+            // InternalSmartCity.g:1000:2: rule__DataGateway__Group__3__Impl rule__DataGateway__Group__4
             {
             pushFollow(FOLLOW_9);
             rule__DataGateway__Group__3__Impl();
@@ -3164,17 +3241,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__DataGateway__Group__3__Impl"
-    // InternalSmartCity.g:982:1: rule__DataGateway__Group__3__Impl : ( 'priority' ) ;
+    // InternalSmartCity.g:1007:1: rule__DataGateway__Group__3__Impl : ( 'priority' ) ;
     public final void rule__DataGateway__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:986:1: ( ( 'priority' ) )
-            // InternalSmartCity.g:987:1: ( 'priority' )
+            // InternalSmartCity.g:1011:1: ( ( 'priority' ) )
+            // InternalSmartCity.g:1012:1: ( 'priority' )
             {
-            // InternalSmartCity.g:987:1: ( 'priority' )
-            // InternalSmartCity.g:988:2: 'priority'
+            // InternalSmartCity.g:1012:1: ( 'priority' )
+            // InternalSmartCity.g:1013:2: 'priority'
             {
              before(grammarAccess.getDataGatewayAccess().getPriorityKeyword_3()); 
             match(input,40,FOLLOW_2); 
@@ -3201,14 +3278,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__DataGateway__Group__4"
-    // InternalSmartCity.g:997:1: rule__DataGateway__Group__4 : rule__DataGateway__Group__4__Impl rule__DataGateway__Group__5 ;
+    // InternalSmartCity.g:1022:1: rule__DataGateway__Group__4 : rule__DataGateway__Group__4__Impl rule__DataGateway__Group__5 ;
     public final void rule__DataGateway__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1001:1: ( rule__DataGateway__Group__4__Impl rule__DataGateway__Group__5 )
-            // InternalSmartCity.g:1002:2: rule__DataGateway__Group__4__Impl rule__DataGateway__Group__5
+            // InternalSmartCity.g:1026:1: ( rule__DataGateway__Group__4__Impl rule__DataGateway__Group__5 )
+            // InternalSmartCity.g:1027:2: rule__DataGateway__Group__4__Impl rule__DataGateway__Group__5
             {
             pushFollow(FOLLOW_14);
             rule__DataGateway__Group__4__Impl();
@@ -3239,21 +3316,21 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__DataGateway__Group__4__Impl"
-    // InternalSmartCity.g:1009:1: rule__DataGateway__Group__4__Impl : ( ( rule__DataGateway__PriorityAssignment_4 ) ) ;
+    // InternalSmartCity.g:1034:1: rule__DataGateway__Group__4__Impl : ( ( rule__DataGateway__PriorityAssignment_4 ) ) ;
     public final void rule__DataGateway__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1013:1: ( ( ( rule__DataGateway__PriorityAssignment_4 ) ) )
-            // InternalSmartCity.g:1014:1: ( ( rule__DataGateway__PriorityAssignment_4 ) )
+            // InternalSmartCity.g:1038:1: ( ( ( rule__DataGateway__PriorityAssignment_4 ) ) )
+            // InternalSmartCity.g:1039:1: ( ( rule__DataGateway__PriorityAssignment_4 ) )
             {
-            // InternalSmartCity.g:1014:1: ( ( rule__DataGateway__PriorityAssignment_4 ) )
-            // InternalSmartCity.g:1015:2: ( rule__DataGateway__PriorityAssignment_4 )
+            // InternalSmartCity.g:1039:1: ( ( rule__DataGateway__PriorityAssignment_4 ) )
+            // InternalSmartCity.g:1040:2: ( rule__DataGateway__PriorityAssignment_4 )
             {
              before(grammarAccess.getDataGatewayAccess().getPriorityAssignment_4()); 
-            // InternalSmartCity.g:1016:2: ( rule__DataGateway__PriorityAssignment_4 )
-            // InternalSmartCity.g:1016:3: rule__DataGateway__PriorityAssignment_4
+            // InternalSmartCity.g:1041:2: ( rule__DataGateway__PriorityAssignment_4 )
+            // InternalSmartCity.g:1041:3: rule__DataGateway__PriorityAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__DataGateway__PriorityAssignment_4();
@@ -3286,14 +3363,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__DataGateway__Group__5"
-    // InternalSmartCity.g:1024:1: rule__DataGateway__Group__5 : rule__DataGateway__Group__5__Impl rule__DataGateway__Group__6 ;
+    // InternalSmartCity.g:1049:1: rule__DataGateway__Group__5 : rule__DataGateway__Group__5__Impl rule__DataGateway__Group__6 ;
     public final void rule__DataGateway__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1028:1: ( rule__DataGateway__Group__5__Impl rule__DataGateway__Group__6 )
-            // InternalSmartCity.g:1029:2: rule__DataGateway__Group__5__Impl rule__DataGateway__Group__6
+            // InternalSmartCity.g:1053:1: ( rule__DataGateway__Group__5__Impl rule__DataGateway__Group__6 )
+            // InternalSmartCity.g:1054:2: rule__DataGateway__Group__5__Impl rule__DataGateway__Group__6
             {
             pushFollow(FOLLOW_15);
             rule__DataGateway__Group__5__Impl();
@@ -3324,17 +3401,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__DataGateway__Group__5__Impl"
-    // InternalSmartCity.g:1036:1: rule__DataGateway__Group__5__Impl : ( 'delay' ) ;
+    // InternalSmartCity.g:1061:1: rule__DataGateway__Group__5__Impl : ( 'delay' ) ;
     public final void rule__DataGateway__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1040:1: ( ( 'delay' ) )
-            // InternalSmartCity.g:1041:1: ( 'delay' )
+            // InternalSmartCity.g:1065:1: ( ( 'delay' ) )
+            // InternalSmartCity.g:1066:1: ( 'delay' )
             {
-            // InternalSmartCity.g:1041:1: ( 'delay' )
-            // InternalSmartCity.g:1042:2: 'delay'
+            // InternalSmartCity.g:1066:1: ( 'delay' )
+            // InternalSmartCity.g:1067:2: 'delay'
             {
              before(grammarAccess.getDataGatewayAccess().getDelayKeyword_5()); 
             match(input,41,FOLLOW_2); 
@@ -3361,14 +3438,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__DataGateway__Group__6"
-    // InternalSmartCity.g:1051:1: rule__DataGateway__Group__6 : rule__DataGateway__Group__6__Impl rule__DataGateway__Group__7 ;
+    // InternalSmartCity.g:1076:1: rule__DataGateway__Group__6 : rule__DataGateway__Group__6__Impl rule__DataGateway__Group__7 ;
     public final void rule__DataGateway__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1055:1: ( rule__DataGateway__Group__6__Impl rule__DataGateway__Group__7 )
-            // InternalSmartCity.g:1056:2: rule__DataGateway__Group__6__Impl rule__DataGateway__Group__7
+            // InternalSmartCity.g:1080:1: ( rule__DataGateway__Group__6__Impl rule__DataGateway__Group__7 )
+            // InternalSmartCity.g:1081:2: rule__DataGateway__Group__6__Impl rule__DataGateway__Group__7
             {
             pushFollow(FOLLOW_16);
             rule__DataGateway__Group__6__Impl();
@@ -3399,21 +3476,21 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__DataGateway__Group__6__Impl"
-    // InternalSmartCity.g:1063:1: rule__DataGateway__Group__6__Impl : ( ( rule__DataGateway__DelayAssignment_6 ) ) ;
+    // InternalSmartCity.g:1088:1: rule__DataGateway__Group__6__Impl : ( ( rule__DataGateway__DelayAssignment_6 ) ) ;
     public final void rule__DataGateway__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1067:1: ( ( ( rule__DataGateway__DelayAssignment_6 ) ) )
-            // InternalSmartCity.g:1068:1: ( ( rule__DataGateway__DelayAssignment_6 ) )
+            // InternalSmartCity.g:1092:1: ( ( ( rule__DataGateway__DelayAssignment_6 ) ) )
+            // InternalSmartCity.g:1093:1: ( ( rule__DataGateway__DelayAssignment_6 ) )
             {
-            // InternalSmartCity.g:1068:1: ( ( rule__DataGateway__DelayAssignment_6 ) )
-            // InternalSmartCity.g:1069:2: ( rule__DataGateway__DelayAssignment_6 )
+            // InternalSmartCity.g:1093:1: ( ( rule__DataGateway__DelayAssignment_6 ) )
+            // InternalSmartCity.g:1094:2: ( rule__DataGateway__DelayAssignment_6 )
             {
              before(grammarAccess.getDataGatewayAccess().getDelayAssignment_6()); 
-            // InternalSmartCity.g:1070:2: ( rule__DataGateway__DelayAssignment_6 )
-            // InternalSmartCity.g:1070:3: rule__DataGateway__DelayAssignment_6
+            // InternalSmartCity.g:1095:2: ( rule__DataGateway__DelayAssignment_6 )
+            // InternalSmartCity.g:1095:3: rule__DataGateway__DelayAssignment_6
             {
             pushFollow(FOLLOW_2);
             rule__DataGateway__DelayAssignment_6();
@@ -3446,14 +3523,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__DataGateway__Group__7"
-    // InternalSmartCity.g:1078:1: rule__DataGateway__Group__7 : rule__DataGateway__Group__7__Impl ;
+    // InternalSmartCity.g:1103:1: rule__DataGateway__Group__7 : rule__DataGateway__Group__7__Impl ;
     public final void rule__DataGateway__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1082:1: ( rule__DataGateway__Group__7__Impl )
-            // InternalSmartCity.g:1083:2: rule__DataGateway__Group__7__Impl
+            // InternalSmartCity.g:1107:1: ( rule__DataGateway__Group__7__Impl )
+            // InternalSmartCity.g:1108:2: rule__DataGateway__Group__7__Impl
             {
             pushFollow(FOLLOW_2);
             rule__DataGateway__Group__7__Impl();
@@ -3479,17 +3556,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__DataGateway__Group__7__Impl"
-    // InternalSmartCity.g:1089:1: rule__DataGateway__Group__7__Impl : ( '}' ) ;
+    // InternalSmartCity.g:1114:1: rule__DataGateway__Group__7__Impl : ( '}' ) ;
     public final void rule__DataGateway__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1093:1: ( ( '}' ) )
-            // InternalSmartCity.g:1094:1: ( '}' )
+            // InternalSmartCity.g:1118:1: ( ( '}' ) )
+            // InternalSmartCity.g:1119:1: ( '}' )
             {
-            // InternalSmartCity.g:1094:1: ( '}' )
-            // InternalSmartCity.g:1095:2: '}'
+            // InternalSmartCity.g:1119:1: ( '}' )
+            // InternalSmartCity.g:1120:2: '}'
             {
              before(grammarAccess.getDataGatewayAccess().getRightCurlyBracketKeyword_7()); 
             match(input,37,FOLLOW_2); 
@@ -3516,14 +3593,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Node__Group__0"
-    // InternalSmartCity.g:1105:1: rule__Node__Group__0 : rule__Node__Group__0__Impl rule__Node__Group__1 ;
+    // InternalSmartCity.g:1130:1: rule__Node__Group__0 : rule__Node__Group__0__Impl rule__Node__Group__1 ;
     public final void rule__Node__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1109:1: ( rule__Node__Group__0__Impl rule__Node__Group__1 )
-            // InternalSmartCity.g:1110:2: rule__Node__Group__0__Impl rule__Node__Group__1
+            // InternalSmartCity.g:1134:1: ( rule__Node__Group__0__Impl rule__Node__Group__1 )
+            // InternalSmartCity.g:1135:2: rule__Node__Group__0__Impl rule__Node__Group__1
             {
             pushFollow(FOLLOW_12);
             rule__Node__Group__0__Impl();
@@ -3554,17 +3631,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Node__Group__0__Impl"
-    // InternalSmartCity.g:1117:1: rule__Node__Group__0__Impl : ( 'node' ) ;
+    // InternalSmartCity.g:1142:1: rule__Node__Group__0__Impl : ( 'node' ) ;
     public final void rule__Node__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1121:1: ( ( 'node' ) )
-            // InternalSmartCity.g:1122:1: ( 'node' )
+            // InternalSmartCity.g:1146:1: ( ( 'node' ) )
+            // InternalSmartCity.g:1147:1: ( 'node' )
             {
-            // InternalSmartCity.g:1122:1: ( 'node' )
-            // InternalSmartCity.g:1123:2: 'node'
+            // InternalSmartCity.g:1147:1: ( 'node' )
+            // InternalSmartCity.g:1148:2: 'node'
             {
              before(grammarAccess.getNodeAccess().getNodeKeyword_0()); 
             match(input,42,FOLLOW_2); 
@@ -3591,14 +3668,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Node__Group__1"
-    // InternalSmartCity.g:1132:1: rule__Node__Group__1 : rule__Node__Group__1__Impl rule__Node__Group__2 ;
+    // InternalSmartCity.g:1157:1: rule__Node__Group__1 : rule__Node__Group__1__Impl rule__Node__Group__2 ;
     public final void rule__Node__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1136:1: ( rule__Node__Group__1__Impl rule__Node__Group__2 )
-            // InternalSmartCity.g:1137:2: rule__Node__Group__1__Impl rule__Node__Group__2
+            // InternalSmartCity.g:1161:1: ( rule__Node__Group__1__Impl rule__Node__Group__2 )
+            // InternalSmartCity.g:1162:2: rule__Node__Group__1__Impl rule__Node__Group__2
             {
             pushFollow(FOLLOW_7);
             rule__Node__Group__1__Impl();
@@ -3629,21 +3706,21 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Node__Group__1__Impl"
-    // InternalSmartCity.g:1144:1: rule__Node__Group__1__Impl : ( ( rule__Node__NameAssignment_1 ) ) ;
+    // InternalSmartCity.g:1169:1: rule__Node__Group__1__Impl : ( ( rule__Node__NameAssignment_1 ) ) ;
     public final void rule__Node__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1148:1: ( ( ( rule__Node__NameAssignment_1 ) ) )
-            // InternalSmartCity.g:1149:1: ( ( rule__Node__NameAssignment_1 ) )
+            // InternalSmartCity.g:1173:1: ( ( ( rule__Node__NameAssignment_1 ) ) )
+            // InternalSmartCity.g:1174:1: ( ( rule__Node__NameAssignment_1 ) )
             {
-            // InternalSmartCity.g:1149:1: ( ( rule__Node__NameAssignment_1 ) )
-            // InternalSmartCity.g:1150:2: ( rule__Node__NameAssignment_1 )
+            // InternalSmartCity.g:1174:1: ( ( rule__Node__NameAssignment_1 ) )
+            // InternalSmartCity.g:1175:2: ( rule__Node__NameAssignment_1 )
             {
              before(grammarAccess.getNodeAccess().getNameAssignment_1()); 
-            // InternalSmartCity.g:1151:2: ( rule__Node__NameAssignment_1 )
-            // InternalSmartCity.g:1151:3: rule__Node__NameAssignment_1
+            // InternalSmartCity.g:1176:2: ( rule__Node__NameAssignment_1 )
+            // InternalSmartCity.g:1176:3: rule__Node__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Node__NameAssignment_1();
@@ -3676,14 +3753,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Node__Group__2"
-    // InternalSmartCity.g:1159:1: rule__Node__Group__2 : rule__Node__Group__2__Impl rule__Node__Group__3 ;
+    // InternalSmartCity.g:1184:1: rule__Node__Group__2 : rule__Node__Group__2__Impl rule__Node__Group__3 ;
     public final void rule__Node__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1163:1: ( rule__Node__Group__2__Impl rule__Node__Group__3 )
-            // InternalSmartCity.g:1164:2: rule__Node__Group__2__Impl rule__Node__Group__3
+            // InternalSmartCity.g:1188:1: ( rule__Node__Group__2__Impl rule__Node__Group__3 )
+            // InternalSmartCity.g:1189:2: rule__Node__Group__2__Impl rule__Node__Group__3
             {
             pushFollow(FOLLOW_17);
             rule__Node__Group__2__Impl();
@@ -3714,17 +3791,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Node__Group__2__Impl"
-    // InternalSmartCity.g:1171:1: rule__Node__Group__2__Impl : ( '{' ) ;
+    // InternalSmartCity.g:1196:1: rule__Node__Group__2__Impl : ( '{' ) ;
     public final void rule__Node__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1175:1: ( ( '{' ) )
-            // InternalSmartCity.g:1176:1: ( '{' )
+            // InternalSmartCity.g:1200:1: ( ( '{' ) )
+            // InternalSmartCity.g:1201:1: ( '{' )
             {
-            // InternalSmartCity.g:1176:1: ( '{' )
-            // InternalSmartCity.g:1177:2: '{'
+            // InternalSmartCity.g:1201:1: ( '{' )
+            // InternalSmartCity.g:1202:2: '{'
             {
              before(grammarAccess.getNodeAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,35,FOLLOW_2); 
@@ -3751,14 +3828,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Node__Group__3"
-    // InternalSmartCity.g:1186:1: rule__Node__Group__3 : rule__Node__Group__3__Impl rule__Node__Group__4 ;
+    // InternalSmartCity.g:1211:1: rule__Node__Group__3 : rule__Node__Group__3__Impl rule__Node__Group__4 ;
     public final void rule__Node__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1190:1: ( rule__Node__Group__3__Impl rule__Node__Group__4 )
-            // InternalSmartCity.g:1191:2: rule__Node__Group__3__Impl rule__Node__Group__4
+            // InternalSmartCity.g:1215:1: ( rule__Node__Group__3__Impl rule__Node__Group__4 )
+            // InternalSmartCity.g:1216:2: rule__Node__Group__3__Impl rule__Node__Group__4
             {
             pushFollow(FOLLOW_17);
             rule__Node__Group__3__Impl();
@@ -3789,20 +3866,20 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Node__Group__3__Impl"
-    // InternalSmartCity.g:1198:1: rule__Node__Group__3__Impl : ( ( rule__Node__SensorsAssignment_3 )* ) ;
+    // InternalSmartCity.g:1223:1: rule__Node__Group__3__Impl : ( ( rule__Node__SensorsAssignment_3 )* ) ;
     public final void rule__Node__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1202:1: ( ( ( rule__Node__SensorsAssignment_3 )* ) )
-            // InternalSmartCity.g:1203:1: ( ( rule__Node__SensorsAssignment_3 )* )
+            // InternalSmartCity.g:1227:1: ( ( ( rule__Node__SensorsAssignment_3 )* ) )
+            // InternalSmartCity.g:1228:1: ( ( rule__Node__SensorsAssignment_3 )* )
             {
-            // InternalSmartCity.g:1203:1: ( ( rule__Node__SensorsAssignment_3 )* )
-            // InternalSmartCity.g:1204:2: ( rule__Node__SensorsAssignment_3 )*
+            // InternalSmartCity.g:1228:1: ( ( rule__Node__SensorsAssignment_3 )* )
+            // InternalSmartCity.g:1229:2: ( rule__Node__SensorsAssignment_3 )*
             {
              before(grammarAccess.getNodeAccess().getSensorsAssignment_3()); 
-            // InternalSmartCity.g:1205:2: ( rule__Node__SensorsAssignment_3 )*
+            // InternalSmartCity.g:1230:2: ( rule__Node__SensorsAssignment_3 )*
             loop8:
             do {
                 int alt8=2;
@@ -3815,7 +3892,7 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalSmartCity.g:1205:3: rule__Node__SensorsAssignment_3
+            	    // InternalSmartCity.g:1230:3: rule__Node__SensorsAssignment_3
             	    {
             	    pushFollow(FOLLOW_18);
             	    rule__Node__SensorsAssignment_3();
@@ -3854,14 +3931,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Node__Group__4"
-    // InternalSmartCity.g:1213:1: rule__Node__Group__4 : rule__Node__Group__4__Impl rule__Node__Group__5 ;
+    // InternalSmartCity.g:1238:1: rule__Node__Group__4 : rule__Node__Group__4__Impl rule__Node__Group__5 ;
     public final void rule__Node__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1217:1: ( rule__Node__Group__4__Impl rule__Node__Group__5 )
-            // InternalSmartCity.g:1218:2: rule__Node__Group__4__Impl rule__Node__Group__5
+            // InternalSmartCity.g:1242:1: ( rule__Node__Group__4__Impl rule__Node__Group__5 )
+            // InternalSmartCity.g:1243:2: rule__Node__Group__4__Impl rule__Node__Group__5
             {
             pushFollow(FOLLOW_17);
             rule__Node__Group__4__Impl();
@@ -3892,20 +3969,20 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Node__Group__4__Impl"
-    // InternalSmartCity.g:1225:1: rule__Node__Group__4__Impl : ( ( rule__Node__ModulesAssignment_4 )* ) ;
+    // InternalSmartCity.g:1250:1: rule__Node__Group__4__Impl : ( ( rule__Node__ModulesAssignment_4 )* ) ;
     public final void rule__Node__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1229:1: ( ( ( rule__Node__ModulesAssignment_4 )* ) )
-            // InternalSmartCity.g:1230:1: ( ( rule__Node__ModulesAssignment_4 )* )
+            // InternalSmartCity.g:1254:1: ( ( ( rule__Node__ModulesAssignment_4 )* ) )
+            // InternalSmartCity.g:1255:1: ( ( rule__Node__ModulesAssignment_4 )* )
             {
-            // InternalSmartCity.g:1230:1: ( ( rule__Node__ModulesAssignment_4 )* )
-            // InternalSmartCity.g:1231:2: ( rule__Node__ModulesAssignment_4 )*
+            // InternalSmartCity.g:1255:1: ( ( rule__Node__ModulesAssignment_4 )* )
+            // InternalSmartCity.g:1256:2: ( rule__Node__ModulesAssignment_4 )*
             {
              before(grammarAccess.getNodeAccess().getModulesAssignment_4()); 
-            // InternalSmartCity.g:1232:2: ( rule__Node__ModulesAssignment_4 )*
+            // InternalSmartCity.g:1257:2: ( rule__Node__ModulesAssignment_4 )*
             loop9:
             do {
                 int alt9=2;
@@ -3918,7 +3995,7 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
                 switch (alt9) {
             	case 1 :
-            	    // InternalSmartCity.g:1232:3: rule__Node__ModulesAssignment_4
+            	    // InternalSmartCity.g:1257:3: rule__Node__ModulesAssignment_4
             	    {
             	    pushFollow(FOLLOW_19);
             	    rule__Node__ModulesAssignment_4();
@@ -3957,14 +4034,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Node__Group__5"
-    // InternalSmartCity.g:1240:1: rule__Node__Group__5 : rule__Node__Group__5__Impl rule__Node__Group__6 ;
+    // InternalSmartCity.g:1265:1: rule__Node__Group__5 : rule__Node__Group__5__Impl rule__Node__Group__6 ;
     public final void rule__Node__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1244:1: ( rule__Node__Group__5__Impl rule__Node__Group__6 )
-            // InternalSmartCity.g:1245:2: rule__Node__Group__5__Impl rule__Node__Group__6
+            // InternalSmartCity.g:1269:1: ( rule__Node__Group__5__Impl rule__Node__Group__6 )
+            // InternalSmartCity.g:1270:2: rule__Node__Group__5__Impl rule__Node__Group__6
             {
             pushFollow(FOLLOW_20);
             rule__Node__Group__5__Impl();
@@ -3995,21 +4072,21 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Node__Group__5__Impl"
-    // InternalSmartCity.g:1252:1: rule__Node__Group__5__Impl : ( ( rule__Node__ControllerAssignment_5 ) ) ;
+    // InternalSmartCity.g:1277:1: rule__Node__Group__5__Impl : ( ( rule__Node__ControllerAssignment_5 ) ) ;
     public final void rule__Node__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1256:1: ( ( ( rule__Node__ControllerAssignment_5 ) ) )
-            // InternalSmartCity.g:1257:1: ( ( rule__Node__ControllerAssignment_5 ) )
+            // InternalSmartCity.g:1281:1: ( ( ( rule__Node__ControllerAssignment_5 ) ) )
+            // InternalSmartCity.g:1282:1: ( ( rule__Node__ControllerAssignment_5 ) )
             {
-            // InternalSmartCity.g:1257:1: ( ( rule__Node__ControllerAssignment_5 ) )
-            // InternalSmartCity.g:1258:2: ( rule__Node__ControllerAssignment_5 )
+            // InternalSmartCity.g:1282:1: ( ( rule__Node__ControllerAssignment_5 ) )
+            // InternalSmartCity.g:1283:2: ( rule__Node__ControllerAssignment_5 )
             {
              before(grammarAccess.getNodeAccess().getControllerAssignment_5()); 
-            // InternalSmartCity.g:1259:2: ( rule__Node__ControllerAssignment_5 )
-            // InternalSmartCity.g:1259:3: rule__Node__ControllerAssignment_5
+            // InternalSmartCity.g:1284:2: ( rule__Node__ControllerAssignment_5 )
+            // InternalSmartCity.g:1284:3: rule__Node__ControllerAssignment_5
             {
             pushFollow(FOLLOW_2);
             rule__Node__ControllerAssignment_5();
@@ -4042,14 +4119,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Node__Group__6"
-    // InternalSmartCity.g:1267:1: rule__Node__Group__6 : rule__Node__Group__6__Impl rule__Node__Group__7 ;
+    // InternalSmartCity.g:1292:1: rule__Node__Group__6 : rule__Node__Group__6__Impl rule__Node__Group__7 ;
     public final void rule__Node__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1271:1: ( rule__Node__Group__6__Impl rule__Node__Group__7 )
-            // InternalSmartCity.g:1272:2: rule__Node__Group__6__Impl rule__Node__Group__7
+            // InternalSmartCity.g:1296:1: ( rule__Node__Group__6__Impl rule__Node__Group__7 )
+            // InternalSmartCity.g:1297:2: rule__Node__Group__6__Impl rule__Node__Group__7
             {
             pushFollow(FOLLOW_20);
             rule__Node__Group__6__Impl();
@@ -4080,20 +4157,20 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Node__Group__6__Impl"
-    // InternalSmartCity.g:1279:1: rule__Node__Group__6__Impl : ( ( rule__Node__LinksAssignment_6 )* ) ;
+    // InternalSmartCity.g:1304:1: rule__Node__Group__6__Impl : ( ( rule__Node__LinksAssignment_6 )* ) ;
     public final void rule__Node__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1283:1: ( ( ( rule__Node__LinksAssignment_6 )* ) )
-            // InternalSmartCity.g:1284:1: ( ( rule__Node__LinksAssignment_6 )* )
+            // InternalSmartCity.g:1308:1: ( ( ( rule__Node__LinksAssignment_6 )* ) )
+            // InternalSmartCity.g:1309:1: ( ( rule__Node__LinksAssignment_6 )* )
             {
-            // InternalSmartCity.g:1284:1: ( ( rule__Node__LinksAssignment_6 )* )
-            // InternalSmartCity.g:1285:2: ( rule__Node__LinksAssignment_6 )*
+            // InternalSmartCity.g:1309:1: ( ( rule__Node__LinksAssignment_6 )* )
+            // InternalSmartCity.g:1310:2: ( rule__Node__LinksAssignment_6 )*
             {
              before(grammarAccess.getNodeAccess().getLinksAssignment_6()); 
-            // InternalSmartCity.g:1286:2: ( rule__Node__LinksAssignment_6 )*
+            // InternalSmartCity.g:1311:2: ( rule__Node__LinksAssignment_6 )*
             loop10:
             do {
                 int alt10=2;
@@ -4106,7 +4183,7 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
                 switch (alt10) {
             	case 1 :
-            	    // InternalSmartCity.g:1286:3: rule__Node__LinksAssignment_6
+            	    // InternalSmartCity.g:1311:3: rule__Node__LinksAssignment_6
             	    {
             	    pushFollow(FOLLOW_6);
             	    rule__Node__LinksAssignment_6();
@@ -4145,14 +4222,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Node__Group__7"
-    // InternalSmartCity.g:1294:1: rule__Node__Group__7 : rule__Node__Group__7__Impl rule__Node__Group__8 ;
+    // InternalSmartCity.g:1319:1: rule__Node__Group__7 : rule__Node__Group__7__Impl rule__Node__Group__8 ;
     public final void rule__Node__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1298:1: ( rule__Node__Group__7__Impl rule__Node__Group__8 )
-            // InternalSmartCity.g:1299:2: rule__Node__Group__7__Impl rule__Node__Group__8
+            // InternalSmartCity.g:1323:1: ( rule__Node__Group__7__Impl rule__Node__Group__8 )
+            // InternalSmartCity.g:1324:2: rule__Node__Group__7__Impl rule__Node__Group__8
             {
             pushFollow(FOLLOW_9);
             rule__Node__Group__7__Impl();
@@ -4183,17 +4260,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Node__Group__7__Impl"
-    // InternalSmartCity.g:1306:1: rule__Node__Group__7__Impl : ( 'postFrequency' ) ;
+    // InternalSmartCity.g:1331:1: rule__Node__Group__7__Impl : ( 'postFrequency' ) ;
     public final void rule__Node__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1310:1: ( ( 'postFrequency' ) )
-            // InternalSmartCity.g:1311:1: ( 'postFrequency' )
+            // InternalSmartCity.g:1335:1: ( ( 'postFrequency' ) )
+            // InternalSmartCity.g:1336:1: ( 'postFrequency' )
             {
-            // InternalSmartCity.g:1311:1: ( 'postFrequency' )
-            // InternalSmartCity.g:1312:2: 'postFrequency'
+            // InternalSmartCity.g:1336:1: ( 'postFrequency' )
+            // InternalSmartCity.g:1337:2: 'postFrequency'
             {
              before(grammarAccess.getNodeAccess().getPostFrequencyKeyword_7()); 
             match(input,43,FOLLOW_2); 
@@ -4220,16 +4297,16 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Node__Group__8"
-    // InternalSmartCity.g:1321:1: rule__Node__Group__8 : rule__Node__Group__8__Impl rule__Node__Group__9 ;
+    // InternalSmartCity.g:1346:1: rule__Node__Group__8 : rule__Node__Group__8__Impl rule__Node__Group__9 ;
     public final void rule__Node__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1325:1: ( rule__Node__Group__8__Impl rule__Node__Group__9 )
-            // InternalSmartCity.g:1326:2: rule__Node__Group__8__Impl rule__Node__Group__9
+            // InternalSmartCity.g:1350:1: ( rule__Node__Group__8__Impl rule__Node__Group__9 )
+            // InternalSmartCity.g:1351:2: rule__Node__Group__8__Impl rule__Node__Group__9
             {
-            pushFollow(FOLLOW_21);
+            pushFollow(FOLLOW_13);
             rule__Node__Group__8__Impl();
 
             state._fsp--;
@@ -4258,31 +4335,31 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Node__Group__8__Impl"
-    // InternalSmartCity.g:1333:1: rule__Node__Group__8__Impl : ( ( rule__Node__FreqValueAssignment_8 ) ) ;
+    // InternalSmartCity.g:1358:1: rule__Node__Group__8__Impl : ( ( rule__Node__FrequencyAssignment_8 ) ) ;
     public final void rule__Node__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1337:1: ( ( ( rule__Node__FreqValueAssignment_8 ) ) )
-            // InternalSmartCity.g:1338:1: ( ( rule__Node__FreqValueAssignment_8 ) )
+            // InternalSmartCity.g:1362:1: ( ( ( rule__Node__FrequencyAssignment_8 ) ) )
+            // InternalSmartCity.g:1363:1: ( ( rule__Node__FrequencyAssignment_8 ) )
             {
-            // InternalSmartCity.g:1338:1: ( ( rule__Node__FreqValueAssignment_8 ) )
-            // InternalSmartCity.g:1339:2: ( rule__Node__FreqValueAssignment_8 )
+            // InternalSmartCity.g:1363:1: ( ( rule__Node__FrequencyAssignment_8 ) )
+            // InternalSmartCity.g:1364:2: ( rule__Node__FrequencyAssignment_8 )
             {
-             before(grammarAccess.getNodeAccess().getFreqValueAssignment_8()); 
-            // InternalSmartCity.g:1340:2: ( rule__Node__FreqValueAssignment_8 )
-            // InternalSmartCity.g:1340:3: rule__Node__FreqValueAssignment_8
+             before(grammarAccess.getNodeAccess().getFrequencyAssignment_8()); 
+            // InternalSmartCity.g:1365:2: ( rule__Node__FrequencyAssignment_8 )
+            // InternalSmartCity.g:1365:3: rule__Node__FrequencyAssignment_8
             {
             pushFollow(FOLLOW_2);
-            rule__Node__FreqValueAssignment_8();
+            rule__Node__FrequencyAssignment_8();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getNodeAccess().getFreqValueAssignment_8()); 
+             after(grammarAccess.getNodeAccess().getFrequencyAssignment_8()); 
 
             }
 
@@ -4305,16 +4382,16 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Node__Group__9"
-    // InternalSmartCity.g:1348:1: rule__Node__Group__9 : rule__Node__Group__9__Impl rule__Node__Group__10 ;
+    // InternalSmartCity.g:1373:1: rule__Node__Group__9 : rule__Node__Group__9__Impl rule__Node__Group__10 ;
     public final void rule__Node__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1352:1: ( rule__Node__Group__9__Impl rule__Node__Group__10 )
-            // InternalSmartCity.g:1353:2: rule__Node__Group__9__Impl rule__Node__Group__10
+            // InternalSmartCity.g:1377:1: ( rule__Node__Group__9__Impl rule__Node__Group__10 )
+            // InternalSmartCity.g:1378:2: rule__Node__Group__9__Impl rule__Node__Group__10
             {
-            pushFollow(FOLLOW_13);
+            pushFollow(FOLLOW_9);
             rule__Node__Group__9__Impl();
 
             state._fsp--;
@@ -4343,31 +4420,21 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Node__Group__9__Impl"
-    // InternalSmartCity.g:1360:1: rule__Node__Group__9__Impl : ( ( rule__Node__FreqUnitAssignment_9 ) ) ;
+    // InternalSmartCity.g:1385:1: rule__Node__Group__9__Impl : ( 'priority' ) ;
     public final void rule__Node__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1364:1: ( ( ( rule__Node__FreqUnitAssignment_9 ) ) )
-            // InternalSmartCity.g:1365:1: ( ( rule__Node__FreqUnitAssignment_9 ) )
+            // InternalSmartCity.g:1389:1: ( ( 'priority' ) )
+            // InternalSmartCity.g:1390:1: ( 'priority' )
             {
-            // InternalSmartCity.g:1365:1: ( ( rule__Node__FreqUnitAssignment_9 ) )
-            // InternalSmartCity.g:1366:2: ( rule__Node__FreqUnitAssignment_9 )
+            // InternalSmartCity.g:1390:1: ( 'priority' )
+            // InternalSmartCity.g:1391:2: 'priority'
             {
-             before(grammarAccess.getNodeAccess().getFreqUnitAssignment_9()); 
-            // InternalSmartCity.g:1367:2: ( rule__Node__FreqUnitAssignment_9 )
-            // InternalSmartCity.g:1367:3: rule__Node__FreqUnitAssignment_9
-            {
-            pushFollow(FOLLOW_2);
-            rule__Node__FreqUnitAssignment_9();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getNodeAccess().getFreqUnitAssignment_9()); 
+             before(grammarAccess.getNodeAccess().getPriorityKeyword_9()); 
+            match(input,40,FOLLOW_2); 
+             after(grammarAccess.getNodeAccess().getPriorityKeyword_9()); 
 
             }
 
@@ -4390,16 +4457,16 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Node__Group__10"
-    // InternalSmartCity.g:1375:1: rule__Node__Group__10 : rule__Node__Group__10__Impl rule__Node__Group__11 ;
+    // InternalSmartCity.g:1400:1: rule__Node__Group__10 : rule__Node__Group__10__Impl rule__Node__Group__11 ;
     public final void rule__Node__Group__10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1379:1: ( rule__Node__Group__10__Impl rule__Node__Group__11 )
-            // InternalSmartCity.g:1380:2: rule__Node__Group__10__Impl rule__Node__Group__11
+            // InternalSmartCity.g:1404:1: ( rule__Node__Group__10__Impl rule__Node__Group__11 )
+            // InternalSmartCity.g:1405:2: rule__Node__Group__10__Impl rule__Node__Group__11
             {
-            pushFollow(FOLLOW_9);
+            pushFollow(FOLLOW_16);
             rule__Node__Group__10__Impl();
 
             state._fsp--;
@@ -4428,21 +4495,31 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Node__Group__10__Impl"
-    // InternalSmartCity.g:1387:1: rule__Node__Group__10__Impl : ( 'priority' ) ;
+    // InternalSmartCity.g:1412:1: rule__Node__Group__10__Impl : ( ( rule__Node__PriorityAssignment_10 ) ) ;
     public final void rule__Node__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1391:1: ( ( 'priority' ) )
-            // InternalSmartCity.g:1392:1: ( 'priority' )
+            // InternalSmartCity.g:1416:1: ( ( ( rule__Node__PriorityAssignment_10 ) ) )
+            // InternalSmartCity.g:1417:1: ( ( rule__Node__PriorityAssignment_10 ) )
             {
-            // InternalSmartCity.g:1392:1: ( 'priority' )
-            // InternalSmartCity.g:1393:2: 'priority'
+            // InternalSmartCity.g:1417:1: ( ( rule__Node__PriorityAssignment_10 ) )
+            // InternalSmartCity.g:1418:2: ( rule__Node__PriorityAssignment_10 )
             {
-             before(grammarAccess.getNodeAccess().getPriorityKeyword_10()); 
-            match(input,40,FOLLOW_2); 
-             after(grammarAccess.getNodeAccess().getPriorityKeyword_10()); 
+             before(grammarAccess.getNodeAccess().getPriorityAssignment_10()); 
+            // InternalSmartCity.g:1419:2: ( rule__Node__PriorityAssignment_10 )
+            // InternalSmartCity.g:1419:3: rule__Node__PriorityAssignment_10
+            {
+            pushFollow(FOLLOW_2);
+            rule__Node__PriorityAssignment_10();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getNodeAccess().getPriorityAssignment_10()); 
 
             }
 
@@ -4465,22 +4542,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Node__Group__11"
-    // InternalSmartCity.g:1402:1: rule__Node__Group__11 : rule__Node__Group__11__Impl rule__Node__Group__12 ;
+    // InternalSmartCity.g:1427:1: rule__Node__Group__11 : rule__Node__Group__11__Impl ;
     public final void rule__Node__Group__11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1406:1: ( rule__Node__Group__11__Impl rule__Node__Group__12 )
-            // InternalSmartCity.g:1407:2: rule__Node__Group__11__Impl rule__Node__Group__12
+            // InternalSmartCity.g:1431:1: ( rule__Node__Group__11__Impl )
+            // InternalSmartCity.g:1432:2: rule__Node__Group__11__Impl
             {
-            pushFollow(FOLLOW_16);
-            rule__Node__Group__11__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__Node__Group__12();
+            rule__Node__Group__11__Impl();
 
             state._fsp--;
 
@@ -4503,31 +4575,21 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Node__Group__11__Impl"
-    // InternalSmartCity.g:1414:1: rule__Node__Group__11__Impl : ( ( rule__Node__PriorityAssignment_11 ) ) ;
+    // InternalSmartCity.g:1438:1: rule__Node__Group__11__Impl : ( '}' ) ;
     public final void rule__Node__Group__11__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1418:1: ( ( ( rule__Node__PriorityAssignment_11 ) ) )
-            // InternalSmartCity.g:1419:1: ( ( rule__Node__PriorityAssignment_11 ) )
+            // InternalSmartCity.g:1442:1: ( ( '}' ) )
+            // InternalSmartCity.g:1443:1: ( '}' )
             {
-            // InternalSmartCity.g:1419:1: ( ( rule__Node__PriorityAssignment_11 ) )
-            // InternalSmartCity.g:1420:2: ( rule__Node__PriorityAssignment_11 )
+            // InternalSmartCity.g:1443:1: ( '}' )
+            // InternalSmartCity.g:1444:2: '}'
             {
-             before(grammarAccess.getNodeAccess().getPriorityAssignment_11()); 
-            // InternalSmartCity.g:1421:2: ( rule__Node__PriorityAssignment_11 )
-            // InternalSmartCity.g:1421:3: rule__Node__PriorityAssignment_11
-            {
-            pushFollow(FOLLOW_2);
-            rule__Node__PriorityAssignment_11();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getNodeAccess().getPriorityAssignment_11()); 
+             before(grammarAccess.getNodeAccess().getRightCurlyBracketKeyword_11()); 
+            match(input,37,FOLLOW_2); 
+             after(grammarAccess.getNodeAccess().getRightCurlyBracketKeyword_11()); 
 
             }
 
@@ -4549,85 +4611,15 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
     // $ANTLR end "rule__Node__Group__11__Impl"
 
 
-    // $ANTLR start "rule__Node__Group__12"
-    // InternalSmartCity.g:1429:1: rule__Node__Group__12 : rule__Node__Group__12__Impl ;
-    public final void rule__Node__Group__12() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSmartCity.g:1433:1: ( rule__Node__Group__12__Impl )
-            // InternalSmartCity.g:1434:2: rule__Node__Group__12__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__Node__Group__12__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Node__Group__12"
-
-
-    // $ANTLR start "rule__Node__Group__12__Impl"
-    // InternalSmartCity.g:1440:1: rule__Node__Group__12__Impl : ( '}' ) ;
-    public final void rule__Node__Group__12__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSmartCity.g:1444:1: ( ( '}' ) )
-            // InternalSmartCity.g:1445:1: ( '}' )
-            {
-            // InternalSmartCity.g:1445:1: ( '}' )
-            // InternalSmartCity.g:1446:2: '}'
-            {
-             before(grammarAccess.getNodeAccess().getRightCurlyBracketKeyword_12()); 
-            match(input,37,FOLLOW_2); 
-             after(grammarAccess.getNodeAccess().getRightCurlyBracketKeyword_12()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Node__Group__12__Impl"
-
-
     // $ANTLR start "rule__Sensor__Group__0"
-    // InternalSmartCity.g:1456:1: rule__Sensor__Group__0 : rule__Sensor__Group__0__Impl rule__Sensor__Group__1 ;
+    // InternalSmartCity.g:1454:1: rule__Sensor__Group__0 : rule__Sensor__Group__0__Impl rule__Sensor__Group__1 ;
     public final void rule__Sensor__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1460:1: ( rule__Sensor__Group__0__Impl rule__Sensor__Group__1 )
-            // InternalSmartCity.g:1461:2: rule__Sensor__Group__0__Impl rule__Sensor__Group__1
+            // InternalSmartCity.g:1458:1: ( rule__Sensor__Group__0__Impl rule__Sensor__Group__1 )
+            // InternalSmartCity.g:1459:2: rule__Sensor__Group__0__Impl rule__Sensor__Group__1
             {
             pushFollow(FOLLOW_12);
             rule__Sensor__Group__0__Impl();
@@ -4658,17 +4650,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Sensor__Group__0__Impl"
-    // InternalSmartCity.g:1468:1: rule__Sensor__Group__0__Impl : ( 'sensor' ) ;
+    // InternalSmartCity.g:1466:1: rule__Sensor__Group__0__Impl : ( 'sensor' ) ;
     public final void rule__Sensor__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1472:1: ( ( 'sensor' ) )
-            // InternalSmartCity.g:1473:1: ( 'sensor' )
+            // InternalSmartCity.g:1470:1: ( ( 'sensor' ) )
+            // InternalSmartCity.g:1471:1: ( 'sensor' )
             {
-            // InternalSmartCity.g:1473:1: ( 'sensor' )
-            // InternalSmartCity.g:1474:2: 'sensor'
+            // InternalSmartCity.g:1471:1: ( 'sensor' )
+            // InternalSmartCity.g:1472:2: 'sensor'
             {
              before(grammarAccess.getSensorAccess().getSensorKeyword_0()); 
             match(input,44,FOLLOW_2); 
@@ -4695,14 +4687,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Sensor__Group__1"
-    // InternalSmartCity.g:1483:1: rule__Sensor__Group__1 : rule__Sensor__Group__1__Impl rule__Sensor__Group__2 ;
+    // InternalSmartCity.g:1481:1: rule__Sensor__Group__1 : rule__Sensor__Group__1__Impl rule__Sensor__Group__2 ;
     public final void rule__Sensor__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1487:1: ( rule__Sensor__Group__1__Impl rule__Sensor__Group__2 )
-            // InternalSmartCity.g:1488:2: rule__Sensor__Group__1__Impl rule__Sensor__Group__2
+            // InternalSmartCity.g:1485:1: ( rule__Sensor__Group__1__Impl rule__Sensor__Group__2 )
+            // InternalSmartCity.g:1486:2: rule__Sensor__Group__1__Impl rule__Sensor__Group__2
             {
             pushFollow(FOLLOW_7);
             rule__Sensor__Group__1__Impl();
@@ -4733,21 +4725,21 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Sensor__Group__1__Impl"
-    // InternalSmartCity.g:1495:1: rule__Sensor__Group__1__Impl : ( ( rule__Sensor__NameAssignment_1 ) ) ;
+    // InternalSmartCity.g:1493:1: rule__Sensor__Group__1__Impl : ( ( rule__Sensor__NameAssignment_1 ) ) ;
     public final void rule__Sensor__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1499:1: ( ( ( rule__Sensor__NameAssignment_1 ) ) )
-            // InternalSmartCity.g:1500:1: ( ( rule__Sensor__NameAssignment_1 ) )
+            // InternalSmartCity.g:1497:1: ( ( ( rule__Sensor__NameAssignment_1 ) ) )
+            // InternalSmartCity.g:1498:1: ( ( rule__Sensor__NameAssignment_1 ) )
             {
-            // InternalSmartCity.g:1500:1: ( ( rule__Sensor__NameAssignment_1 ) )
-            // InternalSmartCity.g:1501:2: ( rule__Sensor__NameAssignment_1 )
+            // InternalSmartCity.g:1498:1: ( ( rule__Sensor__NameAssignment_1 ) )
+            // InternalSmartCity.g:1499:2: ( rule__Sensor__NameAssignment_1 )
             {
              before(grammarAccess.getSensorAccess().getNameAssignment_1()); 
-            // InternalSmartCity.g:1502:2: ( rule__Sensor__NameAssignment_1 )
-            // InternalSmartCity.g:1502:3: rule__Sensor__NameAssignment_1
+            // InternalSmartCity.g:1500:2: ( rule__Sensor__NameAssignment_1 )
+            // InternalSmartCity.g:1500:3: rule__Sensor__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Sensor__NameAssignment_1();
@@ -4780,16 +4772,16 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Sensor__Group__2"
-    // InternalSmartCity.g:1510:1: rule__Sensor__Group__2 : rule__Sensor__Group__2__Impl rule__Sensor__Group__3 ;
+    // InternalSmartCity.g:1508:1: rule__Sensor__Group__2 : rule__Sensor__Group__2__Impl rule__Sensor__Group__3 ;
     public final void rule__Sensor__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1514:1: ( rule__Sensor__Group__2__Impl rule__Sensor__Group__3 )
-            // InternalSmartCity.g:1515:2: rule__Sensor__Group__2__Impl rule__Sensor__Group__3
+            // InternalSmartCity.g:1512:1: ( rule__Sensor__Group__2__Impl rule__Sensor__Group__3 )
+            // InternalSmartCity.g:1513:2: rule__Sensor__Group__2__Impl rule__Sensor__Group__3
             {
-            pushFollow(FOLLOW_22);
+            pushFollow(FOLLOW_21);
             rule__Sensor__Group__2__Impl();
 
             state._fsp--;
@@ -4818,17 +4810,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Sensor__Group__2__Impl"
-    // InternalSmartCity.g:1522:1: rule__Sensor__Group__2__Impl : ( '{' ) ;
+    // InternalSmartCity.g:1520:1: rule__Sensor__Group__2__Impl : ( '{' ) ;
     public final void rule__Sensor__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1526:1: ( ( '{' ) )
-            // InternalSmartCity.g:1527:1: ( '{' )
+            // InternalSmartCity.g:1524:1: ( ( '{' ) )
+            // InternalSmartCity.g:1525:1: ( '{' )
             {
-            // InternalSmartCity.g:1527:1: ( '{' )
-            // InternalSmartCity.g:1528:2: '{'
+            // InternalSmartCity.g:1525:1: ( '{' )
+            // InternalSmartCity.g:1526:2: '{'
             {
              before(grammarAccess.getSensorAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,35,FOLLOW_2); 
@@ -4855,16 +4847,16 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Sensor__Group__3"
-    // InternalSmartCity.g:1537:1: rule__Sensor__Group__3 : rule__Sensor__Group__3__Impl rule__Sensor__Group__4 ;
+    // InternalSmartCity.g:1535:1: rule__Sensor__Group__3 : rule__Sensor__Group__3__Impl rule__Sensor__Group__4 ;
     public final void rule__Sensor__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1541:1: ( rule__Sensor__Group__3__Impl rule__Sensor__Group__4 )
-            // InternalSmartCity.g:1542:2: rule__Sensor__Group__3__Impl rule__Sensor__Group__4
+            // InternalSmartCity.g:1539:1: ( rule__Sensor__Group__3__Impl rule__Sensor__Group__4 )
+            // InternalSmartCity.g:1540:2: rule__Sensor__Group__3__Impl rule__Sensor__Group__4
             {
-            pushFollow(FOLLOW_23);
+            pushFollow(FOLLOW_22);
             rule__Sensor__Group__3__Impl();
 
             state._fsp--;
@@ -4893,17 +4885,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Sensor__Group__3__Impl"
-    // InternalSmartCity.g:1549:1: rule__Sensor__Group__3__Impl : ( 'type' ) ;
+    // InternalSmartCity.g:1547:1: rule__Sensor__Group__3__Impl : ( 'type' ) ;
     public final void rule__Sensor__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1553:1: ( ( 'type' ) )
-            // InternalSmartCity.g:1554:1: ( 'type' )
+            // InternalSmartCity.g:1551:1: ( ( 'type' ) )
+            // InternalSmartCity.g:1552:1: ( 'type' )
             {
-            // InternalSmartCity.g:1554:1: ( 'type' )
-            // InternalSmartCity.g:1555:2: 'type'
+            // InternalSmartCity.g:1552:1: ( 'type' )
+            // InternalSmartCity.g:1553:2: 'type'
             {
              before(grammarAccess.getSensorAccess().getTypeKeyword_3()); 
             match(input,45,FOLLOW_2); 
@@ -4930,14 +4922,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Sensor__Group__4"
-    // InternalSmartCity.g:1564:1: rule__Sensor__Group__4 : rule__Sensor__Group__4__Impl rule__Sensor__Group__5 ;
+    // InternalSmartCity.g:1562:1: rule__Sensor__Group__4 : rule__Sensor__Group__4__Impl rule__Sensor__Group__5 ;
     public final void rule__Sensor__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1568:1: ( rule__Sensor__Group__4__Impl rule__Sensor__Group__5 )
-            // InternalSmartCity.g:1569:2: rule__Sensor__Group__4__Impl rule__Sensor__Group__5
+            // InternalSmartCity.g:1566:1: ( rule__Sensor__Group__4__Impl rule__Sensor__Group__5 )
+            // InternalSmartCity.g:1567:2: rule__Sensor__Group__4__Impl rule__Sensor__Group__5
             {
             pushFollow(FOLLOW_13);
             rule__Sensor__Group__4__Impl();
@@ -4968,21 +4960,21 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Sensor__Group__4__Impl"
-    // InternalSmartCity.g:1576:1: rule__Sensor__Group__4__Impl : ( ( rule__Sensor__TypeAssignment_4 ) ) ;
+    // InternalSmartCity.g:1574:1: rule__Sensor__Group__4__Impl : ( ( rule__Sensor__TypeAssignment_4 ) ) ;
     public final void rule__Sensor__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1580:1: ( ( ( rule__Sensor__TypeAssignment_4 ) ) )
-            // InternalSmartCity.g:1581:1: ( ( rule__Sensor__TypeAssignment_4 ) )
+            // InternalSmartCity.g:1578:1: ( ( ( rule__Sensor__TypeAssignment_4 ) ) )
+            // InternalSmartCity.g:1579:1: ( ( rule__Sensor__TypeAssignment_4 ) )
             {
-            // InternalSmartCity.g:1581:1: ( ( rule__Sensor__TypeAssignment_4 ) )
-            // InternalSmartCity.g:1582:2: ( rule__Sensor__TypeAssignment_4 )
+            // InternalSmartCity.g:1579:1: ( ( rule__Sensor__TypeAssignment_4 ) )
+            // InternalSmartCity.g:1580:2: ( rule__Sensor__TypeAssignment_4 )
             {
              before(grammarAccess.getSensorAccess().getTypeAssignment_4()); 
-            // InternalSmartCity.g:1583:2: ( rule__Sensor__TypeAssignment_4 )
-            // InternalSmartCity.g:1583:3: rule__Sensor__TypeAssignment_4
+            // InternalSmartCity.g:1581:2: ( rule__Sensor__TypeAssignment_4 )
+            // InternalSmartCity.g:1581:3: rule__Sensor__TypeAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__Sensor__TypeAssignment_4();
@@ -5015,14 +5007,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Sensor__Group__5"
-    // InternalSmartCity.g:1591:1: rule__Sensor__Group__5 : rule__Sensor__Group__5__Impl rule__Sensor__Group__6 ;
+    // InternalSmartCity.g:1589:1: rule__Sensor__Group__5 : rule__Sensor__Group__5__Impl rule__Sensor__Group__6 ;
     public final void rule__Sensor__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1595:1: ( rule__Sensor__Group__5__Impl rule__Sensor__Group__6 )
-            // InternalSmartCity.g:1596:2: rule__Sensor__Group__5__Impl rule__Sensor__Group__6
+            // InternalSmartCity.g:1593:1: ( rule__Sensor__Group__5__Impl rule__Sensor__Group__6 )
+            // InternalSmartCity.g:1594:2: rule__Sensor__Group__5__Impl rule__Sensor__Group__6
             {
             pushFollow(FOLLOW_9);
             rule__Sensor__Group__5__Impl();
@@ -5053,17 +5045,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Sensor__Group__5__Impl"
-    // InternalSmartCity.g:1603:1: rule__Sensor__Group__5__Impl : ( 'priority' ) ;
+    // InternalSmartCity.g:1601:1: rule__Sensor__Group__5__Impl : ( 'priority' ) ;
     public final void rule__Sensor__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1607:1: ( ( 'priority' ) )
-            // InternalSmartCity.g:1608:1: ( 'priority' )
+            // InternalSmartCity.g:1605:1: ( ( 'priority' ) )
+            // InternalSmartCity.g:1606:1: ( 'priority' )
             {
-            // InternalSmartCity.g:1608:1: ( 'priority' )
-            // InternalSmartCity.g:1609:2: 'priority'
+            // InternalSmartCity.g:1606:1: ( 'priority' )
+            // InternalSmartCity.g:1607:2: 'priority'
             {
              before(grammarAccess.getSensorAccess().getPriorityKeyword_5()); 
             match(input,40,FOLLOW_2); 
@@ -5090,16 +5082,16 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Sensor__Group__6"
-    // InternalSmartCity.g:1618:1: rule__Sensor__Group__6 : rule__Sensor__Group__6__Impl rule__Sensor__Group__7 ;
+    // InternalSmartCity.g:1616:1: rule__Sensor__Group__6 : rule__Sensor__Group__6__Impl rule__Sensor__Group__7 ;
     public final void rule__Sensor__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1622:1: ( rule__Sensor__Group__6__Impl rule__Sensor__Group__7 )
-            // InternalSmartCity.g:1623:2: rule__Sensor__Group__6__Impl rule__Sensor__Group__7
+            // InternalSmartCity.g:1620:1: ( rule__Sensor__Group__6__Impl rule__Sensor__Group__7 )
+            // InternalSmartCity.g:1621:2: rule__Sensor__Group__6__Impl rule__Sensor__Group__7
             {
-            pushFollow(FOLLOW_24);
+            pushFollow(FOLLOW_23);
             rule__Sensor__Group__6__Impl();
 
             state._fsp--;
@@ -5128,21 +5120,21 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Sensor__Group__6__Impl"
-    // InternalSmartCity.g:1630:1: rule__Sensor__Group__6__Impl : ( ( rule__Sensor__PriorityAssignment_6 ) ) ;
+    // InternalSmartCity.g:1628:1: rule__Sensor__Group__6__Impl : ( ( rule__Sensor__PriorityAssignment_6 ) ) ;
     public final void rule__Sensor__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1634:1: ( ( ( rule__Sensor__PriorityAssignment_6 ) ) )
-            // InternalSmartCity.g:1635:1: ( ( rule__Sensor__PriorityAssignment_6 ) )
+            // InternalSmartCity.g:1632:1: ( ( ( rule__Sensor__PriorityAssignment_6 ) ) )
+            // InternalSmartCity.g:1633:1: ( ( rule__Sensor__PriorityAssignment_6 ) )
             {
-            // InternalSmartCity.g:1635:1: ( ( rule__Sensor__PriorityAssignment_6 ) )
-            // InternalSmartCity.g:1636:2: ( rule__Sensor__PriorityAssignment_6 )
+            // InternalSmartCity.g:1633:1: ( ( rule__Sensor__PriorityAssignment_6 ) )
+            // InternalSmartCity.g:1634:2: ( rule__Sensor__PriorityAssignment_6 )
             {
              before(grammarAccess.getSensorAccess().getPriorityAssignment_6()); 
-            // InternalSmartCity.g:1637:2: ( rule__Sensor__PriorityAssignment_6 )
-            // InternalSmartCity.g:1637:3: rule__Sensor__PriorityAssignment_6
+            // InternalSmartCity.g:1635:2: ( rule__Sensor__PriorityAssignment_6 )
+            // InternalSmartCity.g:1635:3: rule__Sensor__PriorityAssignment_6
             {
             pushFollow(FOLLOW_2);
             rule__Sensor__PriorityAssignment_6();
@@ -5175,16 +5167,16 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Sensor__Group__7"
-    // InternalSmartCity.g:1645:1: rule__Sensor__Group__7 : rule__Sensor__Group__7__Impl rule__Sensor__Group__8 ;
+    // InternalSmartCity.g:1643:1: rule__Sensor__Group__7 : rule__Sensor__Group__7__Impl rule__Sensor__Group__8 ;
     public final void rule__Sensor__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1649:1: ( rule__Sensor__Group__7__Impl rule__Sensor__Group__8 )
-            // InternalSmartCity.g:1650:2: rule__Sensor__Group__7__Impl rule__Sensor__Group__8
+            // InternalSmartCity.g:1647:1: ( rule__Sensor__Group__7__Impl rule__Sensor__Group__8 )
+            // InternalSmartCity.g:1648:2: rule__Sensor__Group__7__Impl rule__Sensor__Group__8
             {
-            pushFollow(FOLLOW_24);
+            pushFollow(FOLLOW_23);
             rule__Sensor__Group__7__Impl();
 
             state._fsp--;
@@ -5213,20 +5205,20 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Sensor__Group__7__Impl"
-    // InternalSmartCity.g:1657:1: rule__Sensor__Group__7__Impl : ( ( rule__Sensor__CyclicActionsAssignment_7 )* ) ;
+    // InternalSmartCity.g:1655:1: rule__Sensor__Group__7__Impl : ( ( rule__Sensor__CyclicActionsAssignment_7 )* ) ;
     public final void rule__Sensor__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1661:1: ( ( ( rule__Sensor__CyclicActionsAssignment_7 )* ) )
-            // InternalSmartCity.g:1662:1: ( ( rule__Sensor__CyclicActionsAssignment_7 )* )
+            // InternalSmartCity.g:1659:1: ( ( ( rule__Sensor__CyclicActionsAssignment_7 )* ) )
+            // InternalSmartCity.g:1660:1: ( ( rule__Sensor__CyclicActionsAssignment_7 )* )
             {
-            // InternalSmartCity.g:1662:1: ( ( rule__Sensor__CyclicActionsAssignment_7 )* )
-            // InternalSmartCity.g:1663:2: ( rule__Sensor__CyclicActionsAssignment_7 )*
+            // InternalSmartCity.g:1660:1: ( ( rule__Sensor__CyclicActionsAssignment_7 )* )
+            // InternalSmartCity.g:1661:2: ( rule__Sensor__CyclicActionsAssignment_7 )*
             {
              before(grammarAccess.getSensorAccess().getCyclicActionsAssignment_7()); 
-            // InternalSmartCity.g:1664:2: ( rule__Sensor__CyclicActionsAssignment_7 )*
+            // InternalSmartCity.g:1662:2: ( rule__Sensor__CyclicActionsAssignment_7 )*
             loop11:
             do {
                 int alt11=2;
@@ -5239,9 +5231,9 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
                 switch (alt11) {
             	case 1 :
-            	    // InternalSmartCity.g:1664:3: rule__Sensor__CyclicActionsAssignment_7
+            	    // InternalSmartCity.g:1662:3: rule__Sensor__CyclicActionsAssignment_7
             	    {
-            	    pushFollow(FOLLOW_25);
+            	    pushFollow(FOLLOW_24);
             	    rule__Sensor__CyclicActionsAssignment_7();
 
             	    state._fsp--;
@@ -5278,16 +5270,16 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Sensor__Group__8"
-    // InternalSmartCity.g:1672:1: rule__Sensor__Group__8 : rule__Sensor__Group__8__Impl rule__Sensor__Group__9 ;
+    // InternalSmartCity.g:1670:1: rule__Sensor__Group__8 : rule__Sensor__Group__8__Impl rule__Sensor__Group__9 ;
     public final void rule__Sensor__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1676:1: ( rule__Sensor__Group__8__Impl rule__Sensor__Group__9 )
-            // InternalSmartCity.g:1677:2: rule__Sensor__Group__8__Impl rule__Sensor__Group__9
+            // InternalSmartCity.g:1674:1: ( rule__Sensor__Group__8__Impl rule__Sensor__Group__9 )
+            // InternalSmartCity.g:1675:2: rule__Sensor__Group__8__Impl rule__Sensor__Group__9
             {
-            pushFollow(FOLLOW_24);
+            pushFollow(FOLLOW_23);
             rule__Sensor__Group__8__Impl();
 
             state._fsp--;
@@ -5316,20 +5308,20 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Sensor__Group__8__Impl"
-    // InternalSmartCity.g:1684:1: rule__Sensor__Group__8__Impl : ( ( rule__Sensor__TriggeredActionsAssignment_8 )* ) ;
+    // InternalSmartCity.g:1682:1: rule__Sensor__Group__8__Impl : ( ( rule__Sensor__TriggeredActionsAssignment_8 )* ) ;
     public final void rule__Sensor__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1688:1: ( ( ( rule__Sensor__TriggeredActionsAssignment_8 )* ) )
-            // InternalSmartCity.g:1689:1: ( ( rule__Sensor__TriggeredActionsAssignment_8 )* )
+            // InternalSmartCity.g:1686:1: ( ( ( rule__Sensor__TriggeredActionsAssignment_8 )* ) )
+            // InternalSmartCity.g:1687:1: ( ( rule__Sensor__TriggeredActionsAssignment_8 )* )
             {
-            // InternalSmartCity.g:1689:1: ( ( rule__Sensor__TriggeredActionsAssignment_8 )* )
-            // InternalSmartCity.g:1690:2: ( rule__Sensor__TriggeredActionsAssignment_8 )*
+            // InternalSmartCity.g:1687:1: ( ( rule__Sensor__TriggeredActionsAssignment_8 )* )
+            // InternalSmartCity.g:1688:2: ( rule__Sensor__TriggeredActionsAssignment_8 )*
             {
              before(grammarAccess.getSensorAccess().getTriggeredActionsAssignment_8()); 
-            // InternalSmartCity.g:1691:2: ( rule__Sensor__TriggeredActionsAssignment_8 )*
+            // InternalSmartCity.g:1689:2: ( rule__Sensor__TriggeredActionsAssignment_8 )*
             loop12:
             do {
                 int alt12=2;
@@ -5342,9 +5334,9 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
                 switch (alt12) {
             	case 1 :
-            	    // InternalSmartCity.g:1691:3: rule__Sensor__TriggeredActionsAssignment_8
+            	    // InternalSmartCity.g:1689:3: rule__Sensor__TriggeredActionsAssignment_8
             	    {
-            	    pushFollow(FOLLOW_26);
+            	    pushFollow(FOLLOW_25);
             	    rule__Sensor__TriggeredActionsAssignment_8();
 
             	    state._fsp--;
@@ -5381,14 +5373,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Sensor__Group__9"
-    // InternalSmartCity.g:1699:1: rule__Sensor__Group__9 : rule__Sensor__Group__9__Impl ;
+    // InternalSmartCity.g:1697:1: rule__Sensor__Group__9 : rule__Sensor__Group__9__Impl ;
     public final void rule__Sensor__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1703:1: ( rule__Sensor__Group__9__Impl )
-            // InternalSmartCity.g:1704:2: rule__Sensor__Group__9__Impl
+            // InternalSmartCity.g:1701:1: ( rule__Sensor__Group__9__Impl )
+            // InternalSmartCity.g:1702:2: rule__Sensor__Group__9__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Sensor__Group__9__Impl();
@@ -5414,17 +5406,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Sensor__Group__9__Impl"
-    // InternalSmartCity.g:1710:1: rule__Sensor__Group__9__Impl : ( '}' ) ;
+    // InternalSmartCity.g:1708:1: rule__Sensor__Group__9__Impl : ( '}' ) ;
     public final void rule__Sensor__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1714:1: ( ( '}' ) )
-            // InternalSmartCity.g:1715:1: ( '}' )
+            // InternalSmartCity.g:1712:1: ( ( '}' ) )
+            // InternalSmartCity.g:1713:1: ( '}' )
             {
-            // InternalSmartCity.g:1715:1: ( '}' )
-            // InternalSmartCity.g:1716:2: '}'
+            // InternalSmartCity.g:1713:1: ( '}' )
+            // InternalSmartCity.g:1714:2: '}'
             {
              before(grammarAccess.getSensorAccess().getRightCurlyBracketKeyword_9()); 
             match(input,37,FOLLOW_2); 
@@ -5451,16 +5443,16 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__CommunicationLink__Group__0"
-    // InternalSmartCity.g:1726:1: rule__CommunicationLink__Group__0 : rule__CommunicationLink__Group__0__Impl rule__CommunicationLink__Group__1 ;
+    // InternalSmartCity.g:1724:1: rule__CommunicationLink__Group__0 : rule__CommunicationLink__Group__0__Impl rule__CommunicationLink__Group__1 ;
     public final void rule__CommunicationLink__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1730:1: ( rule__CommunicationLink__Group__0__Impl rule__CommunicationLink__Group__1 )
-            // InternalSmartCity.g:1731:2: rule__CommunicationLink__Group__0__Impl rule__CommunicationLink__Group__1
+            // InternalSmartCity.g:1728:1: ( rule__CommunicationLink__Group__0__Impl rule__CommunicationLink__Group__1 )
+            // InternalSmartCity.g:1729:2: rule__CommunicationLink__Group__0__Impl rule__CommunicationLink__Group__1
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_26);
             rule__CommunicationLink__Group__0__Impl();
 
             state._fsp--;
@@ -5489,17 +5481,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__CommunicationLink__Group__0__Impl"
-    // InternalSmartCity.g:1738:1: rule__CommunicationLink__Group__0__Impl : ( 'link' ) ;
+    // InternalSmartCity.g:1736:1: rule__CommunicationLink__Group__0__Impl : ( 'link' ) ;
     public final void rule__CommunicationLink__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1742:1: ( ( 'link' ) )
-            // InternalSmartCity.g:1743:1: ( 'link' )
+            // InternalSmartCity.g:1740:1: ( ( 'link' ) )
+            // InternalSmartCity.g:1741:1: ( 'link' )
             {
-            // InternalSmartCity.g:1743:1: ( 'link' )
-            // InternalSmartCity.g:1744:2: 'link'
+            // InternalSmartCity.g:1741:1: ( 'link' )
+            // InternalSmartCity.g:1742:2: 'link'
             {
              before(grammarAccess.getCommunicationLinkAccess().getLinkKeyword_0()); 
             match(input,46,FOLLOW_2); 
@@ -5526,16 +5518,16 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__CommunicationLink__Group__1"
-    // InternalSmartCity.g:1753:1: rule__CommunicationLink__Group__1 : rule__CommunicationLink__Group__1__Impl rule__CommunicationLink__Group__2 ;
+    // InternalSmartCity.g:1751:1: rule__CommunicationLink__Group__1 : rule__CommunicationLink__Group__1__Impl rule__CommunicationLink__Group__2 ;
     public final void rule__CommunicationLink__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1757:1: ( rule__CommunicationLink__Group__1__Impl rule__CommunicationLink__Group__2 )
-            // InternalSmartCity.g:1758:2: rule__CommunicationLink__Group__1__Impl rule__CommunicationLink__Group__2
+            // InternalSmartCity.g:1755:1: ( rule__CommunicationLink__Group__1__Impl rule__CommunicationLink__Group__2 )
+            // InternalSmartCity.g:1756:2: rule__CommunicationLink__Group__1__Impl rule__CommunicationLink__Group__2
             {
-            pushFollow(FOLLOW_28);
+            pushFollow(FOLLOW_27);
             rule__CommunicationLink__Group__1__Impl();
 
             state._fsp--;
@@ -5564,21 +5556,21 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__CommunicationLink__Group__1__Impl"
-    // InternalSmartCity.g:1765:1: rule__CommunicationLink__Group__1__Impl : ( ( rule__CommunicationLink__TypeAssignment_1 ) ) ;
+    // InternalSmartCity.g:1763:1: rule__CommunicationLink__Group__1__Impl : ( ( rule__CommunicationLink__TypeAssignment_1 ) ) ;
     public final void rule__CommunicationLink__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1769:1: ( ( ( rule__CommunicationLink__TypeAssignment_1 ) ) )
-            // InternalSmartCity.g:1770:1: ( ( rule__CommunicationLink__TypeAssignment_1 ) )
+            // InternalSmartCity.g:1767:1: ( ( ( rule__CommunicationLink__TypeAssignment_1 ) ) )
+            // InternalSmartCity.g:1768:1: ( ( rule__CommunicationLink__TypeAssignment_1 ) )
             {
-            // InternalSmartCity.g:1770:1: ( ( rule__CommunicationLink__TypeAssignment_1 ) )
-            // InternalSmartCity.g:1771:2: ( rule__CommunicationLink__TypeAssignment_1 )
+            // InternalSmartCity.g:1768:1: ( ( rule__CommunicationLink__TypeAssignment_1 ) )
+            // InternalSmartCity.g:1769:2: ( rule__CommunicationLink__TypeAssignment_1 )
             {
              before(grammarAccess.getCommunicationLinkAccess().getTypeAssignment_1()); 
-            // InternalSmartCity.g:1772:2: ( rule__CommunicationLink__TypeAssignment_1 )
-            // InternalSmartCity.g:1772:3: rule__CommunicationLink__TypeAssignment_1
+            // InternalSmartCity.g:1770:2: ( rule__CommunicationLink__TypeAssignment_1 )
+            // InternalSmartCity.g:1770:3: rule__CommunicationLink__TypeAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__CommunicationLink__TypeAssignment_1();
@@ -5611,14 +5603,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__CommunicationLink__Group__2"
-    // InternalSmartCity.g:1780:1: rule__CommunicationLink__Group__2 : rule__CommunicationLink__Group__2__Impl rule__CommunicationLink__Group__3 ;
+    // InternalSmartCity.g:1778:1: rule__CommunicationLink__Group__2 : rule__CommunicationLink__Group__2__Impl rule__CommunicationLink__Group__3 ;
     public final void rule__CommunicationLink__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1784:1: ( rule__CommunicationLink__Group__2__Impl rule__CommunicationLink__Group__3 )
-            // InternalSmartCity.g:1785:2: rule__CommunicationLink__Group__2__Impl rule__CommunicationLink__Group__3
+            // InternalSmartCity.g:1782:1: ( rule__CommunicationLink__Group__2__Impl rule__CommunicationLink__Group__3 )
+            // InternalSmartCity.g:1783:2: rule__CommunicationLink__Group__2__Impl rule__CommunicationLink__Group__3
             {
             pushFollow(FOLLOW_12);
             rule__CommunicationLink__Group__2__Impl();
@@ -5649,17 +5641,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__CommunicationLink__Group__2__Impl"
-    // InternalSmartCity.g:1792:1: rule__CommunicationLink__Group__2__Impl : ( 'from' ) ;
+    // InternalSmartCity.g:1790:1: rule__CommunicationLink__Group__2__Impl : ( 'from' ) ;
     public final void rule__CommunicationLink__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1796:1: ( ( 'from' ) )
-            // InternalSmartCity.g:1797:1: ( 'from' )
+            // InternalSmartCity.g:1794:1: ( ( 'from' ) )
+            // InternalSmartCity.g:1795:1: ( 'from' )
             {
-            // InternalSmartCity.g:1797:1: ( 'from' )
-            // InternalSmartCity.g:1798:2: 'from'
+            // InternalSmartCity.g:1795:1: ( 'from' )
+            // InternalSmartCity.g:1796:2: 'from'
             {
              before(grammarAccess.getCommunicationLinkAccess().getFromKeyword_2()); 
             match(input,47,FOLLOW_2); 
@@ -5686,16 +5678,16 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__CommunicationLink__Group__3"
-    // InternalSmartCity.g:1807:1: rule__CommunicationLink__Group__3 : rule__CommunicationLink__Group__3__Impl rule__CommunicationLink__Group__4 ;
+    // InternalSmartCity.g:1805:1: rule__CommunicationLink__Group__3 : rule__CommunicationLink__Group__3__Impl rule__CommunicationLink__Group__4 ;
     public final void rule__CommunicationLink__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1811:1: ( rule__CommunicationLink__Group__3__Impl rule__CommunicationLink__Group__4 )
-            // InternalSmartCity.g:1812:2: rule__CommunicationLink__Group__3__Impl rule__CommunicationLink__Group__4
+            // InternalSmartCity.g:1809:1: ( rule__CommunicationLink__Group__3__Impl rule__CommunicationLink__Group__4 )
+            // InternalSmartCity.g:1810:2: rule__CommunicationLink__Group__3__Impl rule__CommunicationLink__Group__4
             {
-            pushFollow(FOLLOW_29);
+            pushFollow(FOLLOW_28);
             rule__CommunicationLink__Group__3__Impl();
 
             state._fsp--;
@@ -5724,21 +5716,21 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__CommunicationLink__Group__3__Impl"
-    // InternalSmartCity.g:1819:1: rule__CommunicationLink__Group__3__Impl : ( ( rule__CommunicationLink__OriginAssignment_3 ) ) ;
+    // InternalSmartCity.g:1817:1: rule__CommunicationLink__Group__3__Impl : ( ( rule__CommunicationLink__OriginAssignment_3 ) ) ;
     public final void rule__CommunicationLink__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1823:1: ( ( ( rule__CommunicationLink__OriginAssignment_3 ) ) )
-            // InternalSmartCity.g:1824:1: ( ( rule__CommunicationLink__OriginAssignment_3 ) )
+            // InternalSmartCity.g:1821:1: ( ( ( rule__CommunicationLink__OriginAssignment_3 ) ) )
+            // InternalSmartCity.g:1822:1: ( ( rule__CommunicationLink__OriginAssignment_3 ) )
             {
-            // InternalSmartCity.g:1824:1: ( ( rule__CommunicationLink__OriginAssignment_3 ) )
-            // InternalSmartCity.g:1825:2: ( rule__CommunicationLink__OriginAssignment_3 )
+            // InternalSmartCity.g:1822:1: ( ( rule__CommunicationLink__OriginAssignment_3 ) )
+            // InternalSmartCity.g:1823:2: ( rule__CommunicationLink__OriginAssignment_3 )
             {
              before(grammarAccess.getCommunicationLinkAccess().getOriginAssignment_3()); 
-            // InternalSmartCity.g:1826:2: ( rule__CommunicationLink__OriginAssignment_3 )
-            // InternalSmartCity.g:1826:3: rule__CommunicationLink__OriginAssignment_3
+            // InternalSmartCity.g:1824:2: ( rule__CommunicationLink__OriginAssignment_3 )
+            // InternalSmartCity.g:1824:3: rule__CommunicationLink__OriginAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__CommunicationLink__OriginAssignment_3();
@@ -5771,14 +5763,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__CommunicationLink__Group__4"
-    // InternalSmartCity.g:1834:1: rule__CommunicationLink__Group__4 : rule__CommunicationLink__Group__4__Impl rule__CommunicationLink__Group__5 ;
+    // InternalSmartCity.g:1832:1: rule__CommunicationLink__Group__4 : rule__CommunicationLink__Group__4__Impl rule__CommunicationLink__Group__5 ;
     public final void rule__CommunicationLink__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1838:1: ( rule__CommunicationLink__Group__4__Impl rule__CommunicationLink__Group__5 )
-            // InternalSmartCity.g:1839:2: rule__CommunicationLink__Group__4__Impl rule__CommunicationLink__Group__5
+            // InternalSmartCity.g:1836:1: ( rule__CommunicationLink__Group__4__Impl rule__CommunicationLink__Group__5 )
+            // InternalSmartCity.g:1837:2: rule__CommunicationLink__Group__4__Impl rule__CommunicationLink__Group__5
             {
             pushFollow(FOLLOW_12);
             rule__CommunicationLink__Group__4__Impl();
@@ -5809,17 +5801,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__CommunicationLink__Group__4__Impl"
-    // InternalSmartCity.g:1846:1: rule__CommunicationLink__Group__4__Impl : ( '->' ) ;
+    // InternalSmartCity.g:1844:1: rule__CommunicationLink__Group__4__Impl : ( '->' ) ;
     public final void rule__CommunicationLink__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1850:1: ( ( '->' ) )
-            // InternalSmartCity.g:1851:1: ( '->' )
+            // InternalSmartCity.g:1848:1: ( ( '->' ) )
+            // InternalSmartCity.g:1849:1: ( '->' )
             {
-            // InternalSmartCity.g:1851:1: ( '->' )
-            // InternalSmartCity.g:1852:2: '->'
+            // InternalSmartCity.g:1849:1: ( '->' )
+            // InternalSmartCity.g:1850:2: '->'
             {
              before(grammarAccess.getCommunicationLinkAccess().getHyphenMinusGreaterThanSignKeyword_4()); 
             match(input,48,FOLLOW_2); 
@@ -5846,14 +5838,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__CommunicationLink__Group__5"
-    // InternalSmartCity.g:1861:1: rule__CommunicationLink__Group__5 : rule__CommunicationLink__Group__5__Impl rule__CommunicationLink__Group__6 ;
+    // InternalSmartCity.g:1859:1: rule__CommunicationLink__Group__5 : rule__CommunicationLink__Group__5__Impl rule__CommunicationLink__Group__6 ;
     public final void rule__CommunicationLink__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1865:1: ( rule__CommunicationLink__Group__5__Impl rule__CommunicationLink__Group__6 )
-            // InternalSmartCity.g:1866:2: rule__CommunicationLink__Group__5__Impl rule__CommunicationLink__Group__6
+            // InternalSmartCity.g:1863:1: ( rule__CommunicationLink__Group__5__Impl rule__CommunicationLink__Group__6 )
+            // InternalSmartCity.g:1864:2: rule__CommunicationLink__Group__5__Impl rule__CommunicationLink__Group__6
             {
             pushFollow(FOLLOW_7);
             rule__CommunicationLink__Group__5__Impl();
@@ -5884,21 +5876,21 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__CommunicationLink__Group__5__Impl"
-    // InternalSmartCity.g:1873:1: rule__CommunicationLink__Group__5__Impl : ( ( rule__CommunicationLink__DestinationAssignment_5 ) ) ;
+    // InternalSmartCity.g:1871:1: rule__CommunicationLink__Group__5__Impl : ( ( rule__CommunicationLink__DestinationAssignment_5 ) ) ;
     public final void rule__CommunicationLink__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1877:1: ( ( ( rule__CommunicationLink__DestinationAssignment_5 ) ) )
-            // InternalSmartCity.g:1878:1: ( ( rule__CommunicationLink__DestinationAssignment_5 ) )
+            // InternalSmartCity.g:1875:1: ( ( ( rule__CommunicationLink__DestinationAssignment_5 ) ) )
+            // InternalSmartCity.g:1876:1: ( ( rule__CommunicationLink__DestinationAssignment_5 ) )
             {
-            // InternalSmartCity.g:1878:1: ( ( rule__CommunicationLink__DestinationAssignment_5 ) )
-            // InternalSmartCity.g:1879:2: ( rule__CommunicationLink__DestinationAssignment_5 )
+            // InternalSmartCity.g:1876:1: ( ( rule__CommunicationLink__DestinationAssignment_5 ) )
+            // InternalSmartCity.g:1877:2: ( rule__CommunicationLink__DestinationAssignment_5 )
             {
              before(grammarAccess.getCommunicationLinkAccess().getDestinationAssignment_5()); 
-            // InternalSmartCity.g:1880:2: ( rule__CommunicationLink__DestinationAssignment_5 )
-            // InternalSmartCity.g:1880:3: rule__CommunicationLink__DestinationAssignment_5
+            // InternalSmartCity.g:1878:2: ( rule__CommunicationLink__DestinationAssignment_5 )
+            // InternalSmartCity.g:1878:3: rule__CommunicationLink__DestinationAssignment_5
             {
             pushFollow(FOLLOW_2);
             rule__CommunicationLink__DestinationAssignment_5();
@@ -5931,14 +5923,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__CommunicationLink__Group__6"
-    // InternalSmartCity.g:1888:1: rule__CommunicationLink__Group__6 : rule__CommunicationLink__Group__6__Impl rule__CommunicationLink__Group__7 ;
+    // InternalSmartCity.g:1886:1: rule__CommunicationLink__Group__6 : rule__CommunicationLink__Group__6__Impl rule__CommunicationLink__Group__7 ;
     public final void rule__CommunicationLink__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1892:1: ( rule__CommunicationLink__Group__6__Impl rule__CommunicationLink__Group__7 )
-            // InternalSmartCity.g:1893:2: rule__CommunicationLink__Group__6__Impl rule__CommunicationLink__Group__7
+            // InternalSmartCity.g:1890:1: ( rule__CommunicationLink__Group__6__Impl rule__CommunicationLink__Group__7 )
+            // InternalSmartCity.g:1891:2: rule__CommunicationLink__Group__6__Impl rule__CommunicationLink__Group__7
             {
             pushFollow(FOLLOW_14);
             rule__CommunicationLink__Group__6__Impl();
@@ -5969,17 +5961,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__CommunicationLink__Group__6__Impl"
-    // InternalSmartCity.g:1900:1: rule__CommunicationLink__Group__6__Impl : ( '{' ) ;
+    // InternalSmartCity.g:1898:1: rule__CommunicationLink__Group__6__Impl : ( '{' ) ;
     public final void rule__CommunicationLink__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1904:1: ( ( '{' ) )
-            // InternalSmartCity.g:1905:1: ( '{' )
+            // InternalSmartCity.g:1902:1: ( ( '{' ) )
+            // InternalSmartCity.g:1903:1: ( '{' )
             {
-            // InternalSmartCity.g:1905:1: ( '{' )
-            // InternalSmartCity.g:1906:2: '{'
+            // InternalSmartCity.g:1903:1: ( '{' )
+            // InternalSmartCity.g:1904:2: '{'
             {
              before(grammarAccess.getCommunicationLinkAccess().getLeftCurlyBracketKeyword_6()); 
             match(input,35,FOLLOW_2); 
@@ -6006,14 +5998,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__CommunicationLink__Group__7"
-    // InternalSmartCity.g:1915:1: rule__CommunicationLink__Group__7 : rule__CommunicationLink__Group__7__Impl rule__CommunicationLink__Group__8 ;
+    // InternalSmartCity.g:1913:1: rule__CommunicationLink__Group__7 : rule__CommunicationLink__Group__7__Impl rule__CommunicationLink__Group__8 ;
     public final void rule__CommunicationLink__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1919:1: ( rule__CommunicationLink__Group__7__Impl rule__CommunicationLink__Group__8 )
-            // InternalSmartCity.g:1920:2: rule__CommunicationLink__Group__7__Impl rule__CommunicationLink__Group__8
+            // InternalSmartCity.g:1917:1: ( rule__CommunicationLink__Group__7__Impl rule__CommunicationLink__Group__8 )
+            // InternalSmartCity.g:1918:2: rule__CommunicationLink__Group__7__Impl rule__CommunicationLink__Group__8
             {
             pushFollow(FOLLOW_15);
             rule__CommunicationLink__Group__7__Impl();
@@ -6044,17 +6036,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__CommunicationLink__Group__7__Impl"
-    // InternalSmartCity.g:1927:1: rule__CommunicationLink__Group__7__Impl : ( 'delay' ) ;
+    // InternalSmartCity.g:1925:1: rule__CommunicationLink__Group__7__Impl : ( 'delay' ) ;
     public final void rule__CommunicationLink__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1931:1: ( ( 'delay' ) )
-            // InternalSmartCity.g:1932:1: ( 'delay' )
+            // InternalSmartCity.g:1929:1: ( ( 'delay' ) )
+            // InternalSmartCity.g:1930:1: ( 'delay' )
             {
-            // InternalSmartCity.g:1932:1: ( 'delay' )
-            // InternalSmartCity.g:1933:2: 'delay'
+            // InternalSmartCity.g:1930:1: ( 'delay' )
+            // InternalSmartCity.g:1931:2: 'delay'
             {
              before(grammarAccess.getCommunicationLinkAccess().getDelayKeyword_7()); 
             match(input,41,FOLLOW_2); 
@@ -6081,16 +6073,16 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__CommunicationLink__Group__8"
-    // InternalSmartCity.g:1942:1: rule__CommunicationLink__Group__8 : rule__CommunicationLink__Group__8__Impl rule__CommunicationLink__Group__9 ;
+    // InternalSmartCity.g:1940:1: rule__CommunicationLink__Group__8 : rule__CommunicationLink__Group__8__Impl rule__CommunicationLink__Group__9 ;
     public final void rule__CommunicationLink__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1946:1: ( rule__CommunicationLink__Group__8__Impl rule__CommunicationLink__Group__9 )
-            // InternalSmartCity.g:1947:2: rule__CommunicationLink__Group__8__Impl rule__CommunicationLink__Group__9
+            // InternalSmartCity.g:1944:1: ( rule__CommunicationLink__Group__8__Impl rule__CommunicationLink__Group__9 )
+            // InternalSmartCity.g:1945:2: rule__CommunicationLink__Group__8__Impl rule__CommunicationLink__Group__9
             {
-            pushFollow(FOLLOW_30);
+            pushFollow(FOLLOW_29);
             rule__CommunicationLink__Group__8__Impl();
 
             state._fsp--;
@@ -6119,21 +6111,21 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__CommunicationLink__Group__8__Impl"
-    // InternalSmartCity.g:1954:1: rule__CommunicationLink__Group__8__Impl : ( ( rule__CommunicationLink__DelayAssignment_8 ) ) ;
+    // InternalSmartCity.g:1952:1: rule__CommunicationLink__Group__8__Impl : ( ( rule__CommunicationLink__DelayAssignment_8 ) ) ;
     public final void rule__CommunicationLink__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1958:1: ( ( ( rule__CommunicationLink__DelayAssignment_8 ) ) )
-            // InternalSmartCity.g:1959:1: ( ( rule__CommunicationLink__DelayAssignment_8 ) )
+            // InternalSmartCity.g:1956:1: ( ( ( rule__CommunicationLink__DelayAssignment_8 ) ) )
+            // InternalSmartCity.g:1957:1: ( ( rule__CommunicationLink__DelayAssignment_8 ) )
             {
-            // InternalSmartCity.g:1959:1: ( ( rule__CommunicationLink__DelayAssignment_8 ) )
-            // InternalSmartCity.g:1960:2: ( rule__CommunicationLink__DelayAssignment_8 )
+            // InternalSmartCity.g:1957:1: ( ( rule__CommunicationLink__DelayAssignment_8 ) )
+            // InternalSmartCity.g:1958:2: ( rule__CommunicationLink__DelayAssignment_8 )
             {
              before(grammarAccess.getCommunicationLinkAccess().getDelayAssignment_8()); 
-            // InternalSmartCity.g:1961:2: ( rule__CommunicationLink__DelayAssignment_8 )
-            // InternalSmartCity.g:1961:3: rule__CommunicationLink__DelayAssignment_8
+            // InternalSmartCity.g:1959:2: ( rule__CommunicationLink__DelayAssignment_8 )
+            // InternalSmartCity.g:1959:3: rule__CommunicationLink__DelayAssignment_8
             {
             pushFollow(FOLLOW_2);
             rule__CommunicationLink__DelayAssignment_8();
@@ -6166,16 +6158,16 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__CommunicationLink__Group__9"
-    // InternalSmartCity.g:1969:1: rule__CommunicationLink__Group__9 : rule__CommunicationLink__Group__9__Impl rule__CommunicationLink__Group__10 ;
+    // InternalSmartCity.g:1967:1: rule__CommunicationLink__Group__9 : rule__CommunicationLink__Group__9__Impl rule__CommunicationLink__Group__10 ;
     public final void rule__CommunicationLink__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1973:1: ( rule__CommunicationLink__Group__9__Impl rule__CommunicationLink__Group__10 )
-            // InternalSmartCity.g:1974:2: rule__CommunicationLink__Group__9__Impl rule__CommunicationLink__Group__10
+            // InternalSmartCity.g:1971:1: ( rule__CommunicationLink__Group__9__Impl rule__CommunicationLink__Group__10 )
+            // InternalSmartCity.g:1972:2: rule__CommunicationLink__Group__9__Impl rule__CommunicationLink__Group__10
             {
-            pushFollow(FOLLOW_23);
+            pushFollow(FOLLOW_22);
             rule__CommunicationLink__Group__9__Impl();
 
             state._fsp--;
@@ -6204,17 +6196,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__CommunicationLink__Group__9__Impl"
-    // InternalSmartCity.g:1981:1: rule__CommunicationLink__Group__9__Impl : ( 'datatype' ) ;
+    // InternalSmartCity.g:1979:1: rule__CommunicationLink__Group__9__Impl : ( 'datatype' ) ;
     public final void rule__CommunicationLink__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:1985:1: ( ( 'datatype' ) )
-            // InternalSmartCity.g:1986:1: ( 'datatype' )
+            // InternalSmartCity.g:1983:1: ( ( 'datatype' ) )
+            // InternalSmartCity.g:1984:1: ( 'datatype' )
             {
-            // InternalSmartCity.g:1986:1: ( 'datatype' )
-            // InternalSmartCity.g:1987:2: 'datatype'
+            // InternalSmartCity.g:1984:1: ( 'datatype' )
+            // InternalSmartCity.g:1985:2: 'datatype'
             {
              before(grammarAccess.getCommunicationLinkAccess().getDatatypeKeyword_9()); 
             match(input,49,FOLLOW_2); 
@@ -6241,14 +6233,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__CommunicationLink__Group__10"
-    // InternalSmartCity.g:1996:1: rule__CommunicationLink__Group__10 : rule__CommunicationLink__Group__10__Impl rule__CommunicationLink__Group__11 ;
+    // InternalSmartCity.g:1994:1: rule__CommunicationLink__Group__10 : rule__CommunicationLink__Group__10__Impl rule__CommunicationLink__Group__11 ;
     public final void rule__CommunicationLink__Group__10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2000:1: ( rule__CommunicationLink__Group__10__Impl rule__CommunicationLink__Group__11 )
-            // InternalSmartCity.g:2001:2: rule__CommunicationLink__Group__10__Impl rule__CommunicationLink__Group__11
+            // InternalSmartCity.g:1998:1: ( rule__CommunicationLink__Group__10__Impl rule__CommunicationLink__Group__11 )
+            // InternalSmartCity.g:1999:2: rule__CommunicationLink__Group__10__Impl rule__CommunicationLink__Group__11
             {
             pushFollow(FOLLOW_16);
             rule__CommunicationLink__Group__10__Impl();
@@ -6279,21 +6271,21 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__CommunicationLink__Group__10__Impl"
-    // InternalSmartCity.g:2008:1: rule__CommunicationLink__Group__10__Impl : ( ( rule__CommunicationLink__DatatypeAssignment_10 ) ) ;
+    // InternalSmartCity.g:2006:1: rule__CommunicationLink__Group__10__Impl : ( ( rule__CommunicationLink__DatatypeAssignment_10 ) ) ;
     public final void rule__CommunicationLink__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2012:1: ( ( ( rule__CommunicationLink__DatatypeAssignment_10 ) ) )
-            // InternalSmartCity.g:2013:1: ( ( rule__CommunicationLink__DatatypeAssignment_10 ) )
+            // InternalSmartCity.g:2010:1: ( ( ( rule__CommunicationLink__DatatypeAssignment_10 ) ) )
+            // InternalSmartCity.g:2011:1: ( ( rule__CommunicationLink__DatatypeAssignment_10 ) )
             {
-            // InternalSmartCity.g:2013:1: ( ( rule__CommunicationLink__DatatypeAssignment_10 ) )
-            // InternalSmartCity.g:2014:2: ( rule__CommunicationLink__DatatypeAssignment_10 )
+            // InternalSmartCity.g:2011:1: ( ( rule__CommunicationLink__DatatypeAssignment_10 ) )
+            // InternalSmartCity.g:2012:2: ( rule__CommunicationLink__DatatypeAssignment_10 )
             {
              before(grammarAccess.getCommunicationLinkAccess().getDatatypeAssignment_10()); 
-            // InternalSmartCity.g:2015:2: ( rule__CommunicationLink__DatatypeAssignment_10 )
-            // InternalSmartCity.g:2015:3: rule__CommunicationLink__DatatypeAssignment_10
+            // InternalSmartCity.g:2013:2: ( rule__CommunicationLink__DatatypeAssignment_10 )
+            // InternalSmartCity.g:2013:3: rule__CommunicationLink__DatatypeAssignment_10
             {
             pushFollow(FOLLOW_2);
             rule__CommunicationLink__DatatypeAssignment_10();
@@ -6326,14 +6318,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__CommunicationLink__Group__11"
-    // InternalSmartCity.g:2023:1: rule__CommunicationLink__Group__11 : rule__CommunicationLink__Group__11__Impl ;
+    // InternalSmartCity.g:2021:1: rule__CommunicationLink__Group__11 : rule__CommunicationLink__Group__11__Impl ;
     public final void rule__CommunicationLink__Group__11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2027:1: ( rule__CommunicationLink__Group__11__Impl )
-            // InternalSmartCity.g:2028:2: rule__CommunicationLink__Group__11__Impl
+            // InternalSmartCity.g:2025:1: ( rule__CommunicationLink__Group__11__Impl )
+            // InternalSmartCity.g:2026:2: rule__CommunicationLink__Group__11__Impl
             {
             pushFollow(FOLLOW_2);
             rule__CommunicationLink__Group__11__Impl();
@@ -6359,17 +6351,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__CommunicationLink__Group__11__Impl"
-    // InternalSmartCity.g:2034:1: rule__CommunicationLink__Group__11__Impl : ( '}' ) ;
+    // InternalSmartCity.g:2032:1: rule__CommunicationLink__Group__11__Impl : ( '}' ) ;
     public final void rule__CommunicationLink__Group__11__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2038:1: ( ( '}' ) )
-            // InternalSmartCity.g:2039:1: ( '}' )
+            // InternalSmartCity.g:2036:1: ( ( '}' ) )
+            // InternalSmartCity.g:2037:1: ( '}' )
             {
-            // InternalSmartCity.g:2039:1: ( '}' )
-            // InternalSmartCity.g:2040:2: '}'
+            // InternalSmartCity.g:2037:1: ( '}' )
+            // InternalSmartCity.g:2038:2: '}'
             {
              before(grammarAccess.getCommunicationLinkAccess().getRightCurlyBracketKeyword_11()); 
             match(input,37,FOLLOW_2); 
@@ -6396,14 +6388,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Controller__Group__0"
-    // InternalSmartCity.g:2050:1: rule__Controller__Group__0 : rule__Controller__Group__0__Impl rule__Controller__Group__1 ;
+    // InternalSmartCity.g:2048:1: rule__Controller__Group__0 : rule__Controller__Group__0__Impl rule__Controller__Group__1 ;
     public final void rule__Controller__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2054:1: ( rule__Controller__Group__0__Impl rule__Controller__Group__1 )
-            // InternalSmartCity.g:2055:2: rule__Controller__Group__0__Impl rule__Controller__Group__1
+            // InternalSmartCity.g:2052:1: ( rule__Controller__Group__0__Impl rule__Controller__Group__1 )
+            // InternalSmartCity.g:2053:2: rule__Controller__Group__0__Impl rule__Controller__Group__1
             {
             pushFollow(FOLLOW_12);
             rule__Controller__Group__0__Impl();
@@ -6434,17 +6426,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Controller__Group__0__Impl"
-    // InternalSmartCity.g:2062:1: rule__Controller__Group__0__Impl : ( 'controller' ) ;
+    // InternalSmartCity.g:2060:1: rule__Controller__Group__0__Impl : ( 'controller' ) ;
     public final void rule__Controller__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2066:1: ( ( 'controller' ) )
-            // InternalSmartCity.g:2067:1: ( 'controller' )
+            // InternalSmartCity.g:2064:1: ( ( 'controller' ) )
+            // InternalSmartCity.g:2065:1: ( 'controller' )
             {
-            // InternalSmartCity.g:2067:1: ( 'controller' )
-            // InternalSmartCity.g:2068:2: 'controller'
+            // InternalSmartCity.g:2065:1: ( 'controller' )
+            // InternalSmartCity.g:2066:2: 'controller'
             {
              before(grammarAccess.getControllerAccess().getControllerKeyword_0()); 
             match(input,50,FOLLOW_2); 
@@ -6471,14 +6463,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Controller__Group__1"
-    // InternalSmartCity.g:2077:1: rule__Controller__Group__1 : rule__Controller__Group__1__Impl rule__Controller__Group__2 ;
+    // InternalSmartCity.g:2075:1: rule__Controller__Group__1 : rule__Controller__Group__1__Impl rule__Controller__Group__2 ;
     public final void rule__Controller__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2081:1: ( rule__Controller__Group__1__Impl rule__Controller__Group__2 )
-            // InternalSmartCity.g:2082:2: rule__Controller__Group__1__Impl rule__Controller__Group__2
+            // InternalSmartCity.g:2079:1: ( rule__Controller__Group__1__Impl rule__Controller__Group__2 )
+            // InternalSmartCity.g:2080:2: rule__Controller__Group__1__Impl rule__Controller__Group__2
             {
             pushFollow(FOLLOW_7);
             rule__Controller__Group__1__Impl();
@@ -6509,21 +6501,21 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Controller__Group__1__Impl"
-    // InternalSmartCity.g:2089:1: rule__Controller__Group__1__Impl : ( ( rule__Controller__NameAssignment_1 ) ) ;
+    // InternalSmartCity.g:2087:1: rule__Controller__Group__1__Impl : ( ( rule__Controller__NameAssignment_1 ) ) ;
     public final void rule__Controller__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2093:1: ( ( ( rule__Controller__NameAssignment_1 ) ) )
-            // InternalSmartCity.g:2094:1: ( ( rule__Controller__NameAssignment_1 ) )
+            // InternalSmartCity.g:2091:1: ( ( ( rule__Controller__NameAssignment_1 ) ) )
+            // InternalSmartCity.g:2092:1: ( ( rule__Controller__NameAssignment_1 ) )
             {
-            // InternalSmartCity.g:2094:1: ( ( rule__Controller__NameAssignment_1 ) )
-            // InternalSmartCity.g:2095:2: ( rule__Controller__NameAssignment_1 )
+            // InternalSmartCity.g:2092:1: ( ( rule__Controller__NameAssignment_1 ) )
+            // InternalSmartCity.g:2093:2: ( rule__Controller__NameAssignment_1 )
             {
              before(grammarAccess.getControllerAccess().getNameAssignment_1()); 
-            // InternalSmartCity.g:2096:2: ( rule__Controller__NameAssignment_1 )
-            // InternalSmartCity.g:2096:3: rule__Controller__NameAssignment_1
+            // InternalSmartCity.g:2094:2: ( rule__Controller__NameAssignment_1 )
+            // InternalSmartCity.g:2094:3: rule__Controller__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Controller__NameAssignment_1();
@@ -6556,16 +6548,16 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Controller__Group__2"
-    // InternalSmartCity.g:2104:1: rule__Controller__Group__2 : rule__Controller__Group__2__Impl rule__Controller__Group__3 ;
+    // InternalSmartCity.g:2102:1: rule__Controller__Group__2 : rule__Controller__Group__2__Impl rule__Controller__Group__3 ;
     public final void rule__Controller__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2108:1: ( rule__Controller__Group__2__Impl rule__Controller__Group__3 )
-            // InternalSmartCity.g:2109:2: rule__Controller__Group__2__Impl rule__Controller__Group__3
+            // InternalSmartCity.g:2106:1: ( rule__Controller__Group__2__Impl rule__Controller__Group__3 )
+            // InternalSmartCity.g:2107:2: rule__Controller__Group__2__Impl rule__Controller__Group__3
             {
-            pushFollow(FOLLOW_22);
+            pushFollow(FOLLOW_21);
             rule__Controller__Group__2__Impl();
 
             state._fsp--;
@@ -6594,17 +6586,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Controller__Group__2__Impl"
-    // InternalSmartCity.g:2116:1: rule__Controller__Group__2__Impl : ( '{' ) ;
+    // InternalSmartCity.g:2114:1: rule__Controller__Group__2__Impl : ( '{' ) ;
     public final void rule__Controller__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2120:1: ( ( '{' ) )
-            // InternalSmartCity.g:2121:1: ( '{' )
+            // InternalSmartCity.g:2118:1: ( ( '{' ) )
+            // InternalSmartCity.g:2119:1: ( '{' )
             {
-            // InternalSmartCity.g:2121:1: ( '{' )
-            // InternalSmartCity.g:2122:2: '{'
+            // InternalSmartCity.g:2119:1: ( '{' )
+            // InternalSmartCity.g:2120:2: '{'
             {
              before(grammarAccess.getControllerAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,35,FOLLOW_2); 
@@ -6631,16 +6623,16 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Controller__Group__3"
-    // InternalSmartCity.g:2131:1: rule__Controller__Group__3 : rule__Controller__Group__3__Impl rule__Controller__Group__4 ;
+    // InternalSmartCity.g:2129:1: rule__Controller__Group__3 : rule__Controller__Group__3__Impl rule__Controller__Group__4 ;
     public final void rule__Controller__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2135:1: ( rule__Controller__Group__3__Impl rule__Controller__Group__4 )
-            // InternalSmartCity.g:2136:2: rule__Controller__Group__3__Impl rule__Controller__Group__4
+            // InternalSmartCity.g:2133:1: ( rule__Controller__Group__3__Impl rule__Controller__Group__4 )
+            // InternalSmartCity.g:2134:2: rule__Controller__Group__3__Impl rule__Controller__Group__4
             {
-            pushFollow(FOLLOW_31);
+            pushFollow(FOLLOW_30);
             rule__Controller__Group__3__Impl();
 
             state._fsp--;
@@ -6669,17 +6661,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Controller__Group__3__Impl"
-    // InternalSmartCity.g:2143:1: rule__Controller__Group__3__Impl : ( 'type' ) ;
+    // InternalSmartCity.g:2141:1: rule__Controller__Group__3__Impl : ( 'type' ) ;
     public final void rule__Controller__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2147:1: ( ( 'type' ) )
-            // InternalSmartCity.g:2148:1: ( 'type' )
+            // InternalSmartCity.g:2145:1: ( ( 'type' ) )
+            // InternalSmartCity.g:2146:1: ( 'type' )
             {
-            // InternalSmartCity.g:2148:1: ( 'type' )
-            // InternalSmartCity.g:2149:2: 'type'
+            // InternalSmartCity.g:2146:1: ( 'type' )
+            // InternalSmartCity.g:2147:2: 'type'
             {
              before(grammarAccess.getControllerAccess().getTypeKeyword_3()); 
             match(input,45,FOLLOW_2); 
@@ -6706,14 +6698,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Controller__Group__4"
-    // InternalSmartCity.g:2158:1: rule__Controller__Group__4 : rule__Controller__Group__4__Impl rule__Controller__Group__5 ;
+    // InternalSmartCity.g:2156:1: rule__Controller__Group__4 : rule__Controller__Group__4__Impl rule__Controller__Group__5 ;
     public final void rule__Controller__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2162:1: ( rule__Controller__Group__4__Impl rule__Controller__Group__5 )
-            // InternalSmartCity.g:2163:2: rule__Controller__Group__4__Impl rule__Controller__Group__5
+            // InternalSmartCity.g:2160:1: ( rule__Controller__Group__4__Impl rule__Controller__Group__5 )
+            // InternalSmartCity.g:2161:2: rule__Controller__Group__4__Impl rule__Controller__Group__5
             {
             pushFollow(FOLLOW_13);
             rule__Controller__Group__4__Impl();
@@ -6744,21 +6736,21 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Controller__Group__4__Impl"
-    // InternalSmartCity.g:2170:1: rule__Controller__Group__4__Impl : ( ( rule__Controller__TypeAssignment_4 ) ) ;
+    // InternalSmartCity.g:2168:1: rule__Controller__Group__4__Impl : ( ( rule__Controller__TypeAssignment_4 ) ) ;
     public final void rule__Controller__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2174:1: ( ( ( rule__Controller__TypeAssignment_4 ) ) )
-            // InternalSmartCity.g:2175:1: ( ( rule__Controller__TypeAssignment_4 ) )
+            // InternalSmartCity.g:2172:1: ( ( ( rule__Controller__TypeAssignment_4 ) ) )
+            // InternalSmartCity.g:2173:1: ( ( rule__Controller__TypeAssignment_4 ) )
             {
-            // InternalSmartCity.g:2175:1: ( ( rule__Controller__TypeAssignment_4 ) )
-            // InternalSmartCity.g:2176:2: ( rule__Controller__TypeAssignment_4 )
+            // InternalSmartCity.g:2173:1: ( ( rule__Controller__TypeAssignment_4 ) )
+            // InternalSmartCity.g:2174:2: ( rule__Controller__TypeAssignment_4 )
             {
              before(grammarAccess.getControllerAccess().getTypeAssignment_4()); 
-            // InternalSmartCity.g:2177:2: ( rule__Controller__TypeAssignment_4 )
-            // InternalSmartCity.g:2177:3: rule__Controller__TypeAssignment_4
+            // InternalSmartCity.g:2175:2: ( rule__Controller__TypeAssignment_4 )
+            // InternalSmartCity.g:2175:3: rule__Controller__TypeAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__Controller__TypeAssignment_4();
@@ -6791,14 +6783,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Controller__Group__5"
-    // InternalSmartCity.g:2185:1: rule__Controller__Group__5 : rule__Controller__Group__5__Impl rule__Controller__Group__6 ;
+    // InternalSmartCity.g:2183:1: rule__Controller__Group__5 : rule__Controller__Group__5__Impl rule__Controller__Group__6 ;
     public final void rule__Controller__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2189:1: ( rule__Controller__Group__5__Impl rule__Controller__Group__6 )
-            // InternalSmartCity.g:2190:2: rule__Controller__Group__5__Impl rule__Controller__Group__6
+            // InternalSmartCity.g:2187:1: ( rule__Controller__Group__5__Impl rule__Controller__Group__6 )
+            // InternalSmartCity.g:2188:2: rule__Controller__Group__5__Impl rule__Controller__Group__6
             {
             pushFollow(FOLLOW_9);
             rule__Controller__Group__5__Impl();
@@ -6829,17 +6821,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Controller__Group__5__Impl"
-    // InternalSmartCity.g:2197:1: rule__Controller__Group__5__Impl : ( 'priority' ) ;
+    // InternalSmartCity.g:2195:1: rule__Controller__Group__5__Impl : ( 'priority' ) ;
     public final void rule__Controller__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2201:1: ( ( 'priority' ) )
-            // InternalSmartCity.g:2202:1: ( 'priority' )
+            // InternalSmartCity.g:2199:1: ( ( 'priority' ) )
+            // InternalSmartCity.g:2200:1: ( 'priority' )
             {
-            // InternalSmartCity.g:2202:1: ( 'priority' )
-            // InternalSmartCity.g:2203:2: 'priority'
+            // InternalSmartCity.g:2200:1: ( 'priority' )
+            // InternalSmartCity.g:2201:2: 'priority'
             {
              before(grammarAccess.getControllerAccess().getPriorityKeyword_5()); 
             match(input,40,FOLLOW_2); 
@@ -6866,16 +6858,16 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Controller__Group__6"
-    // InternalSmartCity.g:2212:1: rule__Controller__Group__6 : rule__Controller__Group__6__Impl rule__Controller__Group__7 ;
+    // InternalSmartCity.g:2210:1: rule__Controller__Group__6 : rule__Controller__Group__6__Impl rule__Controller__Group__7 ;
     public final void rule__Controller__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2216:1: ( rule__Controller__Group__6__Impl rule__Controller__Group__7 )
-            // InternalSmartCity.g:2217:2: rule__Controller__Group__6__Impl rule__Controller__Group__7
+            // InternalSmartCity.g:2214:1: ( rule__Controller__Group__6__Impl rule__Controller__Group__7 )
+            // InternalSmartCity.g:2215:2: rule__Controller__Group__6__Impl rule__Controller__Group__7
             {
-            pushFollow(FOLLOW_24);
+            pushFollow(FOLLOW_23);
             rule__Controller__Group__6__Impl();
 
             state._fsp--;
@@ -6904,21 +6896,21 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Controller__Group__6__Impl"
-    // InternalSmartCity.g:2224:1: rule__Controller__Group__6__Impl : ( ( rule__Controller__PriorityAssignment_6 ) ) ;
+    // InternalSmartCity.g:2222:1: rule__Controller__Group__6__Impl : ( ( rule__Controller__PriorityAssignment_6 ) ) ;
     public final void rule__Controller__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2228:1: ( ( ( rule__Controller__PriorityAssignment_6 ) ) )
-            // InternalSmartCity.g:2229:1: ( ( rule__Controller__PriorityAssignment_6 ) )
+            // InternalSmartCity.g:2226:1: ( ( ( rule__Controller__PriorityAssignment_6 ) ) )
+            // InternalSmartCity.g:2227:1: ( ( rule__Controller__PriorityAssignment_6 ) )
             {
-            // InternalSmartCity.g:2229:1: ( ( rule__Controller__PriorityAssignment_6 ) )
-            // InternalSmartCity.g:2230:2: ( rule__Controller__PriorityAssignment_6 )
+            // InternalSmartCity.g:2227:1: ( ( rule__Controller__PriorityAssignment_6 ) )
+            // InternalSmartCity.g:2228:2: ( rule__Controller__PriorityAssignment_6 )
             {
              before(grammarAccess.getControllerAccess().getPriorityAssignment_6()); 
-            // InternalSmartCity.g:2231:2: ( rule__Controller__PriorityAssignment_6 )
-            // InternalSmartCity.g:2231:3: rule__Controller__PriorityAssignment_6
+            // InternalSmartCity.g:2229:2: ( rule__Controller__PriorityAssignment_6 )
+            // InternalSmartCity.g:2229:3: rule__Controller__PriorityAssignment_6
             {
             pushFollow(FOLLOW_2);
             rule__Controller__PriorityAssignment_6();
@@ -6951,16 +6943,16 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Controller__Group__7"
-    // InternalSmartCity.g:2239:1: rule__Controller__Group__7 : rule__Controller__Group__7__Impl rule__Controller__Group__8 ;
+    // InternalSmartCity.g:2237:1: rule__Controller__Group__7 : rule__Controller__Group__7__Impl rule__Controller__Group__8 ;
     public final void rule__Controller__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2243:1: ( rule__Controller__Group__7__Impl rule__Controller__Group__8 )
-            // InternalSmartCity.g:2244:2: rule__Controller__Group__7__Impl rule__Controller__Group__8
+            // InternalSmartCity.g:2241:1: ( rule__Controller__Group__7__Impl rule__Controller__Group__8 )
+            // InternalSmartCity.g:2242:2: rule__Controller__Group__7__Impl rule__Controller__Group__8
             {
-            pushFollow(FOLLOW_24);
+            pushFollow(FOLLOW_23);
             rule__Controller__Group__7__Impl();
 
             state._fsp--;
@@ -6989,20 +6981,20 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Controller__Group__7__Impl"
-    // InternalSmartCity.g:2251:1: rule__Controller__Group__7__Impl : ( ( rule__Controller__CyclicActionsAssignment_7 )* ) ;
+    // InternalSmartCity.g:2249:1: rule__Controller__Group__7__Impl : ( ( rule__Controller__CyclicActionsAssignment_7 )* ) ;
     public final void rule__Controller__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2255:1: ( ( ( rule__Controller__CyclicActionsAssignment_7 )* ) )
-            // InternalSmartCity.g:2256:1: ( ( rule__Controller__CyclicActionsAssignment_7 )* )
+            // InternalSmartCity.g:2253:1: ( ( ( rule__Controller__CyclicActionsAssignment_7 )* ) )
+            // InternalSmartCity.g:2254:1: ( ( rule__Controller__CyclicActionsAssignment_7 )* )
             {
-            // InternalSmartCity.g:2256:1: ( ( rule__Controller__CyclicActionsAssignment_7 )* )
-            // InternalSmartCity.g:2257:2: ( rule__Controller__CyclicActionsAssignment_7 )*
+            // InternalSmartCity.g:2254:1: ( ( rule__Controller__CyclicActionsAssignment_7 )* )
+            // InternalSmartCity.g:2255:2: ( rule__Controller__CyclicActionsAssignment_7 )*
             {
              before(grammarAccess.getControllerAccess().getCyclicActionsAssignment_7()); 
-            // InternalSmartCity.g:2258:2: ( rule__Controller__CyclicActionsAssignment_7 )*
+            // InternalSmartCity.g:2256:2: ( rule__Controller__CyclicActionsAssignment_7 )*
             loop13:
             do {
                 int alt13=2;
@@ -7015,9 +7007,9 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
                 switch (alt13) {
             	case 1 :
-            	    // InternalSmartCity.g:2258:3: rule__Controller__CyclicActionsAssignment_7
+            	    // InternalSmartCity.g:2256:3: rule__Controller__CyclicActionsAssignment_7
             	    {
-            	    pushFollow(FOLLOW_25);
+            	    pushFollow(FOLLOW_24);
             	    rule__Controller__CyclicActionsAssignment_7();
 
             	    state._fsp--;
@@ -7054,16 +7046,16 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Controller__Group__8"
-    // InternalSmartCity.g:2266:1: rule__Controller__Group__8 : rule__Controller__Group__8__Impl rule__Controller__Group__9 ;
+    // InternalSmartCity.g:2264:1: rule__Controller__Group__8 : rule__Controller__Group__8__Impl rule__Controller__Group__9 ;
     public final void rule__Controller__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2270:1: ( rule__Controller__Group__8__Impl rule__Controller__Group__9 )
-            // InternalSmartCity.g:2271:2: rule__Controller__Group__8__Impl rule__Controller__Group__9
+            // InternalSmartCity.g:2268:1: ( rule__Controller__Group__8__Impl rule__Controller__Group__9 )
+            // InternalSmartCity.g:2269:2: rule__Controller__Group__8__Impl rule__Controller__Group__9
             {
-            pushFollow(FOLLOW_24);
+            pushFollow(FOLLOW_23);
             rule__Controller__Group__8__Impl();
 
             state._fsp--;
@@ -7092,20 +7084,20 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Controller__Group__8__Impl"
-    // InternalSmartCity.g:2278:1: rule__Controller__Group__8__Impl : ( ( rule__Controller__TriggeredActionsAssignment_8 )* ) ;
+    // InternalSmartCity.g:2276:1: rule__Controller__Group__8__Impl : ( ( rule__Controller__TriggeredActionsAssignment_8 )* ) ;
     public final void rule__Controller__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2282:1: ( ( ( rule__Controller__TriggeredActionsAssignment_8 )* ) )
-            // InternalSmartCity.g:2283:1: ( ( rule__Controller__TriggeredActionsAssignment_8 )* )
+            // InternalSmartCity.g:2280:1: ( ( ( rule__Controller__TriggeredActionsAssignment_8 )* ) )
+            // InternalSmartCity.g:2281:1: ( ( rule__Controller__TriggeredActionsAssignment_8 )* )
             {
-            // InternalSmartCity.g:2283:1: ( ( rule__Controller__TriggeredActionsAssignment_8 )* )
-            // InternalSmartCity.g:2284:2: ( rule__Controller__TriggeredActionsAssignment_8 )*
+            // InternalSmartCity.g:2281:1: ( ( rule__Controller__TriggeredActionsAssignment_8 )* )
+            // InternalSmartCity.g:2282:2: ( rule__Controller__TriggeredActionsAssignment_8 )*
             {
              before(grammarAccess.getControllerAccess().getTriggeredActionsAssignment_8()); 
-            // InternalSmartCity.g:2285:2: ( rule__Controller__TriggeredActionsAssignment_8 )*
+            // InternalSmartCity.g:2283:2: ( rule__Controller__TriggeredActionsAssignment_8 )*
             loop14:
             do {
                 int alt14=2;
@@ -7118,9 +7110,9 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
                 switch (alt14) {
             	case 1 :
-            	    // InternalSmartCity.g:2285:3: rule__Controller__TriggeredActionsAssignment_8
+            	    // InternalSmartCity.g:2283:3: rule__Controller__TriggeredActionsAssignment_8
             	    {
-            	    pushFollow(FOLLOW_26);
+            	    pushFollow(FOLLOW_25);
             	    rule__Controller__TriggeredActionsAssignment_8();
 
             	    state._fsp--;
@@ -7157,14 +7149,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Controller__Group__9"
-    // InternalSmartCity.g:2293:1: rule__Controller__Group__9 : rule__Controller__Group__9__Impl ;
+    // InternalSmartCity.g:2291:1: rule__Controller__Group__9 : rule__Controller__Group__9__Impl ;
     public final void rule__Controller__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2297:1: ( rule__Controller__Group__9__Impl )
-            // InternalSmartCity.g:2298:2: rule__Controller__Group__9__Impl
+            // InternalSmartCity.g:2295:1: ( rule__Controller__Group__9__Impl )
+            // InternalSmartCity.g:2296:2: rule__Controller__Group__9__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Controller__Group__9__Impl();
@@ -7190,17 +7182,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Controller__Group__9__Impl"
-    // InternalSmartCity.g:2304:1: rule__Controller__Group__9__Impl : ( '}' ) ;
+    // InternalSmartCity.g:2302:1: rule__Controller__Group__9__Impl : ( '}' ) ;
     public final void rule__Controller__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2308:1: ( ( '}' ) )
-            // InternalSmartCity.g:2309:1: ( '}' )
+            // InternalSmartCity.g:2306:1: ( ( '}' ) )
+            // InternalSmartCity.g:2307:1: ( '}' )
             {
-            // InternalSmartCity.g:2309:1: ( '}' )
-            // InternalSmartCity.g:2310:2: '}'
+            // InternalSmartCity.g:2307:1: ( '}' )
+            // InternalSmartCity.g:2308:2: '}'
             {
              before(grammarAccess.getControllerAccess().getRightCurlyBracketKeyword_9()); 
             match(input,37,FOLLOW_2); 
@@ -7227,14 +7219,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Module__Group__0"
-    // InternalSmartCity.g:2320:1: rule__Module__Group__0 : rule__Module__Group__0__Impl rule__Module__Group__1 ;
+    // InternalSmartCity.g:2318:1: rule__Module__Group__0 : rule__Module__Group__0__Impl rule__Module__Group__1 ;
     public final void rule__Module__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2324:1: ( rule__Module__Group__0__Impl rule__Module__Group__1 )
-            // InternalSmartCity.g:2325:2: rule__Module__Group__0__Impl rule__Module__Group__1
+            // InternalSmartCity.g:2322:1: ( rule__Module__Group__0__Impl rule__Module__Group__1 )
+            // InternalSmartCity.g:2323:2: rule__Module__Group__0__Impl rule__Module__Group__1
             {
             pushFollow(FOLLOW_12);
             rule__Module__Group__0__Impl();
@@ -7265,17 +7257,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Module__Group__0__Impl"
-    // InternalSmartCity.g:2332:1: rule__Module__Group__0__Impl : ( 'module' ) ;
+    // InternalSmartCity.g:2330:1: rule__Module__Group__0__Impl : ( 'module' ) ;
     public final void rule__Module__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2336:1: ( ( 'module' ) )
-            // InternalSmartCity.g:2337:1: ( 'module' )
+            // InternalSmartCity.g:2334:1: ( ( 'module' ) )
+            // InternalSmartCity.g:2335:1: ( 'module' )
             {
-            // InternalSmartCity.g:2337:1: ( 'module' )
-            // InternalSmartCity.g:2338:2: 'module'
+            // InternalSmartCity.g:2335:1: ( 'module' )
+            // InternalSmartCity.g:2336:2: 'module'
             {
              before(grammarAccess.getModuleAccess().getModuleKeyword_0()); 
             match(input,51,FOLLOW_2); 
@@ -7302,14 +7294,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Module__Group__1"
-    // InternalSmartCity.g:2347:1: rule__Module__Group__1 : rule__Module__Group__1__Impl rule__Module__Group__2 ;
+    // InternalSmartCity.g:2345:1: rule__Module__Group__1 : rule__Module__Group__1__Impl rule__Module__Group__2 ;
     public final void rule__Module__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2351:1: ( rule__Module__Group__1__Impl rule__Module__Group__2 )
-            // InternalSmartCity.g:2352:2: rule__Module__Group__1__Impl rule__Module__Group__2
+            // InternalSmartCity.g:2349:1: ( rule__Module__Group__1__Impl rule__Module__Group__2 )
+            // InternalSmartCity.g:2350:2: rule__Module__Group__1__Impl rule__Module__Group__2
             {
             pushFollow(FOLLOW_7);
             rule__Module__Group__1__Impl();
@@ -7340,21 +7332,21 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Module__Group__1__Impl"
-    // InternalSmartCity.g:2359:1: rule__Module__Group__1__Impl : ( ( rule__Module__NameAssignment_1 ) ) ;
+    // InternalSmartCity.g:2357:1: rule__Module__Group__1__Impl : ( ( rule__Module__NameAssignment_1 ) ) ;
     public final void rule__Module__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2363:1: ( ( ( rule__Module__NameAssignment_1 ) ) )
-            // InternalSmartCity.g:2364:1: ( ( rule__Module__NameAssignment_1 ) )
+            // InternalSmartCity.g:2361:1: ( ( ( rule__Module__NameAssignment_1 ) ) )
+            // InternalSmartCity.g:2362:1: ( ( rule__Module__NameAssignment_1 ) )
             {
-            // InternalSmartCity.g:2364:1: ( ( rule__Module__NameAssignment_1 ) )
-            // InternalSmartCity.g:2365:2: ( rule__Module__NameAssignment_1 )
+            // InternalSmartCity.g:2362:1: ( ( rule__Module__NameAssignment_1 ) )
+            // InternalSmartCity.g:2363:2: ( rule__Module__NameAssignment_1 )
             {
              before(grammarAccess.getModuleAccess().getNameAssignment_1()); 
-            // InternalSmartCity.g:2366:2: ( rule__Module__NameAssignment_1 )
-            // InternalSmartCity.g:2366:3: rule__Module__NameAssignment_1
+            // InternalSmartCity.g:2364:2: ( rule__Module__NameAssignment_1 )
+            // InternalSmartCity.g:2364:3: rule__Module__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Module__NameAssignment_1();
@@ -7387,14 +7379,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Module__Group__2"
-    // InternalSmartCity.g:2374:1: rule__Module__Group__2 : rule__Module__Group__2__Impl rule__Module__Group__3 ;
+    // InternalSmartCity.g:2372:1: rule__Module__Group__2 : rule__Module__Group__2__Impl rule__Module__Group__3 ;
     public final void rule__Module__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2378:1: ( rule__Module__Group__2__Impl rule__Module__Group__3 )
-            // InternalSmartCity.g:2379:2: rule__Module__Group__2__Impl rule__Module__Group__3
+            // InternalSmartCity.g:2376:1: ( rule__Module__Group__2__Impl rule__Module__Group__3 )
+            // InternalSmartCity.g:2377:2: rule__Module__Group__2__Impl rule__Module__Group__3
             {
             pushFollow(FOLLOW_13);
             rule__Module__Group__2__Impl();
@@ -7425,17 +7417,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Module__Group__2__Impl"
-    // InternalSmartCity.g:2386:1: rule__Module__Group__2__Impl : ( '{' ) ;
+    // InternalSmartCity.g:2384:1: rule__Module__Group__2__Impl : ( '{' ) ;
     public final void rule__Module__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2390:1: ( ( '{' ) )
-            // InternalSmartCity.g:2391:1: ( '{' )
+            // InternalSmartCity.g:2388:1: ( ( '{' ) )
+            // InternalSmartCity.g:2389:1: ( '{' )
             {
-            // InternalSmartCity.g:2391:1: ( '{' )
-            // InternalSmartCity.g:2392:2: '{'
+            // InternalSmartCity.g:2389:1: ( '{' )
+            // InternalSmartCity.g:2390:2: '{'
             {
              before(grammarAccess.getModuleAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,35,FOLLOW_2); 
@@ -7462,14 +7454,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Module__Group__3"
-    // InternalSmartCity.g:2401:1: rule__Module__Group__3 : rule__Module__Group__3__Impl rule__Module__Group__4 ;
+    // InternalSmartCity.g:2399:1: rule__Module__Group__3 : rule__Module__Group__3__Impl rule__Module__Group__4 ;
     public final void rule__Module__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2405:1: ( rule__Module__Group__3__Impl rule__Module__Group__4 )
-            // InternalSmartCity.g:2406:2: rule__Module__Group__3__Impl rule__Module__Group__4
+            // InternalSmartCity.g:2403:1: ( rule__Module__Group__3__Impl rule__Module__Group__4 )
+            // InternalSmartCity.g:2404:2: rule__Module__Group__3__Impl rule__Module__Group__4
             {
             pushFollow(FOLLOW_9);
             rule__Module__Group__3__Impl();
@@ -7500,17 +7492,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Module__Group__3__Impl"
-    // InternalSmartCity.g:2413:1: rule__Module__Group__3__Impl : ( 'priority' ) ;
+    // InternalSmartCity.g:2411:1: rule__Module__Group__3__Impl : ( 'priority' ) ;
     public final void rule__Module__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2417:1: ( ( 'priority' ) )
-            // InternalSmartCity.g:2418:1: ( 'priority' )
+            // InternalSmartCity.g:2415:1: ( ( 'priority' ) )
+            // InternalSmartCity.g:2416:1: ( 'priority' )
             {
-            // InternalSmartCity.g:2418:1: ( 'priority' )
-            // InternalSmartCity.g:2419:2: 'priority'
+            // InternalSmartCity.g:2416:1: ( 'priority' )
+            // InternalSmartCity.g:2417:2: 'priority'
             {
              before(grammarAccess.getModuleAccess().getPriorityKeyword_3()); 
             match(input,40,FOLLOW_2); 
@@ -7537,16 +7529,16 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Module__Group__4"
-    // InternalSmartCity.g:2428:1: rule__Module__Group__4 : rule__Module__Group__4__Impl rule__Module__Group__5 ;
+    // InternalSmartCity.g:2426:1: rule__Module__Group__4 : rule__Module__Group__4__Impl rule__Module__Group__5 ;
     public final void rule__Module__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2432:1: ( rule__Module__Group__4__Impl rule__Module__Group__5 )
-            // InternalSmartCity.g:2433:2: rule__Module__Group__4__Impl rule__Module__Group__5
+            // InternalSmartCity.g:2430:1: ( rule__Module__Group__4__Impl rule__Module__Group__5 )
+            // InternalSmartCity.g:2431:2: rule__Module__Group__4__Impl rule__Module__Group__5
             {
-            pushFollow(FOLLOW_24);
+            pushFollow(FOLLOW_23);
             rule__Module__Group__4__Impl();
 
             state._fsp--;
@@ -7575,21 +7567,21 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Module__Group__4__Impl"
-    // InternalSmartCity.g:2440:1: rule__Module__Group__4__Impl : ( ( rule__Module__PriorityAssignment_4 ) ) ;
+    // InternalSmartCity.g:2438:1: rule__Module__Group__4__Impl : ( ( rule__Module__PriorityAssignment_4 ) ) ;
     public final void rule__Module__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2444:1: ( ( ( rule__Module__PriorityAssignment_4 ) ) )
-            // InternalSmartCity.g:2445:1: ( ( rule__Module__PriorityAssignment_4 ) )
+            // InternalSmartCity.g:2442:1: ( ( ( rule__Module__PriorityAssignment_4 ) ) )
+            // InternalSmartCity.g:2443:1: ( ( rule__Module__PriorityAssignment_4 ) )
             {
-            // InternalSmartCity.g:2445:1: ( ( rule__Module__PriorityAssignment_4 ) )
-            // InternalSmartCity.g:2446:2: ( rule__Module__PriorityAssignment_4 )
+            // InternalSmartCity.g:2443:1: ( ( rule__Module__PriorityAssignment_4 ) )
+            // InternalSmartCity.g:2444:2: ( rule__Module__PriorityAssignment_4 )
             {
              before(grammarAccess.getModuleAccess().getPriorityAssignment_4()); 
-            // InternalSmartCity.g:2447:2: ( rule__Module__PriorityAssignment_4 )
-            // InternalSmartCity.g:2447:3: rule__Module__PriorityAssignment_4
+            // InternalSmartCity.g:2445:2: ( rule__Module__PriorityAssignment_4 )
+            // InternalSmartCity.g:2445:3: rule__Module__PriorityAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__Module__PriorityAssignment_4();
@@ -7622,16 +7614,16 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Module__Group__5"
-    // InternalSmartCity.g:2455:1: rule__Module__Group__5 : rule__Module__Group__5__Impl rule__Module__Group__6 ;
+    // InternalSmartCity.g:2453:1: rule__Module__Group__5 : rule__Module__Group__5__Impl rule__Module__Group__6 ;
     public final void rule__Module__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2459:1: ( rule__Module__Group__5__Impl rule__Module__Group__6 )
-            // InternalSmartCity.g:2460:2: rule__Module__Group__5__Impl rule__Module__Group__6
+            // InternalSmartCity.g:2457:1: ( rule__Module__Group__5__Impl rule__Module__Group__6 )
+            // InternalSmartCity.g:2458:2: rule__Module__Group__5__Impl rule__Module__Group__6
             {
-            pushFollow(FOLLOW_24);
+            pushFollow(FOLLOW_23);
             rule__Module__Group__5__Impl();
 
             state._fsp--;
@@ -7660,20 +7652,20 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Module__Group__5__Impl"
-    // InternalSmartCity.g:2467:1: rule__Module__Group__5__Impl : ( ( rule__Module__CyclicActionsAssignment_5 )* ) ;
+    // InternalSmartCity.g:2465:1: rule__Module__Group__5__Impl : ( ( rule__Module__CyclicActionsAssignment_5 )* ) ;
     public final void rule__Module__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2471:1: ( ( ( rule__Module__CyclicActionsAssignment_5 )* ) )
-            // InternalSmartCity.g:2472:1: ( ( rule__Module__CyclicActionsAssignment_5 )* )
+            // InternalSmartCity.g:2469:1: ( ( ( rule__Module__CyclicActionsAssignment_5 )* ) )
+            // InternalSmartCity.g:2470:1: ( ( rule__Module__CyclicActionsAssignment_5 )* )
             {
-            // InternalSmartCity.g:2472:1: ( ( rule__Module__CyclicActionsAssignment_5 )* )
-            // InternalSmartCity.g:2473:2: ( rule__Module__CyclicActionsAssignment_5 )*
+            // InternalSmartCity.g:2470:1: ( ( rule__Module__CyclicActionsAssignment_5 )* )
+            // InternalSmartCity.g:2471:2: ( rule__Module__CyclicActionsAssignment_5 )*
             {
              before(grammarAccess.getModuleAccess().getCyclicActionsAssignment_5()); 
-            // InternalSmartCity.g:2474:2: ( rule__Module__CyclicActionsAssignment_5 )*
+            // InternalSmartCity.g:2472:2: ( rule__Module__CyclicActionsAssignment_5 )*
             loop15:
             do {
                 int alt15=2;
@@ -7686,9 +7678,9 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
                 switch (alt15) {
             	case 1 :
-            	    // InternalSmartCity.g:2474:3: rule__Module__CyclicActionsAssignment_5
+            	    // InternalSmartCity.g:2472:3: rule__Module__CyclicActionsAssignment_5
             	    {
-            	    pushFollow(FOLLOW_25);
+            	    pushFollow(FOLLOW_24);
             	    rule__Module__CyclicActionsAssignment_5();
 
             	    state._fsp--;
@@ -7725,16 +7717,16 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Module__Group__6"
-    // InternalSmartCity.g:2482:1: rule__Module__Group__6 : rule__Module__Group__6__Impl rule__Module__Group__7 ;
+    // InternalSmartCity.g:2480:1: rule__Module__Group__6 : rule__Module__Group__6__Impl rule__Module__Group__7 ;
     public final void rule__Module__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2486:1: ( rule__Module__Group__6__Impl rule__Module__Group__7 )
-            // InternalSmartCity.g:2487:2: rule__Module__Group__6__Impl rule__Module__Group__7
+            // InternalSmartCity.g:2484:1: ( rule__Module__Group__6__Impl rule__Module__Group__7 )
+            // InternalSmartCity.g:2485:2: rule__Module__Group__6__Impl rule__Module__Group__7
             {
-            pushFollow(FOLLOW_24);
+            pushFollow(FOLLOW_23);
             rule__Module__Group__6__Impl();
 
             state._fsp--;
@@ -7763,20 +7755,20 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Module__Group__6__Impl"
-    // InternalSmartCity.g:2494:1: rule__Module__Group__6__Impl : ( ( rule__Module__TriggeredActionsAssignment_6 )* ) ;
+    // InternalSmartCity.g:2492:1: rule__Module__Group__6__Impl : ( ( rule__Module__TriggeredActionsAssignment_6 )* ) ;
     public final void rule__Module__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2498:1: ( ( ( rule__Module__TriggeredActionsAssignment_6 )* ) )
-            // InternalSmartCity.g:2499:1: ( ( rule__Module__TriggeredActionsAssignment_6 )* )
+            // InternalSmartCity.g:2496:1: ( ( ( rule__Module__TriggeredActionsAssignment_6 )* ) )
+            // InternalSmartCity.g:2497:1: ( ( rule__Module__TriggeredActionsAssignment_6 )* )
             {
-            // InternalSmartCity.g:2499:1: ( ( rule__Module__TriggeredActionsAssignment_6 )* )
-            // InternalSmartCity.g:2500:2: ( rule__Module__TriggeredActionsAssignment_6 )*
+            // InternalSmartCity.g:2497:1: ( ( rule__Module__TriggeredActionsAssignment_6 )* )
+            // InternalSmartCity.g:2498:2: ( rule__Module__TriggeredActionsAssignment_6 )*
             {
              before(grammarAccess.getModuleAccess().getTriggeredActionsAssignment_6()); 
-            // InternalSmartCity.g:2501:2: ( rule__Module__TriggeredActionsAssignment_6 )*
+            // InternalSmartCity.g:2499:2: ( rule__Module__TriggeredActionsAssignment_6 )*
             loop16:
             do {
                 int alt16=2;
@@ -7789,9 +7781,9 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
                 switch (alt16) {
             	case 1 :
-            	    // InternalSmartCity.g:2501:3: rule__Module__TriggeredActionsAssignment_6
+            	    // InternalSmartCity.g:2499:3: rule__Module__TriggeredActionsAssignment_6
             	    {
-            	    pushFollow(FOLLOW_26);
+            	    pushFollow(FOLLOW_25);
             	    rule__Module__TriggeredActionsAssignment_6();
 
             	    state._fsp--;
@@ -7828,14 +7820,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Module__Group__7"
-    // InternalSmartCity.g:2509:1: rule__Module__Group__7 : rule__Module__Group__7__Impl ;
+    // InternalSmartCity.g:2507:1: rule__Module__Group__7 : rule__Module__Group__7__Impl ;
     public final void rule__Module__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2513:1: ( rule__Module__Group__7__Impl )
-            // InternalSmartCity.g:2514:2: rule__Module__Group__7__Impl
+            // InternalSmartCity.g:2511:1: ( rule__Module__Group__7__Impl )
+            // InternalSmartCity.g:2512:2: rule__Module__Group__7__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Module__Group__7__Impl();
@@ -7861,17 +7853,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Module__Group__7__Impl"
-    // InternalSmartCity.g:2520:1: rule__Module__Group__7__Impl : ( '}' ) ;
+    // InternalSmartCity.g:2518:1: rule__Module__Group__7__Impl : ( '}' ) ;
     public final void rule__Module__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2524:1: ( ( '}' ) )
-            // InternalSmartCity.g:2525:1: ( '}' )
+            // InternalSmartCity.g:2522:1: ( ( '}' ) )
+            // InternalSmartCity.g:2523:1: ( '}' )
             {
-            // InternalSmartCity.g:2525:1: ( '}' )
-            // InternalSmartCity.g:2526:2: '}'
+            // InternalSmartCity.g:2523:1: ( '}' )
+            // InternalSmartCity.g:2524:2: '}'
             {
              before(grammarAccess.getModuleAccess().getRightCurlyBracketKeyword_7()); 
             match(input,37,FOLLOW_2); 
@@ -7897,15 +7889,180 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
     // $ANTLR end "rule__Module__Group__7__Impl"
 
 
+    // $ANTLR start "rule__Frequency__Group__0"
+    // InternalSmartCity.g:2534:1: rule__Frequency__Group__0 : rule__Frequency__Group__0__Impl rule__Frequency__Group__1 ;
+    public final void rule__Frequency__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSmartCity.g:2538:1: ( rule__Frequency__Group__0__Impl rule__Frequency__Group__1 )
+            // InternalSmartCity.g:2539:2: rule__Frequency__Group__0__Impl rule__Frequency__Group__1
+            {
+            pushFollow(FOLLOW_31);
+            rule__Frequency__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Frequency__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Frequency__Group__0"
+
+
+    // $ANTLR start "rule__Frequency__Group__0__Impl"
+    // InternalSmartCity.g:2546:1: rule__Frequency__Group__0__Impl : ( ( rule__Frequency__ValueAssignment_0 ) ) ;
+    public final void rule__Frequency__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSmartCity.g:2550:1: ( ( ( rule__Frequency__ValueAssignment_0 ) ) )
+            // InternalSmartCity.g:2551:1: ( ( rule__Frequency__ValueAssignment_0 ) )
+            {
+            // InternalSmartCity.g:2551:1: ( ( rule__Frequency__ValueAssignment_0 ) )
+            // InternalSmartCity.g:2552:2: ( rule__Frequency__ValueAssignment_0 )
+            {
+             before(grammarAccess.getFrequencyAccess().getValueAssignment_0()); 
+            // InternalSmartCity.g:2553:2: ( rule__Frequency__ValueAssignment_0 )
+            // InternalSmartCity.g:2553:3: rule__Frequency__ValueAssignment_0
+            {
+            pushFollow(FOLLOW_2);
+            rule__Frequency__ValueAssignment_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getFrequencyAccess().getValueAssignment_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Frequency__Group__0__Impl"
+
+
+    // $ANTLR start "rule__Frequency__Group__1"
+    // InternalSmartCity.g:2561:1: rule__Frequency__Group__1 : rule__Frequency__Group__1__Impl ;
+    public final void rule__Frequency__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSmartCity.g:2565:1: ( rule__Frequency__Group__1__Impl )
+            // InternalSmartCity.g:2566:2: rule__Frequency__Group__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Frequency__Group__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Frequency__Group__1"
+
+
+    // $ANTLR start "rule__Frequency__Group__1__Impl"
+    // InternalSmartCity.g:2572:1: rule__Frequency__Group__1__Impl : ( ( rule__Frequency__UnitAssignment_1 ) ) ;
+    public final void rule__Frequency__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSmartCity.g:2576:1: ( ( ( rule__Frequency__UnitAssignment_1 ) ) )
+            // InternalSmartCity.g:2577:1: ( ( rule__Frequency__UnitAssignment_1 ) )
+            {
+            // InternalSmartCity.g:2577:1: ( ( rule__Frequency__UnitAssignment_1 ) )
+            // InternalSmartCity.g:2578:2: ( rule__Frequency__UnitAssignment_1 )
+            {
+             before(grammarAccess.getFrequencyAccess().getUnitAssignment_1()); 
+            // InternalSmartCity.g:2579:2: ( rule__Frequency__UnitAssignment_1 )
+            // InternalSmartCity.g:2579:3: rule__Frequency__UnitAssignment_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__Frequency__UnitAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getFrequencyAccess().getUnitAssignment_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Frequency__Group__1__Impl"
+
+
     // $ANTLR start "rule__DelayRange__Group__0"
-    // InternalSmartCity.g:2536:1: rule__DelayRange__Group__0 : rule__DelayRange__Group__0__Impl rule__DelayRange__Group__1 ;
+    // InternalSmartCity.g:2588:1: rule__DelayRange__Group__0 : rule__DelayRange__Group__0__Impl rule__DelayRange__Group__1 ;
     public final void rule__DelayRange__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2540:1: ( rule__DelayRange__Group__0__Impl rule__DelayRange__Group__1 )
-            // InternalSmartCity.g:2541:2: rule__DelayRange__Group__0__Impl rule__DelayRange__Group__1
+            // InternalSmartCity.g:2592:1: ( rule__DelayRange__Group__0__Impl rule__DelayRange__Group__1 )
+            // InternalSmartCity.g:2593:2: rule__DelayRange__Group__0__Impl rule__DelayRange__Group__1
             {
             pushFollow(FOLLOW_9);
             rule__DelayRange__Group__0__Impl();
@@ -7936,17 +8093,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__DelayRange__Group__0__Impl"
-    // InternalSmartCity.g:2548:1: rule__DelayRange__Group__0__Impl : ( '[' ) ;
+    // InternalSmartCity.g:2600:1: rule__DelayRange__Group__0__Impl : ( '[' ) ;
     public final void rule__DelayRange__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2552:1: ( ( '[' ) )
-            // InternalSmartCity.g:2553:1: ( '[' )
+            // InternalSmartCity.g:2604:1: ( ( '[' ) )
+            // InternalSmartCity.g:2605:1: ( '[' )
             {
-            // InternalSmartCity.g:2553:1: ( '[' )
-            // InternalSmartCity.g:2554:2: '['
+            // InternalSmartCity.g:2605:1: ( '[' )
+            // InternalSmartCity.g:2606:2: '['
             {
              before(grammarAccess.getDelayRangeAccess().getLeftSquareBracketKeyword_0()); 
             match(input,52,FOLLOW_2); 
@@ -7973,14 +8130,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__DelayRange__Group__1"
-    // InternalSmartCity.g:2563:1: rule__DelayRange__Group__1 : rule__DelayRange__Group__1__Impl rule__DelayRange__Group__2 ;
+    // InternalSmartCity.g:2615:1: rule__DelayRange__Group__1 : rule__DelayRange__Group__1__Impl rule__DelayRange__Group__2 ;
     public final void rule__DelayRange__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2567:1: ( rule__DelayRange__Group__1__Impl rule__DelayRange__Group__2 )
-            // InternalSmartCity.g:2568:2: rule__DelayRange__Group__1__Impl rule__DelayRange__Group__2
+            // InternalSmartCity.g:2619:1: ( rule__DelayRange__Group__1__Impl rule__DelayRange__Group__2 )
+            // InternalSmartCity.g:2620:2: rule__DelayRange__Group__1__Impl rule__DelayRange__Group__2
             {
             pushFollow(FOLLOW_32);
             rule__DelayRange__Group__1__Impl();
@@ -8011,21 +8168,21 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__DelayRange__Group__1__Impl"
-    // InternalSmartCity.g:2575:1: rule__DelayRange__Group__1__Impl : ( ( rule__DelayRange__MinAssignment_1 ) ) ;
+    // InternalSmartCity.g:2627:1: rule__DelayRange__Group__1__Impl : ( ( rule__DelayRange__MinAssignment_1 ) ) ;
     public final void rule__DelayRange__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2579:1: ( ( ( rule__DelayRange__MinAssignment_1 ) ) )
-            // InternalSmartCity.g:2580:1: ( ( rule__DelayRange__MinAssignment_1 ) )
+            // InternalSmartCity.g:2631:1: ( ( ( rule__DelayRange__MinAssignment_1 ) ) )
+            // InternalSmartCity.g:2632:1: ( ( rule__DelayRange__MinAssignment_1 ) )
             {
-            // InternalSmartCity.g:2580:1: ( ( rule__DelayRange__MinAssignment_1 ) )
-            // InternalSmartCity.g:2581:2: ( rule__DelayRange__MinAssignment_1 )
+            // InternalSmartCity.g:2632:1: ( ( rule__DelayRange__MinAssignment_1 ) )
+            // InternalSmartCity.g:2633:2: ( rule__DelayRange__MinAssignment_1 )
             {
              before(grammarAccess.getDelayRangeAccess().getMinAssignment_1()); 
-            // InternalSmartCity.g:2582:2: ( rule__DelayRange__MinAssignment_1 )
-            // InternalSmartCity.g:2582:3: rule__DelayRange__MinAssignment_1
+            // InternalSmartCity.g:2634:2: ( rule__DelayRange__MinAssignment_1 )
+            // InternalSmartCity.g:2634:3: rule__DelayRange__MinAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__DelayRange__MinAssignment_1();
@@ -8058,14 +8215,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__DelayRange__Group__2"
-    // InternalSmartCity.g:2590:1: rule__DelayRange__Group__2 : rule__DelayRange__Group__2__Impl rule__DelayRange__Group__3 ;
+    // InternalSmartCity.g:2642:1: rule__DelayRange__Group__2 : rule__DelayRange__Group__2__Impl rule__DelayRange__Group__3 ;
     public final void rule__DelayRange__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2594:1: ( rule__DelayRange__Group__2__Impl rule__DelayRange__Group__3 )
-            // InternalSmartCity.g:2595:2: rule__DelayRange__Group__2__Impl rule__DelayRange__Group__3
+            // InternalSmartCity.g:2646:1: ( rule__DelayRange__Group__2__Impl rule__DelayRange__Group__3 )
+            // InternalSmartCity.g:2647:2: rule__DelayRange__Group__2__Impl rule__DelayRange__Group__3
             {
             pushFollow(FOLLOW_9);
             rule__DelayRange__Group__2__Impl();
@@ -8096,17 +8253,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__DelayRange__Group__2__Impl"
-    // InternalSmartCity.g:2602:1: rule__DelayRange__Group__2__Impl : ( '..' ) ;
+    // InternalSmartCity.g:2654:1: rule__DelayRange__Group__2__Impl : ( '..' ) ;
     public final void rule__DelayRange__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2606:1: ( ( '..' ) )
-            // InternalSmartCity.g:2607:1: ( '..' )
+            // InternalSmartCity.g:2658:1: ( ( '..' ) )
+            // InternalSmartCity.g:2659:1: ( '..' )
             {
-            // InternalSmartCity.g:2607:1: ( '..' )
-            // InternalSmartCity.g:2608:2: '..'
+            // InternalSmartCity.g:2659:1: ( '..' )
+            // InternalSmartCity.g:2660:2: '..'
             {
              before(grammarAccess.getDelayRangeAccess().getFullStopFullStopKeyword_2()); 
             match(input,53,FOLLOW_2); 
@@ -8133,14 +8290,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__DelayRange__Group__3"
-    // InternalSmartCity.g:2617:1: rule__DelayRange__Group__3 : rule__DelayRange__Group__3__Impl rule__DelayRange__Group__4 ;
+    // InternalSmartCity.g:2669:1: rule__DelayRange__Group__3 : rule__DelayRange__Group__3__Impl rule__DelayRange__Group__4 ;
     public final void rule__DelayRange__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2621:1: ( rule__DelayRange__Group__3__Impl rule__DelayRange__Group__4 )
-            // InternalSmartCity.g:2622:2: rule__DelayRange__Group__3__Impl rule__DelayRange__Group__4
+            // InternalSmartCity.g:2673:1: ( rule__DelayRange__Group__3__Impl rule__DelayRange__Group__4 )
+            // InternalSmartCity.g:2674:2: rule__DelayRange__Group__3__Impl rule__DelayRange__Group__4
             {
             pushFollow(FOLLOW_33);
             rule__DelayRange__Group__3__Impl();
@@ -8171,21 +8328,21 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__DelayRange__Group__3__Impl"
-    // InternalSmartCity.g:2629:1: rule__DelayRange__Group__3__Impl : ( ( rule__DelayRange__MaxAssignment_3 ) ) ;
+    // InternalSmartCity.g:2681:1: rule__DelayRange__Group__3__Impl : ( ( rule__DelayRange__MaxAssignment_3 ) ) ;
     public final void rule__DelayRange__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2633:1: ( ( ( rule__DelayRange__MaxAssignment_3 ) ) )
-            // InternalSmartCity.g:2634:1: ( ( rule__DelayRange__MaxAssignment_3 ) )
+            // InternalSmartCity.g:2685:1: ( ( ( rule__DelayRange__MaxAssignment_3 ) ) )
+            // InternalSmartCity.g:2686:1: ( ( rule__DelayRange__MaxAssignment_3 ) )
             {
-            // InternalSmartCity.g:2634:1: ( ( rule__DelayRange__MaxAssignment_3 ) )
-            // InternalSmartCity.g:2635:2: ( rule__DelayRange__MaxAssignment_3 )
+            // InternalSmartCity.g:2686:1: ( ( rule__DelayRange__MaxAssignment_3 ) )
+            // InternalSmartCity.g:2687:2: ( rule__DelayRange__MaxAssignment_3 )
             {
              before(grammarAccess.getDelayRangeAccess().getMaxAssignment_3()); 
-            // InternalSmartCity.g:2636:2: ( rule__DelayRange__MaxAssignment_3 )
-            // InternalSmartCity.g:2636:3: rule__DelayRange__MaxAssignment_3
+            // InternalSmartCity.g:2688:2: ( rule__DelayRange__MaxAssignment_3 )
+            // InternalSmartCity.g:2688:3: rule__DelayRange__MaxAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__DelayRange__MaxAssignment_3();
@@ -8218,14 +8375,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__DelayRange__Group__4"
-    // InternalSmartCity.g:2644:1: rule__DelayRange__Group__4 : rule__DelayRange__Group__4__Impl ;
+    // InternalSmartCity.g:2696:1: rule__DelayRange__Group__4 : rule__DelayRange__Group__4__Impl ;
     public final void rule__DelayRange__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2648:1: ( rule__DelayRange__Group__4__Impl )
-            // InternalSmartCity.g:2649:2: rule__DelayRange__Group__4__Impl
+            // InternalSmartCity.g:2700:1: ( rule__DelayRange__Group__4__Impl )
+            // InternalSmartCity.g:2701:2: rule__DelayRange__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__DelayRange__Group__4__Impl();
@@ -8251,17 +8408,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__DelayRange__Group__4__Impl"
-    // InternalSmartCity.g:2655:1: rule__DelayRange__Group__4__Impl : ( ']' ) ;
+    // InternalSmartCity.g:2707:1: rule__DelayRange__Group__4__Impl : ( ']' ) ;
     public final void rule__DelayRange__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2659:1: ( ( ']' ) )
-            // InternalSmartCity.g:2660:1: ( ']' )
+            // InternalSmartCity.g:2711:1: ( ( ']' ) )
+            // InternalSmartCity.g:2712:1: ( ']' )
             {
-            // InternalSmartCity.g:2660:1: ( ']' )
-            // InternalSmartCity.g:2661:2: ']'
+            // InternalSmartCity.g:2712:1: ( ']' )
+            // InternalSmartCity.g:2713:2: ']'
             {
              before(grammarAccess.getDelayRangeAccess().getRightSquareBracketKeyword_4()); 
             match(input,54,FOLLOW_2); 
@@ -8288,14 +8445,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__CyclicAction__Group__0"
-    // InternalSmartCity.g:2671:1: rule__CyclicAction__Group__0 : rule__CyclicAction__Group__0__Impl rule__CyclicAction__Group__1 ;
+    // InternalSmartCity.g:2723:1: rule__CyclicAction__Group__0 : rule__CyclicAction__Group__0__Impl rule__CyclicAction__Group__1 ;
     public final void rule__CyclicAction__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2675:1: ( rule__CyclicAction__Group__0__Impl rule__CyclicAction__Group__1 )
-            // InternalSmartCity.g:2676:2: rule__CyclicAction__Group__0__Impl rule__CyclicAction__Group__1
+            // InternalSmartCity.g:2727:1: ( rule__CyclicAction__Group__0__Impl rule__CyclicAction__Group__1 )
+            // InternalSmartCity.g:2728:2: rule__CyclicAction__Group__0__Impl rule__CyclicAction__Group__1
             {
             pushFollow(FOLLOW_12);
             rule__CyclicAction__Group__0__Impl();
@@ -8326,17 +8483,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__CyclicAction__Group__0__Impl"
-    // InternalSmartCity.g:2683:1: rule__CyclicAction__Group__0__Impl : ( 'cyclicAction' ) ;
+    // InternalSmartCity.g:2735:1: rule__CyclicAction__Group__0__Impl : ( 'cyclicAction' ) ;
     public final void rule__CyclicAction__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2687:1: ( ( 'cyclicAction' ) )
-            // InternalSmartCity.g:2688:1: ( 'cyclicAction' )
+            // InternalSmartCity.g:2739:1: ( ( 'cyclicAction' ) )
+            // InternalSmartCity.g:2740:1: ( 'cyclicAction' )
             {
-            // InternalSmartCity.g:2688:1: ( 'cyclicAction' )
-            // InternalSmartCity.g:2689:2: 'cyclicAction'
+            // InternalSmartCity.g:2740:1: ( 'cyclicAction' )
+            // InternalSmartCity.g:2741:2: 'cyclicAction'
             {
              before(grammarAccess.getCyclicActionAccess().getCyclicActionKeyword_0()); 
             match(input,55,FOLLOW_2); 
@@ -8363,14 +8520,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__CyclicAction__Group__1"
-    // InternalSmartCity.g:2698:1: rule__CyclicAction__Group__1 : rule__CyclicAction__Group__1__Impl rule__CyclicAction__Group__2 ;
+    // InternalSmartCity.g:2750:1: rule__CyclicAction__Group__1 : rule__CyclicAction__Group__1__Impl rule__CyclicAction__Group__2 ;
     public final void rule__CyclicAction__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2702:1: ( rule__CyclicAction__Group__1__Impl rule__CyclicAction__Group__2 )
-            // InternalSmartCity.g:2703:2: rule__CyclicAction__Group__1__Impl rule__CyclicAction__Group__2
+            // InternalSmartCity.g:2754:1: ( rule__CyclicAction__Group__1__Impl rule__CyclicAction__Group__2 )
+            // InternalSmartCity.g:2755:2: rule__CyclicAction__Group__1__Impl rule__CyclicAction__Group__2
             {
             pushFollow(FOLLOW_34);
             rule__CyclicAction__Group__1__Impl();
@@ -8401,21 +8558,21 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__CyclicAction__Group__1__Impl"
-    // InternalSmartCity.g:2710:1: rule__CyclicAction__Group__1__Impl : ( ( rule__CyclicAction__NameAssignment_1 ) ) ;
+    // InternalSmartCity.g:2762:1: rule__CyclicAction__Group__1__Impl : ( ( rule__CyclicAction__NameAssignment_1 ) ) ;
     public final void rule__CyclicAction__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2714:1: ( ( ( rule__CyclicAction__NameAssignment_1 ) ) )
-            // InternalSmartCity.g:2715:1: ( ( rule__CyclicAction__NameAssignment_1 ) )
+            // InternalSmartCity.g:2766:1: ( ( ( rule__CyclicAction__NameAssignment_1 ) ) )
+            // InternalSmartCity.g:2767:1: ( ( rule__CyclicAction__NameAssignment_1 ) )
             {
-            // InternalSmartCity.g:2715:1: ( ( rule__CyclicAction__NameAssignment_1 ) )
-            // InternalSmartCity.g:2716:2: ( rule__CyclicAction__NameAssignment_1 )
+            // InternalSmartCity.g:2767:1: ( ( rule__CyclicAction__NameAssignment_1 ) )
+            // InternalSmartCity.g:2768:2: ( rule__CyclicAction__NameAssignment_1 )
             {
              before(grammarAccess.getCyclicActionAccess().getNameAssignment_1()); 
-            // InternalSmartCity.g:2717:2: ( rule__CyclicAction__NameAssignment_1 )
-            // InternalSmartCity.g:2717:3: rule__CyclicAction__NameAssignment_1
+            // InternalSmartCity.g:2769:2: ( rule__CyclicAction__NameAssignment_1 )
+            // InternalSmartCity.g:2769:3: rule__CyclicAction__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__CyclicAction__NameAssignment_1();
@@ -8448,14 +8605,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__CyclicAction__Group__2"
-    // InternalSmartCity.g:2725:1: rule__CyclicAction__Group__2 : rule__CyclicAction__Group__2__Impl rule__CyclicAction__Group__3 ;
+    // InternalSmartCity.g:2777:1: rule__CyclicAction__Group__2 : rule__CyclicAction__Group__2__Impl rule__CyclicAction__Group__3 ;
     public final void rule__CyclicAction__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2729:1: ( rule__CyclicAction__Group__2__Impl rule__CyclicAction__Group__3 )
-            // InternalSmartCity.g:2730:2: rule__CyclicAction__Group__2__Impl rule__CyclicAction__Group__3
+            // InternalSmartCity.g:2781:1: ( rule__CyclicAction__Group__2__Impl rule__CyclicAction__Group__3 )
+            // InternalSmartCity.g:2782:2: rule__CyclicAction__Group__2__Impl rule__CyclicAction__Group__3
             {
             pushFollow(FOLLOW_9);
             rule__CyclicAction__Group__2__Impl();
@@ -8486,17 +8643,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__CyclicAction__Group__2__Impl"
-    // InternalSmartCity.g:2737:1: rule__CyclicAction__Group__2__Impl : ( 'frequency' ) ;
+    // InternalSmartCity.g:2789:1: rule__CyclicAction__Group__2__Impl : ( 'frequency' ) ;
     public final void rule__CyclicAction__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2741:1: ( ( 'frequency' ) )
-            // InternalSmartCity.g:2742:1: ( 'frequency' )
+            // InternalSmartCity.g:2793:1: ( ( 'frequency' ) )
+            // InternalSmartCity.g:2794:1: ( 'frequency' )
             {
-            // InternalSmartCity.g:2742:1: ( 'frequency' )
-            // InternalSmartCity.g:2743:2: 'frequency'
+            // InternalSmartCity.g:2794:1: ( 'frequency' )
+            // InternalSmartCity.g:2795:2: 'frequency'
             {
              before(grammarAccess.getCyclicActionAccess().getFrequencyKeyword_2()); 
             match(input,56,FOLLOW_2); 
@@ -8523,22 +8680,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__CyclicAction__Group__3"
-    // InternalSmartCity.g:2752:1: rule__CyclicAction__Group__3 : rule__CyclicAction__Group__3__Impl rule__CyclicAction__Group__4 ;
+    // InternalSmartCity.g:2804:1: rule__CyclicAction__Group__3 : rule__CyclicAction__Group__3__Impl ;
     public final void rule__CyclicAction__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2756:1: ( rule__CyclicAction__Group__3__Impl rule__CyclicAction__Group__4 )
-            // InternalSmartCity.g:2757:2: rule__CyclicAction__Group__3__Impl rule__CyclicAction__Group__4
+            // InternalSmartCity.g:2808:1: ( rule__CyclicAction__Group__3__Impl )
+            // InternalSmartCity.g:2809:2: rule__CyclicAction__Group__3__Impl
             {
-            pushFollow(FOLLOW_21);
-            rule__CyclicAction__Group__3__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__CyclicAction__Group__4();
+            rule__CyclicAction__Group__3__Impl();
 
             state._fsp--;
 
@@ -8561,31 +8713,31 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__CyclicAction__Group__3__Impl"
-    // InternalSmartCity.g:2764:1: rule__CyclicAction__Group__3__Impl : ( ( rule__CyclicAction__FreqValueAssignment_3 ) ) ;
+    // InternalSmartCity.g:2815:1: rule__CyclicAction__Group__3__Impl : ( ( rule__CyclicAction__FrequencyAssignment_3 ) ) ;
     public final void rule__CyclicAction__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2768:1: ( ( ( rule__CyclicAction__FreqValueAssignment_3 ) ) )
-            // InternalSmartCity.g:2769:1: ( ( rule__CyclicAction__FreqValueAssignment_3 ) )
+            // InternalSmartCity.g:2819:1: ( ( ( rule__CyclicAction__FrequencyAssignment_3 ) ) )
+            // InternalSmartCity.g:2820:1: ( ( rule__CyclicAction__FrequencyAssignment_3 ) )
             {
-            // InternalSmartCity.g:2769:1: ( ( rule__CyclicAction__FreqValueAssignment_3 ) )
-            // InternalSmartCity.g:2770:2: ( rule__CyclicAction__FreqValueAssignment_3 )
+            // InternalSmartCity.g:2820:1: ( ( rule__CyclicAction__FrequencyAssignment_3 ) )
+            // InternalSmartCity.g:2821:2: ( rule__CyclicAction__FrequencyAssignment_3 )
             {
-             before(grammarAccess.getCyclicActionAccess().getFreqValueAssignment_3()); 
-            // InternalSmartCity.g:2771:2: ( rule__CyclicAction__FreqValueAssignment_3 )
-            // InternalSmartCity.g:2771:3: rule__CyclicAction__FreqValueAssignment_3
+             before(grammarAccess.getCyclicActionAccess().getFrequencyAssignment_3()); 
+            // InternalSmartCity.g:2822:2: ( rule__CyclicAction__FrequencyAssignment_3 )
+            // InternalSmartCity.g:2822:3: rule__CyclicAction__FrequencyAssignment_3
             {
             pushFollow(FOLLOW_2);
-            rule__CyclicAction__FreqValueAssignment_3();
+            rule__CyclicAction__FrequencyAssignment_3();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getCyclicActionAccess().getFreqValueAssignment_3()); 
+             after(grammarAccess.getCyclicActionAccess().getFrequencyAssignment_3()); 
 
             }
 
@@ -8607,95 +8759,15 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
     // $ANTLR end "rule__CyclicAction__Group__3__Impl"
 
 
-    // $ANTLR start "rule__CyclicAction__Group__4"
-    // InternalSmartCity.g:2779:1: rule__CyclicAction__Group__4 : rule__CyclicAction__Group__4__Impl ;
-    public final void rule__CyclicAction__Group__4() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSmartCity.g:2783:1: ( rule__CyclicAction__Group__4__Impl )
-            // InternalSmartCity.g:2784:2: rule__CyclicAction__Group__4__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__CyclicAction__Group__4__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__CyclicAction__Group__4"
-
-
-    // $ANTLR start "rule__CyclicAction__Group__4__Impl"
-    // InternalSmartCity.g:2790:1: rule__CyclicAction__Group__4__Impl : ( ( rule__CyclicAction__FreqUnitAssignment_4 ) ) ;
-    public final void rule__CyclicAction__Group__4__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSmartCity.g:2794:1: ( ( ( rule__CyclicAction__FreqUnitAssignment_4 ) ) )
-            // InternalSmartCity.g:2795:1: ( ( rule__CyclicAction__FreqUnitAssignment_4 ) )
-            {
-            // InternalSmartCity.g:2795:1: ( ( rule__CyclicAction__FreqUnitAssignment_4 ) )
-            // InternalSmartCity.g:2796:2: ( rule__CyclicAction__FreqUnitAssignment_4 )
-            {
-             before(grammarAccess.getCyclicActionAccess().getFreqUnitAssignment_4()); 
-            // InternalSmartCity.g:2797:2: ( rule__CyclicAction__FreqUnitAssignment_4 )
-            // InternalSmartCity.g:2797:3: rule__CyclicAction__FreqUnitAssignment_4
-            {
-            pushFollow(FOLLOW_2);
-            rule__CyclicAction__FreqUnitAssignment_4();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getCyclicActionAccess().getFreqUnitAssignment_4()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__CyclicAction__Group__4__Impl"
-
-
     // $ANTLR start "rule__TriggeredAction__Group__0"
-    // InternalSmartCity.g:2806:1: rule__TriggeredAction__Group__0 : rule__TriggeredAction__Group__0__Impl rule__TriggeredAction__Group__1 ;
+    // InternalSmartCity.g:2831:1: rule__TriggeredAction__Group__0 : rule__TriggeredAction__Group__0__Impl rule__TriggeredAction__Group__1 ;
     public final void rule__TriggeredAction__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2810:1: ( rule__TriggeredAction__Group__0__Impl rule__TriggeredAction__Group__1 )
-            // InternalSmartCity.g:2811:2: rule__TriggeredAction__Group__0__Impl rule__TriggeredAction__Group__1
+            // InternalSmartCity.g:2835:1: ( rule__TriggeredAction__Group__0__Impl rule__TriggeredAction__Group__1 )
+            // InternalSmartCity.g:2836:2: rule__TriggeredAction__Group__0__Impl rule__TriggeredAction__Group__1
             {
             pushFollow(FOLLOW_12);
             rule__TriggeredAction__Group__0__Impl();
@@ -8726,17 +8798,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__TriggeredAction__Group__0__Impl"
-    // InternalSmartCity.g:2818:1: rule__TriggeredAction__Group__0__Impl : ( 'TriggeredAction' ) ;
+    // InternalSmartCity.g:2843:1: rule__TriggeredAction__Group__0__Impl : ( 'TriggeredAction' ) ;
     public final void rule__TriggeredAction__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2822:1: ( ( 'TriggeredAction' ) )
-            // InternalSmartCity.g:2823:1: ( 'TriggeredAction' )
+            // InternalSmartCity.g:2847:1: ( ( 'TriggeredAction' ) )
+            // InternalSmartCity.g:2848:1: ( 'TriggeredAction' )
             {
-            // InternalSmartCity.g:2823:1: ( 'TriggeredAction' )
-            // InternalSmartCity.g:2824:2: 'TriggeredAction'
+            // InternalSmartCity.g:2848:1: ( 'TriggeredAction' )
+            // InternalSmartCity.g:2849:2: 'TriggeredAction'
             {
              before(grammarAccess.getTriggeredActionAccess().getTriggeredActionKeyword_0()); 
             match(input,57,FOLLOW_2); 
@@ -8763,14 +8835,14 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__TriggeredAction__Group__1"
-    // InternalSmartCity.g:2833:1: rule__TriggeredAction__Group__1 : rule__TriggeredAction__Group__1__Impl ;
+    // InternalSmartCity.g:2858:1: rule__TriggeredAction__Group__1 : rule__TriggeredAction__Group__1__Impl ;
     public final void rule__TriggeredAction__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2837:1: ( rule__TriggeredAction__Group__1__Impl )
-            // InternalSmartCity.g:2838:2: rule__TriggeredAction__Group__1__Impl
+            // InternalSmartCity.g:2862:1: ( rule__TriggeredAction__Group__1__Impl )
+            // InternalSmartCity.g:2863:2: rule__TriggeredAction__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__TriggeredAction__Group__1__Impl();
@@ -8796,21 +8868,21 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__TriggeredAction__Group__1__Impl"
-    // InternalSmartCity.g:2844:1: rule__TriggeredAction__Group__1__Impl : ( ( rule__TriggeredAction__NameAssignment_1 ) ) ;
+    // InternalSmartCity.g:2869:1: rule__TriggeredAction__Group__1__Impl : ( ( rule__TriggeredAction__NameAssignment_1 ) ) ;
     public final void rule__TriggeredAction__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2848:1: ( ( ( rule__TriggeredAction__NameAssignment_1 ) ) )
-            // InternalSmartCity.g:2849:1: ( ( rule__TriggeredAction__NameAssignment_1 ) )
+            // InternalSmartCity.g:2873:1: ( ( ( rule__TriggeredAction__NameAssignment_1 ) ) )
+            // InternalSmartCity.g:2874:1: ( ( rule__TriggeredAction__NameAssignment_1 ) )
             {
-            // InternalSmartCity.g:2849:1: ( ( rule__TriggeredAction__NameAssignment_1 ) )
-            // InternalSmartCity.g:2850:2: ( rule__TriggeredAction__NameAssignment_1 )
+            // InternalSmartCity.g:2874:1: ( ( rule__TriggeredAction__NameAssignment_1 ) )
+            // InternalSmartCity.g:2875:2: ( rule__TriggeredAction__NameAssignment_1 )
             {
              before(grammarAccess.getTriggeredActionAccess().getNameAssignment_1()); 
-            // InternalSmartCity.g:2851:2: ( rule__TriggeredAction__NameAssignment_1 )
-            // InternalSmartCity.g:2851:3: rule__TriggeredAction__NameAssignment_1
+            // InternalSmartCity.g:2876:2: ( rule__TriggeredAction__NameAssignment_1 )
+            // InternalSmartCity.g:2876:3: rule__TriggeredAction__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__TriggeredAction__NameAssignment_1();
@@ -8843,17 +8915,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Model__NodesAssignment_0"
-    // InternalSmartCity.g:2860:1: rule__Model__NodesAssignment_0 : ( ruleNode ) ;
+    // InternalSmartCity.g:2885:1: rule__Model__NodesAssignment_0 : ( ruleNode ) ;
     public final void rule__Model__NodesAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2864:1: ( ( ruleNode ) )
-            // InternalSmartCity.g:2865:2: ( ruleNode )
+            // InternalSmartCity.g:2889:1: ( ( ruleNode ) )
+            // InternalSmartCity.g:2890:2: ( ruleNode )
             {
-            // InternalSmartCity.g:2865:2: ( ruleNode )
-            // InternalSmartCity.g:2866:3: ruleNode
+            // InternalSmartCity.g:2890:2: ( ruleNode )
+            // InternalSmartCity.g:2891:3: ruleNode
             {
              before(grammarAccess.getModelAccess().getNodesNodeParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -8884,17 +8956,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Model__DataGatewayAssignment_1"
-    // InternalSmartCity.g:2875:1: rule__Model__DataGatewayAssignment_1 : ( ruleDataGateway ) ;
+    // InternalSmartCity.g:2900:1: rule__Model__DataGatewayAssignment_1 : ( ruleDataGateway ) ;
     public final void rule__Model__DataGatewayAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2879:1: ( ( ruleDataGateway ) )
-            // InternalSmartCity.g:2880:2: ( ruleDataGateway )
+            // InternalSmartCity.g:2904:1: ( ( ruleDataGateway ) )
+            // InternalSmartCity.g:2905:2: ( ruleDataGateway )
             {
-            // InternalSmartCity.g:2880:2: ( ruleDataGateway )
-            // InternalSmartCity.g:2881:3: ruleDataGateway
+            // InternalSmartCity.g:2905:2: ( ruleDataGateway )
+            // InternalSmartCity.g:2906:3: ruleDataGateway
             {
              before(grammarAccess.getModelAccess().getDataGatewayDataGatewayParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -8925,17 +8997,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Model__GlobalLinksAssignment_2"
-    // InternalSmartCity.g:2890:1: rule__Model__GlobalLinksAssignment_2 : ( ruleCommunicationLink ) ;
+    // InternalSmartCity.g:2915:1: rule__Model__GlobalLinksAssignment_2 : ( ruleCommunicationLink ) ;
     public final void rule__Model__GlobalLinksAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2894:1: ( ( ruleCommunicationLink ) )
-            // InternalSmartCity.g:2895:2: ( ruleCommunicationLink )
+            // InternalSmartCity.g:2919:1: ( ( ruleCommunicationLink ) )
+            // InternalSmartCity.g:2920:2: ( ruleCommunicationLink )
             {
-            // InternalSmartCity.g:2895:2: ( ruleCommunicationLink )
-            // InternalSmartCity.g:2896:3: ruleCommunicationLink
+            // InternalSmartCity.g:2920:2: ( ruleCommunicationLink )
+            // InternalSmartCity.g:2921:3: ruleCommunicationLink
             {
              before(grammarAccess.getModelAccess().getGlobalLinksCommunicationLinkParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -8966,17 +9038,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Model__SimulationPropertiesAssignment_3"
-    // InternalSmartCity.g:2905:1: rule__Model__SimulationPropertiesAssignment_3 : ( ruleSimulationProperties ) ;
+    // InternalSmartCity.g:2930:1: rule__Model__SimulationPropertiesAssignment_3 : ( ruleSimulationProperties ) ;
     public final void rule__Model__SimulationPropertiesAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2909:1: ( ( ruleSimulationProperties ) )
-            // InternalSmartCity.g:2910:2: ( ruleSimulationProperties )
+            // InternalSmartCity.g:2934:1: ( ( ruleSimulationProperties ) )
+            // InternalSmartCity.g:2935:2: ( ruleSimulationProperties )
             {
-            // InternalSmartCity.g:2910:2: ( ruleSimulationProperties )
-            // InternalSmartCity.g:2911:3: ruleSimulationProperties
+            // InternalSmartCity.g:2935:2: ( ruleSimulationProperties )
+            // InternalSmartCity.g:2936:3: ruleSimulationProperties
             {
              before(grammarAccess.getModelAccess().getSimulationPropertiesSimulationPropertiesParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -9007,17 +9079,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__SimulationProperties__TerminationTimeAssignment_3"
-    // InternalSmartCity.g:2920:1: rule__SimulationProperties__TerminationTimeAssignment_3 : ( RULE_INT ) ;
+    // InternalSmartCity.g:2945:1: rule__SimulationProperties__TerminationTimeAssignment_3 : ( RULE_INT ) ;
     public final void rule__SimulationProperties__TerminationTimeAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2924:1: ( ( RULE_INT ) )
-            // InternalSmartCity.g:2925:2: ( RULE_INT )
+            // InternalSmartCity.g:2949:1: ( ( RULE_INT ) )
+            // InternalSmartCity.g:2950:2: ( RULE_INT )
             {
-            // InternalSmartCity.g:2925:2: ( RULE_INT )
-            // InternalSmartCity.g:2926:3: RULE_INT
+            // InternalSmartCity.g:2950:2: ( RULE_INT )
+            // InternalSmartCity.g:2951:3: RULE_INT
             {
              before(grammarAccess.getSimulationPropertiesAccess().getTerminationTimeINTTerminalRuleCall_3_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -9044,17 +9116,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__SimulationProperties__GeneratorFileAssignment_4_1"
-    // InternalSmartCity.g:2935:1: rule__SimulationProperties__GeneratorFileAssignment_4_1 : ( RULE_STRING ) ;
+    // InternalSmartCity.g:2960:1: rule__SimulationProperties__GeneratorFileAssignment_4_1 : ( RULE_STRING ) ;
     public final void rule__SimulationProperties__GeneratorFileAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2939:1: ( ( RULE_STRING ) )
-            // InternalSmartCity.g:2940:2: ( RULE_STRING )
+            // InternalSmartCity.g:2964:1: ( ( RULE_STRING ) )
+            // InternalSmartCity.g:2965:2: ( RULE_STRING )
             {
-            // InternalSmartCity.g:2940:2: ( RULE_STRING )
-            // InternalSmartCity.g:2941:3: RULE_STRING
+            // InternalSmartCity.g:2965:2: ( RULE_STRING )
+            // InternalSmartCity.g:2966:3: RULE_STRING
             {
              before(grammarAccess.getSimulationPropertiesAccess().getGeneratorFileSTRINGTerminalRuleCall_4_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -9081,17 +9153,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__DataGateway__NameAssignment_1"
-    // InternalSmartCity.g:2950:1: rule__DataGateway__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalSmartCity.g:2975:1: rule__DataGateway__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__DataGateway__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2954:1: ( ( RULE_ID ) )
-            // InternalSmartCity.g:2955:2: ( RULE_ID )
+            // InternalSmartCity.g:2979:1: ( ( RULE_ID ) )
+            // InternalSmartCity.g:2980:2: ( RULE_ID )
             {
-            // InternalSmartCity.g:2955:2: ( RULE_ID )
-            // InternalSmartCity.g:2956:3: RULE_ID
+            // InternalSmartCity.g:2980:2: ( RULE_ID )
+            // InternalSmartCity.g:2981:3: RULE_ID
             {
              before(grammarAccess.getDataGatewayAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -9118,17 +9190,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__DataGateway__PriorityAssignment_4"
-    // InternalSmartCity.g:2965:1: rule__DataGateway__PriorityAssignment_4 : ( RULE_INT ) ;
+    // InternalSmartCity.g:2990:1: rule__DataGateway__PriorityAssignment_4 : ( RULE_INT ) ;
     public final void rule__DataGateway__PriorityAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2969:1: ( ( RULE_INT ) )
-            // InternalSmartCity.g:2970:2: ( RULE_INT )
+            // InternalSmartCity.g:2994:1: ( ( RULE_INT ) )
+            // InternalSmartCity.g:2995:2: ( RULE_INT )
             {
-            // InternalSmartCity.g:2970:2: ( RULE_INT )
-            // InternalSmartCity.g:2971:3: RULE_INT
+            // InternalSmartCity.g:2995:2: ( RULE_INT )
+            // InternalSmartCity.g:2996:3: RULE_INT
             {
              before(grammarAccess.getDataGatewayAccess().getPriorityINTTerminalRuleCall_4_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -9155,17 +9227,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__DataGateway__DelayAssignment_6"
-    // InternalSmartCity.g:2980:1: rule__DataGateway__DelayAssignment_6 : ( ruleDelayRange ) ;
+    // InternalSmartCity.g:3005:1: rule__DataGateway__DelayAssignment_6 : ( ruleDelayRange ) ;
     public final void rule__DataGateway__DelayAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2984:1: ( ( ruleDelayRange ) )
-            // InternalSmartCity.g:2985:2: ( ruleDelayRange )
+            // InternalSmartCity.g:3009:1: ( ( ruleDelayRange ) )
+            // InternalSmartCity.g:3010:2: ( ruleDelayRange )
             {
-            // InternalSmartCity.g:2985:2: ( ruleDelayRange )
-            // InternalSmartCity.g:2986:3: ruleDelayRange
+            // InternalSmartCity.g:3010:2: ( ruleDelayRange )
+            // InternalSmartCity.g:3011:3: ruleDelayRange
             {
              before(grammarAccess.getDataGatewayAccess().getDelayDelayRangeParserRuleCall_6_0()); 
             pushFollow(FOLLOW_2);
@@ -9196,17 +9268,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Node__NameAssignment_1"
-    // InternalSmartCity.g:2995:1: rule__Node__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalSmartCity.g:3020:1: rule__Node__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Node__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:2999:1: ( ( RULE_ID ) )
-            // InternalSmartCity.g:3000:2: ( RULE_ID )
+            // InternalSmartCity.g:3024:1: ( ( RULE_ID ) )
+            // InternalSmartCity.g:3025:2: ( RULE_ID )
             {
-            // InternalSmartCity.g:3000:2: ( RULE_ID )
-            // InternalSmartCity.g:3001:3: RULE_ID
+            // InternalSmartCity.g:3025:2: ( RULE_ID )
+            // InternalSmartCity.g:3026:3: RULE_ID
             {
              before(grammarAccess.getNodeAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -9233,17 +9305,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Node__SensorsAssignment_3"
-    // InternalSmartCity.g:3010:1: rule__Node__SensorsAssignment_3 : ( ruleSensor ) ;
+    // InternalSmartCity.g:3035:1: rule__Node__SensorsAssignment_3 : ( ruleSensor ) ;
     public final void rule__Node__SensorsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:3014:1: ( ( ruleSensor ) )
-            // InternalSmartCity.g:3015:2: ( ruleSensor )
+            // InternalSmartCity.g:3039:1: ( ( ruleSensor ) )
+            // InternalSmartCity.g:3040:2: ( ruleSensor )
             {
-            // InternalSmartCity.g:3015:2: ( ruleSensor )
-            // InternalSmartCity.g:3016:3: ruleSensor
+            // InternalSmartCity.g:3040:2: ( ruleSensor )
+            // InternalSmartCity.g:3041:3: ruleSensor
             {
              before(grammarAccess.getNodeAccess().getSensorsSensorParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -9274,17 +9346,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Node__ModulesAssignment_4"
-    // InternalSmartCity.g:3025:1: rule__Node__ModulesAssignment_4 : ( ruleModule ) ;
+    // InternalSmartCity.g:3050:1: rule__Node__ModulesAssignment_4 : ( ruleModule ) ;
     public final void rule__Node__ModulesAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:3029:1: ( ( ruleModule ) )
-            // InternalSmartCity.g:3030:2: ( ruleModule )
+            // InternalSmartCity.g:3054:1: ( ( ruleModule ) )
+            // InternalSmartCity.g:3055:2: ( ruleModule )
             {
-            // InternalSmartCity.g:3030:2: ( ruleModule )
-            // InternalSmartCity.g:3031:3: ruleModule
+            // InternalSmartCity.g:3055:2: ( ruleModule )
+            // InternalSmartCity.g:3056:3: ruleModule
             {
              before(grammarAccess.getNodeAccess().getModulesModuleParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -9315,17 +9387,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Node__ControllerAssignment_5"
-    // InternalSmartCity.g:3040:1: rule__Node__ControllerAssignment_5 : ( ruleController ) ;
+    // InternalSmartCity.g:3065:1: rule__Node__ControllerAssignment_5 : ( ruleController ) ;
     public final void rule__Node__ControllerAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:3044:1: ( ( ruleController ) )
-            // InternalSmartCity.g:3045:2: ( ruleController )
+            // InternalSmartCity.g:3069:1: ( ( ruleController ) )
+            // InternalSmartCity.g:3070:2: ( ruleController )
             {
-            // InternalSmartCity.g:3045:2: ( ruleController )
-            // InternalSmartCity.g:3046:3: ruleController
+            // InternalSmartCity.g:3070:2: ( ruleController )
+            // InternalSmartCity.g:3071:3: ruleController
             {
              before(grammarAccess.getNodeAccess().getControllerControllerParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -9356,17 +9428,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Node__LinksAssignment_6"
-    // InternalSmartCity.g:3055:1: rule__Node__LinksAssignment_6 : ( ruleCommunicationLink ) ;
+    // InternalSmartCity.g:3080:1: rule__Node__LinksAssignment_6 : ( ruleCommunicationLink ) ;
     public final void rule__Node__LinksAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:3059:1: ( ( ruleCommunicationLink ) )
-            // InternalSmartCity.g:3060:2: ( ruleCommunicationLink )
+            // InternalSmartCity.g:3084:1: ( ( ruleCommunicationLink ) )
+            // InternalSmartCity.g:3085:2: ( ruleCommunicationLink )
             {
-            // InternalSmartCity.g:3060:2: ( ruleCommunicationLink )
-            // InternalSmartCity.g:3061:3: ruleCommunicationLink
+            // InternalSmartCity.g:3085:2: ( ruleCommunicationLink )
+            // InternalSmartCity.g:3086:3: ruleCommunicationLink
             {
              before(grammarAccess.getNodeAccess().getLinksCommunicationLinkParserRuleCall_6_0()); 
             pushFollow(FOLLOW_2);
@@ -9396,63 +9468,26 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
     // $ANTLR end "rule__Node__LinksAssignment_6"
 
 
-    // $ANTLR start "rule__Node__FreqValueAssignment_8"
-    // InternalSmartCity.g:3070:1: rule__Node__FreqValueAssignment_8 : ( RULE_INT ) ;
-    public final void rule__Node__FreqValueAssignment_8() throws RecognitionException {
+    // $ANTLR start "rule__Node__FrequencyAssignment_8"
+    // InternalSmartCity.g:3095:1: rule__Node__FrequencyAssignment_8 : ( ruleFrequency ) ;
+    public final void rule__Node__FrequencyAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:3074:1: ( ( RULE_INT ) )
-            // InternalSmartCity.g:3075:2: ( RULE_INT )
+            // InternalSmartCity.g:3099:1: ( ( ruleFrequency ) )
+            // InternalSmartCity.g:3100:2: ( ruleFrequency )
             {
-            // InternalSmartCity.g:3075:2: ( RULE_INT )
-            // InternalSmartCity.g:3076:3: RULE_INT
+            // InternalSmartCity.g:3100:2: ( ruleFrequency )
+            // InternalSmartCity.g:3101:3: ruleFrequency
             {
-             before(grammarAccess.getNodeAccess().getFreqValueINTTerminalRuleCall_8_0()); 
-            match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getNodeAccess().getFreqValueINTTerminalRuleCall_8_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Node__FreqValueAssignment_8"
-
-
-    // $ANTLR start "rule__Node__FreqUnitAssignment_9"
-    // InternalSmartCity.g:3085:1: rule__Node__FreqUnitAssignment_9 : ( ruleFrequencyUnit ) ;
-    public final void rule__Node__FreqUnitAssignment_9() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSmartCity.g:3089:1: ( ( ruleFrequencyUnit ) )
-            // InternalSmartCity.g:3090:2: ( ruleFrequencyUnit )
-            {
-            // InternalSmartCity.g:3090:2: ( ruleFrequencyUnit )
-            // InternalSmartCity.g:3091:3: ruleFrequencyUnit
-            {
-             before(grammarAccess.getNodeAccess().getFreqUnitFrequencyUnitEnumRuleCall_9_0()); 
+             before(grammarAccess.getNodeAccess().getFrequencyFrequencyParserRuleCall_8_0()); 
             pushFollow(FOLLOW_2);
-            ruleFrequencyUnit();
+            ruleFrequency();
 
             state._fsp--;
 
-             after(grammarAccess.getNodeAccess().getFreqUnitFrequencyUnitEnumRuleCall_9_0()); 
+             after(grammarAccess.getNodeAccess().getFrequencyFrequencyParserRuleCall_8_0()); 
 
             }
 
@@ -9471,25 +9506,25 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__Node__FreqUnitAssignment_9"
+    // $ANTLR end "rule__Node__FrequencyAssignment_8"
 
 
-    // $ANTLR start "rule__Node__PriorityAssignment_11"
-    // InternalSmartCity.g:3100:1: rule__Node__PriorityAssignment_11 : ( RULE_INT ) ;
-    public final void rule__Node__PriorityAssignment_11() throws RecognitionException {
+    // $ANTLR start "rule__Node__PriorityAssignment_10"
+    // InternalSmartCity.g:3110:1: rule__Node__PriorityAssignment_10 : ( RULE_INT ) ;
+    public final void rule__Node__PriorityAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:3104:1: ( ( RULE_INT ) )
-            // InternalSmartCity.g:3105:2: ( RULE_INT )
+            // InternalSmartCity.g:3114:1: ( ( RULE_INT ) )
+            // InternalSmartCity.g:3115:2: ( RULE_INT )
             {
-            // InternalSmartCity.g:3105:2: ( RULE_INT )
-            // InternalSmartCity.g:3106:3: RULE_INT
+            // InternalSmartCity.g:3115:2: ( RULE_INT )
+            // InternalSmartCity.g:3116:3: RULE_INT
             {
-             before(grammarAccess.getNodeAccess().getPriorityINTTerminalRuleCall_11_0()); 
+             before(grammarAccess.getNodeAccess().getPriorityINTTerminalRuleCall_10_0()); 
             match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getNodeAccess().getPriorityINTTerminalRuleCall_11_0()); 
+             after(grammarAccess.getNodeAccess().getPriorityINTTerminalRuleCall_10_0()); 
 
             }
 
@@ -9508,21 +9543,21 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__Node__PriorityAssignment_11"
+    // $ANTLR end "rule__Node__PriorityAssignment_10"
 
 
     // $ANTLR start "rule__Sensor__NameAssignment_1"
-    // InternalSmartCity.g:3115:1: rule__Sensor__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalSmartCity.g:3125:1: rule__Sensor__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Sensor__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:3119:1: ( ( RULE_ID ) )
-            // InternalSmartCity.g:3120:2: ( RULE_ID )
+            // InternalSmartCity.g:3129:1: ( ( RULE_ID ) )
+            // InternalSmartCity.g:3130:2: ( RULE_ID )
             {
-            // InternalSmartCity.g:3120:2: ( RULE_ID )
-            // InternalSmartCity.g:3121:3: RULE_ID
+            // InternalSmartCity.g:3130:2: ( RULE_ID )
+            // InternalSmartCity.g:3131:3: RULE_ID
             {
              before(grammarAccess.getSensorAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -9549,17 +9584,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Sensor__TypeAssignment_4"
-    // InternalSmartCity.g:3130:1: rule__Sensor__TypeAssignment_4 : ( ruleSensorType ) ;
+    // InternalSmartCity.g:3140:1: rule__Sensor__TypeAssignment_4 : ( ruleSensorType ) ;
     public final void rule__Sensor__TypeAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:3134:1: ( ( ruleSensorType ) )
-            // InternalSmartCity.g:3135:2: ( ruleSensorType )
+            // InternalSmartCity.g:3144:1: ( ( ruleSensorType ) )
+            // InternalSmartCity.g:3145:2: ( ruleSensorType )
             {
-            // InternalSmartCity.g:3135:2: ( ruleSensorType )
-            // InternalSmartCity.g:3136:3: ruleSensorType
+            // InternalSmartCity.g:3145:2: ( ruleSensorType )
+            // InternalSmartCity.g:3146:3: ruleSensorType
             {
              before(grammarAccess.getSensorAccess().getTypeSensorTypeEnumRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -9590,17 +9625,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Sensor__PriorityAssignment_6"
-    // InternalSmartCity.g:3145:1: rule__Sensor__PriorityAssignment_6 : ( RULE_INT ) ;
+    // InternalSmartCity.g:3155:1: rule__Sensor__PriorityAssignment_6 : ( RULE_INT ) ;
     public final void rule__Sensor__PriorityAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:3149:1: ( ( RULE_INT ) )
-            // InternalSmartCity.g:3150:2: ( RULE_INT )
+            // InternalSmartCity.g:3159:1: ( ( RULE_INT ) )
+            // InternalSmartCity.g:3160:2: ( RULE_INT )
             {
-            // InternalSmartCity.g:3150:2: ( RULE_INT )
-            // InternalSmartCity.g:3151:3: RULE_INT
+            // InternalSmartCity.g:3160:2: ( RULE_INT )
+            // InternalSmartCity.g:3161:3: RULE_INT
             {
              before(grammarAccess.getSensorAccess().getPriorityINTTerminalRuleCall_6_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -9627,17 +9662,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Sensor__CyclicActionsAssignment_7"
-    // InternalSmartCity.g:3160:1: rule__Sensor__CyclicActionsAssignment_7 : ( ruleCyclicAction ) ;
+    // InternalSmartCity.g:3170:1: rule__Sensor__CyclicActionsAssignment_7 : ( ruleCyclicAction ) ;
     public final void rule__Sensor__CyclicActionsAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:3164:1: ( ( ruleCyclicAction ) )
-            // InternalSmartCity.g:3165:2: ( ruleCyclicAction )
+            // InternalSmartCity.g:3174:1: ( ( ruleCyclicAction ) )
+            // InternalSmartCity.g:3175:2: ( ruleCyclicAction )
             {
-            // InternalSmartCity.g:3165:2: ( ruleCyclicAction )
-            // InternalSmartCity.g:3166:3: ruleCyclicAction
+            // InternalSmartCity.g:3175:2: ( ruleCyclicAction )
+            // InternalSmartCity.g:3176:3: ruleCyclicAction
             {
              before(grammarAccess.getSensorAccess().getCyclicActionsCyclicActionParserRuleCall_7_0()); 
             pushFollow(FOLLOW_2);
@@ -9668,17 +9703,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Sensor__TriggeredActionsAssignment_8"
-    // InternalSmartCity.g:3175:1: rule__Sensor__TriggeredActionsAssignment_8 : ( ruleTriggeredAction ) ;
+    // InternalSmartCity.g:3185:1: rule__Sensor__TriggeredActionsAssignment_8 : ( ruleTriggeredAction ) ;
     public final void rule__Sensor__TriggeredActionsAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:3179:1: ( ( ruleTriggeredAction ) )
-            // InternalSmartCity.g:3180:2: ( ruleTriggeredAction )
+            // InternalSmartCity.g:3189:1: ( ( ruleTriggeredAction ) )
+            // InternalSmartCity.g:3190:2: ( ruleTriggeredAction )
             {
-            // InternalSmartCity.g:3180:2: ( ruleTriggeredAction )
-            // InternalSmartCity.g:3181:3: ruleTriggeredAction
+            // InternalSmartCity.g:3190:2: ( ruleTriggeredAction )
+            // InternalSmartCity.g:3191:3: ruleTriggeredAction
             {
              before(grammarAccess.getSensorAccess().getTriggeredActionsTriggeredActionParserRuleCall_8_0()); 
             pushFollow(FOLLOW_2);
@@ -9709,17 +9744,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__CommunicationLink__TypeAssignment_1"
-    // InternalSmartCity.g:3190:1: rule__CommunicationLink__TypeAssignment_1 : ( ruleLinkType ) ;
+    // InternalSmartCity.g:3200:1: rule__CommunicationLink__TypeAssignment_1 : ( ruleLinkType ) ;
     public final void rule__CommunicationLink__TypeAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:3194:1: ( ( ruleLinkType ) )
-            // InternalSmartCity.g:3195:2: ( ruleLinkType )
+            // InternalSmartCity.g:3204:1: ( ( ruleLinkType ) )
+            // InternalSmartCity.g:3205:2: ( ruleLinkType )
             {
-            // InternalSmartCity.g:3195:2: ( ruleLinkType )
-            // InternalSmartCity.g:3196:3: ruleLinkType
+            // InternalSmartCity.g:3205:2: ( ruleLinkType )
+            // InternalSmartCity.g:3206:3: ruleLinkType
             {
              before(grammarAccess.getCommunicationLinkAccess().getTypeLinkTypeEnumRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -9750,21 +9785,21 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__CommunicationLink__OriginAssignment_3"
-    // InternalSmartCity.g:3205:1: rule__CommunicationLink__OriginAssignment_3 : ( ( RULE_ID ) ) ;
+    // InternalSmartCity.g:3215:1: rule__CommunicationLink__OriginAssignment_3 : ( ( RULE_ID ) ) ;
     public final void rule__CommunicationLink__OriginAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:3209:1: ( ( ( RULE_ID ) ) )
-            // InternalSmartCity.g:3210:2: ( ( RULE_ID ) )
+            // InternalSmartCity.g:3219:1: ( ( ( RULE_ID ) ) )
+            // InternalSmartCity.g:3220:2: ( ( RULE_ID ) )
             {
-            // InternalSmartCity.g:3210:2: ( ( RULE_ID ) )
-            // InternalSmartCity.g:3211:3: ( RULE_ID )
+            // InternalSmartCity.g:3220:2: ( ( RULE_ID ) )
+            // InternalSmartCity.g:3221:3: ( RULE_ID )
             {
              before(grammarAccess.getCommunicationLinkAccess().getOriginLinkableCrossReference_3_0()); 
-            // InternalSmartCity.g:3212:3: ( RULE_ID )
-            // InternalSmartCity.g:3213:4: RULE_ID
+            // InternalSmartCity.g:3222:3: ( RULE_ID )
+            // InternalSmartCity.g:3223:4: RULE_ID
             {
              before(grammarAccess.getCommunicationLinkAccess().getOriginLinkableIDTerminalRuleCall_3_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -9795,21 +9830,21 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__CommunicationLink__DestinationAssignment_5"
-    // InternalSmartCity.g:3224:1: rule__CommunicationLink__DestinationAssignment_5 : ( ( RULE_ID ) ) ;
+    // InternalSmartCity.g:3234:1: rule__CommunicationLink__DestinationAssignment_5 : ( ( RULE_ID ) ) ;
     public final void rule__CommunicationLink__DestinationAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:3228:1: ( ( ( RULE_ID ) ) )
-            // InternalSmartCity.g:3229:2: ( ( RULE_ID ) )
+            // InternalSmartCity.g:3238:1: ( ( ( RULE_ID ) ) )
+            // InternalSmartCity.g:3239:2: ( ( RULE_ID ) )
             {
-            // InternalSmartCity.g:3229:2: ( ( RULE_ID ) )
-            // InternalSmartCity.g:3230:3: ( RULE_ID )
+            // InternalSmartCity.g:3239:2: ( ( RULE_ID ) )
+            // InternalSmartCity.g:3240:3: ( RULE_ID )
             {
              before(grammarAccess.getCommunicationLinkAccess().getDestinationLinkableCrossReference_5_0()); 
-            // InternalSmartCity.g:3231:3: ( RULE_ID )
-            // InternalSmartCity.g:3232:4: RULE_ID
+            // InternalSmartCity.g:3241:3: ( RULE_ID )
+            // InternalSmartCity.g:3242:4: RULE_ID
             {
              before(grammarAccess.getCommunicationLinkAccess().getDestinationLinkableIDTerminalRuleCall_5_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -9840,17 +9875,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__CommunicationLink__DelayAssignment_8"
-    // InternalSmartCity.g:3243:1: rule__CommunicationLink__DelayAssignment_8 : ( ruleDelayRange ) ;
+    // InternalSmartCity.g:3253:1: rule__CommunicationLink__DelayAssignment_8 : ( ruleDelayRange ) ;
     public final void rule__CommunicationLink__DelayAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:3247:1: ( ( ruleDelayRange ) )
-            // InternalSmartCity.g:3248:2: ( ruleDelayRange )
+            // InternalSmartCity.g:3257:1: ( ( ruleDelayRange ) )
+            // InternalSmartCity.g:3258:2: ( ruleDelayRange )
             {
-            // InternalSmartCity.g:3248:2: ( ruleDelayRange )
-            // InternalSmartCity.g:3249:3: ruleDelayRange
+            // InternalSmartCity.g:3258:2: ( ruleDelayRange )
+            // InternalSmartCity.g:3259:3: ruleDelayRange
             {
              before(grammarAccess.getCommunicationLinkAccess().getDelayDelayRangeParserRuleCall_8_0()); 
             pushFollow(FOLLOW_2);
@@ -9881,17 +9916,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__CommunicationLink__DatatypeAssignment_10"
-    // InternalSmartCity.g:3258:1: rule__CommunicationLink__DatatypeAssignment_10 : ( ruleSensorType ) ;
+    // InternalSmartCity.g:3268:1: rule__CommunicationLink__DatatypeAssignment_10 : ( ruleSensorType ) ;
     public final void rule__CommunicationLink__DatatypeAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:3262:1: ( ( ruleSensorType ) )
-            // InternalSmartCity.g:3263:2: ( ruleSensorType )
+            // InternalSmartCity.g:3272:1: ( ( ruleSensorType ) )
+            // InternalSmartCity.g:3273:2: ( ruleSensorType )
             {
-            // InternalSmartCity.g:3263:2: ( ruleSensorType )
-            // InternalSmartCity.g:3264:3: ruleSensorType
+            // InternalSmartCity.g:3273:2: ( ruleSensorType )
+            // InternalSmartCity.g:3274:3: ruleSensorType
             {
              before(grammarAccess.getCommunicationLinkAccess().getDatatypeSensorTypeEnumRuleCall_10_0()); 
             pushFollow(FOLLOW_2);
@@ -9922,17 +9957,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Controller__NameAssignment_1"
-    // InternalSmartCity.g:3273:1: rule__Controller__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalSmartCity.g:3283:1: rule__Controller__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Controller__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:3277:1: ( ( RULE_ID ) )
-            // InternalSmartCity.g:3278:2: ( RULE_ID )
+            // InternalSmartCity.g:3287:1: ( ( RULE_ID ) )
+            // InternalSmartCity.g:3288:2: ( RULE_ID )
             {
-            // InternalSmartCity.g:3278:2: ( RULE_ID )
-            // InternalSmartCity.g:3279:3: RULE_ID
+            // InternalSmartCity.g:3288:2: ( RULE_ID )
+            // InternalSmartCity.g:3289:3: RULE_ID
             {
              before(grammarAccess.getControllerAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -9959,17 +9994,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Controller__TypeAssignment_4"
-    // InternalSmartCity.g:3288:1: rule__Controller__TypeAssignment_4 : ( ruleControllerType ) ;
+    // InternalSmartCity.g:3298:1: rule__Controller__TypeAssignment_4 : ( ruleControllerType ) ;
     public final void rule__Controller__TypeAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:3292:1: ( ( ruleControllerType ) )
-            // InternalSmartCity.g:3293:2: ( ruleControllerType )
+            // InternalSmartCity.g:3302:1: ( ( ruleControllerType ) )
+            // InternalSmartCity.g:3303:2: ( ruleControllerType )
             {
-            // InternalSmartCity.g:3293:2: ( ruleControllerType )
-            // InternalSmartCity.g:3294:3: ruleControllerType
+            // InternalSmartCity.g:3303:2: ( ruleControllerType )
+            // InternalSmartCity.g:3304:3: ruleControllerType
             {
              before(grammarAccess.getControllerAccess().getTypeControllerTypeEnumRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -10000,17 +10035,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Controller__PriorityAssignment_6"
-    // InternalSmartCity.g:3303:1: rule__Controller__PriorityAssignment_6 : ( RULE_INT ) ;
+    // InternalSmartCity.g:3313:1: rule__Controller__PriorityAssignment_6 : ( RULE_INT ) ;
     public final void rule__Controller__PriorityAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:3307:1: ( ( RULE_INT ) )
-            // InternalSmartCity.g:3308:2: ( RULE_INT )
+            // InternalSmartCity.g:3317:1: ( ( RULE_INT ) )
+            // InternalSmartCity.g:3318:2: ( RULE_INT )
             {
-            // InternalSmartCity.g:3308:2: ( RULE_INT )
-            // InternalSmartCity.g:3309:3: RULE_INT
+            // InternalSmartCity.g:3318:2: ( RULE_INT )
+            // InternalSmartCity.g:3319:3: RULE_INT
             {
              before(grammarAccess.getControllerAccess().getPriorityINTTerminalRuleCall_6_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -10037,17 +10072,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Controller__CyclicActionsAssignment_7"
-    // InternalSmartCity.g:3318:1: rule__Controller__CyclicActionsAssignment_7 : ( ruleCyclicAction ) ;
+    // InternalSmartCity.g:3328:1: rule__Controller__CyclicActionsAssignment_7 : ( ruleCyclicAction ) ;
     public final void rule__Controller__CyclicActionsAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:3322:1: ( ( ruleCyclicAction ) )
-            // InternalSmartCity.g:3323:2: ( ruleCyclicAction )
+            // InternalSmartCity.g:3332:1: ( ( ruleCyclicAction ) )
+            // InternalSmartCity.g:3333:2: ( ruleCyclicAction )
             {
-            // InternalSmartCity.g:3323:2: ( ruleCyclicAction )
-            // InternalSmartCity.g:3324:3: ruleCyclicAction
+            // InternalSmartCity.g:3333:2: ( ruleCyclicAction )
+            // InternalSmartCity.g:3334:3: ruleCyclicAction
             {
              before(grammarAccess.getControllerAccess().getCyclicActionsCyclicActionParserRuleCall_7_0()); 
             pushFollow(FOLLOW_2);
@@ -10078,17 +10113,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Controller__TriggeredActionsAssignment_8"
-    // InternalSmartCity.g:3333:1: rule__Controller__TriggeredActionsAssignment_8 : ( ruleTriggeredAction ) ;
+    // InternalSmartCity.g:3343:1: rule__Controller__TriggeredActionsAssignment_8 : ( ruleTriggeredAction ) ;
     public final void rule__Controller__TriggeredActionsAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:3337:1: ( ( ruleTriggeredAction ) )
-            // InternalSmartCity.g:3338:2: ( ruleTriggeredAction )
+            // InternalSmartCity.g:3347:1: ( ( ruleTriggeredAction ) )
+            // InternalSmartCity.g:3348:2: ( ruleTriggeredAction )
             {
-            // InternalSmartCity.g:3338:2: ( ruleTriggeredAction )
-            // InternalSmartCity.g:3339:3: ruleTriggeredAction
+            // InternalSmartCity.g:3348:2: ( ruleTriggeredAction )
+            // InternalSmartCity.g:3349:3: ruleTriggeredAction
             {
              before(grammarAccess.getControllerAccess().getTriggeredActionsTriggeredActionParserRuleCall_8_0()); 
             pushFollow(FOLLOW_2);
@@ -10119,17 +10154,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Module__NameAssignment_1"
-    // InternalSmartCity.g:3348:1: rule__Module__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalSmartCity.g:3358:1: rule__Module__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Module__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:3352:1: ( ( RULE_ID ) )
-            // InternalSmartCity.g:3353:2: ( RULE_ID )
+            // InternalSmartCity.g:3362:1: ( ( RULE_ID ) )
+            // InternalSmartCity.g:3363:2: ( RULE_ID )
             {
-            // InternalSmartCity.g:3353:2: ( RULE_ID )
-            // InternalSmartCity.g:3354:3: RULE_ID
+            // InternalSmartCity.g:3363:2: ( RULE_ID )
+            // InternalSmartCity.g:3364:3: RULE_ID
             {
              before(grammarAccess.getModuleAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -10156,17 +10191,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Module__PriorityAssignment_4"
-    // InternalSmartCity.g:3363:1: rule__Module__PriorityAssignment_4 : ( RULE_INT ) ;
+    // InternalSmartCity.g:3373:1: rule__Module__PriorityAssignment_4 : ( RULE_INT ) ;
     public final void rule__Module__PriorityAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:3367:1: ( ( RULE_INT ) )
-            // InternalSmartCity.g:3368:2: ( RULE_INT )
+            // InternalSmartCity.g:3377:1: ( ( RULE_INT ) )
+            // InternalSmartCity.g:3378:2: ( RULE_INT )
             {
-            // InternalSmartCity.g:3368:2: ( RULE_INT )
-            // InternalSmartCity.g:3369:3: RULE_INT
+            // InternalSmartCity.g:3378:2: ( RULE_INT )
+            // InternalSmartCity.g:3379:3: RULE_INT
             {
              before(grammarAccess.getModuleAccess().getPriorityINTTerminalRuleCall_4_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -10193,17 +10228,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Module__CyclicActionsAssignment_5"
-    // InternalSmartCity.g:3378:1: rule__Module__CyclicActionsAssignment_5 : ( ruleCyclicAction ) ;
+    // InternalSmartCity.g:3388:1: rule__Module__CyclicActionsAssignment_5 : ( ruleCyclicAction ) ;
     public final void rule__Module__CyclicActionsAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:3382:1: ( ( ruleCyclicAction ) )
-            // InternalSmartCity.g:3383:2: ( ruleCyclicAction )
+            // InternalSmartCity.g:3392:1: ( ( ruleCyclicAction ) )
+            // InternalSmartCity.g:3393:2: ( ruleCyclicAction )
             {
-            // InternalSmartCity.g:3383:2: ( ruleCyclicAction )
-            // InternalSmartCity.g:3384:3: ruleCyclicAction
+            // InternalSmartCity.g:3393:2: ( ruleCyclicAction )
+            // InternalSmartCity.g:3394:3: ruleCyclicAction
             {
              before(grammarAccess.getModuleAccess().getCyclicActionsCyclicActionParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -10234,17 +10269,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Module__TriggeredActionsAssignment_6"
-    // InternalSmartCity.g:3393:1: rule__Module__TriggeredActionsAssignment_6 : ( ruleTriggeredAction ) ;
+    // InternalSmartCity.g:3403:1: rule__Module__TriggeredActionsAssignment_6 : ( ruleTriggeredAction ) ;
     public final void rule__Module__TriggeredActionsAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:3397:1: ( ( ruleTriggeredAction ) )
-            // InternalSmartCity.g:3398:2: ( ruleTriggeredAction )
+            // InternalSmartCity.g:3407:1: ( ( ruleTriggeredAction ) )
+            // InternalSmartCity.g:3408:2: ( ruleTriggeredAction )
             {
-            // InternalSmartCity.g:3398:2: ( ruleTriggeredAction )
-            // InternalSmartCity.g:3399:3: ruleTriggeredAction
+            // InternalSmartCity.g:3408:2: ( ruleTriggeredAction )
+            // InternalSmartCity.g:3409:3: ruleTriggeredAction
             {
              before(grammarAccess.getModuleAccess().getTriggeredActionsTriggeredActionParserRuleCall_6_0()); 
             pushFollow(FOLLOW_2);
@@ -10274,18 +10309,96 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
     // $ANTLR end "rule__Module__TriggeredActionsAssignment_6"
 
 
+    // $ANTLR start "rule__Frequency__ValueAssignment_0"
+    // InternalSmartCity.g:3418:1: rule__Frequency__ValueAssignment_0 : ( RULE_INT ) ;
+    public final void rule__Frequency__ValueAssignment_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSmartCity.g:3422:1: ( ( RULE_INT ) )
+            // InternalSmartCity.g:3423:2: ( RULE_INT )
+            {
+            // InternalSmartCity.g:3423:2: ( RULE_INT )
+            // InternalSmartCity.g:3424:3: RULE_INT
+            {
+             before(grammarAccess.getFrequencyAccess().getValueINTTerminalRuleCall_0_0()); 
+            match(input,RULE_INT,FOLLOW_2); 
+             after(grammarAccess.getFrequencyAccess().getValueINTTerminalRuleCall_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Frequency__ValueAssignment_0"
+
+
+    // $ANTLR start "rule__Frequency__UnitAssignment_1"
+    // InternalSmartCity.g:3433:1: rule__Frequency__UnitAssignment_1 : ( ruleFrequencyUnit ) ;
+    public final void rule__Frequency__UnitAssignment_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSmartCity.g:3437:1: ( ( ruleFrequencyUnit ) )
+            // InternalSmartCity.g:3438:2: ( ruleFrequencyUnit )
+            {
+            // InternalSmartCity.g:3438:2: ( ruleFrequencyUnit )
+            // InternalSmartCity.g:3439:3: ruleFrequencyUnit
+            {
+             before(grammarAccess.getFrequencyAccess().getUnitFrequencyUnitEnumRuleCall_1_0()); 
+            pushFollow(FOLLOW_2);
+            ruleFrequencyUnit();
+
+            state._fsp--;
+
+             after(grammarAccess.getFrequencyAccess().getUnitFrequencyUnitEnumRuleCall_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Frequency__UnitAssignment_1"
+
+
     // $ANTLR start "rule__DelayRange__MinAssignment_1"
-    // InternalSmartCity.g:3408:1: rule__DelayRange__MinAssignment_1 : ( RULE_INT ) ;
+    // InternalSmartCity.g:3448:1: rule__DelayRange__MinAssignment_1 : ( RULE_INT ) ;
     public final void rule__DelayRange__MinAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:3412:1: ( ( RULE_INT ) )
-            // InternalSmartCity.g:3413:2: ( RULE_INT )
+            // InternalSmartCity.g:3452:1: ( ( RULE_INT ) )
+            // InternalSmartCity.g:3453:2: ( RULE_INT )
             {
-            // InternalSmartCity.g:3413:2: ( RULE_INT )
-            // InternalSmartCity.g:3414:3: RULE_INT
+            // InternalSmartCity.g:3453:2: ( RULE_INT )
+            // InternalSmartCity.g:3454:3: RULE_INT
             {
              before(grammarAccess.getDelayRangeAccess().getMinINTTerminalRuleCall_1_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -10312,17 +10425,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__DelayRange__MaxAssignment_3"
-    // InternalSmartCity.g:3423:1: rule__DelayRange__MaxAssignment_3 : ( RULE_INT ) ;
+    // InternalSmartCity.g:3463:1: rule__DelayRange__MaxAssignment_3 : ( RULE_INT ) ;
     public final void rule__DelayRange__MaxAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:3427:1: ( ( RULE_INT ) )
-            // InternalSmartCity.g:3428:2: ( RULE_INT )
+            // InternalSmartCity.g:3467:1: ( ( RULE_INT ) )
+            // InternalSmartCity.g:3468:2: ( RULE_INT )
             {
-            // InternalSmartCity.g:3428:2: ( RULE_INT )
-            // InternalSmartCity.g:3429:3: RULE_INT
+            // InternalSmartCity.g:3468:2: ( RULE_INT )
+            // InternalSmartCity.g:3469:3: RULE_INT
             {
              before(grammarAccess.getDelayRangeAccess().getMaxINTTerminalRuleCall_3_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -10349,17 +10462,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__CyclicAction__NameAssignment_1"
-    // InternalSmartCity.g:3438:1: rule__CyclicAction__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalSmartCity.g:3478:1: rule__CyclicAction__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__CyclicAction__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:3442:1: ( ( RULE_ID ) )
-            // InternalSmartCity.g:3443:2: ( RULE_ID )
+            // InternalSmartCity.g:3482:1: ( ( RULE_ID ) )
+            // InternalSmartCity.g:3483:2: ( RULE_ID )
             {
-            // InternalSmartCity.g:3443:2: ( RULE_ID )
-            // InternalSmartCity.g:3444:3: RULE_ID
+            // InternalSmartCity.g:3483:2: ( RULE_ID )
+            // InternalSmartCity.g:3484:3: RULE_ID
             {
              before(grammarAccess.getCyclicActionAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -10385,63 +10498,26 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
     // $ANTLR end "rule__CyclicAction__NameAssignment_1"
 
 
-    // $ANTLR start "rule__CyclicAction__FreqValueAssignment_3"
-    // InternalSmartCity.g:3453:1: rule__CyclicAction__FreqValueAssignment_3 : ( RULE_INT ) ;
-    public final void rule__CyclicAction__FreqValueAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__CyclicAction__FrequencyAssignment_3"
+    // InternalSmartCity.g:3493:1: rule__CyclicAction__FrequencyAssignment_3 : ( ruleFrequency ) ;
+    public final void rule__CyclicAction__FrequencyAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:3457:1: ( ( RULE_INT ) )
-            // InternalSmartCity.g:3458:2: ( RULE_INT )
+            // InternalSmartCity.g:3497:1: ( ( ruleFrequency ) )
+            // InternalSmartCity.g:3498:2: ( ruleFrequency )
             {
-            // InternalSmartCity.g:3458:2: ( RULE_INT )
-            // InternalSmartCity.g:3459:3: RULE_INT
+            // InternalSmartCity.g:3498:2: ( ruleFrequency )
+            // InternalSmartCity.g:3499:3: ruleFrequency
             {
-             before(grammarAccess.getCyclicActionAccess().getFreqValueINTTerminalRuleCall_3_0()); 
-            match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getCyclicActionAccess().getFreqValueINTTerminalRuleCall_3_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__CyclicAction__FreqValueAssignment_3"
-
-
-    // $ANTLR start "rule__CyclicAction__FreqUnitAssignment_4"
-    // InternalSmartCity.g:3468:1: rule__CyclicAction__FreqUnitAssignment_4 : ( ruleFrequencyUnit ) ;
-    public final void rule__CyclicAction__FreqUnitAssignment_4() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSmartCity.g:3472:1: ( ( ruleFrequencyUnit ) )
-            // InternalSmartCity.g:3473:2: ( ruleFrequencyUnit )
-            {
-            // InternalSmartCity.g:3473:2: ( ruleFrequencyUnit )
-            // InternalSmartCity.g:3474:3: ruleFrequencyUnit
-            {
-             before(grammarAccess.getCyclicActionAccess().getFreqUnitFrequencyUnitEnumRuleCall_4_0()); 
+             before(grammarAccess.getCyclicActionAccess().getFrequencyFrequencyParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
-            ruleFrequencyUnit();
+            ruleFrequency();
 
             state._fsp--;
 
-             after(grammarAccess.getCyclicActionAccess().getFreqUnitFrequencyUnitEnumRuleCall_4_0()); 
+             after(grammarAccess.getCyclicActionAccess().getFrequencyFrequencyParserRuleCall_3_0()); 
 
             }
 
@@ -10460,21 +10536,21 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__CyclicAction__FreqUnitAssignment_4"
+    // $ANTLR end "rule__CyclicAction__FrequencyAssignment_3"
 
 
     // $ANTLR start "rule__TriggeredAction__NameAssignment_1"
-    // InternalSmartCity.g:3483:1: rule__TriggeredAction__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalSmartCity.g:3508:1: rule__TriggeredAction__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__TriggeredAction__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCity.g:3487:1: ( ( RULE_ID ) )
-            // InternalSmartCity.g:3488:2: ( RULE_ID )
+            // InternalSmartCity.g:3512:1: ( ( RULE_ID ) )
+            // InternalSmartCity.g:3513:2: ( RULE_ID )
             {
-            // InternalSmartCity.g:3488:2: ( RULE_ID )
-            // InternalSmartCity.g:3489:3: RULE_ID
+            // InternalSmartCity.g:3513:2: ( RULE_ID )
+            // InternalSmartCity.g:3514:3: RULE_ID
             {
              before(grammarAccess.getTriggeredActionAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -10524,17 +10600,17 @@ public class InternalSmartCityParser extends AbstractInternalContentAssistParser
     public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000100000000002L});
     public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0008000000000002L});
     public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000480000000000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x00000003F0000000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000200000000000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x00000000000FF800L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0280002000000000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0080000000000002L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0200000000000002L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x000000000F800000L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000800000000000L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0001000000000000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0002000000000000L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000000700000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000200000000000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x00000000000FF800L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0280002000000000L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0080000000000002L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0200000000000002L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x000000000F800000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000800000000000L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0001000000000000L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000000700000L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x00000003F0000000L});
     public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0020000000000000L});
     public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0040000000000000L});
     public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0100000000000000L});

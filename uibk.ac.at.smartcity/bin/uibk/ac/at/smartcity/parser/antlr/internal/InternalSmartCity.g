@@ -451,50 +451,32 @@ ruleNode returns [EObject current=null]
 		}
 		(
 			(
-				lv_freqValue_8_0=RULE_INT
 				{
-					newLeafNode(lv_freqValue_8_0, grammarAccess.getNodeAccess().getFreqValueINTTerminalRuleCall_8_0());
+					newCompositeNode(grammarAccess.getNodeAccess().getFrequencyFrequencyParserRuleCall_8_0());
 				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getNodeRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"freqValue",
-						lv_freqValue_8_0,
-						"org.eclipse.xtext.common.Terminals.INT");
-				}
-			)
-		)
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getNodeAccess().getFreqUnitFrequencyUnitEnumRuleCall_9_0());
-				}
-				lv_freqUnit_9_0=ruleFrequencyUnit
+				lv_frequency_8_0=ruleFrequency
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getNodeRule());
 					}
 					set(
 						$current,
-						"freqUnit",
-						lv_freqUnit_9_0,
-						"uibk.ac.at.smartcity.SmartCity.FrequencyUnit");
+						"frequency",
+						lv_frequency_8_0,
+						"uibk.ac.at.smartcity.SmartCity.Frequency");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_10='priority'
+		otherlv_9='priority'
 		{
-			newLeafNode(otherlv_10, grammarAccess.getNodeAccess().getPriorityKeyword_10());
+			newLeafNode(otherlv_9, grammarAccess.getNodeAccess().getPriorityKeyword_9());
 		}
 		(
 			(
-				lv_priority_11_0=RULE_INT
+				lv_priority_10_0=RULE_INT
 				{
-					newLeafNode(lv_priority_11_0, grammarAccess.getNodeAccess().getPriorityINTTerminalRuleCall_11_0());
+					newLeafNode(lv_priority_10_0, grammarAccess.getNodeAccess().getPriorityINTTerminalRuleCall_10_0());
 				}
 				{
 					if ($current==null) {
@@ -503,14 +485,14 @@ ruleNode returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"priority",
-						lv_priority_11_0,
+						lv_priority_10_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
 		)
-		otherlv_12='}'
+		otherlv_11='}'
 		{
-			newLeafNode(otherlv_12, grammarAccess.getNodeAccess().getRightCurlyBracketKeyword_12());
+			newLeafNode(otherlv_11, grammarAccess.getNodeAccess().getRightCurlyBracketKeyword_11());
 		}
 	)
 ;
@@ -1018,6 +1000,62 @@ ruleModule returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleFrequency
+entryRuleFrequency returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getFrequencyRule()); }
+	iv_ruleFrequency=ruleFrequency
+	{ $current=$iv_ruleFrequency.current; }
+	EOF;
+
+// Rule Frequency
+ruleFrequency returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				lv_value_0_0=RULE_INT
+				{
+					newLeafNode(lv_value_0_0, grammarAccess.getFrequencyAccess().getValueINTTerminalRuleCall_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFrequencyRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"value",
+						lv_value_0_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getFrequencyAccess().getUnitFrequencyUnitEnumRuleCall_1_0());
+				}
+				lv_unit_1_0=ruleFrequencyUnit
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getFrequencyRule());
+					}
+					set(
+						$current,
+						"unit",
+						lv_unit_1_0,
+						"uibk.ac.at.smartcity.SmartCity.FrequencyUnit");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
 // Entry rule entryRuleDelayRange
 entryRuleDelayRange returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getDelayRangeRule()); }
@@ -1129,37 +1167,19 @@ ruleCyclicAction returns [EObject current=null]
 		}
 		(
 			(
-				lv_freqValue_3_0=RULE_INT
 				{
-					newLeafNode(lv_freqValue_3_0, grammarAccess.getCyclicActionAccess().getFreqValueINTTerminalRuleCall_3_0());
+					newCompositeNode(grammarAccess.getCyclicActionAccess().getFrequencyFrequencyParserRuleCall_3_0());
 				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getCyclicActionRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"freqValue",
-						lv_freqValue_3_0,
-						"org.eclipse.xtext.common.Terminals.INT");
-				}
-			)
-		)
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getCyclicActionAccess().getFreqUnitFrequencyUnitEnumRuleCall_4_0());
-				}
-				lv_freqUnit_4_0=ruleFrequencyUnit
+				lv_frequency_3_0=ruleFrequency
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getCyclicActionRule());
 					}
 					set(
 						$current,
-						"freqUnit",
-						lv_freqUnit_4_0,
-						"uibk.ac.at.smartcity.SmartCity.FrequencyUnit");
+						"frequency",
+						lv_frequency_3_0,
+						"uibk.ac.at.smartcity.SmartCity.Frequency");
 					afterParserOrEnumRuleCall();
 				}
 			)

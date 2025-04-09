@@ -23,6 +23,7 @@ import uibk.ac.at.smartcity.smartCity.CommunicationLink;
 import uibk.ac.at.smartcity.smartCity.Controller;
 import uibk.ac.at.smartcity.smartCity.ControllerType;
 import uibk.ac.at.smartcity.smartCity.DataGateway;
+import uibk.ac.at.smartcity.smartCity.Frequency;
 import uibk.ac.at.smartcity.smartCity.FrequencyUnit;
 import uibk.ac.at.smartcity.smartCity.LinkType;
 import uibk.ac.at.smartcity.smartCity.Linkable;
@@ -68,24 +69,31 @@ public class SmartCityGenerator extends AbstractGenerator {
     fsa.generateFile("experiment.py", this.generateMain(simulationPropeties));
   }
 
-  public double frequencyToSeconds(final int value, final FrequencyUnit unit) {
-    if (unit != null) {
-      switch (unit) {
+  public double frequencyToSeconds(final Frequency frequency) {
+    FrequencyUnit _unit = frequency.getUnit();
+    if (_unit != null) {
+      switch (_unit) {
         case DAYS:
-          return (((value * 24) * 60) * 60);
+          int _value = frequency.getValue();
+          int _multiply = (_value * 24);
+          int _multiply_1 = (_multiply * 60);
+          return (_multiply_1 * 60);
         case HOURS:
-          return ((value * 60) * 60);
+          int _value_1 = frequency.getValue();
+          int _multiply_2 = (_value_1 * 60);
+          return (_multiply_2 * 60);
         case SECONDS:
-          return value;
+          return frequency.getValue();
         case HERTZ:
-          return (1 / value);
+          int _value_2 = frequency.getValue();
+          return (1 / _value_2);
         case INF:
           return (-1);
         default:
-          return value;
+          return frequency.getValue();
       }
     } else {
-      return value;
+      return frequency.getValue();
     }
   }
 
@@ -402,7 +410,7 @@ public class SmartCityGenerator extends AbstractGenerator {
           distinctLinkTypes.add(link.getType());
         }
       }
-      final double postFrequency = this.frequencyToSeconds(node.getFreqValue(), node.getFreqUnit());
+      final double postFrequency = this.frequencyToSeconds(node.getFrequency());
       ControllerType _type = node.getController().getType();
       final boolean knownController = (!Objects.equals(_type, ControllerType.OTHER));
       StringConcatenation _builder = new StringConcatenation();

@@ -15,6 +15,7 @@ import uibk.ac.at.smartcity.smartCity.Controller;
 import uibk.ac.at.smartcity.smartCity.CyclicAction;
 import uibk.ac.at.smartcity.smartCity.DataGateway;
 import uibk.ac.at.smartcity.smartCity.DelayRange;
+import uibk.ac.at.smartcity.smartCity.Frequency;
 import uibk.ac.at.smartcity.smartCity.Linkable;
 import uibk.ac.at.smartcity.smartCity.Model;
 import uibk.ac.at.smartcity.smartCity.Node;
@@ -125,6 +126,11 @@ public class SmartCityAdapterFactory extends AdapterFactoryImpl
       public Adapter caseModule(uibk.ac.at.smartcity.smartCity.Module object)
       {
         return createModuleAdapter();
+      }
+      @Override
+      public Adapter caseFrequency(Frequency object)
+      {
+        return createFrequencyAdapter();
       }
       @Override
       public Adapter caseLinkable(Linkable object)
@@ -284,6 +290,21 @@ public class SmartCityAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createModuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uibk.ac.at.smartcity.smartCity.Frequency <em>Frequency</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uibk.ac.at.smartcity.smartCity.Frequency
+   * @generated
+   */
+  public Adapter createFrequencyAdapter()
   {
     return null;
   }

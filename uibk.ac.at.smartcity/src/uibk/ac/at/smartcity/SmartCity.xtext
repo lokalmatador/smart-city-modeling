@@ -31,7 +31,7 @@ Node:
 		modules+=Module*
 		controller=Controller
 		links+=CommunicationLink*
-		'postFrequency' freqValue=INT freqUnit=FrequencyUnit
+		'postFrequency' frequency=Frequency
 		'priority' priority=INT
 	'}'
 ;
@@ -45,7 +45,6 @@ Sensor:
 		triggeredActions+=TriggeredAction*
 	'}'
 ;
-
 
 CommunicationLink:
 	'link' type=LinkType 'from' origin=[Linkable] '->' destination=[Linkable] '{'
@@ -71,7 +70,10 @@ Module:
 		cyclicActions+=CyclicAction*
 		triggeredActions+=TriggeredAction*		
 	'}'
-	
+;
+
+Frequency:
+	value=INT unit=FrequencyUnit
 ;
 
 Linkable:
@@ -84,7 +86,7 @@ DelayRange:
 
 CyclicAction:
 	'cyclicAction' name=ID
-	'frequency' freqValue=INT freqUnit=FrequencyUnit
+	'frequency' frequency=Frequency
 ;
 
 TriggeredAction:

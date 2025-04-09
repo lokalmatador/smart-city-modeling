@@ -4,14 +4,16 @@
 package uibk.ac.at.smartcity.smartCity.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import uibk.ac.at.smartcity.smartCity.CyclicAction;
-import uibk.ac.at.smartcity.smartCity.FrequencyUnit;
+import uibk.ac.at.smartcity.smartCity.Frequency;
 import uibk.ac.at.smartcity.smartCity.SmartCityPackage;
 
 /**
@@ -23,8 +25,7 @@ import uibk.ac.at.smartcity.smartCity.SmartCityPackage;
  * </p>
  * <ul>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.CyclicActionImpl#getName <em>Name</em>}</li>
- *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.CyclicActionImpl#getFreqValue <em>Freq Value</em>}</li>
- *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.CyclicActionImpl#getFreqUnit <em>Freq Unit</em>}</li>
+ *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.CyclicActionImpl#getFrequency <em>Frequency</em>}</li>
  * </ul>
  *
  * @generated
@@ -52,44 +53,14 @@ public class CyclicActionImpl extends MinimalEObjectImpl.Container implements Cy
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getFreqValue() <em>Freq Value</em>}' attribute.
+   * The cached value of the '{@link #getFrequency() <em>Frequency</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFreqValue()
+   * @see #getFrequency()
    * @generated
    * @ordered
    */
-  protected static final int FREQ_VALUE_EDEFAULT = 0;
-
-  /**
-   * The cached value of the '{@link #getFreqValue() <em>Freq Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getFreqValue()
-   * @generated
-   * @ordered
-   */
-  protected int freqValue = FREQ_VALUE_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getFreqUnit() <em>Freq Unit</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getFreqUnit()
-   * @generated
-   * @ordered
-   */
-  protected static final FrequencyUnit FREQ_UNIT_EDEFAULT = FrequencyUnit.HERTZ;
-
-  /**
-   * The cached value of the '{@link #getFreqUnit() <em>Freq Unit</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getFreqUnit()
-   * @generated
-   * @ordered
-   */
-  protected FrequencyUnit freqUnit = FREQ_UNIT_EDEFAULT;
+  protected Frequency frequency;
 
   /**
    * <!-- begin-user-doc -->
@@ -143,9 +114,9 @@ public class CyclicActionImpl extends MinimalEObjectImpl.Container implements Cy
    * @generated
    */
   @Override
-  public int getFreqValue()
+  public Frequency getFrequency()
   {
-    return freqValue;
+    return frequency;
   }
 
   /**
@@ -153,13 +124,16 @@ public class CyclicActionImpl extends MinimalEObjectImpl.Container implements Cy
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setFreqValue(int newFreqValue)
+  public NotificationChain basicSetFrequency(Frequency newFrequency, NotificationChain msgs)
   {
-    int oldFreqValue = freqValue;
-    freqValue = newFreqValue;
+    Frequency oldFrequency = frequency;
+    frequency = newFrequency;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SmartCityPackage.CYCLIC_ACTION__FREQ_VALUE, oldFreqValue, freqValue));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmartCityPackage.CYCLIC_ACTION__FREQUENCY, oldFrequency, newFrequency);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -168,9 +142,20 @@ public class CyclicActionImpl extends MinimalEObjectImpl.Container implements Cy
    * @generated
    */
   @Override
-  public FrequencyUnit getFreqUnit()
+  public void setFrequency(Frequency newFrequency)
   {
-    return freqUnit;
+    if (newFrequency != frequency)
+    {
+      NotificationChain msgs = null;
+      if (frequency != null)
+        msgs = ((InternalEObject)frequency).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SmartCityPackage.CYCLIC_ACTION__FREQUENCY, null, msgs);
+      if (newFrequency != null)
+        msgs = ((InternalEObject)newFrequency).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SmartCityPackage.CYCLIC_ACTION__FREQUENCY, null, msgs);
+      msgs = basicSetFrequency(newFrequency, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SmartCityPackage.CYCLIC_ACTION__FREQUENCY, newFrequency, newFrequency));
   }
 
   /**
@@ -179,12 +164,14 @@ public class CyclicActionImpl extends MinimalEObjectImpl.Container implements Cy
    * @generated
    */
   @Override
-  public void setFreqUnit(FrequencyUnit newFreqUnit)
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    FrequencyUnit oldFreqUnit = freqUnit;
-    freqUnit = newFreqUnit == null ? FREQ_UNIT_EDEFAULT : newFreqUnit;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SmartCityPackage.CYCLIC_ACTION__FREQ_UNIT, oldFreqUnit, freqUnit));
+    switch (featureID)
+    {
+      case SmartCityPackage.CYCLIC_ACTION__FREQUENCY:
+        return basicSetFrequency(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -199,10 +186,8 @@ public class CyclicActionImpl extends MinimalEObjectImpl.Container implements Cy
     {
       case SmartCityPackage.CYCLIC_ACTION__NAME:
         return getName();
-      case SmartCityPackage.CYCLIC_ACTION__FREQ_VALUE:
-        return getFreqValue();
-      case SmartCityPackage.CYCLIC_ACTION__FREQ_UNIT:
-        return getFreqUnit();
+      case SmartCityPackage.CYCLIC_ACTION__FREQUENCY:
+        return getFrequency();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -220,11 +205,8 @@ public class CyclicActionImpl extends MinimalEObjectImpl.Container implements Cy
       case SmartCityPackage.CYCLIC_ACTION__NAME:
         setName((String)newValue);
         return;
-      case SmartCityPackage.CYCLIC_ACTION__FREQ_VALUE:
-        setFreqValue((Integer)newValue);
-        return;
-      case SmartCityPackage.CYCLIC_ACTION__FREQ_UNIT:
-        setFreqUnit((FrequencyUnit)newValue);
+      case SmartCityPackage.CYCLIC_ACTION__FREQUENCY:
+        setFrequency((Frequency)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -243,11 +225,8 @@ public class CyclicActionImpl extends MinimalEObjectImpl.Container implements Cy
       case SmartCityPackage.CYCLIC_ACTION__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case SmartCityPackage.CYCLIC_ACTION__FREQ_VALUE:
-        setFreqValue(FREQ_VALUE_EDEFAULT);
-        return;
-      case SmartCityPackage.CYCLIC_ACTION__FREQ_UNIT:
-        setFreqUnit(FREQ_UNIT_EDEFAULT);
+      case SmartCityPackage.CYCLIC_ACTION__FREQUENCY:
+        setFrequency((Frequency)null);
         return;
     }
     super.eUnset(featureID);
@@ -265,10 +244,8 @@ public class CyclicActionImpl extends MinimalEObjectImpl.Container implements Cy
     {
       case SmartCityPackage.CYCLIC_ACTION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case SmartCityPackage.CYCLIC_ACTION__FREQ_VALUE:
-        return freqValue != FREQ_VALUE_EDEFAULT;
-      case SmartCityPackage.CYCLIC_ACTION__FREQ_UNIT:
-        return freqUnit != FREQ_UNIT_EDEFAULT;
+      case SmartCityPackage.CYCLIC_ACTION__FREQUENCY:
+        return frequency != null;
     }
     return super.eIsSet(featureID);
   }
@@ -286,10 +263,6 @@ public class CyclicActionImpl extends MinimalEObjectImpl.Container implements Cy
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (name: ");
     result.append(name);
-    result.append(", freqValue: ");
-    result.append(freqValue);
-    result.append(", freqUnit: ");
-    result.append(freqUnit);
     result.append(')');
     return result.toString();
   }

@@ -19,6 +19,7 @@ import uibk.ac.at.smartcity.smartCity.CyclicAction;
 import uibk.ac.at.smartcity.smartCity.DataGateway;
 import uibk.ac.at.smartcity.smartCity.DataType;
 import uibk.ac.at.smartcity.smartCity.DelayRange;
+import uibk.ac.at.smartcity.smartCity.Frequency;
 import uibk.ac.at.smartcity.smartCity.FrequencyUnit;
 import uibk.ac.at.smartcity.smartCity.LinkType;
 import uibk.ac.at.smartcity.smartCity.Linkable;
@@ -91,6 +92,7 @@ public class SmartCityFactoryImpl extends EFactoryImpl implements SmartCityFacto
       case SmartCityPackage.COMMUNICATION_LINK: return createCommunicationLink();
       case SmartCityPackage.CONTROLLER: return createController();
       case SmartCityPackage.MODULE: return createModule();
+      case SmartCityPackage.FREQUENCY: return createFrequency();
       case SmartCityPackage.LINKABLE: return createLinkable();
       case SmartCityPackage.DELAY_RANGE: return createDelayRange();
       case SmartCityPackage.CYCLIC_ACTION: return createCyclicAction();
@@ -244,6 +246,18 @@ public class SmartCityFactoryImpl extends EFactoryImpl implements SmartCityFacto
   {
     ModuleImpl module = new ModuleImpl();
     return module;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Frequency createFrequency()
+  {
+    FrequencyImpl frequency = new FrequencyImpl();
+    return frequency;
   }
 
   /**

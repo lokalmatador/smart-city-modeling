@@ -62,8 +62,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//Node/modules"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//Node/controller"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//Node/links"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//Node/freqValue"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//Node/freqUnit"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//Node/frequency"/>
     </genClasses>
     <genClasses ecoreClass="SmartCity.ecore#//Sensor">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//Sensor/type"/>
@@ -86,6 +85,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//Module/cyclicActions"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//Module/triggeredActions"/>
     </genClasses>
+    <genClasses ecoreClass="SmartCity.ecore#//Frequency">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//Frequency/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//Frequency/unit"/>
+    </genClasses>
     <genClasses ecoreClass="SmartCity.ecore#//Linkable">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//Linkable/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//Linkable/priority"/>
@@ -96,8 +99,7 @@
     </genClasses>
     <genClasses ecoreClass="SmartCity.ecore#//CyclicAction">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//CyclicAction/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//CyclicAction/freqValue"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//CyclicAction/freqUnit"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCity.ecore#//CyclicAction/frequency"/>
     </genClasses>
     <genClasses ecoreClass="SmartCity.ecore#//TriggeredAction">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCity.ecore#//TriggeredAction/name"/>

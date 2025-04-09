@@ -3,16 +3,24 @@
  */
 package uibk.ac.at.smartcity.validation
 
+import java.io.File
 import org.eclipse.xtext.validation.Check
+import uibk.ac.at.smartcity.smartCity.CommunicationLink
+import uibk.ac.at.smartcity.smartCity.Controller
+import uibk.ac.at.smartcity.smartCity.DataGateway
+import uibk.ac.at.smartcity.smartCity.DelayRange
+import uibk.ac.at.smartcity.smartCity.Frequency
+import uibk.ac.at.smartcity.smartCity.Model
 import uibk.ac.at.smartcity.smartCity.Node
+import uibk.ac.at.smartcity.smartCity.Sensor
+import uibk.ac.at.smartcity.smartCity.SimulationProperties
+import uibk.ac.at.smartcity.smartCity.SmartCityPackage
 
 import static extension java.lang.Character.*
-import uibk.ac.at.smartcity.smartCity.SmartCityPackage
-import uibk.ac.at.smartcity.smartCity.DataGateway
 
 /**
  * This class contains custom validation rules. 
- *
+ * 
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  */
 class SmartCityValidator extends AbstractSmartCityValidator {
@@ -21,28 +29,145 @@ class SmartCityValidator extends AbstractSmartCityValidator {
 	protected static val ISSUE_CODE_PREFIX = "uibk.ac.at.smartcity."
 	public static val INVALID_ENTITY_NAME = "InvalidEntityName"
 	public static val INVALID_ATTRIBUTE_NAME = "InvalidAttributeName"
-	
+
+	// Naming conventions:
+	// 1. Entities
 	@Check
-	def checkNodeStartsWithCapital(Node node){
-		if(node.name.charAt(0).lowerCase){
-			warning("Node name should start with a capital",
+	def checkNodeStartsWithCapital(Node node) {
+		if (node.name.charAt(0).lowerCase) {
+			warning(
+				"Node name should start with a capital",
 				SmartCityPackage.Literals.LINKABLE__NAME,
 				INVALID_ENTITY_NAME,
 				node.name
 			)
 		}
 	}
-	
+
 	@Check
-	def checkDataGatewayStartsWithCapital(DataGateway dataGateway){
-		if(dataGateway.name.charAt(0).lowerCase){
-			warning("DataGateway name should start with a capital",
+	def checkDataGatewayStartsWithCapital(DataGateway dataGateway) {
+		if (dataGateway.name.charAt(0).lowerCase) {
+			warning(
+				"DataGateway name should start with a capital",
 				SmartCityPackage.Literals.LINKABLE__NAME,
 				INVALID_ENTITY_NAME,
-				dataGateway.name	
+				dataGateway.name
 			)
 		}
 	}
+
+	// 2. Attributes
+	// Check that all Node attribute names are lower case
+	@Check
+	def checkSensorNamesAreLowerCase(Sensor sensor) {
+		if (sensor.name.charAt(0).upperCase) {
+				warning(
+					"Sensor name should start with a lower case letter",					
+					SmartCityPackage.Literals.LINKABLE__NAME,
+					INVALID_ATTRIBUTE_NAME,
+					sensor.name
+				)
+			}
+	}
 	
-	
+	@Check
+	def checkModuleNamesAreLowerCase(Module module) {
+		if (module.name.charAt(0).upperCase) {
+				warning(
+					"Module name should start with a lower case letter",					
+					SmartCityPackage.Literals.LINKABLE__NAME,
+					INVALID_ATTRIBUTE_NAME,
+					module.name
+				)
+			}
+	}
+		
+	@Check
+	def checkControllerNamesAreLowerCase(Controller controller) {
+		if (controller.name.charAt(0).upperCase) {
+				warning(
+					"Controller name should start with a lower case letter",					
+					SmartCityPackage.Literals.LINKABLE__NAME,
+					INVALID_ATTRIBUTE_NAME,
+					controller.name
+				)
+			}
+	}
+
+	// Simulation Properties checks:
+	@Check
+	def checkSimulationPropertiesNonNegativeTerminationTime(SimulationProperties props) {
+		if (props.terminationTime <= 0) {
+			error(
+				"Termination Time for the simulation must be larger than 0",
+				SmartCityPackage.Literals.SIMULATION_PROPERTIES__TERMINATION_TIME
+			)
+		}
+	}
+
+	@Check
+	def checkSimulationPropertiesFileExists(SimulationProperties props) {
+		if (!props.generatorFile.nullOrEmpty) {
+			var f = new File(props.generatorFile)
+			if (!f.exists() || f.isDirectory()) {
+				error(
+					"Can not find this File, please check the path",
+					SmartCityPackage.Literals.SIMULATION_PROPERTIES__GENERATOR_FILE
+				)
+			} else if (!f.name.endsWith(".csv")) {
+				error(
+					"The Generator File must be of a 'csv' File",
+					SmartCityPackage.Literals.SIMULATION_PROPERTIES__GENERATOR_FILE
+				)
+			}
+		}
+	}
+
+	// Model checks:
+	@Check
+	def modelContainsAtLeastOneNode(Model model) {
+		if (model.nodes.length < 1) {
+			error(
+				"The Model needs to contain at least one Node for the simulation",
+				SmartCityPackage.Literals.MODEL__NODES
+			)
+		}
+	}
+
+	// Delay Range:
+	@Check
+	def checkDelayRangeIsValid(DelayRange range) {
+		if (range.max < range.min) {
+			error(
+				"Invalid Delay Range: Second value can not be smaller than the first",
+				SmartCityPackage.Literals.DELAY_RANGE__MAX
+			)
+		}
+	}
+
+	// Frequency
+	@Check
+	def checkFrequencyNonNegative(Frequency frequency) {
+		if (frequency.value <= 0) {
+			error(
+				"Frequency must be larger than 0",
+				SmartCityPackage.Literals.FREQUENCY__VALUE
+			)
+		}
+	}
+
+	// Communication Links
+	// If origin is a sensor the types must match, other cases where origin is a controller etc. do not require this check
+	@Check
+	def checkLinkDataTypeMatchesOriginIfSensor(CommunicationLink link) {
+		val origin = link.origin
+		if (origin instanceof Sensor) {
+			if (origin.type != link.datatype) {
+				error(
+					"For links from sensors the link data type must match the sensor type",
+					SmartCityPackage.Literals.COMMUNICATION_LINK__DATATYPE
+				)
+			}
+		}
+	}
 }

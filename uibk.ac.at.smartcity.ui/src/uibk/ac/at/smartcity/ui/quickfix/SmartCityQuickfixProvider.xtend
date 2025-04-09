@@ -27,4 +27,18 @@ class SmartCityQuickfixProvider extends DefaultQuickfixProvider {
 		]
 		)
 	}
+	
+	// quickfix to de-capitalize the first letter of outer classes
+	@Fix(SmartCityValidator.INVALID_ATTRIBUTE_NAME)
+	def void deCapitalizeNameFirstLetter(Issue issue, IssueResolutionAcceptor acceptor) {
+		acceptor.accept(issue, "Convert first letter to lowercase",	// label
+		"Convert first letter of '" + issue.data.get(0) + "'" + " to lowercase",
+		"", 
+		[
+			context | val xtextDocument = context.xtextDocument
+			val firstLetter = xtextDocument.get(issue.offset, 1);
+			xtextDocument.replace(issue.offset, 1, firstLetter.toFirstLower)
+		]
+		)
+	}
 }

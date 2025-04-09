@@ -18,6 +18,7 @@ import uibk.ac.at.smartcity.smartCity.CyclicAction;
 import uibk.ac.at.smartcity.smartCity.DataGateway;
 import uibk.ac.at.smartcity.smartCity.DataType;
 import uibk.ac.at.smartcity.smartCity.DelayRange;
+import uibk.ac.at.smartcity.smartCity.Frequency;
 import uibk.ac.at.smartcity.smartCity.FrequencyUnit;
 import uibk.ac.at.smartcity.smartCity.LinkType;
 import uibk.ac.at.smartcity.smartCity.Linkable;
@@ -93,6 +94,13 @@ public class SmartCityPackageImpl extends EPackageImpl implements SmartCityPacka
    * @generated
    */
   private EClass moduleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass frequencyEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -390,20 +398,9 @@ public class SmartCityPackageImpl extends EPackageImpl implements SmartCityPacka
    * @generated
    */
   @Override
-  public EAttribute getNode_FreqValue()
+  public EReference getNode_Frequency()
   {
-    return (EAttribute)nodeEClass.getEStructuralFeatures().get(4);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getNode_FreqUnit()
-  {
-    return (EAttribute)nodeEClass.getEStructuralFeatures().get(5);
+    return (EReference)nodeEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -599,6 +596,39 @@ public class SmartCityPackageImpl extends EPackageImpl implements SmartCityPacka
    * @generated
    */
   @Override
+  public EClass getFrequency()
+  {
+    return frequencyEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getFrequency_Value()
+  {
+    return (EAttribute)frequencyEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getFrequency_Unit()
+  {
+    return (EAttribute)frequencyEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getLinkable()
   {
     return linkableEClass;
@@ -687,20 +717,9 @@ public class SmartCityPackageImpl extends EPackageImpl implements SmartCityPacka
    * @generated
    */
   @Override
-  public EAttribute getCyclicAction_FreqValue()
+  public EReference getCyclicAction_Frequency()
   {
-    return (EAttribute)cyclicActionEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getCyclicAction_FreqUnit()
-  {
-    return (EAttribute)cyclicActionEClass.getEStructuralFeatures().get(2);
+    return (EReference)cyclicActionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -829,8 +848,7 @@ public class SmartCityPackageImpl extends EPackageImpl implements SmartCityPacka
     createEReference(nodeEClass, NODE__MODULES);
     createEReference(nodeEClass, NODE__CONTROLLER);
     createEReference(nodeEClass, NODE__LINKS);
-    createEAttribute(nodeEClass, NODE__FREQ_VALUE);
-    createEAttribute(nodeEClass, NODE__FREQ_UNIT);
+    createEReference(nodeEClass, NODE__FREQUENCY);
 
     sensorEClass = createEClass(SENSOR);
     createEAttribute(sensorEClass, SENSOR__TYPE);
@@ -853,6 +871,10 @@ public class SmartCityPackageImpl extends EPackageImpl implements SmartCityPacka
     createEReference(moduleEClass, MODULE__CYCLIC_ACTIONS);
     createEReference(moduleEClass, MODULE__TRIGGERED_ACTIONS);
 
+    frequencyEClass = createEClass(FREQUENCY);
+    createEAttribute(frequencyEClass, FREQUENCY__VALUE);
+    createEAttribute(frequencyEClass, FREQUENCY__UNIT);
+
     linkableEClass = createEClass(LINKABLE);
     createEAttribute(linkableEClass, LINKABLE__NAME);
     createEAttribute(linkableEClass, LINKABLE__PRIORITY);
@@ -863,8 +885,7 @@ public class SmartCityPackageImpl extends EPackageImpl implements SmartCityPacka
 
     cyclicActionEClass = createEClass(CYCLIC_ACTION);
     createEAttribute(cyclicActionEClass, CYCLIC_ACTION__NAME);
-    createEAttribute(cyclicActionEClass, CYCLIC_ACTION__FREQ_VALUE);
-    createEAttribute(cyclicActionEClass, CYCLIC_ACTION__FREQ_UNIT);
+    createEReference(cyclicActionEClass, CYCLIC_ACTION__FREQUENCY);
 
     triggeredActionEClass = createEClass(TRIGGERED_ACTION);
     createEAttribute(triggeredActionEClass, TRIGGERED_ACTION__NAME);
@@ -931,8 +952,7 @@ public class SmartCityPackageImpl extends EPackageImpl implements SmartCityPacka
     initEReference(getNode_Modules(), this.getModule(), null, "modules", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getNode_Controller(), this.getController(), null, "controller", null, 0, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getNode_Links(), this.getCommunicationLink(), null, "links", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getNode_FreqValue(), ecorePackage.getEInt(), "freqValue", null, 0, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getNode_FreqUnit(), this.getFrequencyUnit(), "freqUnit", null, 0, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNode_Frequency(), this.getFrequency(), null, "frequency", null, 0, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(sensorEClass, Sensor.class, "Sensor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSensor_Type(), this.getSensorType(), "type", null, 0, 1, Sensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -955,6 +975,10 @@ public class SmartCityPackageImpl extends EPackageImpl implements SmartCityPacka
     initEReference(getModule_CyclicActions(), this.getCyclicAction(), null, "cyclicActions", null, 0, -1, uibk.ac.at.smartcity.smartCity.Module.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModule_TriggeredActions(), this.getTriggeredAction(), null, "triggeredActions", null, 0, -1, uibk.ac.at.smartcity.smartCity.Module.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(frequencyEClass, Frequency.class, "Frequency", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFrequency_Value(), ecorePackage.getEInt(), "value", null, 0, 1, Frequency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFrequency_Unit(), this.getFrequencyUnit(), "unit", null, 0, 1, Frequency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(linkableEClass, Linkable.class, "Linkable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getLinkable_Name(), ecorePackage.getEString(), "name", null, 0, 1, Linkable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getLinkable_Priority(), ecorePackage.getEInt(), "priority", null, 0, 1, Linkable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -965,8 +989,7 @@ public class SmartCityPackageImpl extends EPackageImpl implements SmartCityPacka
 
     initEClass(cyclicActionEClass, CyclicAction.class, "CyclicAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getCyclicAction_Name(), ecorePackage.getEString(), "name", null, 0, 1, CyclicAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getCyclicAction_FreqValue(), ecorePackage.getEInt(), "freqValue", null, 0, 1, CyclicAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getCyclicAction_FreqUnit(), this.getFrequencyUnit(), "freqUnit", null, 0, 1, CyclicAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCyclicAction_Frequency(), this.getFrequency(), null, "frequency", null, 0, 1, CyclicAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(triggeredActionEClass, TriggeredAction.class, "TriggeredAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getTriggeredAction_Name(), ecorePackage.getEString(), "name", null, 0, 1, TriggeredAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

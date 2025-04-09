@@ -3,9 +3,22 @@
  */
 package uibk.ac.at.smartcity.validation;
 
+import java.io.File;
+import java.util.Objects;
 import org.eclipse.xtext.validation.Check;
+import org.eclipse.xtext.xbase.lib.Conversions;
+import org.eclipse.xtext.xbase.lib.StringExtensions;
+import uibk.ac.at.smartcity.smartCity.CommunicationLink;
+import uibk.ac.at.smartcity.smartCity.Controller;
 import uibk.ac.at.smartcity.smartCity.DataGateway;
+import uibk.ac.at.smartcity.smartCity.DelayRange;
+import uibk.ac.at.smartcity.smartCity.Frequency;
+import uibk.ac.at.smartcity.smartCity.Linkable;
+import uibk.ac.at.smartcity.smartCity.Model;
 import uibk.ac.at.smartcity.smartCity.Node;
+import uibk.ac.at.smartcity.smartCity.Sensor;
+import uibk.ac.at.smartcity.smartCity.SensorType;
+import uibk.ac.at.smartcity.smartCity.SimulationProperties;
 import uibk.ac.at.smartcity.smartCity.SmartCityPackage;
 
 /**
@@ -25,7 +38,8 @@ public class SmartCityValidator extends AbstractSmartCityValidator {
   public void checkNodeStartsWithCapital(final Node node) {
     boolean _isLowerCase = Character.isLowerCase(node.getName().charAt(0));
     if (_isLowerCase) {
-      this.warning("Node name should start with a capital", 
+      this.warning(
+        "Node name should start with a capital", 
         SmartCityPackage.Literals.LINKABLE__NAME, 
         SmartCityValidator.INVALID_ENTITY_NAME, 
         node.getName());
@@ -36,10 +50,130 @@ public class SmartCityValidator extends AbstractSmartCityValidator {
   public void checkDataGatewayStartsWithCapital(final DataGateway dataGateway) {
     boolean _isLowerCase = Character.isLowerCase(dataGateway.getName().charAt(0));
     if (_isLowerCase) {
-      this.warning("DataGateway name should start with a capital", 
+      this.warning(
+        "DataGateway name should start with a capital", 
         SmartCityPackage.Literals.LINKABLE__NAME, 
         SmartCityValidator.INVALID_ENTITY_NAME, 
         dataGateway.getName());
+    }
+  }
+
+  @Check
+  public void checkSensorNamesAreLowerCase(final Sensor sensor) {
+    boolean _isUpperCase = Character.isUpperCase(sensor.getName().charAt(0));
+    if (_isUpperCase) {
+      this.warning(
+        "Sensor name should start with a lower case letter", 
+        SmartCityPackage.Literals.LINKABLE__NAME, 
+        SmartCityValidator.INVALID_ATTRIBUTE_NAME, 
+        sensor.getName());
+    }
+  }
+
+  @Check
+  public void checkModuleNamesAreLowerCase(final Module module) {
+    boolean _isUpperCase = Character.isUpperCase(module.getName().charAt(0));
+    if (_isUpperCase) {
+      this.warning(
+        "Module name should start with a lower case letter", 
+        SmartCityPackage.Literals.LINKABLE__NAME, 
+        SmartCityValidator.INVALID_ATTRIBUTE_NAME, 
+        module.getName());
+    }
+  }
+
+  @Check
+  public void checkControllerNamesAreLowerCase(final Controller controller) {
+    boolean _isUpperCase = Character.isUpperCase(controller.getName().charAt(0));
+    if (_isUpperCase) {
+      this.warning(
+        "Controller name should start with a lower case letter", 
+        SmartCityPackage.Literals.LINKABLE__NAME, 
+        SmartCityValidator.INVALID_ATTRIBUTE_NAME, 
+        controller.getName());
+    }
+  }
+
+  @Check
+  public void checkSimulationPropertiesNonNegativeTerminationTime(final SimulationProperties props) {
+    int _terminationTime = props.getTerminationTime();
+    boolean _lessEqualsThan = (_terminationTime <= 0);
+    if (_lessEqualsThan) {
+      this.error(
+        "Termination Time for the simulation must be larger than 0", 
+        SmartCityPackage.Literals.SIMULATION_PROPERTIES__TERMINATION_TIME);
+    }
+  }
+
+  @Check
+  public void checkSimulationPropertiesFileExists(final SimulationProperties props) {
+    boolean _isNullOrEmpty = StringExtensions.isNullOrEmpty(props.getGeneratorFile());
+    boolean _not = (!_isNullOrEmpty);
+    if (_not) {
+      String _generatorFile = props.getGeneratorFile();
+      File f = new File(_generatorFile);
+      if (((!f.exists()) || f.isDirectory())) {
+        this.error(
+          "Can not find this File, please check the path", 
+          SmartCityPackage.Literals.SIMULATION_PROPERTIES__GENERATOR_FILE);
+      } else {
+        boolean _endsWith = f.getName().endsWith(".csv");
+        boolean _not_1 = (!_endsWith);
+        if (_not_1) {
+          this.error(
+            "The Generator File must be of a \'csv\' File", 
+            SmartCityPackage.Literals.SIMULATION_PROPERTIES__GENERATOR_FILE);
+        }
+      }
+    }
+  }
+
+  @Check
+  public void modelContainsAtLeastOneNode(final Model model) {
+    int _length = ((Object[])Conversions.unwrapArray(model.getNodes(), Object.class)).length;
+    boolean _lessThan = (_length < 1);
+    if (_lessThan) {
+      this.error(
+        "The Model needs to contain at least one Node for the simulation", 
+        SmartCityPackage.Literals.MODEL__NODES);
+    }
+  }
+
+  @Check
+  public void checkDelayRangeIsValid(final DelayRange range) {
+    int _max = range.getMax();
+    int _min = range.getMin();
+    boolean _lessThan = (_max < _min);
+    if (_lessThan) {
+      this.error(
+        "Invalid Delay Range: Second value can not be smaller than the first", 
+        SmartCityPackage.Literals.DELAY_RANGE__MAX);
+    }
+  }
+
+  @Check
+  public void checkFrequencyNonNegative(final Frequency frequency) {
+    int _value = frequency.getValue();
+    boolean _lessEqualsThan = (_value <= 0);
+    if (_lessEqualsThan) {
+      this.error(
+        "Frequency must be larger than 0", 
+        SmartCityPackage.Literals.FREQUENCY__VALUE);
+    }
+  }
+
+  @Check
+  public void checkLinkDataTypeMatchesOriginIfSensor(final CommunicationLink link) {
+    final Linkable origin = link.getOrigin();
+    if ((origin instanceof Sensor)) {
+      SensorType _type = ((Sensor)origin).getType();
+      SensorType _datatype = link.getDatatype();
+      boolean _notEquals = (!Objects.equals(_type, _datatype));
+      if (_notEquals) {
+        this.error(
+          "For links from sensors the link data type must match the sensor type", 
+          SmartCityPackage.Literals.COMMUNICATION_LINK__DATATYPE);
+      }
     }
   }
 }

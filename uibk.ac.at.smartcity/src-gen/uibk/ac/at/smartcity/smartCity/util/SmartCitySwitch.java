@@ -13,6 +13,7 @@ import uibk.ac.at.smartcity.smartCity.Controller;
 import uibk.ac.at.smartcity.smartCity.CyclicAction;
 import uibk.ac.at.smartcity.smartCity.DataGateway;
 import uibk.ac.at.smartcity.smartCity.DelayRange;
+import uibk.ac.at.smartcity.smartCity.Frequency;
 import uibk.ac.at.smartcity.smartCity.Linkable;
 import uibk.ac.at.smartcity.smartCity.Model;
 import uibk.ac.at.smartcity.smartCity.Node;
@@ -142,6 +143,13 @@ public class SmartCitySwitch<T> extends Switch<T>
         uibk.ac.at.smartcity.smartCity.Module module = (uibk.ac.at.smartcity.smartCity.Module)theEObject;
         T result = caseModule(module);
         if (result == null) result = caseLinkable(module);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SmartCityPackage.FREQUENCY:
+      {
+        Frequency frequency = (Frequency)theEObject;
+        T result = caseFrequency(frequency);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -301,6 +309,22 @@ public class SmartCitySwitch<T> extends Switch<T>
    * @generated
    */
   public T caseModule(uibk.ac.at.smartcity.smartCity.Module object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Frequency</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Frequency</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFrequency(Frequency object)
   {
     return null;
   }

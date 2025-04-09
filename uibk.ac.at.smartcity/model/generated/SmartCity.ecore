@@ -29,8 +29,8 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1"
         eType="#//CommunicationLink" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="freqValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="freqUnit" eType="#//FrequencyUnit"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="frequency" eType="#//Frequency"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Sensor" eSuperTypes="#//Linkable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//SensorType"/>
@@ -60,6 +60,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="triggeredActions" upperBound="-1"
         eType="#//TriggeredAction" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Frequency">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="#//FrequencyUnit"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Linkable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -70,8 +74,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CyclicAction">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="freqValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="freqUnit" eType="#//FrequencyUnit"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="frequency" eType="#//Frequency"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TriggeredAction">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

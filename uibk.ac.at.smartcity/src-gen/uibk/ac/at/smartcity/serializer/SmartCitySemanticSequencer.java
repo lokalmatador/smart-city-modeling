@@ -20,6 +20,7 @@ import uibk.ac.at.smartcity.smartCity.Controller;
 import uibk.ac.at.smartcity.smartCity.CyclicAction;
 import uibk.ac.at.smartcity.smartCity.DataGateway;
 import uibk.ac.at.smartcity.smartCity.DelayRange;
+import uibk.ac.at.smartcity.smartCity.Frequency;
 import uibk.ac.at.smartcity.smartCity.Model;
 import uibk.ac.at.smartcity.smartCity.Node;
 import uibk.ac.at.smartcity.smartCity.Sensor;
@@ -55,6 +56,9 @@ public class SmartCitySemanticSequencer extends AbstractDelegatingSemanticSequen
 				return; 
 			case SmartCityPackage.DELAY_RANGE:
 				sequence_DelayRange(context, (DelayRange) semanticObject); 
+				return; 
+			case SmartCityPackage.FREQUENCY:
+				sequence_Frequency(context, (Frequency) semanticObject); 
 				return; 
 			case SmartCityPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
@@ -132,22 +136,19 @@ public class SmartCitySemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     CyclicAction returns CyclicAction
 	 *
 	 * Constraint:
-	 *     (name=ID freqValue=INT freqUnit=FrequencyUnit)
+	 *     (name=ID frequency=Frequency)
 	 * </pre>
 	 */
 	protected void sequence_CyclicAction(ISerializationContext context, CyclicAction semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, SmartCityPackage.Literals.CYCLIC_ACTION__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCityPackage.Literals.CYCLIC_ACTION__NAME));
-			if (transientValues.isValueTransient(semanticObject, SmartCityPackage.Literals.CYCLIC_ACTION__FREQ_VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCityPackage.Literals.CYCLIC_ACTION__FREQ_VALUE));
-			if (transientValues.isValueTransient(semanticObject, SmartCityPackage.Literals.CYCLIC_ACTION__FREQ_UNIT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCityPackage.Literals.CYCLIC_ACTION__FREQ_UNIT));
+			if (transientValues.isValueTransient(semanticObject, SmartCityPackage.Literals.CYCLIC_ACTION__FREQUENCY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCityPackage.Literals.CYCLIC_ACTION__FREQUENCY));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getCyclicActionAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getCyclicActionAccess().getFreqValueINTTerminalRuleCall_3_0(), semanticObject.getFreqValue());
-		feeder.accept(grammarAccess.getCyclicActionAccess().getFreqUnitFrequencyUnitEnumRuleCall_4_0(), semanticObject.getFreqUnit());
+		feeder.accept(grammarAccess.getCyclicActionAccess().getFrequencyFrequencyParserRuleCall_3_0(), semanticObject.getFrequency());
 		feeder.finish();
 	}
 	
@@ -205,6 +206,29 @@ public class SmartCitySemanticSequencer extends AbstractDelegatingSemanticSequen
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     Frequency returns Frequency
+	 *
+	 * Constraint:
+	 *     (value=INT unit=FrequencyUnit)
+	 * </pre>
+	 */
+	protected void sequence_Frequency(ISerializationContext context, Frequency semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SmartCityPackage.Literals.FREQUENCY__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCityPackage.Literals.FREQUENCY__VALUE));
+			if (transientValues.isValueTransient(semanticObject, SmartCityPackage.Literals.FREQUENCY__UNIT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCityPackage.Literals.FREQUENCY__UNIT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getFrequencyAccess().getValueINTTerminalRuleCall_0_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getFrequencyAccess().getUnitFrequencyUnitEnumRuleCall_1_0(), semanticObject.getUnit());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     Model returns Model
 	 *
 	 * Constraint:
@@ -244,8 +268,7 @@ public class SmartCitySemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *         modules+=Module* 
 	 *         controller=Controller 
 	 *         links+=CommunicationLink* 
-	 *         freqValue=INT 
-	 *         freqUnit=FrequencyUnit 
+	 *         frequency=Frequency 
 	 *         priority=INT
 	 *     )
 	 * </pre>

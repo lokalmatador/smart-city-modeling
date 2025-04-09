@@ -158,7 +158,7 @@ public interface SmartCityPackage extends EPackage
    * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getLinkable()
    * @generated
    */
-  int LINKABLE = 8;
+  int LINKABLE = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -298,22 +298,13 @@ public interface SmartCityPackage extends EPackage
   int NODE__LINKS = LINKABLE_FEATURE_COUNT + 3;
 
   /**
-   * The feature id for the '<em><b>Freq Value</b></em>' attribute.
+   * The feature id for the '<em><b>Frequency</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NODE__FREQ_VALUE = LINKABLE_FEATURE_COUNT + 4;
-
-  /**
-   * The feature id for the '<em><b>Freq Unit</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NODE__FREQ_UNIT = LINKABLE_FEATURE_COUNT + 5;
+  int NODE__FREQUENCY = LINKABLE_FEATURE_COUNT + 4;
 
   /**
    * The number of structural features of the '<em>Node</em>' class.
@@ -322,7 +313,7 @@ public interface SmartCityPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NODE_FEATURE_COUNT = LINKABLE_FEATURE_COUNT + 6;
+  int NODE_FEATURE_COUNT = LINKABLE_FEATURE_COUNT + 5;
 
   /**
    * The meta object id for the '{@link uibk.ac.at.smartcity.smartCity.impl.SensorImpl <em>Sensor</em>}' class.
@@ -572,6 +563,43 @@ public interface SmartCityPackage extends EPackage
   int MODULE_FEATURE_COUNT = LINKABLE_FEATURE_COUNT + 2;
 
   /**
+   * The meta object id for the '{@link uibk.ac.at.smartcity.smartCity.impl.FrequencyImpl <em>Frequency</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uibk.ac.at.smartcity.smartCity.impl.FrequencyImpl
+   * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getFrequency()
+   * @generated
+   */
+  int FREQUENCY = 8;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FREQUENCY__VALUE = 0;
+
+  /**
+   * The feature id for the '<em><b>Unit</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FREQUENCY__UNIT = 1;
+
+  /**
+   * The number of structural features of the '<em>Frequency</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FREQUENCY_FEATURE_COUNT = 2;
+
+  /**
    * The meta object id for the '{@link uibk.ac.at.smartcity.smartCity.impl.DelayRangeImpl <em>Delay Range</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -579,7 +607,7 @@ public interface SmartCityPackage extends EPackage
    * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getDelayRange()
    * @generated
    */
-  int DELAY_RANGE = 9;
+  int DELAY_RANGE = 10;
 
   /**
    * The feature id for the '<em><b>Min</b></em>' attribute.
@@ -616,7 +644,7 @@ public interface SmartCityPackage extends EPackage
    * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getCyclicAction()
    * @generated
    */
-  int CYCLIC_ACTION = 10;
+  int CYCLIC_ACTION = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -628,22 +656,13 @@ public interface SmartCityPackage extends EPackage
   int CYCLIC_ACTION__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Freq Value</b></em>' attribute.
+   * The feature id for the '<em><b>Frequency</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CYCLIC_ACTION__FREQ_VALUE = 1;
-
-  /**
-   * The feature id for the '<em><b>Freq Unit</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CYCLIC_ACTION__FREQ_UNIT = 2;
+  int CYCLIC_ACTION__FREQUENCY = 1;
 
   /**
    * The number of structural features of the '<em>Cyclic Action</em>' class.
@@ -652,7 +671,7 @@ public interface SmartCityPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CYCLIC_ACTION_FEATURE_COUNT = 3;
+  int CYCLIC_ACTION_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link uibk.ac.at.smartcity.smartCity.impl.TriggeredActionImpl <em>Triggered Action</em>}' class.
@@ -662,7 +681,7 @@ public interface SmartCityPackage extends EPackage
    * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getTriggeredAction()
    * @generated
    */
-  int TRIGGERED_ACTION = 11;
+  int TRIGGERED_ACTION = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -690,7 +709,7 @@ public interface SmartCityPackage extends EPackage
    * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getSensorType()
    * @generated
    */
-  int SENSOR_TYPE = 12;
+  int SENSOR_TYPE = 13;
 
   /**
    * The meta object id for the '{@link uibk.ac.at.smartcity.smartCity.ControllerType <em>Controller Type</em>}' enum.
@@ -700,7 +719,7 @@ public interface SmartCityPackage extends EPackage
    * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getControllerType()
    * @generated
    */
-  int CONTROLLER_TYPE = 13;
+  int CONTROLLER_TYPE = 14;
 
   /**
    * The meta object id for the '{@link uibk.ac.at.smartcity.smartCity.LinkType <em>Link Type</em>}' enum.
@@ -710,7 +729,7 @@ public interface SmartCityPackage extends EPackage
    * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getLinkType()
    * @generated
    */
-  int LINK_TYPE = 14;
+  int LINK_TYPE = 15;
 
   /**
    * The meta object id for the '{@link uibk.ac.at.smartcity.smartCity.DataType <em>Data Type</em>}' enum.
@@ -720,7 +739,7 @@ public interface SmartCityPackage extends EPackage
    * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getDataType()
    * @generated
    */
-  int DATA_TYPE = 15;
+  int DATA_TYPE = 16;
 
   /**
    * The meta object id for the '{@link uibk.ac.at.smartcity.smartCity.FrequencyUnit <em>Frequency Unit</em>}' enum.
@@ -730,7 +749,7 @@ public interface SmartCityPackage extends EPackage
    * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getFrequencyUnit()
    * @generated
    */
-  int FREQUENCY_UNIT = 16;
+  int FREQUENCY_UNIT = 17;
 
 
   /**
@@ -895,26 +914,15 @@ public interface SmartCityPackage extends EPackage
   EReference getNode_Links();
 
   /**
-   * Returns the meta object for the attribute '{@link uibk.ac.at.smartcity.smartCity.Node#getFreqValue <em>Freq Value</em>}'.
+   * Returns the meta object for the containment reference '{@link uibk.ac.at.smartcity.smartCity.Node#getFrequency <em>Frequency</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Freq Value</em>'.
-   * @see uibk.ac.at.smartcity.smartCity.Node#getFreqValue()
+   * @return the meta object for the containment reference '<em>Frequency</em>'.
+   * @see uibk.ac.at.smartcity.smartCity.Node#getFrequency()
    * @see #getNode()
    * @generated
    */
-  EAttribute getNode_FreqValue();
-
-  /**
-   * Returns the meta object for the attribute '{@link uibk.ac.at.smartcity.smartCity.Node#getFreqUnit <em>Freq Unit</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Freq Unit</em>'.
-   * @see uibk.ac.at.smartcity.smartCity.Node#getFreqUnit()
-   * @see #getNode()
-   * @generated
-   */
-  EAttribute getNode_FreqUnit();
+  EReference getNode_Frequency();
 
   /**
    * Returns the meta object for class '{@link uibk.ac.at.smartcity.smartCity.Sensor <em>Sensor</em>}'.
@@ -1100,6 +1108,38 @@ public interface SmartCityPackage extends EPackage
   EReference getModule_TriggeredActions();
 
   /**
+   * Returns the meta object for class '{@link uibk.ac.at.smartcity.smartCity.Frequency <em>Frequency</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Frequency</em>'.
+   * @see uibk.ac.at.smartcity.smartCity.Frequency
+   * @generated
+   */
+  EClass getFrequency();
+
+  /**
+   * Returns the meta object for the attribute '{@link uibk.ac.at.smartcity.smartCity.Frequency#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see uibk.ac.at.smartcity.smartCity.Frequency#getValue()
+   * @see #getFrequency()
+   * @generated
+   */
+  EAttribute getFrequency_Value();
+
+  /**
+   * Returns the meta object for the attribute '{@link uibk.ac.at.smartcity.smartCity.Frequency#getUnit <em>Unit</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Unit</em>'.
+   * @see uibk.ac.at.smartcity.smartCity.Frequency#getUnit()
+   * @see #getFrequency()
+   * @generated
+   */
+  EAttribute getFrequency_Unit();
+
+  /**
    * Returns the meta object for class '{@link uibk.ac.at.smartcity.smartCity.Linkable <em>Linkable</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1185,26 +1225,15 @@ public interface SmartCityPackage extends EPackage
   EAttribute getCyclicAction_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link uibk.ac.at.smartcity.smartCity.CyclicAction#getFreqValue <em>Freq Value</em>}'.
+   * Returns the meta object for the containment reference '{@link uibk.ac.at.smartcity.smartCity.CyclicAction#getFrequency <em>Frequency</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Freq Value</em>'.
-   * @see uibk.ac.at.smartcity.smartCity.CyclicAction#getFreqValue()
+   * @return the meta object for the containment reference '<em>Frequency</em>'.
+   * @see uibk.ac.at.smartcity.smartCity.CyclicAction#getFrequency()
    * @see #getCyclicAction()
    * @generated
    */
-  EAttribute getCyclicAction_FreqValue();
-
-  /**
-   * Returns the meta object for the attribute '{@link uibk.ac.at.smartcity.smartCity.CyclicAction#getFreqUnit <em>Freq Unit</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Freq Unit</em>'.
-   * @see uibk.ac.at.smartcity.smartCity.CyclicAction#getFreqUnit()
-   * @see #getCyclicAction()
-   * @generated
-   */
-  EAttribute getCyclicAction_FreqUnit();
+  EReference getCyclicAction_Frequency();
 
   /**
    * Returns the meta object for class '{@link uibk.ac.at.smartcity.smartCity.TriggeredAction <em>Triggered Action</em>}'.
@@ -1429,20 +1458,12 @@ public interface SmartCityPackage extends EPackage
     EReference NODE__LINKS = eINSTANCE.getNode_Links();
 
     /**
-     * The meta object literal for the '<em><b>Freq Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Frequency</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute NODE__FREQ_VALUE = eINSTANCE.getNode_FreqValue();
-
-    /**
-     * The meta object literal for the '<em><b>Freq Unit</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute NODE__FREQ_UNIT = eINSTANCE.getNode_FreqUnit();
+    EReference NODE__FREQUENCY = eINSTANCE.getNode_Frequency();
 
     /**
      * The meta object literal for the '{@link uibk.ac.at.smartcity.smartCity.impl.SensorImpl <em>Sensor</em>}' class.
@@ -1589,6 +1610,32 @@ public interface SmartCityPackage extends EPackage
     EReference MODULE__TRIGGERED_ACTIONS = eINSTANCE.getModule_TriggeredActions();
 
     /**
+     * The meta object literal for the '{@link uibk.ac.at.smartcity.smartCity.impl.FrequencyImpl <em>Frequency</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uibk.ac.at.smartcity.smartCity.impl.FrequencyImpl
+     * @see uibk.ac.at.smartcity.smartCity.impl.SmartCityPackageImpl#getFrequency()
+     * @generated
+     */
+    EClass FREQUENCY = eINSTANCE.getFrequency();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FREQUENCY__VALUE = eINSTANCE.getFrequency_Value();
+
+    /**
+     * The meta object literal for the '<em><b>Unit</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FREQUENCY__UNIT = eINSTANCE.getFrequency_Unit();
+
+    /**
      * The meta object literal for the '{@link uibk.ac.at.smartcity.smartCity.impl.LinkableImpl <em>Linkable</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1659,20 +1706,12 @@ public interface SmartCityPackage extends EPackage
     EAttribute CYCLIC_ACTION__NAME = eINSTANCE.getCyclicAction_Name();
 
     /**
-     * The meta object literal for the '<em><b>Freq Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Frequency</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CYCLIC_ACTION__FREQ_VALUE = eINSTANCE.getCyclicAction_FreqValue();
-
-    /**
-     * The meta object literal for the '<em><b>Freq Unit</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute CYCLIC_ACTION__FREQ_UNIT = eINSTANCE.getCyclicAction_FreqUnit();
+    EReference CYCLIC_ACTION__FREQUENCY = eINSTANCE.getCyclicAction_Frequency();
 
     /**
      * The meta object literal for the '{@link uibk.ac.at.smartcity.smartCity.impl.TriggeredActionImpl <em>Triggered Action</em>}' class.

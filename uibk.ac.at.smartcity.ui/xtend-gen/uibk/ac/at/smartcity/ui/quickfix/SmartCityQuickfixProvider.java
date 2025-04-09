@@ -30,4 +30,19 @@ public class SmartCityQuickfixProvider extends DefaultQuickfixProvider {
     acceptor.accept(issue, "Capitalize first letter", _plus_1, 
       "upcase.png", _function);
   }
+
+  @Fix(SmartCityValidator.INVALID_ATTRIBUTE_NAME)
+  public void deCapitalizeNameFirstLetter(final Issue issue, final IssueResolutionAcceptor acceptor) {
+    String _get = issue.getData()[0];
+    String _plus = ("Convert first letter of \'" + _get);
+    String _plus_1 = (_plus + "\'");
+    String _plus_2 = (_plus_1 + " to lowercase");
+    final IModification _function = (IModificationContext context) -> {
+      final IXtextDocument xtextDocument = context.getXtextDocument();
+      final String firstLetter = xtextDocument.get((issue.getOffset()).intValue(), 1);
+      xtextDocument.replace((issue.getOffset()).intValue(), 1, StringExtensions.toFirstLower(firstLetter));
+    };
+    acceptor.accept(issue, "Convert first letter to lowercase", _plus_2, 
+      "", _function);
+  }
 }

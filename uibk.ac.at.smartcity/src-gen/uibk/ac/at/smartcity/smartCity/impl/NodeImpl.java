@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import uibk.ac.at.smartcity.smartCity.CommunicationLink;
 import uibk.ac.at.smartcity.smartCity.Controller;
-import uibk.ac.at.smartcity.smartCity.FrequencyUnit;
+import uibk.ac.at.smartcity.smartCity.Frequency;
 import uibk.ac.at.smartcity.smartCity.Node;
 import uibk.ac.at.smartcity.smartCity.Sensor;
 import uibk.ac.at.smartcity.smartCity.SmartCityPackage;
@@ -37,8 +37,7 @@ import uibk.ac.at.smartcity.smartCity.SmartCityPackage;
  *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.NodeImpl#getModules <em>Modules</em>}</li>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.NodeImpl#getController <em>Controller</em>}</li>
  *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.NodeImpl#getLinks <em>Links</em>}</li>
- *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.NodeImpl#getFreqValue <em>Freq Value</em>}</li>
- *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.NodeImpl#getFreqUnit <em>Freq Unit</em>}</li>
+ *   <li>{@link uibk.ac.at.smartcity.smartCity.impl.NodeImpl#getFrequency <em>Frequency</em>}</li>
  * </ul>
  *
  * @generated
@@ -86,44 +85,14 @@ public class NodeImpl extends LinkableImpl implements Node
   protected EList<CommunicationLink> links;
 
   /**
-   * The default value of the '{@link #getFreqValue() <em>Freq Value</em>}' attribute.
+   * The cached value of the '{@link #getFrequency() <em>Frequency</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFreqValue()
+   * @see #getFrequency()
    * @generated
    * @ordered
    */
-  protected static final int FREQ_VALUE_EDEFAULT = 0;
-
-  /**
-   * The cached value of the '{@link #getFreqValue() <em>Freq Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getFreqValue()
-   * @generated
-   * @ordered
-   */
-  protected int freqValue = FREQ_VALUE_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getFreqUnit() <em>Freq Unit</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getFreqUnit()
-   * @generated
-   * @ordered
-   */
-  protected static final FrequencyUnit FREQ_UNIT_EDEFAULT = FrequencyUnit.HERTZ;
-
-  /**
-   * The cached value of the '{@link #getFreqUnit() <em>Freq Unit</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getFreqUnit()
-   * @generated
-   * @ordered
-   */
-  protected FrequencyUnit freqUnit = FREQ_UNIT_EDEFAULT;
+  protected Frequency frequency;
 
   /**
    * <!-- begin-user-doc -->
@@ -247,9 +216,9 @@ public class NodeImpl extends LinkableImpl implements Node
    * @generated
    */
   @Override
-  public int getFreqValue()
+  public Frequency getFrequency()
   {
-    return freqValue;
+    return frequency;
   }
 
   /**
@@ -257,13 +226,16 @@ public class NodeImpl extends LinkableImpl implements Node
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setFreqValue(int newFreqValue)
+  public NotificationChain basicSetFrequency(Frequency newFrequency, NotificationChain msgs)
   {
-    int oldFreqValue = freqValue;
-    freqValue = newFreqValue;
+    Frequency oldFrequency = frequency;
+    frequency = newFrequency;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SmartCityPackage.NODE__FREQ_VALUE, oldFreqValue, freqValue));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmartCityPackage.NODE__FREQUENCY, oldFrequency, newFrequency);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -272,23 +244,20 @@ public class NodeImpl extends LinkableImpl implements Node
    * @generated
    */
   @Override
-  public FrequencyUnit getFreqUnit()
+  public void setFrequency(Frequency newFrequency)
   {
-    return freqUnit;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setFreqUnit(FrequencyUnit newFreqUnit)
-  {
-    FrequencyUnit oldFreqUnit = freqUnit;
-    freqUnit = newFreqUnit == null ? FREQ_UNIT_EDEFAULT : newFreqUnit;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SmartCityPackage.NODE__FREQ_UNIT, oldFreqUnit, freqUnit));
+    if (newFrequency != frequency)
+    {
+      NotificationChain msgs = null;
+      if (frequency != null)
+        msgs = ((InternalEObject)frequency).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SmartCityPackage.NODE__FREQUENCY, null, msgs);
+      if (newFrequency != null)
+        msgs = ((InternalEObject)newFrequency).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SmartCityPackage.NODE__FREQUENCY, null, msgs);
+      msgs = basicSetFrequency(newFrequency, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SmartCityPackage.NODE__FREQUENCY, newFrequency, newFrequency));
   }
 
   /**
@@ -309,6 +278,8 @@ public class NodeImpl extends LinkableImpl implements Node
         return basicSetController(null, msgs);
       case SmartCityPackage.NODE__LINKS:
         return ((InternalEList<?>)getLinks()).basicRemove(otherEnd, msgs);
+      case SmartCityPackage.NODE__FREQUENCY:
+        return basicSetFrequency(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -331,10 +302,8 @@ public class NodeImpl extends LinkableImpl implements Node
         return getController();
       case SmartCityPackage.NODE__LINKS:
         return getLinks();
-      case SmartCityPackage.NODE__FREQ_VALUE:
-        return getFreqValue();
-      case SmartCityPackage.NODE__FREQ_UNIT:
-        return getFreqUnit();
+      case SmartCityPackage.NODE__FREQUENCY:
+        return getFrequency();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -365,11 +334,8 @@ public class NodeImpl extends LinkableImpl implements Node
         getLinks().clear();
         getLinks().addAll((Collection<? extends CommunicationLink>)newValue);
         return;
-      case SmartCityPackage.NODE__FREQ_VALUE:
-        setFreqValue((Integer)newValue);
-        return;
-      case SmartCityPackage.NODE__FREQ_UNIT:
-        setFreqUnit((FrequencyUnit)newValue);
+      case SmartCityPackage.NODE__FREQUENCY:
+        setFrequency((Frequency)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -397,11 +363,8 @@ public class NodeImpl extends LinkableImpl implements Node
       case SmartCityPackage.NODE__LINKS:
         getLinks().clear();
         return;
-      case SmartCityPackage.NODE__FREQ_VALUE:
-        setFreqValue(FREQ_VALUE_EDEFAULT);
-        return;
-      case SmartCityPackage.NODE__FREQ_UNIT:
-        setFreqUnit(FREQ_UNIT_EDEFAULT);
+      case SmartCityPackage.NODE__FREQUENCY:
+        setFrequency((Frequency)null);
         return;
     }
     super.eUnset(featureID);
@@ -425,31 +388,10 @@ public class NodeImpl extends LinkableImpl implements Node
         return controller != null;
       case SmartCityPackage.NODE__LINKS:
         return links != null && !links.isEmpty();
-      case SmartCityPackage.NODE__FREQ_VALUE:
-        return freqValue != FREQ_VALUE_EDEFAULT;
-      case SmartCityPackage.NODE__FREQ_UNIT:
-        return freqUnit != FREQ_UNIT_EDEFAULT;
+      case SmartCityPackage.NODE__FREQUENCY:
+        return frequency != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (freqValue: ");
-    result.append(freqValue);
-    result.append(", freqUnit: ");
-    result.append(freqUnit);
-    result.append(')');
-    return result.toString();
   }
 
 } //NodeImpl
