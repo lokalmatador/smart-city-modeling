@@ -13,6 +13,7 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
 import uibk.ac.at.smartcity.smartCity.CommunicationLink;
 import uibk.ac.at.smartcity.smartCity.Controller;
+import uibk.ac.at.smartcity.smartCity.ControllerType;
 import uibk.ac.at.smartcity.smartCity.DataGateway;
 import uibk.ac.at.smartcity.smartCity.DelayRange;
 import uibk.ac.at.smartcity.smartCity.Frequency;
@@ -143,6 +144,38 @@ public class SmartCityValidator extends AbstractSmartCityValidator {
   }
 
   @Check
+  public Object checkNodeBalance(final Node node) {
+    Object _switchResult = null;
+    ControllerType _type = node.getController().getType();
+    if (_type != null) {
+      switch (_type) {
+        case ESP32:
+          int _size = node.getSensors().size();
+          boolean _greaterThan = (_size > 8);
+          if (_greaterThan) {
+            this.warning("ESP32 controller might be overloaded with too many sensors", 
+              SmartCityPackage.Literals.LINKABLE__NAME);
+          }
+          break;
+        case RASPBERRY_PI:
+          int _size_1 = node.getSensors().size();
+          boolean _greaterThan_1 = (_size_1 > 16);
+          if (_greaterThan_1) {
+            this.warning("Raspberry Pi controller might be overloaded with too many sensors", 
+              SmartCityPackage.Literals.LINKABLE__NAME);
+          }
+          break;
+        default:
+          _switchResult = null;
+          break;
+      }
+    } else {
+      _switchResult = null;
+    }
+    return _switchResult;
+  }
+
+  @Check
   public void checkDelayRangeIsValid(final DelayRange range) {
     int _max = range.getMax();
     int _min = range.getMin();
@@ -150,6 +183,28 @@ public class SmartCityValidator extends AbstractSmartCityValidator {
     if (_lessThan) {
       this.error(
         "Invalid Delay Range: Second value can not be smaller than the first", 
+        SmartCityPackage.Literals.DELAY_RANGE__MAX);
+    }
+  }
+
+  @Check
+  public void checkDelayRangeNotNegative(final DelayRange range) {
+    int _min = range.getMin();
+    boolean _lessThan = (_min < 0);
+    if (_lessThan) {
+      this.error(
+        "Delay minimum cannot be negative", 
+        SmartCityPackage.Literals.DELAY_RANGE__MIN);
+    }
+  }
+
+  @Check
+  public void checkDelayRangeTooLarge(final DelayRange range) {
+    int _max = range.getMax();
+    boolean _greaterThan = (_max > 100000);
+    if (_greaterThan) {
+      this.warning(
+        "Very high delay values may cause unrealistic simulation results", 
         SmartCityPackage.Literals.DELAY_RANGE__MAX);
     }
   }

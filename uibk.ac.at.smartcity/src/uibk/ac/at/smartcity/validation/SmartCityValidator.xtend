@@ -134,12 +134,56 @@ class SmartCityValidator extends AbstractSmartCityValidator {
 		}
 	}
 
+	// Node
+	@Check
+	def checkNodeBalance(Node node) {
+		// Check if nodes are well-balanced (not too many sensors for controller type)
+		switch (node.controller.type) {
+			case ESP32: {
+				if (node.sensors.size > 8) {
+					warning("ESP32 controller might be overloaded with too many sensors", 
+						SmartCityPackage.Literals.LINKABLE__NAME
+					)
+				}
+			}
+			case RASPBERRY_PI: {
+				if (node.sensors.size > 16) {
+					warning("Raspberry Pi controller might be overloaded with too many sensors", 
+						SmartCityPackage.Literals.LINKABLE__NAME
+					)
+				}
+			}
+			default: {
+			}
+		}
+	}
+
 	// Delay Range:
 	@Check
 	def checkDelayRangeIsValid(DelayRange range) {
 		if (range.max < range.min) {
 			error(
 				"Invalid Delay Range: Second value can not be smaller than the first",
+				SmartCityPackage.Literals.DELAY_RANGE__MAX
+			)
+		}
+	}
+
+	@Check
+	def checkDelayRangeNotNegative(DelayRange range) {
+		if (range.min < 0) {
+			error(
+				"Delay minimum cannot be negative",
+				SmartCityPackage.Literals.DELAY_RANGE__MIN
+			)
+		}
+	}
+
+	@Check
+	def checkDelayRangeTooLarge(DelayRange range) {
+		if (range.max > 100000) {
+			warning(
+				"Very high delay values may cause unrealistic simulation results",
 				SmartCityPackage.Literals.DELAY_RANGE__MAX
 			)
 		}
@@ -171,7 +215,6 @@ class SmartCityValidator extends AbstractSmartCityValidator {
 		}
 	}
 
-	// Duplicates with different names
 	@Check
 	def checkCommunicationLinkDuplicates(CommunicationLink link) {
 		// First, get the containing Node
