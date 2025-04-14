@@ -297,14 +297,21 @@ public class SmartCityValidator extends AbstractSmartCityValidator {
   @Check
   public void checkCylicActionsHaveNotImplementedInfo(final CyclicAction action) {
     this.info(
-      "Cyclic Actions are not yet implemented in the Code Generation, and will therefore have no effect for the simulation", 
+      "Cyclic Actions are not yet implemented in the Code Generation, and will therefore have no effect for the simulation.", 
       null);
   }
 
   @Check
   public void checkTriggeredActionsHaveNotImplementedInfo(final TriggeredAction action) {
     this.info(
-      "Triggered Actions are not yet implemented in the Code Generator, and will therefore have no effect for the simulation", 
+      "Triggered Actions are not yet implemented in the Code Generator, and will therefore have no effect for the simulation.", 
       null);
+  }
+
+  @Check
+  public void checkModuleNotImplementedInfo(final Module module) {
+    this.info(
+      "Modules are not yet implemented in the Code Generator, and will therefore have no effect for the simulation.", 
+      SmartCityPackage.Literals.LINKABLE__NAME);
   }
 }

@@ -280,7 +280,7 @@ class SmartCityValidator extends AbstractSmartCityValidator {
 	@Check
 	def checkCylicActionsHaveNotImplementedInfo(CyclicAction action){
 		info(
-		"Cyclic Actions are not yet implemented in the Code Generation, and will therefore have no effect for the simulation",
+		"Cyclic Actions are not yet implemented in the Code Generation, and will therefore have no effect for the simulation.",
 		null
 		)
 	}
@@ -288,8 +288,16 @@ class SmartCityValidator extends AbstractSmartCityValidator {
 	@Check
 	def checkTriggeredActionsHaveNotImplementedInfo(TriggeredAction action){
 		info(
-		"Triggered Actions are not yet implemented in the Code Generator, and will therefore have no effect for the simulation",
+		"Triggered Actions are not yet implemented in the Code Generator, and will therefore have no effect for the simulation.",
 		null
+		)
+	}
+	
+	@Check
+	def checkModuleNotImplementedInfo(Module module) {
+		info(
+			"Modules are not yet implemented in the Code Generator, and will therefore have no effect for the simulation.",
+			SmartCityPackage.Literals.LINKABLE__NAME
 		)
 	}
 }
