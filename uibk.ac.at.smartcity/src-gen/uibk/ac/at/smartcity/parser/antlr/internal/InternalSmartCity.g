@@ -1161,16 +1161,20 @@ ruleCyclicAction returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_2='frequency'
+		otherlv_2='{'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getCyclicActionAccess().getFrequencyKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getCyclicActionAccess().getLeftCurlyBracketKeyword_2());
+		}
+		otherlv_3='frequency'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getCyclicActionAccess().getFrequencyKeyword_3());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getCyclicActionAccess().getFrequencyFrequencyParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getCyclicActionAccess().getFrequencyFrequencyParserRuleCall_4_0());
 				}
-				lv_frequency_3_0=ruleFrequency
+				lv_frequency_4_0=ruleFrequency
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getCyclicActionRule());
@@ -1178,12 +1182,16 @@ ruleCyclicAction returns [EObject current=null]
 					set(
 						$current,
 						"frequency",
-						lv_frequency_3_0,
+						lv_frequency_4_0,
 						"uibk.ac.at.smartcity.SmartCity.Frequency");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		otherlv_5='}'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getCyclicActionAccess().getRightCurlyBracketKeyword_5());
+		}
 	)
 ;
 
@@ -1203,7 +1211,7 @@ ruleTriggeredAction returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='TriggeredAction'
+		otherlv_0='triggeredAction'
 		{
 			newLeafNode(otherlv_0, grammarAccess.getTriggeredActionAccess().getTriggeredActionKeyword_0());
 		}

@@ -14,6 +14,7 @@ import org.eclipse.xtext.xbase.lib.StringExtensions;
 import uibk.ac.at.smartcity.smartCity.CommunicationLink;
 import uibk.ac.at.smartcity.smartCity.Controller;
 import uibk.ac.at.smartcity.smartCity.ControllerType;
+import uibk.ac.at.smartcity.smartCity.CyclicAction;
 import uibk.ac.at.smartcity.smartCity.DataGateway;
 import uibk.ac.at.smartcity.smartCity.DelayRange;
 import uibk.ac.at.smartcity.smartCity.Frequency;
@@ -24,6 +25,7 @@ import uibk.ac.at.smartcity.smartCity.Sensor;
 import uibk.ac.at.smartcity.smartCity.SensorType;
 import uibk.ac.at.smartcity.smartCity.SimulationProperties;
 import uibk.ac.at.smartcity.smartCity.SmartCityPackage;
+import uibk.ac.at.smartcity.smartCity.TriggeredAction;
 
 /**
  * This class contains custom validation rules.
@@ -255,5 +257,43 @@ public class SmartCityValidator extends AbstractSmartCityValidator {
         "Duplicate communication link", 
         null);
     }
+  }
+
+  @Check
+  public void checkCommunicationLinkValidOrigin(final CommunicationLink link) {
+    Linkable _origin = link.getOrigin();
+    if ((_origin instanceof Controller)) {
+      this.error("Controllers can\'t send data", 
+        SmartCityPackage.Literals.COMMUNICATION_LINK__ORIGIN);
+    } else {
+      Linkable _origin_1 = link.getOrigin();
+      if ((_origin_1 instanceof DataGateway)) {
+        this.error("The DataGateway can\'t send data", 
+          SmartCityPackage.Literals.COMMUNICATION_LINK__ORIGIN);
+      }
+    }
+  }
+
+  @Check
+  public void checkCommunicationLinkValidDestination(final CommunicationLink link) {
+    Linkable _destination = link.getDestination();
+    if ((_destination instanceof Sensor)) {
+      this.error("Sensors can\'t receive data", 
+        SmartCityPackage.Literals.COMMUNICATION_LINK__DESTINATION);
+    }
+  }
+
+  @Check
+  public void checkCylicActionsHaveNotImplementedInfo(final CyclicAction action) {
+    this.info(
+      "Cyclic Actions are not yet implemented in the Code Generation, and will therefore have no effect for the simulation", 
+      null);
+  }
+
+  @Check
+  public void checkTriggeredActionsHaveNotImplementedInfo(final TriggeredAction action) {
+    this.info(
+      "Triggered Actions are not yet implemented in the Code Generator, and will therefore have no effect for the simulation", 
+      null);
   }
 }

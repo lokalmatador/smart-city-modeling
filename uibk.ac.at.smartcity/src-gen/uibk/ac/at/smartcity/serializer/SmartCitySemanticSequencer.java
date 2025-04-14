@@ -148,7 +148,7 @@ public class SmartCitySemanticSequencer extends AbstractDelegatingSemanticSequen
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getCyclicActionAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getCyclicActionAccess().getFrequencyFrequencyParserRuleCall_3_0(), semanticObject.getFrequency());
+		feeder.accept(grammarAccess.getCyclicActionAccess().getFrequencyFrequencyParserRuleCall_4_0(), semanticObject.getFrequency());
 		feeder.finish();
 	}
 	

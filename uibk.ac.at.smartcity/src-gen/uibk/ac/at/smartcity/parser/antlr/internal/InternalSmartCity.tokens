@@ -21,7 +21,6 @@
 'TDS'=38
 'TEMPERATURE'=35
 'TURBIDITY'=37
-'TriggeredAction'=34
 'UART'=47
 'ULTRASONIC'=41
 '['=29
@@ -42,6 +41,7 @@
 'sensor'=21
 'simulationProperties'=11
 'terminationTime'=13
+'triggeredAction'=34
 'type'=22
 '{'=12
 '}'=15

@@ -740,18 +740,24 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Keyword cCyclicActionKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cFrequencyKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cFrequencyAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cFrequencyFrequencyParserRuleCall_3_0 = (RuleCall)cFrequencyAssignment_3.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cFrequencyKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cFrequencyAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cFrequencyFrequencyParserRuleCall_4_0 = (RuleCall)cFrequencyAssignment_4.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//CyclicAction:
 		//    'cyclicAction' name=ID
-		//    'frequency' frequency=Frequency
+		//    '{'
+		//        'frequency' frequency=Frequency
+		//    '}'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'cyclicAction' name=ID
-		//'frequency' frequency=Frequency
+		//'{'
+		//    'frequency' frequency=Frequency
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//'cyclicAction'
@@ -763,14 +769,20 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		
 		//'frequency'
-		public Keyword getFrequencyKeyword_2() { return cFrequencyKeyword_2; }
+		public Keyword getFrequencyKeyword_3() { return cFrequencyKeyword_3; }
 		
 		//frequency=Frequency
-		public Assignment getFrequencyAssignment_3() { return cFrequencyAssignment_3; }
+		public Assignment getFrequencyAssignment_4() { return cFrequencyAssignment_4; }
 		
 		//Frequency
-		public RuleCall getFrequencyFrequencyParserRuleCall_3_0() { return cFrequencyFrequencyParserRuleCall_3_0; }
+		public RuleCall getFrequencyFrequencyParserRuleCall_4_0() { return cFrequencyFrequencyParserRuleCall_4_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 	public class TriggeredActionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uibk.ac.at.smartcity.SmartCity.TriggeredAction");
@@ -780,14 +792,14 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		
 		//TriggeredAction:
-		//    'TriggeredAction' name=ID
+		//    'triggeredAction' name=ID
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'TriggeredAction' name=ID
+		//'triggeredAction' name=ID
 		public Group getGroup() { return cGroup; }
 		
-		//'TriggeredAction'
+		//'triggeredAction'
 		public Keyword getTriggeredActionKeyword_0() { return cTriggeredActionKeyword_0; }
 		
 		//name=ID
@@ -1290,7 +1302,9 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 	
 	//CyclicAction:
 	//    'cyclicAction' name=ID
-	//    'frequency' frequency=Frequency
+	//    '{'
+	//        'frequency' frequency=Frequency
+	//    '}'
 	//;
 	public CyclicActionElements getCyclicActionAccess() {
 		return pCyclicAction;
@@ -1301,7 +1315,7 @@ public class SmartCityGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	
 	//TriggeredAction:
-	//    'TriggeredAction' name=ID
+	//    'triggeredAction' name=ID
 	//;
 	public TriggeredActionElements getTriggeredActionAccess() {
 		return pTriggeredAction;

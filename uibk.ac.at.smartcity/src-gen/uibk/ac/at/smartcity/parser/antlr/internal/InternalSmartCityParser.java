@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSmartCityParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_STRING", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'simulationProperties'", "'{'", "'terminationTime'", "'generatorFile'", "'}'", "'dataGateway'", "'priority'", "'delay'", "'node'", "'postFrequency'", "'sensor'", "'type'", "'link'", "'from'", "'->'", "'datatype'", "'controller'", "'module'", "'['", "'..'", "']'", "'cyclicAction'", "'frequency'", "'TriggeredAction'", "'TEMPERATURE'", "'PH'", "'TURBIDITY'", "'TDS'", "'CURRENT'", "'PULSE'", "'ULTRASONIC'", "'CAMERA'", "'GSM'", "'ESP32'", "'RASPBERRY_PI'", "'OTHER'", "'UART'", "'ADC'", "'SPI'", "'CSI'", "'HTTPS'", "'HERTZ'", "'SECONDS'", "'MINUTES'", "'HOURS'", "'DAYS'", "'INF'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_STRING", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'simulationProperties'", "'{'", "'terminationTime'", "'generatorFile'", "'}'", "'dataGateway'", "'priority'", "'delay'", "'node'", "'postFrequency'", "'sensor'", "'type'", "'link'", "'from'", "'->'", "'datatype'", "'controller'", "'module'", "'['", "'..'", "']'", "'cyclicAction'", "'frequency'", "'triggeredAction'", "'TEMPERATURE'", "'PH'", "'TURBIDITY'", "'TDS'", "'CURRENT'", "'PULSE'", "'ULTRASONIC'", "'CAMERA'", "'GSM'", "'ESP32'", "'RASPBERRY_PI'", "'OTHER'", "'UART'", "'ADC'", "'SPI'", "'CSI'", "'HTTPS'", "'HERTZ'", "'SECONDS'", "'MINUTES'", "'HOURS'", "'DAYS'", "'INF'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -2481,25 +2481,27 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCyclicAction"
-    // InternalSmartCity.g:1134:1: ruleCyclicAction returns [EObject current=null] : (otherlv_0= 'cyclicAction' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'frequency' ( (lv_frequency_3_0= ruleFrequency ) ) ) ;
+    // InternalSmartCity.g:1134:1: ruleCyclicAction returns [EObject current=null] : (otherlv_0= 'cyclicAction' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'frequency' ( (lv_frequency_4_0= ruleFrequency ) ) otherlv_5= '}' ) ;
     public final EObject ruleCyclicAction() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token lv_name_1_0=null;
         Token otherlv_2=null;
-        EObject lv_frequency_3_0 = null;
+        Token otherlv_3=null;
+        Token otherlv_5=null;
+        EObject lv_frequency_4_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalSmartCity.g:1140:2: ( (otherlv_0= 'cyclicAction' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'frequency' ( (lv_frequency_3_0= ruleFrequency ) ) ) )
-            // InternalSmartCity.g:1141:2: (otherlv_0= 'cyclicAction' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'frequency' ( (lv_frequency_3_0= ruleFrequency ) ) )
+            // InternalSmartCity.g:1140:2: ( (otherlv_0= 'cyclicAction' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'frequency' ( (lv_frequency_4_0= ruleFrequency ) ) otherlv_5= '}' ) )
+            // InternalSmartCity.g:1141:2: (otherlv_0= 'cyclicAction' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'frequency' ( (lv_frequency_4_0= ruleFrequency ) ) otherlv_5= '}' )
             {
-            // InternalSmartCity.g:1141:2: (otherlv_0= 'cyclicAction' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'frequency' ( (lv_frequency_3_0= ruleFrequency ) ) )
-            // InternalSmartCity.g:1142:3: otherlv_0= 'cyclicAction' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'frequency' ( (lv_frequency_3_0= ruleFrequency ) )
+            // InternalSmartCity.g:1141:2: (otherlv_0= 'cyclicAction' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'frequency' ( (lv_frequency_4_0= ruleFrequency ) ) otherlv_5= '}' )
+            // InternalSmartCity.g:1142:3: otherlv_0= 'cyclicAction' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'frequency' ( (lv_frequency_4_0= ruleFrequency ) ) otherlv_5= '}'
             {
             otherlv_0=(Token)match(input,32,FOLLOW_11); 
 
@@ -2511,7 +2513,7 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
             // InternalSmartCity.g:1147:4: (lv_name_1_0= RULE_ID )
             // InternalSmartCity.g:1148:5: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_29); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_5); 
 
             					newLeafNode(lv_name_1_0, grammarAccess.getCyclicActionAccess().getNameIDTerminalRuleCall_1_0());
             				
@@ -2531,21 +2533,25 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,33,FOLLOW_7); 
+            otherlv_2=(Token)match(input,12,FOLLOW_29); 
 
-            			newLeafNode(otherlv_2, grammarAccess.getCyclicActionAccess().getFrequencyKeyword_2());
+            			newLeafNode(otherlv_2, grammarAccess.getCyclicActionAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalSmartCity.g:1168:3: ( (lv_frequency_3_0= ruleFrequency ) )
-            // InternalSmartCity.g:1169:4: (lv_frequency_3_0= ruleFrequency )
+            otherlv_3=(Token)match(input,33,FOLLOW_7); 
+
+            			newLeafNode(otherlv_3, grammarAccess.getCyclicActionAccess().getFrequencyKeyword_3());
+            		
+            // InternalSmartCity.g:1172:3: ( (lv_frequency_4_0= ruleFrequency ) )
+            // InternalSmartCity.g:1173:4: (lv_frequency_4_0= ruleFrequency )
             {
-            // InternalSmartCity.g:1169:4: (lv_frequency_3_0= ruleFrequency )
-            // InternalSmartCity.g:1170:5: lv_frequency_3_0= ruleFrequency
+            // InternalSmartCity.g:1173:4: (lv_frequency_4_0= ruleFrequency )
+            // InternalSmartCity.g:1174:5: lv_frequency_4_0= ruleFrequency
             {
 
-            					newCompositeNode(grammarAccess.getCyclicActionAccess().getFrequencyFrequencyParserRuleCall_3_0());
+            					newCompositeNode(grammarAccess.getCyclicActionAccess().getFrequencyFrequencyParserRuleCall_4_0());
             				
-            pushFollow(FOLLOW_2);
-            lv_frequency_3_0=ruleFrequency();
+            pushFollow(FOLLOW_10);
+            lv_frequency_4_0=ruleFrequency();
 
             state._fsp--;
 
@@ -2556,7 +2562,7 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
             					set(
             						current,
             						"frequency",
-            						lv_frequency_3_0,
+            						lv_frequency_4_0,
             						"uibk.ac.at.smartcity.SmartCity.Frequency");
             					afterParserOrEnumRuleCall();
             				
@@ -2566,6 +2572,10 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
 
             }
 
+            otherlv_5=(Token)match(input,15,FOLLOW_2); 
+
+            			newLeafNode(otherlv_5, grammarAccess.getCyclicActionAccess().getRightCurlyBracketKeyword_5());
+            		
 
             }
 
@@ -2589,7 +2599,7 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTriggeredAction"
-    // InternalSmartCity.g:1191:1: entryRuleTriggeredAction returns [EObject current=null] : iv_ruleTriggeredAction= ruleTriggeredAction EOF ;
+    // InternalSmartCity.g:1199:1: entryRuleTriggeredAction returns [EObject current=null] : iv_ruleTriggeredAction= ruleTriggeredAction EOF ;
     public final EObject entryRuleTriggeredAction() throws RecognitionException {
         EObject current = null;
 
@@ -2597,8 +2607,8 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmartCity.g:1191:56: (iv_ruleTriggeredAction= ruleTriggeredAction EOF )
-            // InternalSmartCity.g:1192:2: iv_ruleTriggeredAction= ruleTriggeredAction EOF
+            // InternalSmartCity.g:1199:56: (iv_ruleTriggeredAction= ruleTriggeredAction EOF )
+            // InternalSmartCity.g:1200:2: iv_ruleTriggeredAction= ruleTriggeredAction EOF
             {
              newCompositeNode(grammarAccess.getTriggeredActionRule()); 
             pushFollow(FOLLOW_1);
@@ -2625,7 +2635,7 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTriggeredAction"
-    // InternalSmartCity.g:1198:1: ruleTriggeredAction returns [EObject current=null] : (otherlv_0= 'TriggeredAction' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // InternalSmartCity.g:1206:1: ruleTriggeredAction returns [EObject current=null] : (otherlv_0= 'triggeredAction' ( (lv_name_1_0= RULE_ID ) ) ) ;
     public final EObject ruleTriggeredAction() throws RecognitionException {
         EObject current = null;
 
@@ -2636,21 +2646,21 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCity.g:1204:2: ( (otherlv_0= 'TriggeredAction' ( (lv_name_1_0= RULE_ID ) ) ) )
-            // InternalSmartCity.g:1205:2: (otherlv_0= 'TriggeredAction' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSmartCity.g:1212:2: ( (otherlv_0= 'triggeredAction' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalSmartCity.g:1213:2: (otherlv_0= 'triggeredAction' ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // InternalSmartCity.g:1205:2: (otherlv_0= 'TriggeredAction' ( (lv_name_1_0= RULE_ID ) ) )
-            // InternalSmartCity.g:1206:3: otherlv_0= 'TriggeredAction' ( (lv_name_1_0= RULE_ID ) )
+            // InternalSmartCity.g:1213:2: (otherlv_0= 'triggeredAction' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSmartCity.g:1214:3: otherlv_0= 'triggeredAction' ( (lv_name_1_0= RULE_ID ) )
             {
             otherlv_0=(Token)match(input,34,FOLLOW_11); 
 
             			newLeafNode(otherlv_0, grammarAccess.getTriggeredActionAccess().getTriggeredActionKeyword_0());
             		
-            // InternalSmartCity.g:1210:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSmartCity.g:1211:4: (lv_name_1_0= RULE_ID )
+            // InternalSmartCity.g:1218:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSmartCity.g:1219:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSmartCity.g:1211:4: (lv_name_1_0= RULE_ID )
-            // InternalSmartCity.g:1212:5: lv_name_1_0= RULE_ID
+            // InternalSmartCity.g:1219:4: (lv_name_1_0= RULE_ID )
+            // InternalSmartCity.g:1220:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -2695,7 +2705,7 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSensorType"
-    // InternalSmartCity.g:1232:1: ruleSensorType returns [Enumerator current=null] : ( (enumLiteral_0= 'TEMPERATURE' ) | (enumLiteral_1= 'PH' ) | (enumLiteral_2= 'TURBIDITY' ) | (enumLiteral_3= 'TDS' ) | (enumLiteral_4= 'CURRENT' ) | (enumLiteral_5= 'PULSE' ) | (enumLiteral_6= 'ULTRASONIC' ) | (enumLiteral_7= 'CAMERA' ) | (enumLiteral_8= 'GSM' ) ) ;
+    // InternalSmartCity.g:1240:1: ruleSensorType returns [Enumerator current=null] : ( (enumLiteral_0= 'TEMPERATURE' ) | (enumLiteral_1= 'PH' ) | (enumLiteral_2= 'TURBIDITY' ) | (enumLiteral_3= 'TDS' ) | (enumLiteral_4= 'CURRENT' ) | (enumLiteral_5= 'PULSE' ) | (enumLiteral_6= 'ULTRASONIC' ) | (enumLiteral_7= 'CAMERA' ) | (enumLiteral_8= 'GSM' ) ) ;
     public final Enumerator ruleSensorType() throws RecognitionException {
         Enumerator current = null;
 
@@ -2713,10 +2723,10 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCity.g:1238:2: ( ( (enumLiteral_0= 'TEMPERATURE' ) | (enumLiteral_1= 'PH' ) | (enumLiteral_2= 'TURBIDITY' ) | (enumLiteral_3= 'TDS' ) | (enumLiteral_4= 'CURRENT' ) | (enumLiteral_5= 'PULSE' ) | (enumLiteral_6= 'ULTRASONIC' ) | (enumLiteral_7= 'CAMERA' ) | (enumLiteral_8= 'GSM' ) ) )
-            // InternalSmartCity.g:1239:2: ( (enumLiteral_0= 'TEMPERATURE' ) | (enumLiteral_1= 'PH' ) | (enumLiteral_2= 'TURBIDITY' ) | (enumLiteral_3= 'TDS' ) | (enumLiteral_4= 'CURRENT' ) | (enumLiteral_5= 'PULSE' ) | (enumLiteral_6= 'ULTRASONIC' ) | (enumLiteral_7= 'CAMERA' ) | (enumLiteral_8= 'GSM' ) )
+            // InternalSmartCity.g:1246:2: ( ( (enumLiteral_0= 'TEMPERATURE' ) | (enumLiteral_1= 'PH' ) | (enumLiteral_2= 'TURBIDITY' ) | (enumLiteral_3= 'TDS' ) | (enumLiteral_4= 'CURRENT' ) | (enumLiteral_5= 'PULSE' ) | (enumLiteral_6= 'ULTRASONIC' ) | (enumLiteral_7= 'CAMERA' ) | (enumLiteral_8= 'GSM' ) ) )
+            // InternalSmartCity.g:1247:2: ( (enumLiteral_0= 'TEMPERATURE' ) | (enumLiteral_1= 'PH' ) | (enumLiteral_2= 'TURBIDITY' ) | (enumLiteral_3= 'TDS' ) | (enumLiteral_4= 'CURRENT' ) | (enumLiteral_5= 'PULSE' ) | (enumLiteral_6= 'ULTRASONIC' ) | (enumLiteral_7= 'CAMERA' ) | (enumLiteral_8= 'GSM' ) )
             {
-            // InternalSmartCity.g:1239:2: ( (enumLiteral_0= 'TEMPERATURE' ) | (enumLiteral_1= 'PH' ) | (enumLiteral_2= 'TURBIDITY' ) | (enumLiteral_3= 'TDS' ) | (enumLiteral_4= 'CURRENT' ) | (enumLiteral_5= 'PULSE' ) | (enumLiteral_6= 'ULTRASONIC' ) | (enumLiteral_7= 'CAMERA' ) | (enumLiteral_8= 'GSM' ) )
+            // InternalSmartCity.g:1247:2: ( (enumLiteral_0= 'TEMPERATURE' ) | (enumLiteral_1= 'PH' ) | (enumLiteral_2= 'TURBIDITY' ) | (enumLiteral_3= 'TDS' ) | (enumLiteral_4= 'CURRENT' ) | (enumLiteral_5= 'PULSE' ) | (enumLiteral_6= 'ULTRASONIC' ) | (enumLiteral_7= 'CAMERA' ) | (enumLiteral_8= 'GSM' ) )
             int alt13=9;
             switch ( input.LA(1) ) {
             case 35:
@@ -2773,10 +2783,10 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
 
             switch (alt13) {
                 case 1 :
-                    // InternalSmartCity.g:1240:3: (enumLiteral_0= 'TEMPERATURE' )
+                    // InternalSmartCity.g:1248:3: (enumLiteral_0= 'TEMPERATURE' )
                     {
-                    // InternalSmartCity.g:1240:3: (enumLiteral_0= 'TEMPERATURE' )
-                    // InternalSmartCity.g:1241:4: enumLiteral_0= 'TEMPERATURE'
+                    // InternalSmartCity.g:1248:3: (enumLiteral_0= 'TEMPERATURE' )
+                    // InternalSmartCity.g:1249:4: enumLiteral_0= 'TEMPERATURE'
                     {
                     enumLiteral_0=(Token)match(input,35,FOLLOW_2); 
 
@@ -2790,10 +2800,10 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCity.g:1248:3: (enumLiteral_1= 'PH' )
+                    // InternalSmartCity.g:1256:3: (enumLiteral_1= 'PH' )
                     {
-                    // InternalSmartCity.g:1248:3: (enumLiteral_1= 'PH' )
-                    // InternalSmartCity.g:1249:4: enumLiteral_1= 'PH'
+                    // InternalSmartCity.g:1256:3: (enumLiteral_1= 'PH' )
+                    // InternalSmartCity.g:1257:4: enumLiteral_1= 'PH'
                     {
                     enumLiteral_1=(Token)match(input,36,FOLLOW_2); 
 
@@ -2807,10 +2817,10 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalSmartCity.g:1256:3: (enumLiteral_2= 'TURBIDITY' )
+                    // InternalSmartCity.g:1264:3: (enumLiteral_2= 'TURBIDITY' )
                     {
-                    // InternalSmartCity.g:1256:3: (enumLiteral_2= 'TURBIDITY' )
-                    // InternalSmartCity.g:1257:4: enumLiteral_2= 'TURBIDITY'
+                    // InternalSmartCity.g:1264:3: (enumLiteral_2= 'TURBIDITY' )
+                    // InternalSmartCity.g:1265:4: enumLiteral_2= 'TURBIDITY'
                     {
                     enumLiteral_2=(Token)match(input,37,FOLLOW_2); 
 
@@ -2824,10 +2834,10 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalSmartCity.g:1264:3: (enumLiteral_3= 'TDS' )
+                    // InternalSmartCity.g:1272:3: (enumLiteral_3= 'TDS' )
                     {
-                    // InternalSmartCity.g:1264:3: (enumLiteral_3= 'TDS' )
-                    // InternalSmartCity.g:1265:4: enumLiteral_3= 'TDS'
+                    // InternalSmartCity.g:1272:3: (enumLiteral_3= 'TDS' )
+                    // InternalSmartCity.g:1273:4: enumLiteral_3= 'TDS'
                     {
                     enumLiteral_3=(Token)match(input,38,FOLLOW_2); 
 
@@ -2841,10 +2851,10 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalSmartCity.g:1272:3: (enumLiteral_4= 'CURRENT' )
+                    // InternalSmartCity.g:1280:3: (enumLiteral_4= 'CURRENT' )
                     {
-                    // InternalSmartCity.g:1272:3: (enumLiteral_4= 'CURRENT' )
-                    // InternalSmartCity.g:1273:4: enumLiteral_4= 'CURRENT'
+                    // InternalSmartCity.g:1280:3: (enumLiteral_4= 'CURRENT' )
+                    // InternalSmartCity.g:1281:4: enumLiteral_4= 'CURRENT'
                     {
                     enumLiteral_4=(Token)match(input,39,FOLLOW_2); 
 
@@ -2858,10 +2868,10 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalSmartCity.g:1280:3: (enumLiteral_5= 'PULSE' )
+                    // InternalSmartCity.g:1288:3: (enumLiteral_5= 'PULSE' )
                     {
-                    // InternalSmartCity.g:1280:3: (enumLiteral_5= 'PULSE' )
-                    // InternalSmartCity.g:1281:4: enumLiteral_5= 'PULSE'
+                    // InternalSmartCity.g:1288:3: (enumLiteral_5= 'PULSE' )
+                    // InternalSmartCity.g:1289:4: enumLiteral_5= 'PULSE'
                     {
                     enumLiteral_5=(Token)match(input,40,FOLLOW_2); 
 
@@ -2875,10 +2885,10 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalSmartCity.g:1288:3: (enumLiteral_6= 'ULTRASONIC' )
+                    // InternalSmartCity.g:1296:3: (enumLiteral_6= 'ULTRASONIC' )
                     {
-                    // InternalSmartCity.g:1288:3: (enumLiteral_6= 'ULTRASONIC' )
-                    // InternalSmartCity.g:1289:4: enumLiteral_6= 'ULTRASONIC'
+                    // InternalSmartCity.g:1296:3: (enumLiteral_6= 'ULTRASONIC' )
+                    // InternalSmartCity.g:1297:4: enumLiteral_6= 'ULTRASONIC'
                     {
                     enumLiteral_6=(Token)match(input,41,FOLLOW_2); 
 
@@ -2892,10 +2902,10 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalSmartCity.g:1296:3: (enumLiteral_7= 'CAMERA' )
+                    // InternalSmartCity.g:1304:3: (enumLiteral_7= 'CAMERA' )
                     {
-                    // InternalSmartCity.g:1296:3: (enumLiteral_7= 'CAMERA' )
-                    // InternalSmartCity.g:1297:4: enumLiteral_7= 'CAMERA'
+                    // InternalSmartCity.g:1304:3: (enumLiteral_7= 'CAMERA' )
+                    // InternalSmartCity.g:1305:4: enumLiteral_7= 'CAMERA'
                     {
                     enumLiteral_7=(Token)match(input,42,FOLLOW_2); 
 
@@ -2909,10 +2919,10 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // InternalSmartCity.g:1304:3: (enumLiteral_8= 'GSM' )
+                    // InternalSmartCity.g:1312:3: (enumLiteral_8= 'GSM' )
                     {
-                    // InternalSmartCity.g:1304:3: (enumLiteral_8= 'GSM' )
-                    // InternalSmartCity.g:1305:4: enumLiteral_8= 'GSM'
+                    // InternalSmartCity.g:1312:3: (enumLiteral_8= 'GSM' )
+                    // InternalSmartCity.g:1313:4: enumLiteral_8= 'GSM'
                     {
                     enumLiteral_8=(Token)match(input,43,FOLLOW_2); 
 
@@ -2948,7 +2958,7 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleControllerType"
-    // InternalSmartCity.g:1315:1: ruleControllerType returns [Enumerator current=null] : ( (enumLiteral_0= 'ESP32' ) | (enumLiteral_1= 'RASPBERRY_PI' ) | (enumLiteral_2= 'OTHER' ) ) ;
+    // InternalSmartCity.g:1323:1: ruleControllerType returns [Enumerator current=null] : ( (enumLiteral_0= 'ESP32' ) | (enumLiteral_1= 'RASPBERRY_PI' ) | (enumLiteral_2= 'OTHER' ) ) ;
     public final Enumerator ruleControllerType() throws RecognitionException {
         Enumerator current = null;
 
@@ -2960,10 +2970,10 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCity.g:1321:2: ( ( (enumLiteral_0= 'ESP32' ) | (enumLiteral_1= 'RASPBERRY_PI' ) | (enumLiteral_2= 'OTHER' ) ) )
-            // InternalSmartCity.g:1322:2: ( (enumLiteral_0= 'ESP32' ) | (enumLiteral_1= 'RASPBERRY_PI' ) | (enumLiteral_2= 'OTHER' ) )
+            // InternalSmartCity.g:1329:2: ( ( (enumLiteral_0= 'ESP32' ) | (enumLiteral_1= 'RASPBERRY_PI' ) | (enumLiteral_2= 'OTHER' ) ) )
+            // InternalSmartCity.g:1330:2: ( (enumLiteral_0= 'ESP32' ) | (enumLiteral_1= 'RASPBERRY_PI' ) | (enumLiteral_2= 'OTHER' ) )
             {
-            // InternalSmartCity.g:1322:2: ( (enumLiteral_0= 'ESP32' ) | (enumLiteral_1= 'RASPBERRY_PI' ) | (enumLiteral_2= 'OTHER' ) )
+            // InternalSmartCity.g:1330:2: ( (enumLiteral_0= 'ESP32' ) | (enumLiteral_1= 'RASPBERRY_PI' ) | (enumLiteral_2= 'OTHER' ) )
             int alt14=3;
             switch ( input.LA(1) ) {
             case 44:
@@ -2990,10 +3000,10 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
 
             switch (alt14) {
                 case 1 :
-                    // InternalSmartCity.g:1323:3: (enumLiteral_0= 'ESP32' )
+                    // InternalSmartCity.g:1331:3: (enumLiteral_0= 'ESP32' )
                     {
-                    // InternalSmartCity.g:1323:3: (enumLiteral_0= 'ESP32' )
-                    // InternalSmartCity.g:1324:4: enumLiteral_0= 'ESP32'
+                    // InternalSmartCity.g:1331:3: (enumLiteral_0= 'ESP32' )
+                    // InternalSmartCity.g:1332:4: enumLiteral_0= 'ESP32'
                     {
                     enumLiteral_0=(Token)match(input,44,FOLLOW_2); 
 
@@ -3007,10 +3017,10 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCity.g:1331:3: (enumLiteral_1= 'RASPBERRY_PI' )
+                    // InternalSmartCity.g:1339:3: (enumLiteral_1= 'RASPBERRY_PI' )
                     {
-                    // InternalSmartCity.g:1331:3: (enumLiteral_1= 'RASPBERRY_PI' )
-                    // InternalSmartCity.g:1332:4: enumLiteral_1= 'RASPBERRY_PI'
+                    // InternalSmartCity.g:1339:3: (enumLiteral_1= 'RASPBERRY_PI' )
+                    // InternalSmartCity.g:1340:4: enumLiteral_1= 'RASPBERRY_PI'
                     {
                     enumLiteral_1=(Token)match(input,45,FOLLOW_2); 
 
@@ -3024,10 +3034,10 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalSmartCity.g:1339:3: (enumLiteral_2= 'OTHER' )
+                    // InternalSmartCity.g:1347:3: (enumLiteral_2= 'OTHER' )
                     {
-                    // InternalSmartCity.g:1339:3: (enumLiteral_2= 'OTHER' )
-                    // InternalSmartCity.g:1340:4: enumLiteral_2= 'OTHER'
+                    // InternalSmartCity.g:1347:3: (enumLiteral_2= 'OTHER' )
+                    // InternalSmartCity.g:1348:4: enumLiteral_2= 'OTHER'
                     {
                     enumLiteral_2=(Token)match(input,46,FOLLOW_2); 
 
@@ -3063,7 +3073,7 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLinkType"
-    // InternalSmartCity.g:1350:1: ruleLinkType returns [Enumerator current=null] : ( (enumLiteral_0= 'UART' ) | (enumLiteral_1= 'ADC' ) | (enumLiteral_2= 'SPI' ) | (enumLiteral_3= 'CSI' ) | (enumLiteral_4= 'HTTPS' ) ) ;
+    // InternalSmartCity.g:1358:1: ruleLinkType returns [Enumerator current=null] : ( (enumLiteral_0= 'UART' ) | (enumLiteral_1= 'ADC' ) | (enumLiteral_2= 'SPI' ) | (enumLiteral_3= 'CSI' ) | (enumLiteral_4= 'HTTPS' ) ) ;
     public final Enumerator ruleLinkType() throws RecognitionException {
         Enumerator current = null;
 
@@ -3077,10 +3087,10 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCity.g:1356:2: ( ( (enumLiteral_0= 'UART' ) | (enumLiteral_1= 'ADC' ) | (enumLiteral_2= 'SPI' ) | (enumLiteral_3= 'CSI' ) | (enumLiteral_4= 'HTTPS' ) ) )
-            // InternalSmartCity.g:1357:2: ( (enumLiteral_0= 'UART' ) | (enumLiteral_1= 'ADC' ) | (enumLiteral_2= 'SPI' ) | (enumLiteral_3= 'CSI' ) | (enumLiteral_4= 'HTTPS' ) )
+            // InternalSmartCity.g:1364:2: ( ( (enumLiteral_0= 'UART' ) | (enumLiteral_1= 'ADC' ) | (enumLiteral_2= 'SPI' ) | (enumLiteral_3= 'CSI' ) | (enumLiteral_4= 'HTTPS' ) ) )
+            // InternalSmartCity.g:1365:2: ( (enumLiteral_0= 'UART' ) | (enumLiteral_1= 'ADC' ) | (enumLiteral_2= 'SPI' ) | (enumLiteral_3= 'CSI' ) | (enumLiteral_4= 'HTTPS' ) )
             {
-            // InternalSmartCity.g:1357:2: ( (enumLiteral_0= 'UART' ) | (enumLiteral_1= 'ADC' ) | (enumLiteral_2= 'SPI' ) | (enumLiteral_3= 'CSI' ) | (enumLiteral_4= 'HTTPS' ) )
+            // InternalSmartCity.g:1365:2: ( (enumLiteral_0= 'UART' ) | (enumLiteral_1= 'ADC' ) | (enumLiteral_2= 'SPI' ) | (enumLiteral_3= 'CSI' ) | (enumLiteral_4= 'HTTPS' ) )
             int alt15=5;
             switch ( input.LA(1) ) {
             case 47:
@@ -3117,10 +3127,10 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
 
             switch (alt15) {
                 case 1 :
-                    // InternalSmartCity.g:1358:3: (enumLiteral_0= 'UART' )
+                    // InternalSmartCity.g:1366:3: (enumLiteral_0= 'UART' )
                     {
-                    // InternalSmartCity.g:1358:3: (enumLiteral_0= 'UART' )
-                    // InternalSmartCity.g:1359:4: enumLiteral_0= 'UART'
+                    // InternalSmartCity.g:1366:3: (enumLiteral_0= 'UART' )
+                    // InternalSmartCity.g:1367:4: enumLiteral_0= 'UART'
                     {
                     enumLiteral_0=(Token)match(input,47,FOLLOW_2); 
 
@@ -3134,10 +3144,10 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCity.g:1366:3: (enumLiteral_1= 'ADC' )
+                    // InternalSmartCity.g:1374:3: (enumLiteral_1= 'ADC' )
                     {
-                    // InternalSmartCity.g:1366:3: (enumLiteral_1= 'ADC' )
-                    // InternalSmartCity.g:1367:4: enumLiteral_1= 'ADC'
+                    // InternalSmartCity.g:1374:3: (enumLiteral_1= 'ADC' )
+                    // InternalSmartCity.g:1375:4: enumLiteral_1= 'ADC'
                     {
                     enumLiteral_1=(Token)match(input,48,FOLLOW_2); 
 
@@ -3151,10 +3161,10 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalSmartCity.g:1374:3: (enumLiteral_2= 'SPI' )
+                    // InternalSmartCity.g:1382:3: (enumLiteral_2= 'SPI' )
                     {
-                    // InternalSmartCity.g:1374:3: (enumLiteral_2= 'SPI' )
-                    // InternalSmartCity.g:1375:4: enumLiteral_2= 'SPI'
+                    // InternalSmartCity.g:1382:3: (enumLiteral_2= 'SPI' )
+                    // InternalSmartCity.g:1383:4: enumLiteral_2= 'SPI'
                     {
                     enumLiteral_2=(Token)match(input,49,FOLLOW_2); 
 
@@ -3168,10 +3178,10 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalSmartCity.g:1382:3: (enumLiteral_3= 'CSI' )
+                    // InternalSmartCity.g:1390:3: (enumLiteral_3= 'CSI' )
                     {
-                    // InternalSmartCity.g:1382:3: (enumLiteral_3= 'CSI' )
-                    // InternalSmartCity.g:1383:4: enumLiteral_3= 'CSI'
+                    // InternalSmartCity.g:1390:3: (enumLiteral_3= 'CSI' )
+                    // InternalSmartCity.g:1391:4: enumLiteral_3= 'CSI'
                     {
                     enumLiteral_3=(Token)match(input,50,FOLLOW_2); 
 
@@ -3185,10 +3195,10 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalSmartCity.g:1390:3: (enumLiteral_4= 'HTTPS' )
+                    // InternalSmartCity.g:1398:3: (enumLiteral_4= 'HTTPS' )
                     {
-                    // InternalSmartCity.g:1390:3: (enumLiteral_4= 'HTTPS' )
-                    // InternalSmartCity.g:1391:4: enumLiteral_4= 'HTTPS'
+                    // InternalSmartCity.g:1398:3: (enumLiteral_4= 'HTTPS' )
+                    // InternalSmartCity.g:1399:4: enumLiteral_4= 'HTTPS'
                     {
                     enumLiteral_4=(Token)match(input,51,FOLLOW_2); 
 
@@ -3224,7 +3234,7 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFrequencyUnit"
-    // InternalSmartCity.g:1401:1: ruleFrequencyUnit returns [Enumerator current=null] : ( (enumLiteral_0= 'HERTZ' ) | (enumLiteral_1= 'SECONDS' ) | (enumLiteral_2= 'MINUTES' ) | (enumLiteral_3= 'HOURS' ) | (enumLiteral_4= 'DAYS' ) | (enumLiteral_5= 'INF' ) ) ;
+    // InternalSmartCity.g:1409:1: ruleFrequencyUnit returns [Enumerator current=null] : ( (enumLiteral_0= 'HERTZ' ) | (enumLiteral_1= 'SECONDS' ) | (enumLiteral_2= 'MINUTES' ) | (enumLiteral_3= 'HOURS' ) | (enumLiteral_4= 'DAYS' ) | (enumLiteral_5= 'INF' ) ) ;
     public final Enumerator ruleFrequencyUnit() throws RecognitionException {
         Enumerator current = null;
 
@@ -3239,10 +3249,10 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCity.g:1407:2: ( ( (enumLiteral_0= 'HERTZ' ) | (enumLiteral_1= 'SECONDS' ) | (enumLiteral_2= 'MINUTES' ) | (enumLiteral_3= 'HOURS' ) | (enumLiteral_4= 'DAYS' ) | (enumLiteral_5= 'INF' ) ) )
-            // InternalSmartCity.g:1408:2: ( (enumLiteral_0= 'HERTZ' ) | (enumLiteral_1= 'SECONDS' ) | (enumLiteral_2= 'MINUTES' ) | (enumLiteral_3= 'HOURS' ) | (enumLiteral_4= 'DAYS' ) | (enumLiteral_5= 'INF' ) )
+            // InternalSmartCity.g:1415:2: ( ( (enumLiteral_0= 'HERTZ' ) | (enumLiteral_1= 'SECONDS' ) | (enumLiteral_2= 'MINUTES' ) | (enumLiteral_3= 'HOURS' ) | (enumLiteral_4= 'DAYS' ) | (enumLiteral_5= 'INF' ) ) )
+            // InternalSmartCity.g:1416:2: ( (enumLiteral_0= 'HERTZ' ) | (enumLiteral_1= 'SECONDS' ) | (enumLiteral_2= 'MINUTES' ) | (enumLiteral_3= 'HOURS' ) | (enumLiteral_4= 'DAYS' ) | (enumLiteral_5= 'INF' ) )
             {
-            // InternalSmartCity.g:1408:2: ( (enumLiteral_0= 'HERTZ' ) | (enumLiteral_1= 'SECONDS' ) | (enumLiteral_2= 'MINUTES' ) | (enumLiteral_3= 'HOURS' ) | (enumLiteral_4= 'DAYS' ) | (enumLiteral_5= 'INF' ) )
+            // InternalSmartCity.g:1416:2: ( (enumLiteral_0= 'HERTZ' ) | (enumLiteral_1= 'SECONDS' ) | (enumLiteral_2= 'MINUTES' ) | (enumLiteral_3= 'HOURS' ) | (enumLiteral_4= 'DAYS' ) | (enumLiteral_5= 'INF' ) )
             int alt16=6;
             switch ( input.LA(1) ) {
             case 52:
@@ -3284,10 +3294,10 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
 
             switch (alt16) {
                 case 1 :
-                    // InternalSmartCity.g:1409:3: (enumLiteral_0= 'HERTZ' )
+                    // InternalSmartCity.g:1417:3: (enumLiteral_0= 'HERTZ' )
                     {
-                    // InternalSmartCity.g:1409:3: (enumLiteral_0= 'HERTZ' )
-                    // InternalSmartCity.g:1410:4: enumLiteral_0= 'HERTZ'
+                    // InternalSmartCity.g:1417:3: (enumLiteral_0= 'HERTZ' )
+                    // InternalSmartCity.g:1418:4: enumLiteral_0= 'HERTZ'
                     {
                     enumLiteral_0=(Token)match(input,52,FOLLOW_2); 
 
@@ -3301,10 +3311,10 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCity.g:1417:3: (enumLiteral_1= 'SECONDS' )
+                    // InternalSmartCity.g:1425:3: (enumLiteral_1= 'SECONDS' )
                     {
-                    // InternalSmartCity.g:1417:3: (enumLiteral_1= 'SECONDS' )
-                    // InternalSmartCity.g:1418:4: enumLiteral_1= 'SECONDS'
+                    // InternalSmartCity.g:1425:3: (enumLiteral_1= 'SECONDS' )
+                    // InternalSmartCity.g:1426:4: enumLiteral_1= 'SECONDS'
                     {
                     enumLiteral_1=(Token)match(input,53,FOLLOW_2); 
 
@@ -3318,10 +3328,10 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalSmartCity.g:1425:3: (enumLiteral_2= 'MINUTES' )
+                    // InternalSmartCity.g:1433:3: (enumLiteral_2= 'MINUTES' )
                     {
-                    // InternalSmartCity.g:1425:3: (enumLiteral_2= 'MINUTES' )
-                    // InternalSmartCity.g:1426:4: enumLiteral_2= 'MINUTES'
+                    // InternalSmartCity.g:1433:3: (enumLiteral_2= 'MINUTES' )
+                    // InternalSmartCity.g:1434:4: enumLiteral_2= 'MINUTES'
                     {
                     enumLiteral_2=(Token)match(input,54,FOLLOW_2); 
 
@@ -3335,10 +3345,10 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalSmartCity.g:1433:3: (enumLiteral_3= 'HOURS' )
+                    // InternalSmartCity.g:1441:3: (enumLiteral_3= 'HOURS' )
                     {
-                    // InternalSmartCity.g:1433:3: (enumLiteral_3= 'HOURS' )
-                    // InternalSmartCity.g:1434:4: enumLiteral_3= 'HOURS'
+                    // InternalSmartCity.g:1441:3: (enumLiteral_3= 'HOURS' )
+                    // InternalSmartCity.g:1442:4: enumLiteral_3= 'HOURS'
                     {
                     enumLiteral_3=(Token)match(input,55,FOLLOW_2); 
 
@@ -3352,10 +3362,10 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalSmartCity.g:1441:3: (enumLiteral_4= 'DAYS' )
+                    // InternalSmartCity.g:1449:3: (enumLiteral_4= 'DAYS' )
                     {
-                    // InternalSmartCity.g:1441:3: (enumLiteral_4= 'DAYS' )
-                    // InternalSmartCity.g:1442:4: enumLiteral_4= 'DAYS'
+                    // InternalSmartCity.g:1449:3: (enumLiteral_4= 'DAYS' )
+                    // InternalSmartCity.g:1450:4: enumLiteral_4= 'DAYS'
                     {
                     enumLiteral_4=(Token)match(input,56,FOLLOW_2); 
 
@@ -3369,10 +3379,10 @@ public class InternalSmartCityParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalSmartCity.g:1449:3: (enumLiteral_5= 'INF' )
+                    // InternalSmartCity.g:1457:3: (enumLiteral_5= 'INF' )
                     {
-                    // InternalSmartCity.g:1449:3: (enumLiteral_5= 'INF' )
-                    // InternalSmartCity.g:1450:4: enumLiteral_5= 'INF'
+                    // InternalSmartCity.g:1457:3: (enumLiteral_5= 'INF' )
+                    // InternalSmartCity.g:1458:4: enumLiteral_5= 'INF'
                     {
                     enumLiteral_5=(Token)match(input,57,FOLLOW_2); 
 

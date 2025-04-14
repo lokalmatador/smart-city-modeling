@@ -17,6 +17,8 @@ import uibk.ac.at.smartcity.smartCity.SimulationProperties
 import uibk.ac.at.smartcity.smartCity.SmartCityPackage
 
 import static extension java.lang.Character.*
+import uibk.ac.at.smartcity.smartCity.CyclicAction
+import uibk.ac.at.smartcity.smartCity.TriggeredAction
 
 /**
  * This class contains custom validation rules. 
@@ -234,8 +236,50 @@ class SmartCityValidator extends AbstractSmartCityValidator {
 		if (!duplicates.empty) {
 			error(
 				"Duplicate communication link", // both of the duplicates will show this message
-				null // marks the whole link
+				null
 			)
 		}
 	}
+	
+	@Check
+	def checkCommunicationLinkValidOrigin(CommunicationLink link) {
+		if (link.origin instanceof Controller) {
+			error("Controllers can't send data",
+				SmartCityPackage.Literals.COMMUNICATION_LINK__ORIGIN
+			)
+		}
+		else if (link.origin instanceof DataGateway) {
+			error("The DataGateway can't send data",
+				SmartCityPackage.Literals.COMMUNICATION_LINK__ORIGIN
+			)
+		}
+	}
+	
+	@Check
+	def checkCommunicationLinkValidDestination(CommunicationLink link) {
+		if (link.destination instanceof Sensor) {
+			error("Sensors can't receive data",
+				SmartCityPackage.Literals.COMMUNICATION_LINK__DESTINATION
+			)
+		}
+	}
+	
+	
+	// Info for features that do not produce any Python Code yet
+	@Check
+	def checkCylicActionsHaveNotImplementedInfo(CyclicAction action){
+		info(
+		"Cyclic Actions are not yet implemented in the Code Generation, and will therefore have no effect for the simulation",
+		null
+		)
+	}
+	
+	@Check
+	def checkTriggeredActionsHaveNotImplementedInfo(TriggeredAction action){
+		info(
+		"Triggered Actions are not yet implemented in the Code Generator, and will therefore have no effect for the simulation",
+		null
+		)
+	}
+	
 }

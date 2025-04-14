@@ -86,11 +86,13 @@ DelayRange:
 
 CyclicAction:
 	'cyclicAction' name=ID
-	'frequency' frequency=Frequency
+	'{'
+		'frequency' frequency=Frequency
+	'}'
 ;
 
 TriggeredAction:
-	'TriggeredAction' name=ID
+	'triggeredAction' name=ID
 ;
 	
 enum SensorType:

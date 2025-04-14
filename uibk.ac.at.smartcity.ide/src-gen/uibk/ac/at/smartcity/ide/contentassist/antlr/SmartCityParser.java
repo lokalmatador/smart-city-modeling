@@ -90,7 +90,7 @@ public class SmartCityParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getDelayRangeAccess().getMinAssignment_1(), "rule__DelayRange__MinAssignment_1");
 			builder.put(grammarAccess.getDelayRangeAccess().getMaxAssignment_3(), "rule__DelayRange__MaxAssignment_3");
 			builder.put(grammarAccess.getCyclicActionAccess().getNameAssignment_1(), "rule__CyclicAction__NameAssignment_1");
-			builder.put(grammarAccess.getCyclicActionAccess().getFrequencyAssignment_3(), "rule__CyclicAction__FrequencyAssignment_3");
+			builder.put(grammarAccess.getCyclicActionAccess().getFrequencyAssignment_4(), "rule__CyclicAction__FrequencyAssignment_4");
 			builder.put(grammarAccess.getTriggeredActionAccess().getNameAssignment_1(), "rule__TriggeredAction__NameAssignment_1");
 		}
 	}
