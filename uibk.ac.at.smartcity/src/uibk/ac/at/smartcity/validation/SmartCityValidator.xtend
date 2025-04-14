@@ -19,6 +19,7 @@ import uibk.ac.at.smartcity.smartCity.SmartCityPackage
 import static extension java.lang.Character.*
 import uibk.ac.at.smartcity.smartCity.CyclicAction
 import uibk.ac.at.smartcity.smartCity.TriggeredAction
+import uibk.ac.at.smartcity.smartCity.ControllerType
 
 /**
  * This class contains custom validation rules. 
@@ -93,6 +94,16 @@ class SmartCityValidator extends AbstractSmartCityValidator {
 				INVALID_ATTRIBUTE_NAME,
 				controller.name
 			)
+		}
+	}
+	
+	// Controller type
+	@Check
+	def checkControllerType(Controller controller) {
+		if (controller.type == ControllerType.OTHER) {
+			info(
+			"For non-standard Controller types the pinout will not be inferred for constraint checking. They will still function as normal for the simulation.",
+			SmartCityPackage.Literals.CONTROLLER__TYPE)
 		}
 	}
 
@@ -281,5 +292,4 @@ class SmartCityValidator extends AbstractSmartCityValidator {
 		null
 		)
 	}
-	
 }

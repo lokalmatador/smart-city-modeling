@@ -101,6 +101,17 @@ public class SmartCityValidator extends AbstractSmartCityValidator {
   }
 
   @Check
+  public void checkControllerType(final Controller controller) {
+    ControllerType _type = controller.getType();
+    boolean _equals = Objects.equals(_type, ControllerType.OTHER);
+    if (_equals) {
+      this.info(
+        "For non-standard Controller types the pinout will not be inferred for constraint checking. They will still function as normal for the simulation.", 
+        SmartCityPackage.Literals.CONTROLLER__TYPE);
+    }
+  }
+
+  @Check
   public void checkSimulationPropertiesNonNegativeTerminationTime(final SimulationProperties props) {
     int _terminationTime = props.getTerminationTime();
     boolean _lessEqualsThan = (_terminationTime <= 0);
