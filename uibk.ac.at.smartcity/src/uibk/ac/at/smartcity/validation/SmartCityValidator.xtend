@@ -96,14 +96,14 @@ class SmartCityValidator extends AbstractSmartCityValidator {
 			)
 		}
 	}
-	
+
 	// Controller type
 	@Check
 	def checkControllerType(Controller controller) {
 		if (controller.type == ControllerType.OTHER) {
 			info(
-			"For non-standard Controller types the pinout will not be inferred for constraint checking. They will still function as normal for the simulation.",
-			SmartCityPackage.Literals.CONTROLLER__TYPE)
+				"For non-standard Controller types the pinout will not be inferred for constraint checking. They will still function as normal for the simulation.",
+				SmartCityPackage.Literals.CONTROLLER__TYPE)
 		}
 	}
 
@@ -154,14 +154,16 @@ class SmartCityValidator extends AbstractSmartCityValidator {
 		switch (node.controller.type) {
 			case ESP32: {
 				if (node.sensors.size > 8) {
-					warning("ESP32 controller might be overloaded with too many sensors", 
+					warning(
+						"ESP32 controller might be overloaded with too many sensors",
 						SmartCityPackage.Literals.LINKABLE__NAME
 					)
 				}
 			}
 			case RASPBERRY_PI: {
 				if (node.sensors.size > 16) {
-					warning("Raspberry Pi controller might be overloaded with too many sensors", 
+					warning(
+						"Raspberry Pi controller might be overloaded with too many sensors",
 						SmartCityPackage.Literals.LINKABLE__NAME
 					)
 				}
@@ -251,48 +253,49 @@ class SmartCityValidator extends AbstractSmartCityValidator {
 			)
 		}
 	}
-	
+
 	@Check
 	def checkCommunicationLinkValidOrigin(CommunicationLink link) {
 		if (link.origin instanceof Controller) {
-			error("Controllers can't send data",
+			error(
+				"Controllers can't send data",
 				SmartCityPackage.Literals.COMMUNICATION_LINK__ORIGIN
 			)
-		}
-		else if (link.origin instanceof DataGateway) {
-			error("The DataGateway can't send data",
+		} else if (link.origin instanceof DataGateway) {
+			error(
+				"The DataGateway can't send data",
 				SmartCityPackage.Literals.COMMUNICATION_LINK__ORIGIN
 			)
 		}
 	}
-	
+
 	@Check
 	def checkCommunicationLinkValidDestination(CommunicationLink link) {
 		if (link.destination instanceof Sensor) {
-			error("Sensors can't receive data",
+			error(
+				"Sensors can't receive data",
 				SmartCityPackage.Literals.COMMUNICATION_LINK__DESTINATION
 			)
 		}
 	}
-	
-	
+
 	// Info for features that do not produce any Python Code yet
 	@Check
-	def checkCylicActionsHaveNotImplementedInfo(CyclicAction action){
+	def checkCylicActionsHaveNotImplementedInfo(CyclicAction action) {
 		info(
-		"Cyclic Actions are not yet implemented in the Code Generation, and will therefore have no effect for the simulation.",
-		null
+			"Cyclic Actions are not yet implemented in the Code Generation, and will therefore have no effect for the simulation.",
+			null
 		)
 	}
-	
+
 	@Check
-	def checkTriggeredActionsHaveNotImplementedInfo(TriggeredAction action){
+	def checkTriggeredActionsHaveNotImplementedInfo(TriggeredAction action) {
 		info(
-		"Triggered Actions are not yet implemented in the Code Generator, and will therefore have no effect for the simulation.",
-		null
+			"Triggered Actions are not yet implemented in the Code Generator, and will therefore have no effect for the simulation.",
+			null
 		)
 	}
-	
+
 	@Check
 	def checkModuleNotImplementedInfo(Module module) {
 		info(

@@ -166,7 +166,8 @@ public class SmartCityValidator extends AbstractSmartCityValidator {
           int _size = node.getSensors().size();
           boolean _greaterThan = (_size > 8);
           if (_greaterThan) {
-            this.warning("ESP32 controller might be overloaded with too many sensors", 
+            this.warning(
+              "ESP32 controller might be overloaded with too many sensors", 
               SmartCityPackage.Literals.LINKABLE__NAME);
           }
           break;
@@ -174,7 +175,8 @@ public class SmartCityValidator extends AbstractSmartCityValidator {
           int _size_1 = node.getSensors().size();
           boolean _greaterThan_1 = (_size_1 > 16);
           if (_greaterThan_1) {
-            this.warning("Raspberry Pi controller might be overloaded with too many sensors", 
+            this.warning(
+              "Raspberry Pi controller might be overloaded with too many sensors", 
               SmartCityPackage.Literals.LINKABLE__NAME);
           }
           break;
@@ -274,12 +276,14 @@ public class SmartCityValidator extends AbstractSmartCityValidator {
   public void checkCommunicationLinkValidOrigin(final CommunicationLink link) {
     Linkable _origin = link.getOrigin();
     if ((_origin instanceof Controller)) {
-      this.error("Controllers can\'t send data", 
+      this.error(
+        "Controllers can\'t send data", 
         SmartCityPackage.Literals.COMMUNICATION_LINK__ORIGIN);
     } else {
       Linkable _origin_1 = link.getOrigin();
       if ((_origin_1 instanceof DataGateway)) {
-        this.error("The DataGateway can\'t send data", 
+        this.error(
+          "The DataGateway can\'t send data", 
           SmartCityPackage.Literals.COMMUNICATION_LINK__ORIGIN);
       }
     }
@@ -289,7 +293,8 @@ public class SmartCityValidator extends AbstractSmartCityValidator {
   public void checkCommunicationLinkValidDestination(final CommunicationLink link) {
     Linkable _destination = link.getDestination();
     if ((_destination instanceof Sensor)) {
-      this.error("Sensors can\'t receive data", 
+      this.error(
+        "Sensors can\'t receive data", 
         SmartCityPackage.Literals.COMMUNICATION_LINK__DESTINATION);
     }
   }
