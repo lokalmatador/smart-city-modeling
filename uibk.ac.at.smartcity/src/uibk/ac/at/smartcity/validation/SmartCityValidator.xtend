@@ -147,7 +147,7 @@ class SmartCityValidator extends AbstractSmartCityValidator {
 		}
 	}
 
-	// Node
+	// Controller
 	@Check
 	def checkNodeBalance(Node node) {
 		// Check if nodes are well-balanced (not too many sensors for controller type)

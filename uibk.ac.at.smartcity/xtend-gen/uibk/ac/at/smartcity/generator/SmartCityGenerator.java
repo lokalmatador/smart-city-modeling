@@ -69,34 +69,6 @@ public class SmartCityGenerator extends AbstractGenerator {
     fsa.generateFile("experiment.py", this.generateMain(simulationPropeties));
   }
 
-  public double frequencyToSeconds(final Frequency frequency) {
-    FrequencyUnit _unit = frequency.getUnit();
-    if (_unit != null) {
-      switch (_unit) {
-        case DAYS:
-          int _value = frequency.getValue();
-          int _multiply = (_value * 24);
-          int _multiply_1 = (_multiply * 60);
-          return (_multiply_1 * 60);
-        case HOURS:
-          int _value_1 = frequency.getValue();
-          int _multiply_2 = (_value_1 * 60);
-          return (_multiply_2 * 60);
-        case SECONDS:
-          return frequency.getValue();
-        case HERTZ:
-          int _value_2 = frequency.getValue();
-          return (1 / _value_2);
-        case INF:
-          return (-1);
-        default:
-          return frequency.getValue();
-      }
-    } else {
-      return frequency.getValue();
-    }
-  }
-
   public CharSequence compile(final Sensor sensor) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("from pypdevs.DEVS import AtomicDEVS");
@@ -2466,5 +2438,33 @@ public class SmartCityGenerator extends AbstractGenerator {
     final String config = _builder_1.toString();
     fsa.generateFile("generator/data_generator.py", generatorClass);
     fsa.generateFile("generator/sensors_config.json", config);
+  }
+
+  public double frequencyToSeconds(final Frequency frequency) {
+    FrequencyUnit _unit = frequency.getUnit();
+    if (_unit != null) {
+      switch (_unit) {
+        case DAYS:
+          int _value = frequency.getValue();
+          int _multiply = (_value * 24);
+          int _multiply_1 = (_multiply * 60);
+          return (_multiply_1 * 60);
+        case HOURS:
+          int _value_1 = frequency.getValue();
+          int _multiply_2 = (_value_1 * 60);
+          return (_multiply_2 * 60);
+        case SECONDS:
+          return frequency.getValue();
+        case HERTZ:
+          int _value_2 = frequency.getValue();
+          return (1 / _value_2);
+        case INF:
+          return (-1);
+        default:
+          return frequency.getValue();
+      }
+    } else {
+      return frequency.getValue();
+    }
   }
 }

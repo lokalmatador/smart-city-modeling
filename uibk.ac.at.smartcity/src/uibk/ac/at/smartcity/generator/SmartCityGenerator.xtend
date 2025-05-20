@@ -31,7 +31,6 @@ import uibk.ac.at.smartcity.smartCity.SimulationProperties
 class SmartCityGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		
 		// first create nodes, in there the sensors
 		for (node: resource.allContents.toIterable.filter(Node)){
 			fsa.generateFile("nodes/" + node.name + ".py", node.compile)
@@ -40,16 +39,16 @@ class SmartCityGenerator extends AbstractGenerator {
 			}
 		}
 		
-		// generate blueprint for the interface
+		// generate oneM2M layer from blueprint. Used to represent the scenario, needs to be refined for general purpose scenarios.
 		generateInterface(fsa)
 		
-		// generate hardcoded sink
+		// generate sink from blueprint, this takes all the outcoming data and prints it to the console for simulation output
 		generateSink(fsa)
 		
-		//Generate the data generator and config file
+		// generate the data generator and default json config file
 		generateGenerator(fsa)
 		
-		// create the model
+		// generate the model file containing all the nodes
 		val sensors = resource.allContents.toIterable.filter(Sensor)
 		val links = resource.allContents.toIterable.filter(CommunicationLink)
 		val nodes = resource.allContents.toIterable.filter(Node)
@@ -57,35 +56,14 @@ class SmartCityGenerator extends AbstractGenerator {
 		val simulationPropeties = resource.allContents.toIterable.filter(SimulationProperties).get(0)
 		fsa.generateFile("model.py", generateModel(sensors, links, nodes, interoperableLayer))
 				
-		// main:
+		// generate the main experiment file used to run the simulation
 		fsa.generateFile("experiment.py", generateMain(simulationPropeties))
-	}
-
-	
-	def double frequencyToSeconds(Frequency frequency){
-		switch (frequency.unit) {
-			case DAYS: {
-				return frequency.value * 24 * 60 * 60
-			}
-			case HOURS: {
-				return frequency.value * 60 * 60
-			}
-			case SECONDS: {
-				return frequency.value
-			}
-			case HERTZ: {
-				return 1/frequency.value
-			}
-			case INF: {
-				return -1
-			}
-			default: {
-				return frequency.value
-			}
-		}
 	}
 	
 	def compile(Sensor sensor){
+		/*
+		 * Generates an atomicDEVS model for the given sensor
+		 */
 		'''
 		from pypdevs.DEVS import AtomicDEVS
 		from pypdevs.infinity import INFINITY
@@ -180,6 +158,9 @@ class SmartCityGenerator extends AbstractGenerator {
 	}
 	
 	def compile(Node node){
+		/*
+		 * Generates an atomicDEVS model representing the specified node
+		 */
 		val nodeLinks = new ArrayList
 		val distinctLinkTypes = new HashSet()
 		for (link:node.links){
@@ -274,6 +255,9 @@ class SmartCityGenerator extends AbstractGenerator {
 	}
 	
 	def compile(Iterable<CommunicationLink> links){
+		/*
+		 * Compiles the communication links, building the DEVS connections based on the properties
+		 */
 		var linksList = new ArrayList()
 		var distinct = new HashSet()
 		for (link: links){
@@ -311,6 +295,9 @@ class SmartCityGenerator extends AbstractGenerator {
 	}
 	
 	def generateMain(SimulationProperties simulationProperties){
+		/*
+		 * Creates the main file to run the simulation given the simulation properties 
+		 */
 		val dgFile = simulationProperties.generatorFile
 		'''
 		from pypdevs.simulator import Simulator
@@ -346,6 +333,9 @@ class SmartCityGenerator extends AbstractGenerator {
 	}
 	
 	def generateModel(Iterable<Sensor> sensors, Iterable<CommunicationLink> links, Iterable<Node> nodes, DataGateway interoperableLayer){
+		/*
+		 * Generate the model file containing all the Nodes, Global Links, Data Gateway.
+		 */
 		var commLinks = new ArrayList<CommunicationLink>
 		for (link:links){
 			commLinks.add(link)
@@ -435,6 +425,9 @@ class SmartCityGenerator extends AbstractGenerator {
 	}
 	
 	def generateInterface(IFileSystemAccess2 fsa){
+		/*
+		 * Generate the oneM2M Interface from the scenario
+		 */
 		val m2minterface = '''
 		from pypdevs.DEVS import AtomicDEVS
 		from pypdevs.infinity import INFINITY
@@ -507,6 +500,9 @@ class SmartCityGenerator extends AbstractGenerator {
 	}
 	
 	def generateSink(IFileSystemAccess2 fsa){
+		/*
+		 * Generates the sink. Will be used to display the output of the simulation as all data goes there.
+		 */
 		val sink = '''
 		from pypdevs.DEVS import AtomicDEVS
 		from pypdevs.infinity import INFINITY
@@ -529,6 +525,9 @@ class SmartCityGenerator extends AbstractGenerator {
 	}
 	
 	def generateCommunications(IFileSystemAccess2 fsa){
+		/* 
+		 * Generates the classes for all the supported types of communication links
+		 */
 		val adc_comm = '''
 		from pypdevs.DEVS import AtomicDEVS
 		from pypdevs.infinity import INFINITY
@@ -801,7 +800,6 @@ class SmartCityGenerator extends AbstractGenerator {
 		fsa.generateFile("communications/spi_comm.py", spi_comm)		
 		fsa.generateFile("communications/uart_comm.py", uart_comm)		
 	}
-	
 		
 	def generateGenerator(IFileSystemAccess2 fsa) {
 		/*
@@ -967,5 +965,31 @@ class SmartCityGenerator extends AbstractGenerator {
 		'''
 		fsa.generateFile("generator/data_generator.py", generatorClass)
 		fsa.generateFile("generator/sensors_config.json", config)
+	}
+
+	def double frequencyToSeconds(Frequency frequency){
+		/*
+		 * Helper function to transform any frequency into our standard unit of seconds
+		 */
+		switch (frequency.unit) {
+			case DAYS: {
+				return frequency.value * 24 * 60 * 60
+			}
+			case HOURS: {
+				return frequency.value * 60 * 60
+			}
+			case SECONDS: {
+				return frequency.value
+			}
+			case HERTZ: {
+				return 1/frequency.value
+			}
+			case INF: {
+				return -1
+			}
+			default: {
+				return frequency.value
+			}
+		}
 	}
 }
